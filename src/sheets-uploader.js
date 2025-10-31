@@ -95,14 +95,16 @@ async function uploadToSheets() {
     
     console.log(`✅ ${rows.length}개 행 준비 완료`);
     
-    // 5. 시트 초기화 (4행부터)
+    // 5. 기존 데이터 행 삭제 (헤더 제외)
     console.log('🗑️ 기존 데이터 삭제 중...');
-    await sheet.loadCells();
+    const existingRows = await sheet.getRows();
     
-    const rowCount = sheet.rowCount;
-    if (rowCount > 3) {
-      // 4행부터 끝까지 삭제
-      await sheet.deleteRows(3, rowCount - 3);
+    if (existingRows.length > 0) {
+      // 헤더(3행) 이후의 모든 행 삭제
+      for (const row of existingRows) {
+        await row.delete();
+      }
+      console.log(`✅ ${existingRows.length}개 행 삭제 완료`);
     }
     
     // 6. 헤더 설정 (3행)
