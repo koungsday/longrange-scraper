@@ -34,7 +34,7 @@ jobs:
         run: node src/sheets-uploader.js
       
       - name: Upload results as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: scraping-results
           path: data/subsidies.json
