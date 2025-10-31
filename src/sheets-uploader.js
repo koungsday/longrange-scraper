@@ -95,25 +95,26 @@ async function uploadToSheets() {
     
     console.log(`✅ ${rows.length}개 행 준비 완료`);
     
-    // 5. 기존 데이터 행 삭제 (헤더 제외)
+   console.log(`✅ ${rows.length}개 행 준비 완료`);
+    
+    // 5. 헤더 먼저 설정 (3행)
+    console.log('📝 헤더 작성 중...');
+    const headers = ['시/도', '시/군/구', ...keywords];
+    
+    await sheet.setHeaderRow(headers, 2); // 3행 (index 2)
+    
+    // 6. 기존 데이터 행 삭제
     console.log('🗑️ 기존 데이터 삭제 중...');
     const existingRows = await sheet.getRows();
     
     if (existingRows.length > 0) {
-      // 헤더(3행) 이후의 모든 행 삭제
       for (const row of existingRows) {
         await row.delete();
       }
       console.log(`✅ ${existingRows.length}개 행 삭제 완료`);
     }
     
-    // 6. 헤더 설정 (3행)
-    console.log('📝 헤더 작성 중...');
-    const headers = ['시/도', '시/군/구', ...keywords];
-    
-    await sheet.setHeaderRow(headers, 2); // 3행 (index 2)
-    
-    // 7. 데이터 입력
+    // 7. 새 데이터 입력
     console.log('💾 데이터 저장 중...');
     await sheet.addRows(rows);
     
