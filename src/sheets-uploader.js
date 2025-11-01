@@ -175,10 +175,9 @@ async function updateALLSheet(doc, allData) {
   await sheet.setHeaderRow(row2, 1); // index 1 = 2행
   
   // 1행과 2행 수동 입력
-  const lastColIndex = Math.min(row1.length - 1, 701);
-  const lastColLetter = getColumnLetter(lastColIndex);
-  
-  await sheet.loadCells(`A1:${lastColLetter}2`);
+  await sheet.loadCells(`A1:${String.fromCharCode(65 + Math.min(row1.length - 1, 701))}2`);
+  await sheet.loadCells(`A1:${String.fromCharCode(65 + Math.min(row1.length - 1, 701))}2`);
+  for (let col = 0; col < row1.length && col < 702; col++) {
   
   for (let col = 0; col < row1.length && col < 702; col++) {
     sheet.getCell(0, col).value = row1[col];
