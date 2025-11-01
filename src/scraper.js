@@ -49,60 +49,7 @@ async function getAllRegions() {
 }
 
 // ==========================================
-// 2. HTML 파싱 - VW 전용
-// ==========================================
-function parseEVTableVW(html, keywords) {
-  const vehicles = {};
-  
-  if (!html || typeof html !== 'string') return vehicles;
-  
-  const $ = cheerio.load(html);
-  
-  $('tr').each((i, row) => {
-    const cells = [];
-    
-    $(row).find('td').each((j, cell) => {
-      let text = $(cell).text().trim().replace(/\s+/g, ' ');
-      cells.push(text);
-    });
-    
-    // 폭스바겐만 필터링
-    if (cells.length >= 6 && cells[1] && cells[1].includes('폭스바겐')) {
-      const model = cells[2];
-      const isDanjong = model.includes('(단종)');
-      
-      keywords.forEach(keyword => {
-        if (model.includes(keyword)) {
-          try {
-            const vehicleData = {
-              type: cells[0],
-              manufacturer: cells[1],
-              model: model,
-              national: parseInt(cells[3]) * 10000,
-              local: parseInt(cells[4]) * 10000,
-              total: parseInt(cells[5]) * 10000,
-              isDanjong: isDanjong
-            };
-            
-            if (!vehicles[keyword]) {
-              vehicles[keyword] = vehicleData;
-            } else if (vehicles[keyword].isDanjong && !isDanjong) {
-              vehicles[keyword] = vehicleData;
-            }
-            
-          } catch (e) {
-            console.warn(`   ⚠️ VW 파싱 오류: ${keyword}`);
-          }
-        }
-      });
-    }
-  });
-  
-  return vehicles;
-}
-
-// ==========================================
-// 3. HTML 파싱 - ALL (모든 제조사)
+// 2. HTML 파싱 - 모든 제조사
 // ==========================================
 function parseEVTableALL(html) {
   const vehicles = {};
@@ -123,7 +70,7 @@ function parseEVTableALL(html) {
     if (cells.length >= 6 && cells[1] && cells[2]) {
       const manufacturer = cells[1];
       const model = cells[2];
-      const key = `${manufacturer}_${model}`; // 고유 키
+      const key = `${manufacturer}___${model}`; // 고유 키 (3개 언더스코어로 구분)
       
       try {
         vehicles[key] = {
@@ -144,9 +91,9 @@ function parseEVTableALL(html) {
 }
 
 // ==========================================
-// 4. 재시도 로직 포함 스크래핑
+// 3. 재시도 로직 포함 스크래핑
 // ==========================================
-async function scrapeRegionWithRetry(browser, region, keywords, mode) {
+async function scrapeRegionWithRetry(browser, region) {
   const targetUrl = `https://ev.or.kr/nportal/buySupprt/psPopupLocalCarModelPrice.do?year=2025&local_cd=${region.code}&local_nm=${encodeURIComponent(region.localName)}&car_type=11&pnph=`;
   
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
@@ -166,10 +113,7 @@ async function scrapeRegionWithRetry(browser, region, keywords, mode) {
       const html = await page.content();
       await page.close();
       
-      // 모드에 따라 파싱
-      const vehicles = mode === 'VW' 
-        ? parseEVTableVW(html, keywords)
-        : parseEVTableALL(html);
+      const vehicles = parseEVTableALL(html);
       
       if (attempt > 1) {
         console.log(`   ✅ 재시도 ${attempt}회 성공`);
@@ -210,7 +154,7 @@ async function scrapeRegionWithRetry(browser, region, keywords, mode) {
 }
 
 // ==========================================
-// 5. 메인 실행
+// 4. 메인 실행
 // ==========================================
 async function main() {
   console.log('🚀 전기차 보조금 스크래핑 시작');
@@ -237,61 +181,25 @@ async function main() {
     console.log('✅ 브라우저 준비 완료');
     console.log('');
     
-    // VW 키워드 로드 (환경변수 또는 기본값)
-    const vwKeywords = process.env.VW_KEYWORDS 
-      ? process.env.VW_KEYWORDS.split(',')
-      : ['ID.4', 'ID.5', 'ID.7', 'ID.버즈'];
-    
-    console.log(`📋 VW 키워드: ${vwKeywords.join(', ')}`);
-    console.log('');
-    
-    // ===== VW 모드 스크래핑 =====
-    console.log('🔵 ===== VW 모드 시작 =====');
-    const resultsVW = [];
+    // 전체 스크래핑 (1회만)
+    console.log('🟢 ===== 전체 스크래핑 시작 =====');
+    const results = [];
     
     for (let i = 0; i < regions.length; i++) {
       const region = regions[i];
-      console.log(`[VW ${i + 1}/${regions.length}] ${region.parentName} ${region.localName}`);
+      console.log(`[${i + 1}/${regions.length}] ${region.parentName} ${region.localName}`);
       
-      const result = await scrapeRegionWithRetry(browser, region, vwKeywords, 'VW');
+      const result = await scrapeRegionWithRetry(browser, region);
       
       if (result.success && Object.keys(result.vehicles).length > 0) {
         console.log(`   ✅ ${Object.keys(result.vehicles).length}개 차량`);
       } else if (!result.success) {
-        console.log(`   ❌ 실패 (재시도 ${result.attempts}회)`);
+        console.log(`   ❌ 실패 (시도 ${result.attempts}회)`);
+      } else {
+        console.log(`   ⚠️ 차량 없음`);
       }
       
-      resultsVW.push(result);
-      
-      if (i < regions.length - 1) {
-        await new Promise(resolve => setTimeout(resolve, 800));
-      }
-    }
-    
-    console.log('');
-    console.log('🔵 ===== VW 모드 완료 =====');
-    const vwSuccess = resultsVW.filter(r => r.success).length;
-    const vwFailed = resultsVW.filter(r => !r.success).length;
-    console.log(`✅ 성공: ${vwSuccess}개 | ❌ 실패: ${vwFailed}개`);
-    console.log('');
-    
-    // ===== ALL 모드 스크래핑 =====
-    console.log('🟢 ===== ALL 모드 시작 =====');
-    const resultsALL = [];
-    
-    for (let i = 0; i < regions.length; i++) {
-      const region = regions[i];
-      console.log(`[ALL ${i + 1}/${regions.length}] ${region.parentName} ${region.localName}`);
-      
-      const result = await scrapeRegionWithRetry(browser, region, [], 'ALL');
-      
-      if (result.success && Object.keys(result.vehicles).length > 0) {
-        console.log(`   ✅ ${Object.keys(result.vehicles).length}개 차량`);
-      } else if (!result.success) {
-        console.log(`   ❌ 실패`);
-      }
-      
-      resultsALL.push(result);
+      results.push(result);
       
       if (i < regions.length - 1) {
         await new Promise(resolve => setTimeout(resolve, 800));
@@ -300,10 +208,13 @@ async function main() {
     
     await browser.close();
     console.log('');
-    console.log('🟢 ===== ALL 모드 완료 =====');
-    const allSuccess = resultsALL.filter(r => r.success).length;
-    const allFailed = resultsALL.filter(r => !r.success).length;
-    console.log(`✅ 성공: ${allSuccess}개 | ❌ 실패: ${allFailed}개`);
+    console.log('🟢 ===== 스크래핑 완료 =====');
+    
+    const success = results.filter(r => r.success).length;
+    const failed = results.filter(r => !r.success).length;
+    
+    console.log(`✅ 성공: ${success}개`);
+    console.log(`❌ 실패: ${failed}개`);
     console.log('');
     
     // 저장
@@ -311,19 +222,10 @@ async function main() {
     
     const outputData = {
       timestamp: new Date().toISOString(),
-      vw: {
-        keywords: vwKeywords,
-        total: resultsVW.length,
-        success: vwSuccess,
-        failed: vwFailed,
-        data: resultsVW
-      },
-      all: {
-        total: resultsALL.length,
-        success: allSuccess,
-        failed: allFailed,
-        data: resultsALL
-      }
+      total_regions: results.length,
+      success_count: success,
+      failed_count: failed,
+      data: results
     };
     
     await fs.writeFile(
