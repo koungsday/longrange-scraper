@@ -31,183 +31,7 @@ async function getPreviousData(sheet) {
 }
 
 // ==========================================
-// 2. VW 시트 업데이트
-// ==========================================
-async function updateVWSheet(doc, vwData) {
-  console.log('');
-  console.log('🔵 ===== VW 시트 업데이트 =====');
-  
-  let sheet = doc.sheetsByTitle[SHEET_NAME_VW];
-  
-  if (!sheet) {
-    console.log('📄 VW 시트 생성 중...');
-    sheet = await doc.addSheet({ title: SHEET_NAME_VW });
-  }
-  
-  console.log('✅ VW 시트 확인');
-  
-  // 3행에서 키워드 읽기
-  await sheet.loadCells('C3:Z3');
-  const keywords = [];
-  
-  for (let col = 2; col < 26; col++) { // C~Z (index 2~25)
-    const cell = sheet.getCell(2, col);
-    if (cell.value && cell.value.toString().trim()) {
-      keywords.push({
-        col: col,
-        keyword: cell.value.toString().trim()
-      });
-    } else {
-      break; // 빈 셀 만나면 중단
-    }
-  }
-  
-  if (keywords.length === 0) {
-    console.log('❌ 3행에 키워드가 없습니다!');
-    return;
-  }
-  
-  console.log(`✅ ${keywords.length}개 키워드 로드: ${keywords.map(k => k.keyword).join(', ')}`);
-  
-  // 이전 데이터 로드
-  console.log('📁 이전 데이터 로딩...');
-  const prevData = await getPreviousData(sheet);
-  console.log(`✅ ${Object.keys(prevData).length}개 이전 행`);
-  
-  // 국고보조금 수집
-  const nationalSubsidies = {};
-  vwData.data.forEach(region => {
-    if (region.success) {
-      Object.keys(region.vehicles).forEach(keyword => {
-        const vehicle = region.vehicles[keyword];
-        if (!nationalSubsidies[keyword]) {
-          nationalSubsidies[keyword] = vehicle.national;
-        }
-      });
-    }
-  });
-  
-  // 1행에 국고보조금 입력
-  console.log('💰 국고보조금 입력 중...');
-  await sheet.loadCells('C1:Z1');
-  
-  keywords.forEach(keywordObj => {
-    const keyword = keywordObj.keyword;
-    const col = keywordObj.col;
-    
-    if (nationalSubsidies[keyword]) {
-      const cell = sheet.getCell(0, col); // 1행 (index 0)
-      cell.value = nationalSubsidies[keyword] / 10000; // 만원 단위
-    }
-  });
-  
-  await sheet.saveUpdatedCells();
-  console.log('✅ 국고보조금 저장 완료');
-  
-  // 헤더 설정 (2행은 이미 있다고 가정)
-  // 데이터 준비
-  console.log('🔄 데이터 변환 중...');
-  const rows = [];
-  const failedRegions = [];
-  
-  vwData.data.forEach(region => {
-    let prefix, suffix;
-    
-    const parentName = region.parentName || '';
-    const localName = region.localName || '';
-    
-    // 지역명 분리
-    if (localName.includes('특별시')) {
-      prefix = localName.replace('특별시', '');
-      suffix = '특별시';
-    } else if (localName.includes('광역시')) {
-      prefix = localName.replace('광역시', '');
-      suffix = '광역시';
-    } else if (localName.includes('특별자치시')) {
-      prefix = localName.replace('특별자치시', '');
-      suffix = '특별자치시';
-    } else if (localName.includes('특별자치도')) {
-      prefix = localName.replace('특별자치도', '');
-      suffix = '특별자치도';
-    } else {
-      prefix = parentName;
-      suffix = localName;
-    }
-    
-    const rowData = {
-      '시/도': prefix,
-      '시/군/구': suffix
-    };
-    
-    const key = `${prefix}_${suffix}`;
-    
-    // 실패 처리: 이전 값 재활용
-    if (!region.success) {
-      console.log(`   ⚠️ 실패 지역: ${prefix} ${suffix} - 이전 값 사용`);
-      
-      failedRegions.push({
-        region: `${prefix} ${suffix}`,
-        sheet: 'VW',
-        error: region.error || 'Unknown',
-        attempts: region.attempts || 0,
-        timestamp: region.timestamp
-      });
-      
-      // 이전 데이터 있으면 재활용
-      if (prevData[key]) {
-        keywords.forEach(keywordObj => {
-          const keyword = keywordObj.keyword;
-          rowData[keyword] = prevData[key][keyword] || 0;
-        });
-      } else {
-        // 이전 데이터 없으면 0
-        keywords.forEach(keywordObj => {
-          rowData[keywordObj.keyword] = 0;
-        });
-      }
-    } else {
-      // 성공: 새 데이터 사용
-      keywords.forEach(keywordObj => {
-        const keyword = keywordObj.keyword;
-        if (region.vehicles[keyword]) {
-          rowData[keyword] = region.vehicles[keyword].local / 10000;
-        } else {
-          rowData[keyword] = 0;
-        }
-      });
-    }
-    
-    rows.push(rowData);
-  });
-  
-  console.log(`✅ ${rows.length}개 행 준비 (실패 ${failedRegions.length}개는 이전 값 사용)`);
-  
-  // 헤더 설정 (3행 = index 2)
-  console.log('📝 헤더 작성 중...');
-  const headers = ['시/도', '시/군/구', ...keywords.map(k => k.keyword)];
-  await sheet.setHeaderRow(headers, 3); // 4행부터 데이터 (3행이 헤더)
-  
-  // 기존 데이터 삭제
-  console.log('🗑️ 기존 데이터 삭제 중...');
-  const existingRows = await sheet.getRows();
-  
-  if (existingRows.length > 0) {
-    for (const row of existingRows) {
-      await row.delete();
-    }
-    console.log(`✅ ${existingRows.length}개 행 삭제`);
-  }
-  
-  // 새 데이터 입력
-  console.log('💾 데이터 저장 중...');
-  await sheet.addRows(rows);
-  console.log('✅ VW 시트 업데이트 완료!');
-  
-  return failedRegions;
-}
-
-// ==========================================
-// 3. ALL 시트 업데이트
+// 2. ALL 시트 업데이트 (전체 차량)
 // ==========================================
 async function updateALLSheet(doc, allData) {
   console.log('');
@@ -330,10 +154,11 @@ async function updateALLSheet(doc, allData) {
   
   console.log(`✅ ${rows.length}개 행 준비 (실패 ${failedRegions.length}개는 이전 값 사용)`);
   
-  // 1행: 국고보조금
-  console.log('💰 1행: 국고보조금 작성 중...');
+  // 시트 초기화
   await sheet.clear();
   
+  // 1행: 국고보조금
+  console.log('💰 1행: 국고보조금 작성 중...');
   const row1 = ['시/도', '시/군/구'];
   vehicleKeys.forEach(key => {
     row1.push(nationalSubsidies[key] ? nationalSubsidies[key] / 10000 : 0);
@@ -346,11 +171,12 @@ async function updateALLSheet(doc, allData) {
     row2.push(vehicleNames[key] || key);
   });
   
-  await sheet.setHeaderRow(row2, 1); // 3행이 헤더 (index 1 = 2행)
+  // 헤더 설정 (3행)
+  await sheet.setHeaderRow(row2, 1); // index 1 = 2행
   
   // 1행과 2행 수동 입력
-  await sheet.loadCells('A1:ZZ2');
-  for (let col = 0; col < row1.length && col < 702; col++) { // ZZ = 702
+  await sheet.loadCells(`A1:${String.fromCharCode(65 + Math.min(row1.length - 1, 701))}2`);
+  for (let col = 0; col < row1.length && col < 702; col++) {
     sheet.getCell(0, col).value = row1[col];
     sheet.getCell(1, col).value = row2[col];
   }
@@ -361,7 +187,215 @@ async function updateALLSheet(doc, allData) {
   await sheet.addRows(rows);
   console.log('✅ ALL 시트 업데이트 완료!');
   
-  return failedRegions;
+  return { failedRegions, allVehicles: vehicleKeys };
+}
+
+// ==========================================
+// 3. VW 시트 업데이트 (폭스바겐만 필터링)
+// ==========================================
+async function updateVWSheet(doc, allData, allVehicles) {
+  console.log('');
+  console.log('🔵 ===== VW 시트 업데이트 =====');
+  
+  let sheet = doc.sheetsByTitle[SHEET_NAME_VW];
+  
+  if (!sheet) {
+    console.log('📄 VW 시트 생성 중...');
+    sheet = await doc.addSheet({ title: SHEET_NAME_VW });
+  }
+  
+  console.log('✅ VW 시트 확인');
+  
+  // 3행에서 키워드 읽기
+  console.log('📖 3행에서 키워드 읽는 중...');
+  await sheet.loadCells('C3:Z3');
+  const keywords = [];
+  
+  for (let col = 2; col < 26; col++) { // C~Z (index 2~25)
+    const cell = sheet.getCell(2, col);
+    if (cell.value && cell.value.toString().trim()) {
+      keywords.push({
+        col: col,
+        keyword: cell.value.toString().trim()
+      });
+    } else {
+      break;
+    }
+  }
+  
+  if (keywords.length === 0) {
+    console.log('❌ 3행에 키워드가 없습니다!');
+    console.log('⚠️ VW 시트 업데이트 건너뜀');
+    return { failedRegions: [] };
+  }
+  
+  console.log(`✅ ${keywords.length}개 키워드: ${keywords.map(k => k.keyword).join(', ')}`);
+  
+  // 이전 데이터 로드
+  console.log('📁 이전 데이터 로딩...');
+  const prevData = await getPreviousData(sheet);
+  console.log(`✅ ${Object.keys(prevData).length}개 이전 행`);
+  
+  // ALL 데이터에서 폭스바겐 + 키워드 매칭
+  console.log('🔍 폭스바겐 차량 필터링 중...');
+  const vwVehicleKeys = [];
+  const vwKeywordMap = {}; // vehicleKey → keyword 매핑
+  
+  allVehicles.forEach(vehicleKey => {
+    // vehicleKey 형식: "폭스바겐___ID.4 GTX"
+    const parts = vehicleKey.split('___');
+    if (parts.length === 2) {
+      const manufacturer = parts[0];
+      const model = parts[1];
+      
+      // 폭스바겐 확인
+      if (manufacturer.includes('폭스바겐')) {
+        // 키워드 매칭
+        keywords.forEach(keywordObj => {
+          const keyword = keywordObj.keyword;
+          if (model.includes(keyword)) {
+            if (!vwKeywordMap[keyword]) {
+              vwKeywordMap[keyword] = vehicleKey;
+              vwVehicleKeys.push(vehicleKey);
+            }
+          }
+        });
+      }
+    }
+  });
+  
+  console.log(`✅ ${vwVehicleKeys.length}개 폭스바겐 차량 발견`);
+  
+  // 국고보조금 수집
+  const nationalSubsidies = {};
+  
+  allData.data.forEach(region => {
+    if (region.success) {
+      vwVehicleKeys.forEach(vKey => {
+        if (region.vehicles[vKey] && !nationalSubsidies[vKey]) {
+          nationalSubsidies[vKey] = region.vehicles[vKey].national;
+        }
+      });
+    }
+  });
+  
+  // 1행에 국고보조금 입력
+  console.log('💰 국고보조금 입력 중...');
+  await sheet.loadCells('C1:Z1');
+  
+  keywords.forEach(keywordObj => {
+    const keyword = keywordObj.keyword;
+    const col = keywordObj.col;
+    const vehicleKey = vwKeywordMap[keyword];
+    
+    if (vehicleKey && nationalSubsidies[vehicleKey]) {
+      const cell = sheet.getCell(0, col);
+      cell.value = nationalSubsidies[vehicleKey] / 10000;
+    }
+  });
+  
+  await sheet.saveUpdatedCells();
+  console.log('✅ 국고보조금 저장 완료');
+  
+  // 데이터 준비
+  console.log('🔄 데이터 변환 중...');
+  const rows = [];
+  const failedRegions = [];
+  
+  allData.data.forEach(region => {
+    let prefix, suffix;
+    
+    const parentName = region.parentName || '';
+    const localName = region.localName || '';
+    
+    // 지역명 분리
+    if (localName.includes('특별시')) {
+      prefix = localName.replace('특별시', '');
+      suffix = '특별시';
+    } else if (localName.includes('광역시')) {
+      prefix = localName.replace('광역시', '');
+      suffix = '광역시';
+    } else if (localName.includes('특별자치시')) {
+      prefix = localName.replace('특별자치시', '');
+      suffix = '특별자치시';
+    } else if (localName.includes('특별자치도')) {
+      prefix = localName.replace('특별자치도', '');
+      suffix = '특별자치도';
+    } else {
+      prefix = parentName;
+      suffix = localName;
+    }
+    
+    const rowData = {
+      '시/도': prefix,
+      '시/군/구': suffix
+    };
+    
+    const key = `${prefix}_${suffix}`;
+    
+    // 실패 처리
+    if (!region.success) {
+      console.log(`   ⚠️ 실패 지역: ${prefix} ${suffix} - 이전 값 사용`);
+      
+      failedRegions.push({
+        region: `${prefix} ${suffix}`,
+        sheet: 'VW',
+        error: region.error || 'Unknown',
+        attempts: region.attempts || 0,
+        timestamp: region.timestamp
+      });
+      
+      if (prevData[key]) {
+        keywords.forEach(keywordObj => {
+          const keyword = keywordObj.keyword;
+          rowData[keyword] = prevData[key][keyword] || 0;
+        });
+      } else {
+        keywords.forEach(keywordObj => {
+          rowData[keywordObj.keyword] = 0;
+        });
+      }
+    } else {
+      // 성공: 키워드별 데이터 매핑
+      keywords.forEach(keywordObj => {
+        const keyword = keywordObj.keyword;
+        const vehicleKey = vwKeywordMap[keyword];
+        
+        if (vehicleKey && region.vehicles[vehicleKey]) {
+          rowData[keyword] = region.vehicles[vehicleKey].local / 10000;
+        } else {
+          rowData[keyword] = 0;
+        }
+      });
+    }
+    
+    rows.push(rowData);
+  });
+  
+  console.log(`✅ ${rows.length}개 행 준비 (실패 ${failedRegions.length}개는 이전 값 사용)`);
+  
+  // 헤더 설정 (4행부터 데이터, 3행이 헤더)
+  console.log('📝 헤더 확인 중...');
+  const headers = ['시/도', '시/군/구', ...keywords.map(k => k.keyword)];
+  await sheet.setHeaderRow(headers, 3); // index 3 = 4행부터 데이터
+  
+  // 기존 데이터 삭제
+  console.log('🗑️ 기존 데이터 삭제 중...');
+  const existingRows = await sheet.getRows();
+  
+  if (existingRows.length > 0) {
+    for (const row of existingRows) {
+      await row.delete();
+    }
+    console.log(`✅ ${existingRows.length}개 행 삭제`);
+  }
+  
+  // 새 데이터 입력
+  console.log('💾 데이터 저장 중...');
+  await sheet.addRows(rows);
+  console.log('✅ VW 시트 업데이트 완료!');
+  
+  return { failedRegions };
 }
 
 // ==========================================
@@ -423,8 +457,7 @@ async function uploadToSheets() {
     const jsonData = await fs.readFile('data/subsidies.json', 'utf8');
     const scrapedData = JSON.parse(jsonData);
     
-    console.log(`✅ VW: ${scrapedData.vw.data.length}개 지역`);
-    console.log(`✅ ALL: ${scrapedData.all.data.length}개 지역`);
+    console.log(`✅ ${scrapedData.data.length}개 지역 데이터 로드`);
     
     // 인증
     console.log('🔐 Google 인증 중...');
@@ -438,14 +471,14 @@ async function uploadToSheets() {
     await doc.loadInfo();
     console.log(`✅ 시트 연결: ${doc.title}`);
     
-    // VW 시트 업데이트
-    const vwFailed = await updateVWSheet(doc, scrapedData.vw);
+    // ALL 시트 업데이트 (전체)
+    const { failedRegions: allFailed, allVehicles } = await updateALLSheet(doc, scrapedData);
     
-    // ALL 시트 업데이트
-    const allFailed = await updateALLSheet(doc, scrapedData.all);
+    // VW 시트 업데이트 (필터링)
+    const { failedRegions: vwFailed } = await updateVWSheet(doc, scrapedData, allVehicles);
     
     // Fail Data 업데이트
-    const allFailedRegions = [...vwFailed, ...allFailed];
+    const allFailedRegions = [...allFailed, ...vwFailed];
     await updateFailSheet(doc, allFailedRegions);
     
     console.log('');
