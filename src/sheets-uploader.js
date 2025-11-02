@@ -195,9 +195,9 @@ async function updateALLSheet(doc, allData) {
   
   // 1-3행 데이터 준비
   console.log('📝 1-3행 작성 중...');
-  const row1 = ['제조사', ''];
-  const row2 = ['모델명', ''];
-  const row3 = ['국비', ''];
+  const row1 = ['제조사', '제조사'];  // ← 수정!
+  const row2 = ['모델명', '모델명'];  // ← 수정!
+  const row3 = ['국비', '국비'];      // ← 수정!
   
   vehicleKeys.forEach(key => {
     row1.push(manufacturers[key]);
