@@ -164,7 +164,7 @@ async function updateALLSheet(doc, allData) {
       
       if (prevData[key]) {
         vehicleKeys.forEach(vKey => {
-          const colName = models[vKey]; // 모델명을 헤더로 사용
+          const colName = models[vKey];
           rowData[colName] = prevData[key][colName] || 0;
         });
       } else {
@@ -193,52 +193,40 @@ async function updateALLSheet(doc, allData) {
   console.log('🗑️ 시트 초기화 중...');
   await sheet.clear();
   
-  // 1행: 제조사
-  console.log('🏭 1행: 제조사 작성 중...');
+  // 1-3행 데이터 준비
+  console.log('📝 1-3행 작성 중...');
   const row1 = ['제조사', ''];
+  const row2 = ['모델명', ''];
+  const row3 = ['국비', ''];
+  
   vehicleKeys.forEach(key => {
     row1.push(manufacturers[key]);
-  });
-  
-  // 2행: 모델명
-  console.log('🚗 2행: 모델명 작성 중...');
-  const row2 = ['모델명', ''];
-  vehicleKeys.forEach(key => {
     row2.push(models[key]);
-  });
-  
-  // 3행: 국비
-  console.log('💰 3행: 국비 작성 중...');
-  const row3 = ['국비', ''];
-  vehicleKeys.forEach(key => {
     row3.push(nationalSubsidies[key] ? nationalSubsidies[key] / 10000 : 0);
   });
   
-  // 4행: 헤더 (지역명)
-  console.log('📝 4행: 헤더 작성 중...');
-  const row4 = ['지역명(앞)', '지역명(뒤)'];
-  vehicleKeys.forEach(key => {
-    row4.push(models[key]); // 모델명을 헤더로
-  });
-  
-  // 1-4행 입력
+  // 1-3행 입력
   const lastColIndex = Math.min(row1.length - 1, 701);
   const lastColLetter = getColumnLetter(lastColIndex);
   
-  await sheet.loadCells(`A1:${lastColLetter}4`);
+  await sheet.loadCells(`A1:${lastColLetter}3`);
   
   for (let col = 0; col < row1.length && col < 702; col++) { 
     sheet.getCell(0, col).value = row1[col];
     sheet.getCell(1, col).value = row2[col];
     sheet.getCell(2, col).value = row3[col];
-    sheet.getCell(3, col).value = row4[col];
   }
   await sheet.saveUpdatedCells();
+  console.log('✅ 1-3행 저장 완료');
   
-  console.log('✅ 1-4행 저장 완료');
+  // 4행: 헤더 설정
+  console.log('📝 4행: 헤더 설정 중...');
+  const row4 = ['지역명(앞)', '지역명(뒤)'];
+  vehicleKeys.forEach(key => {
+    row4.push(models[key]);
+  });
   
-  // 헤더 설정 (4행)
-  await sheet.setHeaderRow(row4, 3);
+  await sheet.setHeaderRow(row4, 3); // 4행(index 3)을 헤더로
   
   // 데이터 입력
   console.log('💾 데이터 저장 중...');
