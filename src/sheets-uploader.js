@@ -173,21 +173,19 @@ async function updateALLSheet(doc, allData) {
   
   // 헤더 설정 (3행)
   await sheet.setHeaderRow(row2, 1); // index 1 = 2행
-  
-  // 1행과 2행 수동 입력
+
   // 1행과 2행 수동 입력
   const lastColIndex = Math.min(row1.length - 1, 701);
   const lastColLetter = getColumnLetter(lastColIndex);
-  
+  
   await sheet.loadCells(`A1:${lastColLetter}2`);
-  
-  for (let col = 0; col < row1.length && col < 702; col++) {
-  
-  for (let col = 0; col < row1.length && col < 702; col++) {
-    sheet.getCell(0, col).value = row1[col];
-    sheet.getCell(1, col).value = row2[col];
-  }
-  await sheet.saveUpdatedCells();
+  
+  // 'for' 루프를 한 번만 사용해야 합니다.
+  for (let col = 0; col < row1.length && col < 702; col++) { 
+    sheet.getCell(0, col).value = row1[col];
+    sheet.getCell(1, col).value = row2[col];
+  }
+  await sheet.saveUpdatedCells();
   
   // 데이터 입력
   console.log('💾 데이터 저장 중...');
