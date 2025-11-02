@@ -29,22 +29,19 @@ async function getPreviousData(sheet) {
     return {};
   }
 }
-/**
- * 0부터 시작하는 열 인덱스를 Google Sheets의 문자열 열 주소(A, B, Z, AA, AB 등)로 변환합니다.
- * @param {number} colIndex 0부터 시작하는 열 인덱스 (0 = A, 1 = B)
- * @returns {string} 열 문자열 (예: 26 -> AA)
- */
-function getColumnLetter(colIndex) {
-    let letter = '';
-    let temp = colIndex + 1; // 1부터 시작하는 인덱스로 변환 (1 = A)
 
-    while (temp > 0) {
-        const remainder = (temp - 1) % 26;
-        letter = String.fromCharCode(65 + remainder) + letter;
-        temp = Math.floor((temp - remainder) / 26);
-    }
-    return letter;
+function getColumnLetter(colIndex) {
+  let letter = '';
+  let temp = colIndex + 1;
+  
+  while (temp > 0) {
+    const remainder = (temp - 1) % 26;
+    letter = String.fromCharCode(65 + remainder) + letter;
+    temp = Math.floor((temp - remainder) / 26);
+  }
+  return letter;
 }
+
 // ==========================================
 // 2. ALL 시트 업데이트 (전체 차량)
 // ==========================================
@@ -147,19 +144,23 @@ async function updateALLSheet(doc, allData) {
       
       if (prevData[key]) {
         vehicleKeys.forEach(vKey => {
-          rowData[vKey] = prevData[key][vKey] || 0;
+          const displayName = vehicleNames[vKey];
+          rowData[displayName] = prevData[key][displayName] || 0;
         });
       } else {
         vehicleKeys.forEach(vKey => {
-          rowData[vKey] = 0;
+          const displayName = vehicleNames[vKey];
+          rowData[displayName] = 0;
         });
       }
     } else {
+      // ✅ 수정: vehicleNames를 키로 사용
       vehicleKeys.forEach(vKey => {
+        const displayName = vehicleNames[vKey]; // "현대 코나"
         if (region.vehicles[vKey]) {
-          rowData[vKey] = region.vehicles[vKey].local / 10000;
+          rowData[displayName] = region.vehicles[vKey].local / 10000;
         } else {
-          rowData[vKey] = 0;
+          rowData[displayName] = 0;
         }
       });
     }
@@ -179,49 +180,47 @@ async function updateALLSheet(doc, allData) {
     row1.push(nationalSubsidies[key] ? nationalSubsidies[key] / 10000 : 0);
   });
   
-  // 2행: 차종명
+  // 2행: 차종명 (헤더)
   console.log('🚗 2행: 차종명 작성 중...');
   const row2 = ['시/도', '시/군/구'];
   vehicleKeys.forEach(key => {
     row2.push(vehicleNames[key] || key);
   });
   
-  // 헤더 설정 (3행)
+  // 헤더 설정 (2행)
   await sheet.setHeaderRow(row2, 1); // index 1 = 2행
-
-  // 1행과 2행 수동 입력
-  const lastColIndex = Math.min(row1.length - 1, 701);
-  const lastColLetter = getColumnLetter(lastColIndex);
-  
-  await sheet.loadCells(`A1:${lastColLetter}2`);
-  
-  // 'for' 루프를 한 번만 사용해야 합니다.
-  for (let col = 0; col < row1.length && col < 702; col++) { 
-    sheet.getCell(0, col).value = row1[col];
-    sheet.getCell(1, col).value = row2[col];
-  }
-  await sheet.saveUpdatedCells();
+  
+  // 1행 수동 입력
+  const lastColIndex = Math.min(row1.length - 1, 701);
+  const lastColLetter = getColumnLetter(lastColIndex);
+  
+  await sheet.loadCells(`A1:${lastColLetter}1`);
+  
+  for (let col = 0; col < row1.length && col < 702; col++) { 
+    sheet.getCell(0, col).value = row1[col];
+  }
+  await sheet.saveUpdatedCells();
   
   // 데이터 입력
   console.log('💾 데이터 저장 중...');
   await sheet.addRows(rows);
   console.log('✅ ALL 시트 업데이트 완료!');
   
-  return { failedRegions, allVehicles: vehicleKeys };
+  return { failedRegions, allVehicles: vehicleKeys, vehicleNames };
 }
 
 // ==========================================
 // 3. VW 시트 업데이트 (폭스바겐만 필터링)
 // ==========================================
-async function updateVWSheet(doc, allData, allVehicles) {
+async function updateVWSheet(doc, allData, allVehicles, vehicleNames) {
   console.log('');
   console.log('🔵 ===== VW 시트 업데이트 =====');
   
   let sheet = doc.sheetsByTitle[SHEET_NAME_VW];
   
   if (!sheet) {
-    console.log('📄 VW 시트 생성 중...');
-    sheet = await doc.addSheet({ title: SHEET_NAME_VW });
+    console.log('❌ VW 시트가 없습니다! 먼저 시트를 생성하고 3행에 키워드를 입력하세요.');
+    return { failedRegions: [] };
   }
   
   console.log('✅ VW 시트 확인');
@@ -231,7 +230,7 @@ async function updateVWSheet(doc, allData, allVehicles) {
   await sheet.loadCells('C3:Z3');
   const keywords = [];
   
-  for (let col = 2; col < 26; col++) { // C~Z (index 2~25)
+  for (let col = 2; col < 26; col++) {
     const cell = sheet.getCell(2, col);
     if (cell.value && cell.value.toString().trim()) {
       keywords.push({
@@ -259,18 +258,15 @@ async function updateVWSheet(doc, allData, allVehicles) {
   // ALL 데이터에서 폭스바겐 + 키워드 매칭
   console.log('🔍 폭스바겐 차량 필터링 중...');
   const vwVehicleKeys = [];
-  const vwKeywordMap = {}; // vehicleKey → keyword 매핑
+  const vwKeywordMap = {};
   
   allVehicles.forEach(vehicleKey => {
-    // vehicleKey 형식: "폭스바겐___ID.4 GTX"
     const parts = vehicleKey.split('___');
     if (parts.length === 2) {
       const manufacturer = parts[0];
       const model = parts[1];
       
-      // 폭스바겐 확인
       if (manufacturer.includes('폭스바겐')) {
-        // 키워드 매칭
         keywords.forEach(keywordObj => {
           const keyword = keywordObj.keyword;
           if (model.includes(keyword)) {
@@ -300,7 +296,7 @@ async function updateVWSheet(doc, allData, allVehicles) {
   });
   
   // 1행에 국고보조금 입력
-  console.log('💰 국고보조금 입력 중...');
+  console.log('💰 1행: 국고보조금 입력 중...');
   await sheet.loadCells('C1:Z1');
   
   keywords.forEach(keywordObj => {
@@ -376,7 +372,6 @@ async function updateVWSheet(doc, allData, allVehicles) {
         });
       }
     } else {
-      // 성공: 키워드별 데이터 매핑
       keywords.forEach(keywordObj => {
         const keyword = keywordObj.keyword;
         const vehicleKey = vwKeywordMap[keyword];
@@ -394,10 +389,10 @@ async function updateVWSheet(doc, allData, allVehicles) {
   
   console.log(`✅ ${rows.length}개 행 준비 (실패 ${failedRegions.length}개는 이전 값 사용)`);
   
-  // 헤더 설정 (4행부터 데이터, 3행이 헤더)
-  console.log('📝 헤더 확인 중...');
+  // ✅ 수정: 3행을 헤더로 설정
+  console.log('📝 헤더 설정 중...');
   const headers = ['시/도', '시/군/구', ...keywords.map(k => k.keyword)];
-  await sheet.setHeaderRow(headers, 3); // index 3 = 4행부터 데이터
+  await sheet.setHeaderRow(headers, 2); // index 2 = 3행이 헤더, 4행부터 데이터
   
   // 기존 데이터 삭제
   console.log('🗑️ 기존 데이터 삭제 중...');
@@ -472,15 +467,11 @@ async function uploadToSheets() {
   console.log('📊 Google Sheets 업로드 시작');
   
   try {
-    // JSON 로드
-    console.log('📁 data/subsidies.json 읽는 중...');
     const jsonData = await fs.readFile('data/subsidies.json', 'utf8');
     const scrapedData = JSON.parse(jsonData);
     
     console.log(`✅ ${scrapedData.data.length}개 지역 데이터 로드`);
     
-    // 인증
-    console.log('🔐 Google 인증 중...');
     const serviceAccountAuth = new JWT({
       email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
       key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
@@ -491,13 +482,9 @@ async function uploadToSheets() {
     await doc.loadInfo();
     console.log(`✅ 시트 연결: ${doc.title}`);
     
-    // ALL 시트 업데이트 (전체)
-    const { failedRegions: allFailed, allVehicles } = await updateALLSheet(doc, scrapedData);
+    const { failedRegions: allFailed, allVehicles, vehicleNames } = await updateALLSheet(doc, scrapedData);
+    const { failedRegions: vwFailed } = await updateVWSheet(doc, scrapedData, allVehicles, vehicleNames);
     
-    // VW 시트 업데이트 (필터링)
-    const { failedRegions: vwFailed } = await updateVWSheet(doc, scrapedData, allVehicles);
-    
-    // Fail Data 업데이트
     const allFailedRegions = [...allFailed, ...vwFailed];
     await updateFailSheet(doc, allFailedRegions);
     
