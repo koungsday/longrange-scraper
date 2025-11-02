@@ -211,7 +211,11 @@ async function updateALLSheet(doc, allData) {
     row4.push(models[key]);
   });
   
+   // 4행: 헤더 설정 (자동으로 4행에 입력됨)
+  console.log('📝 4행: 헤더 설정 중...');
+  await sheet.setHeaderRow(row4, 3);
   // 1-3행만 수동 입력
+  
   console.log('📝 1-3행 작성 중...');
   const lastColIndex = Math.min(row1.length - 1, 701);
   const lastColLetter = getColumnLetter(lastColIndex);
@@ -225,10 +229,6 @@ async function updateALLSheet(doc, allData) {
   }
   await sheet.saveUpdatedCells();
   console.log('✅ 1-3행 저장 완료');
-  
-  // 4행: 헤더 설정 (자동으로 4행에 입력됨)
-  console.log('📝 4행: 헤더 설정 중...');
-  await sheet.setHeaderRow(row4, 3);
   
   // 데이터 입력
   console.log('💾 데이터 저장 중...');
