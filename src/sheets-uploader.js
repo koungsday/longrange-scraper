@@ -29,7 +29,22 @@ async function getPreviousData(sheet) {
     return {};
   }
 }
+/**
+ * 0부터 시작하는 열 인덱스를 Google Sheets의 문자열 열 주소(A, B, Z, AA, AB 등)로 변환합니다.
+ * @param {number} colIndex 0부터 시작하는 열 인덱스 (0 = A, 1 = B)
+ * @returns {string} 열 문자열 (예: 26 -> AA)
+ */
+function getColumnLetter(colIndex) {
+    let letter = '';
+    let temp = colIndex + 1; // 1부터 시작하는 인덱스로 변환 (1 = A)
 
+    while (temp > 0) {
+        const remainder = (temp - 1) % 26;
+        letter = String.fromCharCode(65 + remainder) + letter;
+        temp = Math.floor((temp - remainder) / 26);
+    }
+    return letter;
+}
 // ==========================================
 // 2. ALL 시트 업데이트 (전체 차량)
 // ==========================================
