@@ -154,9 +154,8 @@ async function updateALLSheet(doc, allData) {
         });
       }
     } else {
-      // ✅ 수정: vehicleNames를 키로 사용
       vehicleKeys.forEach(vKey => {
-        const displayName = vehicleNames[vKey]; // "현대 코나"
+        const displayName = vehicleNames[vKey];
         if (region.vehicles[vKey]) {
           rowData[displayName] = region.vehicles[vKey].local / 10000;
         } else {
@@ -171,6 +170,7 @@ async function updateALLSheet(doc, allData) {
   console.log(`✅ ${rows.length}개 행 준비 (실패 ${failedRegions.length}개는 이전 값 사용)`);
   
   // 시트 초기화
+  console.log('🗑️ 시트 초기화 중...');
   await sheet.clear();
   
   // 1행: 국고보조금
@@ -187,19 +187,22 @@ async function updateALLSheet(doc, allData) {
     row2.push(vehicleNames[key] || key);
   });
   
-  // 헤더 설정 (2행)
-  await sheet.setHeaderRow(row2, 1); // index 1 = 2행
-  
-  // 1행 수동 입력
+  // 1행, 2행 먼저 입력
   const lastColIndex = Math.min(row1.length - 1, 701);
   const lastColLetter = getColumnLetter(lastColIndex);
   
-  await sheet.loadCells(`A1:${lastColLetter}1`);
+  await sheet.loadCells(`A1:${lastColLetter}2`);
   
   for (let col = 0; col < row1.length && col < 702; col++) { 
     sheet.getCell(0, col).value = row1[col];
+    sheet.getCell(1, col).value = row2[col];
   }
   await sheet.saveUpdatedCells();
+  
+  console.log('✅ 1-2행 저장 완료');
+  
+  // 헤더 설정 (2행, 이미 작성됨)
+  await sheet.setHeaderRow(row2, 1);
   
   // 데이터 입력
   console.log('💾 데이터 저장 중...');
@@ -389,20 +392,19 @@ async function updateVWSheet(doc, allData, allVehicles, vehicleNames) {
   
   console.log(`✅ ${rows.length}개 행 준비 (실패 ${failedRegions.length}개는 이전 값 사용)`);
   
-  // ✅ 수정: 3행을 헤더로 설정
+  // 헤더 설정 (3행)
   console.log('📝 헤더 설정 중...');
   const headers = ['시/도', '시/군/구', ...keywords.map(k => k.keyword)];
-  await sheet.setHeaderRow(headers, 2); // index 2 = 3행이 헤더, 4행부터 데이터
+  await sheet.setHeaderRow(headers, 2);
   
-  // 기존 데이터 삭제
+  // ✅ 수정: 기존 데이터 한 번에 삭제
   console.log('🗑️ 기존 데이터 삭제 중...');
   const existingRows = await sheet.getRows();
   
   if (existingRows.length > 0) {
-    for (const row of existingRows) {
-      await row.delete();
-    }
-    console.log(`✅ ${existingRows.length}개 행 삭제`);
+    console.log(`   ${existingRows.length}개 행 삭제 예정...`);
+    await sheet.clearRows();
+    console.log(`✅ 삭제 완료`);
   }
   
   // 새 데이터 입력
@@ -439,12 +441,7 @@ async function updateFailSheet(doc, failedRegions) {
   await sheet.setHeaderRow(['지역명', '시트', '에러메시지', '시도횟수', '타임스탬프']);
   
   // 기존 데이터 삭제
-  const existingRows = await sheet.getRows();
-  if (existingRows.length > 0) {
-    for (const row of existingRows) {
-      await row.delete();
-    }
-  }
+  await sheet.clearRows();
   
   // 실패 데이터 입력
   const failRows = failedRegions.map(f => ({
