@@ -205,29 +205,29 @@ async function updateALLSheet(doc, allData) {
     row3.push(nationalSubsidies[key] ? nationalSubsidies[key] / 10000 : 0);
   });
   
-  // 4행: 헤더 준비
+ // 4행: 헤더 준비
   const row4 = ['지역명(앞)', '지역명(뒤)'];
   vehicleKeys.forEach(key => {
     row4.push(models[key]);
   });
   
-  // 1-4행 모두 수동 입력
-  console.log('📝 1-4행 작성 중...');
+  // 1-3행만 수동 입력
+  console.log('📝 1-3행 작성 중...');
   const lastColIndex = Math.min(row1.length - 1, 701);
   const lastColLetter = getColumnLetter(lastColIndex);
   
-  await sheet.loadCells(`A1:${lastColLetter}4`);
+  await sheet.loadCells(`A1:${lastColLetter}3`);
   
   for (let col = 0; col < row1.length && col < 702; col++) { 
     sheet.getCell(0, col).value = row1[col];
     sheet.getCell(1, col).value = row2[col];
     sheet.getCell(2, col).value = row3[col];
-    sheet.getCell(3, col).value = row4[col];
   }
   await sheet.saveUpdatedCells();
-  console.log('✅ 1-4행 저장 완료');
+  console.log('✅ 1-3행 저장 완료');
   
-  // 헤더 설정 (4행을 헤더로 지정)
+  // 4행: 헤더 설정 (자동으로 4행에 입력됨)
+  console.log('📝 4행: 헤더 설정 중...');
   await sheet.setHeaderRow(row4, 3);
   
   // 데이터 입력
