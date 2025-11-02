@@ -173,36 +173,33 @@ async function updateALLSheet(doc, allData) {
   console.log('🗑️ 시트 초기화 중...');
   await sheet.clear();
   
-  // 1행: 국고보조금
-  console.log('💰 1행: 국고보조금 작성 중...');
-  const row1 = ['시/도', '시/군/구'];
-  vehicleKeys.forEach(key => {
-    row1.push(nationalSubsidies[key] ? nationalSubsidies[key] / 10000 : 0);
-  });
-  
-  // 2행: 차종명 (헤더)
-  console.log('🚗 2행: 차종명 작성 중...');
+  // 2행: 차종명 (헤더) - 먼저 설정
+  console.log('🚗 2행: 헤더 설정 중...');
   const row2 = ['시/도', '시/군/구'];
   vehicleKeys.forEach(key => {
     row2.push(vehicleNames[key] || key);
   });
   
-  // 1행, 2행 먼저 입력
+  await sheet.setHeaderRow(row2, 1); // 2행(index 1)을 헤더로
+  
+  // 1행: 국고보조금 - 나중에 입력
+  console.log('💰 1행: 국고보조금 작성 중...');
+  const row1 = ['국고', '보조금'];
+  vehicleKeys.forEach(key => {
+    row1.push(nationalSubsidies[key] ? nationalSubsidies[key] / 10000 : 0);
+  });
+  
   const lastColIndex = Math.min(row1.length - 1, 701);
   const lastColLetter = getColumnLetter(lastColIndex);
   
-  await sheet.loadCells(`A1:${lastColLetter}2`);
+  await sheet.loadCells(`A1:${lastColLetter}1`);
   
   for (let col = 0; col < row1.length && col < 702; col++) { 
     sheet.getCell(0, col).value = row1[col];
-    sheet.getCell(1, col).value = row2[col];
   }
   await sheet.saveUpdatedCells();
   
-  console.log('✅ 1-2행 저장 완료');
-  
-  // 헤더 설정 (2행, 이미 작성됨)
-  await sheet.setHeaderRow(row2, 1);
+  console.log('✅ 1행 저장 완료');
   
   // 데이터 입력
   console.log('💾 데이터 저장 중...');
@@ -260,7 +257,6 @@ async function updateVWSheet(doc, allData, allVehicles, vehicleNames) {
   
   // ALL 데이터에서 폭스바겐 + 키워드 매칭
   console.log('🔍 폭스바겐 차량 필터링 중...');
-  const vwVehicleKeys = [];
   const vwKeywordMap = {};
   
   allVehicles.forEach(vehicleKey => {
@@ -270,12 +266,13 @@ async function updateVWSheet(doc, allData, allVehicles, vehicleNames) {
       const model = parts[1];
       
       if (manufacturer.includes('폭스바겐')) {
+        console.log(`   🚗 폭스바겐 차량 발견: ${model}`);
         keywords.forEach(keywordObj => {
           const keyword = keywordObj.keyword;
           if (model.includes(keyword)) {
+            console.log(`      ✅ 키워드 "${keyword}" 매칭!`);
             if (!vwKeywordMap[keyword]) {
               vwKeywordMap[keyword] = vehicleKey;
-              vwVehicleKeys.push(vehicleKey);
             }
           }
         });
@@ -283,14 +280,20 @@ async function updateVWSheet(doc, allData, allVehicles, vehicleNames) {
     }
   });
   
-  console.log(`✅ ${vwVehicleKeys.length}개 폭스바겐 차량 발견`);
+  const matchedCount = Object.keys(vwKeywordMap).length;
+  console.log(`✅ ${matchedCount}개 키워드 매칭 완료`);
+  
+  if (matchedCount === 0) {
+    console.log('❌ 매칭된 차량이 없습니다!');
+    return { failedRegions: [] };
+  }
   
   // 국고보조금 수집
   const nationalSubsidies = {};
   
   allData.data.forEach(region => {
     if (region.success) {
-      vwVehicleKeys.forEach(vKey => {
+      Object.values(vwKeywordMap).forEach(vKey => {
         if (region.vehicles[vKey] && !nationalSubsidies[vKey]) {
           nationalSubsidies[vKey] = region.vehicles[vKey].national;
         }
@@ -310,6 +313,7 @@ async function updateVWSheet(doc, allData, allVehicles, vehicleNames) {
     if (vehicleKey && nationalSubsidies[vehicleKey]) {
       const cell = sheet.getCell(0, col);
       cell.value = nationalSubsidies[vehicleKey] / 10000;
+      console.log(`   ✅ ${keyword}: ${nationalSubsidies[vehicleKey] / 10000}만원`);
     }
   });
   
@@ -397,15 +401,9 @@ async function updateVWSheet(doc, allData, allVehicles, vehicleNames) {
   const headers = ['시/도', '시/군/구', ...keywords.map(k => k.keyword)];
   await sheet.setHeaderRow(headers, 2);
   
-  // ✅ 수정: 기존 데이터 한 번에 삭제
+  // 기존 데이터 삭제
   console.log('🗑️ 기존 데이터 삭제 중...');
-  const existingRows = await sheet.getRows();
-  
-  if (existingRows.length > 0) {
-    console.log(`   ${existingRows.length}개 행 삭제 예정...`);
-    await sheet.clearRows();
-    console.log(`✅ 삭제 완료`);
-  }
+  await sheet.clearRows();
   
   // 새 데이터 입력
   console.log('💾 데이터 저장 중...');
