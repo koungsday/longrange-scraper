@@ -205,28 +205,30 @@ async function updateALLSheet(doc, allData) {
     row3.push(nationalSubsidies[key] ? nationalSubsidies[key] / 10000 : 0);
   });
   
-  // 1-3행 입력
-  const lastColIndex = Math.min(row1.length - 1, 701);
-  const lastColLetter = getColumnLetter(lastColIndex);
-  
-  await sheet.loadCells(`A1:${lastColLetter}3`);
-  
-  for (let col = 0; col < row1.length && col < 702; col++) { 
-    sheet.getCell(0, col).value = row1[col];
-    sheet.getCell(1, col).value = row2[col];
-    sheet.getCell(2, col).value = row3[col];
-  }
-  await sheet.saveUpdatedCells();
-  console.log('✅ 1-3행 저장 완료');
-  
-  // 4행: 헤더 설정
-  console.log('📝 4행: 헤더 설정 중...');
+  // 4행: 헤더 준비
+  console.log('📝 1-4행 작성 중...');
   const row4 = ['지역명(앞)', '지역명(뒤)'];
   vehicleKeys.forEach(key => {
     row4.push(models[key]);
   });
   
-  await sheet.setHeaderRow(row4, 3); // 4행(index 3)을 헤더로
+  // 1-4행 한 번에 입력
+  const lastColIndex = Math.min(row1.length - 1, 701);
+  const lastColLetter = getColumnLetter(lastColIndex);
+  
+  await sheet.loadCells(`A1:${lastColLetter}4`);
+  
+  for (let col = 0; col < row1.length && col < 702; col++) { 
+    sheet.getCell(0, col).value = row1[col];
+    sheet.getCell(1, col).value = row2[col];
+    sheet.getCell(2, col).value = row3[col];
+    sheet.getCell(3, col).value = row4[col];
+  }
+  await sheet.saveUpdatedCells();
+  console.log('✅ 1-4행 저장 완료');
+  
+  // 헤더 설정 (4행)
+  await sheet.setHeaderRow(row4, 3);
   
   // 데이터 입력
   console.log('💾 데이터 저장 중...');
