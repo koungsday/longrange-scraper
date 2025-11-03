@@ -85,8 +85,6 @@ async function updateQuotaSheet(doc, quotaData) {
       if (region.quotaData && region.quotaData.length > 0) {
         region.quotaData.forEach(quota => {
           rows.push({
-            '지역(앞)': prefix,
-            '지역(뒤)': suffix,
             '차량구분': quota.vehicleType || '',
             '공고': quota.announcement || '',
             '접수방법': quota.registrationMethod || '',
@@ -129,7 +127,7 @@ async function updateQuotaSheet(doc, quotaData) {
   
   console.log('📝 헤더 설정 중...');
   const headers = [
-    '지역(앞)', '지역(뒤)', '차량구분', '공고', '접수방법',
+    '차량구분', '공고', '접수방법',
     '전체_전체', '전체_우선', '전체_법인', '전체_택시', '전체_일반',
     '접수_전체', '접수_우선', '접수_법인', '접수_택시', '접수_일반',
     '출고_전체', '출고_우선', '출고_법인', '출고_택시', '출고_일반',
