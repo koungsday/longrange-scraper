@@ -147,12 +147,26 @@ async function scrapeRegionWithRetry(browser, region) {
       });
       
       await page.waitForSelector('table', { timeout: 10000 });
+
+// 디버깅: 테이블 개수 확인
+const tableCount = await page.evaluate(() => {
+  return document.querySelectorAll('table').length;
+});
+console.log(`   📊 테이블 ${tableCount}개 발견`);
+
+// 첫 테이블의 행 개수 확인
+const rowCount = await page.evaluate(() => {
+  const table = document.querySelector('table');
+  return table ? table.querySelectorAll('tbody tr').length : 0;
+});
+console.log(`   📊 첫 테이블 행 ${rowCount}개`);
+
 const html = await page.content();
 
-// HTML 저장 (첫 번째 지역만)
-if (attempt === 1 && region.code === '1100000000') {
-  await fs.writeFile('debug-quota.html', html);
-  console.log('   📄 HTML 저장: debug-quota.html');
+// HTML 저장 (서울만)
+if (region.code === 1100) {
+  await fs.writeFile('debug-seoul.html', html);
+  console.log('   💾 debug-seoul.html 저장됨');
 }
 
 await page.close();
