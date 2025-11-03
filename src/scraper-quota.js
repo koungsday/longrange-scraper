@@ -79,39 +79,46 @@ function parseQuotaTable(html) {
       cells.push(text);
     });
     
-    // 총 24개 셀: 시도(0), 지역(1), 차종(2), 공고(3-7), 접수(8-12), 출고(13-17), 잔여(18-22), 비고(23)
-    if (cells.length >= 24) {
+    // 총 27개 셀
+    if (cells.length >= 27) {
       try {
+        // 괄호 제거 함수
+        const parseNum = (text) => {
+          if (!text) return 0;
+          const cleaned = text.replace(/[()]/g, '').trim();
+          return parseInt(cleaned) || 0;
+        };
+        
         const rowData = {
           sido: cells[0] || '',
           region: cells[1] || '',
           vehicleType: cells[2] || '',
           
-          quota_total: parseInt(cells[3]) || 0,
-          quota_priority: parseInt(cells[4]) || 0,
-          quota_corporate: parseInt(cells[5]) || 0,
-          quota_taxi: parseInt(cells[6]) || 0,
-          quota_general: parseInt(cells[7]) || 0,
+          quota_total: parseNum(cells[6]),
+          quota_priority: parseNum(cells[7]),
+          quota_corporate: parseNum(cells[8]),
+          quota_taxi: parseNum(cells[9]),
+          quota_general: parseNum(cells[10]),
           
-          registered_total: parseInt(cells[8]) || 0,
-          registered_priority: parseInt(cells[9]) || 0,
-          registered_corporate: parseInt(cells[10]) || 0,
-          registered_taxi: parseInt(cells[11]) || 0,
-          registered_general: parseInt(cells[12]) || 0,
+          registered_total: parseNum(cells[11]),
+          registered_priority: parseNum(cells[12]),
+          registered_corporate: parseNum(cells[13]),
+          registered_taxi: parseNum(cells[14]),
+          registered_general: parseNum(cells[15]),
           
-          delivered_total: parseInt(cells[13]) || 0,
-          delivered_priority: parseInt(cells[14]) || 0,
-          delivered_corporate: parseInt(cells[15]) || 0,
-          delivered_taxi: parseInt(cells[16]) || 0,
-          delivered_general: parseInt(cells[17]) || 0,
+          delivered_total: parseNum(cells[16]),
+          delivered_priority: parseNum(cells[17]),
+          delivered_corporate: parseNum(cells[18]),
+          delivered_taxi: parseNum(cells[19]),
+          delivered_general: parseNum(cells[20]),
           
-          remaining_total: parseInt(cells[18]) || 0,
-          remaining_priority: parseInt(cells[19]) || 0,
-          remaining_corporate: parseInt(cells[20]) || 0,
-          remaining_taxi: parseInt(cells[21]) || 0,
-          remaining_general: parseInt(cells[22]) || 0,
+          remaining_total: parseNum(cells[21]),
+          remaining_priority: parseNum(cells[22]),
+          remaining_corporate: parseNum(cells[23]),
+          remaining_taxi: parseNum(cells[24]),
+          remaining_general: parseNum(cells[25]),
           
-          note: cells[23] || ''
+          note: cells[26] || ''
         };
         
         quotaData.push(rowData);
