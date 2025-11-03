@@ -147,8 +147,15 @@ async function scrapeRegionWithRetry(browser, region) {
       });
       
       await page.waitForSelector('table', { timeout: 10000 });
-      const html = await page.content();
-      await page.close();
+const html = await page.content();
+
+// HTML 저장 (첫 번째 지역만)
+if (attempt === 1 && region.code === '1100000000') {
+  await fs.writeFile('debug-quota.html', html);
+  console.log('   📄 HTML 저장: debug-quota.html');
+}
+
+await page.close();
       
       const quotaData = parseQuotaTable(html);
       
