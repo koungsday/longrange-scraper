@@ -72,15 +72,15 @@ function parseQuotaTable(html) {
   const $ = cheerio.load(html);
   
   $('table tbody tr').each((i, row) => {
-    const cells = [];
-    
-    $(row).find('td').each((j, cell) => {
-      let text = $(cell).text().trim().replace(/\s+/g, ' ');
-      cells.push(text);
-    });
+  const cells = [];
+  
+  $(row).find('td').each((j, cell) => {
+    let text = $(cell).text().trim().replace(/\s+/g, ' ');
+    cells.push(text);
+  });
     
     // 총 27개 셀
-    if (cells.length >= 27) {
+    if (cells.length >= 20) {
       try {
         // 괄호 제거 함수
         const parseNum = (text) => {
