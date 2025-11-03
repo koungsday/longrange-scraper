@@ -3,15 +3,10 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const fs = require('fs').promises;
 
-// ==========================================
-// 설정
-// ==========================================
 const TEST_MODE = false;
 const MAX_RETRIES = 3;
 
-// ==========================================
 // 괄호 파싱: 11351(3470)(404)(1194)(6283)
-// ==========================================
 function parseWithParentheses(text) {
   if (!text || typeof text !== 'string') {
     return { total: 0, priority: 0, corporate: 0, taxi: 0, general: 0 };
@@ -29,14 +24,10 @@ function parseWithParentheses(text) {
     };
   }
   
-  // 괄호 없으면 숫자만
   const num = parseInt(text.replace(/[^\d]/g, '')) || 0;
   return { total: num, priority: 0, corporate: 0, taxi: 0, general: 0 };
 }
 
-// ==========================================
-// 1. 지역 목록 가져오기
-// ==========================================
 async function getAllRegions() {
   console.log('📍 지역 목록 로딩...');
   
@@ -73,9 +64,6 @@ async function getAllRegions() {
   }
 }
 
-// ==========================================
-// 2. HTML 파싱 - 접수현황
-// ==========================================
 function parseQuotaTable(html) {
   const quotaData = [];
   
@@ -91,7 +79,8 @@ function parseQuotaTable(html) {
       cells.push(text);
     });
     
-    if (cells.length >= 7) {
+    // 시도, 지역구분, 차종구분, 공고대수, 접수대수, 출고대수, 잔여대수, 비고
+    if (cells.length >= 8) {
       try {
         const quotaTotal = parseWithParentheses(cells[3]);
         const registered = parseWithParentheses(cells[4]);
@@ -99,9 +88,9 @@ function parseQuotaTable(html) {
         const remaining = parseWithParentheses(cells[6]);
         
         const rowData = {
-          vehicleType: cells[0] || '',
-          announcement: cells[1] || '',
-          registrationMethod: cells[2] || '',
+          sido: cells[0] || '',              // 시도
+          region: cells[1] || '',            // 지역구분
+          vehicleType: cells[2] || '',       // 차종구분
           
           quota_total: quotaTotal.total,
           quota_priority: quotaTotal.priority,
@@ -140,9 +129,6 @@ function parseQuotaTable(html) {
   return quotaData;
 }
 
-// ==========================================
-// 3. 재시도 로직 포함 스크래핑
-// ==========================================
 async function scrapeRegionWithRetry(browser, region) {
   const targetUrl = `https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do?local_cd=${region.code}`;
   
@@ -203,9 +189,6 @@ async function scrapeRegionWithRetry(browser, region) {
   }
 }
 
-// ==========================================
-// 4. 메인 실행
-// ==========================================
 async function main() {
   console.log('🚀 전기차 보조금 접수현황 스크래핑 시작');
   console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
