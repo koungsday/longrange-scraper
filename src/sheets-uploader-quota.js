@@ -12,7 +12,7 @@ async function getPreviousData(sheet) {
     const prevData = {};
     
     rows.forEach(row => {
-      const key = `${row['지역(앞)']||''}_${row['지역(뒤)']||''}_${row['차량구분']||''}`;
+      const key = `${row['시도']||''}_${row['지역구분']||''}_${row['차종구분']||''}`;
       prevData[key] = row;
     });
     
@@ -44,38 +44,17 @@ async function updateQuotaSheet(doc, quotaData) {
   const failedRegions = [];
   
   quotaData.data.forEach(region => {
-    let prefix, suffix;
-    
-    const parentName = region.parentName || '';
-    const localName = region.localName || '';
-    
-    if (localName.includes('특별시')) {
-      prefix = localName.replace('특별시', '');
-      suffix = '특별시';
-    } else if (localName.includes('광역시')) {
-      prefix = localName.replace('광역시', '');
-      suffix = '광역시';
-    } else if (localName.includes('특별자치시')) {
-      prefix = localName.replace('특별자치시', '');
-      suffix = '특별자치시';
-    } else if (localName.includes('특별자치도')) {
-      prefix = localName.replace('특별자치도', '');
-      suffix = '특별자치도';
-    } else {
-      prefix = parentName;
-      suffix = localName;
-    }
-    
     if (!region.success) {
       failedRegions.push({
-        region: `${prefix} ${suffix}`,
+        region: `${region.parentName} ${region.localName}`,
         error: region.error || 'Unknown',
         attempts: region.attempts || 0,
         timestamp: region.timestamp
       });
       
+      // 이전 데이터 재활용
       const existingRows = Object.values(prevData).filter(
-        row => row['지역(앞)'] === prefix && row['지역(뒤)'] === suffix
+        row => row['시도'] === region.parentName || row['지역구분'] === region.localName
       );
       
       if (existingRows.length > 0) {
@@ -85,33 +64,33 @@ async function updateQuotaSheet(doc, quotaData) {
       if (region.quotaData && region.quotaData.length > 0) {
         region.quotaData.forEach(quota => {
           rows.push({
-            '차량구분': quota.vehicleType || '',
-            '공고': quota.announcement || '',
-            '접수방법': quota.registrationMethod || '',
+            '시도': quota.sido || '',
+            '지역구분': quota.region || '',
+            '차종구분': quota.vehicleType || '',
             
-            '전체_전체': quota.quota_total || 0,
-            '전체_우선': quota.quota_priority || 0,
-            '전체_법인': quota.quota_corporate || 0,
-            '전체_택시': quota.quota_taxi || 0,
-            '전체_일반': quota.quota_general || 0,
+            '공고대수_전체': quota.quota_total || 0,
+            '공고대수_우선순위': quota.quota_priority || 0,
+            '공고대수_법인기관': quota.quota_corporate || 0,
+            '공고대수_택시': quota.quota_taxi || 0,
+            '공고대수_일반': quota.quota_general || 0,
             
-            '접수_전체': quota.registered_total || 0,
-            '접수_우선': quota.registered_priority || 0,
-            '접수_법인': quota.registered_corporate || 0,
-            '접수_택시': quota.registered_taxi || 0,
-            '접수_일반': quota.registered_general || 0,
+            '접수대수_전체': quota.registered_total || 0,
+            '접수대수_우선순위': quota.registered_priority || 0,
+            '접수대수_법인기관': quota.registered_corporate || 0,
+            '접수대수_택시': quota.registered_taxi || 0,
+            '접수대수_일반': quota.registered_general || 0,
             
-            '출고_전체': quota.delivered_total || 0,
-            '출고_우선': quota.delivered_priority || 0,
-            '출고_법인': quota.delivered_corporate || 0,
-            '출고_택시': quota.delivered_taxi || 0,
-            '출고_일반': quota.delivered_general || 0,
+            '출고대수_전체': quota.delivered_total || 0,
+            '출고대수_우선순위': quota.delivered_priority || 0,
+            '출고대수_법인기관': quota.delivered_corporate || 0,
+            '출고대수_택시': quota.delivered_taxi || 0,
+            '출고대수_일반': quota.delivered_general || 0,
             
-            '잔여_전체': quota.remaining_total || 0,
-            '잔여_우선': quota.remaining_priority || 0,
-            '잔여_법인': quota.remaining_corporate || 0,
-            '잔여_택시': quota.remaining_taxi || 0,
-            '잔여_일반': quota.remaining_general || 0,
+            '잔여대수_전체': quota.remaining_total || 0,
+            '잔여대수_우선순위': quota.remaining_priority || 0,
+            '잔여대수_법인기관': quota.remaining_corporate || 0,
+            '잔여대수_택시': quota.remaining_taxi || 0,
+            '잔여대수_일반': quota.remaining_general || 0,
             
             '비고': quota.note || ''
           });
@@ -127,11 +106,11 @@ async function updateQuotaSheet(doc, quotaData) {
   
   console.log('📝 헤더 설정 중...');
   const headers = [
-    '차량구분', '공고', '접수방법',
-    '전체_전체', '전체_우선', '전체_법인', '전체_택시', '전체_일반',
-    '접수_전체', '접수_우선', '접수_법인', '접수_택시', '접수_일반',
-    '출고_전체', '출고_우선', '출고_법인', '출고_택시', '출고_일반',
-    '잔여_전체', '잔여_우선', '잔여_법인', '잔여_택시', '잔여_일반',
+    '시도', '지역구분', '차종구분',
+    '공고대수_전체', '공고대수_우선순위', '공고대수_법인기관', '공고대수_택시', '공고대수_일반',
+    '접수대수_전체', '접수대수_우선순위', '접수대수_법인기관', '접수대수_택시', '접수대수_일반',
+    '출고대수_전체', '출고대수_우선순위', '출고대수_법인기관', '출고대수_택시', '출고대수_일반',
+    '잔여대수_전체', '잔여대수_우선순위', '잔여대수_법인기관', '잔여대수_택시', '잔여대수_일반',
     '비고'
   ];
   
