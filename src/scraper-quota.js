@@ -6,8 +6,33 @@ const fs = require('fs').promises;
 // ==========================================
 // 설정
 // ==========================================
-const TEST_MODE = false; // false = 전체 161개 지역
+const TEST_MODE = false;
 const MAX_RETRIES = 3;
+
+// ==========================================
+// 괄호 파싱: 11351(3470)(404)(1194)(6283)
+// ==========================================
+function parseWithParentheses(text) {
+  if (!text || typeof text !== 'string') {
+    return { total: 0, priority: 0, corporate: 0, taxi: 0, general: 0 };
+  }
+  
+  const matches = text.match(/(\d+)\((\d+)\)\((\d+)\)\((\d+)\)\((\d+)\)/);
+  
+  if (matches) {
+    return {
+      total: parseInt(matches[1]) || 0,
+      priority: parseInt(matches[2]) || 0,
+      corporate: parseInt(matches[3]) || 0,
+      taxi: parseInt(matches[4]) || 0,
+      general: parseInt(matches[5]) || 0
+    };
+  }
+  
+  // 괄호 없으면 숫자만
+  const num = parseInt(text.replace(/[^\d]/g, '')) || 0;
+  return { total: num, priority: 0, corporate: 0, taxi: 0, general: 0 };
+}
 
 // ==========================================
 // 1. 지역 목록 가져오기
@@ -58,7 +83,6 @@ function parseQuotaTable(html) {
   
   const $ = cheerio.load(html);
   
-  // 테이블 행 파싱
   $('table tbody tr').each((i, row) => {
     const cells = [];
     
@@ -67,26 +91,48 @@ function parseQuotaTable(html) {
       cells.push(text);
     });
     
-    if (cells.length >= 10) {
+    if (cells.length >= 7) {
       try {
+        const quotaTotal = parseWithParentheses(cells[3]);
+        const registered = parseWithParentheses(cells[4]);
+        const delivered = parseWithParentheses(cells[5]);
+        const remaining = parseWithParentheses(cells[6]);
+        
         const rowData = {
-          vehicleType: cells[0] || '',           // 차량구분
-          announcement: cells[1] || '',          // 공고
-          registrationMethod: cells[2] || '',    // 접수방법
-          quota_total: parseInt(cells[3]) || 0,  // 전체
-          quota_priority: parseInt(cells[4]) || 0, // 우선순위
-          quota_corporate: parseInt(cells[5]) || 0, // 법인/기관
-          quota_taxi: parseInt(cells[6]) || 0,      // 택시
-          quota_general: parseInt(cells[7]) || 0,   // 일반
-          registered: parseInt(cells[8]) || 0,      // 접수대수
-          delivered: parseInt(cells[9]) || 0,       // 출고대수
-          remaining: parseInt(cells[10]) || 0,      // 잔여대수
-          note: cells[11] || ''                     // 비고
+          vehicleType: cells[0] || '',
+          announcement: cells[1] || '',
+          registrationMethod: cells[2] || '',
+          
+          quota_total: quotaTotal.total,
+          quota_priority: quotaTotal.priority,
+          quota_corporate: quotaTotal.corporate,
+          quota_taxi: quotaTotal.taxi,
+          quota_general: quotaTotal.general,
+          
+          registered_total: registered.total,
+          registered_priority: registered.priority,
+          registered_corporate: registered.corporate,
+          registered_taxi: registered.taxi,
+          registered_general: registered.general,
+          
+          delivered_total: delivered.total,
+          delivered_priority: delivered.priority,
+          delivered_corporate: delivered.corporate,
+          delivered_taxi: delivered.taxi,
+          delivered_general: delivered.general,
+          
+          remaining_total: remaining.total,
+          remaining_priority: remaining.priority,
+          remaining_corporate: remaining.corporate,
+          remaining_taxi: remaining.taxi,
+          remaining_general: remaining.general,
+          
+          note: cells[7] || ''
         };
         
         quotaData.push(rowData);
       } catch (e) {
-        console.warn(`   ⚠️ 행 파싱 오류`);
+        console.warn(`   ⚠️ 행 파싱 오류: ${e.message}`);
       }
     }
   });
@@ -185,7 +231,6 @@ async function main() {
     console.log('✅ 브라우저 준비 완료');
     console.log('');
     
-    // 전체 스크래핑
     console.log('🟢 ===== 접수현황 스크래핑 시작 =====');
     const results = [];
     
@@ -198,7 +243,7 @@ async function main() {
       if (result.success && result.quotaData.length > 0) {
         console.log(`   ✅ ${result.quotaData.length}개 항목`);
       } else if (!result.success) {
-        console.log(`   ❌ 실패 (시도 ${result.attempts}회)`);
+        console.log(`   ❌ 실패`);
       } else {
         console.log(`   ⚠️ 데이터 없음`);
       }
@@ -221,7 +266,6 @@ async function main() {
     console.log(`❌ 실패: ${failed}개`);
     console.log('');
     
-    // 저장
     await fs.mkdir('data', { recursive: true });
     
     const outputData = {
