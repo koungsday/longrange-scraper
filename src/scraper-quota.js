@@ -70,9 +70,20 @@ function parseQuotaTable(html) {
   if (!html || typeof html !== 'string') return quotaData;
   
   const $ = cheerio.load(html);
-  
-  $('table tbody tr').each((i, row) => {
-  const cells = [];
+
+// 모든 테이블 중 가장 많은 행을 가진 테이블 찾기
+let maxRows = 0;
+let targetTableIndex = 0;
+
+$('table').each((tableIdx, table) => {
+  const rows = $(table).find('tbody tr').length;
+  if (rows > maxRows) {
+    maxRows = rows;
+    targetTableIndex = tableIdx;
+  }
+});
+
+$('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
   
   $(row).find('td').each((j, cell) => {
     let text = $(cell).text().trim().replace(/\s+/g, ' ');
@@ -148,18 +159,19 @@ async function scrapeRegionWithRetry(browser, region) {
       
       await page.waitForSelector('table', { timeout: 10000 });
 
-// 디버깅: 테이블 개수 확인
-const tableCount = await page.evaluate(() => {
-  return document.querySelectorAll('table').length;
+// 모든 테이블의 행 개수 확인
+const tableInfo = await page.evaluate(() => {
+  const tables = document.querySelectorAll('table');
+  return Array.from(tables).map((table, idx) => {
+    const rows = table.querySelectorAll('tbody tr').length;
+    return { index: idx, rows: rows };
+  });
 });
-console.log(`   📊 테이블 ${tableCount}개 발견`);
+console.log(`   📊 테이블 정보:`, tableInfo);
 
-// 첫 테이블의 행 개수 확인
-const rowCount = await page.evaluate(() => {
-  const table = document.querySelector('table');
-  return table ? table.querySelectorAll('tbody tr').length : 0;
-});
-console.log(`   📊 첫 테이블 행 ${rowCount}개`);
+// 가장 많은 행을 가진 테이블 찾기
+const maxTable = tableInfo.reduce((max, t) => t.rows > max.rows ? t : max, tableInfo[0]);
+console.log(`   ✅ 테이블 ${maxTable.index}번 사용 (${maxTable.rows}개 행)`);
 
 const html = await page.content();
 
