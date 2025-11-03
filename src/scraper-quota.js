@@ -1,0 +1,258 @@
+const puppeteer = require('puppeteer');
+const axios = require('axios');
+const cheerio = require('cheerio');
+const fs = require('fs').promises;
+
+// ==========================================
+// 설정
+// ==========================================
+const TEST_MODE = false; // false = 전체 161개 지역
+const MAX_RETRIES = 3;
+
+// ==========================================
+// 1. 지역 목록 가져오기
+// ==========================================
+async function getAllRegions() {
+  console.log('📍 지역 목록 로딩...');
+  
+  try {
+    const response = await axios.get('https://api.donut.im/api/v1/regions/list');
+    const allRegions = [];
+    
+    response.data.regions.forEach(region => {
+      const localType = region.localType;
+      
+      if (region.local && Array.isArray(region.local)) {
+        region.local.forEach(local => {
+          allRegions.push({
+            parentName: localType,
+            localName: local.name,
+            code: local.code
+          });
+        });
+      }
+    });
+    
+    console.log(`✅ 총 ${allRegions.length}개 지역`);
+    
+    if (TEST_MODE) {
+      console.log(`🧪 테스트 모드: 10개만 처리`);
+      return allRegions.slice(0, 10);
+    }
+    
+    return allRegions;
+    
+  } catch (error) {
+    console.error('❌ 지역 목록 로딩 실패:', error.message);
+    throw error;
+  }
+}
+
+// ==========================================
+// 2. HTML 파싱 - 접수현황
+// ==========================================
+function parseQuotaTable(html) {
+  const quotaData = [];
+  
+  if (!html || typeof html !== 'string') return quotaData;
+  
+  const $ = cheerio.load(html);
+  
+  // 테이블 행 파싱
+  $('table tbody tr').each((i, row) => {
+    const cells = [];
+    
+    $(row).find('td').each((j, cell) => {
+      let text = $(cell).text().trim().replace(/\s+/g, ' ');
+      cells.push(text);
+    });
+    
+    if (cells.length >= 10) {
+      try {
+        const rowData = {
+          vehicleType: cells[0] || '',           // 차량구분
+          announcement: cells[1] || '',          // 공고
+          registrationMethod: cells[2] || '',    // 접수방법
+          quota_total: parseInt(cells[3]) || 0,  // 전체
+          quota_priority: parseInt(cells[4]) || 0, // 우선순위
+          quota_corporate: parseInt(cells[5]) || 0, // 법인/기관
+          quota_taxi: parseInt(cells[6]) || 0,      // 택시
+          quota_general: parseInt(cells[7]) || 0,   // 일반
+          registered: parseInt(cells[8]) || 0,      // 접수대수
+          delivered: parseInt(cells[9]) || 0,       // 출고대수
+          remaining: parseInt(cells[10]) || 0,      // 잔여대수
+          note: cells[11] || ''                     // 비고
+        };
+        
+        quotaData.push(rowData);
+      } catch (e) {
+        console.warn(`   ⚠️ 행 파싱 오류`);
+      }
+    }
+  });
+  
+  return quotaData;
+}
+
+// ==========================================
+// 3. 재시도 로직 포함 스크래핑
+// ==========================================
+async function scrapeRegionWithRetry(browser, region) {
+  const targetUrl = `https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do?local_cd=${region.code}`;
+  
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    let page = null;
+    
+    try {
+      page = await browser.newPage();
+      await page.setDefaultNavigationTimeout(30000);
+      await page.setDefaultTimeout(30000);
+      
+      await page.goto(targetUrl, { 
+        waitUntil: 'networkidle2',
+        timeout: 30000 
+      });
+      
+      await page.waitForSelector('table', { timeout: 10000 });
+      const html = await page.content();
+      await page.close();
+      
+      const quotaData = parseQuotaTable(html);
+      
+      if (attempt > 1) {
+        console.log(`   ✅ 재시도 ${attempt}회 성공`);
+      }
+      
+      return {
+        parentName: region.parentName,
+        localName: region.localName,
+        code: region.code,
+        quotaData: quotaData,
+        success: true,
+        attempts: attempt,
+        timestamp: new Date().toISOString()
+      };
+      
+    } catch (error) {
+      if (page) await page.close();
+      
+      if (attempt < MAX_RETRIES) {
+        console.log(`   ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
+        await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
+        continue;
+      } else {
+        console.error(`   ❌ 최종 실패: ${error.message}`);
+        return {
+          parentName: region.parentName,
+          localName: region.localName,
+          code: region.code,
+          quotaData: [],
+          success: false,
+          error: error.message,
+          attempts: attempt,
+          timestamp: new Date().toISOString()
+        };
+      }
+    }
+  }
+}
+
+// ==========================================
+// 4. 메인 실행
+// ==========================================
+async function main() {
+  console.log('🚀 전기차 보조금 접수현황 스크래핑 시작');
+  console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
+  console.log('');
+  
+  const startTime = Date.now();
+  let browser = null;
+  
+  try {
+    const regions = await getAllRegions();
+    console.log('');
+    
+    console.log('🌐 브라우저 시작...');
+    browser = await puppeteer.launch({
+      headless: 'new',
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu'
+      ]
+    });
+    console.log('✅ 브라우저 준비 완료');
+    console.log('');
+    
+    // 전체 스크래핑
+    console.log('🟢 ===== 접수현황 스크래핑 시작 =====');
+    const results = [];
+    
+    for (let i = 0; i < regions.length; i++) {
+      const region = regions[i];
+      console.log(`[${i + 1}/${regions.length}] ${region.parentName} ${region.localName}`);
+      
+      const result = await scrapeRegionWithRetry(browser, region);
+      
+      if (result.success && result.quotaData.length > 0) {
+        console.log(`   ✅ ${result.quotaData.length}개 항목`);
+      } else if (!result.success) {
+        console.log(`   ❌ 실패 (시도 ${result.attempts}회)`);
+      } else {
+        console.log(`   ⚠️ 데이터 없음`);
+      }
+      
+      results.push(result);
+      
+      if (i < regions.length - 1) {
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+    }
+    
+    await browser.close();
+    console.log('');
+    console.log('🟢 ===== 스크래핑 완료 =====');
+    
+    const success = results.filter(r => r.success).length;
+    const failed = results.filter(r => !r.success).length;
+    
+    console.log(`✅ 성공: ${success}개`);
+    console.log(`❌ 실패: ${failed}개`);
+    console.log('');
+    
+    // 저장
+    await fs.mkdir('data', { recursive: true });
+    
+    const outputData = {
+      timestamp: new Date().toISOString(),
+      total_regions: results.length,
+      success_count: success,
+      failed_count: failed,
+      data: results
+    };
+    
+    await fs.writeFile(
+      'data/quota.json',
+      JSON.stringify(outputData, null, 2)
+    );
+    
+    console.log('💾 data/quota.json 저장 완료');
+    
+    const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+    console.log(`⏱️ 총 소요 시간: ${elapsed}초`);
+    console.log('🎉 완료!');
+    
+  } catch (error) {
+    console.error('');
+    console.error('💥 치명적 오류:', error);
+    
+    if (browser) await browser.close();
+    process.exit(1);
+  }
+}
+
+main().catch(error => {
+  console.error('💥 예상치 못한 오류:', error);
+  process.exit(1);
+});
