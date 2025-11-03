@@ -79,44 +79,39 @@ function parseQuotaTable(html) {
       cells.push(text);
     });
     
-    // 시도, 지역구분, 차종구분, 공고대수, 접수대수, 출고대수, 잔여대수, 비고
-    if (cells.length >= 8) {
+    // 총 24개 셀: 시도(0), 지역(1), 차종(2), 공고(3-7), 접수(8-12), 출고(13-17), 잔여(18-22), 비고(23)
+    if (cells.length >= 24) {
       try {
-        const quotaTotal = parseWithParentheses(cells[3]);
-        const registered = parseWithParentheses(cells[4]);
-        const delivered = parseWithParentheses(cells[5]);
-        const remaining = parseWithParentheses(cells[6]);
-        
         const rowData = {
-          sido: cells[0] || '',              // 시도
-          region: cells[1] || '',            // 지역구분
-          vehicleType: cells[2] || '',       // 차종구분
+          sido: cells[0] || '',
+          region: cells[1] || '',
+          vehicleType: cells[2] || '',
           
-          quota_total: quotaTotal.total,
-          quota_priority: quotaTotal.priority,
-          quota_corporate: quotaTotal.corporate,
-          quota_taxi: quotaTotal.taxi,
-          quota_general: quotaTotal.general,
+          quota_total: parseInt(cells[3]) || 0,
+          quota_priority: parseInt(cells[4]) || 0,
+          quota_corporate: parseInt(cells[5]) || 0,
+          quota_taxi: parseInt(cells[6]) || 0,
+          quota_general: parseInt(cells[7]) || 0,
           
-          registered_total: registered.total,
-          registered_priority: registered.priority,
-          registered_corporate: registered.corporate,
-          registered_taxi: registered.taxi,
-          registered_general: registered.general,
+          registered_total: parseInt(cells[8]) || 0,
+          registered_priority: parseInt(cells[9]) || 0,
+          registered_corporate: parseInt(cells[10]) || 0,
+          registered_taxi: parseInt(cells[11]) || 0,
+          registered_general: parseInt(cells[12]) || 0,
           
-          delivered_total: delivered.total,
-          delivered_priority: delivered.priority,
-          delivered_corporate: delivered.corporate,
-          delivered_taxi: delivered.taxi,
-          delivered_general: delivered.general,
+          delivered_total: parseInt(cells[13]) || 0,
+          delivered_priority: parseInt(cells[14]) || 0,
+          delivered_corporate: parseInt(cells[15]) || 0,
+          delivered_taxi: parseInt(cells[16]) || 0,
+          delivered_general: parseInt(cells[17]) || 0,
           
-          remaining_total: remaining.total,
-          remaining_priority: remaining.priority,
-          remaining_corporate: remaining.corporate,
-          remaining_taxi: remaining.taxi,
-          remaining_general: remaining.general,
+          remaining_total: parseInt(cells[18]) || 0,
+          remaining_priority: parseInt(cells[19]) || 0,
+          remaining_corporate: parseInt(cells[20]) || 0,
+          remaining_taxi: parseInt(cells[21]) || 0,
+          remaining_general: parseInt(cells[22]) || 0,
           
-          note: cells[7] || ''
+          note: cells[23] || ''
         };
         
         quotaData.push(rowData);
@@ -128,7 +123,6 @@ function parseQuotaTable(html) {
   
   return quotaData;
 }
-
 async function scrapeRegionWithRetry(browser, region) {
   const targetUrl = `https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do?local_cd=${region.code}`;
   
