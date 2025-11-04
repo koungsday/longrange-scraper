@@ -111,6 +111,18 @@ async function scrapeRegionWithRetry(browser, region) {
       
       await page.waitForSelector('table', { timeout: 10000 });
       const html = await page.content();
+      
+      // 서울과 부산만 HTML 저장
+      if (region.code === 1100 || region.code === 2600) {
+        try {
+          await fs.mkdir('data', { recursive: true });
+          await fs.writeFile(`data/debug-subsidy-${region.code}.html`, html);
+          console.log(`   💾 debug-subsidy-${region.code}.html 저장됨`);
+        } catch (e) {
+          console.log(`   ⚠️ HTML 저장 실패 (무시)`);
+        }
+      }
+      
       await page.close();
       
       const vehicles = parseEVTableALL(html);
