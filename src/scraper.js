@@ -197,9 +197,11 @@ async function main() {
     console.log('');
     
     console.log('🟢 ===== 전체 스크래핑 시작 =====');
-    console.log('⚡ 병렬 처리: 5개씩 동시 스크래핑');
+    // ⚡ 최적화: 병렬 처리 개수를 5에서 8로 상향 조정
+    console.log('⚡ 병렬 처리: 8개씩 동시 스크래핑');
     const results = [];
-    const CONCURRENT = 5;
+    const CONCURRENT = 8; // 기존 5 -> 8로 증가
+    const BATCH_DELAY = 300; // 배치 사이 대기 시간 500ms -> 300ms로 감소
     
     for (let i = 0; i < regions.length; i += CONCURRENT) {
       const batch = regions.slice(i, i + CONCURRENT);
@@ -208,7 +210,7 @@ async function main() {
       
       console.log(`\n📦 배치 [${batchStart}-${batchEnd}/${regions.length}]`);
       
-      // 5개 동시 실행
+      // 8개 동시 실행
       const batchResults = await Promise.all(
         batch.map(async (region, idx) => {
           const regionNum = i + idx + 1;
@@ -233,7 +235,7 @@ async function main() {
       
       // 배치 사이 대기 (서버 부하 방지)
       if (i + CONCURRENT < regions.length) {
-        await new Promise(resolve => setTimeout(resolve, 500));
+        await new Promise(resolve => setTimeout(resolve, BATCH_DELAY)); // 500ms -> 300ms로 감소
       }
     }
     
