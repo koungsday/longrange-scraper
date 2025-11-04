@@ -100,6 +100,7 @@ async function scrapeRegionWithRetry(browser, region) {
     let page = null;
     
     try {
+      // ⭐ 브라우저 재사용: 새로운 페이지(탭)만 생성
       page = await browser.newPage();
       await page.setDefaultNavigationTimeout(30000);
       await page.setDefaultTimeout(30000);
@@ -117,18 +118,19 @@ async function scrapeRegionWithRetry(browser, region) {
         try {
           await fs.mkdir('data', { recursive: true });
           await fs.writeFile(`data/debug-subsidy-${region.code}.html`, html);
-          console.log(`   💾 debug-subsidy-${region.code}.html 저장됨`);
+          console.log(`    💾 debug-subsidy-${region.code}.html 저장됨`);
         } catch (e) {
-          console.log(`   ⚠️ HTML 저장 실패 (무시)`);
+          console.log(`    ⚠️ HTML 저장 실패 (무시)`);
         }
       }
       
+      // ⭐ 브라우저 재사용: 페이지(탭)만 종료
       await page.close();
       
       const vehicles = parseEVTableALL(html);
       
       if (attempt > 1) {
-        console.log(`   ✅ 재시도 ${attempt}회 성공`);
+        console.log(`    ✅ 재시도 ${attempt}회 성공`);
       }
       
       return {
@@ -145,11 +147,11 @@ async function scrapeRegionWithRetry(browser, region) {
       if (page) await page.close();
       
       if (attempt < MAX_RETRIES) {
-        console.log(`   ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
+        console.log(`    ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
         await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
         continue;
       } else {
-        console.error(`   ❌ 최종 실패: ${error.message}`);
+        console.error(`    ❌ 최종 실패: ${error.message}`);
         return {
           parentName: region.parentName,
           localName: region.localName,
@@ -180,9 +182,10 @@ async function main() {
     const regions = await getAllRegions();
     console.log('');
     
+    // ⭐ 핵심: 브라우저를 단 한 번만 시작 (Launch Once)
     console.log('🌐 브라우저 시작...');
     browser = await puppeteer.launch({
-      headless: 'new',
+      headless: 'new', // 최신 Headless 모드를 사용하면 더 빠르고 안정적입니다.
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -211,14 +214,15 @@ async function main() {
           const regionNum = i + idx + 1;
           console.log(`[${regionNum}/${regions.length}] ${region.parentName} ${region.localName}`);
           
+          // ⭐ 브라우저 인스턴스를 전달
           const result = await scrapeRegionWithRetry(browser, region);
           
           if (result.success && Object.keys(result.vehicles).length > 0) {
-            console.log(`   ✅ [${regionNum}] ${Object.keys(result.vehicles).length}개 차량`);
+            console.log(`    ✅ [${regionNum}] ${Object.keys(result.vehicles).length}개 차량`);
           } else if (!result.success) {
-            console.log(`   ❌ [${regionNum}] 실패`);
+            console.log(`    ❌ [${regionNum}] 실패`);
           } else {
-            console.log(`   ⚠️ [${regionNum}] 차량 없음`);
+            console.log(`    ⚠️ [${regionNum}] 차량 없음`);
           }
           
           return result;
@@ -233,6 +237,7 @@ async function main() {
       }
     }
     
+    // ⭐ 핵심: 모든 작업이 끝난 후 브라우저를 종료 (Close Once)
     await browser.close();
     console.log('');
     console.log('🟢 ===== 스크래핑 완료 =====');
