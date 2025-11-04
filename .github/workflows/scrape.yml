@@ -23,7 +23,15 @@ jobs:
       
       - name: Install dependencies
         run: npm install
-      
+      - name: Generate package-lock and push  # ← 이 부분 추가!
+        run: |
+          if [ ! -f package-lock.json ]; then
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add package-lock.json
+            git commit -m "Add package-lock.json for caching"
+            git push
+          fi
       - name: Run scraper
         run: node src/scraper.js
       
