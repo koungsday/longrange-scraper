@@ -6,28 +6,6 @@ const fs = require('fs').promises;
 const TEST_MODE = false;
 const MAX_RETRIES = 3;
 
-// 괄호 파싱: 11351(3470)(404)(1194)(6283)
-function parseWithParentheses(text) {
-  if (!text || typeof text !== 'string') {
-    return { total: 0, priority: 0, corporate: 0, taxi: 0, general: 0 };
-  }
-  
-  const matches = text.match(/(\d+)\((\d+)\)\((\d+)\)\((\d+)\)\((\d+)\)/);
-  
-  if (matches) {
-    return {
-      total: parseInt(matches[1]) || 0,
-      priority: parseInt(matches[2]) || 0,
-      corporate: parseInt(matches[3]) || 0,
-      taxi: parseInt(matches[4]) || 0,
-      general: parseInt(matches[5]) || 0
-    };
-  }
-  
-  const num = parseInt(text.replace(/[^\d]/g, '')) || 0;
-  return { total: num, priority: 0, corporate: 0, taxi: 0, general: 0 };
-}
-
 async function getAllRegions() {
   console.log('📍 지역 목록 로딩...');
   
@@ -71,84 +49,87 @@ function parseQuotaTable(html) {
   
   const $ = cheerio.load(html);
 
-// 모든 테이블 중 가장 많은 행을 가진 테이블 찾기
-let maxRows = 0;
-let targetTableIndex = 0;
+  // 가장 많은 행을 가진 테이블 찾기
+  let maxRows = 0;
+  let targetTableIndex = 0;
 
-$('table').each((tableIdx, table) => {
-  const rows = $(table).find('tbody tr').length;
-  if (rows > maxRows) {
-    maxRows = rows;
-    targetTableIndex = tableIdx;
-  }
-});
+  $('table').each((tableIdx, table) => {
+    const rows = $(table).find('tbody tr').length;
+    if (rows > maxRows) {
+      maxRows = rows;
+      targetTableIndex = tableIdx;
+    }
+  });
 
-$('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
-  const cells = [];  // ← 추가!
-  
-  $(row).find('td').each((j, cell) => {
-  // HTML 가져와서 br 기준으로 split
-  const html = $(cell).html() || '';
-  const parts = html.split(/<br\s*\/?>/i).map(p => 
-    $('<div>').html(p).text().trim()
-  ).filter(p => p);
-  
-  cells.push(parts);
-});
+  $('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
+    const cells = [];
     
-if (cells.length >= 9) {
-  try {
-    const parseNum = (text) => {
-      if (!text) return 0;
-      const cleaned = text.replace(/[()]/g, '').trim();
-      return parseInt(cleaned) || 0;
-    };
+    $(row).find('td').each((j, cell) => {
+      // HTML 가져와서 br 기준으로 split
+      const html = $(cell).html() || '';
+      const parts = html.split(/<br\s*\/?>/i)
+        .map(p => $('<div>').html(p).text().trim())
+        .filter(p => p);
+      
+      cells.push(parts);
+    });
     
-    const quota = cells[5] || [];
-    const registered = cells[6] || [];
-    const delivered = cells[7] || [];
-    const remaining = cells[8] || [];
-    
-    const rowData = {
-      sido: (cells[0] && cells[0][0]) || '',
-      region: (cells[1] && cells[1][0]) || '',
-      vehicleType: (cells[2] && cells[2][0]) || '',
-      
-      quota_total: parseNum(quota[0]),
-      quota_priority: parseNum(quota[1]),
-      quota_corporate: parseNum(quota[2]),
-      quota_taxi: parseNum(quota[3]),
-      quota_general: parseNum(quota[4]),
-      
-      registered_total: parseNum(registered[0]),
-      registered_priority: parseNum(registered[1]),
-      registered_corporate: parseNum(registered[2]),
-      registered_taxi: parseNum(registered[3]),
-      registered_general: parseNum(registered[4]),
-      
-      delivered_total: parseNum(delivered[0]),
-      delivered_priority: parseNum(delivered[1]),
-      delivered_corporate: parseNum(delivered[2]),
-      delivered_taxi: parseNum(delivered[3]),
-      delivered_general: parseNum(delivered[4]),
-      
-      remaining_total: parseNum(remaining[0]),
-      remaining_priority: parseNum(remaining[1]),
-      remaining_corporate: parseNum(remaining[2]),
-      remaining_taxi: parseNum(remaining[3]),
-      remaining_general: parseNum(remaining[4]),
-      
-      note: (cells[9] && cells[9][0]) || ''
-    };
-    
-    quotaData.push(rowData);
-  } catch (e) {
-    console.warn(`   ⚠️ 행 파싱 오류: ${e.message}`);
-  }
-}
+    // 총 10개 셀
+    if (cells.length >= 10) {
+      try {
+        const parseNum = (text) => {
+          if (!text) return 0;
+          const cleaned = text.replace(/[()]/g, '').trim();
+          return parseInt(cleaned) || 0;
+        };
+        
+        const quota = cells[5] || [];
+        const registered = cells[6] || [];
+        const delivered = cells[7] || [];
+        const remaining = cells[8] || [];
+        
+        const rowData = {
+          sido: (cells[0] && cells[0][0]) || '',
+          region: (cells[1] && cells[1][0]) || '',
+          vehicleType: (cells[2] && cells[2][0]) || '',
+          
+          quota_total: parseNum(quota[0]),
+          quota_priority: parseNum(quota[1]),
+          quota_corporate: parseNum(quota[2]),
+          quota_taxi: parseNum(quota[3]),
+          quota_general: parseNum(quota[4]),
+          
+          registered_total: parseNum(registered[0]),
+          registered_priority: parseNum(registered[1]),
+          registered_corporate: parseNum(registered[2]),
+          registered_taxi: parseNum(registered[3]),
+          registered_general: parseNum(registered[4]),
+          
+          delivered_total: parseNum(delivered[0]),
+          delivered_priority: parseNum(delivered[1]),
+          delivered_corporate: parseNum(delivered[2]),
+          delivered_taxi: parseNum(delivered[3]),
+          delivered_general: parseNum(delivered[4]),
+          
+          remaining_total: parseNum(remaining[0]),
+          remaining_priority: parseNum(remaining[1]),
+          remaining_corporate: parseNum(remaining[2]),
+          remaining_taxi: parseNum(remaining[3]),
+          remaining_general: parseNum(remaining[4]),
+          
+          note: (cells[9] && cells[9].join(' ')) || ''
+        };
+        
+        quotaData.push(rowData);
+      } catch (e) {
+        console.warn(`   ⚠️ 행 파싱 오류: ${e.message}`);
+      }
+    }
+  });
   
   return quotaData;
 }
+
 async function scrapeRegionWithRetry(browser, region) {
   const targetUrl = `https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do?local_cd=${region.code}`;
   
@@ -167,29 +148,27 @@ async function scrapeRegionWithRetry(browser, region) {
       
       await page.waitForSelector('table', { timeout: 10000 });
 
-// 모든 테이블의 행 개수 확인
-const tableInfo = await page.evaluate(() => {
-  const tables = document.querySelectorAll('table');
-  return Array.from(tables).map((table, idx) => {
-    const rows = table.querySelectorAll('tbody tr').length;
-    return { index: idx, rows: rows };
-  });
-});
-console.log(`   📊 테이블 정보:`, tableInfo);
+      // 테이블 정보 확인
+      const tableInfo = await page.evaluate(() => {
+        const tables = document.querySelectorAll('table');
+        return Array.from(tables).map((table, idx) => {
+          const rows = table.querySelectorAll('tbody tr').length;
+          return { index: idx, rows: rows };
+        });
+      });
 
-// 가장 많은 행을 가진 테이블 찾기
-const maxTable = tableInfo.reduce((max, t) => t.rows > max.rows ? t : max, tableInfo[0]);
-console.log(`   ✅ 테이블 ${maxTable.index}번 사용 (${maxTable.rows}개 행)`);
+      // 가장 많은 행을 가진 테이블 찾기
+      const maxTable = tableInfo.reduce((max, t) => t.rows > max.rows ? t : max, tableInfo[0]);
 
-const html = await page.content();
+      const html = await page.content();
 
-// HTML 저장 (서울만)
-if (region.code === 1100) {
-  await fs.writeFile('debug-seoul.html', html);
-  console.log('   💾 debug-seoul.html 저장됨');
-}
+      // HTML 저장 (서울만)
+      if (region.code === 1100) {
+        await fs.writeFile('data/debug-seoul.html', html);
+        console.log(`   💾 debug-seoul.html 저장됨 (테이블 ${maxTable.index}번 사용, ${maxTable.rows}개 행)`);
+      }
 
-await page.close();
+      await page.close();
       
       const quotaData = parseQuotaTable(html);
       
