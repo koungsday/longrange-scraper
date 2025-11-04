@@ -3,7 +3,7 @@ name: EV Subsidy Scraper
 on:
   schedule:
     - cron: '0 1 * * *'  # 매일 오전 10시 KST (UTC+9)
-  workflow_dispatch:      # 수동 실행 버튼
+  workflow_dispatch:     # 수동 실행 버튼
 
 jobs:
   scrape:
@@ -13,42 +13,51 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
+        
+      # --- 캐싱 기능 추가 (actions/cache 직접 사용) ---
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
-          cache: 'npm'  # ← 이거 추가!
 
-      
+      - name: Cache Node Modules
+        id: cache-npm
+        uses: actions/cache@v4
+        with:
+          path: node_modules # node_modules 폴더 자체를 캐싱
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            
+      # --- 설치 단계 최적화: 캐시 히트 시 건너뛰기 ---
       - name: Install dependencies
-        run: npm install
-      - name: Generate package-lock and push  # ← 이 부분 추가!
+        # cache-npm의 outputs.cache-hit 값이 'true'가 아닐 때만 npm install 실행
+        if: steps.cache-npm.outputs.cache-hit != 'true'
         run: |
-          if [ ! -f package-lock.json ]; then
-            git config --local user.email "action@github.com"
-            git config --local user.name "GitHub Action"
-            git add package-lock.json
-            git commit -m "Add package-lock.json for caching"
-            git push
-          fi
+          echo "Cache miss. Installing dependencies..."
+          npm install
+
+      # NOTE: package-lock.json 커밋 로직은 이미 로컬에서 완료했으므로 제거합니다.
+      # 이 로직은 CI에서 Git Push를 시도하여 종종 권한 문제를 일으킵니다.
+      
       - name: Run scraper
         run: node src/scraper.js
-      
+        
       - name: Upload to Google Sheets
         env:
+          # 시크릿 변수들은 이전에 확인된 대로 올바르게 사용되고 있습니다.
           GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
           GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
           GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
         run: node src/sheets-uploader.js
-      
+        
       - name: Upload results as artifact
         uses: actions/upload-artifact@v4
         with:
           name: scraping-results
           path: data/subsidies.json
           retention-days: 30
-      
+          
       - name: Commit results to repository
         run: |
           git config --local user.email "action@github.com"
