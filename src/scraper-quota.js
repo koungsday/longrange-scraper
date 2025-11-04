@@ -87,58 +87,65 @@ $('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
   const cells = [];  // ← 추가!
   
   $(row).find('td').each((j, cell) => {
-    let text = $(cell).text().trim().replace(/\s+/g, ' ');
-    cells.push(text);
-  });
+  // HTML 가져와서 br 기준으로 split
+  const html = $(cell).html() || '';
+  const parts = html.split(/<br\s*\/?>/i).map(p => 
+    $('<div>').html(p).text().trim()
+  ).filter(p => p);
+  
+  cells.push(parts);
+});
     
-    // 총 27개 셀
-    if (cells.length >= 20) {
-      try {
-        // 괄호 제거 함수
-        const parseNum = (text) => {
-          if (!text) return 0;
-          const cleaned = text.replace(/[()]/g, '').trim();
-          return parseInt(cleaned) || 0;
-        };
-        
-        const rowData = {
-          sido: cells[0] || '',
-          region: cells[1] || '',
-          vehicleType: cells[2] || '',
-          
-          quota_total: parseNum(cells[6]),
-          quota_priority: parseNum(cells[7]),
-          quota_corporate: parseNum(cells[8]),
-          quota_taxi: parseNum(cells[9]),
-          quota_general: parseNum(cells[10]),
-          
-          registered_total: parseNum(cells[11]),
-          registered_priority: parseNum(cells[12]),
-          registered_corporate: parseNum(cells[13]),
-          registered_taxi: parseNum(cells[14]),
-          registered_general: parseNum(cells[15]),
-          
-          delivered_total: parseNum(cells[16]),
-          delivered_priority: parseNum(cells[17]),
-          delivered_corporate: parseNum(cells[18]),
-          delivered_taxi: parseNum(cells[19]),
-          delivered_general: parseNum(cells[20]),
-          
-          remaining_total: parseNum(cells[21]),
-          remaining_priority: parseNum(cells[22]),
-          remaining_corporate: parseNum(cells[23]),
-          remaining_taxi: parseNum(cells[24]),
-          remaining_general: parseNum(cells[25]),
-          
-          note: cells[26] || ''
-        };
-        
-        quotaData.push(rowData);
-      } catch (e) {
-        console.warn(`   ⚠️ 행 파싱 오류: ${e.message}`);
-      }
-    }
-  });
+if (cells.length >= 9) {
+  try {
+    const parseNum = (text) => {
+      if (!text) return 0;
+      const cleaned = text.replace(/[()]/g, '').trim();
+      return parseInt(cleaned) || 0;
+    };
+    
+    const quota = cells[5] || [];
+    const registered = cells[6] || [];
+    const delivered = cells[7] || [];
+    const remaining = cells[8] || [];
+    
+    const rowData = {
+      sido: (cells[0] && cells[0][0]) || '',
+      region: (cells[1] && cells[1][0]) || '',
+      vehicleType: (cells[2] && cells[2][0]) || '',
+      
+      quota_total: parseNum(quota[0]),
+      quota_priority: parseNum(quota[1]),
+      quota_corporate: parseNum(quota[2]),
+      quota_taxi: parseNum(quota[3]),
+      quota_general: parseNum(quota[4]),
+      
+      registered_total: parseNum(registered[0]),
+      registered_priority: parseNum(registered[1]),
+      registered_corporate: parseNum(registered[2]),
+      registered_taxi: parseNum(registered[3]),
+      registered_general: parseNum(registered[4]),
+      
+      delivered_total: parseNum(delivered[0]),
+      delivered_priority: parseNum(delivered[1]),
+      delivered_corporate: parseNum(delivered[2]),
+      delivered_taxi: parseNum(delivered[3]),
+      delivered_general: parseNum(delivered[4]),
+      
+      remaining_total: parseNum(remaining[0]),
+      remaining_priority: parseNum(remaining[1]),
+      remaining_corporate: parseNum(remaining[2]),
+      remaining_taxi: parseNum(remaining[3]),
+      remaining_general: parseNum(remaining[4]),
+      
+      note: (cells[9] && cells[9][0]) || ''
+    };
+    
+    quotaData.push(rowData);
+  } catch (e) {
+    console.warn(`   ⚠️ 행 파싱 오류: ${e.message}`);
+  }
+}
   
   return quotaData;
 }
