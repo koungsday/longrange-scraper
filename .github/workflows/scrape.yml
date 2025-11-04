@@ -60,7 +60,15 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
           GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
         run: node src/sheets-uploader.js
-        
+
+        - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: subsidy-results
+          path: |
+            data/subsidies.json
+            data/debug-subsidy-*.html
+            
       - name: Upload results as artifact
         uses: actions/upload-artifact@v4
         with:
