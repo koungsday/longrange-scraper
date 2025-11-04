@@ -25,31 +25,39 @@ jobs:
       - name: Set Puppeteer Cache Directory
         run: echo "PUPPETEER_CACHE_DIR=$(pwd)/.cache/puppeteer" >> $GITHUB_ENV
         
-      - name: Cache Node Modules and Puppeteer Cache
-        id: cache-npm
+      - name: Restore Node Modules and Puppeteer Cache
+        id: cache-restore
         uses: actions/cache@v4
         with:
-          # node_modules와 함께 Puppeteer 바이너리 캐시 폴더도 함께 캐싱합니다.
           path: |
             node_modules
             .cache/puppeteer
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-            
+
       # --- 설치 단계 최적화 및 Puppeteer 오류 수정 ---
       - name: Install dependencies (with Puppeteer fix)
         run: |
-          if [ "${{ steps.cache-npm.outputs.cache-hit }}" != "true" ]; then
+          if [ "${{ steps.cache-restore.outputs.cache-hit }}" != "true" ]; then
             echo "Cache miss. Installing all dependencies..."
             npm install
           else
             echo "Cache hit. Skipping npm install, checking Puppeteer..."
           fi
           
-          # 캐시 복원 후에도 Chromium이 누락될 경우를 대비하여 명시적으로 설치 명령을 실행합니다.
-          # PUPPETEER_CACHE_DIR 환경 변수 덕분에 설치된 바이너리가 캐시 대상 폴더에 저장됩니다.
+          # 캐시 복원 여부와 관계없이 Puppeteer 실행 파일 누락 문제를 해결합니다.
           npx puppeteer install
+          
+      # --- 캐시 저장 (Save) 단계 ---
+      - name: Save New Node Modules Cache
+        uses: actions/cache@v4
+        if: always() && steps.cache-restore.outputs.cache-hit != 'true'
+        with:
+          path: |
+            node_modules
+            .cache/puppeteer
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           
       - name: Run scraper
         run: node src/scraper.js
@@ -60,12 +68,15 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
           GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
         run: node src/sheets-uploader.js
-            
+          
+      # --- Artifact 업로드 단계 수정 (요청하신 대로) ---
       - name: Upload results as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: scraping-results
-          path: data/subsidies.json
+          name: subsidy-results
+          path: |
+            data/subsidies.json
+            data/debug-subsidy-*.html
           retention-days: 30
           
       - name: Commit results to repository
