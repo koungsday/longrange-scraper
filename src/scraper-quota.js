@@ -234,7 +234,20 @@ async function main() {
     const results = [];
     const CONCURRENT = 5;
     
-    for (let i = 0; i < regions.length; i += CONCURRENT) {
+    // 첫 지역만 스크래핑 (모든 페이지 동일)
+    console.log('⚠️ 모든 지역 페이지가 동일한 데이터 → 첫 지역만 스크래핑');
+    const firstRegion = regions[0];
+    console.log(`[1/1] ${firstRegion.parentName} ${firstRegion.localName}`);
+    
+    const result = await scrapeRegionWithRetry(browser, firstRegion);
+    
+    if (result.success && result.quotaData.length > 0) {
+      console.log(`   ✅ ${result.quotaData.length}개 항목 (전체 지역)`);
+    }
+    
+    const results = [result];
+    
+    // 기존 for 루프 삭제!
       const batch = regions.slice(i, i + CONCURRENT);
       const batchStart = i + 1;
       const batchEnd = Math.min(i + CONCURRENT, regions.length);
