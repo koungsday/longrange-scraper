@@ -230,26 +230,42 @@ async function main() {
     console.log('');
     
     console.log('🟢 ===== 접수현황 스크래핑 시작 =====');
+    console.log('⚡ 병렬 처리: 3개씩 동시 스크래핑');
     const results = [];
+    const CONCURRENT = 3;
     
-    for (let i = 0; i < regions.length; i++) {
-      const region = regions[i];
-      console.log(`[${i + 1}/${regions.length}] ${region.parentName} ${region.localName}`);
+    for (let i = 0; i < regions.length; i += CONCURRENT) {
+      const batch = regions.slice(i, i + CONCURRENT);
+      const batchStart = i + 1;
+      const batchEnd = Math.min(i + CONCURRENT, regions.length);
       
-      const result = await scrapeRegionWithRetry(browser, region);
+      console.log(`\n📦 배치 [${batchStart}-${batchEnd}/${regions.length}]`);
       
-      if (result.success && result.quotaData.length > 0) {
-        console.log(`   ✅ ${result.quotaData.length}개 항목`);
-      } else if (!result.success) {
-        console.log(`   ❌ 실패`);
-      } else {
-        console.log(`   ⚠️ 데이터 없음`);
-      }
+      // 3개 동시 실행
+      const batchResults = await Promise.all(
+        batch.map(async (region, idx) => {
+          const regionNum = i + idx + 1;
+          console.log(`[${regionNum}/${regions.length}] ${region.parentName} ${region.localName}`);
+          
+          const result = await scrapeRegionWithRetry(browser, region);
+          
+          if (result.success && result.quotaData.length > 0) {
+            console.log(`   ✅ [${regionNum}] ${result.quotaData.length}개 항목`);
+          } else if (!result.success) {
+            console.log(`   ❌ [${regionNum}] 실패`);
+          } else {
+            console.log(`   ⚠️ [${regionNum}] 데이터 없음`);
+          }
+          
+          return result;
+        })
+      );
       
-      results.push(result);
+      results.push(...batchResults);
       
-      if (i < regions.length - 1) {
-        await new Promise(resolve => setTimeout(resolve, 250));
+      // 배치 사이 대기 (서버 부하 방지)
+      if (i + CONCURRENT < regions.length) {
+        await new Promise(resolve => setTimeout(resolve, 300));
       }
     }
     
