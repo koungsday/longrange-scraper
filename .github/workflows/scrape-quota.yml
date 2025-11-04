@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     
+    # ⭐ 핵심 수정: GITHUB_TOKEN에 쓰기 권한을 명시적으로 부여합니다.
+    permissions:
+      contents: write
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -81,10 +85,20 @@ jobs:
           name: quota-results
           path: data/quota.json
           
+      # ⭐ 최종 파일 커밋 및 푸시 단계 (권한 문제 해결 및 최적화된 로직 적용)
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add data/quota.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update: $(date +'%Y-%m-%d %H:%M:%S') KST"
-          git push || echo "Nothing to commit"
+          
+          # 생성된 json 파일을 커밋 대상으로 추가
+          git add data/quota.json 
+          
+          # 변경 사항이 있는지 확인 (diff --quiet: 변경 사항이 없으면 0이 아닌 코드 반환)
+          if ! git diff --quiet --staged; then
+            echo "Data changes detected. Committing and pushing..."
+            git commit -m "Update EV quota data: $(date +'%Y-%m-%d %H:%M:%S KST')"
+            git push
+          else
+            echo "No data changes since last run. Skipping commit."
+          fi
