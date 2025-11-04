@@ -3,51 +3,84 @@ name: EV Quota Scraper
 on:
   schedule:
     - cron: '0 * * * *'  # 매시간 정각 (UTC)
-  workflow_dispatch:      # 수동 실행 버튼
+  workflow_dispatch:     # 수동 실행 버튼
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+        
+      # --- Node.js 환경 설정 ---
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'  # ← 이거 추가!
-      
-      - name: Install dependencies
-        run: npm install
-      - name: Generate package-lock and push  # ← 이 부분 추가!
+
+      # Puppeteer의 캐시 위치를 프로젝트 폴더 내의 '.cache/puppeteer'로 지정합니다.
+      - name: Set Puppeteer Cache Directory
+        run: echo "PUPPETEER_CACHE_DIR=$(pwd)/.cache/puppeteer" >> $GITHUB_ENV
+        
+      # --- 1. 캐시 복원 (Restore) 단계 ---
+      - name: Restore Node Modules and Puppeteer Cache
+        id: cache-restore
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            .cache/puppeteer
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            
+      # --- 2. 설치 단계: 캐시 미스 시에만 설치 ---
+      - name: Install dependencies (with Puppeteer fix)
         run: |
-          if [ ! -f package-lock.json ]; then
-            git config --local user.email "action@github.com"
-            git config --local user.name "GitHub Action"
-            git add package-lock.json
-            git commit -m "Add package-lock.json for caching"
-            git push
+          # cache-restore 단계에서 캐시를 찾지 못했을 때 (cache-hit != 'true')
+          if [ "${{ steps.cache-restore.outputs.cache-hit }}" != "true" ]; then
+            echo "Cache miss. Installing all dependencies..."
+            # 이전 워크플로우에서 불필요했던 'Generate package-lock and push' 단계는 삭제하고 npm install만 남깁니다.
+            npm install
+          else
+            echo "Cache hit. Skipping npm install, checking Puppeteer..."
           fi
+          
+          # 캐시 복원 여부와 관계없이 Puppeteer 실행 파일 누락 문제를 해결합니다.
+          # PUPPETEER_CACHE_DIR 환경 변수 덕분에 설치된 바이너리가 캐시 대상 폴더에 저장됩니다.
+          npx puppeteer install
+          
+      # --- 3. 캐시 저장 (Save) 단계 ---
+      # 복원 단계에서 캐시를 찾지 못했고, 설치가 성공적으로 완료되었을 때만 새로운 캐시를 저장합니다.
+      - name: Save New Node Modules Cache
+        uses: actions/cache@v4
+        if: always() && steps.cache-restore.outputs.cache-hit != 'true'
+        with:
+          path: |
+            node_modules
+            .cache/puppeteer
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          
       - name: Run quota scraper
         run: node src/scraper-quota.js
-      
+        
       - name: Upload quota to Google Sheets
         run: node src/sheets-uploader-quota.js
         env:
           GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
           GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
           GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
-      
+        
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: quota-results
           path: data/quota.json
-      
+          
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
