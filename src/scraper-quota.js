@@ -232,7 +232,7 @@ async function main() {
     console.log('🟢 ===== 접수현황 스크래핑 시작 =====');
     console.log('⚡ 병렬 처리: 3개씩 동시 스크래핑');
     const results = [];
-    const CONCURRENT = 3;
+    const CONCURRENT = 5;
     
     for (let i = 0; i < regions.length; i += CONCURRENT) {
       const batch = regions.slice(i, i + CONCURRENT);
