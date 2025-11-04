@@ -162,12 +162,6 @@ async function scrapeRegionWithRetry(browser, region) {
 
       const html = await page.content();
 
-      // HTML 저장 (서울만)
-      if (region.code === 1100) {
-        await fs.writeFile('data/debug-seoul.html', html);
-        console.log(`   💾 debug-seoul.html 저장됨 (테이블 ${maxTable.index}번 사용, ${maxTable.rows}개 행)`);
-      }
-
       await page.close();
       
       const quotaData = parseQuotaTable(html);
