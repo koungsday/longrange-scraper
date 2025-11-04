@@ -14,38 +14,48 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         
-      # --- 캐싱 기능 추가 (actions/cache 직접 사용) ---
+      # --- 캐싱 기능 추가 및 PUPPETEER_CACHE_DIR 설정 ---
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      - name: Cache Node Modules
+      # Puppeteer의 캐시 위치를 프로젝트 폴더 내의 '.cache/puppeteer'로 지정합니다.
+      # 이 폴더도 node_modules와 함께 캐싱 대상에 포함됩니다.
+      - name: Set Puppeteer Cache Directory
+        run: echo "PUPPETEER_CACHE_DIR=$(pwd)/.cache/puppeteer" >> $GITHUB_ENV
+        
+      - name: Cache Node Modules and Puppeteer Cache
         id: cache-npm
         uses: actions/cache@v4
         with:
-          path: node_modules # node_modules 폴더 자체를 캐싱
+          # node_modules와 함께 Puppeteer 바이너리 캐시 폴더도 함께 캐싱합니다.
+          path: |
+            node_modules
+            .cache/puppeteer
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
             
-      # --- 설치 단계 최적화: 캐시 히트 시 건너뛰기 ---
-      - name: Install dependencies
-        # cache-npm의 outputs.cache-hit 값이 'true'가 아닐 때만 npm install 실행
-        if: steps.cache-npm.outputs.cache-hit != 'true'
+      # --- 설치 단계 최적화 및 Puppeteer 오류 수정 ---
+      - name: Install dependencies (with Puppeteer fix)
         run: |
-          echo "Cache miss. Installing dependencies..."
-          npm install
-
-      # NOTE: package-lock.json 커밋 로직은 이미 로컬에서 완료했으므로 제거합니다.
-      # 이 로직은 CI에서 Git Push를 시도하여 종종 권한 문제를 일으킵니다.
-      
+          if [ "${{ steps.cache-npm.outputs.cache-hit }}" != "true" ]; then
+            echo "Cache miss. Installing all dependencies..."
+            npm install
+          else
+            echo "Cache hit. Skipping npm install, checking Puppeteer..."
+          fi
+          
+          # 캐시 복원 후에도 Chromium이 누락될 경우를 대비하여 명시적으로 설치 명령을 실행합니다.
+          # PUPPETEER_CACHE_DIR 환경 변수 덕분에 설치된 바이너리가 캐시 대상 폴더에 저장됩니다.
+          npx puppeteer install
+          
       - name: Run scraper
         run: node src/scraper.js
         
       - name: Upload to Google Sheets
         env:
-          # 시크릿 변수들은 이전에 확인된 대로 올바르게 사용되고 있습니다.
           GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
           GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
           GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
