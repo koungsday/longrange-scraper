@@ -148,20 +148,7 @@ async function scrapeRegionWithRetry(browser, region) {
       
       await page.waitForSelector('table', { timeout: 10000 });
 
-      // 테이블 정보 확인
-      const tableInfo = await page.evaluate(() => {
-        const tables = document.querySelectorAll('table');
-        return Array.from(tables).map((table, idx) => {
-          const rows = table.querySelectorAll('tbody tr').length;
-          return { index: idx, rows: rows };
-        });
-      });
-
-      // 가장 많은 행을 가진 테이블 찾기
-      const maxTable = tableInfo.reduce((max, t) => t.rows > max.rows ? t : max, tableInfo[0]);
-
       const html = await page.content();
-
       await page.close();
       
       const quotaData = parseQuotaTable(html);
@@ -230,57 +217,22 @@ async function main() {
     console.log('');
     
     console.log('🟢 ===== 접수현황 스크래핑 시작 =====');
-    console.log('⚡ 병렬 처리: 3개씩 동시 스크래핑');
-    const results = [];
-    const CONCURRENT = 5;
+    console.log('⚠️ 모든 지역 페이지가 동일 → 첫 지역만 스크래핑');
     
-    // 첫 지역만 스크래핑 (모든 페이지 동일)
-    console.log('⚠️ 모든 지역 페이지가 동일한 데이터 → 첫 지역만 스크래핑');
     const firstRegion = regions[0];
     console.log(`[1/1] ${firstRegion.parentName} ${firstRegion.localName}`);
     
     const result = await scrapeRegionWithRetry(browser, firstRegion);
     
     if (result.success && result.quotaData.length > 0) {
-      console.log(`   ✅ ${result.quotaData.length}개 항목 (전체 지역)`);
+      console.log(`   ✅ ${result.quotaData.length}개 항목 (전체 161개 지역)`);
+    } else if (!result.success) {
+      console.log(`   ❌ 실패`);
+    } else {
+      console.log(`   ⚠️ 데이터 없음`);
     }
     
     const results = [result];
-    
-    // 기존 for 루프 삭제!
-      const batch = regions.slice(i, i + CONCURRENT);
-      const batchStart = i + 1;
-      const batchEnd = Math.min(i + CONCURRENT, regions.length);
-      
-      console.log(`\n📦 배치 [${batchStart}-${batchEnd}/${regions.length}]`);
-      
-      // 3개 동시 실행
-      const batchResults = await Promise.all(
-        batch.map(async (region, idx) => {
-          const regionNum = i + idx + 1;
-          console.log(`[${regionNum}/${regions.length}] ${region.parentName} ${region.localName}`);
-          
-          const result = await scrapeRegionWithRetry(browser, region);
-          
-          if (result.success && result.quotaData.length > 0) {
-            console.log(`   ✅ [${regionNum}] ${result.quotaData.length}개 항목`);
-          } else if (!result.success) {
-            console.log(`   ❌ [${regionNum}] 실패`);
-          } else {
-            console.log(`   ⚠️ [${regionNum}] 데이터 없음`);
-          }
-          
-          return result;
-        })
-      );
-      
-      results.push(...batchResults);
-      
-      // 배치 사이 대기 (서버 부하 방지)
-      if (i + CONCURRENT < regions.length) {
-        await new Promise(resolve => setTimeout(resolve, 300));
-      }
-    }
     
     await browser.close();
     console.log('');
@@ -297,7 +249,7 @@ async function main() {
     
     const outputData = {
       timestamp: new Date().toISOString(),
-      total_regions: results.length,
+      total_regions: 1,
       success_count: success,
       failed_count: failed,
       data: results
