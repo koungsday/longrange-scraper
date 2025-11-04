@@ -10,9 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     
+    # ⭐ 핵심 수정: GITHUB_TOKEN에 쓰기 권한을 명시적으로 부여합니다.
+    permissions:
+      contents: write
+    
     steps:
       - name: Checkout repository
+        # 토큰을 사용하여 체크아웃하면, 이후 푸시 작업에 필요한 권한을 얻습니다.
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
         
       # --- 캐싱 기능 추가 및 PUPPETEER_CACHE_DIR 설정 ---
       - name: Setup Node.js
@@ -68,8 +75,7 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
           GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
         run: node src/sheets-uploader.js
-          
-      # --- Artifact 업로드 단계 수정 (요청하신 대로) ---
+        
       - name: Upload results as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -79,31 +85,21 @@ jobs:
             data/debug-subsidy-*.html
           retention-days: 30
           
-      - name: Commit results to repository
+      # ⭐ 최종 파일 커밋 및 푸시 단계 (권한 문제 해결 및 최적화된 로직 적용)
+      - name: Commit and Push Data
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add data/
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update: $(date +'%Y-%m-%d %H:%M:%S KST')"
-          git push || echo "Nothing to commit"
-
-permissions:
-  contents: write
-
-- name: Commit and Push Data
-  run: |
-    # Git 사용자 정보 설정
-    git config user.name 'github-actions[bot]'
-    git config user.email 'github-actions[bot]@users.noreply.github.com'
-    
-    # 생성된 data 폴더 내의 json 파일을 커밋 대상으로 추가
-    git add data/subsidies.json 
-    
-    # 변경 사항이 있는지 확인 (diff --quiet: 변경 사항이 없으면 0이 아닌 코드 반환)
-    if ! git diff --quiet --staged; then
-      echo "Data changes detected. Committing and pushing..."
-      git commit -m "Update EV subsidy data: $(date +'%Y-%m-%d %H:%M:%S KST')"
-      git push
-    else
-      echo "No data changes since last run. Skipping commit."
-    fi
+          # Git 사용자 정보 설정
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # 생성된 json 파일을 커밋 대상으로 추가
+          git add data/subsidies.json 
+          
+          # 변경 사항이 있는지 확인 (diff --quiet: 변경 사항이 없으면 0이 아닌 코드 반환)
+          if ! git diff --quiet --staged; then
+            echo "Data changes detected. Committing and pushing..."
+            git commit -m "Update EV subsidy data: $(date +'%Y-%m-%d %H:%M:%S KST')"
+            git push
+          else
+            echo "No data changes since last run. Skipping commit."
+          fi
