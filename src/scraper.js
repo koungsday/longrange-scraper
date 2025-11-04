@@ -201,7 +201,7 @@ async function main() {
     console.log('⚡ 병렬 처리: 8개씩 동시 스크래핑');
     const results = [];
     const CONCURRENT = 8; // 기존 5 -> 8로 증가
-    const BATCH_DELAY = 300; // 배치 사이 대기 시간 500ms -> 300ms로 감소
+    const BATCH_DELAY = 500; // 배치 사이 대기 시간 500ms -> 300ms로 감소
     
     for (let i = 0; i < regions.length; i += CONCURRENT) {
       const batch = regions.slice(i, i + CONCURRENT);
