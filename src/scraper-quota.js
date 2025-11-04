@@ -84,6 +84,7 @@ $('table').each((tableIdx, table) => {
 });
 
 $('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
+  const cells = [];  // ← 추가!
   
   $(row).find('td').each((j, cell) => {
     let text = $(cell).text().trim().replace(/\s+/g, ' ');
