@@ -249,7 +249,7 @@ async function main() {
       results.push(result);
       
       if (i < regions.length - 1) {
-        await new Promise(resolve => setTimeout(resolve, 500));
+        await new Promise(resolve => setTimeout(resolve, 250));
       }
     }
     
