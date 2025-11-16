@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-16T07:09:16.220Z",
+  "timestamp": "2025-11-16T08:12:16.273Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2145,11 +2145,11 @@
           "sido": "충남",
           "region": "태안군",
           "vehicleType": "전기승용",
-          "quota_total": 295,
+          "quota_total": 293,
           "quota_priority": 16,
           "quota_corporate": 0,
           "quota_taxi": 16,
-          "quota_general": 263,
+          "quota_general": 261,
           "registered_total": 174,
           "registered_priority": 22,
           "registered_corporate": 5,
@@ -2160,11 +2160,11 @@
           "delivered_corporate": 5,
           "delivered_taxi": 0,
           "delivered_general": 146,
-          "remaining_total": 122,
+          "remaining_total": 120,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 16,
-          "remaining_general": 117,
+          "remaining_general": 115,
           "note": "1. 보급대수 : 총 388대(승용 303, 화물85) - 하반기 공고 : 총 105대(승용 68, 화물 37) - 하반기 변경 공고 : 총 175대(승용 138(70대분 증), 화물 37) ※ 우선순위, 승용택시, 택배, 중소기업 생산 물량은 일반물량과 통합 진행 ※ 차종별 보조금 차등지원 및 추가지원금으로 공고물량과 실제 보조금 지급 물량 다를 수 있음 2. 신청기간 : 2025. 2. 12.(수) ~ 12. 5.(금) - 하반기 공고 : 2025. 7. 16.(수) ~ 8. 14.(목) - 하반기 변경 공고 : 2025. 9. 15.(월) ~ 12. 5.(금)  ※ 2025. 10. 14. 예산소진 마감"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2025-11-16T07:09:16.093Z"
+      "timestamp": "2025-11-16T08:12:16.160Z"
     }
   ]
 }
