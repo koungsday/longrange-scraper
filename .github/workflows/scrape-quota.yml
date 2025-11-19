@@ -5,6 +5,11 @@ on:
     - cron: '0 * * * *'  # 매시간 정각 (UTC)
   workflow_dispatch:     # 수동 실행 버튼
 
+# 동일한 워크플로우가 동시에 실행되는 것을 방지
+concurrency:
+  group: scrape-quota
+  cancel-in-progress: false  # 진행 중인 작업을 취소하지 않고 대기
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -85,20 +90,48 @@ jobs:
           name: quota-results
           path: data/quota.json
           
-      # ⭐ 최종 파일 커밋 및 푸시 단계 (권한 문제 해결 및 최적화된 로직 적용)
+      # ⭐ 최종 파일 커밋 및 푸시 단계 (동시성 문제 해결)
       - name: Commit and push if changed
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
+
           # 생성된 json 파일을 커밋 대상으로 추가
-          git add data/quota.json 
-          
-          # 변경 사항이 있는지 확인 (diff --quiet: 변경 사항이 없으면 0이 아닌 코드 반환)
+          git add data/quota.json
+
+          # 변경 사항이 있는지 확인
           if ! git diff --quiet --staged; then
             echo "Data changes detected. Committing and pushing..."
             git commit -m "Update EV quota data: $(date +'%Y-%m-%d %H:%M:%S KST')"
-            git push
+
+            # Push with retry logic (최대 5번 시도, 재시도 간 pull --rebase)
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              echo "Push attempt $((RETRY_COUNT + 1))/$MAX_RETRIES..."
+
+              if git push; then
+                echo "✅ Push successful!"
+                exit 0
+              else
+                echo "⚠️ Push failed. Pulling latest changes..."
+                RETRY_COUNT=$((RETRY_COUNT + 1))
+
+                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                  # Pull with rebase to integrate remote changes
+                  git pull --rebase origin main
+
+                  # 지수 백오프: 2초, 4초, 8초, 16초
+                  WAIT_TIME=$((2 ** RETRY_COUNT))
+                  echo "Waiting ${WAIT_TIME}s before retry..."
+                  sleep $WAIT_TIME
+                fi
+              fi
+            done
+
+            echo "❌ Failed to push after $MAX_RETRIES attempts"
+            exit 1
           else
             echo "No data changes since last run. Skipping commit."
           fi
