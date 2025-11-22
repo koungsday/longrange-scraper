@@ -1,0 +1,91 @@
+# ⚠️ 이 파일을 longrange-scraper 리포지토리의 .github/workflows/ 폴더에 추가하세요
+#
+# 경로: longrange-scraper/.github/workflows/sync-data.yml
+#
+# 이 워크플로우는 스크래핑한 데이터를 koungs-day-web의 public/data/ 폴더에 자동으로 동기화합니다.
+
+name: Sync Data to koungs-day-web
+
+on:
+  # 스크래핑 완료 후 수동 실행
+  workflow_dispatch:
+
+  # 또는 스크래핑 워크플로우가 완료된 후 자동 실행 (선택사항)
+  # workflow_run:
+  #   workflows: ["Scrape EV Data"]
+  #   types:
+  #     - completed
+
+  # 또는 정기적으로 실행 (선택사항)
+  # schedule:
+  #   - cron: '0 */6 * * *'  # 6시간마다
+
+jobs:
+  sync-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout longrange-scraper (현재 리포)
+        uses: actions/checkout@v4
+        with:
+          path: scraper
+
+      - name: Checkout koungs-day-web (대상 리포)
+        uses: actions/checkout@v4
+        with:
+          repository: koungsday/koungs-day-web
+          token: ${{ secrets.PAT_TOKEN }}
+          path: web
+
+      - name: Copy data files
+        run: |
+          # public/data 폴더가 없으면 생성
+          mkdir -p web/public/data
+
+          # 데이터 파일 복사 (경로는 실제 스크래퍼 구조에 맞게 수정)
+          cp scraper/data/subsidies.json web/public/data/
+          cp scraper/data/quota.json web/public/data/
+
+          # 복사된 파일 확인
+          echo "📁 Copied files:"
+          ls -lh web/public/data/
+
+      - name: Commit and push to koungs-day-web
+        working-directory: web
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+
+          git add public/data/
+
+          # 변경사항이 있을 때만 커밋
+          if git diff --staged --quiet; then
+            echo "✅ No changes to commit"
+          else
+            git commit -m "chore: Auto-update scraper data
+
+            - Updated subsidies.json
+            - Updated quota.json
+
+            Synced from koungsday/longrange-scraper @ ${{ github.sha }}"
+
+            git push
+
+            echo "✅ Data synced successfully!"
+          fi
+
+# 🔑 설정 방법:
+#
+# 1. GitHub Personal Access Token (PAT) 생성
+#    - https://github.com/settings/tokens/new
+#    - repo 권한 부여
+#    - Fine-grained token 추천 (koungs-day-web만 접근)
+#
+# 2. longrange-scraper 리포에 Secret 추가
+#    - Settings > Secrets and variables > Actions
+#    - New repository secret: PAT_TOKEN = <생성한 토큰>
+#
+# 3. 이 파일을 longrange-scraper/.github/workflows/sync-data.yml에 추가
+#
+# 4. 테스트:
+#    - Actions 탭 > Sync Data to koungs-day-web > Run workflow
