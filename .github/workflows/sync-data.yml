@@ -7,18 +7,14 @@
 name: Sync Data to koungs-day-web
 
 on:
-  # 스크래핑 완료 후 수동 실행
+  # 수동 실행 (유지)
   workflow_dispatch:
 
-  # 또는 스크래핑 워크플로우가 완료된 후 자동 실행 (선택사항)
-  # workflow_run:
-  #   workflows: ["Scrape EV Data"]
-  #   types:
-  #     - completed
-
-  # 또는 정기적으로 실행 (선택사항)
-  # schedule:
-  #   - cron: '0 */6 * * *'  # 6시간마다
+  # 스크래핑 워크플로우 완료 후 자동 실행 (추가!)
+  workflow_run:
+    workflows: ["EV Quota Scraper", "EV Subsidy Scraper"]
+    types:
+      - completed
 
 jobs:
   sync-data:
