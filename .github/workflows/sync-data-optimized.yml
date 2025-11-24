@@ -1,0 +1,127 @@
+name: Sync Data to koungs-day-web (Optimized)
+
+on:
+  workflow_run:
+    # Quota, Subsidies 스크래퍼 완료 후 실행
+    workflows: ["EV Quota Scraper", "EV Subsidy Scraper"]
+    types: [completed]
+
+  # 수동 테스트용
+  workflow_dispatch:
+
+jobs:
+  sync-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ========================================
+      # 1. 스크래퍼 리포 체크아웃
+      # ========================================
+      - name: Checkout scraper repository
+        uses: actions/checkout@v4
+        with:
+          path: scraper
+
+      # ========================================
+      # 2. 웹 리포 체크아웃
+      # ========================================
+      - name: Checkout koungs-day-web repository
+        uses: actions/checkout@v4
+        with:
+          repository: koungsday/koungs-day-web
+          token: ${{ secrets.PAT_TOKEN }}
+          path: web
+
+      # ========================================
+      # 3. 데이터 파일 복사
+      # ========================================
+      - name: Copy scraped data to web repo
+        run: |
+          echo "📥 Copying scraped data..."
+
+          # public/data 폴더 확인/생성
+          mkdir -p web/public/data
+
+          # quota.json, subsidies.json 복사
+          cp scraper/data/quota.json web/public/data/ || echo "⚠️ quota.json not found"
+          cp scraper/data/subsidies.json web/public/data/ || echo "⚠️ subsidies.json not found"
+
+          # 복사된 파일 확인
+          echo "📁 Files in web/public/data/:"
+          ls -lh web/public/data/
+
+      # ========================================
+      # 4. 변경사항 감지 (핵심!)
+      # ========================================
+      - name: Check if data actually changed
+        id: check_changes
+        working-directory: web
+        run: |
+          # Git diff로 실제 변경 확인
+          if git diff --quiet public/data/quota.json public/data/subsidies.json; then
+            # 변경 없음
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No data changes detected"
+            echo "💡 Skipping commit to save Vercel deployment!"
+          else
+            # 변경 있음
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "✅ Data changes detected:"
+
+            # 어떤 파일이 변경되었는지 로그
+            if ! git diff --quiet public/data/quota.json 2>/dev/null; then
+              echo "  📝 quota.json changed"
+              git diff --stat public/data/quota.json
+            fi
+
+            if ! git diff --quiet public/data/subsidies.json 2>/dev/null; then
+              echo "  📝 subsidies.json changed"
+              git diff --stat public/data/subsidies.json
+            fi
+          fi
+
+      # ========================================
+      # 5. 조건부 커밋 (변경 있을 때만!)
+      # ========================================
+      - name: Commit and push ONLY if data changed
+        if: steps.check_changes.outputs.changed == 'true'
+        working-directory: web
+        run: |
+          echo "📤 Committing changes to koungs-day-web..."
+
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+
+          # 변경된 파일만 add
+          git add public/data/quota.json public/data/subsidies.json
+
+          # 커밋 메시지 생성
+          git commit -m "chore: Auto-update scraper data
+
+          Updated at: $(date -u +'%Y-%m-%d %H:%M:%S UTC')
+
+          Data sources:
+            - Quota: 무공해차 누리집 (할당량)
+            - Subsidies: 무공해차 누리집 (보조금)
+
+          Synced from koungsday/longrange-scraper @ ${{ github.sha }}"
+
+          # Push
+          git push
+
+          echo "✅ Data synced and deployed to Vercel"
+
+      # ========================================
+      # 6. 결과 로그
+      # ========================================
+      - name: Log sync result
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          if [ "${{ steps.check_changes.outputs.changed }}" == "true" ]; then
+            echo "✅ Sync completed: Data changed and committed"
+            echo "🚀 Vercel deployment triggered"
+          else
+            echo "⏭️  Sync skipped: No data changes"
+            echo "💰 Saved 1 Vercel deployment!"
+          fi
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
