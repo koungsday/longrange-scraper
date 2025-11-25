@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-25T09:13:17.761Z",
+  "timestamp": "2025-11-25T10:12:00.403Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3507,11 +3507,11 @@
           "registered_corporate": 7,
           "registered_taxi": 0,
           "registered_general": 63,
-          "delivered_total": 106,
+          "delivered_total": 107,
           "delivered_priority": 37,
           "delivered_corporate": 7,
           "delivered_taxi": 0,
-          "delivered_general": 62,
+          "delivered_general": 63,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
@@ -4157,16 +4157,16 @@
           "registered_corporate": 87,
           "registered_taxi": 371,
           "registered_general": 1550,
-          "delivered_total": 3526,
+          "delivered_total": 3527,
           "delivered_priority": 1628,
           "delivered_corporate": 83,
           "delivered_taxi": 355,
-          "delivered_general": 1460,
+          "delivered_general": 1461,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1740,
+          "remaining_general": 1739,
           "note": "○ 무공해자 보조금 접수 마감 안내 무공해차(전기차) 보조금 접수가 예산 조기 소진으로 인해 아래와 같이 마감되었음을 알려드립니다. - 접수마감일 : 2025년 11월 12일(수) 09:30 - 마 감 사 유 : 보조금 예산 조기 소진 - 대 상 사 업 :  2025년 무공해차(전기차) 민간보급사업 ※ 비고 : 접수는 완료되었으나 예산 법위를 초과해 보조금 지원 대상에서 제외될 수 있음을 알려드립니다."
         },
         {
@@ -4183,9 +4183,9 @@
           "registered_corporate": 33212,
           "registered_taxi": 124,
           "registered_general": 2923,
-          "delivered_total": 36254,
+          "delivered_total": 36259,
           "delivered_priority": 1349,
-          "delivered_corporate": 32100,
+          "delivered_corporate": 32105,
           "delivered_taxi": 110,
           "delivered_general": 2695,
           "remaining_total": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2025-11-25T09:13:17.626Z"
+      "timestamp": "2025-11-25T10:12:00.318Z"
     }
   ]
 }
