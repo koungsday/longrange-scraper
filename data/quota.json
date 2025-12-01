@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-01T09:17:10.392Z",
+  "timestamp": "2025-12-01T10:12:54.512Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -49,11 +49,11 @@
           "registered_corporate": 222,
           "registered_taxi": 1076,
           "registered_general": 4339,
-          "delivered_total": 7897,
-          "delivered_priority": 2462,
+          "delivered_total": 7913,
+          "delivered_priority": 2469,
           "delivered_corporate": 213,
           "delivered_taxi": 1021,
-          "delivered_general": 4201,
+          "delivered_general": 4210,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
@@ -257,16 +257,16 @@
           "registered_corporate": 75,
           "registered_taxi": 141,
           "registered_general": 1687,
-          "delivered_total": 2752,
+          "delivered_total": 2753,
           "delivered_priority": 932,
           "delivered_corporate": 71,
           "delivered_taxi": 140,
-          "delivered_general": 1609,
-          "remaining_total": 1513,
+          "delivered_general": 1610,
+          "remaining_total": 1512,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 2656,
+          "remaining_general": 2655,
           "note": "★12. 1. 9시 기준 전기승용, 전기화물 우선순위 구분없이 신청접수 진행중 ★ -------------------------------- 신청기간: 2025. 2. 10. 10:00 - 2025. 12. 12. 18:00(단, 지급신청 2025. 12. 17.까지) 지원대수: 승용 4,265대, 화물 369대 신청조건: 성남시 거주 3개월 이상 개인, 법인 * 출고 10일이내 차량에 대하여 신청(12.5일 이전까지 출고 요청, 지원신청시 출고증빙서류 첨부 必) * 접수 후 7일이내 처리. 빠른 처리를 위하여 전화 자제 부탁드립니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2025-12-01T09:17:10.254Z"
+      "timestamp": "2025-12-01T10:12:54.386Z"
     }
   ]
 }
