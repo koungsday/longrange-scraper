@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-08T09:17:43.721Z",
+  "timestamp": "2025-12-08T10:12:51.204Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -252,11 +252,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 4265,
-          "registered_total": 2935,
+          "registered_total": 2936,
           "registered_priority": 1001,
           "registered_corporate": 77,
           "registered_taxi": 145,
-          "registered_general": 1712,
+          "registered_general": 1713,
           "delivered_total": 2866,
           "delivered_priority": 975,
           "delivered_corporate": 74,
@@ -3767,16 +3767,16 @@
           "registered_corporate": 3,
           "registered_taxi": 14,
           "registered_general": 232,
-          "delivered_total": 382,
+          "delivered_total": 383,
           "delivered_priority": 141,
           "delivered_corporate": 2,
           "delivered_taxi": 14,
-          "delivered_general": 225,
-          "remaining_total": 203,
+          "delivered_general": 226,
+          "remaining_total": 202,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 34,
-          "remaining_general": 264,
+          "remaining_general": 263,
           "note": ""
         },
         {
@@ -4001,12 +4001,12 @@
           "registered_corporate": 2,
           "registered_taxi": 1,
           "registered_general": 79,
-          "delivered_total": 105,
-          "delivered_priority": 27,
+          "delivered_total": 106,
+          "delivered_priority": 28,
           "delivered_corporate": 2,
           "delivered_taxi": 1,
           "delivered_general": 75,
-          "remaining_total": 191,
+          "remaining_total": 190,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2025-12-08T09:17:43.635Z"
+      "timestamp": "2025-12-08T10:12:51.086Z"
     }
   ]
 }
