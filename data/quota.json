@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-08T12:19:52.764Z",
+  "timestamp": "2025-12-08T13:27:58.540Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1895,16 +1895,16 @@
           "registered_corporate": 11,
           "registered_taxi": 10,
           "registered_general": 525,
-          "delivered_total": 629,
+          "delivered_total": 628,
           "delivered_priority": 83,
           "delivered_corporate": 11,
           "delivered_taxi": 10,
-          "delivered_general": 525,
-          "remaining_total": 0,
+          "delivered_general": 524,
+          "remaining_total": 1,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 104,
+          "remaining_general": 105,
           "note": "< 2025년 서산시 하반기 전기자동차 민간보급사업(추가) > ※ 전기승용 마감입니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2025-12-08T12:19:52.685Z"
+      "timestamp": "2025-12-08T13:27:58.414Z"
     }
   ]
 }
