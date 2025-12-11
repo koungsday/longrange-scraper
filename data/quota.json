@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-11T03:51:49.412Z",
+  "timestamp": "2025-12-11T04:26:00.946Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1864,11 +1864,11 @@
           "quota_corporate": 0,
           "quota_taxi": 24,
           "quota_general": 551,
-          "registered_total": 775,
+          "registered_total": 774,
           "registered_priority": 135,
           "registered_corporate": 13,
           "registered_taxi": 19,
-          "registered_general": 608,
+          "registered_general": 607,
           "delivered_total": 692,
           "delivered_priority": 108,
           "delivered_corporate": 13,
@@ -3299,16 +3299,16 @@
           "registered_corporate": 14,
           "registered_taxi": 13,
           "registered_general": 268,
-          "delivered_total": 388,
+          "delivered_total": 389,
           "delivered_priority": 99,
           "delivered_corporate": 14,
           "delivered_taxi": 13,
-          "delivered_general": 262,
-          "remaining_total": 112,
+          "delivered_general": 263,
+          "remaining_total": 111,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 32,
-          "remaining_general": 148,
+          "remaining_general": 147,
           "note": "○ 접수기간: 2025. 2. 3.(월) ~ 예산소진 시까지 ○ 지원대상: 개인, 법인, 공공기관, 지방공기업(중앙행정기관 제외) ○ 지원대수 - 개인, 개인사업자, 법인, 기업: 1대 - 택시법인 및 초소형(승용, 화물), 경형(화물)을 구매하는 법인: 5대 ○ 보급대수: 승용차(450대), 화물차(239대), 어린이통학버스 1대) ○ 접 수 처: 자동차 판매？제작사를 통한 인터넷 신청(www.ev.or.kr) ○ 지 원 금 (차량에 따라 차등지급) - 승용차 최대 1,180만원 - 화물차 최대 2,435만원 - 어린이통학용버스 최대 14,212만원 ○ 문의사항: 환경관리과(☎054-537-7355) ※ 자세한 사항은 시청 홈페이지(www.sangju.go.kr) 공고란 참조"
         },
         {
@@ -4178,11 +4178,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 36140,
-          "registered_total": 37323,
+          "registered_total": 37321,
           "registered_priority": 1431,
           "registered_corporate": 32940,
           "registered_taxi": 120,
-          "registered_general": 2832,
+          "registered_general": 2830,
           "delivered_total": 36950,
           "delivered_priority": 1395,
           "delivered_corporate": 32696,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2025-12-11T03:51:49.292Z"
+      "timestamp": "2025-12-11T04:26:00.814Z"
     }
   ]
 }
