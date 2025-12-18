@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-18T08:15:35.268Z",
+  "timestamp": "2025-12-18T09:16:31.652Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2529,7 +2529,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 4,
           "remaining_general": 13,
-          "note": "*예산소진으로 인한 신청마감 <하반기 추가 전기자동차 구매 지원사업 안내> 추경2차 첨부된 파일로 신청서 작성 바람(서식1,2 변경) 보조금 단가 : 추경2차 첨부등록2 엑셀파일로 확인"
+          "note": "*예산소진으로 인한 신청마감"
         },
         {
           "sido": "전남",
@@ -3767,12 +3767,12 @@
           "registered_corporate": 4,
           "registered_taxi": 14,
           "registered_general": 235,
-          "delivered_total": 391,
+          "delivered_total": 392,
           "delivered_priority": 145,
-          "delivered_corporate": 3,
+          "delivered_corporate": 4,
           "delivered_taxi": 14,
           "delivered_general": 229,
-          "remaining_total": 194,
+          "remaining_total": 193,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 34,
@@ -4157,16 +4157,16 @@
           "registered_corporate": 85,
           "registered_taxi": 370,
           "registered_general": 1536,
-          "delivered_total": 3628,
-          "delivered_priority": 1683,
+          "delivered_total": 3631,
+          "delivered_priority": 1685,
           "delivered_corporate": 84,
           "delivered_taxi": 361,
-          "delivered_general": 1500,
+          "delivered_general": 1501,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1700,
+          "remaining_general": 1699,
           "note": "○ 무공해자 보조금 접수 마감 안내 무공해차(전기차) 보조금 접수가 예산 조기 소진으로 인해 아래와 같이 마감되었음을 알려드립니다. - 접수마감일 : 2025년 11월 12일(수) 09:30 - 마 감 사 유 : 보조금 예산 조기 소진 - 대 상 사 업 :  2025년 무공해차(전기차) 민간보급사업 ※ 비고 : 접수는 완료되었으나 예산 법위를 초과해 보조금 지원 대상에서 제외될 수 있음을 알려드립니다."
         },
         {
@@ -4183,8 +4183,8 @@
           "registered_corporate": 32925,
           "registered_taxi": 116,
           "registered_general": 2825,
-          "delivered_total": 37098,
-          "delivered_priority": 1406,
+          "delivered_total": 37099,
+          "delivered_priority": 1407,
           "delivered_corporate": 32814,
           "delivered_taxi": 115,
           "delivered_general": 2763,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2025-12-18T08:15:35.108Z"
+      "timestamp": "2025-12-18T09:16:31.592Z"
     }
   ]
 }
