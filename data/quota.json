@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-12-24T07:15:14.234Z",
+  "timestamp": "2025-12-24T08:15:35.443Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2311,16 +2311,16 @@
           "registered_corporate": 11,
           "registered_taxi": 8,
           "registered_general": 194,
-          "delivered_total": 264,
+          "delivered_total": 265,
           "delivered_priority": 61,
           "delivered_corporate": 10,
           "delivered_taxi": 7,
-          "delivered_general": 186,
-          "remaining_total": 5,
+          "delivered_general": 187,
+          "remaining_total": 4,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 13,
-          "remaining_general": 43,
+          "remaining_general": 42,
           "note": "- 상반기 신청기간 : 2025.2.17.(월) ~2025.6.30.(월) 18:00 [예산소진시 조기마감] - 상반기 보급대수 : 승용 193대 / 화물 140대 - 선정방법 : 출고등록순 ※ 기타 자세한 사항은 공고문 참고"
         },
         {
@@ -4183,9 +4183,9 @@
           "registered_corporate": 32921,
           "registered_taxi": 116,
           "registered_general": 2821,
-          "delivered_total": 37126,
+          "delivered_total": 37128,
           "delivered_priority": 1407,
-          "delivered_corporate": 32841,
+          "delivered_corporate": 32843,
           "delivered_taxi": 115,
           "delivered_general": 2763,
           "remaining_total": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2025-12-24T07:15:14.088Z"
+      "timestamp": "2025-12-24T08:15:35.372Z"
     }
   ]
 }
