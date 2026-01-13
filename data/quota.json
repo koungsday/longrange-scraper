@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-13T00:46:15.581Z",
+  "timestamp": "2026-01-13T02:49:57.105Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3522,12 +3522,12 @@
         {
           "sido": "경북",
           "region": "성주군",
-          "vehicleType": "전기승용",
-          "quota_total": 103,
-          "quota_priority": 10,
+          "vehicleType": "",
+          "quota_total": 0,
+          "quota_priority": 0,
           "quota_corporate": 0,
-          "quota_taxi": 10,
-          "quota_general": 83,
+          "quota_taxi": 0,
+          "quota_general": 0,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-13T00:46:15.505Z"
+      "timestamp": "2026-01-13T02:49:57.019Z"
     }
   ]
 }
