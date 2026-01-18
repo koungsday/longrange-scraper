@@ -1,0 +1,768 @@
+{
+  "timestamp": "2026-01-18T03:03:14.793Z",
+  "total_vehicles": 127,
+  "vehicles": {
+    "현대자동차___GV60 스탠다드 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 스탠다드 2WD 19인치",
+      "national": 2870000
+    },
+    "현대자동차___GV60 스탠다드 AWD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 스탠다드 AWD 19인치",
+      "national": 2610000
+    },
+    "현대자동차___GV60 스탠다드 AWD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 스탠다드 AWD 20인치",
+      "national": 2510000
+    },
+    "현대자동차___GV60 퍼포먼스 AWD 21인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 퍼포먼스 AWD 21인치",
+      "national": 2360000
+    },
+    "현대자동차___Electrified GV70 AWD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "Electrified GV70 AWD 20인치",
+      "national": 2440000
+    },
+    "현대자동차___Electrified GV70 AWD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "Electrified GV70 AWD 19인치",
+      "national": 2600000
+    },
+    "현대자동차___아이오닉6 스탠다드 2WD 18인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉6 스탠다드 2WD 18인치",
+      "national": 6350000
+    },
+    "현대자동차___아이오닉6 롱레인지 2WD 18인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉6 롱레인지 2WD 18인치",
+      "national": 6860000
+    },
+    "현대자동차___아이오닉6 롱레인지 2WD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉6 롱레인지 2WD 20인치",
+      "national": 6800000
+    },
+    "현대자동차___아이오닉6 롱레인지 AWD 18인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉6 롱레인지 AWD 18인치",
+      "national": 6860000
+    },
+    "현대자동차___아이오닉6 롱레인지 AWD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉6 롱레인지 AWD 20인치",
+      "national": 6470000
+    },
+    "현대자동차___코나 일렉트릭 2WD 스탠다드 17인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "코나 일렉트릭 2WD 스탠다드 17인치",
+      "national": 5730000
+    },
+    "현대자동차___코나 일렉트릭 2WD 롱레인지 17인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "코나 일렉트릭 2WD 롱레인지 17인치",
+      "national": 6230000
+    },
+    "현대자동차___코나 일렉트릭 2WD 롱레인지 19인치(빌트인 캠)": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "코나 일렉트릭 2WD 롱레인지 19인치(빌트인 캠)",
+      "national": 5680000
+    },
+    "현대자동차___아이오닉5 N": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉5 N",
+      "national": 2320000
+    },
+    "현대자동차___더뉴아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더뉴아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용",
+      "national": 6590000
+    },
+    "현대자동차___더뉴아이오닉5 2WD 롱레인지 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더뉴아이오닉5 2WD 롱레인지 19인치",
+      "national": 6560000
+    },
+    "현대자동차___더뉴아이오닉5 2WD 롱레인지 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더뉴아이오닉5 2WD 롱레인지 20인치",
+      "national": 6510000
+    },
+    "현대자동차___더뉴아이오닉5 AWD 롱레인지 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더뉴아이오닉5 AWD 롱레인지 20인치",
+      "national": 6240000
+    },
+    "현대자동차___더뉴아이오닉5 AWD 롱레인지 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더뉴아이오닉5 AWD 롱레인지 19인치",
+      "national": 6500000
+    },
+    "현대자동차___더뉴아이오닉5 2WD 롱레인지 N라인 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더뉴아이오닉5 2WD 롱레인지 N라인 20인치",
+      "national": 6330000
+    },
+    "현대자동차___더뉴아이오닉5 AWD 롱레인지 N라인 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더뉴아이오닉5 AWD 롱레인지 N라인 20인치",
+      "national": 6020000
+    },
+    "현대자동차___Electrified G80 AWD 19인치(2025)": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "Electrified G80 AWD 19인치(2025)",
+      "national": 2750000
+    },
+    "현대자동차___더뉴아이오닉5 2WD 스탠다드 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더뉴아이오닉5 2WD 스탠다드 19인치",
+      "national": 5610000
+    },
+    "현대자동차___Electrified GV70 AWD 20인치(2025)": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "Electrified GV70 AWD 20인치(2025)",
+      "national": 2500000
+    },
+    "현대자동차___Electrified GV70 AWD 19인치(2025)": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "Electrified GV70 AWD 19인치(2025)",
+      "national": 2660000
+    },
+    "현대자동차___코나 일렉트릭 2WD 롱레인지 17인치(빌트인 캠)": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "코나 일렉트릭 2WD 롱레인지 17인치(빌트인 캠)",
+      "national": 6230000
+    },
+    "현대자동차___아이오닉9 성능형 AWD": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉9 성능형 AWD",
+      "national": 2770000
+    },
+    "현대자동차___아이오닉9 항속형 AWD": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉9 항속형 AWD",
+      "national": 2760000
+    },
+    "현대자동차___아이오닉9 항속형 2WD": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉9 항속형 2WD",
+      "national": 2790000
+    },
+    "현대자동차___GV60 퍼포먼스 AWD 21인치(2025)": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 퍼포먼스 AWD 21인치(2025)",
+      "national": 2480000
+    },
+    "현대자동차___GV60 스탠다드 AWD 20인치(2025)": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 스탠다드 AWD 20인치(2025)",
+      "national": 2660000
+    },
+    "현대자동차___GV60 스탠다드 AWD 19인치(2025)": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 스탠다드 AWD 19인치(2025)",
+      "national": 2770000
+    },
+    "현대자동차___GV60 스탠다드 2WD 19인치(2025)": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 스탠다드 2WD 19인치(2025)",
+      "national": 2900000
+    },
+    "현대자동차___더 뉴 아이오닉6 2wd 롱레인지 n라인 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 2wd 롱레인지 n라인 20인치",
+      "national": 5800000
+    },
+    "현대자동차___더 뉴 아이오닉6 awd 롱레인지 n라인 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 awd 롱레인지 n라인 20인치",
+      "national": 5470000
+    },
+    "현대자동차___더 뉴 아이오닉6 2wd 롱레인지 18인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 2wd 롱레인지 18인치",
+      "national": 5800000
+    },
+    "현대자동차___더 뉴 아이오닉6 2wd 롱레인지 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 2wd 롱레인지 20인치",
+      "national": 5800000
+    },
+    "현대자동차___더 뉴 아이오닉6 awd 롱레인지 18인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 awd 롱레인지 18인치",
+      "national": 5800000
+    },
+    "현대자동차___더 뉴 아이오닉6 awd 롱레인지 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 awd 롱레인지 20인치",
+      "national": 5630000
+    },
+    "현대자동차___더 뉴 아이오닉6 2wd 스탠다드 18인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 2wd 스탠다드 18인치",
+      "national": 5700000
+    },
+    "현대자동차___아이오닉6 N": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉6 N",
+      "national": 2550000
+    },
+    "기아___The all-new Kia Niro EV": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "The all-new Kia Niro EV",
+      "national": 5900000
+    },
+    "기아___EV9 롱레인지 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 롱레인지 2WD 19인치",
+      "national": 2750000
+    },
+    "기아___EV9 롱레인지 2WD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 롱레인지 2WD 20인치",
+      "national": 2730000
+    },
+    "기아___EV9 롱레인지 4WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 롱레인지 4WD 19인치",
+      "national": 2590000
+    },
+    "기아___EV9 롱레인지 4WD 21인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 롱레인지 4WD 21인치",
+      "national": 2650000
+    },
+    "기아___EV9 롱레인지 GTL 4WD 21인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 롱레인지 GTL 4WD 21인치",
+      "national": 2570000
+    },
+    "기아___더뉴EV6 롱레인지 4WD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 롱레인지 4WD 20인치",
+      "national": 6170000
+    },
+    "기아___더뉴EV6 롱레인지 2WD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 롱레인지 2WD 20인치",
+      "national": 6440000
+    },
+    "기아___더뉴EV6 롱레인지 4WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 롱레인지 4WD 19인치",
+      "national": 6460000
+    },
+    "기아___더뉴EV6 롱레인지 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 롱레인지 2WD 19인치",
+      "national": 6550000
+    },
+    "기아___EV3 롱레인지 2WD 17인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV3 롱레인지 2WD 17인치",
+      "national": 5650000
+    },
+    "기아___EV3 롱레인지 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV3 롱레인지 2WD 19인치",
+      "national": 5650000
+    },
+    "기아___EV3 스탠다드 2WD": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV3 스탠다드 2WD",
+      "national": 4790000
+    },
+    "기아___더뉴EV6 GT": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 GT",
+      "national": 2320000
+    },
+    "기아___더뉴EV6 스탠다드": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 스탠다드",
+      "national": 5820000
+    },
+    "기아___EV9 스탠다드": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 스탠다드",
+      "national": 2420000
+    },
+    "기아___EV4 롱레인지 GTL 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 롱레인지 GTL 2WD 19인치",
+      "national": 5650000
+    },
+    "기아___EV4 스탠다드 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 스탠다드 2WD 19인치",
+      "national": 4910000
+    },
+    "기아___EV4 롱레인지 2WD 17인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 롱레인지 2WD 17인치",
+      "national": 5650000
+    },
+    "기아___EV4 롱레인지 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 롱레인지 2WD 19인치",
+      "national": 5650000
+    },
+    "기아___EV4 스탠다드 2WD 17인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 스탠다드 2WD 17인치",
+      "national": 5220000
+    },
+    "기아___PV5 패신저 5인승 롱레인지": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "PV5 패신저 5인승 롱레인지",
+      "national": 4680000
+    },
+    "기아___EV5 롱레인지 2WD": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV5 롱레인지 2WD",
+      "national": 5620000
+    },
+    "르노코리아___scenic": {
+      "type": "일반승용",
+      "manufacturer": "르노코리아",
+      "model": "scenic",
+      "national": 4430000
+    },
+    "BMW___MINI Cooper SE": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI Cooper SE",
+      "national": 3030000
+    },
+    "BMW___i4 eDrive40": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "i4 eDrive40",
+      "national": 1890000
+    },
+    "BMW___i4 M50": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "i4 M50",
+      "national": 1720000
+    },
+    "BMW___iX1 xDrive30": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX1 xDrive30",
+      "national": 1540000
+    },
+    "BMW___i4 eDrive40 LCI": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "i4 eDrive40 LCI",
+      "national": 1870000
+    },
+    "BMW___iX2 eDrive20": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX2 eDrive20",
+      "national": 1670000
+    },
+    "BMW___MINI Countryman SE ALL4": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI Countryman SE ALL4",
+      "national": 1580000
+    },
+    "BMW___MINI Countryman E": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI Countryman E",
+      "national": 1660000
+    },
+    "BMW___MINI Aceman SE": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI Aceman SE",
+      "national": 3060000
+    },
+    "BMW___i4 M50 LCI": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "i4 M50 LCI",
+      "national": 1770000
+    },
+    "BMW___MINI JCW Aceman E": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI JCW Aceman E",
+      "national": 1510000
+    },
+    "BMW___MINI JCW E": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI JCW E",
+      "national": 1470000
+    },
+    "BMW___MINI Aceman E": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI Aceman E",
+      "national": 3060000
+    },
+    "BMW___ix1 edrive20": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "ix1 edrive20",
+      "national": 1660000
+    },
+    "BMW___i5 edrive 40": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "i5 edrive 40",
+      "national": 1980000
+    },
+    "테슬라코리아___(단종)Model 3 RWD(2024)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "(단종)Model 3 RWD(2024)",
+      "national": 1830000
+    },
+    "테슬라코리아___Model 3 Long Range": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 Long Range",
+      "national": 2020000
+    },
+    "테슬라코리아___(단종)Model Y RWD": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "(단종)Model Y RWD",
+      "national": 2010000
+    },
+    "테슬라코리아___(단종)Model Y Long Range": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "(단종)Model Y Long Range",
+      "national": 1840000
+    },
+    "테슬라코리아___(단종)Model Y Performance": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "(단종)Model Y Performance",
+      "national": 1910000
+    },
+    "테슬라코리아___Model 3 Performance": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 Performance",
+      "national": 1870000
+    },
+    "테슬라코리아___(단종)Model Y Long Range 19인치": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "(단종)Model Y Long Range 19인치",
+      "national": 2020000
+    },
+    "테슬라코리아___Model 3 RWD": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 RWD",
+      "national": 1860000
+    },
+    "테슬라코리아___(단종)New Model Y Long Range": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "(단종)New Model Y Long Range",
+      "national": 2070000
+    },
+    "테슬라코리아___New Model Y RWD": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "New Model Y RWD",
+      "national": 1880000
+    },
+    "테슬라코리아___New Model Y Long Range(배터리변경)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "New Model Y Long Range(배터리변경)",
+      "national": 2100000
+    },
+    "테슬라코리아___Model 3 Long Range(배터리변경)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 Long Range(배터리변경)",
+      "national": 2070000
+    },
+    "메르세데스벤츠코리아___(단종)EQB300 4MATIC(Pre-Facelift)(5인승)": {
+      "type": "일반승용",
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "(단종)EQB300 4MATIC(Pre-Facelift)(5인승)",
+      "national": 1520000
+    },
+    "메르세데스벤츠코리아___(단종)EQB300 4MATIC(Pre-Facelift)(7인승)": {
+      "type": "일반승용",
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "(단종)EQB300 4MATIC(Pre-Facelift)(7인승)",
+      "national": 1520000
+    },
+    "메르세데스벤츠코리아___EQA250(Facelift)": {
+      "type": "일반승용",
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "EQA250(Facelift)",
+      "national": 1900000
+    },
+    "메르세데스벤츠코리아___EQB300 4MATIC(Facelift)(5인승)": {
+      "type": "일반승용",
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "EQB300 4MATIC(Facelift)(5인승)",
+      "national": 1540000
+    },
+    "메르세데스벤츠코리아___EQB300 4MATIC(Facelift)(7인승)": {
+      "type": "일반승용",
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "EQB300 4MATIC(Facelift)(7인승)",
+      "national": 1540000
+    },
+    "폭스바겐그룹코리아___(단종)아우디 Q4 40 e-tron": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "(단종)아우디 Q4 40 e-tron",
+      "national": 2010000
+    },
+    "폭스바겐그룹코리아___(단종)아우디 Q4 Sportback 40 e-tron": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "(단종)아우디 Q4 Sportback 40 e-tron",
+      "national": 2020000
+    },
+    "폭스바겐그룹코리아___(단종)폭스바겐 2024 ID.4 Pro": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "(단종)폭스바겐 2024 ID.4 Pro",
+      "national": 4220000
+    },
+    "폭스바겐그룹코리아___(단종)폭스바겐 ID.5 Pro": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "(단종)폭스바겐 ID.5 Pro",
+      "national": 2150000
+    },
+    "폭스바겐그룹코리아___폭스바겐 ID.4 Pro": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "폭스바겐 ID.4 Pro",
+      "national": 4220000
+    },
+    "폭스바겐그룹코리아___아우디 Q4 Sportback 45 e-tron": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "아우디 Q4 Sportback 45 e-tron",
+      "national": 2010000
+    },
+    "폭스바겐그룹코리아___아우디 Q4 45 e-tron": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "아우디 Q4 45 e-tron",
+      "national": 2010000
+    },
+    "폭스바겐그룹코리아___아우디 Q6 e-tron performance": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "아우디 Q6 e-tron performance",
+      "national": 2200000
+    },
+    "케이지모빌리티___토레스 EVX 2WD 18인치": {
+      "type": "일반승용",
+      "manufacturer": "케이지모빌리티",
+      "model": "토레스 EVX 2WD 18인치",
+      "national": 3730000
+    },
+    "케이지모빌리티___토레스 EVX 2WD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "케이지모빌리티",
+      "model": "토레스 EVX 2WD 20인치",
+      "national": 3560000
+    },
+    "케이지모빌리티___코란도 EV 2WD": {
+      "type": "일반승용",
+      "manufacturer": "케이지모빌리티",
+      "model": "코란도 EV 2WD",
+      "national": 3400000
+    },
+    "케이지모빌리티___토레스 EVX 18인치": {
+      "type": "일반승용",
+      "manufacturer": "케이지모빌리티",
+      "model": "토레스 EVX 18인치",
+      "national": 3640000
+    },
+    "케이지모빌리티___토레스 EVX 20인치": {
+      "type": "일반승용",
+      "manufacturer": "케이지모빌리티",
+      "model": "토레스 EVX 20인치",
+      "national": 3540000
+    },
+    "폴스타오토모티브코리아___Polestar 4 Long Range Single Motor": {
+      "type": "일반승용",
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "Polestar 4 Long Range Single Motor",
+      "national": 1810000
+    },
+    "폴스타오토모티브코리아___Polestar 4 Long Range Dual Motor 22인치": {
+      "type": "일반승용",
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "Polestar 4 Long Range Dual Motor 22인치",
+      "national": 1410000
+    },
+    "폴스타오토모티브코리아___Polestar 4 Long Range Dual Motor 20, 21인치": {
+      "type": "일반승용",
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "Polestar 4 Long Range Dual Motor 20, 21인치",
+      "national": 1680000
+    },
+    "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+      "type": "일반승용",
+      "manufacturer": "볼보자동차코리아",
+      "model": "볼보 EX30 Single Motor ER",
+      "national": 2470000
+    },
+    "볼보자동차코리아___볼보 EX 30cc Twin": {
+      "type": "일반승용",
+      "manufacturer": "볼보자동차코리아",
+      "model": "볼보 EX 30cc Twin",
+      "national": 1110000
+    },
+    "비와이디코리아___BYD ATTO 3": {
+      "type": "일반승용",
+      "manufacturer": "비와이디코리아",
+      "model": "BYD ATTO 3",
+      "national": 1450000
+    },
+    "비와이디코리아___BYD seal dynamic awd": {
+      "type": "일반승용",
+      "manufacturer": "비와이디코리아",
+      "model": "BYD seal dynamic awd",
+      "national": 1780000
+    },
+    "비와이디코리아___BYD SEALION 7": {
+      "type": "일반승용",
+      "manufacturer": "비와이디코리아",
+      "model": "BYD SEALION 7",
+      "national": 1790000
+    },
+    "기아___레이 EV 2WD 14인치 4인승 승용": {
+      "type": "경·소형",
+      "manufacturer": "기아",
+      "model": "레이 EV 2WD 14인치 4인승 승용",
+      "national": 4570000
+    },
+    "기아___레이 EV 2WD 14인치 2인승 밴": {
+      "type": "경·소형",
+      "manufacturer": "기아",
+      "model": "레이 EV 2WD 14인치 2인승 밴",
+      "national": 4570000
+    },
+    "기아___레이 EV 2WD 14인치 1인승 밴": {
+      "type": "경·소형",
+      "manufacturer": "기아",
+      "model": "레이 EV 2WD 14인치 1인승 밴",
+      "national": 4570000
+    },
+    "현대자동차___캐스퍼 일렉트릭 항속형 17인치": {
+      "type": "경·소형",
+      "manufacturer": "현대자동차",
+      "model": "캐스퍼 일렉트릭 항속형 17인치",
+      "national": 5000000
+    },
+    "현대자동차___캐스퍼 일렉트릭 항속형 15인치": {
+      "type": "경·소형",
+      "manufacturer": "현대자동차",
+      "model": "캐스퍼 일렉트릭 항속형 15인치",
+      "national": 5000000
+    },
+    "현대자동차___캐스퍼 일렉트릭 기본형 15인치": {
+      "type": "경·소형",
+      "manufacturer": "현대자동차",
+      "model": "캐스퍼 일렉트릭 기본형 15인치",
+      "national": 5000000
+    },
+    "현대자동차___캐스퍼 일렉트릭 크로스 17인치": {
+      "type": "경·소형",
+      "manufacturer": "현대자동차",
+      "model": "캐스퍼 일렉트릭 크로스 17인치",
+      "national": 5000000
+    },
+    "쎄보모빌리티___(단종)CEVO-C SE": {
+      "type": "초소형",
+      "manufacturer": "쎄보모빌리티",
+      "model": "(단종)CEVO-C SE",
+      "national": 2000000
+    }
+  }
+}

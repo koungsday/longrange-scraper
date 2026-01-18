@@ -10,6 +10,61 @@ const TEST_MODE = false; // false = 전체 161개 지역
 const MAX_RETRIES = 3;
 
 // ==========================================
+// 데이터 정규화 유틸리티
+// ==========================================
+
+/**
+ * 차량 마스터 데이터 추출 (국고 보조금 포함)
+ * 첫 번째 성공한 지역에서 추출하여 재사용
+ */
+function extractVehicleMaster(allResults) {
+  const vehicles = {};
+
+  // 성공한 첫 번째 지역에서 차량 정보 추출
+  const firstSuccess = allResults.find(r => r.success && Object.keys(r.vehicles).length > 0);
+  if (!firstSuccess) return vehicles;
+
+  for (const [key, vehicle] of Object.entries(firstSuccess.vehicles)) {
+    vehicles[key] = {
+      type: vehicle.type,
+      manufacturer: vehicle.manufacturer,
+      model: vehicle.model,
+      national: vehicle.national  // 국고 보조금은 전국 동일
+    };
+  }
+
+  return vehicles;
+}
+
+/**
+ * 정규화된 지역별 보조금 데이터 생성
+ * 지자체 보조금(local)만 저장하여 크기 대폭 감소
+ */
+function normalizeSubsidies(allResults) {
+  const regions = {};
+
+  for (const result of allResults) {
+    const regionKey = String(result.code);
+
+    // 지역별 지자체 보조금만 추출
+    const subsidies = {};
+    for (const [vehicleKey, vehicle] of Object.entries(result.vehicles)) {
+      subsidies[vehicleKey] = vehicle.local;  // 지자체 보조금만
+    }
+
+    regions[regionKey] = {
+      parentName: result.parentName,
+      localName: result.localName,
+      code: result.code,
+      success: result.success,
+      subsidies: subsidies
+    };
+  }
+
+  return regions;
+}
+
+// ==========================================
 // 1. 지역 목록 가져오기
 // ==========================================
 async function getAllRegions() {
@@ -253,21 +308,76 @@ async function main() {
     
     // 저장
     await fs.mkdir('data', { recursive: true });
-    
-    const outputData = {
-      timestamp: new Date().toISOString(),
+
+    const timestamp = new Date().toISOString();
+
+    // ==========================================
+    // 1. 차량 마스터 데이터 (vehicles.json)
+    // ==========================================
+    const vehicleMaster = extractVehicleMaster(results);
+    const vehiclesData = {
+      timestamp: timestamp,
+      total_vehicles: Object.keys(vehicleMaster).length,
+      vehicles: vehicleMaster
+    };
+
+    await fs.writeFile(
+      'data/vehicles.json',
+      JSON.stringify(vehiclesData, null, 2)
+    );
+
+    const vehiclesSize = JSON.stringify(vehiclesData).length;
+    console.log(`💾 data/vehicles.json 저장 완료 (${(vehiclesSize / 1024).toFixed(1)}KB, ${Object.keys(vehicleMaster).length}개 차종)`);
+
+    // ==========================================
+    // 2. 정규화된 보조금 데이터 (subsidies.json)
+    // ==========================================
+    const normalizedRegions = normalizeSubsidies(results);
+    const normalizedData = {
+      timestamp: timestamp,
+      total_regions: results.length,
+      success_count: success,
+      failed_count: failed,
+      regions: normalizedRegions
+    };
+
+    await fs.writeFile(
+      'data/subsidies.json',
+      JSON.stringify(normalizedData, null, 2)
+    );
+
+    const subsidiesSize = JSON.stringify(normalizedData).length;
+    console.log(`💾 data/subsidies.json 저장 완료 (${(subsidiesSize / 1024).toFixed(1)}KB, 정규화됨)`);
+
+    // ==========================================
+    // 3. 레거시 형식 (subsidies-legacy.json) - 하위 호환성
+    // ==========================================
+    const legacyData = {
+      timestamp: timestamp,
       total_regions: results.length,
       success_count: success,
       failed_count: failed,
       data: results
     };
-    
+
     await fs.writeFile(
-      'data/subsidies.json',
-      JSON.stringify(outputData, null, 2)
+      'data/subsidies-legacy.json',
+      JSON.stringify(legacyData, null, 2)
     );
-    
-    console.log('💾 data/subsidies.json 저장 완료');
+
+    const legacySize = JSON.stringify(legacyData).length;
+    console.log(`💾 data/subsidies-legacy.json 저장 완료 (${(legacySize / 1024).toFixed(1)}KB, 레거시)`);
+
+    // ==========================================
+    // 크기 비교 출력
+    // ==========================================
+    const totalNewSize = vehiclesSize + subsidiesSize;
+    const reduction = ((1 - totalNewSize / legacySize) * 100).toFixed(1);
+    console.log('');
+    console.log('📊 데이터 크기 비교:');
+    console.log(`   레거시: ${(legacySize / 1024 / 1024).toFixed(2)}MB`);
+    console.log(`   정규화: ${(totalNewSize / 1024 / 1024).toFixed(2)}MB (vehicles + subsidies)`);
+    console.log(`   감소율: ${reduction}%`);
     
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
     console.log(`⏱️ 총 소요 시간: ${elapsed}초`);
