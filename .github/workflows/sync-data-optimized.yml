@@ -119,6 +119,34 @@ jobs:
           echo "✅ Data synced and deployed to Vercel"
 
       # ========================================
+      # 5.5. Redis 일별 스냅샷 저장
+      # ========================================
+      - name: Save daily quota snapshots to Redis
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          echo "📊 Saving daily quota snapshots to Redis..."
+          
+          # API 호출
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            "${{ secrets.KOUNGS_DAY_WEB_URL }}/api/quota/sync" \
+            -H "Authorization: Bearer ${{ secrets.SYNC_SECRET }}" \
+            -H "Content-Type: application/json" \
+            --max-time 30)
+          
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+          
+          echo "Response: $BODY"
+          
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "⚠️ Snapshot sync failed (HTTP $HTTP_CODE), but continuing..."
+            echo "   This won't block data sync. Snapshots will be saved next time."
+          else
+            echo "✅ Daily snapshots saved successfully"
+            echo "   Data will be available for trend charts"
+          fi
+
+      # ========================================
       # 6. 결과 로그
       # ========================================
       - name: Log sync result
