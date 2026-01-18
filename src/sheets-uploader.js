@@ -287,7 +287,8 @@ async function uploadToSheets() {
   console.log('📊 Google Sheets 업로드 시작');
   
   try {
-    const jsonData = await fs.readFile('data/subsidies.json', 'utf8');
+    // 레거시 형식 사용 (Google Sheets 업로드용)
+    const jsonData = await fs.readFile('data/subsidies-legacy.json', 'utf8');
     const scrapedData = JSON.parse(jsonData);
     
     console.log(`✅ ${scrapedData.data.length}개 지역 데이터 로드`);

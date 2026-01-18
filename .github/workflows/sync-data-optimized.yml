@@ -42,9 +42,10 @@ jobs:
           # public/data 폴더 확인/생성
           mkdir -p web/public/data
 
-          # quota.json, subsidies.json 복사
+          # 정규화된 데이터 파일 복사
           cp scraper/data/quota.json web/public/data/ || echo "⚠️ quota.json not found"
           cp scraper/data/subsidies.json web/public/data/ || echo "⚠️ subsidies.json not found"
+          cp scraper/data/vehicles.json web/public/data/ || echo "⚠️ vehicles.json not found"
 
           # 복사된 파일 확인
           echo "📁 Files in web/public/data/:"
@@ -58,7 +59,7 @@ jobs:
         working-directory: web
         run: |
           # Git diff로 실제 변경 확인
-          if git diff --quiet public/data/quota.json public/data/subsidies.json; then
+          if git diff --quiet public/data/quota.json public/data/subsidies.json public/data/vehicles.json 2>/dev/null; then
             # 변경 없음
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "ℹ️ No data changes detected"
@@ -78,6 +79,11 @@ jobs:
               echo "  📝 subsidies.json changed"
               git diff --stat public/data/subsidies.json
             fi
+
+            if ! git diff --quiet public/data/vehicles.json 2>/dev/null; then
+              echo "  📝 vehicles.json changed"
+              git diff --stat public/data/vehicles.json
+            fi
           fi
 
       # ========================================
@@ -93,7 +99,7 @@ jobs:
           git config user.email "actions@github.com"
 
           # 변경된 파일만 add
-          git add public/data/quota.json public/data/subsidies.json
+          git add public/data/quota.json public/data/subsidies.json public/data/vehicles.json
 
           # 커밋 메시지 생성
           git commit -m "chore: Auto-update scraper data
@@ -102,7 +108,8 @@ jobs:
 
           Data sources:
             - Quota: 무공해차 누리집 (할당량)
-            - Subsidies: 무공해차 누리집 (보조금)
+            - Vehicles: 차량 마스터 (국고 보조금)
+            - Subsidies: 지역별 지자체 보조금 (정규화)
 
           Synced from koungsday/longrange-scraper @ ${{ github.sha }}"
 
