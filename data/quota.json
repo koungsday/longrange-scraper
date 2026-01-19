@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-19T05:22:58.871Z",
+  "timestamp": "2026-01-19T06:22:18.793Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -948,12 +948,12 @@
         {
           "sido": "경기",
           "region": "연천군",
-          "vehicleType": "",
-          "quota_total": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 55,
           "quota_priority": 0,
           "quota_corporate": 0,
           "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_general": 55,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -969,7 +969,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 0,
-          "note": ""
+          "note": "「2026년 전기자동차 구매지원 사업 상반기 공고」. 1. 사업기간: 2026. 01. 22.(목) 09:00 ~ 2025. 6. 30.(화) 18:00 2. 사업내용: 전기자동차를 구매하는 자에게 예산의 범위 내에서 보조금 지원 3. 보급대수(상반기): 승용 55대, 화물 20대, 승합1대 - 보급대수는 차종별 보조금 차등 지원 및 국비 추가 지급 등에 따라 변동될 수 있으며 변경 시 추가 공고를 통해 알려드립니다. 4. 지원대상: 공고문 참고"
         },
         {
           "sido": "경기",
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-19T05:22:58.770Z"
+      "timestamp": "2026-01-19T06:22:18.690Z"
     }
   ]
 }
