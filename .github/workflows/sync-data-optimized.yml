@@ -123,21 +123,67 @@ jobs:
       # ========================================
       - name: Save daily quota snapshots to Redis
         if: steps.check_changes.outputs.changed == 'true'
+        continue-on-error: true
         run: |
           echo "📊 Saving daily quota snapshots to Redis..."
-          
-          # API 호출
+
+          # Secrets 검증
+          if [ -z "${{ secrets.KOUNGS_DAY_WEB_URL }}" ]; then
+            echo "⚠️ KOUNGS_DAY_WEB_URL secret not configured"
+            echo "   Please set it in repository Settings > Secrets and variables > Actions"
+            echo "   Example: https://your-web-app.vercel.app"
+            exit 0
+          fi
+
+          if [ -z "${{ secrets.SYNC_SECRET }}" ]; then
+            echo "⚠️ SYNC_SECRET secret not configured"
+            echo "   Please set it in repository Settings > Secrets and variables > Actions"
+            exit 0
+          fi
+
+          echo "✓ Secrets configured, proceeding with API call..."
+
+          # API 호출 (에러 발생 시에도 계속 진행)
+          set +e
           RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
             "${{ secrets.KOUNGS_DAY_WEB_URL }}/api/quota/sync" \
             -H "Authorization: Bearer ${{ secrets.SYNC_SECRET }}" \
             -H "Content-Type: application/json" \
-            --max-time 30)
-          
+            --max-time 30 2>&1)
+          CURL_EXIT_CODE=$?
+          set -e
+
+          # curl 명령 자체 실패 확인
+          if [ $CURL_EXIT_CODE -ne 0 ]; then
+            echo "⚠️ curl command failed (exit code: $CURL_EXIT_CODE)"
+            case $CURL_EXIT_CODE in
+              3)
+                echo "   Malformed URL - check KOUNGS_DAY_WEB_URL format"
+                echo "   Current URL pattern: ${{ secrets.KOUNGS_DAY_WEB_URL }}/api/quota/sync"
+                ;;
+              6)
+                echo "   Could not resolve host - DNS issue or wrong URL"
+                ;;
+              7)
+                echo "   Failed to connect to host"
+                ;;
+              28)
+                echo "   Timeout after 30 seconds"
+                ;;
+              *)
+                echo "   See curl exit codes: https://curl.se/docs/manpage.html#EXIT"
+                ;;
+            esac
+            echo "   Response: $RESPONSE"
+            exit 0
+          fi
+
+          # HTTP 응답 코드 확인
           HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
           BODY=$(echo "$RESPONSE" | sed '$d')
-          
+
           echo "Response: $BODY"
-          
+
           if [ "$HTTP_CODE" != "200" ]; then
             echo "⚠️ Snapshot sync failed (HTTP $HTTP_CODE), but continuing..."
             echo "   This won't block data sync. Snapshots will be saved next time."
