@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-20T08:17:00.302Z",
+  "timestamp": "2026-01-20T09:22:35.851Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1676,12 +1676,12 @@
         {
           "sido": "충북",
           "region": "진천군",
-          "vehicleType": "",
-          "quota_total": 0,
-          "quota_priority": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 800,
+          "quota_priority": 100,
           "quota_corporate": 0,
-          "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_taxi": 30,
+          "quota_general": 670,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-20T08:17:00.223Z"
+      "timestamp": "2026-01-20T09:22:35.752Z"
     }
   ]
 }
