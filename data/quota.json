@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-21T00:53:08.396Z",
+  "timestamp": "2026-01-21T02:53:46.153Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1546,12 +1546,12 @@
         {
           "sido": "충북",
           "region": "제천시",
-          "vehicleType": "",
-          "quota_total": 0,
-          "quota_priority": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 800,
+          "quota_priority": 80,
           "quota_corporate": 0,
-          "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_taxi": 40,
+          "quota_general": 680,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -1567,7 +1567,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 0,
-          "note": ""
+          "note": "2026년 전기자동차 보급사업을 다음과 같이 공고 하고자 합니다. □ 2026년 전기자동차 보급사업 안내 ○ 공 고 일 : 2026. 1. 21.(수) ○ 접수기간 : 2026. 1. 23.(금) ~ 예산소진 시 까지 ○ 보급대수 : 956대(승용 800, 화물 150, 승합 6) ○ 대상자선정기준 : 자동차 출고·등록 순 ※ 세부사항은 첨부된 공고문 참조 붙임 1. 2026년 전기자동차 보급사업 공고문 1부. 2. 차종별 지원 단가 1부. 끝."
         },
         {
           "sido": "충북",
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-21T00:53:08.286Z"
+      "timestamp": "2026-01-21T02:53:46.063Z"
     }
   ]
 }
