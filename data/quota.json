@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-21T04:01:04.431Z",
+  "timestamp": "2026-01-21T05:20:25.337Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -612,10 +612,10 @@
           "region": "군포시",
           "vehicleType": "전기승용",
           "quota_total": 750,
-          "quota_priority": 75,
+          "quota_priority": 60,
           "quota_corporate": 0,
-          "quota_taxi": 75,
-          "quota_general": 600,
+          "quota_taxi": 23,
+          "quota_general": 667,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -1520,12 +1520,12 @@
         {
           "sido": "충북",
           "region": "충주시",
-          "vehicleType": "",
-          "quota_total": 0,
-          "quota_priority": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 959,
+          "quota_priority": 120,
           "quota_corporate": 0,
-          "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_taxi": 120,
+          "quota_general": 719,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-21T04:01:04.300Z"
+      "timestamp": "2026-01-21T05:20:25.223Z"
     }
   ]
 }
