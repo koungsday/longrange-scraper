@@ -33,7 +33,7 @@ jobs:
           path: web
 
       # ========================================
-      # 3. 데이터 파일 복사
+      # 3. 데이터 파일 복사 (연도별 폴더 지원)
       # ========================================
       - name: Copy scraped data to web repo
         run: |
@@ -42,14 +42,25 @@ jobs:
           # public/data 폴더 확인/생성
           mkdir -p web/public/data
 
-          # 정규화된 데이터 파일 복사
+          # quota.json (실시간 데이터)
           cp scraper/data/quota.json web/public/data/ || echo "⚠️ quota.json not found"
-          cp scraper/data/subsidies.json web/public/data/ || echo "⚠️ subsidies.json not found"
-          cp scraper/data/vehicles.json web/public/data/ || echo "⚠️ vehicles.json not found"
+
+          # years.json (사용 가능한 연도 목록)
+          cp scraper/data/years.json web/public/data/ || echo "⚠️ years.json not found"
+
+          # 연도별 폴더 복사 (2025, 2026, ...)
+          for year_dir in scraper/data/20*/; do
+            if [ -d "$year_dir" ]; then
+              year=$(basename "$year_dir")
+              echo "📁 Copying $year data..."
+              mkdir -p "web/public/data/$year"
+              cp "$year_dir"*.json "web/public/data/$year/" 2>/dev/null || echo "  ⚠️ No JSON files in $year"
+            fi
+          done
 
           # 복사된 파일 확인
           echo "📁 Files in web/public/data/:"
-          ls -lh web/public/data/
+          ls -lhR web/public/data/
 
       # ========================================
       # 4. 변경사항 감지 (핵심!)
@@ -58,8 +69,8 @@ jobs:
         id: check_changes
         working-directory: web
         run: |
-          # Git diff로 실제 변경 확인
-          if git diff --quiet public/data/quota.json public/data/subsidies.json public/data/vehicles.json 2>/dev/null; then
+          # Git diff로 실제 변경 확인 (전체 data 폴더)
+          if git diff --quiet public/data/ 2>/dev/null && [ -z "$(git ls-files --others --exclude-standard public/data/)" ]; then
             # 변경 없음
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "ℹ️ No data changes detected"
@@ -69,21 +80,9 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
             echo "✅ Data changes detected:"
 
-            # 어떤 파일이 변경되었는지 로그
-            if ! git diff --quiet public/data/quota.json 2>/dev/null; then
-              echo "  📝 quota.json changed"
-              git diff --stat public/data/quota.json
-            fi
-
-            if ! git diff --quiet public/data/subsidies.json 2>/dev/null; then
-              echo "  📝 subsidies.json changed"
-              git diff --stat public/data/subsidies.json
-            fi
-
-            if ! git diff --quiet public/data/vehicles.json 2>/dev/null; then
-              echo "  📝 vehicles.json changed"
-              git diff --stat public/data/vehicles.json
-            fi
+            # 변경된 파일 목록 표시
+            git diff --stat public/data/ 2>/dev/null || true
+            git ls-files --others --exclude-standard public/data/ || true
           fi
 
       # ========================================
@@ -98,8 +97,8 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
 
-          # 변경된 파일만 add
-          git add public/data/quota.json public/data/subsidies.json public/data/vehicles.json
+          # 모든 data 폴더 변경사항 add (연도별 폴더 포함)
+          git add public/data/
 
           # 커밋 메시지 생성
           git commit -m "chore: Auto-update scraper data
@@ -108,8 +107,9 @@ jobs:
 
           Data sources:
             - Quota: 무공해차 누리집 (할당량)
-            - Vehicles: 차량 마스터 (국고 보조금)
-            - Subsidies: 지역별 지자체 보조금 (정규화)
+            - Years: 사용 가능한 연도 목록
+            - Vehicles: 차량 마스터 (연도별, 국고 보조금)
+            - Subsidies: 지역별 지자체 보조금 (연도별, 정규화)
 
           Synced from koungsday/longrange-scraper @ ${{ github.sha }}"
 

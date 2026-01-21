@@ -9,6 +9,9 @@ const SPREADSHEET_ID = process.env.GOOGLE_SHEETS_ID || '1gph0IVQqaykAvYyo4QX875x
 const SHEET_NAME_ALL = 'Subsidy Data_ALL';
 const SHEET_NAME_FAIL = 'Fail Data';
 
+// 연도 자동 계산 (한국 시간 기준)
+const CURRENT_YEAR = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' })).getFullYear();
+
 // ==========================================
 // 1. 이전 데이터 읽기 (실패 시 재활용)
 // ==========================================
@@ -287,11 +290,14 @@ async function uploadToSheets() {
   console.log('📊 Google Sheets 업로드 시작');
   
   try {
-    // 레거시 형식 사용 (Google Sheets 업로드용)
-    const jsonData = await fs.readFile('data/subsidies-legacy.json', 'utf8');
+    // 레거시 형식 사용 (Google Sheets 업로드용) - 연도별 폴더
+    const dataPath = `data/${CURRENT_YEAR}/subsidies-legacy.json`;
+    console.log(`📁 데이터 경로: ${dataPath}`);
+
+    const jsonData = await fs.readFile(dataPath, 'utf8');
     const scrapedData = JSON.parse(jsonData);
-    
-    console.log(`✅ ${scrapedData.data.length}개 지역 데이터 로드`);
+
+    console.log(`✅ ${CURRENT_YEAR}년 ${scrapedData.data.length}개 지역 데이터 로드`);
     
     const serviceAccountAuth = new JWT({
       email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
