@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-22T06:18:45.926Z",
+  "timestamp": "2026-01-22T07:18:34.979Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1682,11 +1682,11 @@
           "quota_corporate": 0,
           "quota_taxi": 30,
           "quota_general": 670,
-          "registered_total": 66,
-          "registered_priority": 17,
+          "registered_total": 74,
+          "registered_priority": 18,
           "registered_corporate": 2,
           "registered_taxi": 1,
-          "registered_general": 46,
+          "registered_general": 53,
           "delivered_total": 0,
           "delivered_priority": 0,
           "delivered_corporate": 0,
@@ -2696,8 +2696,8 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 70,
-          "registered_total": 23,
-          "registered_priority": 6,
+          "registered_total": 24,
+          "registered_priority": 7,
           "registered_corporate": 1,
           "registered_taxi": 0,
           "registered_general": 16,
@@ -3132,12 +3132,12 @@
         {
           "sido": "경북",
           "region": "경주시",
-          "vehicleType": "",
-          "quota_total": 0,
-          "quota_priority": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 972,
+          "quota_priority": 97,
           "quota_corporate": 0,
-          "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_taxi": 48,
+          "quota_general": 827,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-22T06:18:45.777Z"
+      "timestamp": "2026-01-22T07:18:34.893Z"
     }
   ]
 }
