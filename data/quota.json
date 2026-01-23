@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-23T11:11:43.335Z",
+  "timestamp": "2026-01-23T12:21:47.729Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3574,12 +3574,12 @@
         {
           "sido": "경북",
           "region": "예천군",
-          "vehicleType": "",
-          "quota_total": 0,
-          "quota_priority": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 100,
+          "quota_priority": 10,
           "quota_corporate": 0,
-          "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_taxi": 5,
+          "quota_general": 85,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 284,
+          "registered_total": 296,
           "registered_priority": 0,
-          "registered_corporate": 278,
+          "registered_corporate": 290,
           "registered_taxi": 2,
           "registered_general": 4,
           "delivered_total": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-23T11:11:43.239Z"
+      "timestamp": "2026-01-23T12:21:47.660Z"
     }
   ]
 }
