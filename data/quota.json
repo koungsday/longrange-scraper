@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-25T22:10:25.254Z",
+  "timestamp": "2026-01-25T23:10:29.416Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -90,12 +90,12 @@
         {
           "sido": "인천",
           "region": "인천광역시",
-          "vehicleType": "",
-          "quota_total": 0,
-          "quota_priority": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 6160,
+          "quota_priority": 880,
           "quota_corporate": 0,
-          "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_taxi": 440,
+          "quota_general": 4840,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -111,7 +111,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 0,
-          "note": ""
+          "note": "2026년 전기자동차 민간보급사업과 관련하여 안내드립니다 2026년 전기승용차 보급대수 : 8,800대 - 1차 상반기 6,160대(70%) - 2차 하반기 2,640대(30%) - 신청접수는 1. 29.(목) 또는 1. 30.(금) 09:00부터 실시할 예정입니다 - 정확한 날짜는 공고 올릴때 다시 공지하도록 하겠습니다 - 공고는 접수 시작일 기준 1~2일 전에 올리도록 하겠습니다."
         },
         {
           "sido": "광주",
@@ -168,12 +168,12 @@
         {
           "sido": "울산",
           "region": "울산광역시",
-          "vehicleType": "",
-          "quota_total": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 1726,
           "quota_priority": 0,
           "quota_corporate": 0,
           "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_general": 1726,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -189,7 +189,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 0,
-          "note": ""
+          "note": "<2026년 상반기 전기자동차(승용) 보급사업 안내> ○ 접수기간 : 2026. 1. 26.(월) 09:00 ~ 6. 30.(화) 예산소진시 조기마감 ○ 보급대수 : 1,736대   * 차량별 보조금 차등 지원에 따라 예산 범위 내에서 변동 될 수 있음 ○ 선정기준 : 자동차 출고·등록 순 ○ 신청방법 : 10일 이내 출고 확정된 건에 대해서만 신청 가능(*자격부여 단계 생략하고 대상자 선정) * 모든 증빙자료는 신청일 기준 30일 이내 발급된 서류여야 함 ○ 신청자격 : 울산시민(개인 및 개인사업자), 울산시 주소의 법인 사업자 등 * 신청일 전 60일 이상 거주 및 설립 등 ○ 보급기준 : 개인·개인사업자, 법인·기관 1대 , 법인택시 5대 * 기타 자세한 내용 공고문 참조 * 지원신청서 및 보조금 지급신청시 첨부파일은 1개의 PDF파일로 저장하여 업로드 바랍니다.(원본 제출 불필요) * 구매지원신청서 접수~지원대상자 확정통보까지 순차적으로 처리 예정 * 빠른 처리를 위해 가능한 전화문의 자제 부탁드립니다."
         },
         {
           "sido": "세종",
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-25T22:10:25.136Z"
+      "timestamp": "2026-01-25T23:10:29.324Z"
     }
   ]
 }
