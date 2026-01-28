@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-28T09:41:02.058Z",
+  "timestamp": "2026-01-28T10:37:00.558Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,11 +18,11 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8060,
-          "registered_total": 1486,
+          "registered_total": 1487,
           "registered_priority": 527,
           "registered_corporate": 47,
           "registered_taxi": 0,
-          "registered_general": 912,
+          "registered_general": 913,
           "delivered_total": 0,
           "delivered_priority": 0,
           "delivered_corporate": 0,
@@ -137,7 +137,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 0,
-          "note": "o 접수기간 : '26.1.30.(금)~ 12.4.(금)   ※ 예산소진시까지 o 보급대수 : 총 2,279대(승용 1,930대, 화물 330대, 승합 19대) * (본공고1) 공고문  (본공고2) 차종별 국시비 보조금 ★ 접수 후 빠른 처리를 위해 단순 접수 알림, 처리 독촉 전화는 자제 부탁드립니다."
+          "note": "o 접수기간 : '26.1.30.(금)~ 12.4.(금)   ※ 예산소진시까지 o 보급대수 : 총 2,279대(승용 1,930대, 화물 330대, 승합 19대) * (본공고1) 공고문  (본공고2) 차종별 국시비 보조금(26.1.29.기준 전환지원금 수정됨) ★ 접수 후 빠른 처리를 위해 단순 접수 알림, 처리 독촉 전화는 자제 부탁드립니다."
         },
         {
           "sido": "대전",
@@ -148,11 +148,11 @@
           "quota_corporate": 0,
           "quota_taxi": 46,
           "quota_general": 786,
-          "registered_total": 367,
+          "registered_total": 368,
           "registered_priority": 98,
           "registered_corporate": 6,
           "registered_taxi": 51,
-          "registered_general": 212,
+          "registered_general": 213,
           "delivered_total": 0,
           "delivered_priority": 0,
           "delivered_corporate": 0,
@@ -3185,11 +3185,11 @@
           "sido": "경북",
           "region": "안동시",
           "vehicleType": "전기승용",
-          "quota_total": 640,
-          "quota_priority": 64,
+          "quota_total": 320,
+          "quota_priority": 32,
           "quota_corporate": 0,
-          "quota_taxi": 6,
-          "quota_general": 570,
+          "quota_taxi": 3,
+          "quota_general": 285,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 1515,
+          "registered_total": 1520,
           "registered_priority": 1,
-          "registered_corporate": 1499,
+          "registered_corporate": 1504,
           "registered_taxi": 6,
           "registered_general": 9,
           "delivered_total": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-28T09:41:01.983Z"
+      "timestamp": "2026-01-28T10:37:00.478Z"
     }
   ]
 }
