@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-28T13:05:37.850Z",
+  "timestamp": "2026-01-28T14:03:03.293Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1053,11 +1053,11 @@
           "sido": "강원",
           "region": "원주시",
           "vehicleType": "전기승용",
-          "quota_total": 1300,
+          "quota_total": 1200,
           "quota_priority": 150,
           "quota_corporate": 0,
           "quota_taxi": 50,
-          "quota_general": 1100,
+          "quota_general": 1000,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -1073,7 +1073,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 0,
-          "note": "○ 전기승용 신청접수 예정일 : 2026. 2. 3.(화) 09:00 (공고 예정일 : 1. 29.(목) / 세부 사항은 추후 공고문 확인) ○ 연간 총 보급대수 1,840대 / 상반기 1,300대, 하반기 540대 - 보급대수는 차종별 보조금 차등 지원 및 국비 추가 지급 등에 따라 변동될 수 있습니다."
+          "note": "○ 전기승용 신청접수 예정일 : 2026. 2. 3.(화) 09:00 (공고 예정일 : 1. 29.(목) / 세부 사항은 추후 공고문 확인) ○ 연간 총 보급대수 1,840대 / 상반기 1,200대, 하반기 640대 - 보급대수는 차종별 보조금 차등 지원 및 국비 추가 지급 등에 따라 변동될 수 있습니다."
         },
         {
           "sido": "강원",
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-28T13:05:37.777Z"
+      "timestamp": "2026-01-28T14:03:03.221Z"
     }
   ]
 }
