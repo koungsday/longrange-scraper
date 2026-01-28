@@ -119,16 +119,21 @@ jobs:
           echo "✅ Data synced and deployed to Vercel"
 
       # ========================================
-      # 5.5. Redis 일별 스냅샷 저장
+      # 5.5. Redis 일별 스냅샷 저장 (항상 실행)
       # ========================================
       - name: Save daily quota snapshots to Redis
-        if: steps.check_changes.outputs.changed == 'true'
         run: |
           echo "📊 Saving daily quota snapshots to Redis..."
           
+          # URL 설정 (secret이 없으면 기본값)
+          API_URL="${{ secrets.KOUNGS_DAY_WEB_URL }}"
+          if [ -z "$API_URL" ]; then
+            API_URL="https://www.vw-k.com"
+          fi
+          
           # API 호출
           RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
-            "${{ secrets.KOUNGS_DAY_WEB_URL }}/api/quota/sync" \
+            "${API_URL}/api/quota/sync" \
             -H "Authorization: Bearer ${{ secrets.SYNC_SECRET }}" \
             -H "Content-Type: application/json" \
             --max-time 30)
@@ -145,6 +150,7 @@ jobs:
             echo "✅ Daily snapshots saved successfully"
             echo "   Data will be available for trend charts"
           fi
+
 
       # ========================================
       # 6. 결과 로그
