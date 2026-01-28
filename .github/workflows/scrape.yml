@@ -74,19 +74,14 @@ jobs:
       - name: Run scraper
         run: node src/scraper.js
         
-      - name: Upload to Google Sheets
-        env:
-          GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
-          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
-          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
-        run: node src/sheets-uploader.js
-        
       - name: Upload results as artifact
         uses: actions/upload-artifact@v4
         with:
           name: subsidy-results
           path: |
-            data/subsidies.json
+            data/*/subsidies.json
+            data/*/vehicles.json
+            data/years.json
             data/debug-subsidy-*.html
           retention-days: 30
           
@@ -97,8 +92,8 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-          # 생성된 json 파일을 커밋 대상으로 추가
-          git add data/subsidies.json
+          # 연도별 데이터 파일과 years.json을 커밋 대상으로 추가
+          git add data/*/subsidies.json data/*/vehicles.json data/*/subsidies-legacy.json data/years.json || true
 
           # 변경 사항이 있는지 확인
           if ! git diff --quiet --staged; then

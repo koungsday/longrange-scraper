@@ -1,0 +1,168 @@
+name: Sync Data to koungs-day-web (Optimized)
+
+on:
+  workflow_run:
+    # Quota, Subsidies 스크래퍼 완료 후 실행
+    workflows: ["EV Quota Scraper", "EV Subsidy Scraper"]
+    types: [completed]
+
+  # 수동 테스트용
+  workflow_dispatch:
+
+jobs:
+  sync-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ========================================
+      # 1. 스크래퍼 리포 체크아웃
+      # ========================================
+      - name: Checkout scraper repository
+        uses: actions/checkout@v4
+        with:
+          path: scraper
+
+      # ========================================
+      # 2. 웹 리포 체크아웃
+      # ========================================
+      - name: Checkout koungs-day-web repository
+        uses: actions/checkout@v4
+        with:
+          repository: koungsday/koungs-day-web
+          token: ${{ secrets.PAT_TOKEN }}
+          path: web
+
+      # ========================================
+      # 3. 데이터 파일 복사 (연도별 폴더 지원)
+      # ========================================
+      - name: Copy scraped data to web repo
+        run: |
+          echo "📥 Copying scraped data..."
+
+          # public/data 폴더 확인/생성
+          mkdir -p web/public/data
+
+          # quota.json (실시간 데이터)
+          cp scraper/data/quota.json web/public/data/ || echo "⚠️ quota.json not found"
+
+          # years.json (사용 가능한 연도 목록)
+          cp scraper/data/years.json web/public/data/ || echo "⚠️ years.json not found"
+
+          # 연도별 폴더 복사 (2025, 2026, ...)
+          for year_dir in scraper/data/20*/; do
+            if [ -d "$year_dir" ]; then
+              year=$(basename "$year_dir")
+              echo "📁 Copying $year data..."
+              mkdir -p "web/public/data/$year"
+              cp "$year_dir"*.json "web/public/data/$year/" 2>/dev/null || echo "  ⚠️ No JSON files in $year"
+            fi
+          done
+
+          # 복사된 파일 확인
+          echo "📁 Files in web/public/data/:"
+          ls -lhR web/public/data/
+
+      # ========================================
+      # 4. 변경사항 감지 (핵심!)
+      # ========================================
+      - name: Check if data actually changed
+        id: check_changes
+        working-directory: web
+        run: |
+          # Git diff로 실제 변경 확인 (전체 data 폴더)
+          if git diff --quiet public/data/ 2>/dev/null && [ -z "$(git ls-files --others --exclude-standard public/data/)" ]; then
+            # 변경 없음
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No data changes detected"
+            echo "💡 Skipping commit to save Vercel deployment!"
+          else
+            # 변경 있음
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "✅ Data changes detected:"
+
+            # 변경된 파일 목록 표시
+            git diff --stat public/data/ 2>/dev/null || true
+            git ls-files --others --exclude-standard public/data/ || true
+          fi
+
+      # ========================================
+      # 5. 조건부 커밋 (변경 있을 때만!)
+      # ========================================
+      - name: Commit and push ONLY if data changed
+        if: steps.check_changes.outputs.changed == 'true'
+        working-directory: web
+        run: |
+          echo "📤 Committing changes to koungs-day-web..."
+
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+
+          # 모든 data 폴더 변경사항 add (연도별 폴더 포함)
+          git add public/data/
+
+          # 커밋 메시지 생성
+          git commit -m "chore: Auto-update scraper data
+
+          Updated at: $(date -u +'%Y-%m-%d %H:%M:%S UTC')
+
+          Data sources:
+            - Quota: 무공해차 누리집 (할당량)
+            - Years: 사용 가능한 연도 목록
+            - Vehicles: 차량 마스터 (연도별, 국고 보조금)
+            - Subsidies: 지역별 지자체 보조금 (연도별, 정규화)
+
+          Synced from koungsday/longrange-scraper @ ${{ github.sha }}"
+
+          # Push
+          git push
+
+          echo "✅ Data synced and deployed to Vercel"
+
+      # ========================================
+      # 5.5. Redis 일별 스냅샷 저장 (항상 실행)
+      # ========================================
+      - name: Save daily quota snapshots to Redis
+        run: |
+          echo "📊 Saving daily quota snapshots to Redis..."
+          
+          # URL 설정 (secret이 없으면 기본값)
+          API_URL="${{ secrets.KOUNGS_DAY_WEB_URL }}"
+          if [ -z "$API_URL" ]; then
+            API_URL="https://www.vw-k.com"
+          fi
+          
+          # API 호출
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            "${API_URL}/api/quota/sync" \
+            -H "Authorization: Bearer ${{ secrets.SYNC_SECRET }}" \
+            -H "Content-Type: application/json" \
+            --max-time 30)
+          
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+          
+          echo "Response: $BODY"
+          
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "⚠️ Snapshot sync failed (HTTP $HTTP_CODE), but continuing..."
+            echo "   This won't block data sync. Snapshots will be saved next time."
+          else
+            echo "✅ Daily snapshots saved successfully"
+            echo "   Data will be available for trend charts"
+          fi
+
+
+      # ========================================
+      # 6. 결과 로그
+      # ========================================
+      - name: Log sync result
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          if [ "${{ steps.check_changes.outputs.changed }}" == "true" ]; then
+            echo "✅ Sync completed: Data changed and committed"
+            echo "🚀 Vercel deployment triggered"
+          else
+            echo "⏭️  Sync skipped: No data changes"
+            echo "💰 Saved 1 Vercel deployment!"
+          fi
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

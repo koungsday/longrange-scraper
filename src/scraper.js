@@ -9,6 +9,91 @@ const fs = require('fs').promises;
 const TEST_MODE = false; // false = 전체 161개 지역
 const MAX_RETRIES = 3;
 
+// 연도 자동 계산 (한국 시간 기준)
+const CURRENT_YEAR = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' })).getFullYear();
+
+// ==========================================
+// 데이터 정규화 유틸리티
+// ==========================================
+
+/**
+ * 차량 마스터 데이터 추출 (국고 보조금 포함)
+ * 첫 번째 성공한 지역에서 추출하여 재사용
+ */
+function extractVehicleMaster(allResults) {
+  const vehicles = {};
+
+  // 성공한 첫 번째 지역에서 차량 정보 추출
+  const firstSuccess = allResults.find(r => r.success && Object.keys(r.vehicles).length > 0);
+  if (!firstSuccess) return vehicles;
+
+  for (const [key, vehicle] of Object.entries(firstSuccess.vehicles)) {
+    vehicles[key] = {
+      type: vehicle.type,
+      manufacturer: vehicle.manufacturer,
+      model: vehicle.model,
+      national: vehicle.national  // 국고 보조금은 전국 동일
+    };
+  }
+
+  return vehicles;
+}
+
+/**
+ * 연도 목록 업데이트 (years.json)
+ * 프론트엔드에서 사용 가능한 연도 목록을 관리
+ */
+async function updateYearsList(currentYear) {
+  const yearsFile = 'data/years.json';
+  let yearsData = { years: [], lastUpdated: null };
+
+  try {
+    const existing = await fs.readFile(yearsFile, 'utf-8');
+    yearsData = JSON.parse(existing);
+  } catch (e) {
+    // 파일이 없으면 새로 생성
+  }
+
+  // 현재 연도 추가 (중복 방지, 내림차순 정렬)
+  if (!yearsData.years.includes(currentYear)) {
+    yearsData.years.push(currentYear);
+  }
+  yearsData.years = yearsData.years.sort((a, b) => b - a); // 내림차순 (최신이 먼저)
+  yearsData.lastUpdated = new Date().toISOString();
+  yearsData.currentYear = currentYear;
+
+  await fs.writeFile(yearsFile, JSON.stringify(yearsData, null, 2));
+  console.log(`💾 data/years.json 업데이트 (사용 가능 연도: ${yearsData.years.join(', ')})`);
+}
+
+/**
+ * 정규화된 지역별 보조금 데이터 생성
+ * 지자체 보조금(local)만 저장하여 크기 대폭 감소
+ */
+function normalizeSubsidies(allResults) {
+  const regions = {};
+
+  for (const result of allResults) {
+    const regionKey = String(result.code);
+
+    // 지역별 지자체 보조금만 추출
+    const subsidies = {};
+    for (const [vehicleKey, vehicle] of Object.entries(result.vehicles)) {
+      subsidies[vehicleKey] = vehicle.local;  // 지자체 보조금만
+    }
+
+    regions[regionKey] = {
+      parentName: result.parentName,
+      localName: result.localName,
+      code: result.code,
+      success: result.success,
+      subsidies: subsidies
+    };
+  }
+
+  return regions;
+}
+
 // ==========================================
 // 1. 지역 목록 가져오기
 // ==========================================
@@ -94,7 +179,7 @@ function parseEVTableALL(html) {
 // 3. 재시도 로직 포함 스크래핑
 // ==========================================
 async function scrapeRegionWithRetry(browser, region) {
-  const targetUrl = `https://ev.or.kr/nportal/buySupprt/psPopupLocalCarModelPrice.do?year=2025&local_cd=${region.code}&local_nm=${encodeURIComponent(region.localName)}&car_type=11&pnph=`;
+  const targetUrl = `https://ev.or.kr/nportal/buySupprt/psPopupLocalCarModelPrice.do?year=${CURRENT_YEAR}&local_cd=${region.code}&local_nm=${encodeURIComponent(region.localName)}&car_type=11&pnph=`;
   
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     let page = null;
@@ -173,6 +258,7 @@ async function scrapeRegionWithRetry(browser, region) {
 async function main() {
   console.log('🚀 전기차 보조금 스크래핑 시작');
   console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
+  console.log(`📅 대상 연도: ${CURRENT_YEAR}년`);
   console.log('');
   
   const startTime = Date.now();
@@ -251,23 +337,88 @@ async function main() {
     console.log(`❌ 실패: ${failed}개`);
     console.log('');
     
-    // 저장
-    await fs.mkdir('data', { recursive: true });
-    
-    const outputData = {
-      timestamp: new Date().toISOString(),
+    // 저장 (연도별 폴더)
+    const yearDir = `data/${CURRENT_YEAR}`;
+    await fs.mkdir(yearDir, { recursive: true });
+    console.log(`📁 저장 폴더: ${yearDir}`);
+
+    const timestamp = new Date().toISOString();
+
+    // ==========================================
+    // 1. 차량 마스터 데이터 (vehicles.json)
+    // ==========================================
+    const vehicleMaster = extractVehicleMaster(results);
+    const vehiclesData = {
+      year: CURRENT_YEAR,
+      timestamp: timestamp,
+      total_vehicles: Object.keys(vehicleMaster).length,
+      vehicles: vehicleMaster
+    };
+
+    await fs.writeFile(
+      `${yearDir}/vehicles.json`,
+      JSON.stringify(vehiclesData, null, 2)
+    );
+
+    const vehiclesSize = JSON.stringify(vehiclesData).length;
+    console.log(`💾 ${yearDir}/vehicles.json 저장 완료 (${(vehiclesSize / 1024).toFixed(1)}KB, ${Object.keys(vehicleMaster).length}개 차종)`);
+
+    // ==========================================
+    // 2. 정규화된 보조금 데이터 (subsidies.json)
+    // ==========================================
+    const normalizedRegions = normalizeSubsidies(results);
+    const normalizedData = {
+      year: CURRENT_YEAR,
+      timestamp: timestamp,
+      total_regions: results.length,
+      success_count: success,
+      failed_count: failed,
+      regions: normalizedRegions
+    };
+
+    await fs.writeFile(
+      `${yearDir}/subsidies.json`,
+      JSON.stringify(normalizedData, null, 2)
+    );
+
+    const subsidiesSize = JSON.stringify(normalizedData).length;
+    console.log(`💾 ${yearDir}/subsidies.json 저장 완료 (${(subsidiesSize / 1024).toFixed(1)}KB, 정규화됨)`);
+
+    // ==========================================
+    // 3. 레거시 형식 (subsidies-legacy.json) - 하위 호환성
+    // ==========================================
+    const legacyData = {
+      year: CURRENT_YEAR,
+      timestamp: timestamp,
       total_regions: results.length,
       success_count: success,
       failed_count: failed,
       data: results
     };
-    
+
     await fs.writeFile(
-      'data/subsidies.json',
-      JSON.stringify(outputData, null, 2)
+      `${yearDir}/subsidies-legacy.json`,
+      JSON.stringify(legacyData, null, 2)
     );
-    
-    console.log('💾 data/subsidies.json 저장 완료');
+
+    const legacySize = JSON.stringify(legacyData).length;
+    console.log(`💾 ${yearDir}/subsidies-legacy.json 저장 완료 (${(legacySize / 1024).toFixed(1)}KB, 레거시)`);
+
+    // ==========================================
+    // 4. 연도 목록 업데이트 (years.json)
+    // ==========================================
+    await updateYearsList(CURRENT_YEAR);
+
+    // ==========================================
+    // 크기 비교 출력
+    // ==========================================
+    const totalNewSize = vehiclesSize + subsidiesSize;
+    const reduction = ((1 - totalNewSize / legacySize) * 100).toFixed(1);
+    console.log('');
+    console.log('📊 데이터 크기 비교:');
+    console.log(`   레거시: ${(legacySize / 1024 / 1024).toFixed(2)}MB`);
+    console.log(`   정규화: ${(totalNewSize / 1024 / 1024).toFixed(2)}MB (vehicles + subsidies)`);
+    console.log(`   감소율: ${reduction}%`);
     
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
     console.log(`⏱️ 총 소요 시간: ${elapsed}초`);
