@@ -77,13 +77,6 @@ jobs:
       - name: Run quota scraper
         run: node src/scraper-quota.js
         
-      - name: Upload quota to Google Sheets
-        run: node src/sheets-uploader-quota.js
-        env:
-          GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
-          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
-          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
-        
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:

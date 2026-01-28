@@ -74,13 +74,6 @@ jobs:
       - name: Run scraper
         run: node src/scraper.js
         
-      - name: Upload to Google Sheets
-        env:
-          GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
-          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
-          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
-        run: node src/sheets-uploader.js
-        
       - name: Upload results as artifact
         uses: actions/upload-artifact@v4
         with:
