@@ -2,7 +2,7 @@ name: EV Quota Scraper
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 매시간 정각 (UTC)
+    - cron: '*/30 * * * *'  # 30분마다 (UTC 기준)
   workflow_dispatch:     # 수동 실행 버튼
 
 # 동일한 워크플로우가 동시에 실행되는 것을 방지
