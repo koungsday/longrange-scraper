@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-29T11:37:20.168Z",
+  "timestamp": "2026-01-29T13:12:45.020Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,9 +18,9 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8060,
-          "registered_total": 1652,
+          "registered_total": 1653,
           "registered_priority": 598,
-          "registered_corporate": 53,
+          "registered_corporate": 54,
           "registered_taxi": 0,
           "registered_general": 1001,
           "delivered_total": 0,
@@ -538,11 +538,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 1000,
-          "registered_total": 263,
+          "registered_total": 262,
           "registered_priority": 94,
           "registered_corporate": 6,
           "registered_taxi": 7,
-          "registered_general": 156,
+          "registered_general": 155,
           "delivered_total": 0,
           "delivered_priority": 0,
           "delivered_corporate": 0,
@@ -735,7 +735,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 60,
           "remaining_general": 1049,
-          "note": "[2026년 상반기 파주시 전기차 보급사업] ㅇ 접수기간: 2026. 1. 27.(화) 10:00 ~ 예산 소진 시까지 ㅇ 보급대수: 승용 1,229대(일반 1,049대, 우선 120대, 택시 60대) ※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음 ㅇ 신청대상: 구매지원 지원신청서 접수일 기준 연속하여 파주시에 60일 이상 거주하거나 파주시에 60일 이상 사무소를 두고 사업자등록을 한 경우 ㅇ 대상자 선정기준: 출고·등록순 ㅇ 보급대수 제한: 개인, 개인사업자, 법인 1대 * 차종별 보조금 확인방법 무공해차 통합누리집 > 구매 및 지원 > 구매보조금 지급현황 > 지자체 차종별보조금 ※ 자세한 내용은 공고문과 차종별 보조금 지원단가를 참고하시기 바랍니다. ※ 이용자명의 리스 등과 같이 차량등록증 상 명의가 개인인 경우 개인구매 기준 적용(이용자 주소지 기준), 추가보조금 지원하지 않음. ★ 우리 시는 전기자동차, 수소전기차, 전기이륜차 등 자동차 보조금을 담당자 1명이 전화부터 서류검토 및 보조금 지급까지 담당하고 있습니다(서류심사 및 자격부여까지 2~3일 소요). ★ 대상자선정은 15시부터 16시까지 진행 예정 접수 개시에 따라 접수 및 전화량이 많아 처리가 계속 지연되오니, 자동차 보조금액 등 단순문의는 공고문을 꼭 확인하여주시기 바랍니다."
+          "note": "[2026년 상반기 파주시 전기차 보급사업] ㅇ 접수기간: 2026. 1. 27.(화) 10:00 ~ 예산 소진 시까지 ㅇ 보급대수: 승용 1,229대(일반 1,049대, 우선 120대, 택시 60대) ※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음 ㅇ 신청대상: 구매지원 지원신청서 접수일 기준 연속하여 파주시에 60일 이상 거주하거나 파주시에 60일 이상 사무소를 두고 사업자등록을 한 경우 ㅇ 대상자 선정기준: 출고·등록순 ㅇ 보급대수 제한: 개인, 개인사업자, 법인 1대 * 차종별 보조금 확인방법 무공해차 통합누리집 > 구매 및 지원 > 구매보조금 지급현황 > 지자체 차종별보조금 ※ 자세한 내용은 공고문과 차종별 보조금 지원단가를 참고하시기 바랍니다. ※ 이용자명의 리스 등과 같이 차량등록증 상 명의가 개인인 경우 개인구매 기준 적용(이용자 주소지 기준), 추가보조금 지원하지 않음. ★ 우리 시는 전기자동차, 수소전기차, 전기이륜차 등 자동차 보조금을 담당자 1명이 전화부터 서류검토 및 보조금 지급까지 담당하고 있습니다(서류심사 및 자격부여까지 3~4일 소요). ★ 대상자 선정은 15시부터 16시까지 진행 예정 접수 개시에 따라 접수 및 전화량이 많아 처리가 계속 지연되오니, 자동차 보조금액 등 단순문의는 공고문을 꼭 확인하여주시고, 순서대로 처리하고 있사오니 독촉전화 지양해주시기 바랍니다."
         },
         {
           "sido": "경기",
@@ -3314,12 +3314,12 @@
         {
           "sido": "경북",
           "region": "문경시",
-          "vehicleType": "",
-          "quota_total": 0,
-          "quota_priority": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 100,
+          "quota_priority": 10,
           "quota_corporate": 0,
-          "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_taxi": 20,
+          "quota_general": 70,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-29T11:37:20.101Z"
+      "timestamp": "2026-01-29T13:12:44.958Z"
     }
   ]
 }
