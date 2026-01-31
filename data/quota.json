@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-31T08:38:44.508Z",
+  "timestamp": "2026-01-31T09:35:22.628Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1832,12 +1832,12 @@
         {
           "sido": "충남",
           "region": "보령시",
-          "vehicleType": "",
-          "quota_total": 0,
-          "quota_priority": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 70,
+          "quota_priority": 7,
           "quota_corporate": 0,
-          "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_taxi": 3,
+          "quota_general": 60,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-01-31T08:38:44.453Z"
+      "timestamp": "2026-01-31T09:35:22.551Z"
     }
   ]
 }
