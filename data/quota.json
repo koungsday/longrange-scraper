@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-01T11:48:33.413Z",
+  "timestamp": "2026-02-01T13:04:39.710Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -122,9 +122,9 @@
           "quota_corporate": 0,
           "quota_taxi": 97,
           "quota_general": 1640,
-          "registered_total": 409,
+          "registered_total": 408,
           "registered_priority": 94,
-          "registered_corporate": 8,
+          "registered_corporate": 7,
           "registered_taxi": 80,
           "registered_general": 227,
           "delivered_total": 0,
@@ -1338,12 +1338,12 @@
         {
           "sido": "강원",
           "region": "철원군",
-          "vehicleType": "",
-          "quota_total": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 140,
           "quota_priority": 0,
           "quota_corporate": 0,
           "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_general": 140,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-01T11:48:33.335Z"
+      "timestamp": "2026-02-01T13:04:39.637Z"
     }
   ]
 }
