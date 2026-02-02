@@ -191,14 +191,34 @@ async function scrapeRegionWithRetry(browser, region) {
   }
 }
 
+// 데이터 비교 함수 (lastChecked, lastUpdated, timestamp 제외)
+function isDataChanged(oldData, newData) {
+  if (!oldData || !oldData.data) return true;
+
+  const oldDataStr = JSON.stringify(oldData.data);
+  const newDataStr = JSON.stringify(newData);
+
+  return oldDataStr !== newDataStr;
+}
+
+// 기존 데이터 로드
+async function loadExistingData() {
+  try {
+    const content = await fs.readFile('data/quota.json', 'utf-8');
+    return JSON.parse(content);
+  } catch (error) {
+    return null;
+  }
+}
+
 async function main() {
   console.log('🚀 전기차 보조금 접수현황 스크래핑 시작');
   console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
   console.log('');
-  
+
   const startTime = Date.now();
   let browser = null;
-  
+
   try {
     const regions = await getAllRegions();
     console.log('');
@@ -246,21 +266,35 @@ async function main() {
     console.log('');
     
     await fs.mkdir('data', { recursive: true });
-    
+
+    // 기존 데이터 로드 및 비교
+    const existingData = await loadExistingData();
+    const now = new Date().toISOString();
+    const dataChanged = isDataChanged(existingData, results);
+
+    if (dataChanged) {
+      console.log('📝 데이터 변경 감지!');
+    } else {
+      console.log('📝 데이터 변경 없음 (lastChecked만 업데이트)');
+    }
+
     const outputData = {
-      timestamp: new Date().toISOString(),
+      lastChecked: now,  // 항상 업데이트 (마지막 확인 시간)
+      lastUpdated: dataChanged ? now : (existingData?.lastUpdated || existingData?.timestamp || now),  // 변경 시에만 업데이트
       total_regions: 1,
       success_count: success,
       failed_count: failed,
       data: results
     };
-    
+
     await fs.writeFile(
       'data/quota.json',
       JSON.stringify(outputData, null, 2)
     );
-    
+
     console.log('💾 data/quota.json 저장 완료');
+    console.log(`   lastChecked: ${outputData.lastChecked}`);
+    console.log(`   lastUpdated: ${outputData.lastUpdated}`);
     
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
     console.log(`⏱️ 총 소요 시간: ${elapsed}초`);
