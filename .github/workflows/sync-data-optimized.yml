@@ -6,6 +6,10 @@ on:
     workflows: ["EV Quota Scraper", "EV Subsidy Scraper"]
     types: [completed]
 
+  # 정기 동기화 (스크래퍼가 스킵되더라도 안전망으로 작동)
+  schedule:
+    - cron: '15,45 * * * *'  # 매 시간 15분, 45분에 실행 (스크래퍼와 시간 분산)
+
   # 수동 테스트용
   workflow_dispatch:
 
