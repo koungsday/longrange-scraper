@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-03T11:08:52.265Z",
+  "timestamp": "2026-02-03T11:58:31.606Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 60,
           "registered_taxi": 4,
           "registered_general": 1140,
-          "delivered_total": 184,
-          "delivered_priority": 67,
-          "delivered_corporate": 9,
+          "delivered_total": 199,
+          "delivered_priority": 73,
+          "delivered_corporate": 10,
           "delivered_taxi": 0,
-          "delivered_general": 108,
-          "remaining_total": 10316,
-          "remaining_priority": 1533,
+          "delivered_general": 116,
+          "remaining_total": 10301,
+          "remaining_priority": 1527,
           "remaining_corporate": 0,
           "remaining_taxi": 840,
-          "remaining_general": 7952,
+          "remaining_general": 7944,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대) ※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대) ※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -111,7 +111,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 440,
           "remaining_general": 4837,
-          "note": "* 문의사항에 대해 공고문 보완(파란색 표시)해서 재첨부하였으니 확인바랍니다* ***2026년 상반기 전기자동차 민간보급사업 안내*** 2026년 전기승용차 보급대수 : 8,800대 - 1차 상반기 6,160대(70%) *택시 및 우선순위 물량 있음 - 2차 하반기 2,640대(30%) * 통합진행 - 신청접수는 1. 29.(목) 09:00부터 시작합니다 - 신청양식은 인천시 양식으로 다운받아서 제출해주시기 바랍니다. - 보급대수는 보급여건에 따라 변동될수 있으며 상반기 목표대수 소진 시 조기 종료합니다. - 기타 사항은 첨부된 공고문을 참고하시기 바랍니다 ***지자체 문의처(연락처)는 조만간 변경예정이오니 수시로 공고를 확인하여 주시기 바랍니다***"
+          "note": "*** 2. 4. 일 18:00 화물차 신청 마감합니다. *** ***2. 4. 일 이후부터는 보조금 지원신청을 해도 보조금 지원 대상자가 안될 수 있습니다.*** ***신청화물차 보조금 선정 기준은 출고 등록 순(대상자 선정 순)입니다 참고 바랍니다*** * 문의사항에 대해 공고문 보완(파란색 표시)해서 재첨부하였으니 확인바랍니다* ***2026년 상반기 전기자동차 민간보급사업 안내*** 2026년 전기승용차 보급대수 : 8,800대 - 1차 상반기 6,160대(70%) *택시 및 우선순위 물량 있음 - 2차 하반기 2,640대(30%) * 통합진행 - 신청접수는 1. 29.(목) 09:00부터 시작합니다 - 신청양식은 인천시 양식으로 다운받아서 제출해주시기 바랍니다. - 보급대수는 보급여건에 따라 변동될수 있으며 상반기 목표대수 소진 시 조기 종료합니다. - 기타 사항은 첨부된 공고문을 참고하시기 바랍니다 ***지자체 문의처(연락처)는 조만간 변경예정이오니 수시로 공고를 확인하여 주시기 바랍니다***"
         },
         {
           "sido": "광주",
@@ -122,11 +122,11 @@
           "quota_corporate": 0,
           "quota_taxi": 97,
           "quota_general": 1640,
-          "registered_total": 544,
+          "registered_total": 543,
           "registered_priority": 137,
           "registered_corporate": 13,
           "registered_taxi": 89,
-          "registered_general": 305,
+          "registered_general": 304,
           "delivered_total": 0,
           "delivered_priority": 0,
           "delivered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-03T11:08:52.219Z"
+      "timestamp": "2026-02-03T11:58:31.537Z"
     }
   ]
 }
