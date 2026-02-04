@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-04T13:20:29.881Z",
+  "timestamp": "2026-02-04T14:25:15.171Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2821,11 +2821,11 @@
           "sido": "전남",
           "region": "장흥군",
           "vehicleType": "전기승용",
-          "quota_total": 169,
-          "quota_priority": 17,
+          "quota_total": 85,
+          "quota_priority": 0,
           "quota_corporate": 0,
-          "quota_taxi": 17,
-          "quota_general": 135,
+          "quota_taxi": 0,
+          "quota_general": 85,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -3685,10 +3685,10 @@
           "quota_taxi": 70,
           "quota_general": 1190,
           "registered_total": 591,
-          "registered_priority": 147,
+          "registered_priority": 140,
           "registered_corporate": 12,
           "registered_taxi": 40,
-          "registered_general": 392,
+          "registered_general": 399,
           "delivered_total": 0,
           "delivered_priority": 0,
           "delivered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-04T13:20:29.823Z"
+      "timestamp": "2026-02-04T14:25:15.116Z"
     }
   ]
 }
