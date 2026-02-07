@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-07T14:00:35.728Z",
+  "timestamp": "2026-02-07T14:53:33.120Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2248,12 +2248,12 @@
         {
           "sido": "전북",
           "region": "정읍시",
-          "vehicleType": "",
-          "quota_total": 0,
-          "quota_priority": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 140,
+          "quota_priority": 14,
           "quota_corporate": 0,
-          "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_taxi": 7,
+          "quota_general": 119,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-07T14:00:35.607Z"
+      "timestamp": "2026-02-07T14:53:33.033Z"
     }
   ]
 }
