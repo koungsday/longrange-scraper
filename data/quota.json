@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-07T02:36:13.407Z",
+  "timestamp": "2026-02-07T04:43:07.131Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -153,15 +153,15 @@
           "registered_corporate": 14,
           "registered_taxi": 74,
           "registered_general": 464,
-          "delivered_total": 71,
+          "delivered_total": 72,
           "delivered_priority": 12,
           "delivered_corporate": 2,
-          "delivered_taxi": 11,
+          "delivered_taxi": 12,
           "delivered_general": 46,
-          "remaining_total": 853,
+          "remaining_total": 852,
           "remaining_priority": 80,
           "remaining_corporate": 0,
-          "remaining_taxi": 35,
+          "remaining_taxi": 34,
           "remaining_general": 740,
           "note": "<2026년 상반기 전기자동차 보급사업 안내> - 접수기간: 2026. 1. 28.(공고일) 09:00 ~ 예산소진시까지 - 보급대수 : 상반기 924대(70%), 하반기 395대(30%) * 차종별 차등지원에 따라 변동될 수있음 - 지원대상: 신청일 기준 30일간 연속하여 대전시에 주소를 둔 개인, 법인 등 * 대상자 선정은 자동차 출고 등록 순 * 지원신청서의 빠른 승인을 위해 독촉 전화문의는 자제 부탁드립니다. * 자세한 사항은 공고문 참고하여 주시기 바랍니다. ★ 차종별 보조금액, 전환지원금 본공고2 첨부파일 참고"
         },
@@ -1905,7 +1905,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 0,
-          "note": "(사전안내) 2026년 서산시 상반기 전기자동차 민간보급사업 1. 공고일: 2026.2.9.(월) 2. 접수일: 승용차 2.20.(금) 10:00~ , 화물차  2.25.(수) 10:00~ 3. 보급대수  ※예산 소진 시 조기 마감 - 승용:  337대(일반물량 265대, 우선배정물량 72대) - 화물:  106대(일반물량   83대,  우선배정물량 23대) ※ 차종별 구매보조금 차등지원 등으로 인하여 보급대수는 조정될 수 있음 ※ 서산시 보조금 확인방법: 구매보조금지급현황-지자체 차종별 보조금-충남 서산시 조회"
+          "note": "2026년 서산시 상반기 전기자동차 민간보급사업 1. 접수일: 승용차 2.20.(금) 10:00~ , 화물차  2.25.(수) 10:00~ 2. 보급대수  ※예산 소진 시 조기 마감 - 승용:  337대(일반물량 265대, 우선배정물량 72대) - 화물:  106대(일반물량  83대,  우선배정물량 23대) ※ 차종별 구매보조금 차등지원 등으로 인하여 보급대수 및 내연차전환금 지원대수는 조정될 수 있음 ※ 서산시 보조금 확인방법: 구매보조금지급현황-지자체 차종별 보조금-충남 서산시 조회"
         },
         {
           "sido": "충남",
@@ -2883,16 +2883,16 @@
           "registered_corporate": 2,
           "registered_taxi": 1,
           "registered_general": 41,
-          "delivered_total": 18,
-          "delivered_priority": 2,
+          "delivered_total": 23,
+          "delivered_priority": 4,
           "delivered_corporate": 1,
           "delivered_taxi": 1,
-          "delivered_general": 14,
-          "remaining_total": 479,
+          "delivered_general": 17,
+          "remaining_total": 474,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 483,
+          "remaining_general": 480,
           "note": ""
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 3357,
           "registered_taxi": 9,
           "registered_general": 13,
-          "delivered_total": 202,
+          "delivered_total": 203,
           "delivered_priority": 0,
-          "delivered_corporate": 193,
+          "delivered_corporate": 194,
           "delivered_taxi": 2,
           "delivered_general": 7,
-          "remaining_total": 29798,
+          "remaining_total": 29797,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-07T02:36:13.279Z"
+      "timestamp": "2026-02-07T04:43:07.068Z"
     }
   ]
 }
