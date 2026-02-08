@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-08T05:14:52.484Z",
+  "timestamp": "2026-02-08T06:27:30.340Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,10 +18,10 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8060,
-          "registered_total": 2037,
+          "registered_total": 2039,
           "registered_priority": 669,
           "registered_corporate": 64,
-          "registered_taxi": 95,
+          "registered_taxi": 97,
           "registered_general": 1209,
           "delivered_total": 554,
           "delivered_priority": 188,
@@ -2144,12 +2144,12 @@
         {
           "sido": "충남",
           "region": "태안군",
-          "vehicleType": "",
-          "quota_total": 0,
-          "quota_priority": 0,
+          "vehicleType": "전기승용",
+          "quota_total": 210,
+          "quota_priority": 10,
           "quota_corporate": 0,
-          "quota_taxi": 0,
-          "quota_general": 0,
+          "quota_taxi": 10,
+          "quota_general": 190,
           "registered_total": 0,
           "registered_priority": 0,
           "registered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-08T05:14:52.380Z"
+      "timestamp": "2026-02-08T06:27:30.258Z"
     }
   ]
 }
