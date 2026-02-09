@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-09T11:51:50.743Z",
+  "timestamp": "2026-02-09T13:24:41.529Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -813,7 +813,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 1031,
-          "note": "★ 검토 및 대상자선정은 순차적으로 처리되오니 독촉 등 단순문의 자제바랍니다. ★ 기본 제출 서류, 차종 단가 등은 문의 전, 반드시 공고문을 먼저 확인하여 주시기 바랍니다. ★공고 (2026. 2. 5.) 이전 계약 보조금 미지급 대상입니다. (계약일자 확인 후 신청바랍니다.) - 지원신청서 작성시 빈칸없이 꼼꼼히 작성해주시기 바랍니다. (*특히 구입차종명 무공해차 신청차종과 동일하게 기입) - 시스템 접수하는 모든 서류는 원본대조필 날인하여 1개의 파일(통합)로 첨부해주시기 바랍니다. <2026년 상반기 전기자동차 보급사업 안내> - 접수기간 : 2026.2.6.(금) 10:00 ~ 6.30.(화) 예산소진시 조기마감 - 보급대수 : 전기승용 1,031대 / 전기화물 125대 / 전기승합 14대 / 전기승합(어린이통학용) 3대 * 기타 자세한 내용 공고문 참조 * (전환지원금)판매 및 폐차 관련 서류는 지급 신청 전까지 제출 - 대리점에서는 전환지원금 Y로 선택(판매, 폐차 등 지원대상은 모두 Y로 선택) - 전환지원금은 \"개인\"만 가능 (개인사업자, 법인 불가) ※ 시스템 상 표시된 잔여대수와 실제 잔여대수는 상이함."
+          "note": "★ 검토 및 대상자선정은 순차적으로 처리되오니 독촉 등 단순문의 자제바랍니다.  서류심사 및 자격부여까지 2~3일 소요되므로 단순 접수 알림, 처리 독촉 문의는 자제 부탁드립니다. ★ 기본 제출 서류, 차종 단가 등은 문의 전, 반드시 공고문을 먼저 확인하여 주시기 바랍니다. ★공고 (2026. 2. 5.) 이전 계약 보조금 미지급 대상입니다. (계약일자 확인 후 신청바랍니다.) - 지원신청서 작성시 빈칸없이 꼼꼼히 작성해주시기 바랍니다. (*특히 구입차종명 무공해차 신청차종과 동일하게 기입) - 시스템 접수하는 모든 서류는 원본대조필 날인하여 1개의 파일(통합)로 첨부해주시기 바랍니다. <2026년 상반기 전기자동차 보급사업 안내> - 접수기간 : 2026.2.6.(금) 10:00 ~ 6.30.(화) 예산소진시 조기마감 - 보급대수 : 전기승용 1,031대 / 전기화물 125대 / 전기승합 14대 / 전기승합(어린이통학용) 3대 * 기타 자세한 내용 공고문 참조 * (전환지원금)판매 및 폐차 관련 서류는 지급 신청 전까지 제출 - 대리점에서는 전환지원금 Y로 선택(판매, 폐차 등 지원대상은 모두 Y로 선택) - 전환지원금은 \"개인\"만 가능 (개인사업자, 법인 불가) ※ 시스템 상 표시된 잔여대수와 실제 잔여대수는 상이함."
         },
         {
           "sido": "경기",
@@ -824,11 +824,11 @@
           "quota_corporate": 0,
           "quota_taxi": 140,
           "quota_general": 3237,
-          "registered_total": 417,
+          "registered_total": 418,
           "registered_priority": 151,
-          "registered_corporate": 6,
-          "registered_taxi": 4,
-          "registered_general": 256,
+          "registered_corporate": 7,
+          "registered_taxi": 5,
+          "registered_general": 255,
           "delivered_total": 0,
           "delivered_priority": 0,
           "delivered_corporate": 0,
@@ -2280,11 +2280,11 @@
           "quota_corporate": 0,
           "quota_taxi": 6,
           "quota_general": 102,
-          "registered_total": 79,
+          "registered_total": 80,
           "registered_priority": 24,
           "registered_corporate": 1,
           "registered_taxi": 4,
-          "registered_general": 50,
+          "registered_general": 51,
           "delivered_total": 0,
           "delivered_priority": 0,
           "delivered_corporate": 0,
@@ -2697,10 +2697,10 @@
           "quota_taxi": 0,
           "quota_general": 70,
           "registered_total": 57,
-          "registered_priority": 16,
+          "registered_priority": 17,
           "registered_corporate": 2,
           "registered_taxi": 0,
-          "registered_general": 39,
+          "registered_general": 38,
           "delivered_total": 32,
           "delivered_priority": 9,
           "delivered_corporate": 1,
@@ -2930,11 +2930,11 @@
           "quota_corporate": 0,
           "quota_taxi": 4,
           "quota_general": 122,
-          "registered_total": 195,
+          "registered_total": 196,
           "registered_priority": 38,
           "registered_corporate": 2,
           "registered_taxi": 2,
-          "registered_general": 153,
+          "registered_general": 154,
           "delivered_total": 0,
           "delivered_priority": 0,
           "delivered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-09T11:51:50.653Z"
+      "timestamp": "2026-02-09T13:24:41.451Z"
     }
   ]
 }
