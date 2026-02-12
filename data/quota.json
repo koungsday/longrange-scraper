@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-12T13:51:40.027Z",
+  "timestamp": "2026-02-12T14:55:14.039Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3113,9 +3113,9 @@
           "quota_taxi": 100,
           "quota_general": 730,
           "registered_total": 893,
-          "registered_priority": 244,
+          "registered_priority": 243,
           "registered_corporate": 16,
-          "registered_taxi": 84,
+          "registered_taxi": 85,
           "registered_general": 549,
           "delivered_total": 0,
           "delivered_priority": 0,
@@ -3455,16 +3455,16 @@
           "registered_corporate": 0,
           "registered_taxi": 0,
           "registered_general": 10,
-          "delivered_total": 1,
+          "delivered_total": 2,
           "delivered_priority": 0,
           "delivered_corporate": 0,
           "delivered_taxi": 0,
-          "delivered_general": 1,
-          "remaining_total": 67,
+          "delivered_general": 2,
+          "remaining_total": 66,
           "remaining_priority": 8,
           "remaining_corporate": 0,
           "remaining_taxi": 4,
-          "remaining_general": 55,
+          "remaining_general": 54,
           "note": "<2026년 전기자동차 구매지원 사업 상반기 공고> 1. 접수기간 : 2026. 2. 3.(화) 10:00 ~ 2026. 12. 04.(금)(하반기 별도 공고예정) ※ 예산소진 시 접수마감 2. 보급대수 : 123대(승용100대, 화물20대, 승합 3대) / 상반기 : 97대, 하반기 : 26대 ※ 지원 차종 및 국비 추가 지원 등 예산소진 현황에 따라 총 보급물량은 변동 가능 3. 문 의 처 : 영덕군청 환경위생과 (☎ 054-730-6184) ※ 기타 자세한 내용은 공고문(붙임 파일) 확인바랍니다. *** 금액 수정으로 잠시 신청 중단 후 내일 2/4(수) 10:00부터 재오픈하겠습니다 ***"
         },
         {
@@ -3554,9 +3554,9 @@
           "quota_corporate": 0,
           "quota_taxi": 21,
           "quota_general": 204,
-          "registered_total": 135,
+          "registered_total": 136,
           "registered_priority": 25,
-          "registered_corporate": 12,
+          "registered_corporate": 13,
           "registered_taxi": 5,
           "registered_general": 93,
           "delivered_total": 14,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-12T13:51:39.946Z"
+      "timestamp": "2026-02-12T14:55:13.976Z"
     }
   ]
 }
