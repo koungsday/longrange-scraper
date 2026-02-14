@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-14T08:40:51.766Z",
+  "timestamp": "2026-02-14T09:38:28.728Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -127,16 +127,16 @@
           "registered_corporate": 19,
           "registered_taxi": 107,
           "registered_general": 499,
-          "delivered_total": 373,
-          "delivered_priority": 95,
+          "delivered_total": 384,
+          "delivered_priority": 97,
           "delivered_corporate": 7,
           "delivered_taxi": 66,
-          "delivered_general": 205,
-          "remaining_total": 1557,
-          "remaining_priority": 98,
+          "delivered_general": 214,
+          "remaining_total": 1546,
+          "remaining_priority": 96,
           "remaining_corporate": 0,
           "remaining_taxi": 31,
-          "remaining_general": 1435,
+          "remaining_general": 1426,
           "note": "o 접수기간 : '26.1.30.(금)~ 12.4.(금)   ※ 예산소진시까지 o 보급대수 : 총 2,279대(승용 1,930대, 화물 330대, 승합 19대) * (본공고1) 공고문  (본공고2) 차종별 국시비 보조금(26.1.29.기준 전환지원금 수정됨) ★ 접수 후 빠른 처리를 위해 단순 접수 알림, 처리 독촉 전화는 자제 부탁드립니다."
         },
         {
@@ -699,16 +699,16 @@
           "registered_corporate": 10,
           "registered_taxi": 24,
           "registered_general": 370,
-          "delivered_total": 216,
-          "delivered_priority": 79,
+          "delivered_total": 230,
+          "delivered_priority": 82,
           "delivered_corporate": 4,
           "delivered_taxi": 13,
-          "delivered_general": 120,
-          "remaining_total": 1784,
-          "remaining_priority": 121,
+          "delivered_general": 131,
+          "remaining_total": 1770,
+          "remaining_priority": 118,
           "remaining_corporate": 0,
           "remaining_taxi": 47,
-          "remaining_general": 1620,
+          "remaining_general": 1609,
           "note": "★ 상반기 전기화물차 예산소진으로 마감되었습니다. (2026. 2. 5. 15:45 현재) 현재 자격부여는 계속 진행하고 있으나 대상자 선정은 불가합니다. 향후 취소 물량이 발생하면 지원가능확인요청순에 따라 연락을 드릴 예정입니다. ★ ■ 2026년 상반기 전기자동차( 보급사업 공고 ■ 1. 신청기간 : 2026. 2. 2.(월) 9:00 ~ 2026. 6. 30.(화) 18:00 (예산소진시 조기마감) ※ 상반기 신청 건 중 대상자 미선정 건은 하반기 물량으로 연계되지 않으므로 취소 후 재신청 필요 2. 보급대수: 총 2,156대 ○ 승용 2,000대 (일반  1,740개, 우선순위 200대, 택시 60대) ○ 화물 150대 (일반 127대, 우선순위 15대, 택배 8대) ○ 승합 6대(개인승합 3대, 어린이통학버스 3대) ※ 지원 차종 및 국비 추가 지원 등 예산소진 현황에 따라 총 보급물량은 변동 가능 3. 지원금액: 차종별 구매보조금 차등 지급 4. 신청대상 및 자격조건 ○ 신청일 기준 90일 전부터 연속하여 용인시에 주소를 둔 만 18세 이상 개인 ○ 용인시 내 위치한 법인, 단체 및 기관 등 5. 선정기준 : 출고·등록순 ※ 반드시 공고문 확인하시고 신청하시기 바랍니다. ※ 사업개시 후 신청 폭주로 전화응대가 어려울 수 있습니다. 독촉여부와 상관없이 접수된 순서대로 공정하게 처리하오니 단순 확인. 독촉 전화 등은 삼가주시기 바랍니다. 신청 당일 처리가 불가할 수 있으니 출고일 확인 후 미리 신청해주시기 바랍니다."
         },
         {
@@ -3294,11 +3294,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 450,
-          "registered_total": 71,
+          "registered_total": 72,
           "registered_priority": 21,
           "registered_corporate": 0,
           "registered_taxi": 2,
-          "registered_general": 48,
+          "registered_general": 49,
           "delivered_total": 26,
           "delivered_priority": 5,
           "delivered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-14T08:40:51.708Z"
+      "timestamp": "2026-02-14T09:38:28.652Z"
     }
   ]
 }
