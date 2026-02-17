@@ -5,38 +5,39 @@ on:
     - cron: '0 1 * * *'  # 매일 오전 10시 KST (UTC+9)
   workflow_dispatch:     # 수동 실행 버튼
 
-# 동일한 워크플로우가 동시에 실행되는 것을 방지
+# scrape-quota.yml과 web repo push 충돌 방지
 concurrency:
-  group: scrape-subsidy
-  cancel-in-progress: false  # 진행 중인 작업을 취소하지 않고 대기
+  group: sync-web-data
+  cancel-in-progress: false  # 대기 후 실행
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    
-    # ⭐ 핵심 수정: GITHUB_TOKEN에 쓰기 권한을 명시적으로 부여합니다.
+
     permissions:
       contents: write
-    
+
     steps:
+      # ========================================
+      # 1. 스크래퍼 리포 체크아웃
+      # ========================================
       - name: Checkout repository
-        # 토큰을 사용하여 체크아웃하면, 이후 푸시 작업에 필요한 권한을 얻습니다.
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-        
-      # --- 캐싱 기능 추가 및 PUPPETEER_CACHE_DIR 설정 ---
+
+      # ========================================
+      # 2. Node.js 환경 설정
+      # ========================================
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # Puppeteer의 캐시 위치를 프로젝트 폴더 내의 '.cache/puppeteer'로 지정합니다.
-      # 이 폴더도 node_modules와 함께 캐싱 대상에 포함됩니다.
       - name: Set Puppeteer Cache Directory
         run: echo "PUPPETEER_CACHE_DIR=$(pwd)/.cache/puppeteer" >> $GITHUB_ENV
-        
+
       - name: Restore Node Modules and Puppeteer Cache
         id: cache-restore
         uses: actions/cache@v4
@@ -48,7 +49,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # --- 설치 단계 최적화 및 Puppeteer 오류 수정 ---
       - name: Install dependencies (with Puppeteer fix)
         run: |
           if [ "${{ steps.cache-restore.outputs.cache-hit }}" != "true" ]; then
@@ -57,11 +57,8 @@ jobs:
           else
             echo "Cache hit. Skipping npm install, checking Puppeteer..."
           fi
-          
-          # 캐시 복원 여부와 관계없이 Puppeteer 실행 파일 누락 문제를 해결합니다.
           npx puppeteer install
-          
-      # --- 캐시 저장 (Save) 단계 ---
+
       - name: Save New Node Modules Cache
         uses: actions/cache@v4
         if: always() && steps.cache-restore.outputs.cache-hit != 'true'
@@ -70,10 +67,13 @@ jobs:
             node_modules
             .cache/puppeteer
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          
+
+      # ========================================
+      # 3. 스크래핑 실행
+      # ========================================
       - name: Run scraper
         run: node src/scraper.js
-        
+
       - name: Upload results as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -84,23 +84,40 @@ jobs:
             data/years.json
             data/debug-subsidy-*.html
           retention-days: 30
-          
-      # ⭐ 최종 파일 커밋 및 푸시 단계 (동시성 문제 해결)
+
+      # ========================================
+      # 4. 데이터 검증
+      # ========================================
+      - name: Validate subsidy data
+        id: validate
+        run: |
+          RESULT=$(node src/validate-data.js subsidy)
+          echo "검증 결과: $RESULT"
+
+          VALID=$(echo "$RESULT" | node -e "process.stdin.on('data',d=>{const r=JSON.parse(d);console.log(r.valid)})")
+
+          if [ "$VALID" == "true" ]; then
+            echo "valid=true" >> $GITHUB_OUTPUT
+            echo "✅ 데이터 검증 통과"
+          else
+            echo "valid=false" >> $GITHUB_OUTPUT
+            echo "❌ 데이터 검증 실패 - web repo 동기화 차단"
+          fi
+
+      # ========================================
+      # 5. scraper repo 커밋 (검증 결과와 무관하게 항상 커밋)
+      # ========================================
       - name: Commit and Push Data
         run: |
-          # Git 사용자 정보 설정
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
 
-          # 연도별 데이터 파일과 years.json을 커밋 대상으로 추가
           git add data/*/subsidies.json data/*/vehicles.json data/*/subsidies-legacy.json data/years.json || true
 
-          # 변경 사항이 있는지 확인
           if ! git diff --quiet --staged; then
             echo "Data changes detected. Committing and pushing..."
-            git commit -m "Update EV subsidy data: $(date +'%Y-%m-%d %H:%M:%S KST')"
+            git commit -m "Update EV subsidy data: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M:%S KST')"
 
-            # Push with retry logic (최대 5번 시도, 재시도 간 pull --rebase)
             MAX_RETRIES=5
             RETRY_COUNT=0
 
@@ -109,16 +126,13 @@ jobs:
 
               if git push; then
                 echo "✅ Push successful!"
-                exit 0
+                break
               else
                 echo "⚠️ Push failed. Pulling latest changes..."
                 RETRY_COUNT=$((RETRY_COUNT + 1))
 
                 if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
-                  # Pull with rebase to integrate remote changes
                   git pull --rebase origin main
-
-                  # 지수 백오프: 2초, 4초, 8초, 16초
                   WAIT_TIME=$((2 ** RETRY_COUNT))
                   echo "Waiting ${WAIT_TIME}s before retry..."
                   sleep $WAIT_TIME
@@ -126,8 +140,112 @@ jobs:
               fi
             done
 
-            echo "❌ Failed to push after $MAX_RETRIES attempts"
-            exit 1
+            if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+              echo "❌ Failed to push after $MAX_RETRIES attempts"
+              exit 1
+            fi
           else
             echo "No data changes since last run. Skipping commit."
           fi
+
+      # ========================================
+      # 6. web repo 동기화 (검증 통과 시에만)
+      # ========================================
+      - name: Checkout koungs-day-web
+        if: steps.validate.outputs.valid == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: koungsday/koungs-day-web
+          token: ${{ secrets.PAT_TOKEN }}
+          path: web
+
+      - name: Sync subsidy data to web repo
+        if: steps.validate.outputs.valid == 'true'
+        run: |
+          echo "📥 Copying subsidy data to web repo..."
+
+          mkdir -p web/public/data
+
+          # years.json (사용 가능한 연도 목록)
+          cp data/years.json web/public/data/ || echo "⚠️ years.json not found"
+
+          # 연도별 폴더 복사 (2025, 2026, ...)
+          for year_dir in data/20*/; do
+            if [ -d "$year_dir" ]; then
+              year=$(basename "$year_dir")
+              echo "📁 Copying $year data..."
+              mkdir -p "web/public/data/$year"
+              cp "${year_dir}vehicles.json" "web/public/data/$year/" 2>/dev/null || echo "  ⚠️ No vehicles.json in $year"
+              cp "${year_dir}subsidies.json" "web/public/data/$year/" 2>/dev/null || echo "  ⚠️ No subsidies.json in $year"
+            fi
+          done
+
+          echo "📁 Files in web/public/data/:"
+          ls -lhR web/public/data/
+
+          cd web
+
+          # 변경 감지
+          if git diff --quiet public/data/ 2>/dev/null && [ -z "$(git ls-files --others --exclude-standard public/data/)" ]; then
+            echo "ℹ️ No subsidy data changes in web repo. Skipping commit."
+          else
+            echo "✅ Subsidy data changed. Committing to web repo..."
+
+            git config user.name "GitHub Actions Bot"
+            git config user.email "actions@github.com"
+
+            git add public/data/
+
+            git commit -m "chore: Auto-update subsidy data
+
+          Updated at: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M:%S KST')
+
+          Data sources:
+            - Years: 사용 가능한 연도 목록
+            - Vehicles: 차량 마스터 (연도별, 국고 보조금)
+            - Subsidies: 지역별 지자체 보조금 (연도별, 정규화)
+
+          Synced from koungsday/longrange-scraper @ ${{ github.sha }}"
+
+            # Push with retry
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              echo "Web repo push attempt $((RETRY_COUNT + 1))/$MAX_RETRIES..."
+
+              if git push; then
+                echo "✅ Web repo push successful!"
+                break
+              else
+                RETRY_COUNT=$((RETRY_COUNT + 1))
+                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                  git pull --rebase
+                  WAIT_TIME=$((2 ** RETRY_COUNT))
+                  echo "Waiting ${WAIT_TIME}s before retry..."
+                  sleep $WAIT_TIME
+                fi
+              fi
+            done
+
+            if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+              echo "⚠️ Web repo push failed after $MAX_RETRIES attempts (non-blocking)"
+            fi
+          fi
+
+      # ========================================
+      # 7. 결과 로그
+      # ========================================
+      - name: Log result
+        if: always()
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          if [ "${{ steps.validate.outputs.valid }}" == "true" ]; then
+            echo "✅ Subsidy 스크래핑 + 검증 통과 + web repo 동기화 완료"
+            echo "🚀 Vercel 배포 트리거됨"
+          elif [ "${{ steps.validate.outputs.valid }}" == "false" ]; then
+            echo "⚠️ Subsidy 스크래핑 완료, 검증 실패 → scraper repo만 커밋, web repo 동기화 차단"
+          else
+            echo "❌ Subsidy 스크래핑 중 오류 발생"
+          fi
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

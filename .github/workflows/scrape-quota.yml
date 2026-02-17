@@ -2,41 +2,78 @@ name: EV Quota Scraper
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # 30분마다 (UTC 기준)
+    - cron: '*/10 * * * *'  # 10분마다 (업무외 시간은 내부에서 스킵)
   workflow_dispatch:     # 수동 실행 버튼
 
-# 동일한 워크플로우가 동시에 실행되는 것을 방지
+# scrape.yml과 web repo push 충돌 방지
 concurrency:
-  group: scrape-quota
-  cancel-in-progress: false  # 진행 중인 작업을 취소하지 않고 대기
+  group: sync-web-data
+  cancel-in-progress: false  # 대기 후 실행
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    
-    # ⭐ 핵심 수정: GITHUB_TOKEN에 쓰기 권한을 명시적으로 부여합니다.
+
     permissions:
       contents: write
-    
+
     steps:
+      # ========================================
+      # 0. 업무시간 판별 (적응형 스케줄)
+      # ========================================
+      - name: Check business hours (KST)
+        id: timecheck
+        run: |
+          KST_HOUR=$(TZ=Asia/Seoul date +%H)
+          KST_HOUR_INT=$((10#$KST_HOUR))
+          KST_MIN=$(TZ=Asia/Seoul date +%M)
+          KST_MIN_INT=$((10#$KST_MIN))
+
+          echo "🕐 KST 시간: ${KST_HOUR}:${KST_MIN}"
+
+          # 업무시간: KST 08:00 ~ 22:00 → 10분 간격 실행
+          if [ $KST_HOUR_INT -ge 8 ] && [ $KST_HOUR_INT -lt 22 ]; then
+            echo "is_business_hours=true" >> $GITHUB_OUTPUT
+            echo "✅ 업무시간: 실행"
+          else
+            # 업무외 시간: 매 30분(x:00, x:30)만 실행
+            if [ $KST_MIN_INT -lt 10 ]; then
+              echo "is_business_hours=true" >> $GITHUB_OUTPUT
+              echo "✅ 업무외 x:00 시간대: 실행"
+            elif [ $KST_MIN_INT -ge 30 ] && [ $KST_MIN_INT -lt 40 ]; then
+              echo "is_business_hours=true" >> $GITHUB_OUTPUT
+              echo "✅ 업무외 x:30 시간대: 실행"
+            else
+              echo "is_business_hours=false" >> $GITHUB_OUTPUT
+              echo "⏭️ 업무외 시간: 스킵 (다음 실행은 x:00 또는 x:30)"
+            fi
+          fi
+
+      # ========================================
+      # 1. 스크래퍼 리포 체크아웃
+      # ========================================
       - name: Checkout code
+        if: steps.timecheck.outputs.is_business_hours == 'true'
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-        
-      # --- Node.js 환경 설정 ---
+
+      # ========================================
+      # 2. Node.js 환경 설정
+      # ========================================
       - name: Setup Node.js
+        if: steps.timecheck.outputs.is_business_hours == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # Puppeteer의 캐시 위치를 프로젝트 폴더 내의 '.cache/puppeteer'로 지정합니다.
       - name: Set Puppeteer Cache Directory
+        if: steps.timecheck.outputs.is_business_hours == 'true'
         run: echo "PUPPETEER_CACHE_DIR=$(pwd)/.cache/puppeteer" >> $GITHUB_ENV
-        
-      # --- 1. 캐시 복원 (Restore) 단계 ---
+
       - name: Restore Node Modules and Puppeteer Cache
+        if: steps.timecheck.outputs.is_business_hours == 'true'
         id: cache-restore
         uses: actions/cache@v4
         with:
@@ -46,58 +83,76 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-            
-      # --- 2. 설치 단계: 캐시 미스 시에만 설치 ---
+
       - name: Install dependencies (with Puppeteer fix)
+        if: steps.timecheck.outputs.is_business_hours == 'true'
         run: |
-          # cache-restore 단계에서 캐시를 찾지 못했을 때 (cache-hit != 'true')
           if [ "${{ steps.cache-restore.outputs.cache-hit }}" != "true" ]; then
             echo "Cache miss. Installing all dependencies..."
-            # 이전 워크플로우에서 불필요했던 'Generate package-lock and push' 단계는 삭제하고 npm install만 남깁니다.
             npm install
           else
             echo "Cache hit. Skipping npm install, checking Puppeteer..."
           fi
-          
-          # 캐시 복원 여부와 관계없이 Puppeteer 실행 파일 누락 문제를 해결합니다.
-          # PUPPETEER_CACHE_DIR 환경 변수 덕분에 설치된 바이너리가 캐시 대상 폴더에 저장됩니다.
           npx puppeteer install
-          
-      # --- 3. 캐시 저장 (Save) 단계 ---
-      # 복원 단계에서 캐시를 찾지 못했고, 설치가 성공적으로 완료되었을 때만 새로운 캐시를 저장합니다.
+
       - name: Save New Node Modules Cache
         uses: actions/cache@v4
-        if: always() && steps.cache-restore.outputs.cache-hit != 'true'
+        if: always() && steps.timecheck.outputs.is_business_hours == 'true' && steps.cache-restore.outputs.cache-hit != 'true'
         with:
           path: |
             node_modules
             .cache/puppeteer
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          
+
+      # ========================================
+      # 3. 스크래핑 실행
+      # ========================================
       - name: Run quota scraper
+        if: steps.timecheck.outputs.is_business_hours == 'true'
         run: node src/scraper-quota.js
-        
+
       - name: Upload artifact
+        if: steps.timecheck.outputs.is_business_hours == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: quota-results
           path: data/quota.json
-          
-      # ⭐ 최종 파일 커밋 및 푸시 단계 (동시성 문제 해결)
-      - name: Commit and push if changed
+
+      # ========================================
+      # 4. 데이터 검증
+      # ========================================
+      - name: Validate quota data
+        if: steps.timecheck.outputs.is_business_hours == 'true'
+        id: validate
+        run: |
+          RESULT=$(node src/validate-data.js quota)
+          echo "검증 결과: $RESULT"
+
+          VALID=$(echo "$RESULT" | node -e "process.stdin.on('data',d=>{const r=JSON.parse(d);console.log(r.valid)})")
+
+          if [ "$VALID" == "true" ]; then
+            echo "valid=true" >> $GITHUB_OUTPUT
+            echo "✅ 데이터 검증 통과"
+          else
+            echo "valid=false" >> $GITHUB_OUTPUT
+            echo "❌ 데이터 검증 실패 - web repo 동기화 차단"
+          fi
+
+      # ========================================
+      # 5. scraper repo 커밋 (검증 결과와 무관하게 항상 커밋)
+      # ========================================
+      - name: Commit and push to scraper repo
+        if: steps.timecheck.outputs.is_business_hours == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-          # 생성된 json 파일을 커밋 대상으로 추가
           git add data/quota.json
 
-          # 변경 사항이 있는지 확인
           if ! git diff --quiet --staged; then
             echo "Data changes detected. Committing and pushing..."
-            git commit -m "Update EV quota data: $(date +'%Y-%m-%d %H:%M:%S KST')"
+            git commit -m "Update EV quota data: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M:%S KST')"
 
-            # Push with retry logic (최대 5번 시도, 재시도 간 pull --rebase)
             MAX_RETRIES=5
             RETRY_COUNT=0
 
@@ -106,16 +161,13 @@ jobs:
 
               if git push; then
                 echo "✅ Push successful!"
-                exit 0
+                break
               else
                 echo "⚠️ Push failed. Pulling latest changes..."
                 RETRY_COUNT=$((RETRY_COUNT + 1))
 
                 if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
-                  # Pull with rebase to integrate remote changes
                   git pull --rebase origin main
-
-                  # 지수 백오프: 2초, 4초, 8초, 16초
                   WAIT_TIME=$((2 ** RETRY_COUNT))
                   echo "Waiting ${WAIT_TIME}s before retry..."
                   sleep $WAIT_TIME
@@ -123,8 +175,90 @@ jobs:
               fi
             done
 
-            echo "❌ Failed to push after $MAX_RETRIES attempts"
-            exit 1
+            if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+              echo "❌ Failed to push after $MAX_RETRIES attempts"
+              exit 1
+            fi
           else
             echo "No data changes since last run. Skipping commit."
           fi
+
+      # ========================================
+      # 6. web repo 동기화 (검증 통과 시에만)
+      # ========================================
+      - name: Checkout koungs-day-web
+        if: steps.timecheck.outputs.is_business_hours == 'true' && steps.validate.outputs.valid == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: koungsday/koungs-day-web
+          token: ${{ secrets.PAT_TOKEN }}
+          path: web
+
+      - name: Sync quota data to web repo
+        if: steps.timecheck.outputs.is_business_hours == 'true' && steps.validate.outputs.valid == 'true'
+        run: |
+          echo "📥 Copying quota data to web repo..."
+
+          mkdir -p web/public/data
+          cp data/quota.json web/public/data/quota.json
+
+          cd web
+
+          # 변경 감지
+          if git diff --quiet public/data/quota.json 2>/dev/null && [ -z "$(git ls-files --others --exclude-standard public/data/quota.json)" ]; then
+            echo "ℹ️ No quota data changes in web repo. Skipping commit."
+          else
+            echo "✅ Quota data changed. Committing to web repo..."
+
+            git config user.name "GitHub Actions Bot"
+            git config user.email "actions@github.com"
+
+            git add public/data/quota.json
+            git commit -m "chore: Auto-update quota data
+
+          Updated at: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M:%S KST')
+          Synced from koungsday/longrange-scraper @ ${{ github.sha }}"
+
+            # Push with retry
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+
+            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+              echo "Web repo push attempt $((RETRY_COUNT + 1))/$MAX_RETRIES..."
+
+              if git push; then
+                echo "✅ Web repo push successful!"
+                break
+              else
+                RETRY_COUNT=$((RETRY_COUNT + 1))
+                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+                  git pull --rebase
+                  WAIT_TIME=$((2 ** RETRY_COUNT))
+                  echo "Waiting ${WAIT_TIME}s before retry..."
+                  sleep $WAIT_TIME
+                fi
+              fi
+            done
+
+            if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+              echo "⚠️ Web repo push failed after $MAX_RETRIES attempts (non-blocking)"
+            fi
+          fi
+
+      # ========================================
+      # 7. 결과 로그
+      # ========================================
+      - name: Log result
+        if: always()
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          if [ "${{ steps.timecheck.outputs.is_business_hours }}" != "true" ]; then
+            echo "⏭️ 업무외 시간 스킵"
+          elif [ "${{ steps.validate.outputs.valid }}" == "true" ]; then
+            echo "✅ Quota 스크래핑 + 검증 통과 + web repo 동기화 완료"
+          elif [ "${{ steps.validate.outputs.valid }}" == "false" ]; then
+            echo "⚠️ Quota 스크래핑 완료, 검증 실패 → scraper repo만 커밋, web repo 동기화 차단"
+          else
+            echo "❌ Quota 스크래핑 중 오류 발생"
+          fi
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
