@@ -1,7 +1,12 @@
 # EV Scraper 파이프라인 개선 설계
 
 > 작성일: 2026-02-17
-> 상태: 설계 검토 중
+> 상태: 구현 중 (2026-02-17 검토 완료)
+>
+> ### 검토 결과 반영사항
+> - `/api/quota/sync` (Redis 스냅샷) 호출은 scraper에서 제거 → web repo의 `update-all-data.yml`이 담당 유지
+> - 이유: Vercel 배포 완료 전 API 호출 시 구 데이터가 스냅샷에 저장되는 타이밍 문제
+> - web repo의 `update-all-data.yml`은 변경 없음 (Bond sync, Kakao token, Redis snapshot 모두 유지)
 
 ---
 
@@ -93,7 +98,7 @@ EV.OR.KR
 | 연도별 subsidies.json 복사 | `scrape.yml` |
 | 변경 감지 (git diff) | 양쪽 모두 |
 | 조건부 커밋 & push (web repo) | 양쪽 모두 |
-| Redis 일별 스냅샷 (/api/quota/sync) | `scrape-quota.yml` |
+| Redis 일별 스냅샷 (/api/quota/sync) | web repo `update-all-data.yml` (기존 유지) |
 
 ##### scrape-quota.yml에 추가되는 단계
 
@@ -118,11 +123,10 @@ EV.OR.KR
       git push
     fi
 
-- name: Save daily quota snapshots to Redis
-  run: |
-    curl -s -X POST "${API_URL}/api/quota/sync" \
-      -H "Authorization: Bearer ${{ secrets.SYNC_SECRET }}" ...
 ```
+
+> **참고**: Redis 일별 스냅샷 저장(`/api/quota/sync`)은 web repo의 `update-all-data.yml`이 매시간 수행하므로,
+> scraper에서는 호출하지 않음 (Vercel 배포 타이밍 문제 방지).
 
 ##### scrape.yml에 추가되는 단계
 
