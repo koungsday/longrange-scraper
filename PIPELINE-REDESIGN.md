@@ -81,20 +81,80 @@ EV.OR.KR
 스크래핑 → 검증 → scraper repo 커밋 → web repo 직접 동기화
 ```
 
-#### 각 스크래퍼 워크플로우에 추가되는 단계
+#### 각 스크래퍼 워크플로우에 추가되는 동기화 단계
+
+현재 `sync-data-optimized.yml`이 수행하는 모든 역할을 각 스크래퍼가 직접 수행:
+
+| 현재 sync workflow 역할 | 통합 후 담당 |
+|------------------------|-------------|
+| quota.json 복사 | `scrape-quota.yml` |
+| years.json 복사 | `scrape.yml` |
+| 연도별 vehicles.json 복사 | `scrape.yml` |
+| 연도별 subsidies.json 복사 | `scrape.yml` |
+| 변경 감지 (git diff) | 양쪽 모두 |
+| 조건부 커밋 & push (web repo) | 양쪽 모두 |
+| Redis 일별 스냅샷 (/api/quota/sync) | `scrape-quota.yml` |
+
+##### scrape-quota.yml에 추가되는 단계
 
 ```yaml
-# 기존 단계: 스크래핑 → 커밋
-# 추가 단계:
-- name: Sync to web repo
-  if: steps.commit.outputs.changed == 'true' && steps.validate.outputs.valid == 'true'
-  steps:
-    - checkout koungs-day-web
-    - copy data files
-    - git diff --quiet (변경 감지)
-    - conditional commit & push
-    - Redis snapshot sync (quota only)
+# 기존: 스크래핑 → scraper repo 커밋
+# 추가:
+- name: Checkout koungs-day-web
+  uses: actions/checkout@v4
+  with:
+    repository: koungsday/koungs-day-web
+    token: ${{ secrets.PAT_TOKEN }}
+    path: web
+
+- name: Sync quota data to web repo
+  if: steps.validate.outputs.valid == 'true'
+  run: |
+    cp data/quota.json web/public/data/quota.json
+    cd web
+    if ! git diff --quiet public/data/quota.json; then
+      git add public/data/quota.json
+      git commit -m "chore: Auto-update quota data ..."
+      git push
+    fi
+
+- name: Save daily quota snapshots to Redis
+  run: |
+    curl -s -X POST "${API_URL}/api/quota/sync" \
+      -H "Authorization: Bearer ${{ secrets.SYNC_SECRET }}" ...
 ```
+
+##### scrape.yml에 추가되는 단계
+
+```yaml
+# 기존: 스크래핑 → scraper repo 커밋
+# 추가:
+- name: Checkout koungs-day-web
+  uses: actions/checkout@v4
+  with:
+    repository: koungsday/koungs-day-web
+    token: ${{ secrets.PAT_TOKEN }}
+    path: web
+
+- name: Sync subsidy data to web repo
+  if: steps.validate.outputs.valid == 'true'
+  run: |
+    cp data/years.json web/public/data/
+    for year_dir in data/20*/; do
+      year=$(basename "$year_dir")
+      mkdir -p "web/public/data/$year"
+      cp "$year_dir"vehicles.json "web/public/data/$year/"
+      cp "$year_dir"subsidies.json "web/public/data/$year/"
+    done
+    cd web
+    if ! git diff --quiet public/data/; then
+      git add public/data/
+      git commit -m "chore: Auto-update subsidy data ..."
+      git push
+    fi
+```
+
+> **핵심**: 각 스크래퍼가 자기 데이터만 web repo에 반영하므로, 현재 sync workflow의 "전체 복사" 방식보다 책임이 명확하고, 불필요한 파일 복사가 줄어듦.
 
 #### 동시 push 충돌 방지
 
