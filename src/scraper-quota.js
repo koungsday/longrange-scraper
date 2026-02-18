@@ -255,7 +255,7 @@ async function saveQuotaHistory(quotaData, regions) {
   // 오늘 날짜 엔트리 덮어쓰기 (같은 날 여러번 실행 시 최신값 유지)
   history.snapshots[today] = todaySnapshot;
   history.year = currentYear;
-  history.lastUpdated = now.toISOString();
+  history.lastUpdated = now.toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }) + ' KST';
 
   await fs.writeFile(HISTORY_PATH, JSON.stringify(history, null, 2));
 
