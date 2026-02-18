@@ -265,66 +265,159 @@ async function scrapeLocalPhones(browser) {
     page = await browser.newPage();
     await page.setDefaultNavigationTimeout(30000);
 
-    // ev.or.kr 세션 수립 (직접 접근 시 빈 페이지 반환 방지)
+    // 네트워크 응답 인터셉트 - AJAX JSON 캡처
+    const capturedJson = [];
+    page.on('response', async (response) => {
+      const ct = response.headers()['content-type'] || '';
+      if (!ct.includes('json')) return;
+      try {
+        const text = await response.text();
+        capturedJson.push({ url: response.url(), text });
+      } catch {}
+    });
+
+    // 세션 수립
     await page.goto(MAIN_URL, { waitUntil: 'networkidle2', timeout: 30000 });
 
-    // 세션 확보 후 전화번호 페이지로 이동
+    // 전화번호 팝업 버튼 찾아서 클릭 시도 (main 페이지에서 window.open으로 여는 경우)
+    const phonePopupPage = await (async () => {
+      try {
+        const btn = await page.$('a[href*="Phone"], a[onclick*="Phone"], button[onclick*="Phone"], a[href*="phone"], a[onclick*="localPhone"]');
+        if (!btn) return null;
+        console.log('   🔍 전화번호 팝업 버튼 발견 - 클릭 시도');
+        const popupPromise = new Promise(resolve =>
+          browser.once('targetcreated', async t => resolve(await t.page()))
+        );
+        await btn.click();
+        const popup = await Promise.race([
+          popupPromise,
+          new Promise((_, rej) => setTimeout(() => rej(new Error('no popup')), 4000))
+        ]);
+        return popup;
+      } catch {
+        return null;
+      }
+    })();
+
+    // 팝업이 열렸으면 팝업에서 데이터 추출
+    if (phonePopupPage) {
+      console.log('   ✅ 팝업 창 감지');
+      try {
+        await phonePopupPage.waitForFunction(
+          () => document.querySelectorAll('table tr').length > 2,
+          { timeout: 15000 }
+        );
+      } catch {
+        console.warn('   ⚠️ 팝업 테이블 로드 타임아웃');
+      }
+      const html = await phonePopupPage.content();
+      await phonePopupPage.close();
+      await page.close();
+      return parsePhonesFromHtml(html);
+    }
+
+    // 직접 PHONE_URL 방문
     await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
 
-    // 테이블 데이터 로드 대기 (최대 15초)
+    // 테이블 행 2개 이상 대기 (tbody 유무 상관없이)
     try {
-      await page.waitForSelector('table tbody tr td', { timeout: 15000 });
+      await page.waitForFunction(
+        () => document.querySelectorAll('table tr').length > 2,
+        { timeout: 15000 }
+      );
     } catch {
-      console.warn('   ⚠️ 테이블 셀 대기 타임아웃 - 현재 HTML로 파싱 시도');
+      console.warn('   ⚠️ 테이블 행 대기 타임아웃 - JS 초기화 함수 호출 시도');
+      // 페이지 초기화 함수 직접 호출
+      await page.evaluate(() => {
+        ['fn_search', 'fnSearch', 'search', 'init', 'loadData', 'getData'].forEach(fn => {
+          if (typeof window[fn] === 'function') {
+            try { window[fn](); } catch {}
+          }
+        });
+      });
+      // 추가 3초 대기
+      await new Promise(r => setTimeout(r, 3000));
     }
 
     const html = await page.content();
 
-    // 디버그용 HTML 저장 (구조 파악용)
-    try {
-      await fs.mkdir('data', { recursive: true });
-      await fs.writeFile('data/debug-phones.html', html);
-      console.log('   💾 data/debug-phones.html 저장됨');
-    } catch { /* 무시 */ }
+    // 디버그용 HTML 저장
+    await fs.mkdir('data', { recursive: true });
+    await fs.writeFile('data/debug-phones.html', html);
+    console.log('   💾 data/debug-phones.html 저장됨');
+
+    // 캡처된 JSON 응답 로깅 및 파싱 시도
+    if (capturedJson.length > 0) {
+      console.log(`   🔍 캡처된 AJAX 응답 ${capturedJson.length}개:`);
+      for (const { url, text } of capturedJson) {
+        console.log(`      - ${url}`);
+        try {
+          const json = JSON.parse(text);
+          const list = Array.isArray(json) ? json : (json.list || json.data || json.items || json.result);
+          if (Array.isArray(list) && list.length > 0) {
+            const first = list[0];
+            // 전화번호 필드 자동 감지
+            const regionKey  = ['localNm','region','sido','areaNm','localName'].find(k => first[k]);
+            const deptKey    = ['deptNm','dept','department','orgNm'].find(k => first[k]);
+            const phoneKey   = ['telNo','phone','tel','phoneNo','contactNo'].find(k => first[k]);
+            if (phoneKey) {
+              const phones = list.map(item => ({
+                region:     item[regionKey] || '',
+                department: item[deptKey]   || '',
+                phone:      item[phoneKey]  || '',
+                note:       item.rmk || item.note || ''
+              })).filter(p => p.phone);
+              if (phones.length > 0) {
+                console.log(`   ✅ AJAX JSON에서 ${phones.length}개 수집 (${url})`);
+                await page.close();
+                return phones;
+              }
+            }
+          }
+        } catch {}
+      }
+    }
 
     await page.close();
-
-    const $ = cheerio.load(html);
-    const phones = [];
-
-    // 가장 많은 행을 가진 테이블에서 추출
-    let maxRows = 0;
-    let targetTableIndex = 0;
-    $('table').each((i, t) => {
-      const rows = $(t).find('tr').length;
-      if (rows > maxRows) { maxRows = rows; targetTableIndex = i; }
-    });
-
-    console.log(`   ℹ️ 테이블 수: ${$('table').length}, 최대 행: ${maxRows} (index ${targetTableIndex})`);
-
-    $('table').eq(targetTableIndex).find('tr').each((i, row) => {
-      const cells = [];
-      $(row).find('td').each((j, cell) => {
-        cells.push($(cell).text().trim().replace(/\s+/g, ' '));
-      });
-      if (cells.length >= 2 && cells[0]) {
-        phones.push({
-          region: cells[0],
-          department: cells[1] || '',
-          phone: cells[2] || '',
-          note: cells[3] || ''
-        });
-      }
-    });
-
-    console.log(`   ✅ ${phones.length}개 지역 전화번호 수집`);
-    return phones;
+    return parsePhonesFromHtml(html);
 
   } catch (error) {
     if (page) await page.close();
     console.error(`   ❌ 전화번호 스크래핑 실패: ${error.message}`);
     return [];
   }
+}
+
+function parsePhonesFromHtml(html) {
+  const $ = cheerio.load(html);
+  const phones = [];
+
+  let maxRows = 0;
+  let targetTableIndex = 0;
+  $('table').each((i, t) => {
+    const rows = $(t).find('tr').length;
+    if (rows > maxRows) { maxRows = rows; targetTableIndex = i; }
+  });
+
+  console.log(`   ℹ️ 테이블 수: ${$('table').length}, 최대 행: ${maxRows} (index ${targetTableIndex})`);
+
+  $('table').eq(targetTableIndex).find('tr').each((i, row) => {
+    const cells = [];
+    $(row).find('td').each((j, cell) => {
+      cells.push($(cell).text().trim().replace(/\s+/g, ' '));
+    });
+    if (cells.length >= 2 && cells[0]) {
+      phones.push({
+        region:     cells[0],
+        department: cells[1] || '',
+        phone:      cells[2] || '',
+        note:       cells[3] || ''
+      });
+    }
+  });
+
+  console.log(`   ✅ ${phones.length}개 지역 전화번호 수집`);
+  return phones;
 }
 
 // ==========================================
