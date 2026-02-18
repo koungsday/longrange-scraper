@@ -20,6 +20,10 @@ jobs:
       pages: write
       id-token: write
 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       # ========================================
       # 1. 스크래퍼 리포 체크아웃
