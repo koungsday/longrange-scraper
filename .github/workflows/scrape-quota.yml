@@ -8,6 +8,9 @@ concurrency:
   group: scraper-pipeline
   cancel-in-progress: false  # 대기 후 실행
 
+env:
+  TZ: Asia/Seoul
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
