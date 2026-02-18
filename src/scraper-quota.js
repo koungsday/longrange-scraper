@@ -65,16 +65,18 @@ function parseQuotaTable(html) {
   $('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
     const cells = [];
 
-    // 공고 파일 링크: 행 전체 <a> 태그 중 "공고" 관련 항목 수집
+    // 공고 파일 링크: goDownloadFile(year, seq, flag) 버튼에서 URL 조립
     const fileLinks = [];
-    $(row).find('a[href]').each((k, a) => {
-      const text = $(a).text().trim();
-      const href = $(a).attr('href') || '';
-      if (text.includes('공고') || href.includes('gongg') || href.includes('notice') || href.includes('fileDown')) {
-        const fullHref = href.startsWith('http')
-          ? href
-          : 'https://ev.or.kr' + (href.startsWith('/') ? '' : '/') + href;
-        fileLinks.push({ text, href: fullHref });
+    $(row).find('button[onclick*="goDownloadFile"]').each((k, btn) => {
+      const text = $(btn).text().trim();
+      const onclick = $(btn).attr('onclick') || '';
+      const match = onclick.match(/goDownloadFile\s*\(\s*'([^']+)'\s*,\s*'([^']+)'\s*,\s*'([^']+)'\s*\)/);
+      if (match) {
+        const year = match[1];
+        const seq  = match[2];
+        const flag = match[3];
+        const href = `https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=${year}&seq=${seq}&flag=${flag}`;
+        fileLinks.push({ text, href });
       }
     });
 
