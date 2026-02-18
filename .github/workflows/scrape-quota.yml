@@ -114,7 +114,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-          git add data/quota.json data/quota-history*.json data/quota-files.json data/notices/ || true
+          git add data/quota.json data/quota-history*.json data/quota-files.json || true
 
           if ! git diff --quiet --staged; then
             echo "Data changes detected. Committing and pushing..."

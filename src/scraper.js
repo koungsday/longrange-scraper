@@ -257,16 +257,36 @@ async function scrapeRegionWithRetry(browser, region) {
 // ==========================================
 async function scrapeLocalPhones(browser) {
   console.log('📞 지역별 부처 전화번호 스크래핑...');
-  const url = 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do';
+  const MAIN_URL = 'https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do';
+  const PHONE_URL = 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do';
   let page = null;
 
   try {
     page = await browser.newPage();
     await page.setDefaultNavigationTimeout(30000);
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-    await page.waitForSelector('table', { timeout: 10000 });
+
+    // ev.or.kr 세션 수립 (직접 접근 시 빈 페이지 반환 방지)
+    await page.goto(MAIN_URL, { waitUntil: 'networkidle2', timeout: 30000 });
+
+    // 세션 확보 후 전화번호 페이지로 이동
+    await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
+
+    // 테이블 데이터 로드 대기 (최대 15초)
+    try {
+      await page.waitForSelector('table tbody tr td', { timeout: 15000 });
+    } catch {
+      console.warn('   ⚠️ 테이블 셀 대기 타임아웃 - 현재 HTML로 파싱 시도');
+    }
 
     const html = await page.content();
+
+    // 디버그용 HTML 저장 (구조 파악용)
+    try {
+      await fs.mkdir('data', { recursive: true });
+      await fs.writeFile('data/debug-phones.html', html);
+      console.log('   💾 data/debug-phones.html 저장됨');
+    } catch { /* 무시 */ }
+
     await page.close();
 
     const $ = cheerio.load(html);
@@ -276,11 +296,13 @@ async function scrapeLocalPhones(browser) {
     let maxRows = 0;
     let targetTableIndex = 0;
     $('table').each((i, t) => {
-      const rows = $(t).find('tbody tr').length;
+      const rows = $(t).find('tr').length;
       if (rows > maxRows) { maxRows = rows; targetTableIndex = i; }
     });
 
-    $('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
+    console.log(`   ℹ️ 테이블 수: ${$('table').length}, 최대 행: ${maxRows} (index ${targetTableIndex})`);
+
+    $('table').eq(targetTableIndex).find('tr').each((i, row) => {
       const cells = [];
       $(row).find('td').each((j, cell) => {
         cells.push($(cell).text().trim().replace(/\s+/g, ' '));
