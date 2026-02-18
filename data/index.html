@@ -3,28 +3,408 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EV Subsidy Data API</title>
+  <title>전기차 보조금 잔여 할당량 추이</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
   <style>
-    body { font-family: -apple-system, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; color: #333; }
-    h1 { font-size: 1.4em; }
-    a { color: #0969da; }
-    ul { line-height: 2; }
-    code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
-    .updated { color: #666; font-size: 0.85em; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, 'Noto Sans KR', sans-serif; background: #f5f7fa; color: #333; }
+    .header { background: #1a56db; color: #fff; padding: 20px 24px; }
+    .header h1 { font-size: 1.3em; font-weight: 600; }
+    .header .sub { font-size: 0.8em; opacity: 0.8; margin-top: 4px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .card { background: #fff; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); padding: 20px; margin-bottom: 16px; }
+    .card h2 { font-size: 1.05em; margin-bottom: 12px; color: #1a56db; }
+
+    /* Filters */
+    .filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+    .filters label { font-size: 0.85em; font-weight: 500; }
+    .filters select { padding: 6px 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.85em; background: #fff; }
+
+    /* Chart */
+    .chart-wrap { position: relative; width: 100%; max-height: 420px; }
+
+    /* Table */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82em; }
+    th, td { padding: 8px 10px; text-align: right; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+    th { background: #f9fafb; font-weight: 600; position: sticky; top: 0; }
+    th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: inherit; }
+    td:first-child { background: #fff; font-weight: 500; }
+    tr:hover td { background: #f0f5ff; }
+    .zero { color: #ccc; }
+    .highlight { background: #fef3c7 !important; }
+
+    /* Sido grouping */
+    .sido-group { background: #eef2ff !important; font-weight: 600; }
+    .sido-group td { border-top: 2px solid #c7d2fe; }
+
+    /* Summary stats */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 16px; }
+    .stat-box { background: #f0f5ff; border-radius: 8px; padding: 14px; text-align: center; }
+    .stat-box .num { font-size: 1.5em; font-weight: 700; color: #1a56db; }
+    .stat-box .label { font-size: 0.75em; color: #666; margin-top: 2px; }
+
+    /* Footer links */
+    .endpoints { font-size: 0.8em; color: #666; }
+    .endpoints a { color: #1a56db; }
+    .endpoints code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+
+    @media (max-width: 600px) {
+      .container { padding: 8px; }
+      .card { padding: 14px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+    }
   </style>
 </head>
 <body>
-  <h1>EV Subsidy Data API</h1>
-  <p class="updated">Last deployed: <span id="ts"></span></p>
-  <h2>Endpoints</h2>
-  <ul>
-    <li><a href="quota.json"><code>quota.json</code></a> — 전기차 보급 할당량 (현재 스냅샷)</li>
-    <li><a href="quota-history.json"><code>quota-history.json</code></a> — 할당량 일일 추이 (올해)</li>
-    <li><a href="years.json"><code>years.json</code></a> — 연도 목록</li>
-    <li><a href="2026/subsidies.json"><code>2026/subsidies.json</code></a> — 보조금 데이터</li>
-    <li><a href="2026/vehicles.json"><code>2026/vehicles.json</code></a> — 차량 데이터</li>
-    <li><a href="2025/subsidies.json"><code>2025/subsidies.json</code></a> — 2025 보조금 데이터</li>
-    <li><a href="2025/vehicles.json"><code>2025/vehicles.json</code></a> — 2025 차량 데이터</li>
-  </ul>
+  <div class="header">
+    <h1>전기차 보조금 잔여 할당량 추이</h1>
+    <div class="sub">무공해차 통합누리집 데이터 기반 | <span id="updated"></span></div>
+  </div>
+  <div class="container">
+
+    <!-- Summary -->
+    <div class="stats" id="stats"></div>
+
+    <!-- Chart -->
+    <div class="card">
+      <h2>잔여 할당량 추이 차트</h2>
+      <div class="filters">
+        <label>시도</label>
+        <select id="sidoFilter"><option value="all">전체</option></select>
+        <label>지역</label>
+        <select id="regionFilter"><option value="all">전체 (시도 합산)</option></select>
+        <label>차종</label>
+        <select id="vtypeFilter"></select>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="trendChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="card">
+      <h2>지역별 잔여 현황</h2>
+      <div class="filters">
+        <label>차종</label>
+        <select id="tableVtype"></select>
+        <label>시도</label>
+        <select id="tableSido"><option value="all">전체</option></select>
+      </div>
+      <div class="table-wrap">
+        <table id="quotaTable">
+          <thead><tr id="tableHead"></tr></thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- API Links -->
+    <div class="card endpoints">
+      <h2>API Endpoints</h2>
+      <ul style="list-style:none;line-height:2;">
+        <li><a href="quota.json"><code>quota.json</code></a> — 현재 스냅샷</li>
+        <li><a href="quota-history.json"><code>quota-history.json</code></a> — 일일 추이</li>
+        <li><a href="years.json"><code>years.json</code></a> — 연도 목록</li>
+        <li><a href="2026/subsidies.json"><code>2026/subsidies.json</code></a> — 보조금</li>
+        <li><a href="2026/vehicles.json"><code>2026/vehicles.json</code></a> — 차량</li>
+      </ul>
+    </div>
+  </div>
+
+<script>
+let DATA = null;
+let trendChart = null;
+
+// Color palette for chart lines
+const COLORS = [
+  '#1a56db','#e02424','#057a55','#9333ea','#d97706','#0891b2',
+  '#be123c','#4f46e5','#15803d','#c2410c','#7c3aed','#0d9488',
+  '#b91c1c','#2563eb','#16a34a','#ea580c','#8b5cf6','#0e7490'
+];
+
+async function init() {
+  const resp = await fetch('quota-history.json');
+  DATA = await resp.json();
+  document.getElementById('updated').textContent = DATA.lastUpdated || '';
+
+  // Collect all sidos and vehicle types
+  const sidos = new Set();
+  const vtypes = new Set();
+  for (const code of Object.keys(DATA.regions)) {
+    sidos.add(DATA.regions[code].sido);
+  }
+  const dates = Object.keys(DATA.snapshots).sort();
+  for (const d of dates) {
+    for (const code of Object.keys(DATA.snapshots[d])) {
+      for (const vt of Object.keys(DATA.snapshots[d][code])) {
+        vtypes.add(vt);
+      }
+    }
+  }
+
+  // Populate sido filters
+  const sortedSidos = [...sidos].sort();
+  for (const sel of [document.getElementById('sidoFilter'), document.getElementById('tableSido')]) {
+    for (const s of sortedSidos) {
+      const opt = document.createElement('option');
+      opt.value = s; opt.textContent = s;
+      sel.appendChild(opt);
+    }
+  }
+
+  // Populate vtype filters
+  const sortedVtypes = [...vtypes].sort();
+  for (const sel of [document.getElementById('vtypeFilter'), document.getElementById('tableVtype')]) {
+    for (const vt of sortedVtypes) {
+      const opt = document.createElement('option');
+      opt.value = vt; opt.textContent = vt;
+      sel.appendChild(opt);
+    }
+  }
+
+  // Events
+  document.getElementById('sidoFilter').addEventListener('change', onSidoChange);
+  document.getElementById('regionFilter').addEventListener('change', renderChart);
+  document.getElementById('vtypeFilter').addEventListener('change', renderChart);
+  document.getElementById('tableVtype').addEventListener('change', renderTable);
+  document.getElementById('tableSido').addEventListener('change', renderTable);
+
+  renderStats();
+  onSidoChange();
+  renderTable();
+}
+
+function getLatestDate() {
+  return Object.keys(DATA.snapshots).sort().slice(-1)[0];
+}
+
+function renderStats() {
+  const dates = Object.keys(DATA.snapshots).sort();
+  const latest = dates[dates.length - 1];
+  const snap = DATA.snapshots[latest];
+
+  let totalRemaining = 0;
+  let regionCount = 0;
+  const vtypeTotals = {};
+  for (const [code, types] of Object.entries(snap)) {
+    regionCount++;
+    for (const [vt, d] of Object.entries(types)) {
+      totalRemaining += d.remaining?.total || 0;
+      vtypeTotals[vt] = (vtypeTotals[vt] || 0) + (d.remaining?.total || 0);
+    }
+  }
+
+  let html = `
+    <div class="stat-box"><div class="num">${totalRemaining.toLocaleString()}</div><div class="label">전체 잔여 (대)</div></div>
+    <div class="stat-box"><div class="num">${regionCount}</div><div class="label">수집 지역</div></div>
+    <div class="stat-box"><div class="num">${dates.length}</div><div class="label">수집일 수</div></div>
+  `;
+  for (const [vt, total] of Object.entries(vtypeTotals)) {
+    html += `<div class="stat-box"><div class="num">${total.toLocaleString()}</div><div class="label">${vt} 잔여</div></div>`;
+  }
+  document.getElementById('stats').innerHTML = html;
+}
+
+function onSidoChange() {
+  const sido = document.getElementById('sidoFilter').value;
+  const regionSel = document.getElementById('regionFilter');
+  regionSel.innerHTML = '<option value="all">전체 (시도 합산)</option>';
+
+  if (sido !== 'all') {
+    const regions = Object.entries(DATA.regions)
+      .filter(([_, r]) => r.sido === sido)
+      .sort((a, b) => a[1].name.localeCompare(b[1].name));
+    for (const [code, r] of regions) {
+      const opt = document.createElement('option');
+      opt.value = code; opt.textContent = r.name;
+      regionSel.appendChild(opt);
+    }
+  }
+  renderChart();
+}
+
+function renderChart() {
+  const sido = document.getElementById('sidoFilter').value;
+  const region = document.getElementById('regionFilter').value;
+  const vtype = document.getElementById('vtypeFilter').value;
+  const dates = Object.keys(DATA.snapshots).sort();
+
+  // Determine which regions to show
+  let targetCodes;
+  if (region !== 'all') {
+    targetCodes = { [region]: DATA.regions[region]?.name || region };
+  } else if (sido !== 'all') {
+    // Show top regions in this sido
+    targetCodes = {};
+    for (const [code, r] of Object.entries(DATA.regions)) {
+      if (r.sido === sido) targetCodes[code] = r.name;
+    }
+  } else {
+    // Show sido-level aggregation
+    targetCodes = null; // special: aggregate by sido
+  }
+
+  const datasets = [];
+  if (targetCodes === null) {
+    // Aggregate by sido
+    const sidoMap = {};
+    for (const [code, r] of Object.entries(DATA.regions)) {
+      if (!sidoMap[r.sido]) sidoMap[r.sido] = [];
+      sidoMap[r.sido].push(code);
+    }
+    const sortedSidos = Object.keys(sidoMap).sort();
+    let ci = 0;
+    for (const s of sortedSidos) {
+      const codes = sidoMap[s];
+      const values = dates.map(d => {
+        let sum = 0;
+        for (const c of codes) {
+          sum += DATA.snapshots[d]?.[c]?.[vtype]?.remaining?.total || 0;
+        }
+        return sum;
+      });
+      // Only show sidos with data
+      if (values.some(v => v > 0)) {
+        datasets.push({
+          label: s,
+          data: values,
+          borderColor: COLORS[ci % COLORS.length],
+          backgroundColor: COLORS[ci % COLORS.length] + '20',
+          borderWidth: 2,
+          pointRadius: 3,
+          tension: 0.3
+        });
+        ci++;
+      }
+    }
+  } else {
+    // Show individual regions
+    const entries = Object.entries(targetCodes).sort((a,b) => {
+      // Sort by latest value desc
+      const la = getLatestDate();
+      const va = DATA.snapshots[la]?.[a[0]]?.[vtype]?.remaining?.total || 0;
+      const vb = DATA.snapshots[la]?.[b[0]]?.[vtype]?.remaining?.total || 0;
+      return vb - va;
+    }).slice(0, 15); // max 15 lines
+
+    let ci = 0;
+    for (const [code, name] of entries) {
+      const values = dates.map(d => DATA.snapshots[d]?.[code]?.[vtype]?.remaining?.total || 0);
+      if (values.some(v => v > 0)) {
+        datasets.push({
+          label: name,
+          data: values,
+          borderColor: COLORS[ci % COLORS.length],
+          backgroundColor: COLORS[ci % COLORS.length] + '20',
+          borderWidth: 2,
+          pointRadius: 3,
+          tension: 0.3
+        });
+        ci++;
+      }
+    }
+  }
+
+  // Format date labels
+  const labels = dates.map(d => {
+    const parts = d.split('-');
+    return `${parseInt(parts[1])}/${parseInt(parts[2])}`;
+  });
+
+  if (trendChart) trendChart.destroy();
+  const ctx = document.getElementById('trendChart').getContext('2d');
+  trendChart = new Chart(ctx, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } },
+        tooltip: {
+          callbacks: {
+            label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}대`
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { callback: v => v.toLocaleString() }
+        }
+      }
+    }
+  });
+}
+
+function renderTable() {
+  const vtype = document.getElementById('tableVtype').value;
+  const sidoFilter = document.getElementById('tableSido').value;
+  const dates = Object.keys(DATA.snapshots).sort();
+
+  // Build header
+  const head = document.getElementById('tableHead');
+  let headHtml = '<th>지역</th>';
+  for (const d of dates) {
+    const parts = d.split('-');
+    headHtml += `<th>${parseInt(parts[1])}/${parseInt(parts[2])}</th>`;
+  }
+  headHtml += '<th>변동</th>';
+  head.innerHTML = headHtml;
+
+  // Gather region data, grouped by sido
+  const sidoGroups = {};
+  for (const [code, r] of Object.entries(DATA.regions)) {
+    if (sidoFilter !== 'all' && r.sido !== sidoFilter) continue;
+    if (!sidoGroups[r.sido]) sidoGroups[r.sido] = [];
+
+    const values = dates.map(d => DATA.snapshots[d]?.[code]?.[vtype]?.remaining?.total ?? null);
+    sidoGroups[r.sido].push({ code, name: r.name, values });
+  }
+
+  const tbody = document.getElementById('tableBody');
+  let bodyHtml = '';
+  const sortedSidos = Object.keys(sidoGroups).sort();
+
+  for (const sido of sortedSidos) {
+    const regions = sidoGroups[sido];
+    // Sido summary row
+    const sidoValues = dates.map((_, i) => {
+      return regions.reduce((sum, r) => sum + (r.values[i] || 0), 0);
+    });
+    const sidoDiff = sidoValues.length >= 2 ? sidoValues[sidoValues.length-1] - sidoValues[0] : 0;
+
+    bodyHtml += `<tr class="sido-group"><td>${sido}</td>`;
+    for (const v of sidoValues) {
+      bodyHtml += `<td>${v === 0 ? '<span class="zero">0</span>' : v.toLocaleString()}</td>`;
+    }
+    const diffColor = sidoDiff < 0 ? '#e02424' : sidoDiff > 0 ? '#057a55' : '#666';
+    bodyHtml += `<td style="color:${diffColor};font-weight:600">${sidoDiff > 0 ? '+' : ''}${sidoDiff.toLocaleString()}</td></tr>`;
+
+    // Individual regions
+    const sorted = regions
+      .filter(r => r.values.some(v => v !== null && v > 0))
+      .sort((a, b) => (b.values[b.values.length-1] || 0) - (a.values[a.values.length-1] || 0));
+
+    for (const r of sorted) {
+      bodyHtml += `<tr><td>&nbsp;&nbsp;${r.name}</td>`;
+      for (const v of r.values) {
+        const val = v ?? 0;
+        bodyHtml += `<td>${val === 0 ? '<span class="zero">0</span>' : val.toLocaleString()}</td>`;
+      }
+      const first = r.values.find(v => v !== null && v > 0) || 0;
+      const last = r.values[r.values.length - 1] || 0;
+      const diff = last - first;
+      const dc = diff < 0 ? '#e02424' : diff > 0 ? '#057a55' : '#666';
+      bodyHtml += `<td style="color:${dc}">${diff > 0 ? '+' : ''}${diff.toLocaleString()}</td></tr>`;
+    }
+  }
+  tbody.innerHTML = bodyHtml;
+}
+
+init();
+</script>
 </body>
 </html>
