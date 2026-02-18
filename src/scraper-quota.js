@@ -118,7 +118,7 @@ function parseQuotaTable(html) {
           remaining_taxi: parseNum(remaining[3]),
           remaining_general: parseNum(remaining[4]),
 
-          note: (cells[9] && cells[9].join(' ')) || ''
+          note: (cells[9] && cells[9].join('\n')) || ''
         };
 
         quotaData.push(rowData);
@@ -245,10 +245,7 @@ async function saveQuotaHistory(quotaData, regions) {
 
     const vehicleType = row.vehicleType || '기타';
     todaySnapshot[code][vehicleType] = {
-      quota:      { total: row.quota_total, priority: row.quota_priority, corporate: row.quota_corporate, taxi: row.quota_taxi, general: row.quota_general },
-      registered: { total: row.registered_total, priority: row.registered_priority, corporate: row.registered_corporate, taxi: row.registered_taxi, general: row.registered_general },
-      delivered:  { total: row.delivered_total, priority: row.delivered_priority, corporate: row.delivered_corporate, taxi: row.delivered_taxi, general: row.delivered_general },
-      remaining:  { total: row.remaining_total, priority: row.remaining_priority, corporate: row.remaining_corporate, taxi: row.remaining_taxi, general: row.remaining_general }
+      remaining: { total: row.remaining_total, priority: row.remaining_priority, corporate: row.remaining_corporate, taxi: row.remaining_taxi, general: row.remaining_general }
     };
   }
 
