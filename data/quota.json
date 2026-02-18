@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-18T04:30:40.475Z",
+  "timestamp": "2026-02-18T04:40:36.938Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1947,16 +1947,16 @@
           "registered_corporate": 2,
           "registered_taxi": 0,
           "registered_general": 129,
-          "delivered_total": 5,
+          "delivered_total": 6,
           "delivered_priority": 0,
           "delivered_corporate": 0,
           "delivered_taxi": 0,
-          "delivered_general": 5,
-          "remaining_total": 125,
+          "delivered_general": 6,
+          "remaining_total": 124,
           "remaining_priority": 13,
           "remaining_corporate": 0,
           "remaining_taxi": 13,
-          "remaining_general": 99,
+          "remaining_general": 98,
           "note": "1. 사 업 명 : 2026년도 상반기 계룡시 전기자동차 민간보급사업 2. 보급대수 : 전기승용 약130대, 전기화물 약15대, 전기승합 1대 3. 신청기간 : 2026. 2. 9.(월) 10:00 ~ 2026. 6. 30.(화) ※ 예산소진 시 조기마감 4. 선정방법 : 출고등록순 (지원가능 확인 요청순)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-18T04:30:40.393Z"
+      "timestamp": "2026-02-18T04:40:36.851Z"
     }
   ]
 }
