@@ -1,0 +1,1934 @@
+{
+  "year": 2026,
+  "lastUpdated": "2026-02-18T10:30:44.811Z",
+  "regions": {
+    "1100": {
+      "name": "서울특별시",
+      "sido": "서울"
+    },
+    "2600": {
+      "name": "부산광역시",
+      "sido": "부산"
+    },
+    "2700": {
+      "name": "대구광역시",
+      "sido": "대구"
+    },
+    "2800": {
+      "name": "인천광역시",
+      "sido": "인천"
+    },
+    "2900": {
+      "name": "광주광역시",
+      "sido": "광주"
+    },
+    "3000": {
+      "name": "대전광역시",
+      "sido": "대전"
+    },
+    "3100": {
+      "name": "울산광역시",
+      "sido": "울산"
+    },
+    "3611": {
+      "name": "세종특별자치시",
+      "sido": "세종"
+    },
+    "4111": {
+      "name": "수원시",
+      "sido": "경기"
+    },
+    "4113": {
+      "name": "성남시",
+      "sido": "경기"
+    },
+    "4115": {
+      "name": "의정부시",
+      "sido": "경기"
+    },
+    "4117": {
+      "name": "안양시",
+      "sido": "경기"
+    },
+    "4119": {
+      "name": "부천시",
+      "sido": "경기"
+    },
+    "4121": {
+      "name": "광명시",
+      "sido": "경기"
+    },
+    "4122": {
+      "name": "평택시",
+      "sido": "경기"
+    },
+    "4125": {
+      "name": "동두천시",
+      "sido": "경기"
+    },
+    "4127": {
+      "name": "안산시",
+      "sido": "경기"
+    },
+    "4128": {
+      "name": "고양시",
+      "sido": "경기"
+    },
+    "4129": {
+      "name": "과천시",
+      "sido": "경기"
+    },
+    "4131": {
+      "name": "구리시",
+      "sido": "경기"
+    },
+    "4136": {
+      "name": "남양주시",
+      "sido": "경기"
+    },
+    "4137": {
+      "name": "오산시",
+      "sido": "경기"
+    },
+    "4139": {
+      "name": "시흥시",
+      "sido": "경기"
+    },
+    "4141": {
+      "name": "군포시",
+      "sido": "경기"
+    },
+    "4143": {
+      "name": "의왕시",
+      "sido": "경기"
+    },
+    "4145": {
+      "name": "하남시",
+      "sido": "경기"
+    },
+    "4146": {
+      "name": "용인시",
+      "sido": "경기"
+    },
+    "4148": {
+      "name": "파주시",
+      "sido": "경기"
+    },
+    "4150": {
+      "name": "이천시",
+      "sido": "경기"
+    },
+    "4155": {
+      "name": "안성시",
+      "sido": "경기"
+    },
+    "4157": {
+      "name": "김포시",
+      "sido": "경기"
+    },
+    "4159": {
+      "name": "화성시",
+      "sido": "경기"
+    },
+    "4161": {
+      "name": "광주시",
+      "sido": "경기"
+    },
+    "4163": {
+      "name": "양주시",
+      "sido": "경기"
+    },
+    "4165": {
+      "name": "포천시",
+      "sido": "경기"
+    },
+    "4167": {
+      "name": "여주시",
+      "sido": "경기"
+    },
+    "4180": {
+      "name": "연천군",
+      "sido": "경기"
+    },
+    "4182": {
+      "name": "가평군",
+      "sido": "경기"
+    },
+    "4183": {
+      "name": "양평군",
+      "sido": "경기"
+    },
+    "4211": {
+      "name": "춘천시",
+      "sido": "강원"
+    },
+    "4213": {
+      "name": "원주시",
+      "sido": "강원"
+    },
+    "4215": {
+      "name": "강릉시",
+      "sido": "강원"
+    },
+    "4217": {
+      "name": "동해시",
+      "sido": "강원"
+    },
+    "4219": {
+      "name": "태백시",
+      "sido": "강원"
+    },
+    "4221": {
+      "name": "속초시",
+      "sido": "강원"
+    },
+    "4223": {
+      "name": "삼척시",
+      "sido": "강원"
+    },
+    "4272": {
+      "name": "홍천군",
+      "sido": "강원"
+    },
+    "4273": {
+      "name": "횡성군",
+      "sido": "강원"
+    },
+    "4275": {
+      "name": "영월군",
+      "sido": "강원"
+    },
+    "4276": {
+      "name": "평창군",
+      "sido": "강원"
+    },
+    "4277": {
+      "name": "정선군",
+      "sido": "강원"
+    },
+    "4278": {
+      "name": "철원군",
+      "sido": "강원"
+    },
+    "4279": {
+      "name": "화천군",
+      "sido": "강원"
+    },
+    "4280": {
+      "name": "양구군",
+      "sido": "강원"
+    },
+    "4281": {
+      "name": "인제군",
+      "sido": "강원"
+    },
+    "4282": {
+      "name": "고성군",
+      "sido": "강원"
+    },
+    "4283": {
+      "name": "양양군",
+      "sido": "강원"
+    },
+    "4311": {
+      "name": "청주시",
+      "sido": "충북"
+    },
+    "4313": {
+      "name": "충주시",
+      "sido": "충북"
+    },
+    "4315": {
+      "name": "제천시",
+      "sido": "충북"
+    },
+    "4372": {
+      "name": "보은군",
+      "sido": "충북"
+    },
+    "4373": {
+      "name": "옥천군",
+      "sido": "충북"
+    },
+    "4374": {
+      "name": "영동군",
+      "sido": "충북"
+    },
+    "4375": {
+      "name": "진천군",
+      "sido": "충북"
+    },
+    "4376": {
+      "name": "괴산군",
+      "sido": "충북"
+    },
+    "4377": {
+      "name": "음성군",
+      "sido": "충북"
+    },
+    "4380": {
+      "name": "단양군",
+      "sido": "충북"
+    },
+    "4413": {
+      "name": "천안시",
+      "sido": "충남"
+    },
+    "4415": {
+      "name": "공주시",
+      "sido": "충남"
+    },
+    "4418": {
+      "name": "보령시",
+      "sido": "충남"
+    },
+    "4420": {
+      "name": "아산시",
+      "sido": "충남"
+    },
+    "4421": {
+      "name": "서산시",
+      "sido": "충남"
+    },
+    "4423": {
+      "name": "논산시",
+      "sido": "충남"
+    },
+    "4425": {
+      "name": "계룡시",
+      "sido": "충남"
+    },
+    "4427": {
+      "name": "당진시",
+      "sido": "충남"
+    },
+    "4471": {
+      "name": "금산군",
+      "sido": "충남"
+    },
+    "4476": {
+      "name": "부여군",
+      "sido": "충남"
+    },
+    "4477": {
+      "name": "서천군",
+      "sido": "충남"
+    },
+    "4479": {
+      "name": "청양군",
+      "sido": "충남"
+    },
+    "4480": {
+      "name": "홍성군",
+      "sido": "충남"
+    },
+    "4481": {
+      "name": "예산군",
+      "sido": "충남"
+    },
+    "4511": {
+      "name": "전주시",
+      "sido": "전북"
+    },
+    "4513": {
+      "name": "군산시",
+      "sido": "전북"
+    },
+    "4514": {
+      "name": "익산시",
+      "sido": "전북"
+    },
+    "4518": {
+      "name": "정읍시",
+      "sido": "전북"
+    },
+    "4519": {
+      "name": "남원시",
+      "sido": "전북"
+    },
+    "4521": {
+      "name": "김제시",
+      "sido": "전북"
+    },
+    "4571": {
+      "name": "완주군",
+      "sido": "전북"
+    },
+    "4572": {
+      "name": "진안군",
+      "sido": "전북"
+    },
+    "4573": {
+      "name": "무주군",
+      "sido": "전북"
+    },
+    "4574": {
+      "name": "장수군",
+      "sido": "전북"
+    },
+    "4575": {
+      "name": "임실군",
+      "sido": "전북"
+    },
+    "4577": {
+      "name": "순창군",
+      "sido": "전북"
+    },
+    "4579": {
+      "name": "고창군",
+      "sido": "전북"
+    },
+    "4580": {
+      "name": "부안군",
+      "sido": "전북"
+    },
+    "4611": {
+      "name": "목포시",
+      "sido": "전남"
+    },
+    "4613": {
+      "name": "여수시",
+      "sido": "전남"
+    },
+    "4615": {
+      "name": "순천시",
+      "sido": "전남"
+    },
+    "4617": {
+      "name": "나주시",
+      "sido": "전남"
+    },
+    "4623": {
+      "name": "광양시",
+      "sido": "전남"
+    },
+    "4671": {
+      "name": "담양군",
+      "sido": "전남"
+    },
+    "4672": {
+      "name": "곡성군",
+      "sido": "전남"
+    },
+    "4673": {
+      "name": "구례군",
+      "sido": "전남"
+    },
+    "4677": {
+      "name": "고흥군",
+      "sido": "전남"
+    },
+    "4678": {
+      "name": "보성군",
+      "sido": "전남"
+    },
+    "4679": {
+      "name": "화순군",
+      "sido": "전남"
+    },
+    "4680": {
+      "name": "장흥군",
+      "sido": "전남"
+    },
+    "4681": {
+      "name": "강진군",
+      "sido": "전남"
+    },
+    "4682": {
+      "name": "해남군",
+      "sido": "전남"
+    },
+    "4683": {
+      "name": "영암군",
+      "sido": "전남"
+    },
+    "4684": {
+      "name": "무안군",
+      "sido": "전남"
+    },
+    "4686": {
+      "name": "함평군",
+      "sido": "전남"
+    },
+    "4687": {
+      "name": "영광군",
+      "sido": "전남"
+    },
+    "4688": {
+      "name": "장성군",
+      "sido": "전남"
+    },
+    "4689": {
+      "name": "완도군",
+      "sido": "전남"
+    },
+    "4690": {
+      "name": "진도군",
+      "sido": "전남"
+    },
+    "4691": {
+      "name": "신안군",
+      "sido": "전남"
+    },
+    "4711": {
+      "name": "포항시",
+      "sido": "경북"
+    },
+    "4713": {
+      "name": "경주시",
+      "sido": "경북"
+    },
+    "4715": {
+      "name": "김천시",
+      "sido": "경북"
+    },
+    "4717": {
+      "name": "안동시",
+      "sido": "경북"
+    },
+    "4719": {
+      "name": "구미시",
+      "sido": "경북"
+    },
+    "4721": {
+      "name": "영주시",
+      "sido": "경북"
+    },
+    "4723": {
+      "name": "영천시",
+      "sido": "경북"
+    },
+    "4725": {
+      "name": "상주시",
+      "sido": "경북"
+    },
+    "4728": {
+      "name": "문경시",
+      "sido": "경북"
+    },
+    "4729": {
+      "name": "경산시",
+      "sido": "경북"
+    },
+    "4773": {
+      "name": "의성군",
+      "sido": "경북"
+    },
+    "4775": {
+      "name": "청송군",
+      "sido": "경북"
+    },
+    "4776": {
+      "name": "영양군",
+      "sido": "경북"
+    },
+    "4777": {
+      "name": "영덕군",
+      "sido": "경북"
+    },
+    "4782": {
+      "name": "청도군",
+      "sido": "경북"
+    },
+    "4783": {
+      "name": "고령군",
+      "sido": "경북"
+    },
+    "4784": {
+      "name": "성주군",
+      "sido": "경북"
+    },
+    "4785": {
+      "name": "칠곡군",
+      "sido": "경북"
+    },
+    "4790": {
+      "name": "예천군",
+      "sido": "경북"
+    },
+    "4792": {
+      "name": "봉화군",
+      "sido": "경북"
+    },
+    "4793": {
+      "name": "울진군",
+      "sido": "경북"
+    },
+    "4794": {
+      "name": "울릉군",
+      "sido": "경북"
+    },
+    "4812": {
+      "name": "창원시",
+      "sido": "경남"
+    },
+    "4817": {
+      "name": "진주시",
+      "sido": "경남"
+    },
+    "4822": {
+      "name": "통영시",
+      "sido": "경남"
+    },
+    "4824": {
+      "name": "사천시",
+      "sido": "경남"
+    },
+    "4825": {
+      "name": "김해시",
+      "sido": "경남"
+    },
+    "4827": {
+      "name": "밀양시",
+      "sido": "경남"
+    },
+    "4831": {
+      "name": "거제시",
+      "sido": "경남"
+    },
+    "4833": {
+      "name": "양산시",
+      "sido": "경남"
+    },
+    "4872": {
+      "name": "의령군",
+      "sido": "경남"
+    },
+    "4873": {
+      "name": "함안군",
+      "sido": "경남"
+    },
+    "4874": {
+      "name": "창녕군",
+      "sido": "경남"
+    },
+    "4882": {
+      "name": "고성군",
+      "sido": "경남"
+    },
+    "4884": {
+      "name": "남해군",
+      "sido": "경남"
+    },
+    "4885": {
+      "name": "하동군",
+      "sido": "경남"
+    },
+    "4886": {
+      "name": "산청군",
+      "sido": "경남"
+    },
+    "4887": {
+      "name": "함양군",
+      "sido": "경남"
+    },
+    "4888": {
+      "name": "거창군",
+      "sido": "경남"
+    },
+    "4889": {
+      "name": "합천군",
+      "sido": "경남"
+    },
+    "5000": {
+      "name": "제주특별자치도",
+      "sido": "제주"
+    },
+    "9999": {
+      "name": "한국환경공단",
+      "sido": "공단"
+    },
+    "43745": {
+      "name": "증평군",
+      "sido": "충북"
+    },
+    "44825": {
+      "name": "태안군",
+      "sido": "충남"
+    }
+  },
+  "snapshots": {
+    "2026-02-18": {
+      "1100": {
+        "전기승용": {
+          "total": 10500,
+          "remaining": 9000,
+          "registered": 2326,
+          "delivered": 1500
+        }
+      },
+      "2600": {
+        "전기승용": {
+          "total": 4126,
+          "remaining": 3584,
+          "registered": 857,
+          "delivered": 542
+        }
+      },
+      "2700": {
+        "전기승용": {
+          "total": 1215,
+          "remaining": 1109,
+          "registered": 1284,
+          "delivered": 106
+        }
+      },
+      "2800": {
+        "전기승용": {
+          "total": 6160,
+          "remaining": 5581,
+          "registered": 1236,
+          "delivered": 579
+        }
+      },
+      "2900": {
+        "전기승용": {
+          "total": 1930,
+          "remaining": 1534,
+          "registered": 822,
+          "delivered": 396
+        }
+      },
+      "3000": {
+        "전기승용": {
+          "total": 924,
+          "remaining": 512,
+          "registered": 977,
+          "delivered": 412
+        }
+      },
+      "3100": {
+        "전기승용": {
+          "total": 1736,
+          "remaining": 1458,
+          "registered": 418,
+          "delivered": 278
+        }
+      },
+      "3611": {
+        "전기승용": {
+          "total": 797,
+          "remaining": 734,
+          "registered": 312,
+          "delivered": 63
+        }
+      },
+      "4111": {
+        "전기승용": {
+          "total": 2470,
+          "remaining": 2356,
+          "registered": 529,
+          "delivered": 114
+        }
+      },
+      "4113": {
+        "전기승용": {
+          "total": 1949,
+          "remaining": 1926,
+          "registered": 107,
+          "delivered": 23
+        }
+      },
+      "4115": {
+        "전기승용": {
+          "total": 700,
+          "remaining": 668,
+          "registered": 126,
+          "delivered": 32
+        }
+      },
+      "4117": {
+        "전기승용": {
+          "total": 1350,
+          "remaining": 1334,
+          "registered": 97,
+          "delivered": 16
+        }
+      },
+      "4119": {
+        "전기승용": {
+          "total": 350,
+          "remaining": 284,
+          "registered": 274,
+          "delivered": 66
+        }
+      },
+      "4121": {
+        "전기승용": {
+          "total": 450,
+          "remaining": 396,
+          "registered": 131,
+          "delivered": 54
+        }
+      },
+      "4122": {
+        "전기승용": {
+          "total": 996,
+          "remaining": 837,
+          "registered": 471,
+          "delivered": 159
+        }
+      },
+      "4125": {
+        "전기승용": {
+          "total": 165,
+          "remaining": 159,
+          "registered": 24,
+          "delivered": 6
+        }
+      },
+      "4127": {
+        "전기승용": {
+          "total": 800,
+          "remaining": 790,
+          "registered": 101,
+          "delivered": 10
+        }
+      },
+      "4128": {
+        "전기승용": {
+          "total": 2500,
+          "remaining": 2413,
+          "registered": 337,
+          "delivered": 87
+        }
+      },
+      "4129": {
+        "전기승용": {
+          "total": 220,
+          "remaining": 219,
+          "registered": 29,
+          "delivered": 1
+        }
+      },
+      "4131": {
+        "전기승용": {
+          "total": 400,
+          "remaining": 379,
+          "registered": 62,
+          "delivered": 21
+        }
+      },
+      "4136": {
+        "전기승용": {
+          "total": 1000,
+          "remaining": 740,
+          "registered": 433,
+          "delivered": 260
+        }
+      },
+      "4137": {
+        "전기승용": {
+          "total": 600,
+          "remaining": 553,
+          "registered": 163,
+          "delivered": 47
+        }
+      },
+      "4139": {
+        "전기승용": {
+          "total": 650,
+          "remaining": 605,
+          "registered": 216,
+          "delivered": 45
+        }
+      },
+      "4141": {
+        "전기승용": {
+          "total": 750,
+          "remaining": 713,
+          "registered": 86,
+          "delivered": 37
+        }
+      },
+      "4143": {
+        "전기승용": {
+          "total": 300,
+          "remaining": 296,
+          "registered": 65,
+          "delivered": 4
+        }
+      },
+      "4145": {
+        "전기승용": {
+          "total": 630,
+          "remaining": 614,
+          "registered": 138,
+          "delivered": 16
+        }
+      },
+      "4146": {
+        "전기승용": {
+          "total": 2000,
+          "remaining": 1765,
+          "registered": 634,
+          "delivered": 235
+        }
+      },
+      "4148": {
+        "전기승용": {
+          "total": 1229,
+          "remaining": 937,
+          "registered": 565,
+          "delivered": 292
+        }
+      },
+      "4150": {
+        "전기승용": {
+          "total": 668,
+          "remaining": 612,
+          "registered": 156,
+          "delivered": 56
+        }
+      },
+      "4155": {
+        "전기승용": {
+          "total": 442,
+          "remaining": 363,
+          "registered": 163,
+          "delivered": 79
+        }
+      },
+      "4157": {
+        "전기승용": {
+          "total": 1031,
+          "remaining": 1021,
+          "registered": 209,
+          "delivered": 10
+        }
+      },
+      "4159": {
+        "전기승용": {
+          "total": 3407,
+          "remaining": 3395,
+          "registered": 705,
+          "delivered": 12
+        }
+      },
+      "4161": {
+        "전기승용": {
+          "total": 775,
+          "remaining": 766,
+          "registered": 153,
+          "delivered": 9
+        }
+      },
+      "4163": {
+        "전기승용": {
+          "total": 1118,
+          "remaining": 1043,
+          "registered": 213,
+          "delivered": 75
+        }
+      },
+      "4165": {
+        "전기승용": {
+          "total": 140,
+          "remaining": 125,
+          "registered": 67,
+          "delivered": 15
+        }
+      },
+      "4167": {
+        "전기승용": {
+          "total": 255,
+          "remaining": 215,
+          "registered": 70,
+          "delivered": 40
+        }
+      },
+      "4180": {
+        "전기승용": {
+          "total": 174,
+          "remaining": 130,
+          "registered": 67,
+          "delivered": 44
+        }
+      },
+      "4182": {
+        "전기승용": {
+          "total": 170,
+          "remaining": 159,
+          "registered": 29,
+          "delivered": 11
+        }
+      },
+      "4183": {
+        "전기승용": {
+          "total": 315,
+          "remaining": 295,
+          "registered": 79,
+          "delivered": 20
+        }
+      },
+      "4211": {
+        "전기승용": {
+          "total": 800,
+          "remaining": 742,
+          "registered": 146,
+          "delivered": 58
+        }
+      },
+      "4213": {
+        "전기승용": {
+          "total": 1200,
+          "remaining": 1173,
+          "registered": 253,
+          "delivered": 27
+        }
+      },
+      "4215": {
+        "전기승용": {
+          "total": 600,
+          "remaining": 589,
+          "registered": 84,
+          "delivered": 11
+        }
+      },
+      "4217": {
+        "전기승용": {
+          "total": 210,
+          "remaining": 199,
+          "registered": 38,
+          "delivered": 11
+        }
+      },
+      "4219": {
+        "전기승용": {
+          "total": 150,
+          "remaining": 148,
+          "registered": 10,
+          "delivered": 2
+        }
+      },
+      "4221": {
+        "전기승용": {
+          "total": 319,
+          "remaining": 310,
+          "registered": 41,
+          "delivered": 9
+        }
+      },
+      "4223": {
+        "전기승용": {
+          "total": 220,
+          "remaining": 210,
+          "registered": 23,
+          "delivered": 10
+        }
+      },
+      "4272": {
+        "전기승용": {
+          "total": 170,
+          "remaining": 165,
+          "registered": 32,
+          "delivered": 5
+        }
+      },
+      "4273": {
+        "전기승용": {
+          "total": 150,
+          "remaining": 146,
+          "registered": 13,
+          "delivered": 4
+        }
+      },
+      "4275": {
+        "전기승용": {
+          "total": 130,
+          "remaining": 127,
+          "registered": 13,
+          "delivered": 3
+        }
+      },
+      "4276": {
+        "전기승용": {
+          "total": 130,
+          "remaining": 126,
+          "registered": 16,
+          "delivered": 4
+        }
+      },
+      "4277": {
+        "전기승용": {
+          "total": 100,
+          "remaining": 97,
+          "registered": 12,
+          "delivered": 3
+        }
+      },
+      "4278": {
+        "전기승용": {
+          "total": 140,
+          "remaining": 134,
+          "registered": 10,
+          "delivered": 6
+        }
+      },
+      "4279": {
+        "전기승용": {
+          "total": 20,
+          "remaining": 19,
+          "registered": 5,
+          "delivered": 1
+        }
+      },
+      "4280": {
+        "전기승용": {
+          "total": 80,
+          "remaining": 75,
+          "registered": 9,
+          "delivered": 5
+        }
+      },
+      "4281": {
+        "전기승용": {
+          "total": 150,
+          "remaining": 148,
+          "registered": 12,
+          "delivered": 2
+        }
+      },
+      "4283": {
+        "전기승용": {
+          "total": 120,
+          "remaining": 116,
+          "registered": 9,
+          "delivered": 4
+        }
+      },
+      "4311": {
+        "전기승용": {
+          "total": 2250,
+          "remaining": 1710,
+          "registered": 1712,
+          "delivered": 540
+        }
+      },
+      "4313": {
+        "전기승용": {
+          "total": 1199,
+          "remaining": 836,
+          "registered": 528,
+          "delivered": 363
+        }
+      },
+      "4315": {
+        "전기승용": {
+          "total": 800,
+          "remaining": 549,
+          "registered": 385,
+          "delivered": 251
+        }
+      },
+      "4372": {
+        "전기승용": {
+          "total": 100,
+          "remaining": 93,
+          "registered": 29,
+          "delivered": 7
+        }
+      },
+      "4373": {
+        "전기승용": {
+          "total": 300,
+          "remaining": 281,
+          "registered": 110,
+          "delivered": 19
+        }
+      },
+      "4374": {
+        "전기승용": {
+          "total": 180,
+          "remaining": 177,
+          "registered": 30,
+          "delivered": 3
+        }
+      },
+      "4375": {
+        "전기승용": {
+          "total": 800,
+          "remaining": 682,
+          "registered": 191,
+          "delivered": 118
+        }
+      },
+      "4376": {
+        "전기승용": {
+          "total": 100,
+          "remaining": 78,
+          "registered": 35,
+          "delivered": 22
+        }
+      },
+      "4377": {
+        "전기승용": {
+          "total": 240,
+          "remaining": 217,
+          "registered": 110,
+          "delivered": 23
+        }
+      },
+      "4380": {
+        "전기승용": {
+          "total": 120,
+          "remaining": 97,
+          "registered": 41,
+          "delivered": 23
+        }
+      },
+      "4413": {
+        "전기승용": {
+          "total": 856,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4415": {
+        "전기승용": {
+          "total": 130,
+          "remaining": 130,
+          "registered": 181,
+          "delivered": 0
+        }
+      },
+      "4418": {
+        "전기승용": {
+          "total": 70,
+          "remaining": 35,
+          "registered": 127,
+          "delivered": 35
+        }
+      },
+      "4420": {
+        "전기승용": {
+          "total": 592,
+          "remaining": 497,
+          "registered": 619,
+          "delivered": 95
+        }
+      },
+      "4421": {
+        "전기승용": {
+          "total": 337,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4423": {
+        "전기승용": {
+          "total": 149,
+          "remaining": 149,
+          "registered": 189,
+          "delivered": 0
+        }
+      },
+      "4425": {
+        "전기승용": {
+          "total": 130,
+          "remaining": 124,
+          "registered": 144,
+          "delivered": 6
+        }
+      },
+      "4427": {
+        "전기승용": {
+          "total": 300,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4471": {
+        "전기승용": {
+          "total": 100,
+          "remaining": 95,
+          "registered": 95,
+          "delivered": 5
+        }
+      },
+      "4476": {
+        "전기승용": {
+          "total": 150,
+          "remaining": 135,
+          "registered": 76,
+          "delivered": 15
+        }
+      },
+      "4477": {
+        "전기승용": {
+          "total": 66,
+          "remaining": 63,
+          "registered": 53,
+          "delivered": 3
+        }
+      },
+      "4479": {
+        "전기승용": {
+          "total": 91,
+          "remaining": 86,
+          "registered": 40,
+          "delivered": 5
+        }
+      },
+      "4480": {
+        "전기승용": {
+          "total": 200,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4481": {
+        "전기승용": {
+          "total": 120,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4511": {
+        "전기승용": {
+          "total": 640,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4513": {
+        "전기승용": {
+          "total": 380,
+          "remaining": 380,
+          "registered": 342,
+          "delivered": 0
+        }
+      },
+      "4514": {
+        "전기승용": {
+          "total": 200,
+          "remaining": 200,
+          "registered": 352,
+          "delivered": 0
+        }
+      },
+      "4518": {
+        "전기승용": {
+          "total": 139,
+          "remaining": 139,
+          "registered": 107,
+          "delivered": 0
+        }
+      },
+      "4519": {
+        "전기승용": {
+          "total": 120,
+          "remaining": 111,
+          "registered": 110,
+          "delivered": 9
+        }
+      },
+      "4521": {
+        "전기승용": {
+          "total": 178,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4571": {
+        "전기승용": {
+          "total": 160,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4572": {
+        "전기승용": {
+          "total": 60,
+          "remaining": 60,
+          "registered": 55,
+          "delivered": 0
+        }
+      },
+      "4573": {
+        "전기승용": {
+          "total": 31,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4574": {
+        "전기승용": {
+          "total": 44,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4575": {
+        "기타": {
+          "total": 0,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4577": {
+        "전기승용": {
+          "total": 60,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4579": {
+        "전기승용": {
+          "total": 57,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4580": {
+        "전기승용": {
+          "total": 76,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4611": {
+        "전기승용": {
+          "total": 96,
+          "remaining": 96,
+          "registered": 135,
+          "delivered": 0
+        }
+      },
+      "4613": {
+        "전기승용": {
+          "total": 400,
+          "remaining": 300,
+          "registered": 355,
+          "delivered": 100
+        }
+      },
+      "4615": {
+        "전기승용": {
+          "total": 500,
+          "remaining": 498,
+          "registered": 447,
+          "delivered": 2
+        }
+      },
+      "4617": {
+        "전기승용": {
+          "total": 150,
+          "remaining": 150,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4623": {
+        "전기승용": {
+          "total": 300,
+          "remaining": 269,
+          "registered": 208,
+          "delivered": 31
+        }
+      },
+      "4671": {
+        "전기승용": {
+          "total": 40,
+          "remaining": 35,
+          "registered": 80,
+          "delivered": 5
+        }
+      },
+      "4672": {
+        "전기승용": {
+          "total": 70,
+          "remaining": 25,
+          "registered": 63,
+          "delivered": 45
+        }
+      },
+      "4673": {
+        "전기승용": {
+          "total": 54,
+          "remaining": 53,
+          "registered": 20,
+          "delivered": 1
+        }
+      },
+      "4677": {
+        "전기승용": {
+          "total": 159,
+          "remaining": 147,
+          "registered": 48,
+          "delivered": 12
+        }
+      },
+      "4678": {
+        "전기승용": {
+          "total": 120,
+          "remaining": 119,
+          "registered": 50,
+          "delivered": 1
+        }
+      },
+      "4679": {
+        "전기승용": {
+          "total": 70,
+          "remaining": 40,
+          "registered": 86,
+          "delivered": 30
+        }
+      },
+      "4680": {
+        "전기승용": {
+          "total": 85,
+          "remaining": 82,
+          "registered": 38,
+          "delivered": 3
+        }
+      },
+      "4681": {
+        "전기승용": {
+          "total": 40,
+          "remaining": 38,
+          "registered": 41,
+          "delivered": 2
+        }
+      },
+      "4682": {
+        "전기승용": {
+          "total": 497,
+          "remaining": 459,
+          "registered": 69,
+          "delivered": 38
+        }
+      },
+      "4683": {
+        "전기승용": {
+          "total": 75,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4684": {
+        "전기승용": {
+          "total": 140,
+          "remaining": 140,
+          "registered": 186,
+          "delivered": 0
+        }
+      },
+      "4686": {
+        "전기승용": {
+          "total": 158,
+          "remaining": 146,
+          "registered": 22,
+          "delivered": 12
+        }
+      },
+      "4687": {
+        "전기승용": {
+          "total": 138,
+          "remaining": 133,
+          "registered": 84,
+          "delivered": 5
+        }
+      },
+      "4688": {
+        "전기승용": {
+          "total": 115,
+          "remaining": 114,
+          "registered": 58,
+          "delivered": 1
+        }
+      },
+      "4689": {
+        "전기승용": {
+          "total": 127,
+          "remaining": 121,
+          "registered": 16,
+          "delivered": 6
+        }
+      },
+      "4690": {
+        "전기승용": {
+          "total": 140,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4691": {
+        "전기승용": {
+          "total": 70,
+          "remaining": 70,
+          "registered": 38,
+          "delivered": 0
+        }
+      },
+      "4711": {
+        "전기승용": {
+          "total": 900,
+          "remaining": 900,
+          "registered": 890,
+          "delivered": 0
+        }
+      },
+      "4713": {
+        "전기승용": {
+          "total": 972,
+          "remaining": 921,
+          "registered": 565,
+          "delivered": 51
+        }
+      },
+      "4715": {
+        "전기승용": {
+          "total": 630,
+          "remaining": 610,
+          "registered": 111,
+          "delivered": 20
+        }
+      },
+      "4717": {
+        "전기승용": {
+          "total": 320,
+          "remaining": 224,
+          "registered": 224,
+          "delivered": 96
+        }
+      },
+      "4719": {
+        "전기승용": {
+          "total": 1050,
+          "remaining": 954,
+          "registered": 688,
+          "delivered": 96
+        }
+      },
+      "4721": {
+        "전기승용": {
+          "total": 300,
+          "remaining": 257,
+          "registered": 168,
+          "delivered": 43
+        }
+      },
+      "4723": {
+        "전기승용": {
+          "total": 150,
+          "remaining": 140,
+          "registered": 52,
+          "delivered": 10
+        }
+      },
+      "4725": {
+        "전기승용": {
+          "total": 450,
+          "remaining": 424,
+          "registered": 72,
+          "delivered": 26
+        }
+      },
+      "4728": {
+        "전기승용": {
+          "total": 100,
+          "remaining": 99,
+          "registered": 36,
+          "delivered": 1
+        }
+      },
+      "4729": {
+        "전기승용": {
+          "total": 700,
+          "remaining": 629,
+          "registered": 350,
+          "delivered": 71
+        }
+      },
+      "4773": {
+        "전기승용": {
+          "total": 125,
+          "remaining": 124,
+          "registered": 37,
+          "delivered": 1
+        }
+      },
+      "4775": {
+        "전기승용": {
+          "total": 100,
+          "remaining": 99,
+          "registered": 32,
+          "delivered": 1
+        }
+      },
+      "4776": {
+        "전기승용": {
+          "total": 50,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      },
+      "4777": {
+        "전기승용": {
+          "total": 68,
+          "remaining": 66,
+          "registered": 13,
+          "delivered": 2
+        }
+      },
+      "4782": {
+        "전기승용": {
+          "total": 120,
+          "remaining": 119,
+          "registered": 43,
+          "delivered": 1
+        }
+      },
+      "4783": {
+        "전기승용": {
+          "total": 64,
+          "remaining": 57,
+          "registered": 34,
+          "delivered": 7
+        }
+      },
+      "4784": {
+        "전기승용": {
+          "total": 210,
+          "remaining": 203,
+          "registered": 35,
+          "delivered": 7
+        }
+      },
+      "4785": {
+        "전기승용": {
+          "total": 266,
+          "remaining": 244,
+          "registered": 142,
+          "delivered": 22
+        }
+      },
+      "4790": {
+        "전기승용": {
+          "total": 100,
+          "remaining": 54,
+          "registered": 85,
+          "delivered": 46
+        }
+      },
+      "4792": {
+        "전기승용": {
+          "total": 170,
+          "remaining": 170,
+          "registered": 36,
+          "delivered": 0
+        }
+      },
+      "4793": {
+        "전기승용": {
+          "total": 100,
+          "remaining": 97,
+          "registered": 21,
+          "delivered": 3
+        }
+      },
+      "4794": {
+        "전기승용": {
+          "total": 130,
+          "remaining": 130,
+          "registered": 57,
+          "delivered": 0
+        }
+      },
+      "4812": {
+        "전기승용": {
+          "total": 1400,
+          "remaining": 1209,
+          "registered": 749,
+          "delivered": 191
+        }
+      },
+      "4817": {
+        "전기승용": {
+          "total": 500,
+          "remaining": 375,
+          "registered": 301,
+          "delivered": 125
+        }
+      },
+      "4822": {
+        "전기승용": {
+          "total": 150,
+          "remaining": 85,
+          "registered": 182,
+          "delivered": 65
+        }
+      },
+      "4824": {
+        "전기승용": {
+          "total": 250,
+          "remaining": 228,
+          "registered": 62,
+          "delivered": 22
+        }
+      },
+      "4825": {
+        "전기승용": {
+          "total": 999,
+          "remaining": 739,
+          "registered": 431,
+          "delivered": 260
+        }
+      },
+      "4827": {
+        "전기승용": {
+          "total": 350,
+          "remaining": 327,
+          "registered": 64,
+          "delivered": 23
+        }
+      },
+      "4831": {
+        "전기승용": {
+          "total": 1050,
+          "remaining": 942,
+          "registered": 209,
+          "delivered": 108
+        }
+      },
+      "4833": {
+        "전기승용": {
+          "total": 480,
+          "remaining": 467,
+          "registered": 333,
+          "delivered": 13
+        }
+      },
+      "4872": {
+        "전기승용": {
+          "total": 70,
+          "remaining": 66,
+          "registered": 25,
+          "delivered": 4
+        }
+      },
+      "4873": {
+        "전기승용": {
+          "total": 150,
+          "remaining": 149,
+          "registered": 20,
+          "delivered": 1
+        }
+      },
+      "4874": {
+        "전기승용": {
+          "total": 170,
+          "remaining": 159,
+          "registered": 63,
+          "delivered": 11
+        }
+      },
+      "4882": {
+        "전기승용": {
+          "total": 110,
+          "remaining": 107,
+          "registered": 19,
+          "delivered": 3
+        }
+      },
+      "4884": {
+        "전기승용": {
+          "total": 100,
+          "remaining": 98,
+          "registered": 5,
+          "delivered": 2
+        }
+      },
+      "4885": {
+        "전기승용": {
+          "total": 110,
+          "remaining": 105,
+          "registered": 11,
+          "delivered": 5
+        }
+      },
+      "4886": {
+        "전기승용": {
+          "total": 120,
+          "remaining": 120,
+          "registered": 14,
+          "delivered": 0
+        }
+      },
+      "4887": {
+        "전기승용": {
+          "total": 104,
+          "remaining": 101,
+          "registered": 9,
+          "delivered": 3
+        }
+      },
+      "4888": {
+        "전기승용": {
+          "total": 60,
+          "remaining": 43,
+          "registered": 68,
+          "delivered": 17
+        }
+      },
+      "4889": {
+        "전기승용": {
+          "total": 180,
+          "remaining": 124,
+          "registered": 77,
+          "delivered": 56
+        }
+      },
+      "5000": {
+        "전기승용": {
+          "total": 3998,
+          "remaining": 3998,
+          "registered": 234,
+          "delivered": 0
+        }
+      },
+      "9999": {
+        "전기승용": {
+          "total": 30000,
+          "remaining": 28804,
+          "registered": 4607,
+          "delivered": 1196
+        }
+      },
+      "43745": {
+        "전기승용": {
+          "total": 100,
+          "remaining": 87,
+          "registered": 39,
+          "delivered": 13
+        }
+      },
+      "44825": {
+        "전기승용": {
+          "total": 210,
+          "remaining": 0,
+          "registered": 0,
+          "delivered": 0
+        }
+      }
+    }
+  }
+}
