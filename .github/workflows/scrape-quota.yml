@@ -90,7 +90,7 @@ jobs:
       - name: Validate quota data
         id: validate
         run: |
-          RESULT=$(node src/validate-data.js quota)
+          RESULT=$(node src/validate-data.js quota || true)
           echo "검증 결과: $RESULT"
 
           VALID=$(echo "$RESULT" | node -e "process.stdin.on('data',d=>{const r=JSON.parse(d);console.log(r.valid)})")
