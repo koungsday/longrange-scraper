@@ -97,7 +97,7 @@ jobs:
       - name: Validate subsidy data
         id: validate
         run: |
-          RESULT=$(node src/validate-data.js subsidy)
+          RESULT=$(node src/validate-data.js subsidy || true)
           echo "검증 결과: $RESULT"
 
           VALID=$(echo "$RESULT" | node -e "process.stdin.on('data',d=>{const r=JSON.parse(d);console.log(r.valid)})")
