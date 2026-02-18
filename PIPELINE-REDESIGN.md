@@ -2,7 +2,7 @@
 
 > 작성일: 2026-02-17
 > 최종 수정: 2026-02-18
-> 상태: Phase 3 진행 중
+> 상태: Phase 4 진행 중
 
 ---
 
@@ -12,6 +12,7 @@
 |------|-----------|
 | 02-17 | 초안 작성: 3단계→2단계 파이프라인, 검증 레이어, 적응형 스케줄 |
 | 02-18 | Phase 3: GitHub Pages 도입으로 web repo 동기화 완전 제거, cron-job.org 외부 스케줄러 전환 |
+| 02-18 | Phase 4: 스냅샷 시스템 통합 — Redis/sync API 제거, quota-history.json으로 추이 데이터 GitHub Pages 서빙 |
 
 ---
 
@@ -33,13 +34,23 @@ EV.OR.KR → scrape.yml → 검증 → scraper repo 커밋 → web repo 동기�
 - 개선: sync workflow 제거, 검증 레이어 추가, 10분/30분 적응형 스케줄
 - 남은 문제: **매 스크래핑마다 Vercel 재배포 (3분 지연)**
 
-### Phase 3 (02-18, 현재)
+### Phase 3 (02-18)
 ```
 EV.OR.KR → scrape.yml → 검증 → scraper repo 커밋 → GitHub Pages (즉시 반영)
          → scrape-quota.yml → 검증 → scraper repo 커밋 → GitHub Pages (즉시 반영)
 ```
 - 개선: **web repo 동기화 완전 제거**, Vercel 재배포 없이 데이터 즉시 서빙
 - 스케줄: cron-job.org 외부 트리거 (GitHub Actions cron 불안정 해소)
+
+### Phase 4 (02-18, 현재)
+```
+EV.OR.KR → scrape-quota.yml → 검증 → quota.json + quota-history.json 커밋 → GitHub Pages
+프론트엔드 → quota-history.json fetch → 클라이언트에서 추이 계산 → 차트 표시
+```
+- 개선: **Redis 스냅샷 + sync API + trend API 완전 제거**
+- quota-history.json: 일일 스냅샷 누적 (지역코드별, 1년 단위 관리)
+- 프론트엔드에서 직접 소진량/소진예측일 계산 (서버사이드 불필요)
+- 연도 변경 시 자동 아카이브 (quota-history-{year}.json)
 
 ---
 
@@ -193,11 +204,147 @@ scraper repo (원본 + 이력)     GitHub Pages (서빙)
 
 ## 7. 기대 효과
 
-| 항목 | Phase 1 | Phase 2 | Phase 3 |
-|------|---------|---------|---------|
-| 데이터 반영 지연 | 30분 + 3분 빌드 | 10분 + 3분 빌드 | **10분 + 즉시** |
-| Vercel 배포 횟수/일 | ~48회 | ~104회 | **코드 변경 시만** |
-| web repo 커밋/일 | ~48회 | ~104회 | **0회** |
-| 워크플로우 파일 | 3개 | 2개 | **2개** |
-| 검증 | 없음 | 있음 | **있음** |
-| 외부 의존성 | 없음 | 없음 | **cron-job.org** |
+| 항목 | Phase 1 | Phase 2 | Phase 3 | Phase 4 |
+|------|---------|---------|---------|---------|
+| 데이터 반영 지연 | 30분 + 3분 빌드 | 10분 + 3분 빌드 | 10분 + 즉시 | **10분 + 즉시** |
+| Vercel 배포 횟수/일 | ~48회 | ~104회 | 코드 변경 시만 | **코드 변경 시만** |
+| web repo 커밋/일 | ~48회 | ~104회 | 0회 | **0회** |
+| Redis 의존성 | 없음 | 없음 | quota 스냅샷용 | **완전 제거** |
+| 추이 계산 위치 | N/A | 서버 (sync API) | 서버 (sync API) | **클라이언트** |
+| 워크플로우 파일 | 3개 | 2개 | 2개 | **2개** |
+| 검증 | 없음 | 있음 | 있음 | **있음** |
+| 외부 의존성 | 없음 | 없음 | cron-job.org | **cron-job.org** |
+
+---
+
+## 8. Phase 4: 스냅샷 시스템 통합
+
+### 개요
+
+기존 3중 파이프라인 (스크래퍼 → sync API → Redis → trend API)을 제거하고,
+스크래퍼가 quota-history.json에 직접 누적하여 GitHub Pages로 서빙합니다.
+
+### 기존 구조 (제거 대상)
+```
+스크래퍼 → quota.json → GitHub Pages
+                ↓
+GitHub Actions → POST /api/quota/sync → Redis 저장 (quota:daily:{code}:{date})
+                                              ↓
+                                    GET /api/quota/trend/[code]
+                                    → Redis 조회 → 캐시 (quota:trend:v2:{code})
+                                              ↓
+                                    QuotaTrendChart 표시
+```
+
+### 새 구조
+```
+스크래퍼 → quota.json + quota-history.json → GitHub Pages
+                                                    ↓
+                                        프론트엔드에서 직접 fetch
+                                        → 클라이언트 계산 → 차트 표시
+```
+
+### quota-history.json 구조
+
+```json
+{
+  "year": 2026,
+  "lastUpdated": "2026-02-18T09:50:39.190Z",
+  "regions": {
+    "1100": { "name": "서울특별시", "sido": "서울" },
+    "2600": { "name": "부산광역시", "sido": "부산" }
+  },
+  "snapshots": {
+    "2026-02-18": {
+      "1100": {
+        "전기승용": { "total": 10500, "remaining": 9000, "registered": 2326, "delivered": 1500 }
+      },
+      "2600": {
+        "전기승용": { "total": 4126, "remaining": 3584, "registered": 857, "delivered": 542 }
+      }
+    }
+  }
+}
+```
+
+| 필드 | 설명 |
+|------|------|
+| `year` | 현재 연도 (연도 변경 시 아카이브 트리거) |
+| `regions` | 지역코드 → 이름/시도 매핑 (프론트엔드 표시용) |
+| `snapshots.{날짜}.{지역코드}.{차종}` | 해당 일자의 스냅샷 데이터 |
+| `total` | 총 배정량 |
+| `remaining` | 잔여량 |
+| `registered` | 접수량 |
+| `delivered` | 출고량 |
+
+### 데이터 크기
+
+| 기간 | 크기 |
+|------|------|
+| 1일 (160개 지역) | ~25KB |
+| 90일 | ~2.2MB |
+| 365일 | ~4.2MB |
+
+### 연도 관리
+
+- **현재 연도**: `quota-history.json` (매 스크래핑 시 오늘 날짜 엔트리 갱신)
+- **지난 연도**: `quota-history-{year}.json` (연도 변경 감지 시 자동 아카이브)
+- 같은 날 여러 번 실행 시 최신값으로 덮어쓰기 (10분 cron 안전)
+
+### web repo 제거 대상
+
+| 파일/키 | 유형 | 설명 |
+|---------|------|------|
+| `/api/quota/sync` | API Route | Redis 스냅샷 저장 — **삭제** |
+| `/api/quota/trend/[code]` | API Route | 추이 분석 — **삭제** |
+| `quota:daily:{code}:{date}` | Redis Key | 일일 스냅샷 — **삭제** |
+| `quota:trend:v2:{code}` | Redis Key | 추이 캐시 — **삭제** |
+| `update-all-data.yml` | GitHub Actions | sync 워크플로우 — **삭제** |
+| `syncAllRegionSnapshots()` | 유틸리티 함수 | — **삭제** |
+| `saveBulkDailySnapshots()` | 유틸리티 함수 | — **삭제** |
+| `getQuotaTrend()` | 유틸리티 함수 | — **삭제** |
+
+### 프론트엔드 계산 로직
+
+```javascript
+// quota-history.json에서 추이 계산
+function calculateTrend(history, regionCode, days = 7) {
+  const dates = Object.keys(history.snapshots).sort().slice(-days);
+  const snapshots = dates.map(d => ({
+    date: d,
+    ...aggregateRegion(history.snapshots[d][regionCode])
+  }));
+
+  // 일일 소진량 계산
+  const dailyChanges = [];
+  for (let i = 1; i < snapshots.length; i++) {
+    dailyChanges.push({
+      date: snapshots[i].date,
+      consumed: snapshots[i - 1].remaining - snapshots[i].remaining,
+      newRegistered: snapshots[i].registered - snapshots[i - 1].registered,
+      newDelivered: snapshots[i].delivered - snapshots[i - 1].delivered
+    });
+  }
+
+  // 평균 일일 소진율
+  const avgDailyConsumed = dailyChanges.reduce((s, d) => s + d.consumed, 0) / dailyChanges.length;
+
+  // 소진 예측일
+  const latest = snapshots[snapshots.length - 1];
+  const predictedDays = avgDailyConsumed > 0
+    ? Math.ceil(latest.remaining / avgDailyConsumed)
+    : null;
+
+  return { snapshots, dailyChanges, avgDailyConsumed, predictedDays };
+}
+
+// 지역의 차종별 데이터를 합산
+function aggregateRegion(regionData) {
+  if (!regionData) return { total: 0, remaining: 0, registered: 0, delivered: 0 };
+  return Object.values(regionData).reduce((acc, v) => ({
+    total: acc.total + v.total,
+    remaining: acc.remaining + v.remaining,
+    registered: acc.registered + v.registered,
+    delivered: acc.delivered + v.delivered
+  }), { total: 0, remaining: 0, registered: 0, delivered: 0 });
+}

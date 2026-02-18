@@ -194,8 +194,16 @@ async function scrapeRegionWithRetry(browser, region) {
 // ==========================================
 // 일일 스냅샷 히스토리 누적
 // ==========================================
-async function saveQuotaHistory(quotaData) {
+async function saveQuotaHistory(quotaData, regions) {
   const HISTORY_PATH = 'data/quota-history.json';
+
+  // 지역명 → 코드 매핑 (프론트엔드에서 코드로 조회 가능)
+  const nameToCode = {};
+  const regionMeta = {};
+  for (const r of regions) {
+    nameToCode[r.localName] = String(r.code);
+    regionMeta[String(r.code)] = { name: r.localName, sido: r.parentName };
+  }
 
   // 오늘 날짜 (KST)
   const now = new Date();
@@ -208,7 +216,7 @@ async function saveQuotaHistory(quotaData) {
     const existing = await fs.readFile(HISTORY_PATH, 'utf8');
     history = JSON.parse(existing);
   } catch {
-    history = { year: currentYear, lastUpdated: '', snapshots: {} };
+    history = { year: currentYear, lastUpdated: '', regions: {}, snapshots: {} };
   }
 
   // 연도 변경 시 아카이브
@@ -217,21 +225,25 @@ async function saveQuotaHistory(quotaData) {
     const archivePath = `data/quota-history-${history.year}.json`;
     await fs.writeFile(archivePath, JSON.stringify(history, null, 2));
     console.log(`💾 ${archivePath} 아카이브 완료`);
-    history = { year: currentYear, lastUpdated: '', snapshots: {} };
+    history = { year: currentYear, lastUpdated: '', regions: {}, snapshots: {} };
   }
 
-  // 오늘 스냅샷 생성 (지역 → 차종 → 수치)
+  // 지역 메타데이터 갱신
+  history.regions = regionMeta;
+
+  // 오늘 스냅샷 생성 (지역코드 → 차종 → 수치)
   const todaySnapshot = {};
   for (const row of quotaData) {
     const regionName = row.region;
     if (!regionName) continue;
 
-    if (!todaySnapshot[regionName]) {
-      todaySnapshot[regionName] = {};
+    const code = nameToCode[regionName] || regionName;
+    if (!todaySnapshot[code]) {
+      todaySnapshot[code] = {};
     }
 
     const vehicleType = row.vehicleType || '기타';
-    todaySnapshot[regionName][vehicleType] = {
+    todaySnapshot[code][vehicleType] = {
       total: row.quota_total,
       remaining: row.remaining_total,
       registered: row.registered_total,
@@ -247,7 +259,8 @@ async function saveQuotaHistory(quotaData) {
   await fs.writeFile(HISTORY_PATH, JSON.stringify(history, null, 2));
 
   const totalDays = Object.keys(history.snapshots).length;
-  console.log(`💾 ${HISTORY_PATH} 저장 완료 (${totalDays}일치 데이터)`);
+  const totalRegions = Object.keys(todaySnapshot).length;
+  console.log(`💾 ${HISTORY_PATH} 저장 완료 (${totalDays}일 × ${totalRegions}개 지역)`);
 }
 
 async function main() {
@@ -325,7 +338,7 @@ async function main() {
     if (result.success && result.quotaData.length > 0) {
       console.log('');
       console.log('📊 ===== 히스토리 스냅샷 저장 =====');
-      await saveQuotaHistory(result.quotaData);
+      await saveQuotaHistory(result.quotaData, regions);
     }
 
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
