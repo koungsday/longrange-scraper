@@ -42,36 +42,6 @@ async function getAllRegions() {
   }
 }
 
-function extractFileLinks(html) {
-  const links = [];
-
-  if (!html || typeof html !== 'string') return links;
-
-  const $ = cheerio.load(html);
-
-  $('a[href]').each((i, el) => {
-    const href = $(el).attr('href') || '';
-    const text = $(el).text().trim();
-
-    // 파일 다운로드 패턴 감지 (ev.or.kr 공통 패턴)
-    if (
-      href.includes('fileDown') ||
-      href.includes('download') ||
-      href.includes('.xls') ||
-      href.includes('.xlsx') ||
-      href.includes('.pdf') ||
-      href.includes('.hwp') ||
-      href.includes('.zip')
-    ) {
-      const fullHref = href.startsWith('http')
-        ? href
-        : 'https://ev.or.kr' + (href.startsWith('/') ? '' : '/') + href;
-      links.push({ text, href: fullHref });
-    }
-  });
-
-  return links;
-}
 
 function parseQuotaTable(html) {
   const quotaData = [];
@@ -94,17 +64,30 @@ function parseQuotaTable(html) {
 
   $('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
     const cells = [];
-    
+
+    // 공고 파일 링크: 행 전체 <a> 태그 중 "공고" 관련 항목 수집
+    const fileLinks = [];
+    $(row).find('a[href]').each((k, a) => {
+      const text = $(a).text().trim();
+      const href = $(a).attr('href') || '';
+      if (text.includes('공고') || href.includes('gongg') || href.includes('notice') || href.includes('fileDown')) {
+        const fullHref = href.startsWith('http')
+          ? href
+          : 'https://ev.or.kr' + (href.startsWith('/') ? '' : '/') + href;
+        fileLinks.push({ text, href: fullHref });
+      }
+    });
+
     $(row).find('td').each((j, cell) => {
       // HTML 가져와서 br 기준으로 split
       const html = $(cell).html() || '';
       const parts = html.split(/<br\s*\/?>/i)
         .map(p => $('<div>').html(p).text().trim())
         .filter(p => p);
-      
+
       cells.push(parts);
     });
-    
+
     // 총 10개 셀
     if (cells.length >= 10) {
       try {
@@ -113,44 +96,45 @@ function parseQuotaTable(html) {
           const cleaned = text.replace(/[()]/g, '').trim();
           return parseInt(cleaned) || 0;
         };
-        
+
         const quota = cells[5] || [];
         const registered = cells[6] || [];
         const delivered = cells[7] || [];
         const remaining = cells[8] || [];
-        
+
         const rowData = {
           sido: (cells[0] && cells[0][0]) || '',
           region: (cells[1] && cells[1][0]) || '',
           vehicleType: (cells[2] && cells[2][0]) || '',
-          
+          fileLinks: fileLinks,
+
           quota_total: parseNum(quota[0]),
           quota_priority: parseNum(quota[1]),
           quota_corporate: parseNum(quota[2]),
           quota_taxi: parseNum(quota[3]),
           quota_general: parseNum(quota[4]),
-          
+
           registered_total: parseNum(registered[0]),
           registered_priority: parseNum(registered[1]),
           registered_corporate: parseNum(registered[2]),
           registered_taxi: parseNum(registered[3]),
           registered_general: parseNum(registered[4]),
-          
+
           delivered_total: parseNum(delivered[0]),
           delivered_priority: parseNum(delivered[1]),
           delivered_corporate: parseNum(delivered[2]),
           delivered_taxi: parseNum(delivered[3]),
           delivered_general: parseNum(delivered[4]),
-          
+
           remaining_total: parseNum(remaining[0]),
           remaining_priority: parseNum(remaining[1]),
           remaining_corporate: parseNum(remaining[2]),
           remaining_taxi: parseNum(remaining[3]),
           remaining_general: parseNum(remaining[4]),
-          
+
           note: (cells[9] && cells[9].join(' ')) || ''
         };
-        
+
         quotaData.push(rowData);
       } catch (e) {
         console.warn(`   ⚠️ 행 파싱 오류: ${e.message}`);
@@ -183,7 +167,6 @@ async function scrapeRegionWithRetry(browser, region) {
       await page.close();
 
       const quotaData = parseQuotaTable(html);
-      const fileLinks = extractFileLinks(html);
 
       if (attempt > 1) {
         console.log(`   ✅ 재시도 ${attempt}회 성공`);
@@ -194,7 +177,6 @@ async function scrapeRegionWithRetry(browser, region) {
         localName: region.localName,
         code: region.code,
         quotaData: quotaData,
-        fileLinks: fileLinks,
         success: true,
         attempts: attempt,
         timestamp: new Date().toISOString()
@@ -214,7 +196,6 @@ async function scrapeRegionWithRetry(browser, region) {
           localName: region.localName,
           code: region.code,
           quotaData: [],
-          fileLinks: [],
           success: false,
           error: error.message,
           attempts: attempt,
@@ -368,18 +349,25 @@ async function main() {
     
     console.log('💾 data/quota.json 저장 완료');
 
-    // 파일 링크 저장
-    if (result.success && result.fileLinks && result.fileLinks.length > 0) {
+    // 공고 파일 링크 저장 (지역/차종별 구조)
+    if (result.success && result.quotaData.length > 0) {
+      const byRegion = {};
+      let totalLinks = 0;
+      for (const row of result.quotaData) {
+        if (!row.fileLinks || row.fileLinks.length === 0) continue;
+        const key = `${row.sido} ${row.region}`.trim() || row.region;
+        if (!byRegion[key]) byRegion[key] = {};
+        byRegion[key][row.vehicleType] = row.fileLinks;
+        totalLinks += row.fileLinks.length;
+      }
       const fileLinksData = {
         timestamp: new Date().toISOString(),
-        source_url: `https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do`,
-        count: result.fileLinks.length,
-        links: result.fileLinks
+        source_url: 'https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do',
+        total_links: totalLinks,
+        by_region: byRegion
       };
       await fs.writeFile('data/quota-files.json', JSON.stringify(fileLinksData, null, 2));
-      console.log(`💾 data/quota-files.json 저장 완료 (${result.fileLinks.length}개 링크)`);
-    } else if (result.success) {
-      console.log('ℹ️  파일 링크 없음 (페이지에 다운로드 링크 미존재)');
+      console.log(`💾 data/quota-files.json 저장 완료 (${totalLinks}개 공고 링크)`);
     }
 
     // 일일 스냅샷 히스토리 누적
