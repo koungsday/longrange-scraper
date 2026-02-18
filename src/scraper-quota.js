@@ -65,21 +65,6 @@ function parseQuotaTable(html) {
   $('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
     const cells = [];
 
-    // 공고 파일 링크: goDownloadFile(year, seq, flag) 버튼에서 URL 조립
-    const fileLinks = [];
-    $(row).find('button[onclick*="goDownloadFile"]').each((k, btn) => {
-      const text = $(btn).text().trim();
-      const onclick = $(btn).attr('onclick') || '';
-      const match = onclick.match(/goDownloadFile\s*\(\s*'([^']+)'\s*,\s*'([^']+)'\s*,\s*'([^']+)'\s*\)/);
-      if (match) {
-        const year = match[1];
-        const seq  = match[2];
-        const flag = match[3];
-        const href = `https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=${year}&seq=${seq}&flag=${flag}`;
-        fileLinks.push({ text, href });
-      }
-    });
-
     $(row).find('td').each((j, cell) => {
       // HTML 가져와서 br 기준으로 split
       const html = $(cell).html() || '';
@@ -108,7 +93,6 @@ function parseQuotaTable(html) {
           sido: (cells[0] && cells[0][0]) || '',
           region: (cells[1] && cells[1][0]) || '',
           vehicleType: (cells[2] && cells[2][0]) || '',
-          fileLinks: fileLinks,
 
           quota_total: parseNum(quota[0]),
           quota_priority: parseNum(quota[1]),
@@ -206,77 +190,6 @@ async function scrapeRegionWithRetry(browser, region) {
       }
     }
   }
-}
-
-// ==========================================
-// 공고 파일 다운로드 (Puppeteer 세션 쿠키 활용)
-// ==========================================
-async function downloadNoticeFiles(browser, quotaData) {
-  const NOTICES_DIR = 'data/notices';
-  const REFERER = 'https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do';
-
-  // 중복 제거한 고유 링크 목록
-  const uniqueFiles = new Map();
-  for (const row of quotaData) {
-    for (const link of (row.fileLinks || [])) {
-      if (!uniqueFiles.has(link.href)) uniqueFiles.set(link.href, link);
-    }
-  }
-
-  if (uniqueFiles.size === 0) {
-    console.log('   ℹ️ 공고 파일 없음');
-    return {};
-  }
-
-  console.log(`   📥 공고 파일 ${uniqueFiles.size}개 다운로드...`);
-
-  // 세션 쿠키 획득 (Puppeteer 브라우저로 페이지 방문)
-  const page = await browser.newPage();
-  await page.goto(REFERER, { waitUntil: 'networkidle2', timeout: 30000 });
-  const cookies = await page.cookies();
-  await page.close();
-  const cookieStr = cookies.map(c => `${c.name}=${c.value}`).join('; ');
-
-  await fs.mkdir(NOTICES_DIR, { recursive: true });
-
-  const fileMap = {}; // href → { publicUrl, filename }
-
-  for (const [href, link] of uniqueFiles) {
-    try {
-      const response = await axios.get(href, {
-        headers: {
-          Cookie: cookieStr,
-          Referer: REFERER,
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-        },
-        responseType: 'arraybuffer',
-        timeout: 30000
-      });
-
-      // Content-Disposition에서 파일명 추출 (RFC 5987 한글 인코딩 포함)
-      const cd = response.headers['content-disposition'] || '';
-      let filename = '';
-      const rfc5987 = cd.match(/filename\*=UTF-8''([^;\n\r]+)/i);
-      if (rfc5987) {
-        filename = decodeURIComponent(rfc5987[1].trim());
-      } else {
-        const plain = cd.match(/filename=['"]?([^'"\n;\r]+)['"]?/i);
-        if (plain) filename = plain[1].trim();
-      }
-      if (!filename) filename = link.text.replace(/[/\\:*?"<>|]/g, '_').trim() || `notice_${Date.now()}`;
-      filename = filename.replace(/[/\\:*?"<>|]/g, '_').trim();
-
-      await fs.writeFile(`${NOTICES_DIR}/${filename}`, response.data);
-
-      const publicUrl = `https://koungsday.github.io/longrange-scraper/notices/${encodeURIComponent(filename)}`;
-      fileMap[href] = { publicUrl, filename };
-      console.log(`   ✅ ${filename} (${(response.data.length / 1024).toFixed(0)}KB)`);
-    } catch (e) {
-      console.warn(`   ⚠️ "${link.text}" 다운로드 실패: ${e.message}`);
-    }
-  }
-
-  return fileMap;
 }
 
 // ==========================================
@@ -394,23 +307,6 @@ async function main() {
     
     const results = [result];
 
-    // 공고 파일 다운로드 (브라우저 닫기 전 - 세션 쿠키 필요)
-    let fileMap = {};
-    if (result.success && result.quotaData.length > 0) {
-      console.log('');
-      console.log('📥 ===== 공고 파일 다운로드 =====');
-      fileMap = await downloadNoticeFiles(browser, result.quotaData);
-      // fileLinks에 publicUrl 추가
-      for (const row of result.quotaData) {
-        if (row.fileLinks) {
-          row.fileLinks = row.fileLinks.map(link => ({
-            ...link,
-            publicUrl: fileMap[link.href]?.publicUrl || null
-          }));
-        }
-      }
-    }
-
     await browser.close();
     console.log('');
     console.log('🟢 ===== 스크래핑 완료 =====');
@@ -438,27 +334,6 @@ async function main() {
     );
 
     console.log('💾 data/quota.json 저장 완료');
-
-    // 공고 파일 링크 저장 (지역/차종별 구조, publicUrl 포함)
-    if (result.success && result.quotaData.length > 0) {
-      const byRegion = {};
-      let totalLinks = 0;
-      for (const row of result.quotaData) {
-        if (!row.fileLinks || row.fileLinks.length === 0) continue;
-        const key = `${row.sido} ${row.region}`.trim() || row.region;
-        if (!byRegion[key]) byRegion[key] = {};
-        byRegion[key][row.vehicleType] = row.fileLinks;
-        totalLinks += row.fileLinks.length;
-      }
-      const fileLinksData = {
-        timestamp: new Date().toISOString(),
-        source_url: 'https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do',
-        total_links: totalLinks,
-        by_region: byRegion
-      };
-      await fs.writeFile('data/quota-files.json', JSON.stringify(fileLinksData, null, 2));
-      console.log(`💾 data/quota-files.json 저장 완료 (${totalLinks}개 공고 링크)`);
-    }
 
     // 일일 스냅샷 히스토리 누적
     if (result.success && result.quotaData.length > 0) {
