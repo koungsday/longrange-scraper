@@ -90,6 +90,7 @@ jobs:
             data/years.json
             data/phones.json
             data/debug-subsidy-*.html
+            data/debug-phones.html
           retention-days: 30
 
       # ========================================
