@@ -42,11 +42,42 @@ async function getAllRegions() {
   }
 }
 
+function extractFileLinks(html) {
+  const links = [];
+
+  if (!html || typeof html !== 'string') return links;
+
+  const $ = cheerio.load(html);
+
+  $('a[href]').each((i, el) => {
+    const href = $(el).attr('href') || '';
+    const text = $(el).text().trim();
+
+    // 파일 다운로드 패턴 감지 (ev.or.kr 공통 패턴)
+    if (
+      href.includes('fileDown') ||
+      href.includes('download') ||
+      href.includes('.xls') ||
+      href.includes('.xlsx') ||
+      href.includes('.pdf') ||
+      href.includes('.hwp') ||
+      href.includes('.zip')
+    ) {
+      const fullHref = href.startsWith('http')
+        ? href
+        : 'https://ev.or.kr' + (href.startsWith('/') ? '' : '/') + href;
+      links.push({ text, href: fullHref });
+    }
+  });
+
+  return links;
+}
+
 function parseQuotaTable(html) {
   const quotaData = [];
-  
+
   if (!html || typeof html !== 'string') return quotaData;
-  
+
   const $ = cheerio.load(html);
 
   // 가장 많은 행을 가진 테이블 찾기
@@ -150,18 +181,20 @@ async function scrapeRegionWithRetry(browser, region) {
 
       const html = await page.content();
       await page.close();
-      
+
       const quotaData = parseQuotaTable(html);
-      
+      const fileLinks = extractFileLinks(html);
+
       if (attempt > 1) {
         console.log(`   ✅ 재시도 ${attempt}회 성공`);
       }
-      
+
       return {
         parentName: region.parentName,
         localName: region.localName,
         code: region.code,
         quotaData: quotaData,
+        fileLinks: fileLinks,
         success: true,
         attempts: attempt,
         timestamp: new Date().toISOString()
@@ -181,6 +214,7 @@ async function scrapeRegionWithRetry(browser, region) {
           localName: region.localName,
           code: region.code,
           quotaData: [],
+          fileLinks: [],
           success: false,
           error: error.message,
           attempts: attempt,
@@ -333,6 +367,20 @@ async function main() {
     );
     
     console.log('💾 data/quota.json 저장 완료');
+
+    // 파일 링크 저장
+    if (result.success && result.fileLinks && result.fileLinks.length > 0) {
+      const fileLinksData = {
+        timestamp: new Date().toISOString(),
+        source_url: `https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do`,
+        count: result.fileLinks.length,
+        links: result.fileLinks
+      };
+      await fs.writeFile('data/quota-files.json', JSON.stringify(fileLinksData, null, 2));
+      console.log(`💾 data/quota-files.json 저장 완료 (${result.fileLinks.length}개 링크)`);
+    } else if (result.success) {
+      console.log('ℹ️  파일 링크 없음 (페이지에 다운로드 링크 미존재)');
+    }
 
     // 일일 스냅샷 히스토리 누적
     if (result.success && result.quotaData.length > 0) {

@@ -253,7 +253,60 @@ async function scrapeRegionWithRetry(browser, region) {
 }
 
 // ==========================================
-// 4. 메인 실행
+// 4. 지역별 부처 전화번호 스크래핑
+// ==========================================
+async function scrapeLocalPhones(browser) {
+  console.log('📞 지역별 부처 전화번호 스크래핑...');
+  const url = 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do';
+  let page = null;
+
+  try {
+    page = await browser.newPage();
+    await page.setDefaultNavigationTimeout(30000);
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+    await page.waitForSelector('table', { timeout: 10000 });
+
+    const html = await page.content();
+    await page.close();
+
+    const $ = cheerio.load(html);
+    const phones = [];
+
+    // 가장 많은 행을 가진 테이블에서 추출
+    let maxRows = 0;
+    let targetTableIndex = 0;
+    $('table').each((i, t) => {
+      const rows = $(t).find('tbody tr').length;
+      if (rows > maxRows) { maxRows = rows; targetTableIndex = i; }
+    });
+
+    $('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
+      const cells = [];
+      $(row).find('td').each((j, cell) => {
+        cells.push($(cell).text().trim().replace(/\s+/g, ' '));
+      });
+      if (cells.length >= 2 && cells[0]) {
+        phones.push({
+          region: cells[0],
+          department: cells[1] || '',
+          phone: cells[2] || '',
+          note: cells[3] || ''
+        });
+      }
+    });
+
+    console.log(`   ✅ ${phones.length}개 지역 전화번호 수집`);
+    return phones;
+
+  } catch (error) {
+    if (page) await page.close();
+    console.error(`   ❌ 전화번호 스크래핑 실패: ${error.message}`);
+    return [];
+  }
+}
+
+// ==========================================
+// 5. 메인 실행
 // ==========================================
 async function main() {
   console.log('🚀 전기차 보조금 스크래핑 시작');
@@ -325,6 +378,11 @@ async function main() {
       }
     }
     
+    // 전화번호 스크래핑 (브라우저 닫기 전)
+    console.log('');
+    console.log('📞 ===== 지역 전화번호 스크래핑 =====');
+    const phones = await scrapeLocalPhones(browser);
+
     // ⭐ 핵심: 모든 작업이 끝난 후 브라우저를 종료 (Close Once)
     await browser.close();
     console.log('');
@@ -408,6 +466,22 @@ async function main() {
     // 4. 연도 목록 업데이트 (years.json)
     // ==========================================
     await updateYearsList(CURRENT_YEAR);
+
+    // ==========================================
+    // 5. 지역별 부처 전화번호 (phones.json)
+    // ==========================================
+    if (phones.length > 0) {
+      const phonesData = {
+        timestamp: timestamp,
+        source_url: 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do',
+        total: phones.length,
+        phones: phones
+      };
+      await fs.writeFile('data/phones.json', JSON.stringify(phonesData, null, 2));
+      console.log(`💾 data/phones.json 저장 완료 (${phones.length}개)`);
+    } else {
+      console.log('ℹ️  전화번호 데이터 없음 (스크래핑 실패 또는 페이지 변경)');
+    }
 
     // ==========================================
     // 크기 비교 출력
