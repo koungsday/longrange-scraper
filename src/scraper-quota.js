@@ -209,6 +209,77 @@ async function scrapeRegionWithRetry(browser, region) {
 }
 
 // ==========================================
+// 공고 파일 다운로드 (Puppeteer 세션 쿠키 활용)
+// ==========================================
+async function downloadNoticeFiles(browser, quotaData) {
+  const NOTICES_DIR = 'data/notices';
+  const REFERER = 'https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do';
+
+  // 중복 제거한 고유 링크 목록
+  const uniqueFiles = new Map();
+  for (const row of quotaData) {
+    for (const link of (row.fileLinks || [])) {
+      if (!uniqueFiles.has(link.href)) uniqueFiles.set(link.href, link);
+    }
+  }
+
+  if (uniqueFiles.size === 0) {
+    console.log('   ℹ️ 공고 파일 없음');
+    return {};
+  }
+
+  console.log(`   📥 공고 파일 ${uniqueFiles.size}개 다운로드...`);
+
+  // 세션 쿠키 획득 (Puppeteer 브라우저로 페이지 방문)
+  const page = await browser.newPage();
+  await page.goto(REFERER, { waitUntil: 'networkidle2', timeout: 30000 });
+  const cookies = await page.cookies();
+  await page.close();
+  const cookieStr = cookies.map(c => `${c.name}=${c.value}`).join('; ');
+
+  await fs.mkdir(NOTICES_DIR, { recursive: true });
+
+  const fileMap = {}; // href → { publicUrl, filename }
+
+  for (const [href, link] of uniqueFiles) {
+    try {
+      const response = await axios.get(href, {
+        headers: {
+          Cookie: cookieStr,
+          Referer: REFERER,
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        },
+        responseType: 'arraybuffer',
+        timeout: 30000
+      });
+
+      // Content-Disposition에서 파일명 추출 (RFC 5987 한글 인코딩 포함)
+      const cd = response.headers['content-disposition'] || '';
+      let filename = '';
+      const rfc5987 = cd.match(/filename\*=UTF-8''([^;\n\r]+)/i);
+      if (rfc5987) {
+        filename = decodeURIComponent(rfc5987[1].trim());
+      } else {
+        const plain = cd.match(/filename=['"]?([^'"\n;\r]+)['"]?/i);
+        if (plain) filename = plain[1].trim();
+      }
+      if (!filename) filename = link.text.replace(/[/\\:*?"<>|]/g, '_').trim() || `notice_${Date.now()}`;
+      filename = filename.replace(/[/\\:*?"<>|]/g, '_').trim();
+
+      await fs.writeFile(`${NOTICES_DIR}/${filename}`, response.data);
+
+      const publicUrl = `https://koungsday.github.io/longrange-scraper/notices/${encodeURIComponent(filename)}`;
+      fileMap[href] = { publicUrl, filename };
+      console.log(`   ✅ ${filename} (${(response.data.length / 1024).toFixed(0)}KB)`);
+    } catch (e) {
+      console.warn(`   ⚠️ "${link.text}" 다운로드 실패: ${e.message}`);
+    }
+  }
+
+  return fileMap;
+}
+
+// ==========================================
 // 일일 스냅샷 히스토리 누적
 // ==========================================
 async function saveQuotaHistory(quotaData, regions) {
@@ -322,20 +393,37 @@ async function main() {
     }
     
     const results = [result];
-    
+
+    // 공고 파일 다운로드 (브라우저 닫기 전 - 세션 쿠키 필요)
+    let fileMap = {};
+    if (result.success && result.quotaData.length > 0) {
+      console.log('');
+      console.log('📥 ===== 공고 파일 다운로드 =====');
+      fileMap = await downloadNoticeFiles(browser, result.quotaData);
+      // fileLinks에 publicUrl 추가
+      for (const row of result.quotaData) {
+        if (row.fileLinks) {
+          row.fileLinks = row.fileLinks.map(link => ({
+            ...link,
+            publicUrl: fileMap[link.href]?.publicUrl || null
+          }));
+        }
+      }
+    }
+
     await browser.close();
     console.log('');
     console.log('🟢 ===== 스크래핑 완료 =====');
-    
+
     const success = results.filter(r => r.success).length;
     const failed = results.filter(r => !r.success).length;
-    
+
     console.log(`✅ 성공: ${success}개`);
     console.log(`❌ 실패: ${failed}개`);
     console.log('');
-    
+
     await fs.mkdir('data', { recursive: true });
-    
+
     const outputData = {
       timestamp: new Date().toISOString(),
       total_regions: 1,
@@ -343,15 +431,15 @@ async function main() {
       failed_count: failed,
       data: results
     };
-    
+
     await fs.writeFile(
       'data/quota.json',
       JSON.stringify(outputData, null, 2)
     );
-    
+
     console.log('💾 data/quota.json 저장 완료');
 
-    // 공고 파일 링크 저장 (지역/차종별 구조)
+    // 공고 파일 링크 저장 (지역/차종별 구조, publicUrl 포함)
     if (result.success && result.quotaData.length > 0) {
       const byRegion = {};
       let totalLinks = 0;
