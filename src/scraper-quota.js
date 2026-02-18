@@ -191,6 +191,65 @@ async function scrapeRegionWithRetry(browser, region) {
   }
 }
 
+// ==========================================
+// 일일 스냅샷 히스토리 누적
+// ==========================================
+async function saveQuotaHistory(quotaData) {
+  const HISTORY_PATH = 'data/quota-history.json';
+
+  // 오늘 날짜 (KST)
+  const now = new Date();
+  const today = now.toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+  const currentYear = parseInt(today.substring(0, 4));
+
+  // 기존 히스토리 읽기
+  let history;
+  try {
+    const existing = await fs.readFile(HISTORY_PATH, 'utf8');
+    history = JSON.parse(existing);
+  } catch {
+    history = { year: currentYear, lastUpdated: '', snapshots: {} };
+  }
+
+  // 연도 변경 시 아카이브
+  if (history.year && history.year !== currentYear) {
+    console.log(`📅 연도 변경 감지: ${history.year} → ${currentYear}`);
+    const archivePath = `data/quota-history-${history.year}.json`;
+    await fs.writeFile(archivePath, JSON.stringify(history, null, 2));
+    console.log(`💾 ${archivePath} 아카이브 완료`);
+    history = { year: currentYear, lastUpdated: '', snapshots: {} };
+  }
+
+  // 오늘 스냅샷 생성 (지역 → 차종 → 수치)
+  const todaySnapshot = {};
+  for (const row of quotaData) {
+    const regionName = row.region;
+    if (!regionName) continue;
+
+    if (!todaySnapshot[regionName]) {
+      todaySnapshot[regionName] = {};
+    }
+
+    const vehicleType = row.vehicleType || '기타';
+    todaySnapshot[regionName][vehicleType] = {
+      total: row.quota_total,
+      remaining: row.remaining_total,
+      registered: row.registered_total,
+      delivered: row.delivered_total
+    };
+  }
+
+  // 오늘 날짜 엔트리 덮어쓰기 (같은 날 여러번 실행 시 최신값 유지)
+  history.snapshots[today] = todaySnapshot;
+  history.year = currentYear;
+  history.lastUpdated = now.toISOString();
+
+  await fs.writeFile(HISTORY_PATH, JSON.stringify(history, null, 2));
+
+  const totalDays = Object.keys(history.snapshots).length;
+  console.log(`💾 ${HISTORY_PATH} 저장 완료 (${totalDays}일치 데이터)`);
+}
+
 async function main() {
   console.log('🚀 전기차 보조금 접수현황 스크래핑 시작');
   console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
@@ -261,7 +320,14 @@ async function main() {
     );
     
     console.log('💾 data/quota.json 저장 완료');
-    
+
+    // 일일 스냅샷 히스토리 누적
+    if (result.success && result.quotaData.length > 0) {
+      console.log('');
+      console.log('📊 ===== 히스토리 스냅샷 저장 =====');
+      await saveQuotaHistory(result.quotaData);
+    }
+
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
     console.log(`⏱️ 총 소요 시간: ${elapsed}초`);
     console.log('🎉 완료!');

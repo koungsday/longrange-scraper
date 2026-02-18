@@ -82,7 +82,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: quota-results
-          path: data/quota.json
+          path: |
+            data/quota.json
+            data/quota-history*.json
 
       # ========================================
       # 4. 데이터 검증
@@ -111,7 +113,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-          git add data/quota.json
+          git add data/quota.json data/quota-history*.json
 
           if ! git diff --quiet --staged; then
             echo "Data changes detected. Committing and pushing..."
