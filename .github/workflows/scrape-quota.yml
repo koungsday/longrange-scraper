@@ -134,7 +134,7 @@ jobs:
                 RETRY_COUNT=$((RETRY_COUNT + 1))
 
                 if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
-                  git pull --rebase origin main
+                  git pull --no-rebase -X ours origin main
                   WAIT_TIME=$((2 ** RETRY_COUNT))
                   echo "Waiting ${WAIT_TIME}s before retry..."
                   sleep $WAIT_TIME
