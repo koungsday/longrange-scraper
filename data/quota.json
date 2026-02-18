@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-18T14:30:47.989Z",
+  "timestamp": "2026-02-18T14:40:42.535Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -13,7 +13,24 @@
           "sido": "서울",
           "region": "서울특별시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=1100&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=1100&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=1100&flag=A03"
+            },
+            {
+              "text": "추경1차 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=1100&flag=B"
+            }
+          ],
           "quota_total": 10500,
           "quota_priority": 1600,
           "quota_corporate": 0,
@@ -40,7 +57,20 @@
           "sido": "부산",
           "region": "부산광역시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=2600&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=2600&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=2600&flag=A03"
+            }
+          ],
           "quota_total": 4126,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -67,7 +97,16 @@
           "sido": "대구",
           "region": "대구광역시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=2700&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=2700&flag=A02"
+            }
+          ],
           "quota_total": 1215,
           "quota_priority": 122,
           "quota_corporate": 0,
@@ -94,7 +133,16 @@
           "sido": "인천",
           "region": "인천광역시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=2800&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=2800&flag=A02"
+            }
+          ],
           "quota_total": 6160,
           "quota_priority": 880,
           "quota_corporate": 0,
@@ -121,7 +169,16 @@
           "sido": "광주",
           "region": "광주광역시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=2900&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=2900&flag=A02"
+            }
+          ],
           "quota_total": 1930,
           "quota_priority": 193,
           "quota_corporate": 0,
@@ -148,7 +205,16 @@
           "sido": "대전",
           "region": "대전광역시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=3000&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=3000&flag=A02"
+            }
+          ],
           "quota_total": 924,
           "quota_priority": 92,
           "quota_corporate": 0,
@@ -175,7 +241,20 @@
           "sido": "울산",
           "region": "울산광역시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=3100&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=3100&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=3100&flag=A03"
+            }
+          ],
           "quota_total": 1736,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -202,7 +281,16 @@
           "sido": "세종",
           "region": "세종특별자치시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=3611&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=3611&flag=A02"
+            }
+          ],
           "quota_total": 797,
           "quota_priority": 120,
           "quota_corporate": 0,
@@ -229,7 +317,16 @@
           "sido": "경기",
           "region": "수원시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4111&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4111&flag=A02"
+            }
+          ],
           "quota_total": 2470,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -256,7 +353,20 @@
           "sido": "경기",
           "region": "성남시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4113&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4113&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4113&flag=A03"
+            }
+          ],
           "quota_total": 1949,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -283,7 +393,12 @@
           "sido": "경기",
           "region": "의정부시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4115&flag=A"
+            }
+          ],
           "quota_total": 700,
           "quota_priority": 70,
           "quota_corporate": 0,
@@ -310,7 +425,24 @@
           "sido": "경기",
           "region": "안양시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4117&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4117&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4117&flag=A03"
+            },
+            {
+              "text": "추경1차 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4117&flag=B"
+            }
+          ],
           "quota_total": 1350,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -337,7 +469,12 @@
           "sido": "경기",
           "region": "부천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4119&flag=A"
+            }
+          ],
           "quota_total": 350,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -364,7 +501,12 @@
           "sido": "경기",
           "region": "광명시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4121&flag=A"
+            }
+          ],
           "quota_total": 450,
           "quota_priority": 25,
           "quota_corporate": 0,
@@ -391,7 +533,12 @@
           "sido": "경기",
           "region": "평택시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4122&flag=A"
+            }
+          ],
           "quota_total": 996,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -418,7 +565,12 @@
           "sido": "경기",
           "region": "동두천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4125&flag=A"
+            }
+          ],
           "quota_total": 165,
           "quota_priority": 17,
           "quota_corporate": 0,
@@ -445,7 +597,16 @@
           "sido": "경기",
           "region": "안산시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4127&flag=A"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4127&flag=A03"
+            }
+          ],
           "quota_total": 800,
           "quota_priority": 40,
           "quota_corporate": 0,
@@ -472,7 +633,12 @@
           "sido": "경기",
           "region": "고양시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4128&flag=A"
+            }
+          ],
           "quota_total": 2500,
           "quota_priority": 420,
           "quota_corporate": 0,
@@ -499,7 +665,12 @@
           "sido": "경기",
           "region": "과천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4129&flag=A"
+            }
+          ],
           "quota_total": 220,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -526,7 +697,16 @@
           "sido": "경기",
           "region": "구리시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4131&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4131&flag=A02"
+            }
+          ],
           "quota_total": 400,
           "quota_priority": 40,
           "quota_corporate": 0,
@@ -553,7 +733,12 @@
           "sido": "경기",
           "region": "남양주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4136&flag=A"
+            }
+          ],
           "quota_total": 1000,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -580,7 +765,12 @@
           "sido": "경기",
           "region": "오산시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4137&flag=A"
+            }
+          ],
           "quota_total": 600,
           "quota_priority": 60,
           "quota_corporate": 0,
@@ -607,7 +797,16 @@
           "sido": "경기",
           "region": "시흥시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4139&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4139&flag=A02"
+            }
+          ],
           "quota_total": 650,
           "quota_priority": 50,
           "quota_corporate": 0,
@@ -634,7 +833,20 @@
           "sido": "경기",
           "region": "군포시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4141&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4141&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4141&flag=A03"
+            }
+          ],
           "quota_total": 750,
           "quota_priority": 60,
           "quota_corporate": 0,
@@ -661,7 +873,12 @@
           "sido": "경기",
           "region": "의왕시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4143&flag=A"
+            }
+          ],
           "quota_total": 300,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -688,7 +905,12 @@
           "sido": "경기",
           "region": "하남시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4145&flag=A"
+            }
+          ],
           "quota_total": 630,
           "quota_priority": 50,
           "quota_corporate": 0,
@@ -715,7 +937,12 @@
           "sido": "경기",
           "region": "용인시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4146&flag=A"
+            }
+          ],
           "quota_total": 2000,
           "quota_priority": 200,
           "quota_corporate": 0,
@@ -742,7 +969,16 @@
           "sido": "경기",
           "region": "파주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4148&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4148&flag=A02"
+            }
+          ],
           "quota_total": 1229,
           "quota_priority": 120,
           "quota_corporate": 0,
@@ -769,7 +1005,12 @@
           "sido": "경기",
           "region": "이천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4150&flag=A"
+            }
+          ],
           "quota_total": 668,
           "quota_priority": 66,
           "quota_corporate": 0,
@@ -796,7 +1037,20 @@
           "sido": "경기",
           "region": "안성시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4155&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4155&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4155&flag=A03"
+            }
+          ],
           "quota_total": 442,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -823,7 +1077,12 @@
           "sido": "경기",
           "region": "김포시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4157&flag=A"
+            }
+          ],
           "quota_total": 1031,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -850,7 +1109,12 @@
           "sido": "경기",
           "region": "화성시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4159&flag=A"
+            }
+          ],
           "quota_total": 3407,
           "quota_priority": 30,
           "quota_corporate": 0,
@@ -877,7 +1141,20 @@
           "sido": "경기",
           "region": "광주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4161&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4161&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4161&flag=A03"
+            }
+          ],
           "quota_total": 775,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -904,7 +1181,16 @@
           "sido": "경기",
           "region": "양주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4163&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4163&flag=A02"
+            }
+          ],
           "quota_total": 1118,
           "quota_priority": 55,
           "quota_corporate": 0,
@@ -931,7 +1217,16 @@
           "sido": "경기",
           "region": "포천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4165&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4165&flag=A02"
+            }
+          ],
           "quota_total": 140,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -958,7 +1253,16 @@
           "sido": "경기",
           "region": "여주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4167&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4167&flag=A02"
+            }
+          ],
           "quota_total": 255,
           "quota_priority": 25,
           "quota_corporate": 0,
@@ -985,7 +1289,16 @@
           "sido": "경기",
           "region": "연천군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4180&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4180&flag=A02"
+            }
+          ],
           "quota_total": 174,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1012,7 +1325,12 @@
           "sido": "경기",
           "region": "가평군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4182&flag=A"
+            }
+          ],
           "quota_total": 170,
           "quota_priority": 17,
           "quota_corporate": 0,
@@ -1039,7 +1357,12 @@
           "sido": "경기",
           "region": "양평군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4183&flag=A"
+            }
+          ],
           "quota_total": 315,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1066,7 +1389,16 @@
           "sido": "강원",
           "region": "춘천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4211&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4211&flag=A02"
+            }
+          ],
           "quota_total": 800,
           "quota_priority": 80,
           "quota_corporate": 0,
@@ -1093,7 +1425,16 @@
           "sido": "강원",
           "region": "원주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4213&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4213&flag=A02"
+            }
+          ],
           "quota_total": 1200,
           "quota_priority": 150,
           "quota_corporate": 0,
@@ -1120,7 +1461,16 @@
           "sido": "강원",
           "region": "강릉시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4215&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4215&flag=A02"
+            }
+          ],
           "quota_total": 600,
           "quota_priority": 60,
           "quota_corporate": 0,
@@ -1147,7 +1497,16 @@
           "sido": "강원",
           "region": "동해시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4217&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4217&flag=A02"
+            }
+          ],
           "quota_total": 210,
           "quota_priority": 20,
           "quota_corporate": 0,
@@ -1174,7 +1533,16 @@
           "sido": "강원",
           "region": "태백시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4219&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4219&flag=A02"
+            }
+          ],
           "quota_total": 150,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -1201,7 +1569,16 @@
           "sido": "강원",
           "region": "속초시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4221&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4221&flag=A02"
+            }
+          ],
           "quota_total": 319,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1228,7 +1605,16 @@
           "sido": "강원",
           "region": "삼척시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4223&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4223&flag=A02"
+            }
+          ],
           "quota_total": 220,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1255,7 +1641,20 @@
           "sido": "강원",
           "region": "홍천군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4272&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4272&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4272&flag=A03"
+            }
+          ],
           "quota_total": 170,
           "quota_priority": 20,
           "quota_corporate": 0,
@@ -1282,7 +1681,20 @@
           "sido": "강원",
           "region": "횡성군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4273&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4273&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4273&flag=A03"
+            }
+          ],
           "quota_total": 150,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1309,7 +1721,16 @@
           "sido": "강원",
           "region": "영월군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4275&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4275&flag=A02"
+            }
+          ],
           "quota_total": 130,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1336,7 +1757,20 @@
           "sido": "강원",
           "region": "평창군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4276&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4276&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4276&flag=A03"
+            }
+          ],
           "quota_total": 130,
           "quota_priority": 13,
           "quota_corporate": 0,
@@ -1363,7 +1797,12 @@
           "sido": "강원",
           "region": "정선군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4277&flag=A"
+            }
+          ],
           "quota_total": 100,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1390,7 +1829,16 @@
           "sido": "강원",
           "region": "철원군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4278&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4278&flag=A02"
+            }
+          ],
           "quota_total": 140,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1417,7 +1865,16 @@
           "sido": "강원",
           "region": "화천군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4279&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4279&flag=A02"
+            }
+          ],
           "quota_total": 20,
           "quota_priority": 2,
           "quota_corporate": 0,
@@ -1444,7 +1901,16 @@
           "sido": "강원",
           "region": "양구군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4280&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4280&flag=A02"
+            }
+          ],
           "quota_total": 80,
           "quota_priority": 8,
           "quota_corporate": 0,
@@ -1471,7 +1937,16 @@
           "sido": "강원",
           "region": "인제군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4281&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4281&flag=A02"
+            }
+          ],
           "quota_total": 150,
           "quota_priority": 15,
           "quota_corporate": 0,
@@ -1498,7 +1973,20 @@
           "sido": "강원",
           "region": "고성군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4282&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4282&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4282&flag=A03"
+            }
+          ],
           "quota_total": 30,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1525,7 +2013,20 @@
           "sido": "강원",
           "region": "양양군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4283&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4283&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4283&flag=A03"
+            }
+          ],
           "quota_total": 120,
           "quota_priority": 6,
           "quota_corporate": 0,
@@ -1552,7 +2053,12 @@
           "sido": "충북",
           "region": "청주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4311&flag=A"
+            }
+          ],
           "quota_total": 2250,
           "quota_priority": 225,
           "quota_corporate": 0,
@@ -1579,7 +2085,16 @@
           "sido": "충북",
           "region": "충주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4313&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4313&flag=A02"
+            }
+          ],
           "quota_total": 1199,
           "quota_priority": 120,
           "quota_corporate": 0,
@@ -1606,7 +2121,16 @@
           "sido": "충북",
           "region": "제천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4315&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4315&flag=A02"
+            }
+          ],
           "quota_total": 800,
           "quota_priority": 80,
           "quota_corporate": 0,
@@ -1633,7 +2157,12 @@
           "sido": "충북",
           "region": "보은군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4372&flag=A"
+            }
+          ],
           "quota_total": 100,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1660,7 +2189,16 @@
           "sido": "충북",
           "region": "옥천군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4373&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4373&flag=A02"
+            }
+          ],
           "quota_total": 300,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1687,7 +2225,12 @@
           "sido": "충북",
           "region": "영동군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4374&flag=A"
+            }
+          ],
           "quota_total": 180,
           "quota_priority": 18,
           "quota_corporate": 0,
@@ -1714,7 +2257,16 @@
           "sido": "충북",
           "region": "증평군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=43745&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=43745&flag=A02"
+            }
+          ],
           "quota_total": 100,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -1741,7 +2293,16 @@
           "sido": "충북",
           "region": "진천군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4375&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4375&flag=A02"
+            }
+          ],
           "quota_total": 800,
           "quota_priority": 100,
           "quota_corporate": 0,
@@ -1768,7 +2329,16 @@
           "sido": "충북",
           "region": "괴산군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4376&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4376&flag=A02"
+            }
+          ],
           "quota_total": 100,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -1795,7 +2365,12 @@
           "sido": "충북",
           "region": "음성군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4377&flag=A"
+            }
+          ],
           "quota_total": 240,
           "quota_priority": 24,
           "quota_corporate": 0,
@@ -1822,7 +2397,12 @@
           "sido": "충북",
           "region": "단양군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4380&flag=A"
+            }
+          ],
           "quota_total": 120,
           "quota_priority": 15,
           "quota_corporate": 0,
@@ -1849,7 +2429,16 @@
           "sido": "충남",
           "region": "천안시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4413&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4413&flag=A02"
+            }
+          ],
           "quota_total": 856,
           "quota_priority": 85,
           "quota_corporate": 0,
@@ -1876,7 +2465,16 @@
           "sido": "충남",
           "region": "공주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4415&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4415&flag=A02"
+            }
+          ],
           "quota_total": 130,
           "quota_priority": 13,
           "quota_corporate": 0,
@@ -1903,7 +2501,20 @@
           "sido": "충남",
           "region": "보령시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4418&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4418&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4418&flag=A03"
+            }
+          ],
           "quota_total": 70,
           "quota_priority": 7,
           "quota_corporate": 0,
@@ -1930,7 +2541,20 @@
           "sido": "충남",
           "region": "아산시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4420&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4420&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4420&flag=A03"
+            }
+          ],
           "quota_total": 592,
           "quota_priority": 59,
           "quota_corporate": 0,
@@ -1957,7 +2581,12 @@
           "sido": "충남",
           "region": "서산시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4421&flag=A"
+            }
+          ],
           "quota_total": 337,
           "quota_priority": 48,
           "quota_corporate": 0,
@@ -1984,7 +2613,16 @@
           "sido": "충남",
           "region": "논산시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4423&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4423&flag=A02"
+            }
+          ],
           "quota_total": 149,
           "quota_priority": 15,
           "quota_corporate": 0,
@@ -2011,7 +2649,12 @@
           "sido": "충남",
           "region": "계룡시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4425&flag=A"
+            }
+          ],
           "quota_total": 130,
           "quota_priority": 13,
           "quota_corporate": 0,
@@ -2038,7 +2681,16 @@
           "sido": "충남",
           "region": "당진시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4427&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4427&flag=A02"
+            }
+          ],
           "quota_total": 300,
           "quota_priority": 30,
           "quota_corporate": 0,
@@ -2065,7 +2717,16 @@
           "sido": "충남",
           "region": "금산군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4471&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4471&flag=A02"
+            }
+          ],
           "quota_total": 100,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -2092,7 +2753,16 @@
           "sido": "충남",
           "region": "부여군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4476&flag=A"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4476&flag=A03"
+            }
+          ],
           "quota_total": 150,
           "quota_priority": 16,
           "quota_corporate": 0,
@@ -2119,7 +2789,12 @@
           "sido": "충남",
           "region": "서천군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4477&flag=A"
+            }
+          ],
           "quota_total": 66,
           "quota_priority": 6,
           "quota_corporate": 0,
@@ -2146,7 +2821,16 @@
           "sido": "충남",
           "region": "청양군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4479&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4479&flag=A02"
+            }
+          ],
           "quota_total": 91,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -2173,7 +2857,16 @@
           "sido": "충남",
           "region": "홍성군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4480&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4480&flag=A02"
+            }
+          ],
           "quota_total": 200,
           "quota_priority": 40,
           "quota_corporate": 0,
@@ -2200,7 +2893,16 @@
           "sido": "충남",
           "region": "예산군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4481&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4481&flag=A02"
+            }
+          ],
           "quota_total": 120,
           "quota_priority": 12,
           "quota_corporate": 0,
@@ -2227,7 +2929,16 @@
           "sido": "충남",
           "region": "태안군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=44825&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=44825&flag=A02"
+            }
+          ],
           "quota_total": 210,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -2254,7 +2965,20 @@
           "sido": "전북",
           "region": "전주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4511&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4511&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4511&flag=A03"
+            }
+          ],
           "quota_total": 640,
           "quota_priority": 64,
           "quota_corporate": 0,
@@ -2281,7 +3005,12 @@
           "sido": "전북",
           "region": "군산시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4513&flag=A"
+            }
+          ],
           "quota_total": 380,
           "quota_priority": 38,
           "quota_corporate": 2,
@@ -2308,7 +3037,12 @@
           "sido": "전북",
           "region": "익산시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4514&flag=A"
+            }
+          ],
           "quota_total": 200,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -2335,7 +3069,12 @@
           "sido": "전북",
           "region": "정읍시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4518&flag=A"
+            }
+          ],
           "quota_total": 139,
           "quota_priority": 14,
           "quota_corporate": 0,
@@ -2362,7 +3101,16 @@
           "sido": "전북",
           "region": "남원시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4519&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4519&flag=A02"
+            }
+          ],
           "quota_total": 120,
           "quota_priority": 12,
           "quota_corporate": 0,
@@ -2389,7 +3137,12 @@
           "sido": "전북",
           "region": "김제시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4521&flag=A"
+            }
+          ],
           "quota_total": 178,
           "quota_priority": 18,
           "quota_corporate": 0,
@@ -2416,7 +3169,12 @@
           "sido": "전북",
           "region": "완주군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4571&flag=A"
+            }
+          ],
           "quota_total": 160,
           "quota_priority": 16,
           "quota_corporate": 0,
@@ -2443,7 +3201,12 @@
           "sido": "전북",
           "region": "진안군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4572&flag=A"
+            }
+          ],
           "quota_total": 60,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -2470,7 +3233,16 @@
           "sido": "전북",
           "region": "무주군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4573&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4573&flag=A02"
+            }
+          ],
           "quota_total": 31,
           "quota_priority": 4,
           "quota_corporate": 0,
@@ -2497,7 +3269,12 @@
           "sido": "전북",
           "region": "장수군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4574&flag=A"
+            }
+          ],
           "quota_total": 44,
           "quota_priority": 4,
           "quota_corporate": 0,
@@ -2551,7 +3328,12 @@
           "sido": "전북",
           "region": "순창군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4577&flag=A"
+            }
+          ],
           "quota_total": 60,
           "quota_priority": 6,
           "quota_corporate": 0,
@@ -2578,7 +3360,12 @@
           "sido": "전북",
           "region": "고창군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4579&flag=A"
+            }
+          ],
           "quota_total": 57,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -2605,7 +3392,16 @@
           "sido": "전북",
           "region": "부안군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4580&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4580&flag=A02"
+            }
+          ],
           "quota_total": 76,
           "quota_priority": 8,
           "quota_corporate": 0,
@@ -2632,7 +3428,16 @@
           "sido": "전남",
           "region": "목포시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4611&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4611&flag=A02"
+            }
+          ],
           "quota_total": 96,
           "quota_priority": 4,
           "quota_corporate": 0,
@@ -2659,7 +3464,16 @@
           "sido": "전남",
           "region": "여수시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4613&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4613&flag=A02"
+            }
+          ],
           "quota_total": 400,
           "quota_priority": 40,
           "quota_corporate": 0,
@@ -2686,7 +3500,16 @@
           "sido": "전남",
           "region": "순천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4615&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4615&flag=A02"
+            }
+          ],
           "quota_total": 500,
           "quota_priority": 50,
           "quota_corporate": 0,
@@ -2713,7 +3536,12 @@
           "sido": "전남",
           "region": "나주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4617&flag=A"
+            }
+          ],
           "quota_total": 150,
           "quota_priority": 15,
           "quota_corporate": 0,
@@ -2740,7 +3568,16 @@
           "sido": "전남",
           "region": "광양시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4623&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4623&flag=A02"
+            }
+          ],
           "quota_total": 300,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -2767,7 +3604,12 @@
           "sido": "전남",
           "region": "담양군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4671&flag=A"
+            }
+          ],
           "quota_total": 40,
           "quota_priority": 4,
           "quota_corporate": 0,
@@ -2794,7 +3636,20 @@
           "sido": "전남",
           "region": "곡성군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4672&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4672&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4672&flag=A03"
+            }
+          ],
           "quota_total": 70,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -2821,7 +3676,20 @@
           "sido": "전남",
           "region": "구례군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4673&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4673&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4673&flag=A03"
+            }
+          ],
           "quota_total": 54,
           "quota_priority": 6,
           "quota_corporate": 0,
@@ -2848,7 +3716,20 @@
           "sido": "전남",
           "region": "고흥군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4677&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4677&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4677&flag=A03"
+            }
+          ],
           "quota_total": 159,
           "quota_priority": 7,
           "quota_corporate": 0,
@@ -2875,7 +3756,12 @@
           "sido": "전남",
           "region": "보성군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4678&flag=A"
+            }
+          ],
           "quota_total": 120,
           "quota_priority": 12,
           "quota_corporate": 0,
@@ -2902,7 +3788,12 @@
           "sido": "전남",
           "region": "화순군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4679&flag=A"
+            }
+          ],
           "quota_total": 70,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -2929,7 +3820,12 @@
           "sido": "전남",
           "region": "장흥군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4680&flag=A"
+            }
+          ],
           "quota_total": 85,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -2956,7 +3852,16 @@
           "sido": "전남",
           "region": "강진군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4681&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4681&flag=A02"
+            }
+          ],
           "quota_total": 40,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -2983,7 +3888,12 @@
           "sido": "전남",
           "region": "해남군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4682&flag=A"
+            }
+          ],
           "quota_total": 497,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -3010,7 +3920,20 @@
           "sido": "전남",
           "region": "영암군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4683&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4683&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4683&flag=A03"
+            }
+          ],
           "quota_total": 75,
           "quota_priority": 7,
           "quota_corporate": 0,
@@ -3037,7 +3960,16 @@
           "sido": "전남",
           "region": "무안군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4684&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4684&flag=A02"
+            }
+          ],
           "quota_total": 140,
           "quota_priority": 14,
           "quota_corporate": 0,
@@ -3064,7 +3996,12 @@
           "sido": "전남",
           "region": "함평군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4686&flag=A"
+            }
+          ],
           "quota_total": 158,
           "quota_priority": 16,
           "quota_corporate": 0,
@@ -3091,7 +4028,12 @@
           "sido": "전남",
           "region": "영광군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4687&flag=A"
+            }
+          ],
           "quota_total": 138,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -3118,7 +4060,16 @@
           "sido": "전남",
           "region": "장성군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4688&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4688&flag=A02"
+            }
+          ],
           "quota_total": 115,
           "quota_priority": 12,
           "quota_corporate": 0,
@@ -3145,7 +4096,12 @@
           "sido": "전남",
           "region": "완도군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4689&flag=A"
+            }
+          ],
           "quota_total": 127,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -3172,7 +4128,12 @@
           "sido": "전남",
           "region": "진도군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4690&flag=A"
+            }
+          ],
           "quota_total": 140,
           "quota_priority": 7,
           "quota_corporate": 0,
@@ -3199,7 +4160,16 @@
           "sido": "전남",
           "region": "신안군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4691&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4691&flag=A02"
+            }
+          ],
           "quota_total": 70,
           "quota_priority": 7,
           "quota_corporate": 0,
@@ -3226,7 +4196,12 @@
           "sido": "경북",
           "region": "포항시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4711&flag=A"
+            }
+          ],
           "quota_total": 900,
           "quota_priority": 70,
           "quota_corporate": 0,
@@ -3253,7 +4228,20 @@
           "sido": "경북",
           "region": "경주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4713&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4713&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4713&flag=A03"
+            }
+          ],
           "quota_total": 972,
           "quota_priority": 97,
           "quota_corporate": 0,
@@ -3280,7 +4268,12 @@
           "sido": "경북",
           "region": "김천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4715&flag=A"
+            }
+          ],
           "quota_total": 630,
           "quota_priority": 60,
           "quota_corporate": 0,
@@ -3307,7 +4300,20 @@
           "sido": "경북",
           "region": "안동시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4717&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4717&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4717&flag=A03"
+            }
+          ],
           "quota_total": 320,
           "quota_priority": 32,
           "quota_corporate": 0,
@@ -3334,7 +4340,20 @@
           "sido": "경북",
           "region": "구미시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4719&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4719&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4719&flag=A03"
+            }
+          ],
           "quota_total": 1050,
           "quota_priority": 105,
           "quota_corporate": 0,
@@ -3361,7 +4380,12 @@
           "sido": "경북",
           "region": "영주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4721&flag=A"
+            }
+          ],
           "quota_total": 300,
           "quota_priority": 30,
           "quota_corporate": 0,
@@ -3388,7 +4412,16 @@
           "sido": "경북",
           "region": "영천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4723&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4723&flag=A02"
+            }
+          ],
           "quota_total": 150,
           "quota_priority": 23,
           "quota_corporate": 0,
@@ -3415,7 +4448,16 @@
           "sido": "경북",
           "region": "상주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4725&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4725&flag=A02"
+            }
+          ],
           "quota_total": 450,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -3442,7 +4484,16 @@
           "sido": "경북",
           "region": "문경시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4728&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4728&flag=A02"
+            }
+          ],
           "quota_total": 100,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -3469,7 +4520,24 @@
           "sido": "경북",
           "region": "경산시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4729&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4729&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4729&flag=A03"
+            },
+            {
+              "text": "추경1차 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4729&flag=B"
+            }
+          ],
           "quota_total": 700,
           "quota_priority": 70,
           "quota_corporate": 0,
@@ -3496,7 +4564,16 @@
           "sido": "경북",
           "region": "의성군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4773&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4773&flag=A02"
+            }
+          ],
           "quota_total": 125,
           "quota_priority": 12,
           "quota_corporate": 0,
@@ -3523,7 +4600,20 @@
           "sido": "경북",
           "region": "청송군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4775&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4775&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4775&flag=A03"
+            }
+          ],
           "quota_total": 100,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -3550,7 +4640,12 @@
           "sido": "경북",
           "region": "영양군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4776&flag=A"
+            }
+          ],
           "quota_total": 50,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -3577,7 +4672,12 @@
           "sido": "경북",
           "region": "영덕군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4777&flag=A"
+            }
+          ],
           "quota_total": 68,
           "quota_priority": 8,
           "quota_corporate": 0,
@@ -3604,7 +4704,20 @@
           "sido": "경북",
           "region": "청도군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4782&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4782&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4782&flag=A03"
+            }
+          ],
           "quota_total": 120,
           "quota_priority": 12,
           "quota_corporate": 0,
@@ -3631,7 +4744,12 @@
           "sido": "경북",
           "region": "고령군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4783&flag=A"
+            }
+          ],
           "quota_total": 64,
           "quota_priority": 6,
           "quota_corporate": 0,
@@ -3658,7 +4776,20 @@
           "sido": "경북",
           "region": "성주군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4784&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4784&flag=A02"
+            },
+            {
+              "text": "본공고 3",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4784&flag=A03"
+            }
+          ],
           "quota_total": 210,
           "quota_priority": 30,
           "quota_corporate": 0,
@@ -3685,7 +4816,16 @@
           "sido": "경북",
           "region": "칠곡군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4785&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4785&flag=A02"
+            }
+          ],
           "quota_total": 266,
           "quota_priority": 41,
           "quota_corporate": 0,
@@ -3712,7 +4852,12 @@
           "sido": "경북",
           "region": "예천군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4790&flag=A"
+            }
+          ],
           "quota_total": 100,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -3739,7 +4884,12 @@
           "sido": "경북",
           "region": "봉화군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4792&flag=A"
+            }
+          ],
           "quota_total": 170,
           "quota_priority": 17,
           "quota_corporate": 0,
@@ -3766,7 +4916,16 @@
           "sido": "경북",
           "region": "울진군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4793&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4793&flag=A02"
+            }
+          ],
           "quota_total": 100,
           "quota_priority": 10,
           "quota_corporate": 0,
@@ -3793,7 +4952,12 @@
           "sido": "경북",
           "region": "울릉군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4794&flag=A"
+            }
+          ],
           "quota_total": 130,
           "quota_priority": 7,
           "quota_corporate": 0,
@@ -3820,7 +4984,16 @@
           "sido": "경남",
           "region": "창원시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4812&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4812&flag=A02"
+            }
+          ],
           "quota_total": 1400,
           "quota_priority": 140,
           "quota_corporate": 0,
@@ -3847,7 +5020,16 @@
           "sido": "경남",
           "region": "진주시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4817&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4817&flag=A02"
+            }
+          ],
           "quota_total": 500,
           "quota_priority": 50,
           "quota_corporate": 0,
@@ -3874,7 +5056,16 @@
           "sido": "경남",
           "region": "통영시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4822&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4822&flag=A02"
+            }
+          ],
           "quota_total": 150,
           "quota_priority": 8,
           "quota_corporate": 0,
@@ -3901,7 +5092,16 @@
           "sido": "경남",
           "region": "사천시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4824&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4824&flag=A02"
+            }
+          ],
           "quota_total": 250,
           "quota_priority": 25,
           "quota_corporate": 0,
@@ -3928,7 +5128,16 @@
           "sido": "경남",
           "region": "김해시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4825&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4825&flag=A02"
+            }
+          ],
           "quota_total": 999,
           "quota_priority": 100,
           "quota_corporate": 0,
@@ -3955,7 +5164,12 @@
           "sido": "경남",
           "region": "밀양시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4827&flag=A"
+            }
+          ],
           "quota_total": 350,
           "quota_priority": 50,
           "quota_corporate": 0,
@@ -3982,7 +5196,16 @@
           "sido": "경남",
           "region": "거제시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4831&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4831&flag=A02"
+            }
+          ],
           "quota_total": 1050,
           "quota_priority": 105,
           "quota_corporate": 0,
@@ -4009,7 +5232,16 @@
           "sido": "경남",
           "region": "양산시",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4833&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4833&flag=A02"
+            }
+          ],
           "quota_total": 480,
           "quota_priority": 24,
           "quota_corporate": 0,
@@ -4036,7 +5268,12 @@
           "sido": "경남",
           "region": "의령군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4872&flag=A"
+            }
+          ],
           "quota_total": 70,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -4063,7 +5300,12 @@
           "sido": "경남",
           "region": "함안군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4873&flag=A"
+            }
+          ],
           "quota_total": 150,
           "quota_priority": 15,
           "quota_corporate": 0,
@@ -4090,7 +5332,16 @@
           "sido": "경남",
           "region": "창녕군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4874&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4874&flag=A02"
+            }
+          ],
           "quota_total": 170,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -4117,7 +5368,12 @@
           "sido": "경남",
           "region": "고성군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4882&flag=A"
+            }
+          ],
           "quota_total": 110,
           "quota_priority": 5,
           "quota_corporate": 0,
@@ -4144,7 +5400,12 @@
           "sido": "경남",
           "region": "남해군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4884&flag=A"
+            }
+          ],
           "quota_total": 100,
           "quota_priority": 5,
           "quota_corporate": 0,
@@ -4171,7 +5432,12 @@
           "sido": "경남",
           "region": "하동군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4885&flag=A"
+            }
+          ],
           "quota_total": 110,
           "quota_priority": 11,
           "quota_corporate": 0,
@@ -4198,7 +5464,12 @@
           "sido": "경남",
           "region": "산청군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4886&flag=A"
+            }
+          ],
           "quota_total": 120,
           "quota_priority": 12,
           "quota_corporate": 0,
@@ -4225,7 +5496,12 @@
           "sido": "경남",
           "region": "함양군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4887&flag=A"
+            }
+          ],
           "quota_total": 104,
           "quota_priority": 11,
           "quota_corporate": 0,
@@ -4252,7 +5528,16 @@
           "sido": "경남",
           "region": "거창군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4888&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4888&flag=A02"
+            }
+          ],
           "quota_total": 60,
           "quota_priority": 6,
           "quota_corporate": 0,
@@ -4279,7 +5564,12 @@
           "sido": "경남",
           "region": "합천군",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=4889&flag=A"
+            }
+          ],
           "quota_total": 180,
           "quota_priority": 18,
           "quota_corporate": 0,
@@ -4306,7 +5596,12 @@
           "sido": "제주",
           "region": "제주특별자치도",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=5000&flag=A"
+            }
+          ],
           "quota_total": 3998,
           "quota_priority": 400,
           "quota_corporate": 0,
@@ -4333,7 +5628,16 @@
           "sido": "공단",
           "region": "한국환경공단",
           "vehicleType": "전기승용",
-          "fileLinks": [],
+          "fileLinks": [
+            {
+              "text": "본공고 1",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=9999&flag=A"
+            },
+            {
+              "text": "본공고 2",
+              "href": "https://ev.or.kr/nportal/ps/comm/noticeFile/download.do?year=2026&seq=9999&flag=A02"
+            }
+          ],
           "quota_total": 30000,
           "quota_priority": 0,
           "quota_corporate": 0,
@@ -4359,7 +5663,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-18T14:30:47.911Z"
+      "timestamp": "2026-02-18T14:40:42.451Z"
     }
   ]
 }
