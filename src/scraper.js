@@ -431,7 +431,8 @@ async function main() {
       total_regions: results.length,
       success_count: success,
       failed_count: failed,
-      regions: normalizedRegions
+      regions: normalizedRegions,
+      phones: phones
     };
 
     await fs.writeFile(
