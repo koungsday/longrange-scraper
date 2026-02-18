@@ -5,9 +5,9 @@ on:
     - cron: '0 1 * * *'  # 매일 오전 10시 KST (UTC+9)
   workflow_dispatch:     # 수동 실행 버튼
 
-# scrape-quota.yml과 web repo push 충돌 방지
+# scrape-quota.yml과 GitHub Pages 배포 충돌 방지
 concurrency:
-  group: sync-web-data
+  group: scraper-pipeline
   cancel-in-progress: false  # 대기 후 실행
 
 jobs:
@@ -17,6 +17,8 @@ jobs:
 
     permissions:
       contents: write
+      pages: write
+      id-token: write
 
     steps:
       # ========================================
@@ -61,7 +63,7 @@ jobs:
 
       - name: Save New Node Modules Cache
         uses: actions/cache@v4
-        if: always() && steps.cache-restore.outputs.cache-hit != 'true'
+        if: steps.cache-restore.outputs.cache-hit != 'true'
         with:
           path: |
             node_modules
@@ -101,7 +103,7 @@ jobs:
             echo "✅ 데이터 검증 통과"
           else
             echo "valid=false" >> $GITHUB_OUTPUT
-            echo "❌ 데이터 검증 실패 - web repo 동기화 차단"
+            echo "❌ 데이터 검증 실패"
           fi
 
       # ========================================
@@ -149,89 +151,22 @@ jobs:
           fi
 
       # ========================================
-      # 6. web repo 동기화 (검증 통과 시에만)
+      # 6. GitHub Pages 배포 (검증 통과 시에만)
       # ========================================
-      - name: Checkout koungs-day-web
+      - name: Setup Pages
         if: steps.validate.outputs.valid == 'true'
-        uses: actions/checkout@v4
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: steps.validate.outputs.valid == 'true'
+        uses: actions/upload-pages-artifact@v3
         with:
-          repository: koungsday/koungs-day-web
-          token: ${{ secrets.PAT_TOKEN }}
-          path: web
+          path: data/
 
-      - name: Sync subsidy data to web repo
+      - name: Deploy to GitHub Pages
         if: steps.validate.outputs.valid == 'true'
-        run: |
-          echo "📥 Copying subsidy data to web repo..."
-
-          mkdir -p web/public/data
-
-          # years.json (사용 가능한 연도 목록)
-          cp data/years.json web/public/data/ || echo "⚠️ years.json not found"
-
-          # 연도별 폴더 복사 (2025, 2026, ...)
-          for year_dir in data/20*/; do
-            if [ -d "$year_dir" ]; then
-              year=$(basename "$year_dir")
-              echo "📁 Copying $year data..."
-              mkdir -p "web/public/data/$year"
-              cp "${year_dir}vehicles.json" "web/public/data/$year/" 2>/dev/null || echo "  ⚠️ No vehicles.json in $year"
-              cp "${year_dir}subsidies.json" "web/public/data/$year/" 2>/dev/null || echo "  ⚠️ No subsidies.json in $year"
-            fi
-          done
-
-          echo "📁 Files in web/public/data/:"
-          ls -lhR web/public/data/
-
-          cd web
-
-          # 변경 감지
-          if git diff --quiet public/data/ 2>/dev/null && [ -z "$(git ls-files --others --exclude-standard public/data/)" ]; then
-            echo "ℹ️ No subsidy data changes in web repo. Skipping commit."
-          else
-            echo "✅ Subsidy data changed. Committing to web repo..."
-
-            git config user.name "GitHub Actions Bot"
-            git config user.email "actions@github.com"
-
-            git add public/data/
-
-            git commit -m "chore: Auto-update subsidy data
-
-          Updated at: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M:%S KST')
-
-          Data sources:
-            - Years: 사용 가능한 연도 목록
-            - Vehicles: 차량 마스터 (연도별, 국고 보조금)
-            - Subsidies: 지역별 지자체 보조금 (연도별, 정규화)
-
-          Synced from koungsday/longrange-scraper @ ${{ github.sha }}"
-
-            # Push with retry
-            MAX_RETRIES=5
-            RETRY_COUNT=0
-
-            while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-              echo "Web repo push attempt $((RETRY_COUNT + 1))/$MAX_RETRIES..."
-
-              if git push; then
-                echo "✅ Web repo push successful!"
-                break
-              else
-                RETRY_COUNT=$((RETRY_COUNT + 1))
-                if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
-                  git pull --rebase
-                  WAIT_TIME=$((2 ** RETRY_COUNT))
-                  echo "Waiting ${WAIT_TIME}s before retry..."
-                  sleep $WAIT_TIME
-                fi
-              fi
-            done
-
-            if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
-              echo "⚠️ Web repo push failed after $MAX_RETRIES attempts (non-blocking)"
-            fi
-          fi
+        id: deployment
+        uses: actions/deploy-pages@v4
 
       # ========================================
       # 7. 결과 로그
@@ -241,10 +176,9 @@ jobs:
         run: |
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           if [ "${{ steps.validate.outputs.valid }}" == "true" ]; then
-            echo "✅ Subsidy 스크래핑 + 검증 통과 + web repo 동기화 완료"
-            echo "🚀 Vercel 배포 트리거됨"
+            echo "✅ Subsidy 스크래핑 + 검증 통과 + GitHub Pages 배포 완료"
           elif [ "${{ steps.validate.outputs.valid }}" == "false" ]; then
-            echo "⚠️ Subsidy 스크래핑 완료, 검증 실패 → scraper repo만 커밋, web repo 동기화 차단"
+            echo "⚠️ Subsidy 스크래핑 완료, 검증 실패 → scraper repo만 커밋"
           else
             echo "❌ Subsidy 스크래핑 중 오류 발생"
           fi
