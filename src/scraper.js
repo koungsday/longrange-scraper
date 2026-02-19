@@ -222,7 +222,8 @@ async function scrapeLocalSubsidies(browser) {
 // ==========================================
 // 4. 지역별 부처 전화번호 스크래핑
 // ==========================================
-// 변경: pnp4web 보안 모듈 우회 시도 (User-Agent 설정 및 렌더링 대기)
+// 변경: pnp4web 보안 모듈 우회 시도 및 "조회" 버튼 클릭 추가
+// ==========================================
 async function scrapeLocalPhones(browser) {
   console.log('📞 지역별 부처 전화번호 스크래핑...');
   const PHONE_URL = 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do';
@@ -244,20 +245,44 @@ async function scrapeLocalPhones(browser) {
 
       // 1단계: 전화번호 페이지로 이동
       console.log('   Navigating to phone page...');
-      // 보안 모듈(pnp4web)이 돌고 리다이렉트/렌더링 될 때까지 충분히 대기
-      await page.goto(PHONE_URL, { waitUntil: 'networkidle0', timeout: 90000 });
+      await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 90000 });
 
-      // 2단계: 명시적 대기 (보안 스크립트 해제 대기 시간을 15초로 늘림)
-      console.log('   ⏳ 보안 모듈 실행 및 데이터 렌더링 대기 (15초)...');
-      await new Promise(r => setTimeout(r, 15000));
+      // 2단계: 보안 모듈 대기 (10초)
+      console.log('   ⏳ 보안 모듈 실행 대기 (10초)...');
+      await new Promise(r => setTimeout(r, 10000));
 
-      // 3단계: 화면 텍스트 진단 (실제로 무엇이 보이는지 확인)
-      const bodyText = await page.evaluate(() => document.body.innerText.substring(0, 500).replace(/\n/g, ' '));
-      console.log(`   🩺 화면 텍스트(상위 500자): ${bodyText}`);
+      // 3단계: 조회 버튼 클릭 시도 (데이터 로딩 트리거)
+      console.log('   🖱️ 조회 버튼 클릭 시도...');
+      try {
+        // 일반적인 조회 버튼 셀렉터들 시도
+        const searchBtnSelectors = ['#btn_search', '.btn_search', 'a.btn_search', '#searchBtn', 'button[type="submit"]'];
+        let clicked = false;
+
+        for (const selector of searchBtnSelectors) {
+          const btn = await page.$(selector);
+          if (btn) {
+            console.log(`      Found search button: ${selector}`);
+            await btn.click();
+            clicked = true;
+            await new Promise(r => setTimeout(r, 1000)); // 클릭 후 잠시 대기
+            break;
+          }
+        }
+
+        if (!clicked) {
+          console.log('      ⚠️ 조회 버튼을 찾을 수 없음 (자동 로딩일 수 있음)');
+          // 버튼을 못 찾았더라도 일단 대기 (혹시나 해서)
+        } else {
+          console.log('      ⏳ 데이터 로딩 대기 (부하 고려 5초)...');
+          await new Promise(r => setTimeout(r, 5000));
+        }
+
+      } catch (e) {
+        console.log(`      ⚠️ 버튼 클릭 중 오류: ${e.message}`);
+      }
 
       // 4단계: 테이블 데이터 대기
       try {
-        // 셀렉터를 좀 더 느슨하게 변경 (table01 클래스가 없을 수도 있음)
         await page.waitForSelector('table tbody td', { timeout: 10000 });
         console.log('   ✅ 테이블 데이터 렌더링 감지됨');
       } catch (e) {
@@ -273,7 +298,6 @@ async function scrapeLocalPhones(browser) {
         const fs = require('fs').promises;
         await fs.mkdir('data', { recursive: true });
         await fs.writeFile('data/debug-phones-last.html', htmlToParse);
-        console.log('   💾 디버깅용 HTML 저장 완료: data/debug-phones-last.html');
       } catch (e) { }
 
       // 6단계: 정규식으로 데이터 추출
