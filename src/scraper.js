@@ -255,7 +255,8 @@ async function scrapeRegionWithRetry(browser, region) {
 // ==========================================
 // 4. 지역별 부처 전화번호 스크래핑
 // ==========================================
-// 전화번호 페이지는 AJAX로 데이터를 로드하므로 세션 수립 + 데이터 행 대기 필요
+// 페이지 구조: <table class="table01 fz15"> 내부에 <thead>/<tbody> 분리
+// <tbody>는 AJAX 로딩 완료 후 채워짐 (로딩 스피너: .dot-spinner)
 async function scrapeLocalPhones(browser) {
   console.log('📞 지역별 부처 전화번호 스크래핑...');
   const MAIN_URL = 'https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do';
@@ -269,75 +270,58 @@ async function scrapeLocalPhones(browser) {
       await page.setDefaultNavigationTimeout(30000);
       await page.setDefaultTimeout(30000);
 
-      // AJAX JSON 응답 인터셉트
-      const capturedJson = [];
-      page.on('response', async (response) => {
-        const ct = response.headers()['content-type'] || '';
-        if (!ct.includes('json') && !ct.includes('javascript')) return;
-        try {
-          const text = await response.text();
-          if (text.length > 10) capturedJson.push({ url: response.url(), text });
-        } catch {}
-      });
-
       // 1단계: 메인 페이지에서 세션 쿠키 수립
       console.log('   🔑 세션 수립 중...');
       await page.goto(MAIN_URL, { waitUntil: 'networkidle2', timeout: 30000 });
 
       // 2단계: 전화번호 페이지로 이동
       await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-      await page.waitForSelector('table', { timeout: 10000 });
 
-      // 3단계: 데이터 행이 로드될 때까지 대기
-      let hasDataRows = false;
+      // 3단계: tbody에 데이터 행이 로드될 때까지 대기
+      // (thead는 즉시 렌더링되지만 tbody는 AJAX 완료 후 채워짐)
+      let dataLoaded = false;
       try {
-        await page.waitForFunction(
-          () => document.querySelectorAll('table tr').length > 1,
-          { timeout: 10000 }
-        );
-        hasDataRows = true;
-        console.log('   ✅ 데이터 행 로드됨');
+        await page.waitForSelector('table.table01 tbody tr', { timeout: 20000 });
+        dataLoaded = true;
+        console.log('   ✅ tbody 데이터 행 로드됨');
       } catch {
-        console.log('   ⚠️ 데이터 행 없음 - 검색 버튼/JS 함수 호출 시도');
-      }
-
-      // 4단계: 데이터 없으면 검색 버튼 클릭 또는 JS 함수 호출
-      if (!hasDataRows) {
-        const triggered = await page.evaluate(() => {
-          // 검색/조회 버튼 찾기
-          const allButtons = [...document.querySelectorAll('button, input[type="button"], a.btn, a')];
-          const searchBtn = allButtons.find(b => {
-            const text = (b.textContent || b.value || '').trim();
-            return text.includes('조회') || text.includes('검색');
-          });
-          if (searchBtn) { searchBtn.click(); return 'button'; }
-
-          // 공통 JS 초기화 함수 호출 시도
-          const fns = ['fn_search', 'fnSearch', 'search', 'fn_init', 'fnInit', 'init', 'loadData', 'getData', 'fn_select', 'fnSelect'];
-          for (const fn of fns) {
-            if (typeof window[fn] === 'function') {
-              try { window[fn](); return fn; } catch {}
-            }
-          }
-          return null;
-        });
-
-        if (triggered) {
-          console.log(`   🔍 트리거: ${triggered} - 데이터 로딩 대기...`);
-          try {
-            await page.waitForFunction(
-              () => document.querySelectorAll('table tr').length > 1,
-              { timeout: 15000 }
-            );
-            hasDataRows = true;
-          } catch {
-            console.log('   ⚠️ 트리거 후에도 데이터 행 없음');
-          }
+        console.log('   ⚠️ table.table01 tbody tr 타임아웃 - 대체 셀렉터 시도');
+        // 대체 셀렉터: 아무 테이블의 tbody tr
+        try {
+          await page.waitForSelector('table tbody tr', { timeout: 10000 });
+          dataLoaded = true;
+          console.log('   ✅ tbody 데이터 행 로드됨 (대체 셀렉터)');
+        } catch {
+          console.log('   ⚠️ tbody tr 대기 타임아웃 - 스피너 확인');
         }
-
-        // 추가 대기 (렌더링 완료 보장)
-        await new Promise(r => setTimeout(r, 3000));
       }
+
+      // 4단계: 스피너가 아직 보이면 사라질 때까지 대기
+      if (!dataLoaded) {
+        try {
+          await page.waitForFunction(
+            () => {
+              const spinner = document.querySelector('.dot-spinner');
+              return !spinner || spinner.style.display === 'none' ||
+                     getComputedStyle(spinner).display === 'none';
+            },
+            { timeout: 15000 }
+          );
+          console.log('   ✅ 로딩 스피너 완료');
+          // 스피너 사라진 후 렌더링 대기
+          await new Promise(r => setTimeout(r, 2000));
+        } catch {
+          console.log('   ⚠️ 스피너 대기 타임아웃');
+        }
+      }
+
+      const rowCount = await page.evaluate(() => ({
+        theadTr: document.querySelectorAll('table thead tr').length,
+        tbodyTr: document.querySelectorAll('table tbody tr').length,
+        allTr: document.querySelectorAll('table tr').length,
+        allTd: document.querySelectorAll('table td').length,
+      }));
+      console.log(`   ℹ️ thead: ${rowCount.theadTr}행, tbody: ${rowCount.tbodyTr}행, 전체 tr: ${rowCount.allTr}, td: ${rowCount.allTd}`);
 
       const html = await page.content();
 
@@ -350,53 +334,31 @@ async function scrapeLocalPhones(browser) {
         console.log('   ⚠️ HTML 저장 실패 (무시)');
       }
 
-      // 5단계: AJAX JSON에서 전화번호 추출 시도
-      if (capturedJson.length > 0) {
-        console.log(`   🔍 캡처된 AJAX 응답 ${capturedJson.length}개`);
-        for (const { url, text } of capturedJson) {
-          try {
-            const json = JSON.parse(text);
-            const list = Array.isArray(json) ? json : (json.list || json.data || json.items || json.result || json.rows);
-            if (Array.isArray(list) && list.length > 0) {
-              const first = list[0];
-              const regionKey = ['localNm', 'region', 'sido', 'areaNm', 'localName', 'sidoNm'].find(k => first[k]);
-              const deptKey = ['deptNm', 'dept', 'department', 'orgNm', 'insttNm'].find(k => first[k]);
-              const phoneKey = ['telNo', 'phone', 'tel', 'phoneNo', 'contactNo', 'cttpc'].find(k => first[k]);
-              if (phoneKey) {
-                const phones = list.map(item => ({
-                  region: item[regionKey] || '',
-                  department: item[deptKey] || '',
-                  phone: item[phoneKey] || '',
-                  note: item.rmk || item.note || item.etcCttpc || ''
-                })).filter(p => p.phone);
-                if (phones.length > 0) {
-                  console.log(`   ✅ AJAX JSON에서 ${phones.length}개 수집`);
-                  await page.close();
-                  return phones;
-                }
-              }
-            }
-          } catch {}
-        }
-      }
-
       await page.close();
 
-      // 6단계: HTML 테이블에서 파싱
+      // 5단계: HTML 테이블에서 파싱
       const phones = parsePhonesFromHtml(html);
 
-      if (attempt > 1) {
-        console.log(`   ✅ 재시도 ${attempt}회 성공`);
+      if (phones.length > 0) {
+        if (attempt > 1) console.log(`   ✅ 재시도 ${attempt}회 성공`);
+        return phones;
+      }
+
+      // 데이터 0건이면 재시도
+      if (attempt < MAX_RETRIES) {
+        console.log(`   ⚠️ 0건 수집 - 재시도 ${attempt}/${MAX_RETRIES}`);
+        await new Promise(resolve => setTimeout(resolve, 3000 * attempt));
+        continue;
       }
 
       return phones;
 
     } catch (error) {
-      if (page) await page.close();
+      if (page) await page.close().catch(() => {});
 
       if (attempt < MAX_RETRIES) {
         console.log(`   ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
-        await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
+        await new Promise(resolve => setTimeout(resolve, 3000 * attempt));
         continue;
       } else {
         console.error(`   ❌ 전화번호 스크래핑 최종 실패: ${error.message}`);
@@ -412,25 +374,38 @@ function parsePhonesFromHtml(html) {
   const $ = cheerio.load(html);
   const phones = [];
 
-  // 데이터가 가장 많은 테이블 찾기
-  let maxRows = 0;
-  let targetTableIndex = 0;
-  $('table').each((i, t) => {
-    const rows = $(t).find('tr').length;
-    if (rows > maxRows) { maxRows = rows; targetTableIndex = i; }
-  });
+  // table.table01 우선, 없으면 데이터가 가장 많은 테이블
+  let $table = $('table.table01');
+  if ($table.length === 0) {
+    let maxRows = 0;
+    let targetTableIndex = 0;
+    $('table').each((i, t) => {
+      const rows = $(t).find('tbody tr').length || $(t).find('tr').length;
+      if (rows > maxRows) { maxRows = rows; targetTableIndex = i; }
+    });
+    $table = $('table').eq(targetTableIndex);
+  }
 
-  console.log(`   ℹ️ 테이블 수: ${$('table').length}, 최대 행: ${maxRows} (index ${targetTableIndex})`);
+  const theadRows = $table.find('thead tr').length;
+  const tbodyRows = $table.find('tbody tr').length;
+  const allRows = $table.find('tr').length;
+  console.log(`   ℹ️ 테이블: thead ${theadRows}행, tbody ${tbodyRows}행, 전체 ${allRows}행`);
 
-  // 헤더에서 컬럼 매핑 자동 감지
-  const $table = $('table').eq(targetTableIndex);
+  // 헤더 추출: thead가 있으면 thead에서, 없으면 첫 번째 tr에서
   const headerCells = [];
-  $table.find('tr').first().find('th, td').each((j, cell) => {
-    headerCells.push($(cell).text().trim().replace(/\s+/g, ' '));
-  });
+  const $headerRow = $table.find('thead tr').first();
+  if ($headerRow.length > 0) {
+    $headerRow.find('th, td').each((j, cell) => {
+      headerCells.push($(cell).text().trim().replace(/\s+/g, ' '));
+    });
+  } else {
+    $table.find('tr').first().find('th, td').each((j, cell) => {
+      headerCells.push($(cell).text().trim().replace(/\s+/g, ' '));
+    });
+  }
   console.log(`   ℹ️ 헤더: [${headerCells.join(', ')}]`);
 
-  // 컬럼 인덱스 자동 감지 (번호 컬럼이 있을 수 있음)
+  // 컬럼 인덱스 자동 감지
   let regionIdx = -1, subRegionIdx = -1, deptIdx = -1, phoneIdx = -1, noteIdx = -1;
   headerCells.forEach((h, idx) => {
     const lower = h.toLowerCase();
@@ -451,9 +426,8 @@ function parsePhonesFromHtml(html) {
 
   console.log(`   ℹ️ 컬럼 매핑: region=${regionIdx}, subRegion=${subRegionIdx}, dept=${deptIdx}, phone=${phoneIdx}, note=${noteIdx}`);
 
-  // 헤더 감지 실패 시 폴백: 번호 컬럼 유무에 따라 오프셋 결정
+  // 헤더 감지 실패 시 폴백
   if (regionIdx === -1 && headerCells.length >= 3) {
-    // 첫 번째 셀이 "번호", "No", "순번" 등이면 오프셋 1
     const first = headerCells[0].toLowerCase();
     const hasNumberCol = first.includes('번호') || first.includes('no') || first.includes('순번') || first === '';
     const offset = hasNumberCol ? 1 : 0;
@@ -464,10 +438,12 @@ function parsePhonesFromHtml(html) {
     console.log(`   ℹ️ 폴백 매핑 (offset=${offset}): region=${regionIdx}, dept=${deptIdx}, phone=${phoneIdx}, note=${noteIdx}`);
   }
 
-  // 데이터 행 파싱 (첫 번째 행 = 헤더이므로 건너뜀)
-  $table.find('tr').each((i, row) => {
-    if (i === 0) return; // 헤더 행 스킵
+  // 데이터 행: tbody가 있으면 tbody tr, 없으면 td가 있는 모든 tr
+  const $dataRows = $table.find('tbody tr').length > 0
+    ? $table.find('tbody tr')
+    : $table.find('tr').filter((i, row) => $(row).find('td').length > 0);
 
+  $dataRows.each((i, row) => {
     const cells = [];
     $(row).find('td').each((j, cell) => {
       cells.push($(cell).text().trim().replace(/\s+/g, ' '));
