@@ -255,27 +255,90 @@ async function scrapeRegionWithRetry(browser, region) {
 // ==========================================
 // 4. 지역별 부처 전화번호 스크래핑
 // ==========================================
-// 차종별보조금 페이지(psPopupLocalCarModelPrice.do)와 동일한 새탭 형식이므로
-// scrapeRegionWithRetry와 동일한 심플한 방식 사용: 직접 URL 접근 → table 대기 → HTML 파싱
+// 전화번호 페이지는 AJAX로 데이터를 로드하므로 세션 수립 + 데이터 행 대기 필요
 async function scrapeLocalPhones(browser) {
   console.log('📞 지역별 부처 전화번호 스크래핑...');
+  const MAIN_URL = 'https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do';
   const PHONE_URL = 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do';
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     let page = null;
 
     try {
-      // 차종별보조금과 동일한 방식: 새 페이지(탭) → 직접 URL 접근
       page = await browser.newPage();
       await page.setDefaultNavigationTimeout(30000);
       await page.setDefaultTimeout(30000);
 
-      await page.goto(PHONE_URL, {
-        waitUntil: 'networkidle2',
-        timeout: 30000
+      // AJAX JSON 응답 인터셉트
+      const capturedJson = [];
+      page.on('response', async (response) => {
+        const ct = response.headers()['content-type'] || '';
+        if (!ct.includes('json') && !ct.includes('javascript')) return;
+        try {
+          const text = await response.text();
+          if (text.length > 10) capturedJson.push({ url: response.url(), text });
+        } catch {}
       });
 
+      // 1단계: 메인 페이지에서 세션 쿠키 수립
+      console.log('   🔑 세션 수립 중...');
+      await page.goto(MAIN_URL, { waitUntil: 'networkidle2', timeout: 30000 });
+
+      // 2단계: 전화번호 페이지로 이동
+      await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
       await page.waitForSelector('table', { timeout: 10000 });
+
+      // 3단계: 데이터 행이 로드될 때까지 대기
+      let hasDataRows = false;
+      try {
+        await page.waitForFunction(
+          () => document.querySelectorAll('table tr').length > 1,
+          { timeout: 10000 }
+        );
+        hasDataRows = true;
+        console.log('   ✅ 데이터 행 로드됨');
+      } catch {
+        console.log('   ⚠️ 데이터 행 없음 - 검색 버튼/JS 함수 호출 시도');
+      }
+
+      // 4단계: 데이터 없으면 검색 버튼 클릭 또는 JS 함수 호출
+      if (!hasDataRows) {
+        const triggered = await page.evaluate(() => {
+          // 검색/조회 버튼 찾기
+          const allButtons = [...document.querySelectorAll('button, input[type="button"], a.btn, a')];
+          const searchBtn = allButtons.find(b => {
+            const text = (b.textContent || b.value || '').trim();
+            return text.includes('조회') || text.includes('검색');
+          });
+          if (searchBtn) { searchBtn.click(); return 'button'; }
+
+          // 공통 JS 초기화 함수 호출 시도
+          const fns = ['fn_search', 'fnSearch', 'search', 'fn_init', 'fnInit', 'init', 'loadData', 'getData', 'fn_select', 'fnSelect'];
+          for (const fn of fns) {
+            if (typeof window[fn] === 'function') {
+              try { window[fn](); return fn; } catch {}
+            }
+          }
+          return null;
+        });
+
+        if (triggered) {
+          console.log(`   🔍 트리거: ${triggered} - 데이터 로딩 대기...`);
+          try {
+            await page.waitForFunction(
+              () => document.querySelectorAll('table tr').length > 1,
+              { timeout: 15000 }
+            );
+            hasDataRows = true;
+          } catch {
+            console.log('   ⚠️ 트리거 후에도 데이터 행 없음');
+          }
+        }
+
+        // 추가 대기 (렌더링 완료 보장)
+        await new Promise(r => setTimeout(r, 3000));
+      }
+
       const html = await page.content();
 
       // 디버그용 HTML 저장
@@ -287,8 +350,39 @@ async function scrapeLocalPhones(browser) {
         console.log('   ⚠️ HTML 저장 실패 (무시)');
       }
 
+      // 5단계: AJAX JSON에서 전화번호 추출 시도
+      if (capturedJson.length > 0) {
+        console.log(`   🔍 캡처된 AJAX 응답 ${capturedJson.length}개`);
+        for (const { url, text } of capturedJson) {
+          try {
+            const json = JSON.parse(text);
+            const list = Array.isArray(json) ? json : (json.list || json.data || json.items || json.result || json.rows);
+            if (Array.isArray(list) && list.length > 0) {
+              const first = list[0];
+              const regionKey = ['localNm', 'region', 'sido', 'areaNm', 'localName', 'sidoNm'].find(k => first[k]);
+              const deptKey = ['deptNm', 'dept', 'department', 'orgNm', 'insttNm'].find(k => first[k]);
+              const phoneKey = ['telNo', 'phone', 'tel', 'phoneNo', 'contactNo', 'cttpc'].find(k => first[k]);
+              if (phoneKey) {
+                const phones = list.map(item => ({
+                  region: item[regionKey] || '',
+                  department: item[deptKey] || '',
+                  phone: item[phoneKey] || '',
+                  note: item.rmk || item.note || item.etcCttpc || ''
+                })).filter(p => p.phone);
+                if (phones.length > 0) {
+                  console.log(`   ✅ AJAX JSON에서 ${phones.length}개 수집`);
+                  await page.close();
+                  return phones;
+                }
+              }
+            }
+          } catch {}
+        }
+      }
+
       await page.close();
 
+      // 6단계: HTML 테이블에서 파싱
       const phones = parsePhonesFromHtml(html);
 
       if (attempt > 1) {
@@ -337,21 +431,25 @@ function parsePhonesFromHtml(html) {
   console.log(`   ℹ️ 헤더: [${headerCells.join(', ')}]`);
 
   // 컬럼 인덱스 자동 감지 (번호 컬럼이 있을 수 있음)
-  let regionIdx = -1, deptIdx = -1, phoneIdx = -1, noteIdx = -1;
+  let regionIdx = -1, subRegionIdx = -1, deptIdx = -1, phoneIdx = -1, noteIdx = -1;
   headerCells.forEach((h, idx) => {
     const lower = h.toLowerCase();
-    if (regionIdx === -1 && (lower.includes('지역') || lower.includes('시도') || lower.includes('지자체') || lower.includes('local'))) {
+    if (regionIdx === -1 && (lower.includes('시도') || lower === '지역')) {
+      regionIdx = idx;
+    } else if (subRegionIdx === -1 && (lower.includes('지역구분') || lower.includes('지자체') || lower.includes('시군구'))) {
+      subRegionIdx = idx;
+    } else if (regionIdx === -1 && (lower.includes('지역') || lower.includes('local'))) {
       regionIdx = idx;
     } else if (deptIdx === -1 && (lower.includes('부서') || lower.includes('부처') || lower.includes('담당') || lower.includes('기관') || lower.includes('dept'))) {
       deptIdx = idx;
-    } else if (phoneIdx === -1 && (lower.includes('전화') || lower.includes('연락') || lower.includes('tel') || lower.includes('phone'))) {
+    } else if (phoneIdx === -1 && (lower.includes('전화') || lower.includes('연락처') || lower.includes('tel') || lower.includes('phone'))) {
       phoneIdx = idx;
-    } else if (noteIdx === -1 && (lower.includes('비고') || lower.includes('참고') || lower.includes('note') || lower.includes('remark'))) {
+    } else if (noteIdx === -1 && (lower.includes('기타') || lower.includes('비고') || lower.includes('참고') || lower.includes('note') || lower.includes('remark'))) {
       noteIdx = idx;
     }
   });
 
-  console.log(`   ℹ️ 컬럼 매핑: region=${regionIdx}, dept=${deptIdx}, phone=${phoneIdx}, note=${noteIdx}`);
+  console.log(`   ℹ️ 컬럼 매핑: region=${regionIdx}, subRegion=${subRegionIdx}, dept=${deptIdx}, phone=${phoneIdx}, note=${noteIdx}`);
 
   // 헤더 감지 실패 시 폴백: 번호 컬럼 유무에 따라 오프셋 결정
   if (regionIdx === -1 && headerCells.length >= 3) {
@@ -378,6 +476,7 @@ function parsePhonesFromHtml(html) {
     if (cells.length < 2) return;
 
     const region = regionIdx >= 0 && regionIdx < cells.length ? cells[regionIdx] : cells[0];
+    const subRegion = subRegionIdx >= 0 && subRegionIdx < cells.length ? cells[subRegionIdx] : '';
     const department = deptIdx >= 0 && deptIdx < cells.length ? cells[deptIdx] : (cells[1] || '');
     const phone = phoneIdx >= 0 && phoneIdx < cells.length ? cells[phoneIdx] : (cells[2] || '');
     const note = noteIdx >= 0 && noteIdx < cells.length ? cells[noteIdx] : '';
@@ -385,7 +484,9 @@ function parsePhonesFromHtml(html) {
     // 빈 행이나 숫자만 있는 행 스킵
     if (!region || /^\d+$/.test(region)) return;
 
-    phones.push({ region, department, phone, note });
+    const entry = { region, department, phone, note };
+    if (subRegion) entry.subRegion = subRegion;
+    phones.push(entry);
   });
 
   console.log(`   ✅ ${phones.length}개 지역 전화번호 수집`);
