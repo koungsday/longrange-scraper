@@ -99,14 +99,14 @@ function normalizeSubsidies(allResults) {
 // ==========================================
 async function getAllRegions() {
   console.log('📍 지역 목록 로딩...');
-  
+
   try {
     const response = await axios.get('https://api.donut.im/api/v1/regions/list');
     const allRegions = [];
-    
+
     response.data.regions.forEach(region => {
       const localType = region.localType;
-      
+
       if (region.local && Array.isArray(region.local)) {
         region.local.forEach(local => {
           allRegions.push({
@@ -117,16 +117,16 @@ async function getAllRegions() {
         });
       }
     });
-    
+
     console.log(`✅ 총 ${allRegions.length}개 지역`);
-    
+
     if (TEST_MODE) {
       console.log(`🧪 테스트 모드: 10개만 처리`);
       return allRegions.slice(0, 10);
     }
-    
+
     return allRegions;
-    
+
   } catch (error) {
     console.error('❌ 지역 목록 로딩 실패:', error.message);
     throw error;
@@ -138,25 +138,25 @@ async function getAllRegions() {
 // ==========================================
 function parseEVTableALL(html) {
   const vehicles = {};
-  
+
   if (!html || typeof html !== 'string') return vehicles;
-  
+
   const $ = cheerio.load(html);
-  
+
   $('tr').each((i, row) => {
     const cells = [];
-    
+
     $(row).find('td').each((j, cell) => {
       let text = $(cell).text().trim().replace(/\s+/g, ' ');
       cells.push(text);
     });
-    
+
     // 제조사 필터 없음 - 모든 차량
     if (cells.length >= 6 && cells[1] && cells[2]) {
       const manufacturer = cells[1];
       const model = cells[2];
       const key = `${manufacturer}___${model}`; // 고유 키 (3개 언더스코어로 구분)
-      
+
       try {
         vehicles[key] = {
           type: cells[0],
@@ -171,7 +171,7 @@ function parseEVTableALL(html) {
       }
     }
   });
-  
+
   return vehicles;
 }
 
@@ -180,24 +180,24 @@ function parseEVTableALL(html) {
 // ==========================================
 async function scrapeRegionWithRetry(browser, region) {
   const targetUrl = `https://ev.or.kr/nportal/buySupprt/psPopupLocalCarModelPrice.do?year=${CURRENT_YEAR}&local_cd=${region.code}&local_nm=${encodeURIComponent(region.localName)}&car_type=11&pnph=`;
-  
+
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     let page = null;
-    
+
     try {
       // ⭐ 브라우저 재사용: 새로운 페이지(탭)만 생성
       page = await browser.newPage();
       await page.setDefaultNavigationTimeout(30000);
       await page.setDefaultTimeout(30000);
-      
-      await page.goto(targetUrl, { 
+
+      await page.goto(targetUrl, {
         waitUntil: 'networkidle2',
-        timeout: 30000 
+        timeout: 30000
       });
-      
+
       await page.waitForSelector('table', { timeout: 10000 });
       const html = await page.content();
-      
+
       // 서울과 부산만 HTML 저장
       if (region.code === 1100 || region.code === 2600) {
         try {
@@ -208,16 +208,16 @@ async function scrapeRegionWithRetry(browser, region) {
           console.log(`    ⚠️ HTML 저장 실패 (무시)`);
         }
       }
-      
+
       // ⭐ 브라우저 재사용: 페이지(탭)만 종료
       await page.close();
-      
+
       const vehicles = parseEVTableALL(html);
-      
+
       if (attempt > 1) {
         console.log(`    ✅ 재시도 ${attempt}회 성공`);
       }
-      
+
       return {
         parentName: region.parentName,
         localName: region.localName,
@@ -227,10 +227,10 @@ async function scrapeRegionWithRetry(browser, region) {
         attempts: attempt,
         timestamp: new Date().toISOString()
       };
-      
+
     } catch (error) {
       if (page) await page.close();
-      
+
       if (attempt < MAX_RETRIES) {
         console.log(`    ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
         await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
@@ -257,9 +257,12 @@ async function scrapeRegionWithRetry(browser, region) {
 // ==========================================
 // 진단 결과: Puppeteer에서 tbody가 채워지지 않음
 // → 모든 네트워크 요청/응답을 캡처하여 실제 데이터 API 엔드포인트를 찾고 직접 호출
+// ==========================================
+// 4. 지역별 부처 전화번호 스크래핑
+// ==========================================
+// 진단 결과: DOM 파싱 실패 (tbody 0행) -> HTML 원본 텍스트에서 정규식으로 직접 추출
 async function scrapeLocalPhones(browser) {
   console.log('📞 지역별 부처 전화번호 스크래핑...');
-  const MAIN_URL = 'https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do';
   const PHONE_URL = 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do';
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
@@ -270,244 +273,81 @@ async function scrapeLocalPhones(browser) {
       await page.setDefaultNavigationTimeout(30000);
       await page.setDefaultTimeout(30000);
 
-      // 모든 네트워크 요청 캡처 (데이터 API 엔드포인트 발견용)
-      const networkRequests = [];
-      const networkResponses = [];
+      // 1단계: 전화번호 페이지로 이동
+      console.log('   Navigating to phone page...');
+      // 네트워크 유휴 상태 대기 (데이터 로딩 완료 가능성 높음)
+      await page.goto(PHONE_URL, { waitUntil: 'networkidle0', timeout: 30000 });
 
-      page.on('request', (request) => {
-        const url = request.url();
-        if (/\.(css|js|png|jpg|gif|ico|woff|svg|font)(\?|$)/i.test(url)) return;
-        networkRequests.push({
-          url,
-          method: request.method(),
-          postData: request.postData() || null
-        });
-      });
+      // 2단계: 추가 대기 (안전장치)
+      await new Promise(r => setTimeout(r, 3000));
 
-      page.on('response', async (response) => {
-        const url = response.url();
-        if (/\.(css|js|png|jpg|gif|ico|woff|svg|font)(\?|$)/i.test(url)) return;
-        try {
-          const status = response.status();
-          const ct = response.headers()['content-type'] || '';
-          let body = null;
-          if (status === 200 && !ct.includes('image')) {
-            body = await response.text().catch(() => null);
-          }
-          networkResponses.push({ url, status, ct, bodyLen: body ? body.length : 0, body });
-        } catch {}
-      });
-
-      // 콘솔 에러/로그 캡처
-      const consoleMessages = [];
-      page.on('console', msg => {
-        if (msg.type() === 'error' || msg.type() === 'warning') {
-          consoleMessages.push(`[${msg.type()}] ${msg.text()}`);
-        }
-      });
-      page.on('pageerror', err => {
-        consoleMessages.push(`[pageerror] ${err.message}`);
-      });
-      page.on('requestfailed', req => {
-        consoleMessages.push(`[reqfail] ${req.method()} ${req.url()} → ${req.failure().errorText}`);
-      });
-
-      // 1단계: 메인 페이지에서 세션 쿠키 수립
-      console.log('   🔑 세션 수립 중...');
-      await page.goto(MAIN_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-
-      // 세션 쿠키 확인
-      const cookies = await page.cookies();
-      console.log(`   🍪 쿠키 ${cookies.length}개: [${cookies.map(c => c.name).join(', ')}]`);
-
-      // 요청 로그 초기화 (세션 수립 요청은 무시)
-      networkRequests.length = 0;
-      networkResponses.length = 0;
-      consoleMessages.length = 0;
-
-      // 2단계: 전화번호 페이지로 이동
-      await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-
-      // 3단계: 페이지 JS에서 AJAX 엔드포인트 추출 시도
-      const pageScriptInfo = await page.evaluate(() => {
-        const info = { ajaxUrls: [], scriptSrcs: [], inlineScripts: [] };
-
-        // script src 목록
-        document.querySelectorAll('script[src]').forEach(s => {
-          info.scriptSrcs.push(s.src);
-        });
-
-        // 인라인 스크립트에서 AJAX URL 패턴 찾기
-        document.querySelectorAll('script:not([src])').forEach(s => {
-          const text = s.textContent || '';
-          if (text.length > 10) {
-            info.inlineScripts.push(text.substring(0, 500));
-            // .do URL 패턴 찾기
-            const urlMatches = text.match(/['"]([^'"]*\.do[^'"]*)['"]/g);
-            if (urlMatches) {
-              info.ajaxUrls.push(...urlMatches.map(m => m.replace(/['"]/g, '')));
-            }
-            // ajax/fetch 패턴
-            const ajaxMatches = text.match(/\$\.(ajax|get|post|getJSON)\s*\(\s*['"]([^'"]+)['"]/g);
-            if (ajaxMatches) info.ajaxUrls.push(...ajaxMatches);
-            const fetchMatches = text.match(/fetch\s*\(\s*['"]([^'"]+)['"]/g);
-            if (fetchMatches) info.ajaxUrls.push(...fetchMatches);
-          }
-        });
-
-        return info;
-      });
-
-      console.log(`   📜 외부 스크립트 ${pageScriptInfo.scriptSrcs.length}개:`);
-      for (const src of pageScriptInfo.scriptSrcs) {
-        console.log(`      - ${src}`);
-      }
-      if (pageScriptInfo.ajaxUrls.length > 0) {
-        console.log(`   📜 발견된 AJAX URL:`);
-        for (const url of pageScriptInfo.ajaxUrls) {
-          console.log(`      - ${url}`);
-        }
-      }
-      if (pageScriptInfo.inlineScripts.length > 0) {
-        console.log(`   📜 인라인 스크립트 ${pageScriptInfo.inlineScripts.length}개:`);
-        for (const s of pageScriptInfo.inlineScripts) {
-          console.log(`      ---`);
-          console.log(`      ${s.substring(0, 300).replace(/\n/g, '\n      ')}`);
-        }
-      }
-
-      // 추가 대기 (AJAX 완료 보장)
-      await new Promise(r => setTimeout(r, 5000));
-
-      // 3단계: 네트워크 요청 분석 로깅
-      console.log(`   🔍 네트워크 요청 ${networkRequests.length}개:`);
-      for (const req of networkRequests) {
-        const postInfo = req.postData ? ` POST=${req.postData.substring(0, 100)}` : '';
-        console.log(`      ${req.method} ${req.url.substring(0, 120)}${postInfo}`);
-      }
-
-      console.log(`   🔍 네트워크 응답 ${networkResponses.length}개:`);
-      for (const res of networkResponses) {
-        const preview = res.body ? res.body.substring(0, 150).replace(/\n/g, ' ') : '';
-        console.log(`      [${res.status}] ${res.url.substring(0, 100)} (${res.bodyLen}B) ${preview}`);
-      }
-
-      // 4단계: 응답에서 전화번호 데이터 찾기
-      for (const res of networkResponses) {
-        if (!res.body || res.bodyLen < 50) continue;
-
-        // JSON 응답에서 전화번호 데이터 추출
-        try {
-          const json = JSON.parse(res.body);
-          const phones = extractPhonesFromJson(json);
-          if (phones.length > 0) {
-            console.log(`   ✅ JSON 응답에서 ${phones.length}개 수집 (${res.url})`);
-            await page.close();
-            return phones;
-          }
-        } catch {}
-
-        // HTML 응답에서 테이블 데이터 추출
-        if (res.body.includes('<tr') && res.body.includes('<td')) {
-          const phones = parsePhonesFromHtml(res.body);
-          if (phones.length > 0) {
-            console.log(`   ✅ HTML 응답에서 ${phones.length}개 수집 (${res.url})`);
-            await page.close();
-            return phones;
-          }
-        }
-      }
-
-      // 5단계: 페이지 내부 JS 상태 확인 (데이터가 JS 변수에 있을 수 있음)
-      const jsData = await page.evaluate(() => {
-        const result = {
-          // 흔한 데이터 변수명 체크
-          dataVars: {},
-          tableHtml: '',
-          tbodyContent: '',
-        };
-
-        // JS 전역 변수에서 배열 데이터 찾기
-        const varNames = ['dataList', 'list', 'phoneList', 'resultList', 'gridData',
-          'tableData', 'rows', 'items', '_data', 'localPhoneList'];
-        for (const v of varNames) {
-          if (window[v] && Array.isArray(window[v]) && window[v].length > 0) {
-            result.dataVars[v] = JSON.stringify(window[v]).substring(0, 500);
-          }
-        }
-
-        // jqGrid 데이터 확인
-        try {
-          const grids = document.querySelectorAll('.ui-jqgrid, [id*="grid"], [id*="Grid"]');
-          if (grids.length > 0) {
-            result.dataVars['_jqGridFound'] = grids.length + '개';
-          }
-        } catch {}
-
-        // table.table01 tbody 내용
-        const tbody = document.querySelector('table.table01 tbody');
-        if (tbody) {
-          result.tbodyContent = tbody.innerHTML.substring(0, 500);
-        }
-
-        // 전체 table.table01 HTML
-        const table = document.querySelector('table.table01');
-        if (table) {
-          result.tableHtml = table.outerHTML.substring(0, 1000);
-        }
-
-        return result;
-      });
-
-      if (Object.keys(jsData.dataVars).length > 0) {
-        console.log(`   🔍 JS 전역 데이터:`, JSON.stringify(jsData.dataVars));
-      }
-      if (jsData.tbodyContent) {
-        console.log(`   🔍 tbody 내용: ${jsData.tbodyContent.substring(0, 200)}`);
-      } else {
-        console.log(`   🔍 tbody 비어있음`);
-      }
-      console.log(`   🔍 table HTML: ${jsData.tableHtml.substring(0, 300)}`);
-
-      // 콘솔 에러 로깅
-      if (consoleMessages.length > 0) {
-        console.log(`   ⚠️ 브라우저 콘솔 메시지 ${consoleMessages.length}개:`);
-        for (const msg of consoleMessages.slice(0, 10)) {
-          console.log(`      ${msg.substring(0, 150)}`);
-        }
-      } else {
-        console.log(`   ℹ️ 브라우저 콘솔 에러 없음`);
-      }
-
-      // 6단계: 페이지 전체 HTML에서 파싱 시도
+      // 3단계: HTML 원본 가져오기
       const html = await page.content();
 
-      try {
-        await fs.mkdir('data', { recursive: true });
-        await fs.writeFile('data/debug-phones.html', html);
-        console.log('   💾 data/debug-phones.html 저장됨');
-      } catch (e) {
-        console.log('   ⚠️ HTML 저장 실패');
+      // 4단계: 정규식으로 데이터 추출
+      // 패턴: <td>지역</td><td>세부지역</td><td>부서</td><td>전화번호</td>
+      // HTML 태그와 공백을 유연하게 처리하는 정규식
+      // 예: <td>서울</td>...<td>02-123-4567</td>
+
+      const phones = [];
+
+      // 행 단위 매칭 시도 (tr 태그 기준)
+      const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+      let rowMatch;
+
+      while ((rowMatch = rowRegex.exec(html)) !== null) {
+        const rowContent = rowMatch[1];
+
+        // 셀 데이터 추출 (td 태그)
+        const cellRegex = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+        const cells = [];
+        let cellMatch;
+        while ((cellMatch = cellRegex.exec(rowContent)) !== null) {
+          // 태그 제거 및 공백 정리
+          const text = cellMatch[1].replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
+          cells.push(text);
+        }
+
+        // 유효한 데이터 행인지 확인 (최소 4개 컬럼: 시도, 지역구분, 부서, 연락처)
+        if (cells.length >= 4) {
+          const region = cells[0];
+          const subRegion = cells[1];
+          const department = cells[2];
+          const phone = cells[3];
+          const note = cells.length > 4 ? cells[4] : '';
+
+          // 전화번호 패턴 검증 (숫자와 하이픈 포함)
+          if (phone && /[\d-]{7,}/.test(phone) && region && region !== '시도') {
+            phones.push({
+              region,
+              subRegion,
+              department,
+              phone,
+              note
+            });
+          }
+        }
       }
 
-      await page.close();
-
-      const phones = parsePhonesFromHtml(html);
       if (phones.length > 0) {
-        if (attempt > 1) console.log(`   ✅ 재시도 ${attempt}회 성공`);
+        console.log(`   ✅ 정규식으로 ${phones.length}개 지역 전화번호 수집 성공`);
+        await page.close();
         return phones;
       }
 
+      // 데이터가 없을 경우
       if (attempt < MAX_RETRIES) {
         console.log(`   ⚠️ 0건 수집 - 재시도 ${attempt}/${MAX_RETRIES}`);
+        await page.close();
         await new Promise(resolve => setTimeout(resolve, 3000 * attempt));
         continue;
       }
 
-      return phones;
+      await page.close();
+      return [];
 
     } catch (error) {
-      if (page) await page.close().catch(() => {});
+      if (page) await page.close().catch(() => { });
 
       if (attempt < MAX_RETRIES) {
         console.log(`   ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
@@ -662,14 +502,14 @@ async function main() {
   console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
   console.log(`📅 대상 연도: ${CURRENT_YEAR}년`);
   console.log('');
-  
+
   const startTime = Date.now();
   let browser = null;
-  
+
   try {
     const regions = await getAllRegions();
     console.log('');
-    
+
     // ⭐ 핵심: 브라우저를 단 한 번만 시작 (Launch Once)
     console.log('🌐 브라우저 시작...');
     browser = await puppeteer.launch({
@@ -683,30 +523,30 @@ async function main() {
     });
     console.log('✅ 브라우저 준비 완료');
     console.log('');
-    
+
     console.log('🟢 ===== 전체 스크래핑 시작 =====');
     // ⚡ 최적화: 병렬 처리 개수를 5에서 8로 상향 조정
     console.log('⚡ 병렬 처리: 8개씩 동시 스크래핑');
     const results = [];
     const CONCURRENT = 8; // 기존 5 -> 8로 증가
     const BATCH_DELAY = 500; // 배치 사이 대기 시간 500ms -> 300ms로 감소
-    
+
     for (let i = 0; i < regions.length; i += CONCURRENT) {
       const batch = regions.slice(i, i + CONCURRENT);
       const batchStart = i + 1;
       const batchEnd = Math.min(i + CONCURRENT, regions.length);
-      
+
       console.log(`\n📦 배치 [${batchStart}-${batchEnd}/${regions.length}]`);
-      
+
       // 8개 동시 실행
       const batchResults = await Promise.all(
         batch.map(async (region, idx) => {
           const regionNum = i + idx + 1;
           console.log(`[${regionNum}/${regions.length}] ${region.parentName} ${region.localName}`);
-          
+
           // ⭐ 브라우저 인스턴스를 전달
           const result = await scrapeRegionWithRetry(browser, region);
-          
+
           if (result.success && Object.keys(result.vehicles).length > 0) {
             console.log(`    ✅ [${regionNum}] ${Object.keys(result.vehicles).length}개 차량`);
           } else if (!result.success) {
@@ -714,19 +554,19 @@ async function main() {
           } else {
             console.log(`    ⚠️ [${regionNum}] 차량 없음`);
           }
-          
+
           return result;
         })
       );
-      
+
       results.push(...batchResults);
-      
+
       // 배치 사이 대기 (서버 부하 방지)
       if (i + CONCURRENT < regions.length) {
         await new Promise(resolve => setTimeout(resolve, BATCH_DELAY)); // 500ms -> 300ms로 감소
       }
     }
-    
+
     // 전화번호 스크래핑 (브라우저 닫기 전)
     console.log('');
     console.log('📞 ===== 지역 전화번호 스크래핑 =====');
@@ -736,14 +576,14 @@ async function main() {
     await browser.close();
     console.log('');
     console.log('🟢 ===== 스크래핑 완료 =====');
-    
+
     const success = results.filter(r => r.success).length;
     const failed = results.filter(r => !r.success).length;
-    
+
     console.log(`✅ 성공: ${success}개`);
     console.log(`❌ 실패: ${failed}개`);
     console.log('');
-    
+
     // 저장 (연도별 폴더)
     const yearDir = `data/${CURRENT_YEAR}`;
     await fs.mkdir(yearDir, { recursive: true });
@@ -843,15 +683,15 @@ async function main() {
     console.log(`   레거시: ${(legacySize / 1024 / 1024).toFixed(2)}MB`);
     console.log(`   정규화: ${(totalNewSize / 1024 / 1024).toFixed(2)}MB (vehicles + subsidies)`);
     console.log(`   감소율: ${reduction}%`);
-    
+
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
     console.log(`⏱️ 총 소요 시간: ${elapsed}초`);
     console.log('🎉 완료!');
-    
+
   } catch (error) {
     console.error('');
     console.error('💥 치명적 오류:', error);
-    
+
     if (browser) await browser.close();
     process.exit(1);
   }
