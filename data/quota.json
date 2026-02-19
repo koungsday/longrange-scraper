@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-19T09:50:37.900Z",
+  "timestamp": "2026-02-19T10:00:46.358Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -720,11 +720,11 @@
           "quota_corporate": 0,
           "quota_taxi": 60,
           "quota_general": 1049,
-          "registered_total": 576,
+          "registered_total": 577,
           "registered_priority": 204,
           "registered_corporate": 13,
           "registered_taxi": 13,
-          "registered_general": 346,
+          "registered_general": 347,
           "delivered_total": 323,
           "delivered_priority": 126,
           "delivered_corporate": 5,
@@ -959,16 +959,16 @@
           "registered_corporate": 4,
           "registered_taxi": 4,
           "registered_general": 43,
-          "delivered_total": 46,
+          "delivered_total": 47,
           "delivered_priority": 10,
           "delivered_corporate": 3,
           "delivered_taxi": 4,
-          "delivered_general": 29,
-          "remaining_total": 128,
+          "delivered_general": 30,
+          "remaining_total": 127,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 145,
+          "remaining_general": 144,
           "note": "「2026년 전기자동차 구매지원 사업 상반기 공고」\n1. 사업기간: 2026. 01. 22.(목) 09:00 ~ 2026. 6. 30.(화) 18:00\n2. 사업내용: 전기자동차를 구매하는 자에게 예산의 범위 내에서 보조금 지원\n3. 보급대수(상반기): 승용 174대(국비300만원기준), 화물 53대(국비1000만원기준), 승합1대, 전환지원금 170대\n- 보급대수는 차종별 보조금 차등 지원 및 국비 추가 지급 등에 따라 예산범위내에서 변동\n4. 지원대상: 공고문 참고\n※ 전기자동차 지원신청서 재공고된 양식으로 작성바랍니다.\n※ 지급신청서는 자동차등록증 첨부란에 같이 첨부 바랍니다."
         },
         {
@@ -1505,13 +1505,13 @@
           "registered_corporate": 30,
           "registered_taxi": 90,
           "registered_general": 1206,
-          "delivered_total": 593,
-          "delivered_priority": 188,
+          "delivered_total": 594,
+          "delivered_priority": 189,
           "delivered_corporate": 11,
           "delivered_taxi": 29,
           "delivered_general": 365,
-          "remaining_total": 1657,
-          "remaining_priority": 37,
+          "remaining_total": 1656,
+          "remaining_priority": 36,
           "remaining_corporate": 0,
           "remaining_taxi": 196,
           "remaining_general": 1435,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-19T09:50:37.827Z"
+      "timestamp": "2026-02-19T10:00:46.262Z"
     }
   ]
 }
