@@ -310,27 +310,48 @@ async function scrapeLocalPhones(browser) {
       const htmlToParse = targetResponseText || await page.content();
       console.log(`   🔍 파싱 대상 데이터 크기: ${htmlToParse.length} bytes`);
 
+      // --- 디버깅 섹션 ---
+      // 데이터가 실제로 포함되어 있는지 확인
+      const hasSeoul = htmlToParse.includes('서울');
+      const hasPhone = /\d{2,3}-\d{3,4}-\d{4}/.test(htmlToParse);
+      const hasTable = htmlToParse.includes('<table');
+      const hasTbody = htmlToParse.includes('<tbody');
+
+      console.log(`   🩺 데이터 진단: 서울=${hasSeoul}, 전화번호패턴=${hasPhone}, Table태그=${hasTable}, Tbody태그=${hasTbody}`);
+
+      if (hasPhone) {
+        const phoneMatches = htmlToParse.match(/\d{2,3}-\d{3,4}-\d{4}/g);
+        console.log(`   🩺 발견된 전화번호 패턴 수: ${phoneMatches ? phoneMatches.length : 0}개`);
+        if (phoneMatches && phoneMatches.length > 0) {
+          console.log(`   🩺 예시: ${phoneMatches[0]}`);
+          // 주변 텍스트 확인 (50자)
+          const idx = htmlToParse.indexOf(phoneMatches[0]);
+          const context = htmlToParse.substring(Math.max(0, idx - 100), Math.min(htmlToParse.length, idx + 100));
+          console.log(`   🩺 문맥: ...${context.replace(/\n/g, ' ')}...`);
+        }
+      } else {
+        console.log(`   ⚠️ 주의: 응답 데이터에 전화번호 형식이 발견되지 않음. (암호화되었거나 다른 포맷일 수 있음)`);
+        // 응답의 앞부분 출력해보기 (혹시 리다이렉트나 에러 페이지인지)
+        console.log(`   🩺 헤드: ${htmlToParse.substring(0, 300).replace(/\n/g, ' ')}`);
+      }
+      // ------------------
+
       // 4단계: 정규식으로 데이터 추출
       const phones = [];
 
-      // 행 단위 매칭 시도 (tr 태그 기준)
+      // 전략 A: HTML Table 파싱 (기존 로직)
       const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
       let rowMatch;
-
       while ((rowMatch = rowRegex.exec(htmlToParse)) !== null) {
         const rowContent = rowMatch[1];
-
-        // 셀 데이터 추출 (td 태그)
         const cellRegex = /<td[^>]*>([\s\S]*?)<\/td>/gi;
         const cells = [];
         let cellMatch;
         while ((cellMatch = cellRegex.exec(rowContent)) !== null) {
-          // 태그 제거 및 공백 정리
           const text = cellMatch[1].replace(/<[^>]+>/g, '').trim().replace(/\s+/g, ' ');
           cells.push(text);
         }
 
-        // 유효한 데이터 행인지 확인 (최소 4개 컬럼: 시도, 지역구분, 부서, 연락처)
         if (cells.length >= 4) {
           const region = cells[0];
           const subRegion = cells[1];
@@ -338,21 +359,40 @@ async function scrapeLocalPhones(browser) {
           const phone = cells[3];
           const note = cells.length > 4 ? cells[4] : '';
 
-          // 전화번호 패턴 검증 (숫자와 하이픈 포함)
           if (phone && /[\d-]{7,}/.test(phone) && region && region !== '시도') {
-            phones.push({
-              region,
-              subRegion,
-              department,
-              phone,
-              note
-            });
+            phones.push({ region, subRegion, department, phone, note });
+          }
+        }
+      }
+
+      // 전략 B: JSON 파싱 (전략 A 실패 시)
+      if (phones.length === 0) {
+        console.log('   🔄 HTML 파싱 실패, JSON 패턴 검색 시도...');
+        // JS 변수 할당 패턴 찾기: var data = [...]; or list = [...];
+        // 느슨한 JSON 배열 매칭: [{ ... }]
+        const jsonArrays = htmlToParse.match(/\[\s*\{[\s\S]*?\}\s*\]/g);
+        if (jsonArrays) {
+          for (const jsonStr of jsonArrays) {
+            if (jsonStr.length < 100) continue; // 너무 짧으면 무시
+            try {
+              // JS 객체 리터럴일 수 있으므로 JSON.parse가 안될 수 있음. 
+              // 1차적으로 valid JSON인지 시도
+              const data = JSON.parse(jsonStr);
+              const extracted = extractPhonesFromJson(data);
+              if (extracted.length > 0) {
+                console.log(`   ✅ JSON 패턴에서 ${extracted.length}개 발견`);
+                phones.push(...extracted);
+                break;
+              }
+            } catch (e) {
+              // JSON 파싱 실패 시 (JS Object Literal일 경우 등) 무시
+            }
           }
         }
       }
 
       if (phones.length > 0) {
-        console.log(`   ✅ 정규식으로 ${phones.length}개 지역 전화번호 수집 성공`);
+        console.log(`   ✅ 정규식/파싱으로 ${phones.length}개 지역 전화번호 수집 성공`);
         await page.close();
         return phones;
       }
