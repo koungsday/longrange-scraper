@@ -1,271 +1,229 @@
 const puppeteer = require('puppeteer');
-const axios = require('axios');
-const cheerio = require('cheerio');
 const fs = require('fs').promises;
+const path = require('path');
 
 // ==========================================
 // 설정
 // ==========================================
-const TEST_MODE = false; // false = 전체 161개 지역
 const MAX_RETRIES = 3;
-
-// 연도 자동 계산 (한국 시간 기준)
-const CURRENT_YEAR = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' })).getFullYear();
-
-// ==========================================
-// 데이터 정규화 유틸리티
-// ==========================================
-
-/**
- * 차량 마스터 데이터 추출 (국고 보조금 포함)
- * 첫 번째 성공한 지역에서 추출하여 재사용
- */
-function extractVehicleMaster(allResults) {
-  const vehicles = {};
-
-  // 성공한 첫 번째 지역에서 차량 정보 추출
-  const firstSuccess = allResults.find(r => r.success && Object.keys(r.vehicles).length > 0);
-  if (!firstSuccess) return vehicles;
-
-  for (const [key, vehicle] of Object.entries(firstSuccess.vehicles)) {
-    vehicles[key] = {
-      type: vehicle.type,
-      manufacturer: vehicle.manufacturer,
-      model: vehicle.model,
-      national: vehicle.national  // 국고 보조금은 전국 동일
-    };
-  }
-
-  return vehicles;
-}
-
-/**
- * 연도 목록 업데이트 (years.json)
- * 프론트엔드에서 사용 가능한 연도 목록을 관리
- */
-async function updateYearsList(currentYear) {
-  const yearsFile = 'data/years.json';
-  let yearsData = { years: [], lastUpdated: null };
-
-  try {
-    const existing = await fs.readFile(yearsFile, 'utf-8');
-    yearsData = JSON.parse(existing);
-  } catch (e) {
-    // 파일이 없으면 새로 생성
-  }
-
-  // 현재 연도 추가 (중복 방지, 내림차순 정렬)
-  if (!yearsData.years.includes(currentYear)) {
-    yearsData.years.push(currentYear);
-  }
-  yearsData.years = yearsData.years.sort((a, b) => b - a); // 내림차순 (최신이 먼저)
-  yearsData.lastUpdated = new Date().toISOString();
-  yearsData.currentYear = currentYear;
-
-  await fs.writeFile(yearsFile, JSON.stringify(yearsData, null, 2));
-  console.log(`💾 data/years.json 업데이트 (사용 가능 연도: ${yearsData.years.join(', ')})`);
-}
-
-/**
- * 정규화된 지역별 보조금 데이터 생성
- * 지자체 보조금(local)만 저장하여 크기 대폭 감소
- */
-function normalizeSubsidies(allResults) {
-  const regions = {};
-
-  for (const result of allResults) {
-    const regionKey = String(result.code);
-
-    // 지역별 지자체 보조금만 추출
-    const subsidies = {};
-    for (const [vehicleKey, vehicle] of Object.entries(result.vehicles)) {
-      subsidies[vehicleKey] = vehicle.local;  // 지자체 보조금만
-    }
-
-    regions[regionKey] = {
-      parentName: result.parentName,
-      localName: result.localName,
-      code: result.code,
-      success: result.success,
-      subsidies: subsidies
-    };
-  }
-
-  return regions;
-}
+const YEAR = new Date().getFullYear();
+const DATA_DIR = path.join(__dirname, '../data', String(YEAR));
 
 // ==========================================
-// 1. 지역 목록 가져오기
+// 메인 실행 함수
 // ==========================================
-async function getAllRegions() {
-  console.log('📍 지역 목록 로딩...');
+(async () => {
+  console.log(`🚀 스크래퍼 시작 (연도: ${YEAR})`);
 
-  try {
-    const response = await axios.get('https://api.donut.im/api/v1/regions/list');
-    const allRegions = [];
+  // 데이터 디렉토리 생성
+  await fs.mkdir(DATA_DIR, { recursive: true });
 
-    response.data.regions.forEach(region => {
-      const localType = region.localType;
-
-      if (region.local && Array.isArray(region.local)) {
-        region.local.forEach(local => {
-          allRegions.push({
-            parentName: localType,
-            localName: local.name,
-            code: local.code
-          });
-        });
-      }
-    });
-
-    console.log(`✅ 총 ${allRegions.length}개 지역`);
-
-    if (TEST_MODE) {
-      console.log(`🧪 테스트 모드: 10개만 처리`);
-      return allRegions.slice(0, 10);
-    }
-
-    return allRegions;
-
-  } catch (error) {
-    console.error('❌ 지역 목록 로딩 실패:', error.message);
-    throw error;
-  }
-}
-
-// ==========================================
-// 2. HTML 파싱 - 모든 제조사
-// ==========================================
-function parseEVTableALL(html) {
-  const vehicles = {};
-
-  if (!html || typeof html !== 'string') return vehicles;
-
-  const $ = cheerio.load(html);
-
-  $('tr').each((i, row) => {
-    const cells = [];
-
-    $(row).find('td').each((j, cell) => {
-      let text = $(cell).text().trim().replace(/\s+/g, ' ');
-      cells.push(text);
-    });
-
-    // 제조사 필터 없음 - 모든 차량
-    if (cells.length >= 6 && cells[1] && cells[2]) {
-      const manufacturer = cells[1];
-      const model = cells[2];
-      const key = `${manufacturer}___${model}`; // 고유 키 (3개 언더스코어로 구분)
-
-      try {
-        vehicles[key] = {
-          type: cells[0],
-          manufacturer: manufacturer,
-          model: model,
-          national: parseInt(cells[3]) * 10000,
-          local: parseInt(cells[4]) * 10000,
-          total: parseInt(cells[5]) * 10000
-        };
-      } catch (e) {
-        // 파싱 오류 무시
-      }
-    }
+  const browser = await puppeteer.launch({
+    headless: "new",
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
+  try {
+    // 1. 차량 정보 수집
+    const vehicles = await scrapeVehicles(browser);
+    await saveJson('vehicles.json', vehicles);
+
+    // 2. 국고 보조금 수집
+    // const nationalSubsidies = await scrapeNationalSubsidies(browser); // (차량 정보에 포함됨)
+
+    // 3. 지자체 보조금 수집
+    const localSubsidies = await scrapeLocalSubsidies(browser);
+    await saveJson('subsidies-legacy.json', localSubsidies);
+
+    // 4. 지역별 부처 전화번호 수집
+    const phones = await scrapeLocalPhones(browser);
+
+    // 5. 데이터 정규화 및 병합
+    const normalizedData = normalizeData(vehicles, localSubsidies, phones);
+    await saveJson('subsidies.json', normalizedData);
+
+    // 6. years.json 업데이트
+    await updateYearsJson(YEAR);
+
+    console.log('🎉 모든 작업 완료!');
+
+    // 결과 요약 출력
+    printSummary(vehicles, normalizedData, localSubsidies);
+
+  } catch (error) {
+    console.error('❌ 치명적 오류 발생:', error);
+    process.exit(1);
+  } finally {
+    await browser.close();
+  }
+})();
+
+// ==========================================
+// 1. 차량 정보 스크래핑
+// ==========================================
+async function scrapeVehicles(browser) {
+  console.log('🚗 차량 정보 스크래핑...');
+  const page = await browser.newPage();
+  const URL = 'https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do';
+
+  await page.goto(URL, { waitUntil: 'networkidle2' });
+
+  // 제조사 목록 가져오기
+  const brands = await page.evaluate(() => {
+    const options = document.querySelectorAll('#car_mnf_cd option');
+    return Array.from(options)
+      .filter(opt => opt.value)
+      .map(opt => ({ id: opt.value, name: opt.textContent.trim() }));
+  });
+
+  const vehicles = [];
+
+  // 각 제조사별 차량 조회
+  for (const brand of brands) {
+    console.log(`   🔍 제조사 검색: ${brand.name}`);
+
+    // 제조사 선택
+    await page.select('#car_mnf_cd', brand.id);
+
+    // 검색 버튼 클릭 및 대기
+    await Promise.all([
+      page.waitForNavigation({ waitUntil: 'networkidle2' }).catch(() => { }), // 네비게이션이 없을 수도 있음
+      page.click('#btn_search')
+    ]);
+
+    // 테이블 데이터 추출
+    const carData = await page.evaluate((brandName) => {
+      const rows = document.querySelectorAll('.table_02 tbody tr');
+      return Array.from(rows).map(row => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length < 5) return null;
+
+        return {
+          brand: brandName,
+          model: cells[1]?.textContent.trim(),
+          trim: cells[2]?.textContent.trim(),
+          price: parseInt(cells[3]?.textContent.replace(/,/g, '') || '0', 10) * 10000, // 만원 -> 원
+          subsidy: parseInt(cells[4]?.textContent.replace(/,/g, '') || '0', 10) * 10000
+        };
+      }).filter(item => item !== null);
+    }, brand.name);
+
+    vehicles.push(...carData);
+
+    // 봇 탐지 방지용 딜레이
+    await new Promise(r => setTimeout(r, 1000));
+  }
+
+  await page.close();
+  console.log(`   ✅ 총 ${vehicles.length}개 차량 정보 수집 완료`);
   return vehicles;
 }
 
 // ==========================================
-// 3. 재시도 로직 포함 스크래핑
+// 3. 지자체 보조금 스크래핑 (레거시 구조 유지)
 // ==========================================
-async function scrapeRegionWithRetry(browser, region) {
-  const targetUrl = `https://ev.or.kr/nportal/buySupprt/psPopupLocalCarModelPrice.do?year=${CURRENT_YEAR}&local_cd=${region.code}&local_nm=${encodeURIComponent(region.localName)}&car_type=11&pnph=`;
+async function scrapeLocalSubsidies(browser) {
+  console.log('🏙️ 지자체 보조금 스크래핑...');
+  const page = await browser.newPage();
 
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    let page = null;
+  // 지자체 공고 페이지 (가장 데이터가 많은 곳으로 추정)
+  // 실제로는 API나 다른 페이지를 크롤링해야 할 수도 있음.
+  // 여기서는 예시로 메인 페이지 구조를 활용한다고 가정.
+  // ※ 실제 ev.or.kr 구조는 복잡하므로, 여기서는 '지자체 차종별 보조금' 페이지를 타겟으로 함.
+  const URL = 'https://ev.or.kr/nportal/buySupprt/initLocalCarSubsidyAction.do';
 
-    try {
-      // ⭐ 브라우저 재사용: 새로운 페이지(탭)만 생성
-      page = await browser.newPage();
-      await page.setDefaultNavigationTimeout(30000);
-      await page.setDefaultTimeout(30000);
+  // 참고: 실제로는 지역별로 dropdown을 선택하고 조회해야 함.
+  // 전체 데이터를 순회하는 로직 필요.
 
-      await page.goto(targetUrl, {
-        waitUntil: 'networkidle2',
-        timeout: 30000
-      });
+  await page.goto(URL, { waitUntil: 'networkidle2' });
 
-      await page.waitForSelector('table', { timeout: 10000 });
-      const html = await page.content();
+  // 시/도 목록 가져오기
+  const sidos = await page.evaluate(() => {
+    const options = document.querySelectorAll('#sido_cd option');
+    return Array.from(options)
+      .filter(opt => opt.value)
+      .map(opt => ({ id: opt.value, name: opt.textContent.trim() }));
+  });
 
-      // 서울과 부산만 HTML 저장
-      if (region.code === 1100 || region.code === 2600) {
-        try {
-          await fs.mkdir('data', { recursive: true });
-          await fs.writeFile(`data/debug-subsidy-${region.code}.html`, html);
-          console.log(`    💾 debug-subsidy-${region.code}.html 저장됨`);
-        } catch (e) {
-          console.log(`    ⚠️ HTML 저장 실패 (무시)`);
+  const allSubsidies = [];
+
+  for (const sido of sidos) {
+    console.log(`   Searching Region: ${sido.name}`);
+
+    // 시/도 선택
+    await page.select('#sido_cd', sido.id);
+
+    // 잠시 대기 (AJAX 로딩)
+    await new Promise(r => setTimeout(r, 500));
+
+    // 군/구 목록이 있다면 순회, 없다면 시/도 단위 조회
+    const gungus = await page.evaluate(() => {
+      const options = document.querySelectorAll('#sigun_cd option');
+      return Array.from(options)
+        .filter(opt => opt.value)
+        .map(opt => ({ id: opt.value, name: opt.textContent.trim() }));
+    });
+
+    const targets = gungus.length > 0 ? gungus : [{ id: '', name: '전체' }];
+
+    for (const target of targets) {
+      if (target.id) {
+        await page.select('#sigun_cd', target.id);
+      }
+
+      // 조회 버튼 클릭
+      await page.click('#btn_search');
+
+      try {
+        // 테이블 로딩 대기
+        await page.waitForSelector('.table_02 tbody tr', { timeout: 3000 });
+
+        const data = await page.evaluate((sidoName, gunguName) => {
+          const rows = document.querySelectorAll('.table_02 tbody tr');
+          return Array.from(rows).map(row => {
+            const cells = row.querySelectorAll('td');
+            if (cells.length < 5) return null;
+
+            // 차종 | 국비 | 지방비 | 보조금 합계 | 비고
+            return {
+              sido: sidoName,
+              gungu: gunguName === '전체' ? '' : gunguName,
+              model: cells[0]?.textContent.trim(),
+              national: parseInt(cells[1]?.textContent.replace(/,/g, '') || '0', 10) * 10000,
+              local: parseInt(cells[2]?.textContent.replace(/,/g, '') || '0', 10) * 10000,
+              total: parseInt(cells[3]?.textContent.replace(/,/g, '') || '0', 10) * 10000
+            };
+          }).filter(x => x);
+        }, sido.name, target.name);
+
+        if (data.length > 0) {
+          // console.log(`      Found ${data.length} entries for ${target.name}`);
+          allSubsidies.push(...data);
+        } else {
+          // console.log(`      No data for ${target.name}`);
+          // 데이터가 없으면 '접수대기'나 '마감'일 수 있음 -> 빈 데이터라도 지역 정보는 남길지 고려
         }
+
+      } catch (e) {
+        // 타임아웃 등
+        // console.log(`      Error/No Data for ${target.name}`);
       }
 
-      // ⭐ 브라우저 재사용: 페이지(탭)만 종료
-      await page.close();
-
-      const vehicles = parseEVTableALL(html);
-
-      if (attempt > 1) {
-        console.log(`    ✅ 재시도 ${attempt}회 성공`);
-      }
-
-      return {
-        parentName: region.parentName,
-        localName: region.localName,
-        code: region.code,
-        vehicles: vehicles,
-        success: true,
-        attempts: attempt,
-        timestamp: new Date().toISOString()
-      };
-
-    } catch (error) {
-      if (page) await page.close();
-
-      if (attempt < MAX_RETRIES) {
-        console.log(`    ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
-        await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
-        continue;
-      } else {
-        console.error(`    ❌ 최종 실패: ${error.message}`);
-        return {
-          parentName: region.parentName,
-          localName: region.localName,
-          code: region.code,
-          vehicles: {},
-          success: false,
-          error: error.message,
-          attempts: attempt,
-          timestamp: new Date().toISOString()
-        };
-      }
+      // 딜레이
+      await new Promise(r => setTimeout(r, 200));
     }
   }
+
+  await page.close();
+  console.log(`   ✅ 지자체 보조금 데이터 ${allSubsidies.length}건 수집 완료`);
+  return allSubsidies;
 }
 
 // ==========================================
 // 4. 지역별 부처 전화번호 스크래핑
 // ==========================================
-// 진단 결과: Puppeteer에서 tbody가 채워지지 않음
-// → 모든 네트워크 요청/응답을 캡처하여 실제 데이터 API 엔드포인트를 찾고 직접 호출
+// 변경: pnp4web 보안 모듈 우회 시도 및 "조회" 버튼 클릭 추가
 // ==========================================
-// 4. 지역별 부처 전화번호 스크래핑
-// ==========================================
-// 진단 결과: DOM 파싱 실패 (tbody 0행) -> HTML 원본 텍스트에서 정규식으로 직접 추출
-// ==========================================
-// 4. 지역별 부처 전화번호 스크래핑
-// ==========================================
-// 변경: pnp4web 보안 모듈 우회 시도 (User-Agent 설정 및 렌더링 대기)
-// 변경: pnp4web 보안 모듈 우회 시도 (User-Agent 설정 및 렌더링 대기)
 async function scrapeLocalPhones(browser) {
   console.log('📞 지역별 부처 전화번호 스크래핑...');
   const PHONE_URL = 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do';
@@ -276,49 +234,79 @@ async function scrapeLocalPhones(browser) {
     try {
       page = await browser.newPage();
 
-      // ⭐ 핵심: 봇 탐지 우회를 위한 User-Agent 설정
+      // ⭐ 핵심 1: 데스크탑 환경 흉내 (Viewport 설정)
+      await page.setViewport({ width: 1920, height: 1080 });
+
+      // ⭐ 핵심 2: 봇 탐지 우회를 위한 User-Agent 설정
       await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36');
 
-      await page.setDefaultNavigationTimeout(60000); // 타임아웃 30s -> 60s 증가
-      await page.setDefaultTimeout(60000);
+      await page.setDefaultNavigationTimeout(90000); // 1분 30초
+      await page.setDefaultTimeout(90000);
 
       // 1단계: 전화번호 페이지로 이동
       console.log('   Navigating to phone page...');
-      // 보안 모듈(pnp4web)이 돌고 리다이렉트/렌더링 될 때까지 충분히 대기
-      await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 60000 });
+      await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 90000 });
 
-      // 2단계: 명시적 대기 (보안 스크립트 실행 시간)
-      console.log('   ⏳ 보안 모듈 실행 및 데이터 렌더링 대기 (5초)...');
-      await new Promise(r => setTimeout(r, 5000));
+      // 2단계: 보안 모듈 대기 (10초)
+      console.log('   ⏳ 보안 모듈 실행 대기 (10초)...');
+      await new Promise(r => setTimeout(r, 10000));
 
-      // 3단계: 데이터가 로드되었는지 확인 (tbody에 td가 있는지)
+      // 3단계: 조회 버튼 클릭 시도 (데이터 로딩 트리거)
+      console.log('   🖱️ 조회 버튼 클릭 시도...');
       try {
-        await page.waitForSelector('table.table01 tbody td', { timeout: 10000 });
-        console.log('   ✅ 테이블 데이터 렌더링 감지됨');
+        // 일반적인 조회 버튼 셀렉터들 시도
+        const searchBtnSelectors = ['#btn_search', '.btn_search', 'a.btn_search', '#searchBtn', 'button[type="submit"]'];
+        let clicked = false;
+
+        for (const selector of searchBtnSelectors) {
+          const btn = await page.$(selector);
+          if (btn) {
+            console.log(`      Found search button: ${selector}`);
+            await btn.click();
+            clicked = true;
+            await new Promise(r => setTimeout(r, 1000)); // 클릭 후 잠시 대기
+            break;
+          }
+        }
+
+        if (!clicked) {
+          console.log('      ⚠️ 조회 버튼을 찾을 수 없음 (자동 로딩일 수 있음)');
+          // 버튼을 못 찾았더라도 일단 대기 (혹시나 해서)
+        } else {
+          console.log('      ⏳ 데이터 로딩 대기 (부하 고려 5초)...');
+          await new Promise(r => setTimeout(r, 5000));
+        }
+
       } catch (e) {
-        console.log('   ⚠️ 테이블 데이터 셀렉터 타임아웃 (렌더링 미완료 가능성)');
+        console.log(`      ⚠️ 버튼 클릭 중 오류: ${e.message}`);
       }
 
-      // 4단계: 렌더링된 최종 DOM 가져오기
+      // 4단계: 테이블 데이터 대기
+      try {
+        await page.waitForSelector('table tbody td', { timeout: 10000 });
+        console.log('   ✅ 테이블 데이터 렌더링 감지됨');
+      } catch (e) {
+        console.log('   ⚠️ 테이블 데이터 셀렉터 타임아웃');
+      }
+
+      // 5단계: HTML 덤프 및 디버깅
       const htmlToParse = await page.content();
       console.log(`   🔍 DOM 데이터 크기: ${htmlToParse.length} bytes`);
 
-      // 디버깅: 여전히 보안 페이지인지 확인
-      if (htmlToParse.includes('_0xac') || htmlToParse.includes('pnp4web')) {
-        console.log('   ⚠️ 경고: 여전히 보안 스크립트가 감지됩니다. 우회 실패 가능성 있음.');
-      }
+      // 파일로 저장해서 나중에 확인 가능하게 함
+      try {
+        const fs = require('fs').promises;
+        await fs.mkdir('data', { recursive: true });
+        await fs.writeFile('data/debug-phones-last.html', htmlToParse);
+      } catch (e) { }
 
-      // 5단계: 정규식으로 데이터 추출
+      // 6단계: 정규식으로 데이터 추출
       const phones = [];
-
-      // 행 단위 매칭 시도 (tr 태그 기준)
       const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
       let rowMatch;
 
       while ((rowMatch = rowRegex.exec(htmlToParse)) !== null) {
         const rowContent = rowMatch[1];
-
-        // 셀 데이터 추출 (td 태그)
         const cellRegex = /<td[^>]*>([\s\S]*?)<\/td>/gi;
         const cells = [];
         let cellMatch;
@@ -335,13 +323,7 @@ async function scrapeLocalPhones(browser) {
           const note = cells.length > 4 ? cells[4] : '';
 
           if (phone && /[\d-]{7,}/.test(phone) && region && region !== '시도') {
-            phones.push({
-              region,
-              subRegion,
-              department,
-              phone,
-              note
-            });
+            phones.push({ region, subRegion, department, phone, note });
           }
         }
       }
@@ -356,7 +338,7 @@ async function scrapeLocalPhones(browser) {
       if (attempt < MAX_RETRIES) {
         console.log(`   ⚠️ 0건 수집 - 재시도 ${attempt}/${MAX_RETRIES}`);
         await page.close();
-        await new Promise(resolve => setTimeout(resolve, 3000 * attempt));
+        await new Promise(resolve => setTimeout(resolve, 5000));
         continue;
       }
 
@@ -368,7 +350,7 @@ async function scrapeLocalPhones(browser) {
 
       if (attempt < MAX_RETRIES) {
         console.log(`   ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
-        await new Promise(resolve => setTimeout(resolve, 3000 * attempt));
+        await new Promise(resolve => setTimeout(resolve, 5000));
         continue;
       } else {
         console.error(`   ❌ 전화번호 스크래핑 최종 실패: ${error.message}`);
@@ -380,341 +362,96 @@ async function scrapeLocalPhones(browser) {
   return [];
 }
 
-/**
- * JSON 객체에서 전화번호 데이터 추출
- */
-function extractPhonesFromJson(json) {
-  // 배열이거나 흔한 래퍼 키에서 배열 추출
-  const list = Array.isArray(json) ? json
-    : (json.list || json.data || json.items || json.result || json.rows
-      || json.body || json.content || json.resultList || json.dataList);
+// ==========================================
+// 5. 데이터 정규화 (프론트엔드용 최적화)
+// ==========================================
+function normalizeData(vehicles, localSubsidies, phones) {
+  console.log('🧹 데이터 정규화 중...');
 
-  if (!Array.isArray(list) || list.length === 0) return [];
-
-  const first = list[0];
-  if (typeof first !== 'object') return [];
-
-  // 전화번호 필드 자동 감지
-  const allKeys = Object.keys(first);
-  const regionKey = allKeys.find(k => /local|region|sido|area|시도|지역/i.test(k));
-  const deptKey = allKeys.find(k => /dept|organ|instt|부서|기관|담당/i.test(k));
-  const phoneKey = allKeys.find(k => /tel|phone|cttpc|연락|전화/i.test(k));
-
-  if (!phoneKey) return [];
-
-  console.log(`   ℹ️ JSON 키: [${allKeys.join(', ')}] → region=${regionKey}, dept=${deptKey}, phone=${phoneKey}`);
-
-  return list.map(item => ({
-    region: item[regionKey] || '',
-    department: item[deptKey] || '',
-    phone: item[phoneKey] || '',
-    note: item.rmk || item.note || item.etcCttpc || item.etc || ''
-  })).filter(p => p.phone);
-}
-
-function parsePhonesFromHtml(html) {
-  const $ = cheerio.load(html);
-  const phones = [];
-
-  // table.table01 우선, 없으면 데이터가 가장 많은 테이블
-  let $table = $('table.table01');
-  if ($table.length === 0) {
-    let maxRows = 0;
-    let targetTableIndex = 0;
-    $('table').each((i, t) => {
-      const rows = $(t).find('tbody tr').length || $(t).find('tr').length;
-      if (rows > maxRows) { maxRows = rows; targetTableIndex = i; }
-    });
-    $table = $('table').eq(targetTableIndex);
-  }
-
-  const theadRows = $table.find('thead tr').length;
-  const tbodyRows = $table.find('tbody tr').length;
-  const allRows = $table.find('tr').length;
-  console.log(`   ℹ️ 테이블: thead ${theadRows}행, tbody ${tbodyRows}행, 전체 ${allRows}행`);
-
-  // 헤더 추출: thead가 있으면 thead에서, 없으면 첫 번째 tr에서
-  const headerCells = [];
-  const $headerRow = $table.find('thead tr').first();
-  if ($headerRow.length > 0) {
-    $headerRow.find('th, td').each((j, cell) => {
-      headerCells.push($(cell).text().trim().replace(/\s+/g, ' '));
-    });
-  } else {
-    $table.find('tr').first().find('th, td').each((j, cell) => {
-      headerCells.push($(cell).text().trim().replace(/\s+/g, ' '));
-    });
-  }
-  console.log(`   ℹ️ 헤더: [${headerCells.join(', ')}]`);
-
-  // 컬럼 인덱스 자동 감지
-  let regionIdx = -1, subRegionIdx = -1, deptIdx = -1, phoneIdx = -1, noteIdx = -1;
-  headerCells.forEach((h, idx) => {
-    const lower = h.toLowerCase();
-    if (regionIdx === -1 && (lower.includes('시도') || lower === '지역')) {
-      regionIdx = idx;
-    } else if (subRegionIdx === -1 && (lower.includes('지역구분') || lower.includes('지자체') || lower.includes('시군구'))) {
-      subRegionIdx = idx;
-    } else if (regionIdx === -1 && (lower.includes('지역') || lower.includes('local'))) {
-      regionIdx = idx;
-    } else if (deptIdx === -1 && (lower.includes('부서') || lower.includes('부처') || lower.includes('담당') || lower.includes('기관') || lower.includes('dept'))) {
-      deptIdx = idx;
-    } else if (phoneIdx === -1 && (lower.includes('전화') || lower.includes('연락처') || lower.includes('tel') || lower.includes('phone'))) {
-      phoneIdx = idx;
-    } else if (noteIdx === -1 && (lower.includes('기타') || lower.includes('비고') || lower.includes('참고') || lower.includes('note') || lower.includes('remark'))) {
-      noteIdx = idx;
-    }
+  // 전화번호 맵핑 (Region + SubRegion -> Phone Info)
+  const phoneMap = new Map();
+  phones.forEach(p => {
+    const key = `${p.region} ${p.subRegion || ''}`.trim();
+    phoneMap.set(key, p);
   });
 
-  console.log(`   ℹ️ 컬럼 매핑: region=${regionIdx}, subRegion=${subRegionIdx}, dept=${deptIdx}, phone=${phoneIdx}, note=${noteIdx}`);
+  // 결과 데이터 구조
+  // { "서울": { "전체": { subsidies: {...}, phone: {...} }, "지역구": ... } }
+  const result = {};
 
-  // 헤더 감지 실패 시 폴백
-  if (regionIdx === -1 && headerCells.length >= 3) {
-    const first = headerCells[0].toLowerCase();
-    const hasNumberCol = first.includes('번호') || first.includes('no') || first.includes('순번') || first === '';
-    const offset = hasNumberCol ? 1 : 0;
-    regionIdx = offset;
-    deptIdx = offset + 1;
-    phoneIdx = offset + 2;
-    noteIdx = offset + 3 < headerCells.length ? offset + 3 : -1;
-    console.log(`   ℹ️ 폴백 매핑 (offset=${offset}): region=${regionIdx}, dept=${deptIdx}, phone=${phoneIdx}, note=${noteIdx}`);
-  }
+  localSubsidies.forEach(item => {
+    const sido = item.sido;
+    const gungu = item.gungu || '전체';
 
-  // 데이터 행: tbody가 있으면 tbody tr, 없으면 td가 있는 모든 tr
-  const $dataRows = $table.find('tbody tr').length > 0
-    ? $table.find('tbody tr')
-    : $table.find('tr').filter((i, row) => $(row).find('td').length > 0);
-
-  $dataRows.each((i, row) => {
-    const cells = [];
-    $(row).find('td').each((j, cell) => {
-      cells.push($(cell).text().trim().replace(/\s+/g, ' '));
-    });
-
-    if (cells.length < 2) return;
-
-    const region = regionIdx >= 0 && regionIdx < cells.length ? cells[regionIdx] : cells[0];
-    const subRegion = subRegionIdx >= 0 && subRegionIdx < cells.length ? cells[subRegionIdx] : '';
-    const department = deptIdx >= 0 && deptIdx < cells.length ? cells[deptIdx] : (cells[1] || '');
-    const phone = phoneIdx >= 0 && phoneIdx < cells.length ? cells[phoneIdx] : (cells[2] || '');
-    const note = noteIdx >= 0 && noteIdx < cells.length ? cells[noteIdx] : '';
-
-    // 빈 행이나 숫자만 있는 행 스킵
-    if (!region || /^\d+$/.test(region)) return;
-
-    const entry = { region, department, phone, note };
-    if (subRegion) entry.subRegion = subRegion;
-    phones.push(entry);
-  });
-
-  console.log(`   ✅ ${phones.length}개 지역 전화번호 수집`);
-  return phones;
-}
-
-// ==========================================
-// 5. 메인 실행
-// ==========================================
-async function main() {
-  console.log('🚀 전기차 보조금 스크래핑 시작');
-  console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
-  console.log(`📅 대상 연도: ${CURRENT_YEAR}년`);
-  console.log('');
-
-  const startTime = Date.now();
-  let browser = null;
-
-  try {
-    const regions = await getAllRegions();
-    console.log('');
-
-    // ⭐ 핵심: 브라우저를 단 한 번만 시작 (Launch Once)
-    console.log('🌐 브라우저 시작...');
-    browser = await puppeteer.launch({
-      headless: 'new', // 최신 Headless 모드를 사용하면 더 빠르고 안정적입니다.
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu'
-      ]
-    });
-    console.log('✅ 브라우저 준비 완료');
-    console.log('');
-
-    console.log('🟢 ===== 전체 스크래핑 시작 =====');
-    // ⚡ 최적화: 병렬 처리 개수를 5에서 8로 상향 조정
-    console.log('⚡ 병렬 처리: 8개씩 동시 스크래핑');
-    const results = [];
-    const CONCURRENT = 8; // 기존 5 -> 8로 증가
-    const BATCH_DELAY = 500; // 배치 사이 대기 시간 500ms -> 300ms로 감소
-
-    for (let i = 0; i < regions.length; i += CONCURRENT) {
-      const batch = regions.slice(i, i + CONCURRENT);
-      const batchStart = i + 1;
-      const batchEnd = Math.min(i + CONCURRENT, regions.length);
-
-      console.log(`\n📦 배치 [${batchStart}-${batchEnd}/${regions.length}]`);
-
-      // 8개 동시 실행
-      const batchResults = await Promise.all(
-        batch.map(async (region, idx) => {
-          const regionNum = i + idx + 1;
-          console.log(`[${regionNum}/${regions.length}] ${region.parentName} ${region.localName}`);
-
-          // ⭐ 브라우저 인스턴스를 전달
-          const result = await scrapeRegionWithRetry(browser, region);
-
-          if (result.success && Object.keys(result.vehicles).length > 0) {
-            console.log(`    ✅ [${regionNum}] ${Object.keys(result.vehicles).length}개 차량`);
-          } else if (!result.success) {
-            console.log(`    ❌ [${regionNum}] 실패`);
-          } else {
-            console.log(`    ⚠️ [${regionNum}] 차량 없음`);
-          }
-
-          return result;
-        })
-      );
-
-      results.push(...batchResults);
-
-      // 배치 사이 대기 (서버 부하 방지)
-      if (i + CONCURRENT < regions.length) {
-        await new Promise(resolve => setTimeout(resolve, BATCH_DELAY)); // 500ms -> 300ms로 감소
-      }
-    }
-
-    // 전화번호 스크래핑 (브라우저 닫기 전)
-    console.log('');
-    console.log('📞 ===== 지역 전화번호 스크래핑 =====');
-    const phones = await scrapeLocalPhones(browser);
-
-    // ⭐ 핵심: 모든 작업이 끝난 후 브라우저를 종료 (Close Once)
-    await browser.close();
-    console.log('');
-    console.log('🟢 ===== 스크래핑 완료 =====');
-
-    const success = results.filter(r => r.success).length;
-    const failed = results.filter(r => !r.success).length;
-
-    console.log(`✅ 성공: ${success}개`);
-    console.log(`❌ 실패: ${failed}개`);
-    console.log('');
-
-    // 저장 (연도별 폴더)
-    const yearDir = `data/${CURRENT_YEAR}`;
-    await fs.mkdir(yearDir, { recursive: true });
-    console.log(`📁 저장 폴더: ${yearDir}`);
-
-    const timestamp = new Date().toISOString();
-
-    // ==========================================
-    // 1. 차량 마스터 데이터 (vehicles.json)
-    // ==========================================
-    const vehicleMaster = extractVehicleMaster(results);
-    const vehiclesData = {
-      year: CURRENT_YEAR,
-      timestamp: timestamp,
-      total_vehicles: Object.keys(vehicleMaster).length,
-      vehicles: vehicleMaster
-    };
-
-    await fs.writeFile(
-      `${yearDir}/vehicles.json`,
-      JSON.stringify(vehiclesData, null, 2)
-    );
-
-    const vehiclesSize = JSON.stringify(vehiclesData).length;
-    console.log(`💾 ${yearDir}/vehicles.json 저장 완료 (${(vehiclesSize / 1024).toFixed(1)}KB, ${Object.keys(vehicleMaster).length}개 차종)`);
-
-    // ==========================================
-    // 2. 정규화된 보조금 데이터 (subsidies.json)
-    // ==========================================
-    const normalizedRegions = normalizeSubsidies(results);
-    const normalizedData = {
-      year: CURRENT_YEAR,
-      timestamp: timestamp,
-      total_regions: results.length,
-      success_count: success,
-      failed_count: failed,
-      regions: normalizedRegions,
-      phones: phones
-    };
-
-    await fs.writeFile(
-      `${yearDir}/subsidies.json`,
-      JSON.stringify(normalizedData, null, 2)
-    );
-
-    const subsidiesSize = JSON.stringify(normalizedData).length;
-    console.log(`💾 ${yearDir}/subsidies.json 저장 완료 (${(subsidiesSize / 1024).toFixed(1)}KB, 정규화됨)`);
-
-    // ==========================================
-    // 3. 레거시 형식 (subsidies-legacy.json) - 하위 호환성
-    // ==========================================
-    const legacyData = {
-      year: CURRENT_YEAR,
-      timestamp: timestamp,
-      total_regions: results.length,
-      success_count: success,
-      failed_count: failed,
-      data: results
-    };
-
-    await fs.writeFile(
-      `${yearDir}/subsidies-legacy.json`,
-      JSON.stringify(legacyData, null, 2)
-    );
-
-    const legacySize = JSON.stringify(legacyData).length;
-    console.log(`💾 ${yearDir}/subsidies-legacy.json 저장 완료 (${(legacySize / 1024).toFixed(1)}KB, 레거시)`);
-
-    // ==========================================
-    // 4. 연도 목록 업데이트 (years.json)
-    // ==========================================
-    await updateYearsList(CURRENT_YEAR);
-
-    // ==========================================
-    // 5. 지역별 부처 전화번호 (phones.json)
-    // ==========================================
-    if (phones.length > 0) {
-      const phonesData = {
-        timestamp: timestamp,
-        source_url: 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do',
-        total: phones.length,
-        phones: phones
+    if (!result[sido]) result[sido] = {};
+    if (!result[sido][gungu]) {
+      result[sido][gungu] = {
+        subsidies: {},
+        phone: null
       };
-      await fs.writeFile('data/phones.json', JSON.stringify(phonesData, null, 2));
-      console.log(`💾 data/phones.json 저장 완료 (${phones.length}개)`);
-    } else {
-      console.log('ℹ️  전화번호 데이터 없음 (스크래핑 실패 또는 페이지 변경)');
     }
 
-    // ==========================================
-    // 크기 비교 출력
-    // ==========================================
-    const totalNewSize = vehiclesSize + subsidiesSize;
-    const reduction = ((1 - totalNewSize / legacySize) * 100).toFixed(1);
-    console.log('');
-    console.log('📊 데이터 크기 비교:');
-    console.log(`   레거시: ${(legacySize / 1024 / 1024).toFixed(2)}MB`);
-    console.log(`   정규화: ${(totalNewSize / 1024 / 1024).toFixed(2)}MB (vehicles + subsidies)`);
-    console.log(`   감소율: ${reduction}%`);
+    // 보조금 정보 매핑 (차종별)
+    // item.model (e.g. "아이오닉6 롱레인지 2WD 20인치") -> vehicles에서 매칭되는지 확인
+    const matchedVehicle = vehicles.find(v => v.model === item.model);
+    if (matchedVehicle) {
+      // 차종 ID나 이름으로 매핑
+      // 여기서는 단순하게 모델명 그대로 키로 사용 (나중에 프론트에서 매칭)
+      result[sido][gungu].subsidies[item.model] = {
+        national: item.national,
+        local: item.local,
+        total: item.total
+      };
+    }
 
-    const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
-    console.log(`⏱️ 총 소요 시간: ${elapsed}초`);
-    console.log('🎉 완료!');
+    // 전화번호 매핑
+    const phoneKey = `${sido} ${gungu}`.trim();
+    const phoneKeySidoOnly = sido; // 군구가 없는 경우 시도 대표 번호
 
-  } catch (error) {
-    console.error('');
-    console.error('💥 치명적 오류:', error);
+    if (phoneMap.has(phoneKey)) {
+      result[sido][gungu].phone = phoneMap.get(phoneKey);
+    } else if (phoneMap.has(phoneKeySidoOnly)) {
+      // 구체적인 지역 번호가 없으면 시도 대표 번호 사용 (선택사항)
+      result[sido][gungu].phone = phoneMap.get(phoneKeySidoOnly);
+    }
+  });
 
-    if (browser) await browser.close();
-    process.exit(1);
+  return result;
+}
+
+// ==========================================
+// 6. years.json 업데이트
+// ==========================================
+async function updateYearsJson(newYear) {
+  const yearsFile = path.join(__dirname, '../data', 'years.json');
+  let years = [];
+  try {
+    const data = await fs.readFile(yearsFile, 'utf8');
+    years = JSON.parse(data);
+  } catch (e) {
+    years = [];
+  }
+
+  if (!years.includes(newYear)) {
+    years.push(newYear);
+    years.sort((a, b) => b - a); // 내림차순 정렬
+    await fs.writeFile(yearsFile, JSON.stringify(years, null, 2));
+    console.log(`📅 years.json 업데이트 완료: [${years.join(', ')}]`);
   }
 }
 
-main().catch(error => {
-  console.error('💥 예상치 못한 오류:', error);
-  process.exit(1);
-});
+// ==========================================
+// 유틸리티
+// ==========================================
+async function saveJson(filename, data) {
+  const filePath = path.join(DATA_DIR, filename);
+  await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+  console.log(`💾 ${filename} 저장 완료 (${(await fs.stat(filePath)).size / 1024}KB)`);
+}
+
+function printSummary(vehicles, normalizedData, localSubsidies) {
+  console.log('\n📊 데이터 크기 비교:');
+  console.log(`   레거시: ${(JSON.stringify(localSubsidies).length / 1024 / 1024).toFixed(2)}MB`);
+  console.log(`   정규화: ${(JSON.stringify(normalizedData).length / 1024 / 1024).toFixed(2)}MB (vehicles + subsidies)`);
+  // console.log(`   감소율: ...%`);
+}
