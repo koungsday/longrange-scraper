@@ -255,143 +255,70 @@ async function scrapeRegionWithRetry(browser, region) {
 // ==========================================
 // 4. 지역별 부처 전화번호 스크래핑
 // ==========================================
+// 차종별보조금 페이지(psPopupLocalCarModelPrice.do)와 동일한 새탭 형식이므로
+// scrapeRegionWithRetry와 동일한 심플한 방식 사용: 직접 URL 접근 → table 대기 → HTML 파싱
 async function scrapeLocalPhones(browser) {
   console.log('📞 지역별 부처 전화번호 스크래핑...');
-  const MAIN_URL = 'https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do';
   const PHONE_URL = 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do';
-  let page = null;
 
-  try {
-    page = await browser.newPage();
-    await page.setDefaultNavigationTimeout(30000);
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    let page = null;
 
-    // 네트워크 응답 인터셉트 - AJAX JSON 캡처
-    const capturedJson = [];
-    page.on('response', async (response) => {
-      const ct = response.headers()['content-type'] || '';
-      if (!ct.includes('json')) return;
-      try {
-        const text = await response.text();
-        capturedJson.push({ url: response.url(), text });
-      } catch {}
-    });
-
-    // 세션 수립
-    await page.goto(MAIN_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-
-    // 전화번호 팝업 버튼 찾아서 클릭 시도 (main 페이지에서 window.open으로 여는 경우)
-    const phonePopupPage = await (async () => {
-      try {
-        const btn = await page.$('a[href*="Phone"], a[onclick*="Phone"], button[onclick*="Phone"], a[href*="phone"], a[onclick*="localPhone"]');
-        if (!btn) return null;
-        console.log('   🔍 전화번호 팝업 버튼 발견 - 클릭 시도');
-        const popupPromise = new Promise(resolve =>
-          browser.once('targetcreated', async t => resolve(await t.page()))
-        );
-        await btn.click();
-        const popup = await Promise.race([
-          popupPromise,
-          new Promise((_, rej) => setTimeout(() => rej(new Error('no popup')), 4000))
-        ]);
-        return popup;
-      } catch {
-        return null;
-      }
-    })();
-
-    // 팝업이 열렸으면 팝업에서 데이터 추출
-    if (phonePopupPage) {
-      console.log('   ✅ 팝업 창 감지');
-      try {
-        await phonePopupPage.waitForFunction(
-          () => document.querySelectorAll('table tr').length > 2,
-          { timeout: 15000 }
-        );
-      } catch {
-        console.warn('   ⚠️ 팝업 테이블 로드 타임아웃');
-      }
-      const html = await phonePopupPage.content();
-      await phonePopupPage.close();
-      await page.close();
-      return parsePhonesFromHtml(html);
-    }
-
-    // 직접 PHONE_URL 방문
-    await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-
-    // 테이블 행 2개 이상 대기 (tbody 유무 상관없이)
     try {
-      await page.waitForFunction(
-        () => document.querySelectorAll('table tr').length > 2,
-        { timeout: 15000 }
-      );
-    } catch {
-      console.warn('   ⚠️ 테이블 행 대기 타임아웃 - JS 초기화 함수 호출 시도');
-      // 페이지 초기화 함수 직접 호출
-      await page.evaluate(() => {
-        ['fn_search', 'fnSearch', 'search', 'init', 'loadData', 'getData'].forEach(fn => {
-          if (typeof window[fn] === 'function') {
-            try { window[fn](); } catch {}
-          }
-        });
+      // 차종별보조금과 동일한 방식: 새 페이지(탭) → 직접 URL 접근
+      page = await browser.newPage();
+      await page.setDefaultNavigationTimeout(30000);
+      await page.setDefaultTimeout(30000);
+
+      await page.goto(PHONE_URL, {
+        waitUntil: 'networkidle2',
+        timeout: 30000
       });
-      // 추가 3초 대기
-      await new Promise(r => setTimeout(r, 3000));
-    }
 
-    const html = await page.content();
+      await page.waitForSelector('table', { timeout: 10000 });
+      const html = await page.content();
 
-    // 디버그용 HTML 저장
-    await fs.mkdir('data', { recursive: true });
-    await fs.writeFile('data/debug-phones.html', html);
-    console.log('   💾 data/debug-phones.html 저장됨');
+      // 디버그용 HTML 저장
+      try {
+        await fs.mkdir('data', { recursive: true });
+        await fs.writeFile('data/debug-phones.html', html);
+        console.log('   💾 data/debug-phones.html 저장됨');
+      } catch (e) {
+        console.log('   ⚠️ HTML 저장 실패 (무시)');
+      }
 
-    // 캡처된 JSON 응답 로깅 및 파싱 시도
-    if (capturedJson.length > 0) {
-      console.log(`   🔍 캡처된 AJAX 응답 ${capturedJson.length}개:`);
-      for (const { url, text } of capturedJson) {
-        console.log(`      - ${url}`);
-        try {
-          const json = JSON.parse(text);
-          const list = Array.isArray(json) ? json : (json.list || json.data || json.items || json.result);
-          if (Array.isArray(list) && list.length > 0) {
-            const first = list[0];
-            // 전화번호 필드 자동 감지
-            const regionKey  = ['localNm','region','sido','areaNm','localName'].find(k => first[k]);
-            const deptKey    = ['deptNm','dept','department','orgNm'].find(k => first[k]);
-            const phoneKey   = ['telNo','phone','tel','phoneNo','contactNo'].find(k => first[k]);
-            if (phoneKey) {
-              const phones = list.map(item => ({
-                region:     item[regionKey] || '',
-                department: item[deptKey]   || '',
-                phone:      item[phoneKey]  || '',
-                note:       item.rmk || item.note || ''
-              })).filter(p => p.phone);
-              if (phones.length > 0) {
-                console.log(`   ✅ AJAX JSON에서 ${phones.length}개 수집 (${url})`);
-                await page.close();
-                return phones;
-              }
-            }
-          }
-        } catch {}
+      await page.close();
+
+      const phones = parsePhonesFromHtml(html);
+
+      if (attempt > 1) {
+        console.log(`   ✅ 재시도 ${attempt}회 성공`);
+      }
+
+      return phones;
+
+    } catch (error) {
+      if (page) await page.close();
+
+      if (attempt < MAX_RETRIES) {
+        console.log(`   ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
+        await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
+        continue;
+      } else {
+        console.error(`   ❌ 전화번호 스크래핑 최종 실패: ${error.message}`);
+        return [];
       }
     }
-
-    await page.close();
-    return parsePhonesFromHtml(html);
-
-  } catch (error) {
-    if (page) await page.close();
-    console.error(`   ❌ 전화번호 스크래핑 실패: ${error.message}`);
-    return [];
   }
+
+  return [];
 }
 
 function parsePhonesFromHtml(html) {
   const $ = cheerio.load(html);
   const phones = [];
 
+  // 데이터가 가장 많은 테이블 찾기
   let maxRows = 0;
   let targetTableIndex = 0;
   $('table').each((i, t) => {
@@ -401,19 +328,64 @@ function parsePhonesFromHtml(html) {
 
   console.log(`   ℹ️ 테이블 수: ${$('table').length}, 최대 행: ${maxRows} (index ${targetTableIndex})`);
 
-  $('table').eq(targetTableIndex).find('tr').each((i, row) => {
+  // 헤더에서 컬럼 매핑 자동 감지
+  const $table = $('table').eq(targetTableIndex);
+  const headerCells = [];
+  $table.find('tr').first().find('th, td').each((j, cell) => {
+    headerCells.push($(cell).text().trim().replace(/\s+/g, ' '));
+  });
+  console.log(`   ℹ️ 헤더: [${headerCells.join(', ')}]`);
+
+  // 컬럼 인덱스 자동 감지 (번호 컬럼이 있을 수 있음)
+  let regionIdx = -1, deptIdx = -1, phoneIdx = -1, noteIdx = -1;
+  headerCells.forEach((h, idx) => {
+    const lower = h.toLowerCase();
+    if (regionIdx === -1 && (lower.includes('지역') || lower.includes('시도') || lower.includes('지자체') || lower.includes('local'))) {
+      regionIdx = idx;
+    } else if (deptIdx === -1 && (lower.includes('부서') || lower.includes('부처') || lower.includes('담당') || lower.includes('기관') || lower.includes('dept'))) {
+      deptIdx = idx;
+    } else if (phoneIdx === -1 && (lower.includes('전화') || lower.includes('연락') || lower.includes('tel') || lower.includes('phone'))) {
+      phoneIdx = idx;
+    } else if (noteIdx === -1 && (lower.includes('비고') || lower.includes('참고') || lower.includes('note') || lower.includes('remark'))) {
+      noteIdx = idx;
+    }
+  });
+
+  console.log(`   ℹ️ 컬럼 매핑: region=${regionIdx}, dept=${deptIdx}, phone=${phoneIdx}, note=${noteIdx}`);
+
+  // 헤더 감지 실패 시 폴백: 번호 컬럼 유무에 따라 오프셋 결정
+  if (regionIdx === -1 && headerCells.length >= 3) {
+    // 첫 번째 셀이 "번호", "No", "순번" 등이면 오프셋 1
+    const first = headerCells[0].toLowerCase();
+    const hasNumberCol = first.includes('번호') || first.includes('no') || first.includes('순번') || first === '';
+    const offset = hasNumberCol ? 1 : 0;
+    regionIdx = offset;
+    deptIdx = offset + 1;
+    phoneIdx = offset + 2;
+    noteIdx = offset + 3 < headerCells.length ? offset + 3 : -1;
+    console.log(`   ℹ️ 폴백 매핑 (offset=${offset}): region=${regionIdx}, dept=${deptIdx}, phone=${phoneIdx}, note=${noteIdx}`);
+  }
+
+  // 데이터 행 파싱 (첫 번째 행 = 헤더이므로 건너뜀)
+  $table.find('tr').each((i, row) => {
+    if (i === 0) return; // 헤더 행 스킵
+
     const cells = [];
     $(row).find('td').each((j, cell) => {
       cells.push($(cell).text().trim().replace(/\s+/g, ' '));
     });
-    if (cells.length >= 2 && cells[0]) {
-      phones.push({
-        region:     cells[0],
-        department: cells[1] || '',
-        phone:      cells[2] || '',
-        note:       cells[3] || ''
-      });
-    }
+
+    if (cells.length < 2) return;
+
+    const region = regionIdx >= 0 && regionIdx < cells.length ? cells[regionIdx] : cells[0];
+    const department = deptIdx >= 0 && deptIdx < cells.length ? cells[deptIdx] : (cells[1] || '');
+    const phone = phoneIdx >= 0 && phoneIdx < cells.length ? cells[phoneIdx] : (cells[2] || '');
+    const note = noteIdx >= 0 && noteIdx < cells.length ? cells[noteIdx] : '';
+
+    // 빈 행이나 숫자만 있는 행 스킵
+    if (!region || /^\d+$/.test(region)) return;
+
+    phones.push({ region, department, phone, note });
   });
 
   console.log(`   ✅ ${phones.length}개 지역 전화번호 수집`);
