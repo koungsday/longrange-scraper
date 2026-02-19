@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-19T22:10:42.372Z",
+  "timestamp": "2026-02-19T22:20:41.500Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1115,15 +1115,15 @@
           "registered_corporate": 0,
           "registered_taxi": 2,
           "registered_general": 24,
-          "delivered_total": 12,
+          "delivered_total": 13,
           "delivered_priority": 6,
           "delivered_corporate": 0,
-          "delivered_taxi": 0,
+          "delivered_taxi": 1,
           "delivered_general": 6,
-          "remaining_total": 198,
+          "remaining_total": 197,
           "remaining_priority": 14,
           "remaining_corporate": 0,
-          "remaining_taxi": 10,
+          "remaining_taxi": 9,
           "remaining_general": 174,
           "note": "<2026년 상반기 동해시 전기자동차 보급사업 안내>\n○ 신청기간 : 2026. 2. 2.(월) 10:00 ~ 6. 30.(화) 18:00 / 예산소진 시 조기 마감\n○ 상반기 보급대수 : 255대(승용 210, 화물 40, 승합(개인) 3, 승합(어린이통학) 2)\n* 차종별 보조금 차등지원 및 국비 추가 지급 등에 따라 보급대수는 변동될 수 있음\n* 자세한 사항은 공고문 확인바람.\n*** '26.1.1.이후 계약건에 대해서만 보조금 지급이 가능합니다!!\n* 대상자 선정 전 차량 출고(등록) 시 보조금 지급 불가하오니 주의하여 주시기 바랍니다.\n* 전환지원금은 개인(개인사업자,법인 등 불가)만 신청가능하며 판매 및 폐차관련서류는 보조금 지급신청전까지 제출\n* 다자녀, 생애최초의 경우 \"만\"나이 기준(다자녀 만18세이하, 생애최초 만19세~만34세)\n* 지급신청시 시스템에서는 미첨부하도록 되어있으나, 붙임4의 지급신청서도 별도첨부해주시기 바랍니다!!"
         },
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-19T22:10:42.187Z"
+      "timestamp": "2026-02-19T22:20:41.379Z"
     }
   ]
 }
