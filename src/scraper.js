@@ -264,86 +264,61 @@ async function scrapeRegionWithRetry(browser, region) {
 // ==========================================
 // 4. 지역별 부처 전화번호 스크래핑
 // ==========================================
-// 변경: DOM 렌더링(page.content)에 의존하지 않고, 네트워크 응답 본문을 직접 가로채서 파싱
-// 이유: DOM이 업데이트되지 않아도 서버 응답(585KB)에는 데이터가 포함되어 있으므로 이를 직접 사용
+// 변경: pnp4web 보안 모듈 우회 시도 (User-Agent 설정 및 렌더링 대기)
+// 변경: pnp4web 보안 모듈 우회 시도 (User-Agent 설정 및 렌더링 대기)
 async function scrapeLocalPhones(browser) {
   console.log('📞 지역별 부처 전화번호 스크래핑...');
   const PHONE_URL = 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do';
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     let page = null;
-    let targetResponseText = ''; // 가로챈 응답 본문을 저장할 변수
 
     try {
       page = await browser.newPage();
-      await page.setDefaultNavigationTimeout(30000);
-      await page.setDefaultTimeout(30000);
 
-      // 네트워크 응답 가로채기 설정
-      page.on('response', async (response) => {
-        const url = response.url();
-        // psLocalPhone.do 요청에 대한 응답만 타겟팅 (500KB 이상 데이터 포함)
-        if (url.includes('psLocalPhone.do') && response.status() === 200) {
-          try {
-            const text = await response.text();
-            if (text && text.length > 1000) {
-              console.log(`   📡 데이터 응답 감지: ${text.length} bytes`);
-              targetResponseText = text;
-            }
-          } catch (e) {
-            console.log(`   ⚠️ 응답 텍스트 읽기 실패: ${e.message}`);
-          }
-        }
-      });
+      // ⭐ 핵심: 봇 탐지 우회를 위한 User-Agent 설정
+      await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36');
+
+      await page.setDefaultNavigationTimeout(60000); // 타임아웃 30s -> 60s 증가
+      await page.setDefaultTimeout(60000);
 
       // 1단계: 전화번호 페이지로 이동
       console.log('   Navigating to phone page...');
-      await page.goto(PHONE_URL, { waitUntil: 'networkidle0', timeout: 30000 });
+      // 보안 모듈(pnp4web)이 돌고 리다이렉트/렌더링 될 때까지 충분히 대기
+      await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 60000 });
 
-      // 2단계: 응답 가로채기 대기 (이미 goto에서 캡처되었을 수 있음)
-      if (!targetResponseText) {
-        console.log('   ⏳ 응답 데이터 대기 중...');
-        await new Promise(r => setTimeout(r, 3000));
+      // 2단계: 명시적 대기 (보안 스크립트 실행 시간)
+      console.log('   ⏳ 보안 모듈 실행 및 데이터 렌더링 대기 (5초)...');
+      await new Promise(r => setTimeout(r, 5000));
+
+      // 3단계: 데이터가 로드되었는지 확인 (tbody에 td가 있는지)
+      try {
+        await page.waitForSelector('table.table01 tbody td', { timeout: 10000 });
+        console.log('   ✅ 테이블 데이터 렌더링 감지됨');
+      } catch (e) {
+        console.log('   ⚠️ 테이블 데이터 셀렉터 타임아웃 (렌더링 미완료 가능성)');
       }
 
-      // 3단계: 사용할 HTML 소스 결정 (가로챈 응답 우선, 없으면 page.content)
-      const htmlToParse = targetResponseText || await page.content();
-      console.log(`   🔍 파싱 대상 데이터 크기: ${htmlToParse.length} bytes`);
+      // 4단계: 렌더링된 최종 DOM 가져오기
+      const htmlToParse = await page.content();
+      console.log(`   🔍 DOM 데이터 크기: ${htmlToParse.length} bytes`);
 
-      // --- 디버깅 섹션 ---
-      // 데이터가 실제로 포함되어 있는지 확인
-      const hasSeoul = htmlToParse.includes('서울');
-      const hasPhone = /\d{2,3}-\d{3,4}-\d{4}/.test(htmlToParse);
-      const hasTable = htmlToParse.includes('<table');
-      const hasTbody = htmlToParse.includes('<tbody');
-
-      console.log(`   🩺 데이터 진단: 서울=${hasSeoul}, 전화번호패턴=${hasPhone}, Table태그=${hasTable}, Tbody태그=${hasTbody}`);
-
-      if (hasPhone) {
-        const phoneMatches = htmlToParse.match(/\d{2,3}-\d{3,4}-\d{4}/g);
-        console.log(`   🩺 발견된 전화번호 패턴 수: ${phoneMatches ? phoneMatches.length : 0}개`);
-        if (phoneMatches && phoneMatches.length > 0) {
-          console.log(`   🩺 예시: ${phoneMatches[0]}`);
-          // 주변 텍스트 확인 (50자)
-          const idx = htmlToParse.indexOf(phoneMatches[0]);
-          const context = htmlToParse.substring(Math.max(0, idx - 100), Math.min(htmlToParse.length, idx + 100));
-          console.log(`   🩺 문맥: ...${context.replace(/\n/g, ' ')}...`);
-        }
-      } else {
-        console.log(`   ⚠️ 주의: 응답 데이터에 전화번호 형식이 발견되지 않음. (암호화되었거나 다른 포맷일 수 있음)`);
-        // 응답의 앞부분 출력해보기 (혹시 리다이렉트나 에러 페이지인지)
-        console.log(`   🩺 헤드: ${htmlToParse.substring(0, 300).replace(/\n/g, ' ')}`);
+      // 디버깅: 여전히 보안 페이지인지 확인
+      if (htmlToParse.includes('_0xac') || htmlToParse.includes('pnp4web')) {
+        console.log('   ⚠️ 경고: 여전히 보안 스크립트가 감지됩니다. 우회 실패 가능성 있음.');
       }
-      // ------------------
 
-      // 4단계: 정규식으로 데이터 추출
+      // 5단계: 정규식으로 데이터 추출
       const phones = [];
 
-      // 전략 A: HTML Table 파싱 (기존 로직)
+      // 행 단위 매칭 시도 (tr 태그 기준)
       const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
       let rowMatch;
+
       while ((rowMatch = rowRegex.exec(htmlToParse)) !== null) {
         const rowContent = rowMatch[1];
+
+        // 셀 데이터 추출 (td 태그)
         const cellRegex = /<td[^>]*>([\s\S]*?)<\/td>/gi;
         const cells = [];
         let cellMatch;
@@ -360,39 +335,19 @@ async function scrapeLocalPhones(browser) {
           const note = cells.length > 4 ? cells[4] : '';
 
           if (phone && /[\d-]{7,}/.test(phone) && region && region !== '시도') {
-            phones.push({ region, subRegion, department, phone, note });
-          }
-        }
-      }
-
-      // 전략 B: JSON 파싱 (전략 A 실패 시)
-      if (phones.length === 0) {
-        console.log('   🔄 HTML 파싱 실패, JSON 패턴 검색 시도...');
-        // JS 변수 할당 패턴 찾기: var data = [...]; or list = [...];
-        // 느슨한 JSON 배열 매칭: [{ ... }]
-        const jsonArrays = htmlToParse.match(/\[\s*\{[\s\S]*?\}\s*\]/g);
-        if (jsonArrays) {
-          for (const jsonStr of jsonArrays) {
-            if (jsonStr.length < 100) continue; // 너무 짧으면 무시
-            try {
-              // JS 객체 리터럴일 수 있으므로 JSON.parse가 안될 수 있음. 
-              // 1차적으로 valid JSON인지 시도
-              const data = JSON.parse(jsonStr);
-              const extracted = extractPhonesFromJson(data);
-              if (extracted.length > 0) {
-                console.log(`   ✅ JSON 패턴에서 ${extracted.length}개 발견`);
-                phones.push(...extracted);
-                break;
-              }
-            } catch (e) {
-              // JSON 파싱 실패 시 (JS Object Literal일 경우 등) 무시
-            }
+            phones.push({
+              region,
+              subRegion,
+              department,
+              phone,
+              note
+            });
           }
         }
       }
 
       if (phones.length > 0) {
-        console.log(`   ✅ 정규식/파싱으로 ${phones.length}개 지역 전화번호 수집 성공`);
+        console.log(`   ✅ 수집 성공: ${phones.length}개 지역 전화번호`);
         await page.close();
         return phones;
       }
