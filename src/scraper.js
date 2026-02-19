@@ -298,16 +298,83 @@ async function scrapeLocalPhones(browser) {
         } catch {}
       });
 
+      // 콘솔 에러/로그 캡처
+      const consoleMessages = [];
+      page.on('console', msg => {
+        if (msg.type() === 'error' || msg.type() === 'warning') {
+          consoleMessages.push(`[${msg.type()}] ${msg.text()}`);
+        }
+      });
+      page.on('pageerror', err => {
+        consoleMessages.push(`[pageerror] ${err.message}`);
+      });
+      page.on('requestfailed', req => {
+        consoleMessages.push(`[reqfail] ${req.method()} ${req.url()} → ${req.failure().errorText}`);
+      });
+
       // 1단계: 메인 페이지에서 세션 쿠키 수립
       console.log('   🔑 세션 수립 중...');
       await page.goto(MAIN_URL, { waitUntil: 'networkidle2', timeout: 30000 });
 
+      // 세션 쿠키 확인
+      const cookies = await page.cookies();
+      console.log(`   🍪 쿠키 ${cookies.length}개: [${cookies.map(c => c.name).join(', ')}]`);
+
       // 요청 로그 초기화 (세션 수립 요청은 무시)
       networkRequests.length = 0;
       networkResponses.length = 0;
+      consoleMessages.length = 0;
 
       // 2단계: 전화번호 페이지로 이동
       await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
+
+      // 3단계: 페이지 JS에서 AJAX 엔드포인트 추출 시도
+      const pageScriptInfo = await page.evaluate(() => {
+        const info = { ajaxUrls: [], scriptSrcs: [], inlineScripts: [] };
+
+        // script src 목록
+        document.querySelectorAll('script[src]').forEach(s => {
+          info.scriptSrcs.push(s.src);
+        });
+
+        // 인라인 스크립트에서 AJAX URL 패턴 찾기
+        document.querySelectorAll('script:not([src])').forEach(s => {
+          const text = s.textContent || '';
+          if (text.length > 10) {
+            info.inlineScripts.push(text.substring(0, 500));
+            // .do URL 패턴 찾기
+            const urlMatches = text.match(/['"]([^'"]*\.do[^'"]*)['"]/g);
+            if (urlMatches) {
+              info.ajaxUrls.push(...urlMatches.map(m => m.replace(/['"]/g, '')));
+            }
+            // ajax/fetch 패턴
+            const ajaxMatches = text.match(/\$\.(ajax|get|post|getJSON)\s*\(\s*['"]([^'"]+)['"]/g);
+            if (ajaxMatches) info.ajaxUrls.push(...ajaxMatches);
+            const fetchMatches = text.match(/fetch\s*\(\s*['"]([^'"]+)['"]/g);
+            if (fetchMatches) info.ajaxUrls.push(...fetchMatches);
+          }
+        });
+
+        return info;
+      });
+
+      console.log(`   📜 외부 스크립트 ${pageScriptInfo.scriptSrcs.length}개:`);
+      for (const src of pageScriptInfo.scriptSrcs) {
+        console.log(`      - ${src}`);
+      }
+      if (pageScriptInfo.ajaxUrls.length > 0) {
+        console.log(`   📜 발견된 AJAX URL:`);
+        for (const url of pageScriptInfo.ajaxUrls) {
+          console.log(`      - ${url}`);
+        }
+      }
+      if (pageScriptInfo.inlineScripts.length > 0) {
+        console.log(`   📜 인라인 스크립트 ${pageScriptInfo.inlineScripts.length}개:`);
+        for (const s of pageScriptInfo.inlineScripts) {
+          console.log(`      ---`);
+          console.log(`      ${s.substring(0, 300).replace(/\n/g, '\n      ')}`);
+        }
+      }
 
       // 추가 대기 (AJAX 완료 보장)
       await new Promise(r => setTimeout(r, 5000));
@@ -401,6 +468,16 @@ async function scrapeLocalPhones(browser) {
         console.log(`   🔍 tbody 비어있음`);
       }
       console.log(`   🔍 table HTML: ${jsData.tableHtml.substring(0, 300)}`);
+
+      // 콘솔 에러 로깅
+      if (consoleMessages.length > 0) {
+        console.log(`   ⚠️ 브라우저 콘솔 메시지 ${consoleMessages.length}개:`);
+        for (const msg of consoleMessages.slice(0, 10)) {
+          console.log(`      ${msg.substring(0, 150)}`);
+        }
+      } else {
+        console.log(`   ℹ️ 브라우저 콘솔 에러 없음`);
+      }
 
       // 6단계: 페이지 전체 HTML에서 파싱 시도
       const html = await page.content();
