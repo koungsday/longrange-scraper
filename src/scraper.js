@@ -261,41 +261,63 @@ async function scrapeRegionWithRetry(browser, region) {
 // 4. 지역별 부처 전화번호 스크래핑
 // ==========================================
 // 진단 결과: DOM 파싱 실패 (tbody 0행) -> HTML 원본 텍스트에서 정규식으로 직접 추출
+// ==========================================
+// 4. 지역별 부처 전화번호 스크래핑
+// ==========================================
+// 변경: DOM 렌더링(page.content)에 의존하지 않고, 네트워크 응답 본문을 직접 가로채서 파싱
+// 이유: DOM이 업데이트되지 않아도 서버 응답(585KB)에는 데이터가 포함되어 있으므로 이를 직접 사용
 async function scrapeLocalPhones(browser) {
   console.log('📞 지역별 부처 전화번호 스크래핑...');
   const PHONE_URL = 'https://ev.or.kr/nportal/buySupprt/psLocalPhone.do';
 
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     let page = null;
+    let targetResponseText = ''; // 가로챈 응답 본문을 저장할 변수
 
     try {
       page = await browser.newPage();
       await page.setDefaultNavigationTimeout(30000);
       await page.setDefaultTimeout(30000);
 
+      // 네트워크 응답 가로채기 설정
+      page.on('response', async (response) => {
+        const url = response.url();
+        // psLocalPhone.do 요청에 대한 응답만 타겟팅 (500KB 이상 데이터 포함)
+        if (url.includes('psLocalPhone.do') && response.status() === 200) {
+          try {
+            const text = await response.text();
+            if (text && text.length > 1000) {
+              console.log(`   📡 데이터 응답 감지: ${text.length} bytes`);
+              targetResponseText = text;
+            }
+          } catch (e) {
+            console.log(`   ⚠️ 응답 텍스트 읽기 실패: ${e.message}`);
+          }
+        }
+      });
+
       // 1단계: 전화번호 페이지로 이동
       console.log('   Navigating to phone page...');
-      // 네트워크 유휴 상태 대기 (데이터 로딩 완료 가능성 높음)
       await page.goto(PHONE_URL, { waitUntil: 'networkidle0', timeout: 30000 });
 
-      // 2단계: 추가 대기 (안전장치)
-      await new Promise(r => setTimeout(r, 3000));
+      // 2단계: 응답 가로채기 대기 (이미 goto에서 캡처되었을 수 있음)
+      if (!targetResponseText) {
+        console.log('   ⏳ 응답 데이터 대기 중...');
+        await new Promise(r => setTimeout(r, 3000));
+      }
 
-      // 3단계: HTML 원본 가져오기
-      const html = await page.content();
+      // 3단계: 사용할 HTML 소스 결정 (가로챈 응답 우선, 없으면 page.content)
+      const htmlToParse = targetResponseText || await page.content();
+      console.log(`   🔍 파싱 대상 데이터 크기: ${htmlToParse.length} bytes`);
 
       // 4단계: 정규식으로 데이터 추출
-      // 패턴: <td>지역</td><td>세부지역</td><td>부서</td><td>전화번호</td>
-      // HTML 태그와 공백을 유연하게 처리하는 정규식
-      // 예: <td>서울</td>...<td>02-123-4567</td>
-
       const phones = [];
 
       // 행 단위 매칭 시도 (tr 태그 기준)
       const rowRegex = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
       let rowMatch;
 
-      while ((rowMatch = rowRegex.exec(html)) !== null) {
+      while ((rowMatch = rowRegex.exec(htmlToParse)) !== null) {
         const rowContent = rowMatch[1];
 
         // 셀 데이터 추출 (td 태그)
