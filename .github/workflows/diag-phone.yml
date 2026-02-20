@@ -1,0 +1,51 @@
+name: Diagnose Phone Scraping
+
+on:
+  workflow_dispatch:  # 수동 실행만
+
+env:
+  TZ: Asia/Seoul
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set Puppeteer Cache Directory
+        run: echo "PUPPETEER_CACHE_DIR=$(pwd)/.cache/puppeteer" >> $GITHUB_ENV
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            .cache/puppeteer
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: |
+          npm install
+          npx puppeteer install
+
+      - name: Run phone diagnostic
+        run: node src/diag-phone.js
+
+      - name: Upload diagnostic results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phone-diagnostic
+          path: |
+            data/diag-phone.json
+            data/diag-phone.html
+          retention-days: 7
