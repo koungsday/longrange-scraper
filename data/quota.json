@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-20T12:50:37.550Z",
+  "timestamp": "2026-02-20T13:00:46.100Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -725,12 +725,12 @@
           "registered_corporate": 13,
           "registered_taxi": 14,
           "registered_general": 364,
-          "delivered_total": 360,
-          "delivered_priority": 138,
+          "delivered_total": 361,
+          "delivered_priority": 139,
           "delivered_corporate": 5,
           "delivered_taxi": 10,
           "delivered_general": 207,
-          "remaining_total": 869,
+          "remaining_total": 868,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 50,
@@ -2571,16 +2571,16 @@
           "registered_corporate": 1,
           "registered_taxi": 45,
           "registered_general": 219,
-          "delivered_total": 158,
+          "delivered_total": 159,
           "delivered_priority": 45,
           "delivered_corporate": 0,
           "delivered_taxi": 25,
-          "delivered_general": 88,
-          "remaining_total": 242,
+          "delivered_general": 89,
+          "remaining_total": 241,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 252,
+          "remaining_general": 251,
           "note": "<2026년 상반기 전기자동차 보급사업 시행>\n★ 구매계약일 2026. 1. 2. 이후 건만 인정\n- 접수기간: 2026. 2. 4.(수) 10:00 ~ 예산소진시까지\n- 보급대수 : 상반기 승용 400대, 화물 90대 * 차종별 차등지원에 따라 변동될 수있음\n- 지원대상: 신청일 기준 3개월간 연속하여 여수시에 주소를 둔 개인, 법인 등\n* 대상자 선정은 자동차 출고 등록 순(보조금 지원가능 요청순)\n* 지원신청서의 빠른 승인을 위해 독촉 전화문의는 자제 부탁드립니다.\n* 자세한 사항은 공고문 참고하여 주시기 바랍니다.\n★(성능보조금)경유화물차 보유 여부 확인 시점은 보조금 지급신청일 기준입니다.\n-  국비 기준금액에서 성능보조금 50만원 차감 될 경우,\n→ 국비: 기본국비 - 50만원\n→ 지방비: (기본국비 - 50만원) x 40%\n→  소상공인: (기본국비 - 50만원) x 30%  * 그 외 추가금도 동일한 방식으로 계산\n★(전환지원금)지급 신청전 까지 처리후 서류 첨부하시면 됩니다.\n- 전환지원금은 \"개인만\" 가능합니다. (개인사업자, 법인 불가)\n- 전기차 구매 대표자가 보유했던 차량에 대해 대표자 또는 공동명의자 여부 무관하게 지원 가능합니다.\n★차종별 보조금액, 전환지원금 본공고2 첨부파일 참고(26.1.30. 기준)"
         },
         {
@@ -3127,7 +3127,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 100,
           "remaining_general": 727,
-          "note": "★ 2026년 상반기 포항시 전기자동차 보급사업 ★\n1. 사업내용 : 전기자동차 신규 등록 시 구매 보조금 지원\n2. 사 업 량 : 1,060대 【 승용 900, 화물 150, 승합 10 】\n※ 보급대수는 예산 집행 사정에 따라 변경될 수 있음\n3. 사업(접수)기간 :  2026. 2. 12.(목) 10:00 ~ 2026. 6. 12.(금) 18:00\n- 예산 소진 시 조기마감\n4. 대상차량 : 환경부 보조금 승인 확정 차량\n5. 지원금액 : 붙임 공고문 참조\n6. 지원방법 : 차량 제작 판매사를 통한 구매계약, 보조금 지원 신청\n(※ 환경부 무공해차 구매보조금 지원시스템 이용)"
+          "note": "★ 2026년 상반기 포항시 전기자동차 보급사업 ★\n★ 승용, 화물 접수마감★\n1. 사업내용 : 전기자동차 신규 등록 시 구매 보조금 지원\n2. 사 업 량 : 1,060대 【 승용 900, 화물 150, 승합 10 】\n※ 보급대수는 예산 집행 사정에 따라 변경될 수 있음\n3. 사업(접수)기간 :  2026. 2. 12.(목) 10:00 ~ 2026. 6. 12.(금) 18:00\n- 예산 소진 시 조기마감\n4. 대상차량 : 환경부 보조금 승인 확정 차량\n5. 지원금액 : 붙임 공고문 참조\n6. 지원방법 : 차량 제작 판매사를 통한 구매계약, 보조금 지원 신청\n(※ 환경부 무공해차 구매보조금 지원시스템 이용)"
         },
         {
           "sido": "경북",
@@ -3762,11 +3762,11 @@
           "quota_corporate": 0,
           "quota_taxi": 13,
           "quota_general": 212,
-          "registered_total": 66,
+          "registered_total": 67,
           "registered_priority": 18,
           "registered_corporate": 4,
           "registered_taxi": 11,
-          "registered_general": 33,
+          "registered_general": 34,
           "delivered_total": 29,
           "delivered_priority": 4,
           "delivered_corporate": 1,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-20T12:50:37.485Z"
+      "timestamp": "2026-02-20T13:00:46.010Z"
     }
   ]
 }
