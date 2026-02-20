@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-20T12:10:35.412Z",
+  "timestamp": "2026-02-20T12:20:38.047Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -434,11 +434,11 @@
           "quota_corporate": 0,
           "quota_taxi": 40,
           "quota_general": 720,
-          "registered_total": 114,
+          "registered_total": 115,
           "registered_priority": 29,
           "registered_corporate": 11,
           "registered_taxi": 9,
-          "registered_general": 65,
+          "registered_general": 66,
           "delivered_total": 27,
           "delivered_priority": 2,
           "delivered_corporate": 1,
@@ -3221,16 +3221,16 @@
           "registered_corporate": 17,
           "registered_taxi": 28,
           "registered_general": 445,
-          "delivered_total": 203,
-          "delivered_priority": 66,
+          "delivered_total": 205,
+          "delivered_priority": 67,
           "delivered_corporate": 5,
           "delivered_taxi": 9,
-          "delivered_general": 123,
-          "remaining_total": 847,
-          "remaining_priority": 39,
+          "delivered_general": 124,
+          "remaining_total": 845,
+          "remaining_priority": 38,
           "remaining_corporate": 0,
           "remaining_taxi": 43,
-          "remaining_general": 770,
+          "remaining_general": 769,
           "note": "<2026년 상반기 구미시 전기차 보급사업 >\n★ 신청기간 : 2026. 2. 4.(수) 10:00 ~ 6. 30.(화)  * 예산소진시 접수마감\n★ 보급대수 : 1,230대(승용 1,050, 화물 173, 버스 4, 어린이통학용버스 3)\n- 공고문 반드시 확인 후 신청\n- 무공해차 통합누리집의 잔여대수와 실제 잔여대수 차이 있을 수 있음\n- 대상자 선정방법 : 출고등록순\n- 계약서에 출고예정일 필히 기재\n- 지원가능확인 요청 단계에서 차량 배정 내역 등 출고예정증빙 자료 첨부\n★ 전환지원금은 \"개인\"만 신청 가능하며, 신청단계에서 전환지원금 여부 선택 후 지급 신청 전까지 판매 및 폐차 관련 서류 제출"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-20T12:10:35.275Z"
+      "timestamp": "2026-02-20T12:20:37.967Z"
     }
   ]
 }
