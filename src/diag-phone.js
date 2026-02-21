@@ -1,11 +1,16 @@
 #!/usr/bin/env node
 /**
- * 진단 v9: puppeteer-extra-plugin-stealth로 pnp4web 우회
+ * 진단 v10: 원본 HTML 분석 + Document.prototype.write 후킹
  *
- * 핵심 변경 (v8 → v9):
- * - 수동 anti-detection 제거 → stealth 플러그인이 수십 가지 벡터 자동 패치
- * - eval/Function/createElement/document.write 후킹 유지 → 복호화 캡처
- * - _getListSearch 발견 시 즉시 호출 → AJAX 요청/응답 캡처
+ * v8-v9 결과: 585KB HTML 수신 → body=0자, scripts=1. pnp4web이 실행되지 않음.
+ * 핵심 의문: 585KB에 뭐가 들어있는가? document.write 훅이 우회되고 있는가?
+ *
+ * 이번 진단:
+ * 1. 원본 HTTP 응답 body를 파일로 저장 (data/raw-phone-response.html)
+ * 2. 원본 HTML 구조 분석 (script, _ah_, body, table 등)
+ * 3. Document.prototype.write/writeln 까지 후킹 (인스턴스 + 프로토타입)
+ * 4. 모든 JS 에러 캡처
+ * 5. 로드된 모든 외부 스크립트 URL 기록
  */
 const puppeteerExtra = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
@@ -15,570 +20,286 @@ const fs = require('fs/promises');
 const BASE = 'https://ev.or.kr/nportal/buySupprt';
 const MAIN_URL = `${BASE}/initSubsidyPaymentCheckAction.do`;
 const PHONE_URL = `${BASE}/psLocalPhone.do`;
-const REAL_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36';
 
 async function main() {
-  console.log('=== 진단 v9: stealth 플러그인 ===\n');
+  console.log('=== 진단 v10: 원본 HTML 분석 ===\n');
   await fs.mkdir('data', { recursive: true });
 
   const browser = await puppeteerExtra.launch({
     headless: 'new',
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-gpu',
-      '--window-size=1920,1080',
-      '--disable-blink-features=AutomationControlled',
-      '--disable-infobars',
-    ]
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage',
+           '--disable-gpu', '--window-size=1920,1080', '--disable-blink-features=AutomationControlled'],
   });
 
   const page = await browser.newPage();
-  await page.setUserAgent(REAL_UA);
   await page.setViewport({ width: 1920, height: 1080 });
 
-  // stealth 플러그인이 webdriver/plugins/chrome/permissions 등 자동 처리
-  // 아래는 후킹만 유지 (복호화 캡처용)
-
-  // ========== eval/Function/createElement 후킹 ==========
+  // ========== 1. 후킹: 인스턴스 + 프로토타입 ==========
   await page.evaluateOnNewDocument(() => {
-    window.__capturedEvals = [];
-    window.__capturedFunctions = [];
-    window.__capturedScriptCreates = [];
-    window.__capturedDocWrites = [];
-    window.__getListSearchFound = false;
-    window.__getListSearchCode = '';
-    window.__ajaxEndpoints = [];
+    window.__writes = [];     // document.write 캡처
+    window.__protoWrites = []; // Document.prototype.write 캡처
+    window.__evals = [];
+    window.__errors = [];
+    window.__allWriteHtml = '';
 
-    // eval 후킹
+    // (A) document.write 인스턴스 후킹
+    const origWrite = document.write.bind(document);
+    const origWriteln = document.writeln.bind(document);
+    document.write = function(html) {
+      window.__writes.push({ len: String(html).length, t: Date.now(), snippet: String(html).substring(0, 500) });
+      window.__allWriteHtml += String(html);
+      return origWrite(html);
+    };
+    document.writeln = function(html) {
+      window.__writes.push({ len: String(html).length, t: Date.now(), snippet: String(html).substring(0, 500) });
+      window.__allWriteHtml += String(html) + '\n';
+      return origWriteln(html);
+    };
+
+    // (B) Document.prototype.write 프로토타입 후킹
+    const protoWrite = Document.prototype.write;
+    const protoWriteln = Document.prototype.writeln;
+    Document.prototype.write = function(html) {
+      window.__protoWrites.push({ len: String(html).length, t: Date.now(), snippet: String(html).substring(0, 500) });
+      window.__allWriteHtml += String(html);
+      return protoWrite.call(this, html);
+    };
+    Document.prototype.writeln = function(html) {
+      window.__protoWrites.push({ len: String(html).length, t: Date.now(), snippet: String(html).substring(0, 500) });
+      window.__allWriteHtml += String(html) + '\n';
+      return protoWriteln.call(this, html);
+    };
+
+    // (C) eval 후킹
     const origEval = window.eval;
     window.eval = function(code) {
-      if (typeof code === 'string') {
-        window.__capturedEvals.push({
-          time: Date.now(),
-          length: code.length,
-          snippet: code.substring(0, 2000),
-          hasGetList: code.includes('_getListSearch'),
-          hasAjax: code.includes('$.ajax') || code.includes('$.post'),
-        });
-        if (code.includes('_getListSearch')) {
-          window.__getListSearchFound = true;
-          window.__getListSearchCode = code;
-          console.log('[HOOK] eval: _getListSearch FOUND! length=' + code.length);
-        }
-        // AJAX URL 추출
-        const doMatches = code.match(/['"]([^'"]*\.do)['"]/g);
-        if (doMatches) {
-          doMatches.forEach(m => window.__ajaxEndpoints.push(m.replace(/['"]/g, '')));
-        }
-      }
+      window.__evals.push({ len: String(code).length, snippet: String(code).substring(0, 1000) });
       return origEval.call(this, code);
     };
 
-    // Function 생성자 후킹
-    const OrigFunction = Function;
-    window.Function = function() {
-      const args = Array.from(arguments);
-      const body = args.length > 0 ? String(args[args.length - 1]) : '';
-      window.__capturedFunctions.push({
-        time: Date.now(),
-        length: body.length,
-        snippet: body.substring(0, 2000),
-        hasGetList: body.includes('_getListSearch'),
-        hasAjax: body.includes('$.ajax') || body.includes('$.post'),
-      });
-      if (body.includes('_getListSearch')) {
-        window.__getListSearchFound = true;
-        window.__getListSearchCode = body;
-        console.log('[HOOK] Function: _getListSearch FOUND! length=' + body.length);
-      }
-      const doMatches = body.match(/['"]([^'"]*\.do)['"]/g);
-      if (doMatches) {
-        doMatches.forEach(m => window.__ajaxEndpoints.push(m.replace(/['"]/g, '')));
-      }
-      return new OrigFunction(...args);
-    };
-    window.Function.prototype = OrigFunction.prototype;
-
-    // document.write 후킹
-    window.__pnpWriteAll = '';
-    const origOpen = document.open.bind(document);
-    const origWrite = document.write.bind(document);
-    const origClose = document.close.bind(document);
-    document.open = function() { window.__pnpWriteAll = ''; return origOpen(); };
-    document.write = function(html) {
-      window.__pnpWriteAll += html;
-      window.__capturedDocWrites.push({
-        time: Date.now(),
-        length: html.length,
-        hasGetList: html.includes('_getListSearch'),
-        hasAjax: html.includes('$.ajax'),
-      });
-      if (html.includes('_getListSearch')) {
-        window.__getListSearchFound = true;
-        window.__getListSearchCode = html;
-        console.log('[HOOK] document.write: _getListSearch FOUND! length=' + html.length);
-      }
-      return origWrite(html);
-    };
-    document.close = function() { return origClose(); };
-
-    // script createElement 후킹
-    const origCreate = document.createElement.bind(document);
-    document.createElement = function(tag) {
-      const el = origCreate(tag);
-      if (tag.toLowerCase() === 'script') {
-        const origTextSetter = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'text')?.set;
-        const origInnerHTMLSetter = Object.getOwnPropertyDescriptor(Element.prototype, 'innerHTML')?.set;
-        if (origTextSetter) {
-          Object.defineProperty(el, 'text', {
-            set: function(val) {
-              window.__capturedScriptCreates.push({
-                time: Date.now(), length: val.length,
-                snippet: val.substring(0, 2000),
-                hasGetList: val.includes('_getListSearch'),
-              });
-              if (val.includes('_getListSearch')) {
-                window.__getListSearchFound = true;
-                window.__getListSearchCode = val;
-                console.log('[HOOK] script.text: _getListSearch FOUND!');
-              }
-              return origTextSetter.call(this, val);
-            },
-            get: function() {
-              return Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'text').get.call(this);
-            }
-          });
-        }
-      }
-      return el;
-    };
+    // (D) 에러 캡처
+    window.addEventListener('error', e => {
+      window.__errors.push({ msg: e.message, file: e.filename, line: e.lineno, col: e.colno });
+    });
   });
 
-  await page.setExtraHTTPHeaders({
-    'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-  });
-
-  // ========== 네트워크 캡처 ==========
-  const networkRequests = [];
-  const networkResponses = [];
-
-  page.on('request', req => {
-    const url = req.url();
-    if (url.includes('.do') || url.includes('/api/') || url.includes('ajax')) {
-      networkRequests.push({
-        url, method: req.method(),
-        postData: req.postData() || null,
-        time: Date.now(),
-      });
-    }
-  });
+  // ========== 2. 네트워크: 원본 응답 저장 ==========
+  const allScriptUrls = [];
+  const allResponses = [];
 
   page.on('response', async res => {
     const url = res.url();
-    if (url.includes('.do') || url.includes('/api/') || url.includes('ajax')) {
-      const entry = { url, status: res.status(), ct: (res.headers()['content-type'] || ''), time: Date.now() };
+    // 모든 .do 응답 기록
+    if (url.includes('.do')) {
+      const entry = { url, status: res.status(), ct: res.headers()['content-type'] || '' };
       try {
         const body = await res.text();
-        entry.bodySize = body.length;
-        const phones = (body.match(/\d{2,3}-\d{3,4}-\d{4}/g) || []);
-        entry.phoneCount = phones.length;
-        if (phones.length > 0) {
-          entry.phoneSample = phones.slice(0, 5);
-          entry.bodySnippet = body.substring(0, 1000);
-        }
-        // 전화번호 데이터가 있으면 전체 저장
-        if (phones.length > 5) {
-          await fs.writeFile('data/phone-ajax-response.html', body).catch(() => {});
-          console.log(`   ✅ AJAX 전화번호 응답 저장! phones=${phones.length} url=${url}`);
+        entry.size = body.length;
+        entry.phones = (body.match(/\d{2,3}-\d{3,4}-\d{4}/g) || []).length;
+        // psLocalPhone.do 원본 저장 (핵심!)
+        if (url.includes('psLocalPhone.do')) {
+          await fs.writeFile('data/raw-phone-response.html', body);
+          console.log(`   ✅ 원본 응답 저장: ${body.length}자 → data/raw-phone-response.html`);
         }
       } catch {}
-      networkResponses.push(entry);
+      allResponses.push(entry);
+    }
+    // JS 파일 URL 기록
+    if (url.endsWith('.js') || url.includes('.js?')) {
+      allScriptUrls.push(url);
     }
   });
 
-  // 콘솔 메시지 캡처 (HOOK 로그 확인용)
+  // 모든 콘솔 메시지 캡처
+  const consoleMsgs = [];
   page.on('console', msg => {
-    const text = msg.text();
-    if (text.includes('[HOOK]') || text.includes('_getListSearch')) {
-      console.log(`   [browser] ${text}`);
-    }
+    consoleMsgs.push({ type: msg.type(), text: msg.text() });
   });
 
-  // ========== 페이지 로딩 ==========
-  console.log('\n===== PART A: 페이지 로딩 =====\n');
+  // JS 에러 캡처
+  page.on('pageerror', err => {
+    consoleMsgs.push({ type: 'pageerror', text: err.message });
+  });
+
+  // ========== 3. 페이지 로딩 ==========
+  console.log('===== PART A: 페이지 로딩 =====\n');
 
   console.log('   세션 수립...');
   await page.goto(MAIN_URL, { waitUntil: 'networkidle2', timeout: 30000 });
   await new Promise(r => setTimeout(r, 2000));
 
   console.log('   전화번호 페이지...');
-  const phoneNavStart = Date.now();
+  const t0 = Date.now();
   await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-  console.log(`   페이지 로드: ${Date.now() - phoneNavStart}ms`);
+  console.log(`   페이지 로드: ${Date.now() - t0}ms`);
 
-  // 충분히 대기 — pnp4web _ah_ 처리 시간
-  console.log('   _ah_ 처리 대기 (15초)...');
-  for (let i = 0; i < 15; i++) {
+  // 대기 (10초 — pnp4web + 데이터 로드)
+  console.log('   대기 (10초)...');
+  for (let i = 0; i < 10; i++) {
     await new Promise(r => setTimeout(r, 1000));
-    const found = await page.evaluate(() => window.__getListSearchFound);
-    if (found) {
-      console.log(`   ✅ _getListSearch 발견! (${i+1}초)`);
-      break;
-    }
-    // 매 3초마다 상태 출력
-    if ((i + 1) % 3 === 0) {
-      const status = await page.evaluate(() => ({
-        evals: window.__capturedEvals.length,
-        funcs: window.__capturedFunctions.length,
-        scripts: window.__capturedScriptCreates.length,
-        writes: window.__capturedDocWrites.length,
-        getListFound: window.__getListSearchFound,
-        ajaxEndpoints: window.__ajaxEndpoints.length,
+    if ((i + 1) % 5 === 0) {
+      const s = await page.evaluate(() => ({
+        body: (document.body?.innerText || '').length,
+        html: (document.body?.innerHTML || '').length,
+        scripts: document.querySelectorAll('script').length,
+        writes: window.__writes.length,
+        protoWrites: window.__protoWrites.length,
+        evals: window.__evals.length,
+        errors: window.__errors.length,
       }));
-      console.log(`   ${i+1}초: evals=${status.evals}, funcs=${status.funcs}, scripts=${status.scripts}, writes=${status.writes}, ajax=${status.ajaxEndpoints}, found=${status.getListFound}`);
+      console.log(`   ${i+1}초: body=${s.body}, html=${s.html}, scripts=${s.scripts}, writes=${s.writes}, protoWrites=${s.protoWrites}, evals=${s.evals}, errors=${s.errors}`);
     }
   }
 
-  // ========== PART B: 후킹 결과 분석 ==========
-  console.log('\n===== PART B: 후킹 캡처 결과 =====\n');
+  // ========== 4. 후킹 결과 ==========
+  console.log('\n===== PART B: 후킹 캡처 =====\n');
 
-  const hookResults = await page.evaluate(() => {
-    return {
-      evalCount: window.__capturedEvals.length,
-      evals: window.__capturedEvals.map(e => ({
-        length: e.length, snippet: e.snippet, hasGetList: e.hasGetList, hasAjax: e.hasAjax,
-      })),
-      funcCount: window.__capturedFunctions.length,
-      funcs: window.__capturedFunctions.map(f => ({
-        length: f.length, snippet: f.snippet, hasGetList: f.hasGetList, hasAjax: f.hasAjax,
-      })),
-      scriptCount: window.__capturedScriptCreates.length,
-      scripts: window.__capturedScriptCreates.map(s => ({
-        length: s.length, snippet: s.snippet, hasGetList: s.hasGetList,
-      })),
-      writeCount: window.__capturedDocWrites.length,
-      writes: window.__capturedDocWrites.map(w => ({
-        length: w.length, hasGetList: w.hasGetList, hasAjax: w.hasAjax,
-      })),
-      getListFound: window.__getListSearchFound,
-      getListCodeLength: window.__getListSearchCode.length,
-      getListCodeSnippet: window.__getListSearchCode.substring(0, 3000),
-      ajaxEndpoints: [...new Set(window.__ajaxEndpoints)],
-    };
-  });
+  const hooks = await page.evaluate(() => ({
+    writes: window.__writes.map(w => ({ len: w.len, snippet: w.snippet })),
+    protoWrites: window.__protoWrites.map(w => ({ len: w.len, snippet: w.snippet })),
+    evals: window.__evals.map(e => ({ len: e.len, snippet: e.snippet })),
+    errors: window.__errors,
+    totalWriteLen: window.__allWriteHtml.length,
+    writeHtmlSample: window.__allWriteHtml.substring(0, 2000),
+  }));
 
-  console.log(`   eval 캡처: ${hookResults.evalCount}개`);
-  hookResults.evals.forEach((e, i) => {
-    console.log(`   [eval ${i}] ${e.length}자, getList=${e.hasGetList}, ajax=${e.hasAjax}`);
-    if (e.hasGetList || e.hasAjax) {
-      console.log(`   코드: ${e.snippet.substring(0, 500)}`);
-    }
-  });
+  console.log(`   document.write: ${hooks.writes.length}회`);
+  hooks.writes.forEach((w, i) => console.log(`   [write ${i}] ${w.len}자: ${w.snippet.substring(0, 200)}`));
 
-  console.log(`\n   Function 캡처: ${hookResults.funcCount}개`);
-  hookResults.funcs.forEach((f, i) => {
-    console.log(`   [func ${i}] ${f.length}자, getList=${f.hasGetList}, ajax=${f.hasAjax}`);
-    if (f.hasGetList || f.hasAjax) {
-      console.log(`   코드: ${f.snippet.substring(0, 500)}`);
-    }
-  });
+  console.log(`   Document.prototype.write: ${hooks.protoWrites.length}회`);
+  hooks.protoWrites.forEach((w, i) => console.log(`   [proto ${i}] ${w.len}자: ${w.snippet.substring(0, 200)}`));
 
-  console.log(`\n   createElement('script') 캡처: ${hookResults.scriptCount}개`);
-  hookResults.scripts.forEach((s, i) => {
-    console.log(`   [script ${i}] ${s.length}자, getList=${s.hasGetList}`);
-    if (s.hasGetList) {
-      console.log(`   코드: ${s.snippet.substring(0, 500)}`);
-    }
-  });
+  console.log(`   eval: ${hooks.evals.length}회`);
+  hooks.evals.forEach((e, i) => console.log(`   [eval ${i}] ${e.len}자: "${e.snippet}"`));
 
-  console.log(`\n   document.write 캡처: ${hookResults.writeCount}개`);
-  hookResults.writes.forEach((w, i) => {
-    console.log(`   [write ${i}] ${w.length}자, getList=${w.hasGetList}, ajax=${w.hasAjax}`);
-  });
+  console.log(`   JS 에러: ${hooks.errors.length}개`);
+  hooks.errors.forEach((e, i) => console.log(`   [err ${i}] ${e.msg} @ ${e.file}:${e.line}`));
 
-  console.log(`\n   _getListSearch 발견: ${hookResults.getListFound}`);
-  if (hookResults.getListFound) {
-    console.log(`   코드 길이: ${hookResults.getListCodeLength}자`);
-    console.log(`   코드:\n${hookResults.getListCodeSnippet}`);
+  if (hooks.totalWriteLen > 0) {
+    console.log(`\n   write 총 출력: ${hooks.totalWriteLen}자`);
+    console.log(`   샘플: ${hooks.writeHtmlSample}`);
+    await fs.writeFile('data/write-output.html', await page.evaluate(() => window.__allWriteHtml)).catch(() => {});
   }
 
-  console.log(`\n   AJAX 엔드포인트: ${hookResults.ajaxEndpoints.join(', ') || '(없음)'}`);
+  // ========== 5. 원본 HTML 분석 ==========
+  console.log('\n===== PART C: 원본 HTML 구조 분석 =====\n');
 
-  // ========== PART C: 직접 _getListSearch 호출 시도 ==========
-  console.log('\n===== PART C: _getListSearch 직접 호출 =====\n');
+  let rawHtml = '';
+  try { rawHtml = await fs.readFile('data/raw-phone-response.html', 'utf8'); } catch {}
 
-  const fnCheck = await page.evaluate(() => {
-    const result = {
-      hasGetListSearch: typeof _getListSearch === 'function',
-      hasGoPage: typeof goPage === 'function',
-      hasFnSearch: typeof fnSearch === 'function',
-      hasInitPage: typeof initPage === 'function',
-    };
+  if (rawHtml) {
+    console.log(`   원본 크기: ${rawHtml.length}자`);
 
-    // 모든 전역 함수 중 관련 있어 보이는 것들
-    const interestingFns = Object.keys(window).filter(k => {
-      try {
-        return typeof window[k] === 'function' &&
-          (k.toLowerCase().includes('search') || k.toLowerCase().includes('list') ||
-           k.toLowerCase().includes('phone') || k.toLowerCase().includes('ajax') ||
-           k.toLowerCase().includes('grid') || k.toLowerCase().includes('page') ||
-           k.toLowerCase().includes('submit') || k.toLowerCase().includes('query'));
-      } catch { return false; }
-    });
-    result.globalFns = interestingFns;
+    // 기본 구조
+    const hasDoctype = rawHtml.startsWith('<!DOCTYPE') || rawHtml.startsWith('<!doctype');
+    const headMatch = rawHtml.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
+    const bodyMatch = rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+    console.log(`   DOCTYPE: ${hasDoctype}`);
+    console.log(`   <head> 길이: ${headMatch ? headMatch[1].length : 'N/A'}자`);
+    console.log(`   <body> 길이: ${bodyMatch ? bodyMatch[1].length : 'N/A'}자`);
 
-    // DOM 상태
-    result.tbodyRows = document.querySelectorAll('table tbody tr').length;
-    result.allTds = document.querySelectorAll('table tbody tr td').length;
-    result.ajsScripts = document.querySelectorAll('script[_ajs_]').length;
-    result.allScripts = document.querySelectorAll('script').length;
-
-    return result;
-  });
-
-  console.log(`   _getListSearch: ${fnCheck.hasGetListSearch}`);
-  console.log(`   goPage: ${fnCheck.hasGoPage}`);
-  console.log(`   fnSearch: ${fnCheck.hasFnSearch}`);
-  console.log(`   initPage: ${fnCheck.hasInitPage}`);
-  console.log(`   전역 관련 함수: ${fnCheck.globalFns.join(', ')}`);
-  console.log(`   tbody rows: ${fnCheck.tbodyRows}, tds: ${fnCheck.allTds}`);
-  console.log(`   _ajs_ scripts: ${fnCheck.ajsScripts}, all scripts: ${fnCheck.allScripts}`);
-
-  // _getListSearch가 있으면 호출!
-  if (fnCheck.hasGetListSearch) {
-    console.log('\n   🎯 _getListSearch 호출!');
-    const preReqCount = networkRequests.length;
-    await page.evaluate(() => {
-      try { _getListSearch(); } catch (e) { console.log('[HOOK] _getListSearch error: ' + e.message); }
-    });
-    await new Promise(r => setTimeout(r, 5000));
-
-    const newReqs = networkRequests.slice(preReqCount);
-    console.log(`   _getListSearch 후 새 요청: ${newReqs.length}개`);
-    newReqs.forEach(r => {
-      console.log(`   ${r.method} ${r.url}`);
-      if (r.postData) console.log(`   POST data: ${r.postData.substring(0, 300)}`);
-    });
-
-    // tbody 확인
-    const afterRows = await page.evaluate(() => ({
-      rows: document.querySelectorAll('table tbody tr').length,
-      tds: document.querySelectorAll('table tbody tr td').length,
-      text: document.querySelector('table tbody')?.innerText?.substring(0, 500) || '',
-    }));
-    console.log(`   호출 후: rows=${afterRows.rows}, tds=${afterRows.tds}`);
-    if (afterRows.text) console.log(`   tbody 텍스트: ${afterRows.text}`);
-  }
-
-  // goPage가 있으면 시도
-  if (fnCheck.hasGoPage && !fnCheck.hasGetListSearch) {
-    console.log('\n   📞 goPage(1) 시도...');
-    const preReqCount = networkRequests.length;
-    try {
-      await page.evaluate(() => {
-        try { goPage(1); } catch (e) { console.log('[HOOK] goPage error: ' + e.message); }
-      });
-    } catch {}
-    await new Promise(r => setTimeout(r, 5000));
-
-    const newReqs = networkRequests.slice(preReqCount);
-    console.log(`   goPage 후 새 요청: ${newReqs.length}개`);
-    newReqs.forEach(r => {
-      console.log(`   ${r.method} ${r.url}`);
-      if (r.postData) console.log(`   POST data: ${r.postData.substring(0, 300)}`);
-    });
-  }
-
-  // ========== PART D: 네트워크 요약 ==========
-  console.log('\n===== PART D: 네트워크 요약 =====\n');
-
-  console.log(`   총 .do 요청: ${networkRequests.length}개`);
-  networkRequests.forEach((r, i) => {
-    console.log(`   [req ${i}] ${r.method} ${r.url}`);
-    if (r.postData) console.log(`           POST: ${r.postData.substring(0, 200)}`);
-  });
-
-  console.log(`\n   총 .do 응답: ${networkResponses.length}개`);
-  networkResponses.forEach((r, i) => {
-    console.log(`   [res ${i}] ${r.status} ${r.url} ct=${r.ct} size=${r.bodySize || 0} phones=${r.phoneCount || 0}`);
-    if (r.phoneCount > 0) {
-      console.log(`   📞 전화: ${r.phoneSample?.join(', ')}`);
-    }
-  });
-
-  // ========== PART E: document.write HTML 분석 ==========
-  console.log('\n===== PART E: 복호화 HTML 분석 =====\n');
-
-  const htmlAnalysis = await page.evaluate(() => {
-    const html = window.__pnpWriteAll || '';
-    if (!html) return { empty: true };
-
-    // _ah_ 스크립트 검색
-    const ahMatches = [...html.matchAll(/_ah_\s*=\s*['"]([^'"]*)['"]/g)];
-    // 모든 스크립트 태그 검색
-    const scriptMatches = [...html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/gi)];
-    // _getListSearch 검색
-    const getListIdx = html.indexOf('_getListSearch');
-
-    return {
-      empty: false,
-      totalLength: html.length,
-      ahScriptCount: ahMatches.length,
-      ahLengths: ahMatches.map(m => m[1].length),
-      ahSnippets: ahMatches.map(m => m[1].substring(0, 200)),
-      totalScripts: scriptMatches.length,
-      inlineScripts: scriptMatches.filter(m => !m[1].includes('src=')).length,
-      getListSearchFound: getListIdx >= 0,
-      getListSearchContext: getListIdx >= 0 ? html.substring(Math.max(0, getListIdx - 200), getListIdx + 500) : '',
-      // tbody 내용 확인
-      tbodyMatch: html.match(/<tbody[^>]*>([\s\S]*?)<\/tbody>/)?.[1]?.substring(0, 500) || '',
-    };
-  });
-
-  if (htmlAnalysis.empty) {
-    console.log('   ⚠️ document.write 캡처 없음!');
-  } else {
-    console.log(`   HTML 길이: ${htmlAnalysis.totalLength}자`);
-    console.log(`   스크립트: ${htmlAnalysis.totalScripts}개 (인라인: ${htmlAnalysis.inlineScripts}개)`);
-    console.log(`   _ah_ 스크립트: ${htmlAnalysis.ahScriptCount}개`);
-    htmlAnalysis.ahLengths.forEach((len, i) => {
-      console.log(`   [ah ${i}] ${len}자: ${htmlAnalysis.ahSnippets[i]}`);
-    });
-    console.log(`   _getListSearch in write HTML: ${htmlAnalysis.getListSearchFound}`);
-    if (htmlAnalysis.getListSearchFound) {
-      console.log(`   컨텍스트: ${htmlAnalysis.getListSearchContext}`);
-    }
-    console.log(`   tbody: "${htmlAnalysis.tbodyMatch}"`);
-  }
-
-  // ========== PART F: _ah_ 수동 분석 ==========
-  console.log('\n===== PART F: _ah_ 수동 분석 =====\n');
-
-  // _ah_ 속성이 있으면 그 내용의 패턴 분석
-  if (htmlAnalysis.ahScriptCount > 0) {
-    const ahContent = await page.evaluate(() => {
-      const html = window.__pnpWriteAll || '';
-      const ahMatches = [...html.matchAll(/_ah_\s*=\s*['"]([^'"]*)['"]/g)];
-      if (ahMatches.length === 0) return null;
-      const content = ahMatches[0][1];
-      return {
-        total: content.length,
-        first500: content.substring(0, 500),
-        last200: content.substring(content.length - 200),
-        // 바이트 패턴 분석
-        isHex: /^[0-9a-f]+$/i.test(content),
-        isBase64: /^[A-Za-z0-9+/=]+$/.test(content),
-        uniqueChars: [...new Set(content)].sort().join(''),
-        charFreq: (() => {
-          const freq = {};
-          for (const c of content.substring(0, 10000)) {
-            freq[c] = (freq[c] || 0) + 1;
-          }
-          return Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 20);
-        })(),
-      };
-    });
-
-    if (ahContent) {
-      console.log(`   _ah_ 내용: ${ahContent.total}자`);
-      console.log(`   처음: ${ahContent.first500}`);
-      console.log(`   마지막: ${ahContent.last200}`);
-      console.log(`   hex: ${ahContent.isHex}, base64: ${ahContent.isBase64}`);
-      console.log(`   고유 문자: ${ahContent.uniqueChars}`);
-      console.log(`   빈도: ${ahContent.charFreq.map(([c, n]) => `${c}:${n}`).join(', ')}`);
-
-      // _ah_ 내용 저장
-      const fullAh = await page.evaluate(() => {
-        const html = window.__pnpWriteAll || '';
-        const m = html.match(/_ah_\s*=\s*['"]([^'"]*)['"]/);
-        return m ? m[1] : '';
-      });
-      if (fullAh) {
-        await fs.writeFile('data/ah-encrypted.txt', fullAh);
-        console.log(`   ✅ data/ah-encrypted.txt 저장 (${fullAh.length}자)`);
+    // script 태그
+    const scriptTags = [...rawHtml.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/gi)];
+    console.log(`   <script> 태그: ${scriptTags.length}개`);
+    scriptTags.forEach((m, i) => {
+      const attrs = m[1].trim();
+      const bodyLen = m[2].length;
+      const hasSrc = attrs.includes('src=');
+      const hasAjs = attrs.includes('_ajs_');
+      const hasAh = attrs.includes('_ah_');
+      console.log(`   [script ${i}] attrs="${attrs.substring(0, 150)}" body=${bodyLen}자 src=${hasSrc} _ajs_=${hasAjs} _ah_=${hasAh}`);
+      if (!hasSrc && bodyLen > 0 && bodyLen < 500) {
+        console.log(`     내용: ${m[2].substring(0, 300)}`);
       }
+    });
+
+    // _ah_ 속성 (스크립트 외에도 있을 수 있음)
+    const ahAttrs = [...rawHtml.matchAll(/_ah_\s*=\s*['"]([^'"]*)['"]/g)];
+    console.log(`\n   _ah_ 속성: ${ahAttrs.length}개`);
+    ahAttrs.forEach((m, i) => {
+      console.log(`   [ah ${i}] ${m[1].length}자: ${m[1].substring(0, 100)}...`);
+    });
+
+    // pnp4web 참조
+    const pnpRefs = rawHtml.match(/pnp4web[^'"<>]*/gi) || [];
+    console.log(`   pnp4web 참조: ${pnpRefs.length}개`);
+    pnpRefs.forEach(r => console.log(`     ${r}`));
+
+    // table 태그
+    const tables = [...rawHtml.matchAll(/<table([^>]*)>/gi)];
+    console.log(`   <table> 태그: ${tables.length}개`);
+
+    // 전화번호 패턴
+    const phonePatterns = rawHtml.match(/\d{2,3}-\d{3,4}-\d{4}/g) || [];
+    console.log(`   전화번호 패턴: ${phonePatterns.length}개`);
+    if (phonePatterns.length > 0) console.log(`   샘플: ${phonePatterns.slice(0, 5).join(', ')}`);
+
+    // 처음/끝 500자
+    console.log(`\n   === 원본 HTML 처음 500자 ===`);
+    console.log(rawHtml.substring(0, 500));
+    console.log(`\n   === 원본 HTML 마지막 500자 ===`);
+    console.log(rawHtml.substring(rawHtml.length - 500));
+
+    // body 태그 내용 처음 1000자
+    if (bodyMatch) {
+      console.log(`\n   === <body> 처음 1000자 ===`);
+      console.log(bodyMatch[1].substring(0, 1000));
     }
+  } else {
+    console.log('   ⚠️ 원본 HTML 파일 없음');
   }
 
-  // DOM _ajs_ 스크립트도 확인 (이미 처리된 것)
-  const domAjs = await page.evaluate(() => {
-    const scripts = document.querySelectorAll('script[_ajs_]');
-    return [...scripts].map(s => ({
-      ajs: s.getAttribute('_ajs_'),
-      ah: (s.getAttribute('_ah_') || '').length,
-      text: s.textContent.substring(0, 500),
-      textLen: s.textContent.length,
-    }));
-  });
-  console.log(`\n   DOM _ajs_ 스크립트: ${domAjs.length}개`);
-  domAjs.forEach((s, i) => {
-    console.log(`   [${i}] _ajs_="${s.ajs}" _ah_=${s.ah}자 text=${s.textLen}자`);
-    if (s.textLen > 0) console.log(`   텍스트: ${s.text}`);
-  });
+  // ========== 6. 현재 DOM 상태 ==========
+  console.log('\n===== PART D: 현재 DOM 상태 =====\n');
 
-  // ========== PART G: 전체 DOM 텍스트에서 전화번호 찾기 ==========
-  console.log('\n===== PART G: DOM 전화번호 검색 =====\n');
+  const dom = await page.evaluate(() => ({
+    title: document.title,
+    url: location.href,
+    bodyText: (document.body?.innerText || '').length,
+    bodyHtml: (document.body?.innerHTML || '').length,
+    allElements: document.querySelectorAll('*').length,
+    scripts: document.querySelectorAll('script').length,
+    scriptSrcs: [...document.querySelectorAll('script[src]')].map(s => s.src),
+    tables: document.querySelectorAll('table').length,
+    tds: document.querySelectorAll('td').length,
+    docHtml: document.documentElement.outerHTML.substring(0, 1000),
+  }));
 
-  const phoneSearch = await page.evaluate(() => {
-    const bodyText = document.body?.innerText || '';
-    const bodyHtml = document.body?.innerHTML || '';
-    const phones = bodyText.match(/\d{2,3}-\d{3,4}-\d{4}/g) || [];
-    const htmlPhones = bodyHtml.match(/\d{2,3}-\d{3,4}-\d{4}/g) || [];
+  console.log(`   title: "${dom.title}"`);
+  console.log(`   url: ${dom.url}`);
+  console.log(`   body text: ${dom.bodyText}자, html: ${dom.bodyHtml}자`);
+  console.log(`   전체 요소: ${dom.allElements}개`);
+  console.log(`   scripts: ${dom.scripts}, tables: ${dom.tables}, tds: ${dom.tds}`);
+  console.log(`   script srcs: ${dom.scriptSrcs.join(' | ') || '없음'}`);
+  console.log(`\n   === 현재 DOM 처음 1000자 ===`);
+  console.log(dom.docHtml);
 
-    return {
-      bodyTextLen: bodyText.length,
-      bodyHtmlLen: bodyHtml.length,
-      textPhones: phones.length,
-      htmlPhones: htmlPhones.length,
-      phoneSamples: phones.slice(0, 10),
-      // 테이블 텍스트
-      tableText: document.querySelector('table')?.innerText?.substring(0, 1000) || '(테이블 없음)',
-      // 전체 본문 일부
-      bodyTextSample: bodyText.substring(0, 500),
-    };
-  });
+  // ========== 7. 네트워크 요약 ==========
+  console.log('\n===== PART E: 네트워크 =====\n');
 
-  console.log(`   body text: ${phoneSearch.bodyTextLen}자, html: ${phoneSearch.bodyHtmlLen}자`);
-  console.log(`   텍스트 전화번호: ${phoneSearch.textPhones}개`);
-  console.log(`   HTML 전화번호: ${phoneSearch.htmlPhones}개`);
-  if (phoneSearch.phoneSamples.length > 0) {
-    console.log(`   샘플: ${phoneSearch.phoneSamples.join(', ')}`);
-  }
-  console.log(`   테이블: ${phoneSearch.tableText}`);
-  console.log(`   본문: ${phoneSearch.bodyTextSample}`);
+  console.log(`   .do 응답: ${allResponses.length}개`);
+  allResponses.forEach(r => console.log(`   ${r.status} ${r.url} size=${r.size || '?'} phones=${r.phones || 0}`));
+
+  console.log(`\n   로드된 JS: ${allScriptUrls.length}개`);
+  allScriptUrls.forEach(u => console.log(`   ${u}`));
+
+  console.log(`\n   콘솔 메시지: ${consoleMsgs.length}개`);
+  consoleMsgs.forEach(m => console.log(`   [${m.type}] ${m.text.substring(0, 200)}`));
 
   // ========== 저장 ==========
-  const html = await page.content();
+  const pageHtml = await page.content();
   await browser.close();
 
-  await fs.writeFile('data/diag-phone.html', html);
+  await fs.writeFile('data/diag-phone.html', pageHtml);
+  await fs.writeFile('data/diag-phone.json', JSON.stringify({
+    timestamp: new Date().toISOString(), version: 'v10',
+    hooks: { writes: hooks.writes.length, protoWrites: hooks.protoWrites.length, evals: hooks.evals.length, errors: hooks.errors.length },
+    dom: { bodyText: dom.bodyText, bodyHtml: dom.bodyHtml, scripts: dom.scripts, tables: dom.tables },
+    network: { responses: allResponses.length, jsFiles: allScriptUrls.length },
+    rawHtmlSize: rawHtml.length,
+  }, null, 2));
 
-  // document.write HTML도 저장
-  const writeHtml = await fs.readFile('data/diag-phone.html', 'utf8').catch(() => '');
-  // 결과 JSON
-  const report = {
-    timestamp: new Date().toISOString(),
-    version: 'v9-stealth',
-    headless: true,
-    hookResults: {
-      evalCount: hookResults.evalCount,
-      funcCount: hookResults.funcCount,
-      scriptCount: hookResults.scriptCount,
-      writeCount: hookResults.writeCount,
-      getListFound: hookResults.getListFound,
-      ajaxEndpoints: hookResults.ajaxEndpoints,
-    },
-    fnCheck,
-    networkRequests: networkRequests.length,
-    networkResponses: networkResponses.map(r => ({ url: r.url, status: r.status, phones: r.phoneCount })),
-    phoneSearch: { textPhones: phoneSearch.textPhones, htmlPhones: phoneSearch.htmlPhones },
-  };
-  await fs.writeFile('data/diag-phone.json', JSON.stringify(report, null, 2));
-
-  console.log('\n✅ 진단 v9 완료');
+  console.log('\n✅ 진단 v10 완료');
 }
 
 main().catch(err => {
