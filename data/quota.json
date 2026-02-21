@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-21T01:00:44.153Z",
+  "timestamp": "2026-02-21T01:10:39.682Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1869,16 +1869,16 @@
           "registered_corporate": 13,
           "registered_taxi": 20,
           "registered_general": 533,
-          "delivered_total": 190,
+          "delivered_total": 191,
           "delivered_priority": 32,
           "delivered_corporate": 4,
           "delivered_taxi": 4,
-          "delivered_general": 150,
-          "remaining_total": 402,
+          "delivered_general": 151,
+          "remaining_total": 401,
           "remaining_priority": 27,
           "remaining_corporate": 0,
           "remaining_taxi": 25,
-          "remaining_general": 354,
+          "remaining_general": 353,
           "note": "<2026년 아산시 상반기 전기자동차(승용, 화물) 보급사업>\n1. 접수시작일 : [승용] ’26. 2. 05.(목) 10:00 ~\n2. 신청대상 : 만 18세 이상 아산시민, 법인, 단체 등(신청일 접수일 기준 90일 이전 거주)\n3. 보급대수: 승용 592  * 우선순위, 택시 물량 포함\n※ 차종별 보조금 차등지원 및 구매수요에 따라 보급물량은 별도 공고 없이 조정될 수 있음."
         },
         {
@@ -2649,16 +2649,16 @@
           "registered_corporate": 3,
           "registered_taxi": 5,
           "registered_general": 191,
-          "delivered_total": 71,
+          "delivered_total": 72,
           "delivered_priority": 9,
           "delivered_corporate": 1,
           "delivered_taxi": 1,
-          "delivered_general": 60,
-          "remaining_total": 229,
+          "delivered_general": 61,
+          "remaining_total": 228,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 240,
+          "remaining_general": 239,
           "note": ""
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-21T01:00:44.070Z"
+      "timestamp": "2026-02-21T01:10:39.620Z"
     }
   ]
 }
