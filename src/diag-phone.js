@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 /**
- * 진단 v8: xvfb + headless:false로 pnp4web headless 감지 완전 우회
+ * 진단 v9: puppeteer-extra-plugin-stealth로 pnp4web 우회
  *
- * 핵심 전략:
- * 1. xvfb 가상 디스플레이로 headless:false 사용 → pnp4web이 실제 브라우저로 인식
- * 2. eval() / new Function() / createElement('script') 전부 후킹 → _ah_ 복호화 캡처
- * 3. _getListSearch 발견 시 즉시 호출 → AJAX 요청/응답 캡처
- * 4. 네트워크 레벨에서도 모든 .do 요청 캡처
+ * 핵심 변경 (v8 → v9):
+ * - 수동 anti-detection 제거 → stealth 플러그인이 수십 가지 벡터 자동 패치
+ * - eval/Function/createElement/document.write 후킹 유지 → 복호화 캡처
+ * - _getListSearch 발견 시 즉시 호출 → AJAX 요청/응답 캡처
  */
-const puppeteer = require('puppeteer');
+const puppeteerExtra = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+puppeteerExtra.use(StealthPlugin());
 const fs = require('fs/promises');
 
 const BASE = 'https://ev.or.kr/nportal/buySupprt';
@@ -17,28 +18,19 @@ const PHONE_URL = `${BASE}/psLocalPhone.do`;
 const REAL_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36';
 
 async function main() {
-  console.log('=== 진단 v8: xvfb + headless:false ===\n');
+  console.log('=== 진단 v9: stealth 플러그인 ===\n');
   await fs.mkdir('data', { recursive: true });
 
-  // headless:false가 가능한지 확인 (DISPLAY 환경변수)
-  const hasDisplay = !!process.env.DISPLAY;
-  const useHeadless = !hasDisplay;
-  console.log(`   DISPLAY=${process.env.DISPLAY || '(없음)'}, headless=${useHeadless}`);
-
-  const browser = await puppeteer.launch({
-    headless: useHeadless ? 'new' : false,
+  const browser = await puppeteerExtra.launch({
+    headless: 'new',
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--disable-gpu',
       '--window-size=1920,1080',
-      // 추가 anti-detection
       '--disable-blink-features=AutomationControlled',
       '--disable-infobars',
-      '--disable-background-timer-throttling',
-      '--disable-backgrounding-occluded-windows',
-      '--disable-renderer-backgrounding',
     ]
   });
 
@@ -46,64 +38,8 @@ async function main() {
   await page.setUserAgent(REAL_UA);
   await page.setViewport({ width: 1920, height: 1080 });
 
-  // ========== 종합 anti-detection ==========
-  await page.evaluateOnNewDocument(() => {
-    // webdriver
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-    // plugins
-    Object.defineProperty(navigator, 'plugins', {
-      get: () => {
-        const plugins = [
-          { name: 'Chrome PDF Plugin', filename: 'internal-pdf-viewer', description: 'Portable Document Format' },
-          { name: 'Chrome PDF Viewer', filename: 'mhjfbmdgcfjbbpaeojofohoefgiehjai', description: '' },
-          { name: 'Native Client', filename: 'internal-nacl-plugin', description: '' },
-        ];
-        plugins.length = 3;
-        return plugins;
-      }
-    });
-    // languages
-    Object.defineProperty(navigator, 'languages', { get: () => ['ko-KR', 'ko', 'en-US', 'en'] });
-    // platform
-    Object.defineProperty(navigator, 'platform', { get: () => 'Win32' });
-    // hardwareConcurrency
-    Object.defineProperty(navigator, 'hardwareConcurrency', { get: () => 8 });
-    // deviceMemory
-    Object.defineProperty(navigator, 'deviceMemory', { get: () => 8 });
-    // chrome object
-    window.chrome = {
-      runtime: { onMessage: { addListener: () => {}, removeListener: () => {} } },
-      loadTimes: () => ({
-        commitLoadTime: Date.now() / 1000, connectionInfo: 'h2',
-        finishDocumentLoadTime: Date.now() / 1000, finishLoadTime: Date.now() / 1000,
-        firstPaintAfterLoadTime: 0, firstPaintTime: Date.now() / 1000,
-        navigationType: 'Other', npnNegotiatedProtocol: 'h2',
-        requestTime: Date.now() / 1000 - 0.1, startLoadTime: Date.now() / 1000 - 0.2,
-        wasAlternateProtocolAvailable: false, wasFetchedViaSpdy: true,
-        wasNpnNegotiated: true
-      }),
-      csi: () => ({ pageT: Date.now(), startE: Date.now(), onloadT: Date.now() }),
-    };
-    // permissions
-    const origQuery = window.navigator.permissions?.query;
-    if (origQuery) {
-      window.navigator.permissions.query = (params) => {
-        if (params.name === 'notifications') {
-          return Promise.resolve({ state: Notification.permission });
-        }
-        return origQuery(params);
-      };
-    }
-    // screen properties
-    Object.defineProperty(screen, 'availWidth', { get: () => 1920 });
-    Object.defineProperty(screen, 'availHeight', { get: () => 1040 });
-    Object.defineProperty(screen, 'colorDepth', { get: () => 24 });
-    // outerWidth/Height (key headless indicator!)
-    Object.defineProperty(window, 'outerWidth', { get: () => 1920 });
-    Object.defineProperty(window, 'outerHeight', { get: () => 1040 });
-    // hasFocus
-    document.hasFocus = () => true;
-  });
+  // stealth 플러그인이 webdriver/plugins/chrome/permissions 등 자동 처리
+  // 아래는 후킹만 유지 (복호화 캡처용)
 
   // ========== eval/Function/createElement 후킹 ==========
   await page.evaluateOnNewDocument(() => {
@@ -625,8 +561,8 @@ async function main() {
   // 결과 JSON
   const report = {
     timestamp: new Date().toISOString(),
-    headless: useHeadless,
-    display: process.env.DISPLAY || null,
+    version: 'v9-stealth',
+    headless: true,
     hookResults: {
       evalCount: hookResults.evalCount,
       funcCount: hookResults.funcCount,
@@ -642,7 +578,7 @@ async function main() {
   };
   await fs.writeFile('data/diag-phone.json', JSON.stringify(report, null, 2));
 
-  console.log('\n✅ 진단 v8 완료');
+  console.log('\n✅ 진단 v9 완료');
 }
 
 main().catch(err => {

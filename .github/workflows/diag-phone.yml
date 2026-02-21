@@ -37,13 +37,8 @@ jobs:
           npm install
           npx puppeteer install
 
-      - name: Install xvfb
-        run: sudo apt-get update && sudo apt-get install -y xvfb
-
-      - name: Run phone diagnostic (with xvfb)
-        run: xvfb-run --auto-servernum --server-args='-screen 0 1920x1080x24' node src/diag-phone.js
-        env:
-          DISPLAY: ':99'
+      - name: Run phone diagnostic (stealth plugin)
+        run: node src/diag-phone.js
 
       - name: Upload diagnostic results
         if: always()
