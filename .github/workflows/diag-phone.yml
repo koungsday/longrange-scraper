@@ -37,8 +37,13 @@ jobs:
           npm install
           npx puppeteer install
 
-      - name: Run phone diagnostic
-        run: node src/diag-phone.js
+      - name: Install xvfb
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+
+      - name: Run phone diagnostic (with xvfb)
+        run: xvfb-run --auto-servernum --server-args='-screen 0 1920x1080x24' node src/diag-phone.js
+        env:
+          DISPLAY: ':99'
 
       - name: Upload diagnostic results
         if: always()
@@ -50,4 +55,6 @@ jobs:
             data/diag-phone.html
             data/decrypted-full.html
             data/decrypted-raw.html
+            data/ah-encrypted.txt
+            data/phone-ajax-response.html
           retention-days: 7
