@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-21T07:30:42.122Z",
+  "timestamp": "2026-02-21T07:40:36.643Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1844,15 +1844,15 @@
           "registered_taxi": 3,
           "registered_general": 115,
           "delivered_total": 60,
-          "delivered_priority": 6,
+          "delivered_priority": 7,
           "delivered_corporate": 0,
           "delivered_taxi": 1,
-          "delivered_general": 53,
+          "delivered_general": 52,
           "remaining_total": 10,
-          "remaining_priority": 1,
+          "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 2,
-          "remaining_general": 7,
+          "remaining_general": 8,
           "note": "★사업포기 시 공고파일 첨부3 서식에 따라 포기서 제출해 주시기  바랍니다.\n★ 전기 화물 마감안내(신청번호 55번 이후 순번은 대기 물량으로 전환, 취소분 발생 시 순차 연락 예정입니다.)\n<2026년 상반기 전기자동차(승용·화물) 보급사업>\n- 접수기간 ※ 예산소진시 조기마감\n[승용] '26. 2. 3.(화) ~ 6. 5.(금) 09:00~18:00\n[화물] '26. 2. 9.(월) ~ 6. 5.(금) 09:00~18:00\n- 보급대수: 승용 70대(일반 59, 우선 7, 택시 4), 화물 50대(일반 42, 우선 5, 택배 3)\n- 선정기준: 출고·등록순( *자격부여는 신청접수순으로 예산범위 초과하여 선정하며 대상자 선정된것 아님)\n※ 기타 자세한 문의사항은 공고문을 참조하시기 바라며, 자격부여, 대상자 선정 요청, 금액확인을 위한 전화문의 자제바랍니다."
         },
         {
@@ -3143,16 +3143,16 @@
           "registered_corporate": 21,
           "registered_taxi": 45,
           "registered_general": 369,
-          "delivered_total": 133,
+          "delivered_total": 134,
           "delivered_priority": 35,
           "delivered_corporate": 4,
           "delivered_taxi": 19,
-          "delivered_general": 75,
-          "remaining_total": 839,
+          "delivered_general": 76,
+          "remaining_total": 838,
           "remaining_priority": 62,
           "remaining_corporate": 0,
           "remaining_taxi": 29,
-          "remaining_general": 752,
+          "remaining_general": 751,
           "note": "★ 전환지원금 폐차/매매 아직안했더라도 시스템상으로 신청은 하셔야합니다. (추후 신청 불가)\n- 그 외 추가지원금 대상 확인 철저 (지원신청 당시 신청하지않은 추가지원금에 대해서는 지급이 어렵습니다.)\n<2026년 전기차 보조금 지원사업 공고>\nㅇ 상반기 보급대수 : 1,129대[승용 972, 화물 151, 승합 6(어린이통학용 2)]\n*보급대수는 예산액에 따라 산정된 대수로 차종별 보조금단가차이, 추가지원금에 따라 실제 지원대수와 차이날 수 있습니다.\nㅇ 접수일정 : 2월 4일 (수) 오전 10시 ~\nㅇ 기타 자세한 사항은 공고파일 참고바랍니다.\nㅇ 안내사항(많이하는 질문)\n- 지원단가는 경주시 추가지원금 100만원이 \"미포함\"된 금액입니다.\n차종별단가에서 100만원(법인기관승용, 초소형승용화물은 50만원)더하시면 됩니다.\n- 전환지원금 폐차(수출말소포함),판매는 보조급 \"지급\"신청 이전까지 완료되어야합니다.\n- 보조금대상자 선정전 (자격부여상태)에서 차량 출고시 보조금 지원불가\n* 전기차관련 접수,서류검토,보완요청, 전화응대 모두 한명이 하고있습니다. 접수일 전화 자제 부탁드립니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-21T07:30:42.035Z"
+      "timestamp": "2026-02-21T07:40:36.560Z"
     }
   ]
 }
