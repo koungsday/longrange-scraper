@@ -48,4 +48,6 @@ jobs:
           path: |
             data/diag-phone.json
             data/diag-phone.html
+            data/decrypted-full.html
+            data/decrypted-raw.html
           retention-days: 7
