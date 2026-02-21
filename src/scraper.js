@@ -1,4 +1,7 @@
 const puppeteer = require('puppeteer');
+const puppeteerExtra = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+puppeteerExtra.use(StealthPlugin());
 const axios = require('axios');
 const cheerio = require('cheerio');
 const fs = require('fs').promises;
@@ -255,12 +258,10 @@ async function scrapeRegionWithRetry(browser, region) {
 // ==========================================
 // 4. 지역별 부처 전화번호 스크래핑
 // ==========================================
-// 진단 결과:
-//   - 전역함수: initPage (데이터 로드 트리거로 추정)
-//   - 폼 ffrm: 만족도 조사 폼 (데이터 로드와 무관)
-//   - script=0 (인라인), 외부 JS에서 initPage 정의
-//   - 페이지 로드 시 initPage 자동호출 안 됨 → 명시적 호출 필요
-// 전략: initPage() 호출 → AJAX 캡처 → 직접 엔드포인트 요청
+// pnp4web DRM이 페이지 전체를 암호화하므로 puppeteer-extra-plugin-stealth 사용.
+// 전략:
+//   1. stealth 브라우저로 pnp4web 우회 → 복호화된 페이지에서 데이터 추출
+//   2. 실패 시 HTTP 직접 엔드포인트 탐색
 async function scrapeLocalPhones(browser) {
   console.log('📞 지역별 부처 전화번호 스크래핑...');
   const BASE = 'https://ev.or.kr/nportal/buySupprt';
@@ -268,235 +269,239 @@ async function scrapeLocalPhones(browser) {
   const PHONE_URL = `${BASE}/psLocalPhone.do`;
   const REAL_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36';
 
-  // ── 전략 1: Puppeteer + initPage() 호출 + AJAX 엔드포인트 캡처 ──
-  let discoveredEndpoints = []; // Puppeteer에서 발견한 AJAX 엔드포인트
+  // ── 전략 1: puppeteer-extra + stealth 플러그인 ──
+  let stealthBrowser = null;
+  let discoveredEndpoints = [];
 
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    let page = null;
-    try {
-      page = await browser.newPage();
+  try {
+    console.log('   🛡️ stealth 브라우저 시작...');
+    stealthBrowser = await puppeteerExtra.launch({
+      headless: 'new',
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-gpu',
+        '--window-size=1920,1080',
+        '--disable-blink-features=AutomationControlled',
+        '--disable-infobars',
+      ]
+    });
 
-      // 봇 감지 우회
-      await page.setUserAgent(REAL_UA);
-      await page.setViewport({ width: 1920, height: 1080 });
-      await page.evaluateOnNewDocument(() => {
-        Object.defineProperty(navigator, 'webdriver', { get: () => false });
-        Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3] });
-        Object.defineProperty(navigator, 'languages', { get: () => ['ko-KR', 'ko', 'en-US', 'en'] });
-        window.chrome = { runtime: {} };
-      });
-      await page.setExtraHTTPHeaders({
-        'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
-      });
-
-      // 네트워크 요청/응답 캡처 (initPage가 호출하는 AJAX 엔드포인트 발견)
-      const capturedRequests = [];
-      const capturedResponses = [];
-      page.on('request', req => {
-        if (req.url().includes('.do') || req.url().includes('/api/')) {
-          capturedRequests.push({
-            url: req.url(), method: req.method(),
-            postData: req.postData() || null,
-          });
-        }
-      });
-      page.on('response', async res => {
-        const url = res.url();
-        if (url.includes('.do') || url.includes('/api/')) {
-          const entry = { url, status: res.status(), ct: (res.headers()['content-type'] || '') };
-          // 응답 본문 캡처 (전화번호 확인용)
-          try {
-            const body = await res.text();
-            const phones = (body.match(/\d{2,3}-\d{3,4}-\d{4}/g) || []);
-            entry.phoneCount = phones.length;
-            entry.bodySize = body.length;
-            if (phones.length > 0) {
-              entry.phoneSample = phones.slice(0, 3);
-              entry.bodySnippet = body.substring(0, 500);
-            }
-          } catch {}
-          capturedResponses.push(entry);
-        }
-      });
-
-      // 세션 수립 → 전화번호 페이지
-      await page.goto(MAIN_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-      const prePhoneReqCount = capturedRequests.length;
-      await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-
-      // (A) 자동 로드 대기 (짧게)
-      let found = false;
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      let page = null;
       try {
-        await page.waitForSelector('table tbody tr td', { timeout: 5000 });
-        found = true;
-        console.log('   ✅ 자동 로드 성공');
-      } catch {}
-
-      // (B) initPage() 즉시 호출 (핵심!)
-      if (!found) {
-        const preCallReqCount = capturedRequests.length;
-        console.log('   📞 initPage() 호출...');
-        const callResult = await page.evaluate(() => {
-          if (typeof initPage === 'function') {
-            try { initPage(); return 'called'; } catch (e) { return `err:${e.message}`; }
-          }
-          return 'not-found';
+        page = await stealthBrowser.newPage();
+        await page.setUserAgent(REAL_UA);
+        await page.setViewport({ width: 1920, height: 1080 });
+        await page.setExtraHTTPHeaders({
+          'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
         });
-        console.log(`   ℹ️ initPage() → ${callResult}`);
 
-        if (callResult === 'called') {
-          // initPage가 트리거한 AJAX 요청 대기
-          await new Promise(r => setTimeout(r, 5000));
-          const newReqs = capturedRequests.slice(preCallReqCount);
-          if (newReqs.length > 0) {
-            console.log(`   ℹ️ initPage() 후 새 요청 ${newReqs.length}개:`);
-            newReqs.forEach(r => console.log(`      ${r.method} ${r.url} ${r.postData ? `POST: ${r.postData.substring(0, 100)}` : ''}`));
-            // 발견된 엔드포인트 저장 (HTTP 폴백에서 사용)
-            discoveredEndpoints = newReqs.map(r => ({ url: r.url, method: r.method, postData: r.postData }));
+        // 추가 anti-detection (stealth가 커버하지 않는 항목)
+        await page.evaluateOnNewDocument(() => {
+          // pnp4web은 document.write로 복호화 콘텐츠를 출력함 → 캡처 후킹
+          window.__pnpDecrypted = '';
+          window.__ajaxEndpoints = [];
+          const origWrite = document.write.bind(document);
+          document.write = function(html) {
+            if (typeof html === 'string') window.__pnpDecrypted += html;
+            return origWrite(html);
+          };
+          // eval 후킹 (.do 엔드포인트 발견용)
+          const origEval = window.eval;
+          window.eval = function(code) {
+            if (typeof code === 'string') {
+              const doMatches = code.match(/['"]([^'"]*\.do)['"]/g);
+              if (doMatches) doMatches.forEach(m => window.__ajaxEndpoints.push(m.replace(/['"]/g, '')));
+            }
+            return origEval.call(this, code);
+          };
+        });
+
+        // 네트워크 캡처
+        const capturedRequests = [];
+        const capturedResponses = [];
+        page.on('request', req => {
+          const url = req.url();
+          if (url.includes('.do') || url.includes('/api/')) {
+            capturedRequests.push({ url, method: req.method(), postData: req.postData() || null });
           }
+        });
+        page.on('response', async res => {
+          const url = res.url();
+          if (url.includes('.do') || url.includes('/api/')) {
+            const entry = { url, status: res.status(), ct: (res.headers()['content-type'] || '') };
+            try {
+              const body = await res.text();
+              const phones = (body.match(/\d{2,3}-\d{3,4}-\d{4}/g) || []);
+              entry.phoneCount = phones.length;
+              entry.bodySize = body.length;
+              if (phones.length > 0) {
+                entry.phoneSample = phones.slice(0, 3);
+                entry.bodySnippet = body.substring(0, 500);
+              }
+            } catch {}
+            capturedResponses.push(entry);
+          }
+        });
 
-          // 데이터 확인
-          const rows = await page.evaluate(() =>
-            document.querySelectorAll('table tbody tr td').length
-          );
-          if (rows > 0) {
+        // 세션 수립 → 전화번호 페이지
+        await page.goto(MAIN_URL, { waitUntil: 'networkidle2', timeout: 30000 });
+        await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
+
+        // pnp4web 복호화 + 자동 데이터 로드 대기 (최대 20초)
+        let found = false;
+        for (let i = 0; i < 20; i++) {
+          await new Promise(r => setTimeout(r, 1000));
+          const status = await page.evaluate(() => ({
+            bodyLen: (document.body?.innerText || '').length,
+            tables: document.querySelectorAll('table tbody tr td').length,
+            scripts: document.querySelectorAll('script').length,
+            pnpLen: (window.__pnpDecrypted || '').length,
+          }));
+          if (status.tables > 0) {
             found = true;
-            console.log(`   ✅ initPage() 성공: td=${rows}`);
+            console.log(`   ✅ 테이블 데이터 발견 (${i + 1}초): td=${status.tables}`);
+            break;
           }
+          if (i === 4 || i === 9 || i === 14) {
+            console.log(`   ℹ️ ${i + 1}초: body=${status.bodyLen}자, scripts=${status.scripts}, pnp=${status.pnpLen}자, td=${status.tables}`);
+          }
+        }
 
-          // 좀 더 대기 (AJAX 응답 처리 시간)
-          if (!found) {
+        // 테이블 없으면 전역 함수 호출 시도
+        if (!found) {
+          const fns = await page.evaluate(() => {
+            const candidates = ['_getListSearch', 'initPage', 'fnSearch', 'fn_search',
+              'doSearch', 'fnList', 'getList', 'goPage', 'fnPhoneList', 'fn_submit'];
+            return candidates.filter(fn => typeof window[fn] === 'function');
+          });
+          console.log(`   ℹ️ 전역 함수: [${fns.join(', ') || '없음'}]`);
+
+          for (const fn of fns) {
+            const preReqCount = capturedRequests.length;
+            console.log(`   📞 ${fn}() 호출...`);
+            await page.evaluate(fn => { try { window[fn](); } catch {} }, fn);
             await new Promise(r => setTimeout(r, 5000));
-            const rows2 = await page.evaluate(() =>
-              document.querySelectorAll('table tbody tr td').length
-            );
-            if (rows2 > 0) {
+
+            // 새로 발견된 엔드포인트 저장
+            const newReqs = capturedRequests.slice(preReqCount);
+            if (newReqs.length > 0) {
+              console.log(`   ℹ️ ${fn}() 후 새 요청 ${newReqs.length}개:`);
+              newReqs.forEach(r => console.log(`      ${r.method} ${r.url}`));
+              discoveredEndpoints.push(...newReqs.map(r => ({ url: r.url, method: r.method, postData: r.postData })));
+            }
+
+            const rows = await page.evaluate(() => document.querySelectorAll('table tbody tr td').length);
+            if (rows > 0) {
               found = true;
-              console.log(`   ✅ initPage() 지연 성공: td=${rows2}`);
+              console.log(`   ✅ ${fn}() 성공: td=${rows}`);
+              break;
             }
           }
         }
-      }
 
-      // (C) 다른 전역 함수 시도
-      if (!found) {
-        const globalFns = await page.evaluate(() => {
-          const fns = ['fnSearch', 'fn_search', 'doSearch', 'fnList', 'getList',
-            'selectList', 'fnSelectList', 'searchList', 'goList', 'fnPhoneList',
-            'fnLocalPhone', 'selectLocalPhone', 'fn_submit', 'doSubmit'];
-          return fns.filter(fn => typeof window[fn] === 'function');
-        });
-
-        for (const fn of globalFns) {
-          console.log(`   📞 ${fn}() 호출...`);
-          await page.evaluate(fn => { try { window[fn](); } catch {} }, fn);
-          await new Promise(r => setTimeout(r, 3000));
-          const rows = await page.evaluate(() =>
-            document.querySelectorAll('table tbody tr td').length
-          );
-          if (rows > 0) { found = true; console.log(`   ✅ ${fn}() 성공: td=${rows}`); break; }
-        }
-      }
-
-      // 페이지 분석 로그
-      const pageInfo = await page.evaluate(() => {
-        const tables = [];
-        document.querySelectorAll('table').forEach((t, i) => {
-          tables.push({
-            idx: i, id: t.id, cls: t.className,
-            thead: t.querySelectorAll('thead tr').length,
-            tbody: t.querySelectorAll('tbody tr').length,
-            allTr: t.querySelectorAll('tr').length,
-          });
-        });
-        return {
-          tables,
+        // 상태 로그
+        const pageInfo = await page.evaluate(() => ({
+          bodyTextLen: (document.body?.innerText || '').length,
           scripts: document.querySelectorAll('script').length,
           scriptSrcs: [...document.querySelectorAll('script[src]')].map(s => s.src).slice(0, 10),
-          bodyTextLen: (document.body ? document.body.innerText.length : 0),
-        };
-      });
-      console.log(`   ℹ️ tables=${JSON.stringify(pageInfo.tables)}, scripts=${pageInfo.scripts}`);
-      if (pageInfo.scriptSrcs.length > 0) {
-        console.log(`   ℹ️ 외부JS: ${pageInfo.scriptSrcs.join(' | ')}`);
-      }
+          tables: [...document.querySelectorAll('table')].map((t, i) => ({
+            idx: i, id: t.id, cls: t.className,
+            rows: t.querySelectorAll('tbody tr').length || t.querySelectorAll('tr').length,
+          })),
+          pnpLen: (window.__pnpDecrypted || '').length,
+          ajaxEndpoints: [...new Set(window.__ajaxEndpoints || [])],
+        }));
+        console.log(`   ℹ️ body=${pageInfo.bodyTextLen}자, scripts=${pageInfo.scripts}, pnp=${pageInfo.pnpLen}자`);
+        if (pageInfo.tables.length > 0) console.log(`   ℹ️ tables=${JSON.stringify(pageInfo.tables)}`);
+        if (pageInfo.scriptSrcs.length > 0) console.log(`   ℹ️ 외부JS: ${pageInfo.scriptSrcs.join(' | ')}`);
+        if (pageInfo.ajaxEndpoints.length > 0) {
+          console.log(`   ℹ️ eval 발견 .do: ${pageInfo.ajaxEndpoints.join(', ')}`);
+          // eval에서 발견된 엔드포인트도 HTTP 폴백에 추가
+          for (const ep of pageInfo.ajaxEndpoints) {
+            const fullUrl = ep.startsWith('http') ? ep : `https://ev.or.kr${ep.startsWith('/') ? '' : '/nportal/buySupprt/'}${ep}`;
+            discoveredEndpoints.push({ url: fullUrl, method: 'POST', postData: null });
+          }
+        }
 
-      // 캡처된 .do 응답 로그
-      const phoneResponses = capturedResponses.filter(r => r.phoneCount > 0);
-      if (phoneResponses.length > 0) {
-        console.log(`   ℹ️ 전화번호 포함 응답:`);
-        phoneResponses.forEach(r => {
-          console.log(`      ${r.url} phones=${r.phoneCount} size=${r.bodySize}`);
-          if (r.bodySnippet) console.log(`      snippet: ${r.bodySnippet.substring(0, 200)}`);
-        });
-      }
+        // 전화번호 포함 응답 확인
+        const phoneResponses = capturedResponses.filter(r => r.phoneCount > 0);
+        if (phoneResponses.length > 0) {
+          console.log(`   ℹ️ 전화번호 포함 응답:`);
+          phoneResponses.forEach(r => console.log(`      ${r.url} phones=${r.phoneCount}`));
+        }
 
-      // 전체 캡처된 .do 엔드포인트 (전화번호 페이지 이후만)
-      const phonePageResps = capturedResponses.slice(
-        capturedResponses.findIndex(r => r.url.includes('psLocalPhone'))
-      );
-      if (phonePageResps.length > 0) {
-        console.log(`   ℹ️ .do 응답 (phone 페이지 이후):`);
-        phonePageResps.forEach(r => console.log(`      ${r.status} ${r.url} ct=${r.ct} phones=${r.phoneCount || 0}`));
-      }
+        // HTML에서 전화번호 추출 (pnp 복호화 결과 포함)
+        const html = await page.content();
+        if (attempt === 1) await fs.writeFile('data/debug-phones.html', html).catch(() => {});
 
-      // HTML 추출
-      const html = await page.content();
+        // pnp4web document.write 출력에서도 시도
+        const pnpHtml = await page.evaluate(() => window.__pnpDecrypted || '');
+        const sourceHtml = pnpHtml.length > html.length ? pnpHtml : html;
 
-      // 디버그 HTML 저장 (첫 시도만)
-      if (attempt === 1) {
-        await fs.writeFile('data/debug-phones.html', html).catch(() => {});
-      }
+        await page.close();
+        page = null;
 
-      const phonePatterns = (html.match(/\d{2,3}-\d{3,4}-\d{4}/g) || []);
-      if (phonePatterns.length > 0) {
-        console.log(`   ℹ️ HTML 내 전화번호 패턴 ${phonePatterns.length}개: ${phonePatterns.slice(0, 3).join(', ')}`);
-      }
+        const phones = parsePhonesFromHtml(sourceHtml);
+        if (phones.length > 0) {
+          console.log(`   ✅ stealth 브라우저 성공: ${phones.length}개`);
+          await stealthBrowser.close().catch(() => {});
+          return phones;
+        }
 
-      await page.close();
-
-      const phones = parsePhonesFromHtml(html);
-      if (phones.length > 0) {
-        if (attempt > 1) console.log(`   ✅ 재시도 ${attempt}회 성공`);
-        return phones;
-      }
-
-      if (attempt < MAX_RETRIES) {
-        console.log(`   ⚠️ Puppeteer 0건 - 재시도 ${attempt}/${MAX_RETRIES}`);
-        await new Promise(r => setTimeout(r, 3000 * attempt));
-      }
-    } catch (err) {
-      if (page) await page.close().catch(() => {});
-      console.log(`   ⚠️ 에러 ${attempt}/${MAX_RETRIES}: ${err.message}`);
-      if (attempt < MAX_RETRIES) {
-        await new Promise(r => setTimeout(r, 3000 * attempt));
+        if (attempt < MAX_RETRIES) {
+          console.log(`   ⚠️ stealth ${attempt}/${MAX_RETRIES}: 0건 - 재시도`);
+          await new Promise(r => setTimeout(r, 3000 * attempt));
+        }
+      } catch (err) {
+        if (page) await page.close().catch(() => {});
+        console.log(`   ⚠️ stealth 에러 ${attempt}/${MAX_RETRIES}: ${err.message}`);
+        if (attempt < MAX_RETRIES) {
+          await new Promise(r => setTimeout(r, 3000 * attempt));
+        }
       }
     }
+  } catch (err) {
+    console.log(`   ⚠️ stealth 브라우저 시작 실패: ${err.message}`);
+  } finally {
+    if (stealthBrowser) await stealthBrowser.close().catch(() => {});
   }
 
-  // ── 전략 2: Puppeteer에서 발견한 AJAX 엔드포인트에 직접 요청 ──
+  // ── 전략 2: 발견된 AJAX 엔드포인트에 직접 요청 ──
   if (discoveredEndpoints.length > 0) {
     console.log(`   📡 발견된 AJAX 엔드포인트 ${discoveredEndpoints.length}개에 직접 요청...`);
     try {
-      // 먼저 세션 쿠키 획득
       let cookies = '';
-      const sessionResp = await axios.get(PHONE_URL, {
-        headers: { 'User-Agent': REAL_UA, 'Accept-Language': 'ko-KR,ko;q=0.9', Referer: MAIN_URL },
-        timeout: 30000,
-        validateStatus: () => true,
+      // 세션 수립: MAIN → PHONE 순서로 방문
+      const mainResp = await axios.get(MAIN_URL, {
+        headers: { 'User-Agent': REAL_UA, 'Accept-Language': 'ko-KR,ko;q=0.9' },
+        timeout: 30000, validateStatus: () => true,
       });
-      const setCookies = sessionResp.headers['set-cookie'];
-      if (setCookies) cookies = setCookies.map(c => c.split(';')[0]).join('; ');
+      const mainCookies = mainResp.headers['set-cookie'];
+      if (mainCookies) cookies = mainCookies.map(c => c.split(';')[0]).join('; ');
+
+      const phoneResp = await axios.get(PHONE_URL, {
+        headers: { 'User-Agent': REAL_UA, 'Cookie': cookies, 'Referer': MAIN_URL, 'Accept-Language': 'ko-KR,ko;q=0.9' },
+        timeout: 30000, validateStatus: () => true,
+      });
+      const phoneCookies = phoneResp.headers['set-cookie'];
+      if (phoneCookies) {
+        const newCookies = phoneCookies.map(c => c.split(';')[0]);
+        const existingMap = Object.fromEntries(cookies.split('; ').filter(Boolean).map(c => c.split('=')));
+        newCookies.forEach(c => { const [k, ...v] = c.split('='); existingMap[k] = v.join('='); });
+        cookies = Object.entries(existingMap).map(([k, v]) => `${k}=${v}`).join('; ');
+      }
 
       for (const ep of discoveredEndpoints) {
         try {
           const resp = ep.method === 'POST'
-            ? await axios.post(ep.url, ep.postData || '', {
+            ? await axios.post(ep.url, ep.postData || new URLSearchParams({ pageIndex: '1', pageUnit: '1000' }).toString(), {
                 headers: {
                   'User-Agent': REAL_UA, 'Cookie': cookies, 'Referer': PHONE_URL,
                   'Content-Type': 'application/x-www-form-urlencoded',
-                  'Accept-Language': 'ko-KR,ko;q=0.9',
-                  'X-Requested-With': 'XMLHttpRequest',
+                  'Accept-Language': 'ko-KR,ko;q=0.9', 'X-Requested-With': 'XMLHttpRequest',
                 },
                 timeout: 30000, validateStatus: () => true,
               })
@@ -504,7 +509,6 @@ async function scrapeLocalPhones(browser) {
                 headers: { 'User-Agent': REAL_UA, 'Cookie': cookies, 'Referer': PHONE_URL, 'Accept-Language': 'ko-KR,ko;q=0.9' },
                 timeout: 30000, validateStatus: () => true,
               });
-
           if (resp.status === 200 && resp.data) {
             const raw = typeof resp.data === 'string' ? resp.data : JSON.stringify(resp.data);
             const phones = parsePhonesFromHtml(raw);
@@ -512,11 +516,7 @@ async function scrapeLocalPhones(browser) {
               console.log(`   ✅ ${ep.method} ${ep.url} → ${phones.length}개 수집`);
               return phones;
             }
-            const matches = (raw.match(/\d{2,3}-\d{3,4}-\d{4}/g) || []);
-            console.log(`   ℹ️ ${ep.method} ${ep.url} → status=${resp.status}, phonePatterns=${matches.length}`);
-            if (matches.length > 0) {
-              console.log(`   ℹ️ 응답 샘플: ${raw.substring(0, 300)}`);
-            }
+            console.log(`   ℹ️ ${ep.method} ${ep.url} → ${resp.status}, size=${raw.length}`);
           }
         } catch (e) {
           console.log(`   ℹ️ ${ep.method} ${ep.url} → ${e.message}`);
@@ -536,42 +536,81 @@ async function scrapeLocalPhones(browser) {
     `${BASE}/localPhoneList.do`,
     `${BASE}/selectPsLocalPhone.do`,
     `${BASE}/psLocalPhoneListAction.do`,
+    `${BASE}/getPsLocalPhoneList.do`,
+    `${BASE}/psLocalPhoneAction.do`,
+    `${BASE}/searchPsLocalPhoneList.do`,
+    `${BASE}/listPsLocalPhone.do`,
   ];
 
   try {
+    // 세션 수립: MAIN → PHONE 순서
     let cookies = '';
-    const sessionResp = await axios.get(PHONE_URL, {
-      headers: { 'User-Agent': REAL_UA, 'Accept-Language': 'ko-KR,ko;q=0.9', Referer: MAIN_URL },
+    const mainResp = await axios.get(MAIN_URL, {
+      headers: { 'User-Agent': REAL_UA, 'Accept-Language': 'ko-KR,ko;q=0.9' },
       timeout: 30000, validateStatus: () => true,
     });
-    const setCookies = sessionResp.headers['set-cookie'];
-    if (setCookies) cookies = setCookies.map(c => c.split(';')[0]).join('; ');
+    const mainCookies = mainResp.headers['set-cookie'];
+    if (mainCookies) cookies = mainCookies.map(c => c.split(';')[0]).join('; ');
+
+    const phoneResp = await axios.get(PHONE_URL, {
+      headers: { 'User-Agent': REAL_UA, 'Cookie': cookies, 'Referer': MAIN_URL, 'Accept-Language': 'ko-KR,ko;q=0.9' },
+      timeout: 30000, validateStatus: () => true,
+    });
+    const phoneCookies = phoneResp.headers['set-cookie'];
+    if (phoneCookies) {
+      const newCookies = phoneCookies.map(c => c.split(';')[0]);
+      const existingMap = Object.fromEntries(cookies.split('; ').filter(Boolean).map(c => c.split('=')));
+      newCookies.forEach(c => { const [k, ...v] = c.split('='); existingMap[k] = v.join('='); });
+      cookies = Object.entries(existingMap).map(([k, v]) => `${k}=${v}`).join('; ');
+    }
+    console.log(`   ℹ️ 세션 쿠키: ${cookies.substring(0, 80)}...`);
 
     const commonHeaders = {
       'User-Agent': REAL_UA, 'Cookie': cookies, 'Referer': PHONE_URL,
-      'Accept-Language': 'ko-KR,ko;q=0.9',
-      'Origin': 'https://ev.or.kr',
+      'Accept-Language': 'ko-KR,ko;q=0.9', 'Origin': 'https://ev.or.kr',
     };
 
+    // 다양한 파라미터 조합 시도
+    const paramSets = [
+      new URLSearchParams({ pageIndex: '1', pageUnit: '1000', pageSize: '1000' }).toString(),
+      new URLSearchParams({ pageIndex: '1', pageUnit: '100', pageSize: '10' }).toString(),
+      new URLSearchParams({ pageIndex: '1', pageUnit: '1000', pageSize: '1000', searchCondition: '', searchKeyword: '' }).toString(),
+    ];
+
     for (const target of [PHONE_URL, ...LIST_ENDPOINTS]) {
-      // POST 시도
-      try {
-        const resp = await axios.post(target,
-          new URLSearchParams({ pageIndex: '1', pageUnit: '1000', pageSize: '1000' }).toString(),
-          {
+      for (const params of paramSets) {
+        try {
+          const resp = await axios.post(target, params, {
             headers: { ...commonHeaders, 'Content-Type': 'application/x-www-form-urlencoded', 'X-Requested-With': 'XMLHttpRequest' },
             timeout: 15000, validateStatus: () => true,
+          });
+          if (resp.status === 200 && resp.data) {
+            const raw = typeof resp.data === 'string' ? resp.data : JSON.stringify(resp.data);
+            const phones = parsePhonesFromHtml(raw);
+            if (phones.length > 0) {
+              console.log(`   ✅ POST ${target} → ${phones.length}개 수집`);
+              return phones;
+            }
+            const matches = (raw.match(/\d{2,3}-\d{3,4}-\d{4}/g) || []);
+            if (matches.length > 0) {
+              console.log(`   ℹ️ POST ${target} → phones=${matches.length}, size=${raw.length}`);
+            }
           }
-        );
+        } catch {}
+      }
+      // GET도 시도
+      try {
+        const resp = await axios.get(target, {
+          headers: { ...commonHeaders, 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json, text/html, */*' },
+          timeout: 15000, validateStatus: () => true,
+        });
         if (resp.status === 200 && resp.data) {
           const raw = typeof resp.data === 'string' ? resp.data : JSON.stringify(resp.data);
           const phones = parsePhonesFromHtml(raw);
           if (phones.length > 0) {
-            console.log(`   ✅ POST ${target} → ${phones.length}개 수집`);
+            console.log(`   ✅ GET ${target} → ${phones.length}개 수집`);
             return phones;
           }
-          const matches = (raw.match(/\d{2,3}-\d{3,4}-\d{4}/g) || []);
-          console.log(`   ℹ️ POST ${target} → ${resp.status}, phones=${matches.length}, size=${raw.length}`);
         }
       } catch {}
     }
