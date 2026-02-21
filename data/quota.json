@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-21T05:10:38.878Z",
+  "timestamp": "2026-02-21T05:20:36.887Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -543,16 +543,16 @@
           "registered_corporate": 11,
           "registered_taxi": 13,
           "registered_general": 282,
-          "delivered_total": 289,
+          "delivered_total": 290,
           "delivered_priority": 108,
           "delivered_corporate": 4,
           "delivered_taxi": 9,
-          "delivered_general": 168,
-          "remaining_total": 711,
+          "delivered_general": 169,
+          "remaining_total": 710,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 832,
+          "remaining_general": 831,
           "note": "-  보급대수 : 상반기 1,214대 (승용 1,000대 / 화물 230대 / 버스(일반) 14대)\n※ 차종별 보조금 변경 및 보급물량은 예산범위 내에서 변동될 수 있음\n※ 어린이 통학버스는 5월 중 공고 예정\n-  사업기간 : 2026.01.26.(월) 09:00 ~ 2026.06.30.(화) 18:00\n※ 우리시는 전기자동차, 수소전기차, 전기이륜차, LPG차 등 자동차 보조금을\n담당자 1명이 전화부터 서류검토 및 보조금 지급까지 담당하고 있습니다.\n접수 개시에 따라 접수 및 전화량이 많아 처리가 계속 지연되오니,\n자동차 보조금액 등 단순문의는 공고문을 꼭 확인하여주시기 바랍니다"
         },
         {
@@ -2571,12 +2571,12 @@
           "registered_corporate": 1,
           "registered_taxi": 45,
           "registered_general": 219,
-          "delivered_total": 168,
-          "delivered_priority": 48,
+          "delivered_total": 169,
+          "delivered_priority": 49,
           "delivered_corporate": 0,
           "delivered_taxi": 25,
           "delivered_general": 95,
-          "remaining_total": 232,
+          "remaining_total": 231,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-21T05:10:38.765Z"
+      "timestamp": "2026-02-21T05:20:36.819Z"
     }
   ]
 }
