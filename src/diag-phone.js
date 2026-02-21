@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 /**
- * 진단 v6: document.write 전체 캡처 + v() 필터 우회 + innerHTML 구조 분석
+ * 진단 v7: 2단계 암호화 해독 — _ah_ 속성에서 _getListSearch 추출
  *
- * v5 발견:
- * - pnp4web 복호화 성공: document.write로 436KB 출력
- * - 하지만 스크립트 0개, _getListSearch 없음, 전화번호 0개
- * - body innerHTML 412KB인데 innerText 73자 (대부분 숨겨진 HTML)
- * - v(t) 함수가 스크립트를 필터링하는 것으로 추정
+ * v6 발견:
+ * - 1단계 복호화 성공 (436KB document.write)
+ * - 34개 스크립트 존재, 대부분 외부
+ * - tbody 빈 상태 + 바로 뒤에 <script _ajs_='30_...' _ah_='57...'> 존재
+ * - _ah_ 속성 = 2단계 암호화된 JS (여기에 _getListSearch가 있을 것)
  *
  * 전략:
- * 1. document.write 전체 436KB 저장 + 완전한 패턴 검색
- * 2. Puppeteer에서 zn.dc() 직접 호출 (v() 필터 우회)
- * 3. innerHTML 구조 분석 (412KB의 실체)
+ * 1. <script _ajs_ _ah_> 태그 전체 추출
+ * 2. common_page.js, common_grid.js 등 외부 JS에서 _getListSearch 검색
+ * 3. pnp4web의 S() 함수 분석 → _ah_ 복호화 시도
  */
 const puppeteer = require('puppeteer');
 const axios = require('axios');
@@ -23,38 +23,46 @@ const PHONE_URL = `${BASE}/psLocalPhone.do`;
 const REAL_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36';
 
 async function main() {
-  console.log('=== 진단 v6: 전체 캡처 + v() 우회 ===\n');
+  console.log('=== 진단 v7: _ah_ 속성 복호화 ===\n');
   await fs.mkdir('data', { recursive: true });
 
-  // 암호화 blob 추출
-  console.log('1. 암호화 blob 추출...');
-  let encryptedBlob = '';
-  try {
-    const sessionResp = await axios.get(MAIN_URL, {
-      headers: { 'User-Agent': REAL_UA, 'Accept-Language': 'ko-KR,ko;q=0.9' },
-      timeout: 30000, validateStatus: () => true,
-    });
-    const cookies = (sessionResp.headers['set-cookie'] || []).map(c => c.split(';')[0]).join('; ');
+  // ========== PART A: 외부 JS에서 _getListSearch 검색 ==========
+  console.log('===== PART A: 외부 JS 분석 =====\n');
 
-    const phoneResp = await axios.get(PHONE_URL, {
-      headers: { 'User-Agent': REAL_UA, 'Cookie': cookies, 'Referer': MAIN_URL, 'Accept-Language': 'ko-KR,ko;q=0.9' },
-      timeout: 30000, validateStatus: () => true,
-    });
-    const rawHtml = typeof phoneResp.data === 'string' ? phoneResp.data : '';
+  const jsFiles = [
+    '/nportal/js/common/common_page.js',
+    '/nportal/js/common/common_grid.js',
+    '/nportal/js/common/common.js',
+    '/nportal/js/common.js',
+    '/nportal/js/common/cmnReady.js',
+    '/nportal/js/common_util.js',
+    '/nportal/js/paging.js',
+  ];
 
-    const onloadMatch = rawHtml.match(/onload='_0xac\("([^"]+)"\)/);
-    if (onloadMatch) {
-      encryptedBlob = onloadMatch[1];
-      console.log(`   blob: ${encryptedBlob.length}자`);
-    } else {
-      console.log('   ❌ blob 추출 실패');
+  for (const jsPath of jsFiles) {
+    try {
+      const resp = await axios.get(`https://ev.or.kr${jsPath}`, {
+        headers: { 'User-Agent': REAL_UA },
+        timeout: 10000, validateStatus: () => true,
+      });
+      const src = typeof resp.data === 'string' ? resp.data : '';
+      const hasGetList = src.includes('_getListSearch');
+      const hasGetListDef = src.includes('function _getListSearch');
+      console.log(`   ${jsPath}: ${src.length}자, _getListSearch=${hasGetList}, def=${hasGetListDef}`);
+
+      if (hasGetList) {
+        const idx = src.indexOf('_getListSearch');
+        console.log(`   ✅ 발견! 주변 코드:`);
+        console.log(src.substring(Math.max(0, idx - 200), idx + 500));
+        await fs.writeFile(`data/${jsPath.split('/').pop()}`, src);
+      }
+    } catch (err) {
+      console.log(`   ${jsPath}: ${err.message}`);
     }
-  } catch (err) {
-    console.log(`   ⚠️ ${err.message}`);
   }
 
-  // ========== Puppeteer ==========
-  console.log('\n2. Puppeteer...');
+  // ========== PART B: Puppeteer + _ah_ 스크립트 추출 ==========
+  console.log('\n===== PART B: _ah_ 스크립트 추출 =====\n');
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -91,270 +99,282 @@ async function main() {
   await page.goto(PHONE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
   await new Promise(r => setTimeout(r, 3000));
 
-  // ========== 3. document.write 전체 저장 + 분석 ==========
-  console.log('\n3. document.write 전체 분석...');
-  const writeAnalysis = await page.evaluate(() => {
+  // _ah_ 스크립트 추출
+  console.log('\n   _ah_ 스크립트 태그 추출...');
+  const ahScripts = await page.evaluate(() => {
     const html = window.__pnpWriteAll || '';
-    const result = {
-      totalLength: html.length,
-    };
+    const result = [];
 
-    // 패턴 검색
-    const patterns = [
-      '_getListSearch', 'getListSearch', 'listSearch', 'fnSearch',
-      '$.ajax', 'jQuery.ajax', '$.post', '$.get',
-      'function _get', 'function fn', 'function search',
-      'selectPsLocalPhone', 'phoneList', 'Phone.do',
-      'searchForm', 'listForm', '#searchForm', '#listForm',
-      'spageId', 'spageNo', 'srecordCountPerPage',
-      'pageIndex', 'pageUnit',
-      '<script', '</script>', '<form', '</form>',
-      '<tbody', '<td', 'tel', '전화', '연락처',
-    ];
+    // <script _ajs_=... _ah_=...> 태그 찾기
+    // 정규식으로 _ajs_, _ah_ 속성 포함 스크립트 태그 추출
+    const scriptTagRegex = /<script\s+[^>]*_ajs_\s*=\s*['"]([^'"]+)['"][^>]*>/gi;
+    let match;
+    while ((match = scriptTagRegex.exec(html)) !== null) {
+      const fullTag = match[0];
+      const ajs = match[1];
 
-    result.patterns = {};
-    for (const p of patterns) {
-      const idx = html.indexOf(p);
-      result.patterns[p] = idx >= 0 ? {
-        found: true, pos: idx,
-        context: html.substring(Math.max(0, idx - 100), idx + 300),
-      } : { found: false };
+      // _ah_ 속성 추출
+      const ahMatch = fullTag.match(/_ah_\s*=\s*['"]([^'"]*)['"]/);
+      const ah = ahMatch ? ahMatch[1] : '';
+
+      // 태그 시작 위치에서 </script>까지의 내용
+      const startPos = match.index;
+      const endTag = '</script>';
+      const endPos = html.indexOf(endTag, startPos);
+      const fullContent = endPos >= 0 ? html.substring(startPos, endPos + endTag.length) : '';
+      const innerContent = endPos >= 0 ? html.substring(match.index + fullTag.length, endPos) : '';
+
+      result.push({
+        position: startPos,
+        ajs,
+        ahLength: ah.length,
+        ahSnippet: ah.substring(0, 500),
+        fullTagLength: fullTag.length,
+        fullTag: fullTag.substring(0, 300),
+        innerContentLength: innerContent.length,
+        innerContentSnippet: innerContent.substring(0, 300),
+        fullContentLength: fullContent.length,
+      });
     }
 
-    // script 태그 추출
-    const scriptMatches = html.match(/<script[^>]*>[\s\S]*?<\/script>/gi) || [];
-    result.scriptCount = scriptMatches.length;
-    result.scripts = scriptMatches.map((s, i) => {
-      const src = s.match(/src=["']([^"']+)["']/);
-      const content = s.replace(/<\/?script[^>]*>/gi, '').trim();
-      return {
+    // aap='vs' 속성 스크립트도 확인 (1단계 암호화)
+    const aapRegex = /<script[^>]*aap\s*=\s*['"]vs['"][^>]*>([\s\S]*?)<\/script>/gi;
+    const aapScripts = [];
+    while ((match = aapRegex.exec(html)) !== null) {
+      aapScripts.push({
+        position: match.index,
+        contentLength: match[1].length,
+        contentSnippet: match[1].substring(0, 200),
+      });
+    }
+
+    return { ahScripts: result, aapScripts };
+  });
+
+  console.log(`\n   _ajs_/_ah_ 스크립트: ${ahScripts.ahScripts.length}개`);
+  ahScripts.ahScripts.forEach((s, i) => {
+    console.log(`   [${i}] pos=${s.position} _ajs_="${s.ajs}" _ah_=${s.ahLength}자`);
+    console.log(`       fullTag: ${s.fullTag}`);
+    console.log(`       _ah_ snippet: ${s.ahSnippet.substring(0, 200)}`);
+    console.log(`       inner: ${s.innerContentLength}자 "${s.innerContentSnippet.substring(0, 100)}"`);
+  });
+
+  console.log(`\n   aap='vs' 스크립트: ${ahScripts.aapScripts.length}개`);
+  ahScripts.aapScripts.forEach((s, i) => {
+    console.log(`   [${i}] pos=${s.position} content=${s.contentLength}자: ${s.contentSnippet}`);
+  });
+
+  // ========== PART C: pnp4web S() 함수로 _ah_ 복호화 시도 ==========
+  console.log('\n===== PART C: _ah_ 복호화 시도 =====\n');
+
+  // pnp4web 내부의 S() 함수가 _ajs_ 스크립트를 처리
+  // Puppeteer에서 직접 복호화 시도
+  const decryptResult = await page.evaluate(() => {
+    const result = {};
+
+    // DOM에서 _ajs_ 스크립트 태그 찾기
+    const ajsScripts = document.querySelectorAll('script[_ajs_]');
+    result.domAjsCount = ajsScripts.length;
+
+    if (ajsScripts.length > 0) {
+      result.domAjsDetails = [...ajsScripts].map((s, i) => ({
         idx: i,
-        src: src ? src[1] : null,
-        contentLen: content.length,
-        content: content.substring(0, 1000),
+        ajs: s.getAttribute('_ajs_'),
+        ah: (s.getAttribute('_ah_') || '').substring(0, 200),
+        ahLen: (s.getAttribute('_ah_') || '').length,
+        text: s.textContent.substring(0, 200),
+        textLen: s.textContent.length,
+      }));
+    }
+
+    // pnp4web 전역 함수/변수 탐색
+    const pnpKeys = Object.keys(window).filter(k =>
+      k.startsWith('_0x') || k.startsWith('_a') || k.startsWith('$a') ||
+      k === 'zn' || k === 'Zn' || k.startsWith('_$')
+    );
+    result.pnpKeys = pnpKeys;
+
+    // 특히 $aaq (pnp4web의 jQuery alias) 확인
+    result.has$aaq = typeof $aaq !== 'undefined';
+    if (result.has$aaq) {
+      result.$aaqType = typeof $aaq;
+    }
+
+    // pnp4web이 eval을 사용해 스크립트를 실행하는지 확인
+    // eval 후킹
+    const origEval = window.eval;
+    const evalCalls = [];
+    try {
+      window.eval = function(code) {
+        evalCalls.push(typeof code === 'string' ? code.substring(0, 500) : String(code));
+        return origEval.call(window, code);
       };
-    });
 
-    // form 태그 추출
-    const formMatches = html.match(/<form[^>]*>[\s\S]*?<\/form>/gi) || [];
-    result.formCount = formMatches.length;
-    result.forms = formMatches.map((f, i) => f.substring(0, 500));
+      // _ajs_ 스크립트 수동 트리거 시도
+      if (ajsScripts.length > 0) {
+        const script = ajsScripts[0];
+        const ah = script.getAttribute('_ah_') || '';
+        const ajs = script.getAttribute('_ajs_') || '';
 
-    // input 태그 추출
-    const inputMatches = html.match(/<input[^>]*>/gi) || [];
-    result.inputCount = inputMatches.length;
-    result.inputs = inputMatches;
+        // pnp4web의 _avt_ 변수로 키 추출 시도
+        if (typeof _avt_ !== 'undefined') {
+          result._avt_ = String(_avt_).substring(0, 100);
+        }
+        if (typeof _aevl_ !== 'undefined') {
+          result._aevl_ = String(_aevl_).substring(0, 200);
+        }
+      }
+    } catch (e) {
+      result.evalError = e.message;
+    } finally {
+      window.eval = origEval;
+    }
 
-    // table 구조
-    const tableMatches = html.match(/<table[^>]*>/gi) || [];
-    result.tableCount = tableMatches.length;
-
-    // tbody 내용
-    const tbodyMatch = html.match(/<tbody[^>]*>[\s\S]*?<\/tbody>/gi) || [];
-    result.tbodyCount = tbodyMatch.length;
-    result.tbodies = tbodyMatch.map((t, i) => ({
-      idx: i, length: t.length, snippet: t.substring(0, 500),
-    }));
-
-    // 전화번호 패턴
-    const phones = (html.match(/\d{2,3}-\d{3,4}-\d{4}/g) || []);
-    result.phoneCount = phones.length;
-    result.phoneSamples = phones.slice(0, 10);
+    result.evalCalls = evalCalls.length;
 
     return result;
   });
 
-  console.log(`   전체 길이: ${writeAnalysis.totalLength}자`);
-  console.log(`   스크립트: ${writeAnalysis.scriptCount}개`);
-  console.log(`   폼: ${writeAnalysis.formCount}개`);
-  console.log(`   인풋: ${writeAnalysis.inputCount}개`);
-  console.log(`   테이블: ${writeAnalysis.tableCount}개`);
-  console.log(`   tbody: ${writeAnalysis.tbodyCount}개`);
-  console.log(`   전화번호: ${writeAnalysis.phoneCount}개`);
-  if (writeAnalysis.phoneSamples.length > 0) {
-    console.log(`   샘플: ${writeAnalysis.phoneSamples.join(', ')}`);
+  console.log(`   DOM _ajs_ 스크립트: ${decryptResult.domAjsCount}개`);
+  if (decryptResult.domAjsDetails) {
+    decryptResult.domAjsDetails.forEach(d => {
+      console.log(`   [${d.idx}] _ajs_="${d.ajs}" _ah_=${d.ahLen}자 text=${d.textLen}자`);
+      if (d.ahLen > 0) console.log(`       _ah_: ${d.ah}`);
+      if (d.textLen > 0) console.log(`       text: ${d.text}`);
+    });
   }
+  console.log(`   pnp 전역: ${decryptResult.pnpKeys.join(', ')}`);
+  console.log(`   $aaq: ${decryptResult.has$aaq}`);
+  if (decryptResult._avt_) console.log(`   _avt_: ${decryptResult._avt_}`);
+  if (decryptResult._aevl_) console.log(`   _aevl_: ${decryptResult._aevl_}`);
 
-  console.log('\n   패턴 검색 결과:');
-  for (const [p, info] of Object.entries(writeAnalysis.patterns)) {
-    if (info.found) {
-      console.log(`   ✅ "${p}" pos=${info.pos}: ${info.context.substring(0, 200).replace(/\n/g, '\\n')}`);
-    }
-  }
+  // ========== PART D: _ah_ 속성의 전체 내용 저장 ==========
+  console.log('\n===== PART D: _ah_ 전체 저장 =====\n');
 
-  console.log('\n   스크립트 상세:');
-  writeAnalysis.scripts.forEach(s => {
-    if (s.src) {
-      console.log(`   [${s.idx}] 외부: ${s.src}`);
-    } else {
-      console.log(`   [${s.idx}] 인라인 (${s.contentLen}자): ${s.content.substring(0, 500)}`);
+  const ahFull = await page.evaluate(() => {
+    const html = window.__pnpWriteAll || '';
+    // tbody 뒤의 script _ajs_ 태그에서 _ah_ 전체 추출
+    const ahRegex = /_ah_\s*=\s*'([^']*)'/g;
+    const results = [];
+    let m;
+    while ((m = ahRegex.exec(html)) !== null) {
+      results.push({ pos: m.index, length: m[1].length, content: m[1] });
     }
+    // 큰따옴표도 시도
+    const ahRegex2 = /_ah_\s*=\s*"([^"]*)"/g;
+    while ((m = ahRegex2.exec(html)) !== null) {
+      results.push({ pos: m.index, length: m[1].length, content: m[1] });
+    }
+    return results;
   });
 
-  console.log('\n   폼 상세:');
-  writeAnalysis.forms.forEach((f, i) => console.log(`   [${i}] ${f.substring(0, 300).replace(/\n/g, '\\n')}`));
+  console.log(`   _ah_ 속성 ${ahFull.length}개:`);
+  for (const ah of ahFull) {
+    console.log(`   pos=${ah.pos}, ${ah.length}자`);
+    console.log(`   처음 500자: ${ah.content.substring(0, 500)}`);
+    if (ah.length > 500) console.log(`   마지막 200자: ${ah.content.substring(ah.length - 200)}`);
 
-  console.log('\n   인풋 상세:');
-  writeAnalysis.inputs.forEach((inp, i) => console.log(`   [${i}] ${inp}`));
-
-  console.log('\n   tbody 상세:');
-  writeAnalysis.tbodies.forEach(t => {
-    console.log(`   [${t.idx}] ${t.length}자: ${t.snippet.substring(0, 300).replace(/\n/g, '\\n')}`);
-  });
-
-  // 전체 document.write 내용 저장
-  const fullWrite = await page.evaluate(() => window.__pnpWriteAll || '');
-  if (fullWrite.length > 0) {
-    await fs.writeFile('data/decrypted-full.html', fullWrite);
-    console.log(`\n   ✅ data/decrypted-full.html 저장 (${fullWrite.length}자)`);
+    // 저장
+    await fs.writeFile('data/ah-encrypted.txt', ah.content);
+    console.log(`   ✅ data/ah-encrypted.txt 저장 (${ah.length}자)`);
   }
 
-  // ========== 4. zn.dc() 직접 호출 (v() 우회) ==========
-  console.log('\n4. zn.dc() 직접 호출 시도 (v() 필터 우회)...');
+  // ========== PART E: pnp4web S() 함수로 복호화 재시도 ==========
+  console.log('\n===== PART E: S() 함수 복호화 =====\n');
 
-  if (encryptedBlob) {
-    const rawDecrypt = await page.evaluate((blob) => {
-      // pnp4web 내부 객체 탐색
-      const result = { znExists: false, dcResult: null };
+  // pnp4web.js를 다시 가져와서 S() 함수 분석
+  try {
+    const pnpResp = await axios.get('https://ev.or.kr/nportal/js/pnp4web/pnp4web.js?v=20190219', {
+      headers: { 'User-Agent': REAL_UA },
+      timeout: 30000,
+    });
+    const pnpSrc = pnpResp.data;
 
-      // zn 객체 찾기
-      if (typeof zn !== 'undefined') {
-        result.znExists = true;
-        result.znType = typeof zn;
-        result.znKeys = Object.keys(zn).join(', ');
-        if (typeof zn.dc === 'function') {
-          try {
-            const raw = zn.dc(blob);
-            result.dcResult = {
-              length: raw.length,
-              snippet: raw.substring(0, 1000),
-              hasScript: raw.includes('<script'),
-              hasGetList: raw.includes('_getListSearch'),
-              hasAjax: raw.includes('$.ajax'),
-              phoneCount: (raw.match(/\d{2,3}-\d{3,4}-\d{4}/g) || []).length,
-            };
-          } catch (e) {
-            result.dcError = e.message;
-          }
-        }
+    // S(e,t) 함수 찾기 - _ajs_ 처리 부분
+    const sIdx = pnpSrc.indexOf('getAttribute("_ajs_")');
+    if (sIdx >= 0) {
+      console.log(`   _ajs_ 처리 코드 위치: ${sIdx}`);
+      console.log(`   코드:\n${pnpSrc.substring(Math.max(0, sIdx - 500), sIdx + 1000)}`);
+    }
+
+    // _ah_ 처리 부분
+    const ahIdx = pnpSrc.indexOf('_ah_');
+    if (ahIdx >= 0) {
+      console.log(`\n   _ah_ 처리 코드 위치: ${ahIdx}`);
+      console.log(`   코드:\n${pnpSrc.substring(Math.max(0, ahIdx - 300), ahIdx + 500)}`);
+    }
+
+    // dc 함수 (복호화) 찾기
+    const dcIdx = pnpSrc.indexOf('.dc(');
+    if (dcIdx >= 0) {
+      console.log(`\n   .dc() 호출 위치: ${dcIdx}`);
+      console.log(`   코드:\n${pnpSrc.substring(Math.max(0, dcIdx - 300), dcIdx + 300)}`);
+    }
+
+  } catch (err) {
+    console.log(`   ⚠️ pnp4web 분석 실패: ${err.message}`);
+  }
+
+  // ========== PART F: Puppeteer에서 pnp4web 내부 호출로 _ah_ 복호화 ==========
+  console.log('\n===== PART F: 브라우저 내 _ah_ 복호화 =====\n');
+
+  if (ahFull.length > 0) {
+    const ahContent = ahFull[0].content;
+    const browserDecrypt = await page.evaluate((encrypted) => {
+      const result = {};
+
+      // 방법 1: _aevl_ 키를 사용한 base64 디코딩 시도
+      try {
+        const decoded = atob(encrypted);
+        result.base64 = { length: decoded.length, snippet: decoded.substring(0, 200) };
+      } catch (e) {
+        result.base64Error = e.message;
       }
 
-      // 전역에서 복호화 관련 함수 찾기
-      const candidates = ['zn', 'Zn', '_zn', 'dc', '_dc', 'decrypt', '_decrypt'];
-      result.globalSearch = {};
-      for (const name of candidates) {
+      // 방법 2: pnp4web의 내부 복호화 함수 찾기
+      // _0xc792 배열 (pnp4web의 난독화 배열) 확인
+      try {
+        if (typeof _0xc792 !== 'undefined') {
+          result._0xc792 = { type: typeof _0xc792, length: _0xc792.length };
+        }
+      } catch {}
+
+      // 방법 3: pnp4web이 전역에 남긴 복호화 유틸리티
+      const decryptCandidates = ['_$d', '_$dc', '_$decrypt', '$aaq'];
+      for (const name of decryptCandidates) {
         try {
-          result.globalSearch[name] = typeof window[name];
+          if (typeof window[name] !== 'undefined') {
+            result[name] = typeof window[name];
+          }
         } catch {}
       }
 
-      // pnp4web의 난독화 변수 확인
-      try {
-        result.pnpGlobals = Object.keys(window).filter(k =>
-          k.startsWith('_0x') || k.startsWith('_a') || k.startsWith('zn') || k.startsWith('Zn')
-        ).slice(0, 30);
-      } catch {}
-
-      return result;
-    }, encryptedBlob);
-
-    console.log(`   zn 존재: ${rawDecrypt.znExists}`);
-    console.log(`   전역 검색: ${JSON.stringify(rawDecrypt.globalSearch)}`);
-    if (rawDecrypt.pnpGlobals) console.log(`   pnp 전역변수: ${rawDecrypt.pnpGlobals.join(', ')}`);
-
-    if (rawDecrypt.dcResult) {
-      console.log(`\n   ✅ zn.dc() 성공!`);
-      console.log(`   결과: ${rawDecrypt.dcResult.length}자`);
-      console.log(`   <script>: ${rawDecrypt.dcResult.hasScript}`);
-      console.log(`   _getListSearch: ${rawDecrypt.dcResult.hasGetList}`);
-      console.log(`   $.ajax: ${rawDecrypt.dcResult.hasAjax}`);
-      console.log(`   전화번호: ${rawDecrypt.dcResult.phoneCount}`);
-      console.log(`   snippet: ${rawDecrypt.dcResult.snippet}`);
-
-      // raw 복호화 결과 저장
-      if (rawDecrypt.dcResult.hasScript || rawDecrypt.dcResult.hasGetList || rawDecrypt.dcResult.phoneCount > 0) {
-        const fullRaw = await page.evaluate((blob) => {
-          try { return zn.dc(blob); } catch { return ''; }
-        }, encryptedBlob);
-        if (fullRaw) {
-          await fs.writeFile('data/decrypted-raw.html', fullRaw);
-          console.log(`   ✅ data/decrypted-raw.html 저장 (${fullRaw.length}자)`);
-
-          // _getListSearch 추출
-          if (fullRaw.includes('_getListSearch')) {
-            const idx = fullRaw.indexOf('_getListSearch');
-            console.log(`\n   _getListSearch 컨텍스트:`);
-            console.log(fullRaw.substring(Math.max(0, idx - 500), idx + 1000));
-          }
+      // 방법 4: script 태그에서 직접 처리 시도
+      const scripts = document.querySelectorAll('script[_ajs_]');
+      if (scripts.length > 0) {
+        const s = scripts[0];
+        // pnp4web이 이 스크립트를 아직 처리 안 했는지 확인
+        result.scriptProcessed = s.textContent.length > 0;
+        result.scriptAttributes = {};
+        for (const attr of s.attributes) {
+          result.scriptAttributes[attr.name] = attr.value.substring(0, 100);
         }
       }
-    }
-    if (rawDecrypt.dcError) console.log(`   ⚠️ zn.dc() 에러: ${rawDecrypt.dcError}`);
+
+      return result;
+    }, ahFull[0].content);
+
+    console.log(`   복호화 시도 결과: ${JSON.stringify(browserDecrypt, null, 2)}`);
   }
 
-  // ========== 5. innerHTML 구조 분석 ==========
-  console.log('\n5. innerHTML 구조 분석...');
-  const htmlAnalysis = await page.evaluate(() => {
-    const body = document.body;
-    if (!body) return { error: 'no body' };
-
-    // 최상위 자식 요소 분석
-    const children = [...body.children].map((el, i) => ({
-      idx: i,
-      tag: el.tagName,
-      id: el.id,
-      className: el.className?.toString().substring(0, 100) || '',
-      display: getComputedStyle(el).display,
-      visibility: getComputedStyle(el).visibility,
-      htmlLen: el.innerHTML.length,
-      textLen: el.innerText.length,
-    }));
-
-    // display:none 요소
-    const hiddenEls = body.querySelectorAll('[style*="display:none"], [style*="display: none"], .hidden, .hide');
-    const hiddenInfo = [...hiddenEls].slice(0, 10).map(el => ({
-      tag: el.tagName, id: el.id, cls: el.className?.toString().substring(0, 50),
-      htmlLen: el.innerHTML.length,
-    }));
-
-    // 보이는 텍스트
-    const visibleText = body.innerText;
-
-    return {
-      childCount: children.length,
-      children: children.slice(0, 30),
-      hiddenCount: hiddenEls.length,
-      hiddenInfo,
-      visibleText: visibleText.substring(0, 500),
-      visibleTextLen: visibleText.length,
-    };
-  });
-
-  console.log(`   body 자식: ${htmlAnalysis.childCount}개`);
-  console.log(`   숨겨진 요소: ${htmlAnalysis.hiddenCount}개`);
-  console.log(`   보이는 텍스트 (${htmlAnalysis.visibleTextLen}자): ${htmlAnalysis.visibleText}`);
-
-  console.log('\n   자식 요소:');
-  htmlAnalysis.children.forEach(c => {
-    console.log(`   [${c.idx}] <${c.tag}> id="${c.id}" class="${c.className}" display=${c.display} vis=${c.visibility} html=${c.htmlLen} text=${c.textLen}`);
-  });
-
-  // 전체 HTML 저장
   const html = await page.content();
   await browser.close();
 
   await fs.writeFile('data/diag-phone.html', html);
-
-  const report = { timestamp: new Date().toISOString(), writeAnalysis, htmlAnalysis };
+  const report = { timestamp: new Date().toISOString(), ahScripts, decryptResult, ahFull: ahFull.map(a => ({ pos: a.pos, length: a.length })) };
   await fs.writeFile('data/diag-phone.json', JSON.stringify(report, null, 2));
 
   console.log('\n✅ 저장 완료');
-  console.log('\n========== 핵심 요약 ==========');
-  console.log(`document.write: ${writeAnalysis.totalLength}자`);
-  console.log(`스크립트: ${writeAnalysis.scriptCount}개`);
-  console.log(`전화번호: ${writeAnalysis.phoneCount}개`);
-  console.log(`폼: ${writeAnalysis.formCount}개, 인풋: ${writeAnalysis.inputCount}개`);
-  console.log(`tbody: ${writeAnalysis.tbodyCount}개`);
 }
 
 main().catch(err => {
