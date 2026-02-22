@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-22T07:40:37.749Z",
+  "timestamp": "2026-02-22T07:50:36.881Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1661,16 +1661,16 @@
           "registered_corporate": 2,
           "registered_taxi": 0,
           "registered_general": 40,
-          "delivered_total": 16,
+          "delivered_total": 17,
           "delivered_priority": 0,
           "delivered_corporate": 1,
           "delivered_taxi": 0,
-          "delivered_general": 15,
-          "remaining_total": 84,
+          "delivered_general": 16,
+          "remaining_total": 83,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 5,
-          "remaining_general": 80,
+          "remaining_general": 79,
           "note": "[2월20일 기준] (승용)잔여대수 15대정도\n* 계약일은 공고일(1.28.) 이후여야 하며, 차종은 신청내역과 계약서가 동일해야 합니다.\n*  전환지원금은 출고 후 3년 이상 경과한 내연기관차를 신차 등록일까지 교체(자동차관리정보시스템 등록일자로 확인)한 개인에게만 지급됨\n[증평군 전기자동차 보급사업 안내]\n○ 2026년 1차 보급 대수\n- 전기승용 : 100대(일반 95대, 택시 5대)\n* 예산소진 시 조기마감(3분기부터 보급물량은 통합 접수)\n○ 보조금 지원대상 차량 및 지원금액 : 무공해차 통합누리집에서 열람가능\n- 열람방법 : 구매 및 지원 > 무공해차 구매보조금 지원 > 구매보조금 지급현황 > 차종 선택 > 지자체 차종별 보조금 클릭 > 해당 지자체 조회\n○ 자세한 사항은 공고문 참조(의무운행기간은 증평군에서 준수해야 함)\n※ 전화문의가 많아 오히려 업무처리가 지연될 수 있습니다. 서류심사 및 자격부여까지 1~5일 소요되므로 단순문의 등 독촉전화 자제 부탁드립니다."
         },
         {
@@ -2597,15 +2597,15 @@
           "registered_corporate": 6,
           "registered_taxi": 36,
           "registered_general": 273,
-          "delivered_total": 9,
+          "delivered_total": 10,
           "delivered_priority": 2,
           "delivered_corporate": 0,
-          "delivered_taxi": 2,
+          "delivered_taxi": 3,
           "delivered_general": 5,
-          "remaining_total": 491,
+          "remaining_total": 490,
           "remaining_priority": 48,
           "remaining_corporate": 0,
-          "remaining_taxi": 23,
+          "remaining_taxi": 22,
           "remaining_general": 420,
           "note": "1. 신청기간 : 2026. 2. 9.(월) 09:00 ~ 예산 소진 시 까지\n2. 보급대수 : 전기차 530대 (보급 여건 등에 따라 변동될 수 있음)\n가. 승용 : 500대(추가지원금 제외 대당 최대 1,101만원 지원)\n나. 화물 : 30대(추가지원금 제외 대당 최대 2,030만원 지원)\n3. 보급기준 : 개인 1대, 기업·법인·기관 당 1대\n4. 선정기준 : 차량 출고·등록순(보조금 지원가능 확인 요청일 순)\n5. 지원차량 : 무공해차 통합누리집(ev.or.kr)에서 확인 가능\n※ 향후 무공해차 통합누리집에 조회되는 차량은 변경 공고 없이 보조금 지원대상에 포함\n6. 기타 자세한 사항은 순천시 공고 제2026-349호 참고"
         },
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-22T07:40:37.378Z"
+      "timestamp": "2026-02-22T07:50:36.799Z"
     }
   ]
 }
