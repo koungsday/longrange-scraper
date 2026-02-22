@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-22T13:50:36.225Z",
+  "timestamp": "2026-02-22T14:00:45.148Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -491,16 +491,16 @@
           "registered_corporate": 1,
           "registered_taxi": 2,
           "registered_general": 16,
-          "delivered_total": 7,
+          "delivered_total": 8,
           "delivered_priority": 2,
           "delivered_corporate": 0,
           "delivered_taxi": 2,
-          "delivered_general": 3,
-          "remaining_total": 213,
+          "delivered_general": 4,
+          "remaining_total": 212,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 5,
-          "remaining_general": 210,
+          "remaining_general": 209,
           "note": "<2026년 과천시 전기자동차 상반기(1차) 보급사업>\n▶사업(접수)기간: 2026. 2. 4.(수) 9:00 ~ 2026. 6. 30.(화) 18:00\n▶상반기 보급대수: 승용 220대 화물 12대, 승합(버스) 2대\n▶신청대상: 지원신청일로부터 30일 이상 과천시에 주소를 둔 자\n▶선정방법: 차량 출고·등록순\n※신청서를 포함한 모든 서류 원본대조필 날인 후 첨부 (원본 우편 발송 불필요)\n※자세한 사항은 공고문을 참고하시기 바랍니다.\n★ 시스템상 잔여대수와 실제 예산내 가능대수는 일치하지 않습니다.\n★  차량보조금 지급액 등 단순문의는 가급적 자제해 주시기 바랍니다."
         },
         {
@@ -1011,12 +1011,12 @@
           "registered_corporate": 1,
           "registered_taxi": 4,
           "registered_general": 59,
-          "delivered_total": 33,
-          "delivered_priority": 8,
+          "delivered_total": 34,
+          "delivered_priority": 9,
           "delivered_corporate": 0,
           "delivered_taxi": 2,
           "delivered_general": 23,
-          "remaining_total": 282,
+          "remaining_total": 281,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-22T13:50:36.144Z"
+      "timestamp": "2026-02-22T14:00:45.069Z"
     }
   ]
 }
