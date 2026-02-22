@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-22T03:00:49.515Z",
+  "timestamp": "2026-02-22T03:10:36.314Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1817,16 +1817,16 @@
           "registered_corporate": 5,
           "registered_taxi": 10,
           "registered_general": 121,
-          "delivered_total": 10,
+          "delivered_total": 11,
           "delivered_priority": 3,
           "delivered_corporate": 0,
           "delivered_taxi": 1,
-          "delivered_general": 6,
-          "remaining_total": 120,
+          "delivered_general": 7,
+          "remaining_total": 119,
           "remaining_priority": 10,
           "remaining_corporate": 0,
           "remaining_taxi": 6,
-          "remaining_general": 104,
+          "remaining_general": 103,
           "note": "사업명 : 2026년도 공주시 상반기 전기자동차 보급사업 공고\n접수기간 : (승용) 2026. 2. 11.(수) 09:00 ~ 6.26.(금) 18:00\n(화물) 2026. 2. 23.(월) 09:00 ~ 6.26.(금) 18:00\n접수는 평일 09:00~18:00가능(주말, 공휴일 제외), 예산 소진 시 조기마감 될 수 있음\n무공해차 통합누리집에 등록되어 있는 차량대수와 실제 지원대수는 상이할 수 있으니, 유선상으로 잔여대수 확인 바람"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-22T03:00:49.437Z"
+      "timestamp": "2026-02-22T03:10:36.218Z"
     }
   ]
 }
