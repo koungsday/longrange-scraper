@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-22T23:00:49.272Z",
+  "timestamp": "2026-02-22T23:10:37.858Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -49,16 +49,16 @@
           "registered_corporate": 25,
           "registered_taxi": 149,
           "registered_general": 515,
-          "delivered_total": 595,
+          "delivered_total": 596,
           "delivered_priority": 156,
           "delivered_corporate": 16,
           "delivered_taxi": 103,
-          "delivered_general": 320,
-          "remaining_total": 3531,
+          "delivered_general": 321,
+          "remaining_total": 3530,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 397,
-          "remaining_general": 3306,
+          "remaining_general": 3305,
           "note": "ㅇ 상반기 보급대수 : 5023대(승용차 4,126, 화물차 846, 승합 38, 어린이통학차 13)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음\nㅇ 보급기간 : `26. 1. 28.(수)  ∼ ‘26. 12. 11.(금)\n(※ 보급기간 내 지급신청까지 완료하여야 하며, 예산소진 시 신청마감)\n* 신청서 및 각종 첨부서류는 1개의 PDF파일로 업로드해주세요\n* 대상자 선정 전 차량 출고 시 보조금 지급되지 않습니다. 주의바랍니다."
         },
         {
@@ -231,12 +231,12 @@
           "registered_corporate": 8,
           "registered_taxi": 22,
           "registered_general": 372,
-          "delivered_total": 213,
+          "delivered_total": 214,
           "delivered_priority": 69,
-          "delivered_corporate": 3,
+          "delivered_corporate": 4,
           "delivered_taxi": 9,
           "delivered_general": 132,
-          "remaining_total": 2257,
+          "remaining_total": 2256,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 114,
@@ -1869,16 +1869,16 @@
           "registered_corporate": 13,
           "registered_taxi": 20,
           "registered_general": 533,
-          "delivered_total": 199,
+          "delivered_total": 201,
           "delivered_priority": 33,
           "delivered_corporate": 4,
           "delivered_taxi": 5,
-          "delivered_general": 157,
-          "remaining_total": 393,
+          "delivered_general": 159,
+          "remaining_total": 391,
           "remaining_priority": 26,
           "remaining_corporate": 0,
           "remaining_taxi": 24,
-          "remaining_general": 347,
+          "remaining_general": 345,
           "note": "<2026년 아산시 상반기 전기자동차(승용, 화물) 보급사업>\n1. 접수시작일 : [승용] ’26. 2. 05.(목) 10:00 ~\n2. 신청대상 : 만 18세 이상 아산시민, 법인, 단체 등(신청일 접수일 기준 90일 이전 거주)\n3. 보급대수: 승용 592  * 우선순위, 택시 물량 포함\n※ 차종별 보조금 차등지원 및 구매수요에 따라 보급물량은 별도 공고 없이 조정될 수 있음."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-22T23:00:49.191Z"
+      "timestamp": "2026-02-22T23:10:37.781Z"
     }
   ]
 }
