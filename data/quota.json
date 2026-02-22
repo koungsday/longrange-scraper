@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-22T14:20:37.458Z",
+  "timestamp": "2026-02-22T14:30:45.074Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2753,16 +2753,16 @@
           "registered_corporate": 2,
           "registered_taxi": 0,
           "registered_general": 43,
-          "delivered_total": 20,
+          "delivered_total": 21,
           "delivered_priority": 2,
           "delivered_corporate": 2,
           "delivered_taxi": 0,
-          "delivered_general": 16,
-          "remaining_total": 139,
+          "delivered_general": 17,
+          "remaining_total": 138,
           "remaining_priority": 5,
           "remaining_corporate": 0,
           "remaining_taxi": 3,
-          "remaining_general": 133,
+          "remaining_general": 132,
           "note": "신청기간: 2026. 2. 3. ~ 예산 소진 시까지\n사업예산: 국비 210,000천원/도비 105,000천원/군비 420,000천원\n보급대수: 70대\n지원자격\n- 고흥군에 3개월 이상 거주한 만 18세 이상의 운전면허를 소지한 사람"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-22T14:20:37.369Z"
+      "timestamp": "2026-02-22T14:30:44.983Z"
     }
   ]
 }
