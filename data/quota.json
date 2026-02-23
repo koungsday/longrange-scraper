@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-23T12:20:41.141Z",
+  "timestamp": "2026-02-23T12:30:44.395Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -387,16 +387,16 @@
           "registered_corporate": 19,
           "registered_taxi": 15,
           "registered_general": 320,
-          "delivered_total": 235,
+          "delivered_total": 236,
           "delivered_priority": 90,
           "delivered_corporate": 6,
           "delivered_taxi": 10,
-          "delivered_general": 129,
-          "remaining_total": 761,
+          "delivered_general": 130,
+          "remaining_total": 760,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 867,
+          "remaining_general": 866,
           "note": "★2026년 평택시 상반기 전기자동차 공고★\n★전기화물 접수, 대상자선정 마감★\nㅇ 지원대수\n- (승용) 1,000대, (화물) 200대, (어린이통학버스) 5대\n* 차종별 보조금 지급액 상이하여(국비 추가 보조 등) 사업량 별도 공고 없이 변동됨\nㅇ 신청기간 : 2026. 2. 2.(월) ~ 예산 소진 시까지\n* 예산 소진 시 조기 마감\nㅇ 선정기준 : 차량 출고 · 등록 순\nㅇ 보조금 관련 서류는 원본대조필 날인 후 시스템 첨부(우편발송 X)\n** 공고문에 첨부된 양식으로 신청해 주시기 바랍니다. **\n** 자세한 내용은 공고문 참조하시기 바랍니다. **\n★자격부여 신청,대상자선정 신청까지 순차적으로 선정되니 전화문의 자제바랍니다."
         },
         {
@@ -3112,11 +3112,11 @@
           "quota_corporate": 0,
           "quota_taxi": 100,
           "quota_general": 730,
-          "registered_total": 885,
-          "registered_priority": 251,
+          "registered_total": 868,
+          "registered_priority": 244,
           "registered_corporate": 16,
           "registered_taxi": 86,
-          "registered_general": 532,
+          "registered_general": 522,
           "delivered_total": 32,
           "delivered_priority": 6,
           "delivered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-23T12:20:41.086Z"
+      "timestamp": "2026-02-23T12:30:44.257Z"
     }
   ]
 }
