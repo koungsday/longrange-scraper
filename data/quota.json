@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-23T15:10:44.736Z",
+  "timestamp": "2026-02-23T15:20:42.567Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -101,16 +101,16 @@
           "registered_corporate": 26,
           "registered_taxi": 53,
           "registered_general": 853,
-          "delivered_total": 785,
+          "delivered_total": 786,
           "delivered_priority": 282,
           "delivered_corporate": 8,
           "delivered_taxi": 25,
-          "delivered_general": 470,
-          "remaining_total": 5375,
+          "delivered_general": 471,
+          "remaining_total": 5374,
           "remaining_priority": 598,
           "remaining_corporate": 0,
           "remaining_taxi": 415,
-          "remaining_general": 4370,
+          "remaining_general": 4369,
           "note": "*** 2025년 계약한 차량은 신청불가입니다. 지원 신청한 차량들도 계약서 수정 요청 바랍니다***\n*** 2. 4. 일 18:00 화물차 신청 마감합니다. ***\n***2. 4. 일 부터는 보조금 지원신청을 해도 보조금 지원 대상자가 안될 수 있으며 대부분 대기자 명단에 포함될 것으로 예상됩니다***\n***신청화물차 보조금 선정 기준은 출고 등록 순(대상자 선정 순)입니다 참고 바랍니다***\n* 문의사항에 대해 공고문 보완(파란색 표시)해서 재첨부하였으니 확인바랍니다*\n***2026년 상반기 전기자동차 민간보급사업 안내***\n2026년 전기승용차 보급대수 : 8,800대\n- 1차 상반기 6,160대(70%) *택시 및 우선순위 물량 있음\n- 2차 하반기 2,640대(30%) * 통합진행\n- 신청접수는 1. 29.(목) 09:00부터 시작합니다\n- 신청양식은 인천시 양식으로 다운받아서 제출해주시기 바랍니다.\n- 보급대수는 보급여건에 따라 변동될수 있으며 상반기 목표대수 소진 시 조기 종료합니다.\n- 기타 사항은 첨부된 공고문을 참고하시기 바랍니다\n***지자체 문의처(연락처)는 조만간 변경예정이오니 수시로 공고를 확인하여 주시기 바랍니다***"
         },
         {
@@ -3112,11 +3112,11 @@
           "quota_corporate": 0,
           "quota_taxi": 100,
           "quota_general": 730,
-          "registered_total": 680,
-          "registered_priority": 183,
+          "registered_total": 669,
+          "registered_priority": 181,
           "registered_corporate": 13,
           "registered_taxi": 86,
-          "registered_general": 398,
+          "registered_general": 389,
           "delivered_total": 32,
           "delivered_priority": 6,
           "delivered_corporate": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-23T15:10:44.642Z"
+      "timestamp": "2026-02-23T15:20:42.471Z"
     }
   ]
 }
