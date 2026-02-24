@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-24T22:20:42.215Z",
+  "timestamp": "2026-02-24T22:30:43.331Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -153,16 +153,16 @@
           "registered_corporate": 28,
           "registered_taxi": 85,
           "registered_general": 666,
-          "delivered_total": 613,
+          "delivered_total": 614,
           "delivered_priority": 185,
           "delivered_corporate": 10,
           "delivered_taxi": 49,
-          "delivered_general": 369,
-          "remaining_total": 311,
+          "delivered_general": 370,
+          "remaining_total": 310,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 417,
+          "remaining_general": 416,
           "note": "<2026년 상반기 전기자동차 보급사업 안내>\n- 접수기간: 2026. 1. 28.(공고일) 09:00 ~ 예산소진시까지\n- 보급대수 : 상반기 924대(70%), 하반기 395대(30%) * 차종별 차등지원 및 보급여건에 따라 변동될 수있음\n* 대상자 선정 잔여 약 300대(26.2.24 09:00 기준)\n- 지원대상: 신청일 기준 30일간 연속하여 대전시에 주소를 둔 개인, 법인 등\n* 대상자 선정은 자동차 출고 등록 순\n* 지원신청서의 빠른 승인을 위해 독촉 전화문의는 자제 부탁드립니다.\n* 자세한 사항은 공고문 참고하여 주시기 바랍니다.\n★ 차종별 보조금액, 전환지원금 본공고2 첨부파일 참고"
         },
         {
@@ -803,12 +803,12 @@
           "registered_corporate": 8,
           "registered_taxi": 6,
           "registered_general": 160,
-          "delivered_total": 71,
+          "delivered_total": 72,
           "delivered_priority": 30,
-          "delivered_corporate": 1,
+          "delivered_corporate": 2,
           "delivered_taxi": 1,
           "delivered_general": 39,
-          "remaining_total": 960,
+          "remaining_total": 959,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-24T22:20:42.156Z"
+      "timestamp": "2026-02-24T22:30:43.234Z"
     }
   ]
 }
