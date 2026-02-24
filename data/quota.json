@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-24T13:00:50.310Z",
+  "timestamp": "2026-02-24T13:10:40.269Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1708,11 +1708,11 @@
           "quota_corporate": 0,
           "quota_taxi": 5,
           "quota_general": 85,
-          "registered_total": 42,
+          "registered_total": 43,
           "registered_priority": 5,
           "registered_corporate": 1,
           "registered_taxi": 0,
-          "registered_general": 36,
+          "registered_general": 37,
           "delivered_total": 26,
           "delivered_priority": 3,
           "delivered_corporate": 1,
@@ -2177,10 +2177,10 @@
           "quota_taxi": 32,
           "quota_general": 544,
           "registered_total": 798,
-          "registered_priority": 150,
+          "registered_priority": 149,
           "registered_corporate": 10,
           "registered_taxi": 53,
-          "registered_general": 585,
+          "registered_general": 586,
           "delivered_total": 0,
           "delivered_priority": 0,
           "delivered_corporate": 0,
@@ -2607,7 +2607,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 13,
           "remaining_general": 387,
-          "note": "1. 신청기간 : 2026. 2. 9.(월) 09:00 ~ 예산 소진 시 까지\n2. 보급대수 : 전기차 530대 (보급 여건 등에 따라 변동될 수 있음)\n가. 승용 : 500대(추가지원금 제외 대당 최대 1,101만원 지원)\n나. 화물 : 30대(추가지원금 제외 대당 최대 2,030만원 지원)\n3. 보급기준 : 개인 1대, 기업·법인·기관 당 1대\n4. 선정기준 : 차량 출고·등록순(보조금 지원가능 확인 요청일 순)\n5. 지원차량 : 무공해차 통합누리집(ev.or.kr)에서 확인 가능\n※ 향후 무공해차 통합누리집에 조회되는 차량은 변경 공고 없이 보조금 지원대상에 포함\n6. 기타 자세한 사항은 순천시 공고 제2026-349호 참고"
+          "note": "※ 공고대수 500대 마감 예정입니다.(2026-02-24 기준 489대로 11대 남음)\n※ 전환지원금 및 추가지원금 지방비 예산도 고려하여 산정한 대수(예비 대수 포함)로 접수하셨더라도 대상자 선정이 되지 않으실 수 있는 점 유의하여 주시기 바랍니다."
         },
         {
           "sido": "전남",
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-24T13:00:50.224Z"
+      "timestamp": "2026-02-24T13:10:40.189Z"
     }
   ]
 }
