@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-24T11:20:43.820Z",
+  "timestamp": "2026-02-24T11:30:44.331Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -669,20 +669,20 @@
           "quota_taxi": 0,
           "quota_general": 580,
           "registered_total": 195,
-          "registered_priority": 55,
+          "registered_priority": 54,
           "registered_corporate": 5,
           "registered_taxi": 1,
-          "registered_general": 134,
-          "delivered_total": 56,
-          "delivered_priority": 23,
+          "registered_general": 135,
+          "delivered_total": 58,
+          "delivered_priority": 24,
           "delivered_corporate": 1,
           "delivered_taxi": 1,
-          "delivered_general": 31,
-          "remaining_total": 574,
-          "remaining_priority": 27,
+          "delivered_general": 32,
+          "remaining_total": 572,
+          "remaining_priority": 26,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 549,
+          "remaining_general": 548,
           "note": "★ 우선순위 마감되었습니다. 일반으로 접수바랍니다.(조건을 갖춘 경우 추가 보조금 지급 가능)\n★ 접수된 순서대로 신속히 검토 중입니다. 유선 문의가 많을 경우 처리가 지연될 수 있으니 양해&협조 부탁드립니다.\n★ 모든 사본 자료, 원본대조필 날인바랍니다.\n[2026년 상반기 전기자동차 보급사업]\n○ 접수기간 : 2026. 2. 6.(금) 09:00 ~ 6. 30.(화) 18:00\n○ 보급대수\n- 승용 630대(일반 580대, 우선순위 50대)\n- 화물 80대(일반 74대, 우선순위 6대)\n- 승합 2대(개인)\n- 승합(어린이) 1대\n* 실제 보급대수는 차종별 보조금 차등 지원에 따라 예산범위 내에서 변동될 수 있음\n○ 선정기준 : 출고·등록순\n○ 신청대상 : 지원신청서 접수일 기준 연속 3개월 이상 하남시에 주소를 둔 자\n○ 신청방법 : 무공해차 통합누리집 사이트로 신청\n○ 기타 자세한 사항은 공고문 참조\n※ 제출 서류 우편 송부 불요\n※ 차종별 보조금 확인 방법 : 무공해차 통합누리집 → 구매 및 지원 → 무공해차 구매보조금 지원 → 구매보조금 지급현황 → 지자체 차종별 보조금"
         },
         {
@@ -1505,12 +1505,12 @@
           "registered_corporate": 30,
           "registered_taxi": 96,
           "registered_general": 1186,
-          "delivered_total": 842,
-          "delivered_priority": 251,
+          "delivered_total": 843,
+          "delivered_priority": 252,
           "delivered_corporate": 11,
           "delivered_taxi": 44,
           "delivered_general": 536,
-          "remaining_total": 1408,
+          "remaining_total": 1407,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 181,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-24T11:20:43.728Z"
+      "timestamp": "2026-02-24T11:30:44.265Z"
     }
   ]
 }
