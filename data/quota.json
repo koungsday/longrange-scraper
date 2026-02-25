@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-25T14:00:48.341Z",
+  "timestamp": "2026-02-25T14:10:45.420Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -590,11 +590,11 @@
           "quota_corporate": 0,
           "quota_taxi": 30,
           "quota_general": 570,
-          "registered_total": 295,
+          "registered_total": 296,
           "registered_priority": 52,
           "registered_corporate": 10,
           "registered_taxi": 17,
-          "registered_general": 216,
+          "registered_general": 217,
           "delivered_total": 115,
           "delivered_priority": 31,
           "delivered_corporate": 5,
@@ -1905,7 +1905,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 24,
           "remaining_general": 265,
-          "note": "서산시 승용차 신청 마감(택시 물량만 접수 가능)\n대상자확정 마감.\n★내연차전환지원금 지원기준을 정정하오니 확인하여 주시기 바랍니다. [본공고2첨부]"
+          "note": "★내연차전환지원금 지원기준을 정정하오니 확인하여 주시기 바랍니다. [본공고2첨부]\n마감."
         },
         {
           "sido": "충남",
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-25T14:00:48.293Z"
+      "timestamp": "2026-02-25T14:10:45.334Z"
     }
   ]
 }
