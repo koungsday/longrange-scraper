@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-25T11:50:41.006Z",
+  "timestamp": "2026-02-25T12:00:45.852Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -75,16 +75,16 @@
           "registered_corporate": 35,
           "registered_taxi": 136,
           "registered_general": 816,
-          "delivered_total": 452,
+          "delivered_total": 454,
           "delivered_priority": 113,
           "delivered_corporate": 9,
           "delivered_taxi": 58,
-          "delivered_general": 272,
-          "remaining_total": 763,
+          "delivered_general": 274,
+          "remaining_total": 761,
           "remaining_priority": 9,
           "remaining_corporate": 0,
           "remaining_taxi": 2,
-          "remaining_general": 761,
+          "remaining_general": 759,
           "note": "★ 접수 후 빠른 처리를 위해 단순 문의 및 처리 독촉 전화는 자제해주시길 바랍니다. ★\n*2026년 전기자동차 민간보급사업 안내(1차)*\n- 1차 물량 : 1,419대(승용차 1,215대, 화물차 200대, 승합차 4대)\n* 보급수량은 차종별 보조금 차등지원 및 차종별 구매수요에 따라 가감될 수 있습니다.\n- 신청접수 : 마감\n※ 2026년 전기차 보급대수 : 3,542대(승용차 3,035,  화물차 500, 승합차 7)\n1차 : 1,419대, 2차 : 1,063대, 3차 : 1,060대\n-> 보급추이 및 여건에 따라 회차 및 시기는 조정될수 있습니다.\n- 신청양식 : 대구시 양식(공고문 양식 다운로드)\n- 기타 상세 사항은 공고문을 참고하시기 바랍니다."
         },
         {
@@ -642,8 +642,8 @@
           "quota_corporate": 0,
           "quota_taxi": 10,
           "quota_general": 280,
-          "registered_total": 97,
-          "registered_priority": 36,
+          "registered_total": 98,
+          "registered_priority": 37,
           "registered_corporate": 1,
           "registered_taxi": 2,
           "registered_general": 58,
@@ -669,10 +669,10 @@
           "quota_taxi": 0,
           "quota_general": 580,
           "registered_total": 209,
-          "registered_priority": 55,
+          "registered_priority": 54,
           "registered_corporate": 5,
           "registered_taxi": 1,
-          "registered_general": 148,
+          "registered_general": 149,
           "delivered_total": 68,
           "delivered_priority": 28,
           "delivered_corporate": 1,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-25T11:50:40.942Z"
+      "timestamp": "2026-02-25T12:00:45.786Z"
     }
   ]
 }
