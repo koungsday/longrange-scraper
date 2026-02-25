@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-25T15:10:40.487Z",
+  "timestamp": "2026-02-25T15:20:40.576Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1687,16 +1687,16 @@
           "registered_corporate": 4,
           "registered_taxi": 3,
           "registered_general": 156,
-          "delivered_total": 141,
+          "delivered_total": 142,
           "delivered_priority": 33,
           "delivered_corporate": 2,
           "delivered_taxi": 3,
-          "delivered_general": 103,
-          "remaining_total": 659,
+          "delivered_general": 104,
+          "remaining_total": 658,
           "remaining_priority": 67,
           "remaining_corporate": 0,
           "remaining_taxi": 27,
-          "remaining_general": 567,
+          "remaining_general": 566,
           "note": "○ 공 고 일 : 2026. 1. 21.(수)\n○ 신청기간 : 2026. 1. 22.(목) 10:00 ~ 예산 소진 시 까지\n○ 접수방법 : 저공해차 구매보조금 시스템(www.ev.or.kr/ps)\n○ 사 업 량\n- 승용 : 약 800대\n- 화물 : 약 60대\n주요안내사항\n(생애최초)저희군은 전 생애에 자동차 보유사실이 없어야합니다.\n(전환지원금)구매지원 시점에 내연기관차량 매각.폐차안했더라도  가능합니다 대리점에서는 전환지원금 Y로 선택해주세요\n-전환지원금은 \"개인만\"가능합니다. (개인사업자 불가)\n(우편발송)올해는 우편발송하지않으셔도됩니다"
         },
         {
@@ -2176,10 +2176,10 @@
           "quota_corporate": 0,
           "quota_taxi": 32,
           "quota_general": 544,
-          "registered_total": 919,
+          "registered_total": 918,
           "registered_priority": 157,
           "registered_corporate": 14,
-          "registered_taxi": 58,
+          "registered_taxi": 57,
           "registered_general": 690,
           "delivered_total": 0,
           "delivered_priority": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-25T15:10:40.434Z"
+      "timestamp": "2026-02-25T15:20:40.480Z"
     }
   ]
 }
