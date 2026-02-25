@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-25T11:10:42.937Z",
+  "timestamp": "2026-02-25T11:20:42.359Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -252,8 +252,8 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 1949,
-          "registered_total": 242,
-          "registered_priority": 66,
+          "registered_total": 243,
+          "registered_priority": 67,
           "registered_corporate": 6,
           "registered_taxi": 19,
           "registered_general": 151,
@@ -564,11 +564,11 @@
           "quota_corporate": 0,
           "quota_taxi": 30,
           "quota_general": 510,
-          "registered_total": 219,
+          "registered_total": 220,
           "registered_priority": 66,
           "registered_corporate": 8,
           "registered_taxi": 3,
-          "registered_general": 142,
+          "registered_general": 143,
           "delivered_total": 80,
           "delivered_priority": 27,
           "delivered_corporate": 4,
@@ -2545,16 +2545,16 @@
           "registered_corporate": 7,
           "registered_taxi": 2,
           "registered_general": 105,
-          "delivered_total": 17,
+          "delivered_total": 18,
           "delivered_priority": 1,
           "delivered_corporate": 0,
           "delivered_taxi": 1,
-          "delivered_general": 15,
-          "remaining_total": 79,
+          "delivered_general": 16,
+          "remaining_total": 78,
           "remaining_priority": 3,
           "remaining_corporate": 0,
           "remaining_taxi": 1,
-          "remaining_general": 75,
+          "remaining_general": 74,
           "note": "2026년 전기자동차(승용) 보급사업  공고 안내\n○ 신청기간 : 2026 2. 9. ~ 6. 30. (평일 9 ~18시)\n☆★○ 지원가능 확인요청 : 2026. 2. 12. ~ 6. 30.  (평일 9 ~18시)\n○ 보급대수 : 96대\n○ 선정방법 : 지원가능 확인요청 순(출고등록순)\n※ 보급대수는 차량별 보조금 차등지원에 따라 예산범위 내에서 변동될 수 있음"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-25T11:10:42.875Z"
+      "timestamp": "2026-02-25T11:20:42.256Z"
     }
   ]
 }
