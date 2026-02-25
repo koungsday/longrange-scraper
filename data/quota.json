@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-25T23:00:50.537Z",
+  "timestamp": "2026-02-25T23:10:39.829Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,15 +23,15 @@
           "registered_corporate": 89,
           "registered_taxi": 206,
           "registered_general": 1619,
-          "delivered_total": 1855,
+          "delivered_total": 1856,
           "delivered_priority": 624,
           "delivered_corporate": 54,
-          "delivered_taxi": 72,
+          "delivered_taxi": 73,
           "delivered_general": 1105,
-          "remaining_total": 8645,
+          "remaining_total": 8644,
           "remaining_priority": 976,
           "remaining_corporate": 0,
-          "remaining_taxi": 768,
+          "remaining_taxi": 767,
           "remaining_general": 6955,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
@@ -777,16 +777,16 @@
           "registered_corporate": 7,
           "registered_taxi": 4,
           "registered_general": 131,
-          "delivered_total": 106,
+          "delivered_total": 107,
           "delivered_priority": 32,
           "delivered_corporate": 4,
           "delivered_taxi": 2,
-          "delivered_general": 68,
-          "remaining_total": 336,
+          "delivered_general": 69,
+          "remaining_total": 335,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 374,
+          "remaining_general": 373,
           "note": "<2026년 전기자동차 보급사업 공고(상반기)>\n1. 신청기간 : 2026. 2. 2.(월)  ~ 6. 30.(화) 예산 소진시 조기마감\n2. 보급대수: 승용 442대\n※ 차종별 보조금 상이하므로 보급대수는 변경될 수 있음\n3. 선정방법: 출고등록순\n★ 자세한 사항은 공고문 참고\n★ 전환지원금은 개인(개인사업자 불가)만 신청가능하며 판매 및 폐차관련서류는 보조금 지급신청전까지 제출(대리점에서는 전환지원금 Y로 체크)\n★ 지원 신청 후 자격부여까지는 최대 7일이 소요되며 그 결과는 문자로 안내하오니, 빠른 처리를 위한 단순 접수알림, 처리 독촉 전화 자제 요망\n붙임  1. 공고문(한글) 1부. 2. 공고문(PDF) 1부. 3. 차종별 보조금 및 전환지원금(EXCEL) 1부.  끝."
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 5276,
+          "registered_total": 5275,
           "registered_priority": 2,
-          "registered_corporate": 5223,
+          "registered_corporate": 5222,
           "registered_taxi": 16,
           "registered_general": 35,
           "delivered_total": 1940,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-25T23:00:50.465Z"
+      "timestamp": "2026-02-25T23:10:39.732Z"
     }
   ]
 }
