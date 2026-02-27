@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-27T11:50:38.292Z",
+  "timestamp": "2026-02-27T12:00:48.982Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,11 +18,11 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8060,
-          "registered_total": 2863,
+          "registered_total": 2864,
           "registered_priority": 883,
           "registered_corporate": 95,
           "registered_taxi": 213,
-          "registered_general": 1672,
+          "registered_general": 1673,
           "delivered_total": 1993,
           "delivered_priority": 659,
           "delivered_corporate": 58,
@@ -127,16 +127,16 @@
           "registered_corporate": 26,
           "registered_taxi": 116,
           "registered_general": 756,
-          "delivered_total": 660,
-          "delivered_priority": 159,
+          "delivered_total": 662,
+          "delivered_priority": 160,
           "delivered_corporate": 17,
           "delivered_taxi": 85,
-          "delivered_general": 399,
-          "remaining_total": 1270,
-          "remaining_priority": 34,
+          "delivered_general": 400,
+          "remaining_total": 1268,
+          "remaining_priority": 33,
           "remaining_corporate": 0,
           "remaining_taxi": 12,
-          "remaining_general": 1241,
+          "remaining_general": 1240,
           "note": "o 접수기간 : '26.1.30.(금)~ 12.4.(금)   ※ 예산소진시까지\no 보급대수 : 총 2,279대(승용 1,930대, 화물 330대, 승합 19대)\n★ 화물 신청접수 마감됐습니다(예산소진)\n* (본공고1) 공고문  (본공고2) 차종별 국시비 보조금\n★ 접수 후 빠른 처리를 위해 단순 접수 알림, 처리 독촉 전화는 자제 부탁드립니다."
         },
         {
@@ -1999,16 +1999,16 @@
           "registered_corporate": 4,
           "registered_taxi": 1,
           "registered_general": 77,
-          "delivered_total": 36,
+          "delivered_total": 37,
           "delivered_priority": 9,
           "delivered_corporate": 3,
           "delivered_taxi": 0,
-          "delivered_general": 24,
-          "remaining_total": 64,
+          "delivered_general": 25,
+          "remaining_total": 63,
           "remaining_priority": 1,
           "remaining_corporate": 0,
           "remaining_taxi": 10,
-          "remaining_general": 56,
+          "remaining_general": 55,
           "note": "26.02.10. 공고 수정 확인부탁드립니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-02-27T11:50:38.237Z"
+      "timestamp": "2026-02-27T12:00:48.907Z"
     }
   ]
 }
