@@ -8,14 +8,14 @@ const MAX_RETRIES = 3;
 
 async function getAllRegions() {
   console.log('📍 지역 목록 로딩...');
-  
+
   try {
     const response = await axios.get('https://api.donut.im/api/v1/regions/list');
     const allRegions = [];
-    
+
     response.data.regions.forEach(region => {
       const localType = region.localType;
-      
+
       if (region.local && Array.isArray(region.local)) {
         region.local.forEach(local => {
           allRegions.push({
@@ -26,16 +26,16 @@ async function getAllRegions() {
         });
       }
     });
-    
+
     console.log(`✅ 총 ${allRegions.length}개 지역`);
-    
+
     if (TEST_MODE) {
       console.log(`🧪 테스트 모드: 10개만 처리`);
       return allRegions.slice(0, 10);
     }
-    
+
     return allRegions;
-    
+
   } catch (error) {
     console.error('❌ 지역 목록 로딩 실패:', error.message);
     throw error;
@@ -127,26 +127,26 @@ function parseQuotaTable(html) {
       }
     }
   });
-  
+
   return quotaData;
 }
 
 async function scrapeRegionWithRetry(browser, region) {
   const targetUrl = `https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do?local_cd=${region.code}`;
-  
+
   for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
     let page = null;
-    
+
     try {
       page = await browser.newPage();
       await page.setDefaultNavigationTimeout(30000);
       await page.setDefaultTimeout(30000);
-      
-      await page.goto(targetUrl, { 
+
+      await page.goto(targetUrl, {
         waitUntil: 'networkidle2',
-        timeout: 30000 
+        timeout: 30000
       });
-      
+
       await page.waitForSelector('table', { timeout: 10000 });
 
       const html = await page.content();
@@ -167,10 +167,10 @@ async function scrapeRegionWithRetry(browser, region) {
         attempts: attempt,
         timestamp: new Date().toISOString()
       };
-      
+
     } catch (error) {
       if (page) await page.close();
-      
+
       if (attempt < MAX_RETRIES) {
         console.log(`   ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
         await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
@@ -245,7 +245,10 @@ async function saveQuotaHistory(quotaData, regions) {
 
     const vehicleType = row.vehicleType || '기타';
     todaySnapshot[code][vehicleType] = {
-      remaining: { total: row.remaining_total, priority: row.remaining_priority, corporate: row.remaining_corporate, taxi: row.remaining_taxi, general: row.remaining_general }
+      total: { total: row.quota_total, priority: row.quota_priority, corporate: row.quota_corporate, taxi: row.quota_taxi, general: row.quota_general },
+      remaining: { total: row.remaining_total, priority: row.remaining_priority, corporate: row.remaining_corporate, taxi: row.remaining_taxi, general: row.remaining_general },
+      registered: { total: row.registered_total, priority: row.registered_priority, corporate: row.registered_corporate, taxi: row.registered_taxi, general: row.registered_general },
+      delivered: { total: row.delivered_total, priority: row.delivered_priority, corporate: row.delivered_corporate, taxi: row.delivered_taxi, general: row.delivered_general }
     };
   }
 
@@ -265,14 +268,14 @@ async function main() {
   console.log('🚀 전기차 보조금 접수현황 스크래핑 시작');
   console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
   console.log('');
-  
+
   const startTime = Date.now();
   let browser = null;
-  
+
   try {
     const regions = await getAllRegions();
     console.log('');
-    
+
     console.log('🌐 브라우저 시작...');
     browser = await puppeteer.launch({
       headless: 'new',
@@ -285,15 +288,15 @@ async function main() {
     });
     console.log('✅ 브라우저 준비 완료');
     console.log('');
-    
+
     console.log('🟢 ===== 접수현황 스크래핑 시작 =====');
     console.log('⚠️ 모든 지역 페이지가 동일 → 첫 지역만 스크래핑');
-    
+
     const firstRegion = regions[0];
     console.log(`[1/1] ${firstRegion.parentName} ${firstRegion.localName}`);
-    
+
     const result = await scrapeRegionWithRetry(browser, firstRegion);
-    
+
     if (result.success && result.quotaData.length > 0) {
       console.log(`   ✅ ${result.quotaData.length}개 항목 (전체 161개 지역)`);
     } else if (!result.success) {
@@ -301,7 +304,7 @@ async function main() {
     } else {
       console.log(`   ⚠️ 데이터 없음`);
     }
-    
+
     const results = [result];
 
     await browser.close();
@@ -342,11 +345,11 @@ async function main() {
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
     console.log(`⏱️ 총 소요 시간: ${elapsed}초`);
     console.log('🎉 완료!');
-    
+
   } catch (error) {
     console.error('');
     console.error('💥 치명적 오류:', error);
-    
+
     if (browser) await browser.close();
     process.exit(1);
   }
