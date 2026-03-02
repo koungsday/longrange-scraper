@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-02T09:10:39.256Z",
+  "timestamp": "2026-03-02T09:20:41.345Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2597,16 +2597,16 @@
           "registered_corporate": 8,
           "registered_taxi": 40,
           "registered_general": 288,
-          "delivered_total": 175,
+          "delivered_total": 176,
           "delivered_priority": 54,
           "delivered_corporate": 3,
           "delivered_taxi": 21,
-          "delivered_general": 97,
-          "remaining_total": 325,
+          "delivered_general": 98,
+          "remaining_total": 324,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 4,
-          "remaining_general": 328,
+          "remaining_general": 327,
           "note": "※ 2026-02-26 11:14 전기승용 공고대수 500대 접수마감입니다.(+ 검토보류 1건)\n※ 전환지원금 및 추가지원금 지방비 예산도 고려하여 산정한 대수(예비 대수 포함)로 접수하셨더라도 대상자 선정이 되지 않으실 수 있는 점 유의하여 주시기 바랍니다."
         },
         {
@@ -2909,16 +2909,16 @@
           "registered_corporate": 5,
           "registered_taxi": 0,
           "registered_general": 63,
-          "delivered_total": 16,
+          "delivered_total": 17,
           "delivered_priority": 2,
           "delivered_corporate": 1,
           "delivered_taxi": 0,
-          "delivered_general": 13,
-          "remaining_total": 59,
+          "delivered_general": 14,
+          "remaining_total": 58,
           "remaining_priority": 5,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 55,
+          "remaining_general": 54,
           "note": "2026년2월23일 14:00 국고보조금 소진되어 이후 접수분은 보조금 지급이 어려울수 있습니다(16:00 접수마감 )\n승용 75(일반68, 우선7)\n화물 40(일반36, 우선4)\n※ 신청인 또는 세대 구성원 중 1인이 탄소포인트제에 가입된 확인서 반드시 제출 (법인 및 기관은 제외)\n- 보조금 지급 전 제출 미 제출시 보조금 지급  대상자에서 제외\n반드시 첨부된 지원신청서 서식을 사용하시기 바랍니다. (타지자체 서식 사용시 지원 신청 접수 제외됨)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-02T09:10:39.173Z"
+      "timestamp": "2026-03-02T09:20:41.271Z"
     }
   ]
 }
