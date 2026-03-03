@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-03T00:01:00.081Z",
+  "timestamp": "2026-03-03T00:10:42.853Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3299,12 +3299,12 @@
           "registered_corporate": 1,
           "registered_taxi": 2,
           "registered_general": 67,
-          "delivered_total": 44,
-          "delivered_priority": 14,
+          "delivered_total": 45,
+          "delivered_priority": 15,
           "delivered_corporate": 0,
           "delivered_taxi": 2,
           "delivered_general": 28,
-          "remaining_total": 406,
+          "remaining_total": 405,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -3855,7 +3855,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 37,
           "remaining_general": 784,
-          "note": "* 신청기간(상반기)\n- 승용·화물 : 2026. 1. 29.(목) 10:00 ~ 2026. 6. 30.(화)(예산소진 시 조기종료)\n* 선정방법\n- 승용, 화물 : (자격부여) 신청서 접수 순 / (대상자 선정) 출고·등록 순(지원가능확인 요청 순)\n* 2026.2.26. 예산잔액 기준 일반 470대 정도, 우선순위 마감, 택시 2대 정도 지원가능합니다.\n* 2.27.(금)담당자 연가로 27일 신청서 접수건은 당일 검토 어려우니 양해부탁드리겠습니다. 급하신 건은 26일 18시까지 미리 신청하여주시기 바랍니다."
+          "note": "* 신청기간(상반기)\n- 승용·화물 : 2026. 1. 29.(목) 10:00 ~ 2026. 6. 30.(화)(예산소진 시 조기종료)\n* 선정방법\n- 승용, 화물 : (자격부여) 신청서 접수 순 / (대상자 선정) 출고·등록 순(지원가능확인 요청 순)\n* 2026.3.3. 예산잔액 기준 일반 460대 정도, 우선순위 마감, 택시 2대 정도 지원가능합니다."
         },
         {
           "sido": "경남",
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-03T00:00:59.999Z"
+      "timestamp": "2026-03-03T00:10:42.770Z"
     }
   ]
 }
