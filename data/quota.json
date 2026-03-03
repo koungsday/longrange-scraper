@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-03T11:10:39.603Z",
+  "timestamp": "2026-03-03T11:20:39.933Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -824,11 +824,11 @@
           "quota_corporate": 0,
           "quota_taxi": 140,
           "quota_general": 3237,
-          "registered_total": 1130,
+          "registered_total": 1131,
           "registered_priority": 404,
           "registered_corporate": 27,
           "registered_taxi": 38,
-          "registered_general": 661,
+          "registered_general": 662,
           "delivered_total": 472,
           "delivered_priority": 184,
           "delivered_corporate": 12,
@@ -1063,16 +1063,16 @@
           "registered_corporate": 4,
           "registered_taxi": 15,
           "registered_general": 224,
-          "delivered_total": 180,
+          "delivered_total": 181,
           "delivered_priority": 60,
           "delivered_corporate": 3,
           "delivered_taxi": 8,
-          "delivered_general": 109,
-          "remaining_total": 1020,
+          "delivered_general": 110,
+          "remaining_total": 1019,
           "remaining_priority": 90,
           "remaining_corporate": 0,
           "remaining_taxi": 42,
-          "remaining_general": 891,
+          "remaining_general": 890,
           "note": "○ 2026. 2. 23. 변경 공고(변경 사항 적색 표시)\n○ 전기승용 신청접수일 : 2026. 2. 3.(화) 09:00\n○ 연간 총 보급대수 1,840대 / 상반기 1,200대, 하반기 640대\n- 보급대수는 차종별 보조금 차등 지원 및 국비 추가 지급 등에 따라 변동될 수 있습니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-03T11:10:39.499Z"
+      "timestamp": "2026-03-03T11:20:39.868Z"
     }
   ]
 }
