@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-04T12:30:43.602Z",
+  "timestamp": "2026-03-04T12:41:16.063Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -257,12 +257,12 @@
           "registered_corporate": 10,
           "registered_taxi": 21,
           "registered_general": 203,
-          "delivered_total": 141,
-          "delivered_priority": 44,
+          "delivered_total": 142,
+          "delivered_priority": 45,
           "delivered_corporate": 3,
           "delivered_taxi": 15,
           "delivered_general": 79,
-          "remaining_total": 1808,
+          "remaining_total": 1807,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -2597,16 +2597,16 @@
           "registered_corporate": 8,
           "registered_taxi": 40,
           "registered_general": 288,
-          "delivered_total": 233,
+          "delivered_total": 234,
           "delivered_priority": 75,
           "delivered_corporate": 5,
           "delivered_taxi": 20,
-          "delivered_general": 133,
-          "remaining_total": 267,
+          "delivered_general": 134,
+          "remaining_total": 266,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 5,
-          "remaining_general": 292,
+          "remaining_general": 291,
           "note": "※ 2026-02-26 11:14 전기승용 공고대수 500대 접수마감입니다.(+ 검토보류 1건)\n※ 전환지원금 및 추가지원금 지방비 예산도 고려하여 산정한 대수(예비 대수 포함)로 접수하셨더라도 대상자 선정이 되지 않으실 수 있는 점 유의하여 주시기 바랍니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-04T12:30:43.553Z"
+      "timestamp": "2026-03-04T12:41:15.936Z"
     }
   ]
 }
