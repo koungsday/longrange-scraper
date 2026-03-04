@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-04T11:30:46.488Z",
+  "timestamp": "2026-03-04T11:40:39.516Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -595,16 +595,16 @@
           "registered_corporate": 11,
           "registered_taxi": 18,
           "registered_general": 255,
-          "delivered_total": 171,
+          "delivered_total": 172,
           "delivered_priority": 42,
           "delivered_corporate": 7,
           "delivered_taxi": 8,
-          "delivered_general": 114,
-          "remaining_total": 479,
+          "delivered_general": 115,
+          "remaining_total": 478,
           "remaining_priority": 8,
           "remaining_corporate": 0,
           "remaining_taxi": 22,
-          "remaining_general": 456,
+          "remaining_general": 455,
           "note": "★화물 모든 물량 마감되었습니다(26.2.25. 10:25), 현재 자격부여된 상태는 대상자 선정이 된것이 아니오며, 추후 취소물량이 나올 경우 지원가능확인 요청 순으로 연락드리겠습니다.★\n★★★2026년 상반기 보급사업 (변경)공고 안내(26.2.12.)★★★\n○ 변경사항 : 승용650대(감150대), 화물145대(증83대), ,승합2대, 어린이통학용승합3대\n○ (화물) 접수기간 : 26.2.20.(금) 09:00~ 예산소진시까지\n※현재 접수중인 물량은 위 기간과 관계없이 진행\n★★(승용)우선순위 (화물)우선순위, 택배  물량은 마감되었습니다. 일반물량으로 신청 바랍니다\n일반물량으로 신청시 추가보조금(다자녀, 생애최초, 소상공인 등) 가능★★\n★차종별 보조금액이 상이하므로 공고 대수와 실제 보급 대수는 상이합니다. 시스템상 접수, 잔여대수와 실제 잔여대수는 일치하지 않습니다★\n※기타 자세한 사항은 공고문 참조바랍니다."
         },
         {
@@ -2597,16 +2597,16 @@
           "registered_corporate": 8,
           "registered_taxi": 40,
           "registered_general": 288,
-          "delivered_total": 228,
+          "delivered_total": 229,
           "delivered_priority": 74,
           "delivered_corporate": 5,
           "delivered_taxi": 18,
-          "delivered_general": 131,
-          "remaining_total": 272,
+          "delivered_general": 132,
+          "remaining_total": 271,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 7,
-          "remaining_general": 294,
+          "remaining_general": 293,
           "note": "※ 2026-02-26 11:14 전기승용 공고대수 500대 접수마감입니다.(+ 검토보류 1건)\n※ 전환지원금 및 추가지원금 지방비 예산도 고려하여 산정한 대수(예비 대수 포함)로 접수하셨더라도 대상자 선정이 되지 않으실 수 있는 점 유의하여 주시기 바랍니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-04T11:30:46.342Z"
+      "timestamp": "2026-03-04T11:40:39.443Z"
     }
   ]
 }
