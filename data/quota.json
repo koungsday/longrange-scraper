@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-05T12:30:41.633Z",
+  "timestamp": "2026-03-05T12:40:35.061Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -127,16 +127,16 @@
           "registered_corporate": 30,
           "registered_taxi": 123,
           "registered_general": 866,
-          "delivered_total": 781,
+          "delivered_total": 780,
           "delivered_priority": 174,
           "delivered_corporate": 21,
           "delivered_taxi": 89,
-          "delivered_general": 497,
-          "remaining_total": 1149,
+          "delivered_general": 496,
+          "remaining_total": 1150,
           "remaining_priority": 19,
           "remaining_corporate": 0,
           "remaining_taxi": 8,
-          "remaining_general": 1143,
+          "remaining_general": 1144,
           "note": "o 접수기간 : '26.1.30.(금)~ 12.4.(금)   ※ 예산소진시까지\no 보급대수 : 총 2,279대(승용 1,930대, 화물 330대, 승합 19대)\n★ 화물 신청접수 마감됐습니다(예산소진)\n* (본공고1) 공고문  (본공고2) 차종별 국시비 보조금\n★ 접수 후 빠른 처리를 위해 단순 접수 알림, 처리 독촉 전화는 자제 부탁드립니다."
         },
         {
@@ -777,16 +777,16 @@
           "registered_corporate": 9,
           "registered_taxi": 4,
           "registered_general": 152,
-          "delivered_total": 130,
+          "delivered_total": 131,
           "delivered_priority": 38,
           "delivered_corporate": 5,
           "delivered_taxi": 2,
-          "delivered_general": 85,
-          "remaining_total": 312,
+          "delivered_general": 86,
+          "remaining_total": 311,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 357,
+          "remaining_general": 356,
           "note": "<2026년 전기자동차 보급사업 공고(상반기)>\n1. 신청기간 : 2026. 2. 2.(월)  ~ 6. 30.(화) 예산 소진시 조기마감\n2. 보급대수: 승용 442대\n※ 차종별 보조금 상이하므로 보급대수는 변경될 수 있음\n3. 선정방법: 출고등록순\n★ 자세한 사항은 공고문 참고\n★ 전환지원금은 개인(개인사업자 불가)만 신청가능하며 판매 및 폐차관련서류는 보조금 지급신청전까지 제출(대리점에서는 전환지원금 Y로 체크)\n★ 지원 신청 후 자격부여까지는 최대 7일이 소요되며 그 결과는 문자로 안내하오니, 빠른 처리를 위한 단순 접수알림, 처리 독촉 전화 자제 요망\n붙임  1. 공고문(한글) 1부. 2. 공고문(PDF) 1부. 3. 차종별 보조금 및 전환지원금(EXCEL) 1부.  끝."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-05T12:30:41.559Z"
+      "timestamp": "2026-03-05T12:40:34.986Z"
     }
   ]
 }
