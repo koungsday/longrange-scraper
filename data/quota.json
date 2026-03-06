@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-06T11:00:50.734Z",
+  "timestamp": "2026-03-06T11:10:41.128Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -101,16 +101,16 @@
           "registered_corporate": 36,
           "registered_taxi": 79,
           "registered_general": 1256,
-          "delivered_total": 1260,
+          "delivered_total": 1261,
           "delivered_priority": 446,
           "delivered_corporate": 19,
           "delivered_taxi": 40,
-          "delivered_general": 755,
-          "remaining_total": 4900,
+          "delivered_general": 756,
+          "remaining_total": 4899,
           "remaining_priority": 434,
           "remaining_corporate": 0,
           "remaining_taxi": 400,
-          "remaining_general": 4085,
+          "remaining_general": 4084,
           "note": "*** 2. 4. 일 18:00 화물차 신청 마감합니다. ***\n*** 접수 가능 숫자가 있더라도 예산 초과로 마감이므로 추가 신청이 안됩니다***\n*** 시스템 상 보이는 잔여대수 안맞습니다.***\n* 문의사항에 대해 공고문 보완(파란색 표시)해서 재첨부하였으니 확인바랍니다*\n***2026년 상반기 전기자동차 민간보급사업 안내***\n2026년 전기승용차 보급대수 : 8,800대\n- 1차 상반기 6,160대(70%) *택시 및 우선순위 물량 있음\n- 2차 하반기 2,640대(30%) * 통합진행\n- 신청접수는 1. 29.(목) 09:00부터 시작합니다\n- 신청양식은 인천시 양식으로 다운받아서 제출해주시기 바랍니다.\n- 보급대수는 보급여건에 따라 변동될수 있으며 상반기 목표대수 소진 시 조기 종료합니다.\n- 기타 사항은 첨부된 공고문을 참고하시기 바랍니다\n***지자체 문의처(연락처)는 조만간 변경예정이오니 수시로 공고를 확인하여 주시기 바랍니다***"
         },
         {
@@ -2519,16 +2519,16 @@
           "registered_corporate": 0,
           "registered_taxi": 0,
           "registered_general": 60,
-          "delivered_total": 13,
+          "delivered_total": 14,
           "delivered_priority": 4,
           "delivered_corporate": 0,
           "delivered_taxi": 0,
-          "delivered_general": 9,
-          "remaining_total": 63,
+          "delivered_general": 10,
+          "remaining_total": 62,
           "remaining_priority": 4,
           "remaining_corporate": 0,
           "remaining_taxi": 8,
-          "remaining_general": 51,
+          "remaining_general": 50,
           "note": "<< 부안군 상반기 전기차 보조금 지급신청 안내>>\n◎ 상반기 신청 기간 : 2026.2.23.(월) 9:00 ~ 2026.6.26.(금) 18:00 [예산소진 시 조기마감]\n◎ 상반기 보급대수 : 승용 76대 화물 41대\n◎ 지원대상 : 부안군에 연속하여 60일 이상 주소를 둔 만18세 이상의 군민\n◎ 선정방법 : 출고 및 등록순\n----------------------------------------------------------------------------\n※ 차종별 보조금 차등 지원에 따른 보급대수 예산범위내 변동가능\n※ 전환지원금을 위한 폐차 및 판매 증빙서류는 보조금 지급신청 전까지 제출\n- [신청 시 전환지원금 Y체크] 추후 별도 신청 및 지급 불가\n※ 누락 서류 및 오기입된 서류가 없는지 확인 바랍니다.\n※ 자세한 사항은 공고문 참조\n※시스템의 출고 잔여대수는 실제 잔여대수와 다를수 있으므로 담당자에게 확인바랍니다.\n----------------------------------------------------------------------------\n★ 단순 접수 알림 및 독촉전화 자제 부탁드리고 당일신청 당일 출고 지양바랍니다.\n★ 지급신청 후 지원서류 및 지급신청 서류 원본제출\n[우편주소: 전북특별자치도 부안군 부안읍 당산로 91, 부안군청 환경과 전기차 담당자 앞]"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 6526,
+          "registered_total": 6527,
           "registered_priority": 2,
-          "registered_corporate": 6444,
+          "registered_corporate": 6445,
           "registered_taxi": 31,
           "registered_general": 49,
           "delivered_total": 2679,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-06T11:00:50.641Z"
+      "timestamp": "2026-03-06T11:10:41.066Z"
     }
   ]
 }
