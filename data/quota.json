@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-07T07:30:40.982Z",
+  "timestamp": "2026-03-07T07:40:41.474Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -673,16 +673,16 @@
           "registered_corporate": 6,
           "registered_taxi": 2,
           "registered_general": 191,
-          "delivered_total": 142,
+          "delivered_total": 143,
           "delivered_priority": 39,
           "delivered_corporate": 5,
           "delivered_taxi": 1,
-          "delivered_general": 97,
-          "remaining_total": 488,
+          "delivered_general": 98,
+          "remaining_total": 487,
           "remaining_priority": 11,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 483,
+          "remaining_general": 482,
           "note": "※ 승용 잔여대수 403대 (3. 6. 18:00기준)\n★ 우선순위 마감되었습니다. 일반으로 접수바랍니다.(조건을 갖춘 경우 추가 보조금 지급 가능)\n★ 접수된 순서대로 신속히 검토 중입니다. 유선 문의가 많을 경우 처리가 지연될 수 있으니 양해&협조 부탁드립니다.\n★ 모든 사본 자료, 원본대조필 날인바랍니다.\n[2026년 상반기 전기자동차 보급사업]\n○ 접수기간 : 2026. 2. 6.(금) 09:00 ~ 6. 30.(화) 18:00\n○ 보급대수\n- 승용 630대(일반 580대, 우선순위 50대)\n- 화물 80대(일반 74대, 우선순위 6대)\n- 승합 2대(개인)\n- 승합(어린이) 1대\n* 실제 보급대수는 차종별 보조금 차등 지원에 따라 예산범위 내에서 변동될 수 있음\n○ 선정기준 : 출고·등록순\n○ 신청대상 : 지원신청서 접수일 기준 연속 3개월 이상 하남시에 주소를 둔 자\n○ 신청방법 : 무공해차 통합누리집 사이트로 신청\n○ 기타 자세한 사항은 공고문 참조\n※ 제출 서류 우편 송부 불요\n※ 차종별 보조금 확인 방법 : 무공해차 통합누리집 → 구매 및 지원 → 무공해차 구매보조금 지원 → 구매보조금 지급현황 → 지자체 차종별 보조금"
         },
         {
@@ -1791,13 +1791,13 @@
           "registered_corporate": 31,
           "registered_taxi": 97,
           "registered_general": 704,
-          "delivered_total": 120,
-          "delivered_priority": 29,
+          "delivered_total": 121,
+          "delivered_priority": 30,
           "delivered_corporate": 5,
           "delivered_taxi": 7,
           "delivered_general": 79,
-          "remaining_total": 736,
-          "remaining_priority": 56,
+          "remaining_total": 735,
+          "remaining_priority": 55,
           "remaining_corporate": 0,
           "remaining_taxi": 35,
           "remaining_general": 650,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-07T07:30:40.879Z"
+      "timestamp": "2026-03-07T07:40:41.392Z"
     }
   ]
 }
