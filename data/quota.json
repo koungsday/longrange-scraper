@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-07T11:20:34.570Z",
+  "timestamp": "2026-03-07T11:30:45.014Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2233,16 +2233,16 @@
           "registered_corporate": 2,
           "registered_taxi": 39,
           "registered_general": 255,
-          "delivered_total": 126,
+          "delivered_total": 127,
           "delivered_priority": 27,
           "delivered_corporate": 1,
           "delivered_taxi": 6,
-          "delivered_general": 92,
-          "remaining_total": 74,
+          "delivered_general": 93,
+          "remaining_total": 73,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 4,
-          "remaining_general": 88,
+          "remaining_general": 87,
           "note": "★★★★★  마     감  ★★★★★\n<2026년 익산시 전기자동차 민간보급 사업 공고(1차)>\n□ 신청기간: 2026. 02. 13. ~ 2026. 06. 30. (예산소진시 조기마감)\n※ 승용 지원가능 : 2026. 02. 23. 09:00 / 화물 지원가능 : 2026. 02. 24. 09:00\n□ 보급대수: 총 266대(승용 200대, 화물 60대, 승합 6대)\n※ 보급여건, 예산증감에 따라 변동 가능\n□ 선정방법: 출고등록순\n□ 지원한도: 1인 1대, 법인 1대\n□ 신청자격: (공통)신청 접수일 기준 연속 3개월 이상 익산시에 주소를 둔 자\n□ 보급차량: 환경부 무공해차 통합누리집(ev.or.kr.)에서 열람\n-----------------------------------------------------------------------------------------------\n★ 자세한 사항은 공고문 확인\n★ 원본서류 : 전북 익산시 인북로32길 1 익산시청 7층 환경정책과 제출(미제출 시 보조금 미지급)\n★ 자격부여 및 대상자 선정 후 문자통보 없음, 시스템 직접 확인 요망\n★ 우선 처리 요청 전화 자제, 신청순서에 따라 공정하게 서류 심사(서류 접수 후 1~2일 소요)"
         },
         {
@@ -4157,13 +4157,13 @@
           "registered_corporate": 7,
           "registered_taxi": 48,
           "registered_general": 310,
-          "delivered_total": 192,
-          "delivered_priority": 75,
+          "delivered_total": 193,
+          "delivered_priority": 76,
           "delivered_corporate": 1,
           "delivered_taxi": 14,
           "delivered_general": 102,
-          "remaining_total": 3806,
-          "remaining_priority": 325,
+          "remaining_total": 3805,
+          "remaining_priority": 324,
           "remaining_corporate": 0,
           "remaining_taxi": 386,
           "remaining_general": 3096,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-07T11:20:34.485Z"
+      "timestamp": "2026-03-07T11:30:44.956Z"
     }
   ]
 }
