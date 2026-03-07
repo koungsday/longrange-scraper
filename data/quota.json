@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-07T02:20:37.858Z",
+  "timestamp": "2026-03-07T02:30:47.497Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2597,16 +2597,16 @@
           "registered_corporate": 8,
           "registered_taxi": 40,
           "registered_general": 287,
-          "delivered_total": 303,
+          "delivered_total": 304,
           "delivered_priority": 99,
           "delivered_corporate": 5,
           "delivered_taxi": 29,
-          "delivered_general": 170,
-          "remaining_total": 197,
+          "delivered_general": 171,
+          "remaining_total": 196,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 255,
+          "remaining_general": 254,
           "note": "※ 2026-02-26 11:14 전기승용 공고대수 500대 접수마감입니다.(+ 검토보류 1건)\n※ 전환지원금 및 추가지원금 지방비 예산도 고려하여 산정한 대수(예비 대수 포함)로 접수하셨더라도 대상자 선정이 되지 않으실 수 있는 점 유의하여 주시기 바랍니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-07T02:20:37.782Z"
+      "timestamp": "2026-03-07T02:30:47.393Z"
     }
   ]
 }
