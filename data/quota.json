@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-07T07:20:37.734Z",
+  "timestamp": "2026-03-07T07:30:40.982Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -49,16 +49,16 @@
           "registered_corporate": 35,
           "registered_taxi": 215,
           "registered_general": 830,
-          "delivered_total": 961,
+          "delivered_total": 962,
           "delivered_priority": 267,
           "delivered_corporate": 24,
           "delivered_taxi": 148,
-          "delivered_general": 522,
-          "remaining_total": 3165,
+          "delivered_general": 523,
+          "remaining_total": 3164,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 3604,
+          "remaining_general": 3603,
           "note": "ㅇ 상반기 보급대수 : 5023대(승용차 4,126, 화물차 846, 승합 38, 어린이통학차 13)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음\nㅇ 보급기간 : `26. 1. 28.(수)  ∼ ‘26. 12. 11.(금)\n(※ 보급기간 내 지급신청까지 완료하여야 하며, 예산소진 시 신청마감)\n* 신청서 및 각종 첨부서류는 1개의 PDF파일로 업로드해주세요\n* 대상자 선정 전 차량 출고 시 보조금 지급되지 않습니다. 주의바랍니다.\n* 전환지원금은  26.1.1일 이후 판매 또는 폐차건부터 지급신청전까지 인정되오니 \"지급신청 이후\"에 판매 또는 폐차건은 불인정됩니다"
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 6446,
           "registered_taxi": 31,
           "registered_general": 49,
-          "delivered_total": 2681,
+          "delivered_total": 2682,
           "delivered_priority": 1,
-          "delivered_corporate": 2655,
+          "delivered_corporate": 2656,
           "delivered_taxi": 10,
           "delivered_general": 15,
-          "remaining_total": 27319,
+          "remaining_total": 27318,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-07T07:20:37.678Z"
+      "timestamp": "2026-03-07T07:30:40.879Z"
     }
   ]
 }
