@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-07T06:20:39.461Z",
+  "timestamp": "2026-03-07T06:30:40.958Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -465,13 +465,13 @@
           "registered_corporate": 17,
           "registered_taxi": 17,
           "registered_general": 445,
-          "delivered_total": 350,
-          "delivered_priority": 106,
+          "delivered_total": 351,
+          "delivered_priority": 107,
           "delivered_corporate": 4,
           "delivered_taxi": 6,
           "delivered_general": 234,
-          "remaining_total": 2150,
-          "remaining_priority": 314,
+          "remaining_total": 2149,
+          "remaining_priority": 313,
           "remaining_corporate": 0,
           "remaining_taxi": 74,
           "remaining_general": 1766,
@@ -3351,16 +3351,16 @@
           "registered_corporate": 11,
           "registered_taxi": 12,
           "registered_general": 315,
-          "delivered_total": 255,
+          "delivered_total": 256,
           "delivered_priority": 79,
           "delivered_corporate": 6,
           "delivered_taxi": 5,
-          "delivered_general": 165,
-          "remaining_total": 445,
+          "delivered_general": 166,
+          "remaining_total": 444,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 30,
-          "remaining_general": 430,
+          "remaining_general": 429,
           "note": "1. 접수기간 : 2026. 02. 03.(화) 10:00~ 예산 소진시까지\n2. 사 업 량(상반기) : 승용 700대, 화물 140대, 버스 5대, 어린이버스2대\n**전화문의 폭주로 서류검토가 지연되고 있습니다.**\n첨부파일1) 상반기 공고문\n첨부파일2) 차종별 지원금 및 전환지원금\n첨부파일3)자동차양도증명서 (자동차매매업자 거래용)\n첨부파일4)자동차양도증명서 (양도인 양수인 직접 거래용)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-07T06:20:39.395Z"
+      "timestamp": "2026-03-07T06:30:40.876Z"
     }
   ]
 }
