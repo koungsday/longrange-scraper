@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-08T23:00:56.043Z",
+  "timestamp": "2026-03-08T23:10:43.752Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 101,
           "registered_taxi": 270,
           "registered_general": 1858,
-          "delivered_total": 2340,
+          "delivered_total": 2341,
           "delivered_priority": 759,
           "delivered_corporate": 73,
           "delivered_taxi": 123,
-          "delivered_general": 1385,
-          "remaining_total": 8160,
+          "delivered_general": 1386,
+          "remaining_total": 8159,
           "remaining_priority": 841,
           "remaining_corporate": 0,
           "remaining_taxi": 717,
-          "remaining_general": 6675,
+          "remaining_general": 6674,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -101,13 +101,13 @@
           "registered_corporate": 36,
           "registered_taxi": 79,
           "registered_general": 1256,
-          "delivered_total": 1264,
-          "delivered_priority": 449,
+          "delivered_total": 1265,
+          "delivered_priority": 450,
           "delivered_corporate": 19,
           "delivered_taxi": 40,
           "delivered_general": 756,
-          "remaining_total": 4896,
-          "remaining_priority": 431,
+          "remaining_total": 4895,
+          "remaining_priority": 430,
           "remaining_corporate": 0,
           "remaining_taxi": 400,
           "remaining_general": 4084,
@@ -2363,16 +2363,16 @@
           "registered_corporate": 2,
           "registered_taxi": 0,
           "registered_general": 56,
-          "delivered_total": 38,
+          "delivered_total": 39,
           "delivered_priority": 5,
           "delivered_corporate": 0,
           "delivered_taxi": 0,
-          "delivered_general": 33,
-          "remaining_total": 22,
+          "delivered_general": 34,
+          "remaining_total": 21,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 2,
-          "remaining_general": 25,
+          "remaining_general": 24,
           "note": ""
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-08T23:00:55.954Z"
+      "timestamp": "2026-03-08T23:10:43.659Z"
     }
   ]
 }
