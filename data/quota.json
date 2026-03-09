@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-09T10:20:43.491Z",
+  "timestamp": "2026-03-09T10:30:52.764Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -153,16 +153,16 @@
           "registered_corporate": 34,
           "registered_taxi": 103,
           "registered_general": 811,
-          "delivered_total": 904,
+          "delivered_total": 905,
           "delivered_priority": 272,
           "delivered_corporate": 19,
           "delivered_taxi": 72,
-          "delivered_general": 541,
-          "remaining_total": 20,
+          "delivered_general": 542,
+          "remaining_total": 19,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 245,
+          "remaining_general": 244,
           "note": "<2026년 상반기 전기자동차 보급사업 안내>\n- 접수기간: 2026. 1. 28.(공고일) 09:00 ~ 예산소진시까지\n- 보급대수 : 상반기 924대(70%), 하반기 395대(30%) * 차종별 차등지원 및 보급여건에 따라 변동될 수있음\n★ 상반기 전기자동차 승용, 화물 예산소진으로 마감되었습니다\n- 지원대상: 신청일 기준 30일간 연속하여 대전시에 주소를 둔 개인, 법인 등\n* 대상자 선정은 자동차 출고 등록 순\n* 지원신청서의 빠른 승인을 위해 독촉 전화문의는 자제 부탁드립니다.\n* 자세한 사항은 공고문 참고하여 주시기 바랍니다.\n★ 차종별 보조금액, 전환지원금 본공고2 첨부파일 참고"
         },
         {
@@ -3143,16 +3143,16 @@
           "registered_corporate": 25,
           "registered_taxi": 48,
           "registered_general": 461,
-          "delivered_total": 404,
+          "delivered_total": 405,
           "delivered_priority": 113,
           "delivered_corporate": 14,
           "delivered_taxi": 38,
-          "delivered_general": 239,
-          "remaining_total": 568,
+          "delivered_general": 240,
+          "remaining_total": 567,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 10,
-          "remaining_general": 588,
+          "remaining_general": 587,
           "note": "★ 3.3. 16:00 기준 상반기 경주시 전기승용차 마감합니다.\n(3.9. 오전9시 기준 택시4대, 택배2대 남음)\n<<< 출고잔여대수는 보조금 선정대상 잔여대수와 관계없는 숫자입니다.\n- 택시 신청가능, 택시 외 신청하시더라도 자격부여 하지않습니다.\n- 취소분 발생 시 대상자선정요청순으로 대상자 선정할 예정입니다.\n- 7월 중 하반기사업 실시 예정입니다. (그 사이 추경 등으로 예산 조정되더라도 하반기 물량에 포함하여 진행예정)"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 6773,
+          "registered_total": 6774,
           "registered_priority": 2,
-          "registered_corporate": 6683,
+          "registered_corporate": 6684,
           "registered_taxi": 32,
           "registered_general": 56,
           "delivered_total": 2847,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-09T10:20:43.407Z"
+      "timestamp": "2026-03-09T10:30:52.666Z"
     }
   ]
 }
