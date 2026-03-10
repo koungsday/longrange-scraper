@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-10T11:10:39.679Z",
+  "timestamp": "2026-03-10T11:20:39.417Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,11 +18,11 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8060,
-          "registered_total": 3417,
+          "registered_total": 3418,
           "registered_priority": 1036,
           "registered_corporate": 107,
           "registered_taxi": 291,
-          "registered_general": 1983,
+          "registered_general": 1984,
           "delivered_total": 2427,
           "delivered_priority": 776,
           "delivered_corporate": 75,
@@ -2285,16 +2285,16 @@
           "registered_corporate": 1,
           "registered_taxi": 5,
           "registered_general": 99,
-          "delivered_total": 74,
+          "delivered_total": 75,
           "delivered_priority": 14,
           "delivered_corporate": 0,
           "delivered_taxi": 1,
-          "delivered_general": 59,
-          "remaining_total": 46,
+          "delivered_general": 60,
+          "remaining_total": 45,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 5,
-          "remaining_general": 43,
+          "remaining_general": 42,
           "note": "*********우선순위 마감에 따른 일반으로 신청접수************\n※시스템의 출고잔여대수는 실제 잔여대수와 다를 수 있으므로 담당자에게 확인 바랍니다\n<2026년 남원시 상반기 전기자동차 보급사업>\n○ 신청기간 : 2026. 2. 9.(월) ~2026. 6. 30.(화) *예산 소진시 마감\n○ 보급대수 : 201대(승용 120대, 화물 78대, 승합 3대) **여건 및 예산 범위 내에서 변동\n○ 선정방법 : 접수+차량출고 등록순\n○ 지원대수 : 승용 화물 승합 1대(개인, 법인, 사업자, 단체 등)\n**전북특별자치도 및 남원시 보조금을 지급 받은 전기자동차 구매자는 의무운행기간을 전북특별자치도 내에서 준수하여야 함\n- 의무운행기간 미준수(타시도 판매)싱는 환수율에 따라 보조금(도·시비)을 환수함\n- 전기화물차를 구매한 자가 해당 차량을 2만km이상 운행하지 아니하고 최초 등록한 날로부터 2년 이내에 판매하는 경우 보조금 수령자로부터 지급된 보조금의 30%를 회수\n**서류 업로드 시 하나의 파일(PDF)로 통합하여 업로드 제출\n**지급 신청한 후 지원신청서류 및 지급신청 서류 원본 제출\n(우편주소 : 전북특별자치도 남원시 시청로 60, 환경과 전기차 담당자 앞)\n※시스템의 출고잔여대수는 실제 잔여대수와 다를 수 있으므로 담당자에게 확인 바랍니다\n****생애 첫차 구입 및 다자녀 혜택 : 붙임 2참고****\n한국환경공단: 법인(전기승용 및 전기화물) 2대 이상 구매 시(☎1661-0970)"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 6995,
+          "registered_total": 6996,
           "registered_priority": 2,
-          "registered_corporate": 6899,
+          "registered_corporate": 6900,
           "registered_taxi": 34,
           "registered_general": 60,
           "delivered_total": 3055,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-10T11:10:39.609Z"
+      "timestamp": "2026-03-10T11:20:39.340Z"
     }
   ]
 }
