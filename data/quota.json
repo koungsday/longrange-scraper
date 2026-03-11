@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-11T11:20:39.176Z",
+  "timestamp": "2026-03-11T11:30:45.436Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -283,13 +283,13 @@
           "registered_corporate": 2,
           "registered_taxi": 11,
           "registered_general": 179,
-          "delivered_total": 124,
-          "delivered_priority": 41,
+          "delivered_total": 125,
+          "delivered_priority": 42,
           "delivered_corporate": 1,
           "delivered_taxi": 5,
           "delivered_general": 77,
-          "remaining_total": 576,
-          "remaining_priority": 29,
+          "remaining_total": 575,
+          "remaining_priority": 28,
           "remaining_corporate": 0,
           "remaining_taxi": 30,
           "remaining_general": 518,
@@ -543,16 +543,16 @@
           "registered_corporate": 16,
           "registered_taxi": 13,
           "registered_general": 436,
-          "delivered_total": 445,
+          "delivered_total": 446,
           "delivered_priority": 165,
           "delivered_corporate": 10,
           "delivered_taxi": 10,
-          "delivered_general": 260,
-          "remaining_total": 555,
+          "delivered_general": 261,
+          "remaining_total": 554,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 740,
+          "remaining_general": 739,
           "note": "-  보급대수 : 상반기 1,214대 (승용 1,000대 / 화물 230대 / 버스(일반) 14대)\n※ 차종별 보조금 변경 및 보급물량은 예산범위 내에서 변동될 수 있음\n※ 어린이 통학버스는 5월 중 공고 예정\n-  사업기간 : 2026.01.26.(월) 09:00 ~ 2026.06.30.(화) 18:00\n※ 우리시는 전기자동차, 수소전기차, 전기이륜차, LPG차 등 자동차 보조금을\n담당자 1명이 전화부터 서류검토 및 보조금 지급까지 담당하고 있습니다.\n접수 개시에 따라 접수 및 전화량이 많아 처리가 계속 지연되오니,\n자동차 보조금액 등 단순문의는 공고문을 꼭 확인하여주시기 바랍니다"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-11T11:20:39.106Z"
+      "timestamp": "2026-03-11T11:30:45.368Z"
     }
   ]
 }
