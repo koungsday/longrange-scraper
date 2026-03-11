@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-11T11:10:46.133Z",
+  "timestamp": "2026-03-11T11:20:39.176Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -465,13 +465,13 @@
           "registered_corporate": 18,
           "registered_taxi": 19,
           "registered_general": 514,
-          "delivered_total": 417,
-          "delivered_priority": 117,
+          "delivered_total": 418,
+          "delivered_priority": 118,
           "delivered_corporate": 7,
           "delivered_taxi": 10,
           "delivered_general": 283,
-          "remaining_total": 2083,
-          "remaining_priority": 303,
+          "remaining_total": 2082,
+          "remaining_priority": 302,
           "remaining_corporate": 0,
           "remaining_taxi": 70,
           "remaining_general": 1717,
@@ -673,16 +673,16 @@
           "registered_corporate": 6,
           "registered_taxi": 3,
           "registered_general": 226,
-          "delivered_total": 166,
+          "delivered_total": 167,
           "delivered_priority": 42,
           "delivered_corporate": 6,
           "delivered_taxi": 2,
-          "delivered_general": 116,
-          "remaining_total": 464,
+          "delivered_general": 117,
+          "remaining_total": 463,
           "remaining_priority": 8,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 464,
+          "remaining_general": 463,
           "note": "※ 단순 잔여대수 문의 및 승인 재촉 전화 자제 부탁드립니다.\n※ 승용 잔여대수 369대 (3. 11. 11:20기준), 금액 기준이므로 실제 잔여 대수와 상이할 수 있음\n★ 우선순위 마감되었습니다. (조건을 갖춘 경우 추가 보조금 지급 가능)\n★ 접수된 순서대로 신속히 검토 중입니다. 유선 문의가 많을 경우 처리가 지연될 수 있으니 양해&협조 부탁드립니다.\n★ 모든 사본 자료, 원본대조필 날인바랍니다.\n[2026년 상반기 전기자동차 보급사업]\n○ 접수기간 : 2026. 2. 6.(금) 09:00 ~ 6. 30.(화) 18:00\n○ 보급대수\n- 승용 630대(일반 580대, 우선순위 50대)\n- 화물 80대(일반 74대, 우선순위 6대)\n- 승합 2대(개인)\n- 승합(어린이) 1대\n* 실제 보급대수는 차종별 보조금 차등 지원에 따라 예산범위 내에서 변동될 수 있음\n○ 선정기준 : 출고·등록순\n○ 신청대상 : 지원신청서 접수일 기준 연속 3개월 이상 하남시에 주소를 둔 자\n○ 신청방법 : 무공해차 통합누리집 사이트로 신청\n○ 기타 자세한 사항은 공고문 참조\n※ 제출 서류 우편 송부 불요\n※ 차종별 보조금 확인 방법 : 무공해차 통합누리집 → 구매 및 지원 → 무공해차 구매보조금 지원 → 구매보조금 지급현황 → 지자체 차종별 보조금"
         },
         {
@@ -1032,8 +1032,8 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 720,
-          "registered_total": 291,
-          "registered_priority": 93,
+          "registered_total": 292,
+          "registered_priority": 94,
           "registered_corporate": 1,
           "registered_taxi": 9,
           "registered_general": 188,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-11T11:10:46.066Z"
+      "timestamp": "2026-03-11T11:20:39.106Z"
     }
   ]
 }
