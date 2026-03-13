@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-13T11:20:41.142Z",
+  "timestamp": "2026-03-13T11:30:44.819Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2623,16 +2623,16 @@
           "registered_corporate": 5,
           "registered_taxi": 8,
           "registered_general": 135,
-          "delivered_total": 92,
+          "delivered_total": 93,
           "delivered_priority": 28,
           "delivered_corporate": 3,
           "delivered_taxi": 1,
-          "delivered_general": 60,
-          "remaining_total": 58,
+          "delivered_general": 61,
+          "remaining_total": 57,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 7,
-          "remaining_general": 67,
+          "remaining_general": 66,
           "note": "********************나주시 마감되었습니다.********************\n<2026년 상반기 전기자동차 보급사업 시행>\n- 접수기간: 2026. 2. 23.(월) 9:00 ~ 예산소진시까지\n- 보급대수 : 상반기 승용 150대, 화물 50대 * 차종별 차등지원에 따라 변동될 수 있음\n- 지원대상: 신청일 기준 3개월 간 연속하여 나주시에 주소를 둔 개인, 법인 등\n* 대상자 선정은 자동차 출고 등록 순(보조금 지원가능 요청순)\n* 지원신청서의 빠른 승인을 위해 독촉 전화 문의는 자제 부탁드립니다.\n* 자세한 사항은 공고문 참고하여 주시기 바랍니다.\n* (전환지원금) 지급 신청 전까지 처리 후 서류 첨부하시면 됩니다.\n- 전환지원금은 \"개인만\"가능합니다. (개인사업자, 법인 불가)\n- 전기차 구매 대표자가 보유했던 차량에 대해서만 지원 가능합니다.\n********************나주시 마감되었습니다.********************"
         },
         {
@@ -3299,12 +3299,12 @@
           "registered_corporate": 3,
           "registered_taxi": 3,
           "registered_general": 86,
-          "delivered_total": 69,
-          "delivered_priority": 26,
+          "delivered_total": 70,
+          "delivered_priority": 27,
           "delivered_corporate": 0,
           "delivered_taxi": 2,
           "delivered_general": 41,
-          "remaining_total": 381,
+          "remaining_total": 380,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-13T11:20:41.061Z"
+      "timestamp": "2026-03-13T11:30:44.755Z"
     }
   ]
 }
