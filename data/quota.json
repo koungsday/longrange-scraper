@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-13T09:20:40.911Z",
+  "timestamp": "2026-03-13T09:30:46.137Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -824,8 +824,8 @@
           "quota_corporate": 0,
           "quota_taxi": 140,
           "quota_general": 3237,
-          "registered_total": 1567,
-          "registered_priority": 547,
+          "registered_total": 1566,
+          "registered_priority": 546,
           "registered_corporate": 45,
           "registered_taxi": 43,
           "registered_general": 932,
@@ -1895,16 +1895,16 @@
           "registered_corporate": 6,
           "registered_taxi": 6,
           "registered_general": 190,
-          "delivered_total": 199,
+          "delivered_total": 200,
           "delivered_priority": 83,
           "delivered_corporate": 5,
           "delivered_taxi": 3,
-          "delivered_general": 108,
-          "remaining_total": 138,
+          "delivered_general": 109,
+          "remaining_total": 137,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 21,
-          "remaining_general": 157,
+          "remaining_general": 156,
           "note": "★내연차전환지원금 지원기준을 정정하오니 확인하여 주시기 바랍니다. [본공고2첨부]('26.2.13.)\n※ 차종별 보조금이 상이하므로 예산범위 내 보급대수는 조정될 수 있음.\n- (상반기) 승용차 - 일반, 우선순위 접수 마감"
         },
         {
@@ -3346,11 +3346,11 @@
           "quota_corporate": 0,
           "quota_taxi": 35,
           "quota_general": 595,
-          "registered_total": 543,
+          "registered_total": 542,
           "registered_priority": 157,
           "registered_corporate": 12,
           "registered_taxi": 12,
-          "registered_general": 362,
+          "registered_general": 361,
           "delivered_total": 320,
           "delivered_priority": 100,
           "delivered_corporate": 9,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-13T09:20:40.840Z"
+      "timestamp": "2026-03-13T09:30:46.065Z"
     }
   ]
 }
