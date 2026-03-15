@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-15T01:20:38.726Z",
+  "timestamp": "2026-03-15T01:30:48.801Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2337,16 +2337,16 @@
           "registered_corporate": 9,
           "registered_taxi": 5,
           "registered_general": 198,
-          "delivered_total": 51,
+          "delivered_total": 52,
           "delivered_priority": 6,
           "delivered_corporate": 2,
           "delivered_taxi": 3,
-          "delivered_general": 40,
-          "remaining_total": 109,
+          "delivered_general": 41,
+          "remaining_total": 108,
           "remaining_priority": 10,
           "remaining_corporate": 0,
           "remaining_taxi": 5,
-          "remaining_general": 96,
+          "remaining_general": 95,
           "note": "★★★★★2026년 상반기 접수마감★★★★★\n<2026년 전기자동차 보급사업 공고(상반기)>\n1. 신청기간\n- 승용 : 예산 소진으로 접수마감\n- 화물 : 예산 소진으로 접수마감\n2. 보급대수: 승용 160대, 화물 50대\n※ 차종별 보조금은 상이하며, 지원금액 및 예산 집행 상황에 따라 보급물량은 조정될 수 있음.\n3. 선정방법: 출고등록순\n★ 자세한 사항은 공고문 참고\n★ 전환지원금은 개인(개인사업자 불가)만 신청가능하며 판매 및 폐차관련서류는 보조금 지급신청전까지 제출(대리점에서는 전환지원금 Y로 체크)\n★ 빠른 처리를 위한 단순 접수알림, 처리 독촉 전화 자제 요망"
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 7592,
           "registered_taxi": 42,
           "registered_general": 77,
-          "delivered_total": 3637,
+          "delivered_total": 3639,
           "delivered_priority": 2,
-          "delivered_corporate": 3596,
+          "delivered_corporate": 3598,
           "delivered_taxi": 14,
           "delivered_general": 25,
-          "remaining_total": 26363,
+          "remaining_total": 26361,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-15T01:20:38.663Z"
+      "timestamp": "2026-03-15T01:30:48.720Z"
     }
   ]
 }
