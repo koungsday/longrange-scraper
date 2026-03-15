@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-15T07:10:49.237Z",
+  "timestamp": "2026-03-15T07:20:38.820Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1791,16 +1791,16 @@
           "registered_corporate": 29,
           "registered_taxi": 96,
           "registered_general": 689,
-          "delivered_total": 719,
+          "delivered_total": 720,
           "delivered_priority": 228,
           "delivered_corporate": 21,
           "delivered_taxi": 44,
-          "delivered_general": 426,
-          "remaining_total": 137,
+          "delivered_general": 427,
+          "remaining_total": 136,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 303,
+          "remaining_general": 302,
           "note": "★신청마감(26.3.6.)\n★상반기 추경계획 없습니다. 하반기 2차 전기자동차 민간사업에 지원하여 주시기바랍니다."
         },
         {
@@ -3143,16 +3143,16 @@
           "registered_corporate": 25,
           "registered_taxi": 50,
           "registered_general": 450,
-          "delivered_total": 513,
+          "delivered_total": 514,
           "delivered_priority": 143,
           "delivered_corporate": 17,
           "delivered_taxi": 43,
-          "delivered_general": 310,
-          "remaining_total": 459,
+          "delivered_general": 311,
+          "remaining_total": 458,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 5,
-          "remaining_general": 517,
+          "remaining_general": 516,
           "note": "★ 3.3. 16:00 기준 상반기 경주시 전기승용차 마감합니다.(택시 제외)\n- 3.13. 오전9시 기준  택시, 택배 접수 및 선정 현황\n택시 접수 및 대상자선정 현황 : 접수48대 / 대상자선정 46대 (대상자선정 48대까지 가능 : 2대남음)\n택배 접수 및 대상자선정 현황 : 접수7대 / 대상자선정 5대 (대상자 선정 7대까지 가능 : 2대 남음)\n<<< 출고잔여대수는 보조금 선정대상 잔여대수와 관계없는 숫자입니다.\n- 택시 신청가능, 택시 외 신청하시더라도 자격부여 하지않습니다.\n- 취소분 발생 시 대상자선정요청순으로 대상자 선정할 예정입니다.\n- 7월 중 하반기사업 실시 예정입니다. (그 사이 추경 등으로 예산 조정되더라도 하반기 물량에 포함하여 진행예정)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-15T07:10:49.100Z"
+      "timestamp": "2026-03-15T07:20:38.733Z"
     }
   ]
 }
