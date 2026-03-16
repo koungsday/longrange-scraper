@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-16T12:30:47.313Z",
+  "timestamp": "2026-03-16T12:40:44.281Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -669,10 +669,10 @@
           "quota_taxi": 0,
           "quota_general": 580,
           "registered_total": 344,
-          "registered_priority": 67,
+          "registered_priority": 66,
           "registered_corporate": 9,
           "registered_taxi": 4,
-          "registered_general": 264,
+          "registered_general": 265,
           "delivered_total": 192,
           "delivered_priority": 45,
           "delivered_corporate": 6,
@@ -1791,16 +1791,16 @@
           "registered_corporate": 29,
           "registered_taxi": 96,
           "registered_general": 688,
-          "delivered_total": 794,
+          "delivered_total": 796,
           "delivered_priority": 247,
           "delivered_corporate": 22,
           "delivered_taxi": 55,
-          "delivered_general": 470,
-          "remaining_total": 62,
+          "delivered_general": 472,
+          "remaining_total": 60,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 259,
+          "remaining_general": 257,
           "note": "★신청마감(26.3.6.)\n★상반기 추경계획 없습니다. 하반기 2차 전기자동차 민간사업에 지원하여 주시기바랍니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-16T12:30:47.244Z"
+      "timestamp": "2026-03-16T12:40:44.231Z"
     }
   ]
 }
