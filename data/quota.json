@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-18T11:10:42.468Z",
+  "timestamp": "2026-03-18T11:20:43.430Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,13 +23,13 @@
           "registered_corporate": 135,
           "registered_taxi": 383,
           "registered_general": 2407,
-          "delivered_total": 2840,
-          "delivered_priority": 884,
+          "delivered_total": 2839,
+          "delivered_priority": 883,
           "delivered_corporate": 89,
           "delivered_taxi": 212,
           "delivered_general": 1655,
-          "remaining_total": 7660,
-          "remaining_priority": 716,
+          "remaining_total": 7661,
+          "remaining_priority": 717,
           "remaining_corporate": 0,
           "remaining_taxi": 628,
           "remaining_general": 6405,
@@ -3315,11 +3315,11 @@
           "sido": "경북",
           "region": "문경시",
           "vehicleType": "전기승용",
-          "quota_total": 100,
+          "quota_total": 250,
           "quota_priority": 10,
           "quota_corporate": 0,
-          "quota_taxi": 20,
-          "quota_general": 70,
+          "quota_taxi": 15,
+          "quota_general": 225,
           "registered_total": 74,
           "registered_priority": 22,
           "registered_corporate": 2,
@@ -3330,11 +3330,11 @@
           "delivered_corporate": 2,
           "delivered_taxi": 0,
           "delivered_general": 22,
-          "remaining_total": 64,
+          "remaining_total": 214,
           "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 20,
-          "remaining_general": 48,
+          "remaining_taxi": 15,
+          "remaining_general": 203,
           "note": ""
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-18T11:10:42.380Z"
+      "timestamp": "2026-03-18T11:20:43.336Z"
     }
   ]
 }
