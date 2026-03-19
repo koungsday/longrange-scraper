@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-19T12:30:46.742Z",
+  "timestamp": "2026-03-19T12:40:39.430Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 138,
           "registered_taxi": 403,
           "registered_general": 2483,
-          "delivered_total": 2960,
-          "delivered_priority": 922,
+          "delivered_total": 2962,
+          "delivered_priority": 923,
           "delivered_corporate": 91,
           "delivered_taxi": 226,
-          "delivered_general": 1721,
-          "remaining_total": 7540,
-          "remaining_priority": 678,
+          "delivered_general": 1722,
+          "remaining_total": 7538,
+          "remaining_priority": 677,
           "remaining_corporate": 0,
           "remaining_taxi": 614,
-          "remaining_general": 6339,
+          "remaining_general": 6338,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -595,16 +595,16 @@
           "registered_corporate": 16,
           "registered_taxi": 21,
           "registered_general": 421,
-          "delivered_total": 334,
+          "delivered_total": 335,
           "delivered_priority": 53,
           "delivered_corporate": 9,
           "delivered_taxi": 14,
-          "delivered_general": 258,
-          "remaining_total": 316,
+          "delivered_general": 259,
+          "remaining_total": 315,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 16,
-          "remaining_general": 312,
+          "remaining_general": 311,
           "note": "(승용)26.3.19. 12:40 기준 예산 내 대상자 선정 가능대수 :50대\n※자격부여 단계는 대상자로 선정된것이 아니오니 착오없으시길 바랍니다.※\n★차종별 보조금액이 상이하므로 공고 대수와 실제 보급 대수는 상이합니다. 시스템상 접수, 잔여대수와 실제 잔여대수는 일치하지 않습니다★\n★★(승용) 택시, 우선순위 물량 마감되었습니다. 일반물량으로 신청 바랍니다. 일반물량으로 신청시 추가보조금(택시, 다자녀, 생애최초 등) 가능★★\n★★(화물) 모든 물량 마감되었습니다(26.2.25. 10:25), 현재 자격부여된 상태는 대상자 선정이 된것이 아니오며, 추후 취소물량이 나올 경우 지원가능확인 요청 순으로 연락드리겠습니다.★★\n★★★2026년 상반기 보급사업 (변경)공고 안내(26.2.12.)★★★\n○ 변경사항 : 승용650대(감150대), 화물145대(증83대), ,승합2대, 어린이통학용승합3대\n○ (화물) 접수기간 : 26.2.20.(금) 09:00~ 예산소진시까지\n※현재 접수중인 물량은 위 기간과 관계없이 진행\n※기타 자세한 사항은 공고문 참조바랍니다."
         },
         {
@@ -1089,13 +1089,13 @@
           "registered_corporate": 4,
           "registered_taxi": 11,
           "registered_general": 134,
-          "delivered_total": 124,
-          "delivered_priority": 36,
+          "delivered_total": 125,
+          "delivered_priority": 37,
           "delivered_corporate": 3,
           "delivered_taxi": 6,
           "delivered_general": 79,
-          "remaining_total": 476,
-          "remaining_priority": 24,
+          "remaining_total": 475,
+          "remaining_priority": 23,
           "remaining_corporate": 0,
           "remaining_taxi": 24,
           "remaining_general": 431,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-19T12:30:46.655Z"
+      "timestamp": "2026-03-19T12:40:39.340Z"
     }
   ]
 }
