@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-19T09:30:46.678Z",
+  "timestamp": "2026-03-19T09:40:39.862Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2103,16 +2103,16 @@
           "registered_corporate": 6,
           "registered_taxi": 4,
           "registered_general": 108,
-          "delivered_total": 110,
+          "delivered_total": 111,
           "delivered_priority": 40,
           "delivered_corporate": 4,
           "delivered_taxi": 4,
-          "delivered_general": 62,
-          "remaining_total": 90,
+          "delivered_general": 63,
+          "remaining_total": 89,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 6,
-          "remaining_general": 88,
+          "remaining_general": 87,
           "note": "전기승용 예산범위 내에서 우선순위, 택시, 일반 물량 대상자 선정 완료"
         },
         {
@@ -2389,16 +2389,16 @@
           "registered_corporate": 1,
           "registered_taxi": 2,
           "registered_general": 31,
-          "delivered_total": 28,
+          "delivered_total": 29,
           "delivered_priority": 3,
           "delivered_corporate": 1,
           "delivered_taxi": 2,
-          "delivered_general": 22,
-          "remaining_total": 9,
+          "delivered_general": 23,
+          "remaining_total": 8,
           "remaining_priority": 1,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 9,
+          "remaining_general": 8,
           "note": "*승용 마감 *\n** 시스템 상 보이는 잔여대수 안맞습니다.**\n화물 3.19일 기준 18대 남았습니다."
         },
         {
@@ -2618,11 +2618,11 @@
           "quota_corporate": 0,
           "quota_taxi": 8,
           "quota_general": 127,
-          "registered_total": 197,
-          "registered_priority": 55,
+          "registered_total": 189,
+          "registered_priority": 51,
           "registered_corporate": 5,
           "registered_taxi": 8,
-          "registered_general": 129,
+          "registered_general": 125,
           "delivered_total": 133,
           "delivered_priority": 34,
           "delivered_corporate": 3,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-19T09:30:46.596Z"
+      "timestamp": "2026-03-19T09:40:39.788Z"
     }
   ]
 }
