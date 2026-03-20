@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-20T10:40:38.409Z",
+  "timestamp": "2026-03-20T10:50:40.635Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -309,12 +309,12 @@
           "registered_corporate": 5,
           "registered_taxi": 21,
           "registered_general": 210,
-          "delivered_total": 213,
-          "delivered_priority": 60,
+          "delivered_total": 214,
+          "delivered_priority": 61,
           "delivered_corporate": 2,
           "delivered_taxi": 14,
           "delivered_general": 137,
-          "remaining_total": 1137,
+          "remaining_total": 1136,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 36,
@@ -1791,16 +1791,16 @@
           "registered_corporate": 29,
           "registered_taxi": 95,
           "registered_general": 670,
-          "delivered_total": 973,
+          "delivered_total": 975,
           "delivered_priority": 290,
-          "delivered_corporate": 25,
+          "delivered_corporate": 26,
           "delivered_taxi": 85,
-          "delivered_general": 573,
+          "delivered_general": 574,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 156,
+          "remaining_general": 155,
           "note": "★신청마감(26.3.6.)\n★상반기 추경계획 없습니다. 하반기 2차 전기자동차 민간사업에 지원하여 주시기바랍니다."
         },
         {
@@ -2285,12 +2285,12 @@
           "registered_corporate": 1,
           "registered_taxi": 5,
           "registered_general": 99,
-          "delivered_total": 98,
-          "delivered_priority": 20,
+          "delivered_total": 99,
+          "delivered_priority": 21,
           "delivered_corporate": 0,
           "delivered_taxi": 5,
           "delivered_general": 73,
-          "remaining_total": 22,
+          "remaining_total": 21,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 1,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-20T10:40:38.358Z"
+      "timestamp": "2026-03-20T10:50:40.547Z"
     }
   ]
 }
