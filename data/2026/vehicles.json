@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-03-20T03:26:33.491Z",
-  "total_vehicles": 97,
+  "timestamp": "2026-03-21T03:14:42.655Z",
+  "total_vehicles": 107,
   "vehicles": {
     "현대자동차___GV60 스탠다드 2WD 19인치": {
       "type": "일반승용",
@@ -411,6 +411,12 @@
       "model": "Model 3 Performance",
       "national": 2000000
     },
+    "테슬라코리아___Model 3 RWD(2025)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 RWD(2025)",
+      "national": 1680000
+    },
     "테슬라코리아___Model 3 RWD": {
       "type": "일반승용",
       "manufacturer": "테슬라코리아",
@@ -542,6 +548,60 @@
       "manufacturer": "비와이디코리아",
       "model": "BYD DOLPHIN Active",
       "national": 1320000
+    },
+    "기아___EV3 롱레인지 4WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV3 롱레인지 4WD 19인치",
+      "national": 5390000
+    },
+    "기아___EV3 GT": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV3 GT",
+      "national": 2480000
+    },
+    "기아___EV4 롱레인지 4WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 롱레인지 4WD 19인치",
+      "national": 5540000
+    },
+    "기아___EV4 GT": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 GT",
+      "national": 2550000
+    },
+    "기아___EV9 GT": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 GT",
+      "national": 2450000
+    },
+    "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+      "type": "일반승용",
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+      "national": 1620000
+    },
+    "테슬라코리아___Model Y RWD(2025)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model Y RWD(2025)",
+      "national": 1700000
+    },
+    "테슬라코리아___Model Y Long Range(2025)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model Y Long Range(2025)",
+      "national": 2100000
+    },
+    "테슬라코리아___Model Y L": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model Y L",
+      "national": 2100000
     },
     "기아___레이 EV 2WD 14인치 4인승 승용": {
       "type": "경·소형",
