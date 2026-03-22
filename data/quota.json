@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-22T22:40:40.896Z",
+  "timestamp": "2026-03-22T22:50:43.461Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1609,16 +1609,16 @@
           "registered_corporate": 1,
           "registered_taxi": 6,
           "registered_general": 64,
-          "delivered_total": 84,
+          "delivered_total": 85,
           "delivered_priority": 29,
           "delivered_corporate": 1,
           "delivered_taxi": 6,
-          "delivered_general": 48,
-          "remaining_total": 16,
+          "delivered_general": 49,
+          "remaining_total": 15,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 52,
+          "remaining_general": 51,
           "note": "1차 공고 신청 마감되었습니다."
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 9413,
+          "registered_total": 9414,
           "registered_priority": 4,
-          "registered_corporate": 9269,
+          "registered_corporate": 9270,
           "registered_taxi": 47,
           "registered_general": 93,
           "delivered_total": 4148,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T22:40:40.836Z"
+      "timestamp": "2026-03-22T22:50:43.368Z"
     }
   ]
 }
