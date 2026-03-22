@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-22T22:30:45.599Z",
+  "timestamp": "2026-03-22T22:40:40.896Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -101,15 +101,15 @@
           "registered_corporate": 48,
           "registered_taxi": 97,
           "registered_general": 1856,
-          "delivered_total": 2026,
+          "delivered_total": 2027,
           "delivered_priority": 718,
           "delivered_corporate": 35,
-          "delivered_taxi": 61,
+          "delivered_taxi": 62,
           "delivered_general": 1212,
-          "remaining_total": 4134,
+          "remaining_total": 4133,
           "remaining_priority": 162,
           "remaining_corporate": 0,
-          "remaining_taxi": 379,
+          "remaining_taxi": 378,
           "remaining_general": 3628,
           "note": "*** 2. 4. 일 18:00 화물차 신청 마감합니다. ***\n*** 접수 가능 숫자가 있더라도 예산 초과로 마감이므로 추가 신청이 안됩니다***\n*** 시스템 상 보이는 잔여대수 안맞습니다.***\n* 문의사항에 대해 공고문 보완(파란색 표시)해서 재첨부하였으니 확인바랍니다*\n***2026년 상반기 전기자동차 민간보급사업 안내***\n2026년 전기승용차 보급대수 : 8,800대\n- 1차 상반기 6,160대(70%) *택시 및 우선순위 물량 있음\n- 2차 하반기 2,640대(30%) * 통합진행\n- 신청접수는 1. 29.(목) 09:00부터 시작합니다\n- 신청양식은 인천시 양식으로 다운받아서 제출해주시기 바랍니다.\n- 보급대수는 보급여건에 따라 변동될수 있으며 상반기 목표대수 소진 시 조기 종료합니다.\n- 기타 사항은 첨부된 공고문을 참고하시기 바랍니다\n***지자체 문의처(연락처)는 조만간 변경예정이오니 수시로 공고를 확인하여 주시기 바랍니다***"
         },
@@ -153,16 +153,16 @@
           "registered_corporate": 33,
           "registered_taxi": 96,
           "registered_general": 792,
-          "delivered_total": 1140,
+          "delivered_total": 1141,
           "delivered_priority": 341,
           "delivered_corporate": 27,
           "delivered_taxi": 86,
-          "delivered_general": 686,
+          "delivered_general": 687,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 100,
+          "remaining_general": 99,
           "note": "<2026년 상반기 전기자동차 보급사업 안내>\n- 접수기간: 2026. 1. 28.(공고일) 09:00 ~ 예산소진시까지\n- 보급대수 : 상반기 924대(70%), 하반기 395대(30%) * 차종별 차등지원 및 보급여건에 따라 변동될 수있음\n★ 상반기 전기자동차 승용, 화물 예산소진으로 마감되었습니다\n- 지원대상: 신청일 기준 30일간 연속하여 대전시에 주소를 둔 개인, 법인 등\n* 대상자 선정은 자동차 출고 등록 순\n* 지원신청서의 빠른 승인을 위해 독촉 전화문의는 자제 부탁드립니다.\n* 자세한 사항은 공고문 참고하여 주시기 바랍니다.\n★ 차종별 보조금액, 전환지원금 본공고2 첨부파일 참고"
         },
         {
@@ -803,12 +803,12 @@
           "registered_corporate": 20,
           "registered_taxi": 8,
           "registered_general": 344,
-          "delivered_total": 338,
-          "delivered_priority": 120,
+          "delivered_total": 339,
+          "delivered_priority": 121,
           "delivered_corporate": 12,
           "delivered_taxi": 4,
           "delivered_general": 202,
-          "remaining_total": 693,
+          "remaining_total": 692,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T22:30:45.508Z"
+      "timestamp": "2026-03-22T22:40:40.836Z"
     }
   ]
 }
