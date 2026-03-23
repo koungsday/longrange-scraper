@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-23T09:40:45.687Z",
+  "timestamp": "2026-03-23T09:50:44.125Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -746,8 +746,8 @@
           "quota_corporate": 0,
           "quota_taxi": 33,
           "quota_general": 569,
-          "registered_total": 350,
-          "registered_priority": 129,
+          "registered_total": 351,
+          "registered_priority": 130,
           "registered_corporate": 4,
           "registered_taxi": 10,
           "registered_general": 207,
@@ -1791,8 +1791,8 @@
           "registered_corporate": 29,
           "registered_taxi": 95,
           "registered_general": 667,
-          "delivered_total": 989,
-          "delivered_priority": 294,
+          "delivered_total": 990,
+          "delivered_priority": 295,
           "delivered_corporate": 27,
           "delivered_taxi": 86,
           "delivered_general": 582,
@@ -3164,8 +3164,8 @@
           "quota_corporate": 0,
           "quota_taxi": 5,
           "quota_general": 565,
-          "registered_total": 308,
-          "registered_priority": 98,
+          "registered_total": 309,
+          "registered_priority": 99,
           "registered_corporate": 8,
           "registered_taxi": 11,
           "registered_general": 191,
@@ -3351,16 +3351,16 @@
           "registered_corporate": 12,
           "registered_taxi": 12,
           "registered_general": 359,
-          "delivered_total": 403,
+          "delivered_total": 404,
           "delivered_priority": 116,
           "delivered_corporate": 10,
           "delivered_taxi": 10,
-          "delivered_general": 267,
-          "remaining_total": 297,
+          "delivered_general": 268,
+          "remaining_total": 296,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 25,
-          "remaining_general": 328,
+          "remaining_general": 327,
           "note": "1. 접수기간 : 2026. 02. 03.(화) 10:00~ 예산 소진시까지\n2. 사 업 량(상반기) : 승용 700대, 화물 140대, 버스 5대, 어린이버스2대\n**2026년도 상반기 전기승용, 화물 신청마감되었습니다. 7월 중에 하반기 공고예정입니다**\n**택시 신청가능하십니다. 택시 잔여 물량 약 19대 입니다. **\n첨부파일1) 상반기 공고문\n첨부파일2) 차종별 지원금 및 전환지원금\n첨부파일3)자동차양도증명서 (자동차매매업자 거래용)\n첨부파일4)자동차양도증명서 (양도인 양수인 직접 거래용)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-23T09:40:45.613Z"
+      "timestamp": "2026-03-23T09:50:44.043Z"
     }
   ]
 }
