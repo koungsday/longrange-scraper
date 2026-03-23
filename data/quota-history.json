@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "lastUpdated": "2026. 3. 23. PM 12:30:49 KST",
+  "lastUpdated": "2026. 3. 23. PM 12:40:39 KST",
   "regions": {
     "1100": {
       "name": "서울특별시",
@@ -146657,7 +146657,7 @@
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
-            "general": 96
+            "general": 95
           },
           "registered": {
             "total": 1315,
@@ -146667,11 +146667,11 @@
             "general": 789
           },
           "delivered": {
-            "total": 1148,
+            "total": 1149,
             "priority": 345,
             "corporate": 27,
             "taxi": 86,
-            "general": 690
+            "general": 691
           }
         }
       },
@@ -146756,8 +146756,8 @@
             "general": 1768
           },
           "registered": {
-            "total": 1348,
-            "priority": 445,
+            "total": 1347,
+            "priority": 444,
             "corporate": 17,
             "taxi": 62,
             "general": 824
@@ -147236,8 +147236,8 @@
             "general": 584
           },
           "registered": {
-            "total": 180,
-            "priority": 54,
+            "total": 181,
+            "priority": 55,
             "corporate": 5,
             "taxi": 2,
             "general": 119
@@ -148548,11 +148548,11 @@
             "general": 106
           },
           "registered": {
-            "total": 227,
+            "total": 226,
             "priority": 61,
             "corporate": 9,
             "taxi": 1,
-            "general": 156
+            "general": 155
           },
           "delivered": {
             "total": 151,
@@ -149469,11 +149469,11 @@
             "general": 60
           },
           "remaining": {
-            "total": 16,
+            "total": 15,
             "priority": 0,
             "corporate": 0,
             "taxi": 8,
-            "general": 8
+            "general": 7
           },
           "registered": {
             "total": 74,
@@ -149483,11 +149483,11 @@
             "general": 66
           },
           "delivered": {
-            "total": 60,
+            "total": 61,
             "priority": 8,
             "corporate": 0,
             "taxi": 0,
-            "general": 52
+            "general": 53
           }
         }
       },
@@ -151517,23 +151517,23 @@
             "general": 30000
           },
           "remaining": {
-            "total": 25785,
+            "total": 25784,
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
             "general": 29968
           },
           "registered": {
-            "total": 9458,
+            "total": 9460,
             "priority": 4,
-            "corporate": 9311,
+            "corporate": 9313,
             "taxi": 47,
             "general": 96
           },
           "delivered": {
-            "total": 4215,
+            "total": 4216,
             "priority": 2,
-            "corporate": 4160,
+            "corporate": 4161,
             "taxi": 21,
             "general": 32
           }
