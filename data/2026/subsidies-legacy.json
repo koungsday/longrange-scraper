@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-03-22T03:35:15.946Z",
+  "timestamp": "2026-03-23T03:39:26.397Z",
   "total_regions": 161,
   "success_count": 161,
   "failed_count": 0,
@@ -869,7 +869,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:52.001Z"
+      "timestamp": "2026-03-23T03:38:01.068Z"
     },
     {
       "parentName": "부산",
@@ -1735,7 +1735,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:52.052Z"
+      "timestamp": "2026-03-23T03:38:01.570Z"
     },
     {
       "parentName": "대구",
@@ -2601,7 +2601,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:51.886Z"
+      "timestamp": "2026-03-23T03:38:01.239Z"
     },
     {
       "parentName": "인천",
@@ -3467,7 +3467,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:51.817Z"
+      "timestamp": "2026-03-23T03:38:01.646Z"
     },
     {
       "parentName": "광주",
@@ -4333,7 +4333,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:51.606Z"
+      "timestamp": "2026-03-23T03:38:01.470Z"
     },
     {
       "parentName": "대전",
@@ -4884,6 +4884,14 @@
           "local": 600000,
           "total": 2600000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 500000,
+          "total": 2180000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -5060,6 +5068,78 @@
           "local": 390000,
           "total": 1710000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 1610000,
+          "total": 7000000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 740000,
+          "total": 3220000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 1660000,
+          "total": 7200000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 760000,
+          "total": 3310000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 730000,
+          "total": 3180000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 480000,
+          "total": 2100000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 510000,
+          "total": 2210000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -5119,7 +5199,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:51.468Z"
+      "timestamp": "2026-03-23T03:38:01.431Z"
     },
     {
       "parentName": "울산",
@@ -5670,6 +5750,14 @@
           "local": 600000,
           "total": 2600000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 500000,
+          "total": 2180000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -5846,6 +5934,78 @@
           "local": 390000,
           "total": 1710000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 1610000,
+          "total": 7000000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 740000,
+          "total": 3220000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 1660000,
+          "total": 7200000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 760000,
+          "total": 3310000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 730000,
+          "total": 3180000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 480000,
+          "total": 2100000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 510000,
+          "total": 2210000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -5905,7 +6065,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:51.936Z"
+      "timestamp": "2026-03-23T03:38:01.529Z"
     },
     {
       "parentName": "세종",
@@ -6456,6 +6616,14 @@
           "local": 600000,
           "total": 2600000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 0,
+          "total": 1680000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -6632,6 +6800,78 @@
           "local": 390000,
           "total": 1710000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 1620000,
+          "total": 7010000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 740000,
+          "total": 3220000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 1660000,
+          "total": 7200000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 770000,
+          "total": 3320000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 740000,
+          "total": 3190000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 490000,
+          "total": 2110000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 510000,
+          "total": 2210000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -6691,7 +6931,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:51.701Z"
+      "timestamp": "2026-03-23T03:38:01.390Z"
     },
     {
       "parentName": "경기",
@@ -7557,7 +7797,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:56.483Z"
+      "timestamp": "2026-03-23T03:38:06.342Z"
     },
     {
       "parentName": "경기",
@@ -8423,7 +8663,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:56.430Z"
+      "timestamp": "2026-03-23T03:38:06.251Z"
     },
     {
       "parentName": "경기",
@@ -9289,7 +9529,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:56.636Z"
+      "timestamp": "2026-03-23T03:38:06.216Z"
     },
     {
       "parentName": "경기",
@@ -9840,6 +10080,14 @@
           "local": 1400000,
           "total": 3400000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 1170000,
+          "total": 2850000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -10016,6 +10264,78 @@
           "local": 920000,
           "total": 2240000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 3770000,
+          "total": 9160000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 1730000,
+          "total": 4210000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 3870000,
+          "total": 9410000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 1780000,
+          "total": 4330000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 1710000,
+          "total": 4160000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 1130000,
+          "total": 2750000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 1190000,
+          "total": 2890000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 1470000,
+          "total": 3570000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 1470000,
+          "total": 3570000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -10075,7 +10395,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:56.241Z"
+      "timestamp": "2026-03-23T03:38:06.296Z"
     },
     {
       "parentName": "경기",
@@ -10941,7 +11261,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:56.525Z"
+      "timestamp": "2026-03-23T03:38:06.403Z"
     },
     {
       "parentName": "경기",
@@ -11727,7 +12047,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:56.329Z"
+      "timestamp": "2026-03-23T03:38:06.538Z"
     },
     {
       "parentName": "경기",
@@ -12593,7 +12913,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:56.780Z"
+      "timestamp": "2026-03-23T03:38:05.989Z"
     },
     {
       "parentName": "경기",
@@ -13459,7 +13779,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:33:56.686Z"
+      "timestamp": "2026-03-23T03:38:06.125Z"
     },
     {
       "parentName": "경기",
@@ -14245,7 +14565,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:00.497Z"
+      "timestamp": "2026-03-23T03:38:10.462Z"
     },
     {
       "parentName": "경기",
@@ -15111,7 +15431,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:01.357Z"
+      "timestamp": "2026-03-23T03:38:10.553Z"
     },
     {
       "parentName": "경기",
@@ -15977,7 +16297,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:00.931Z"
+      "timestamp": "2026-03-23T03:38:11.018Z"
     },
     {
       "parentName": "경기",
@@ -16763,7 +17083,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:01.214Z"
+      "timestamp": "2026-03-23T03:38:10.690Z"
     },
     {
       "parentName": "경기",
@@ -17629,7 +17949,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:01.258Z"
+      "timestamp": "2026-03-23T03:38:10.619Z"
     },
     {
       "parentName": "경기",
@@ -18495,7 +18815,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:01.095Z"
+      "timestamp": "2026-03-23T03:38:10.932Z"
     },
     {
       "parentName": "경기",
@@ -19361,7 +19681,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:00.979Z"
+      "timestamp": "2026-03-23T03:38:10.773Z"
     },
     {
       "parentName": "경기",
@@ -20147,7 +20467,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:01.157Z"
+      "timestamp": "2026-03-23T03:38:10.854Z"
     },
     {
       "parentName": "경기",
@@ -21013,7 +21333,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:05.374Z"
+      "timestamp": "2026-03-23T03:38:15.469Z"
     },
     {
       "parentName": "경기",
@@ -21879,7 +22199,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:05.566Z"
+      "timestamp": "2026-03-23T03:38:15.563Z"
     },
     {
       "parentName": "경기",
@@ -22745,7 +23065,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:05.426Z"
+      "timestamp": "2026-03-23T03:38:15.598Z"
     },
     {
       "parentName": "경기",
@@ -23611,7 +23931,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:05.732Z"
+      "timestamp": "2026-03-23T03:38:14.986Z"
     },
     {
       "parentName": "경기",
@@ -24477,7 +24797,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:05.868Z"
+      "timestamp": "2026-03-23T03:38:15.435Z"
     },
     {
       "parentName": "경기",
@@ -25343,7 +25663,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:05.657Z"
+      "timestamp": "2026-03-23T03:38:15.357Z"
     },
     {
       "parentName": "경기",
@@ -26129,7 +26449,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:05.523Z"
+      "timestamp": "2026-03-23T03:38:15.296Z"
     },
     {
       "parentName": "경기",
@@ -26995,7 +27315,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:05.771Z"
+      "timestamp": "2026-03-23T03:38:15.090Z"
     },
     {
       "parentName": "경기",
@@ -27546,6 +27866,14 @@
           "local": 730000,
           "total": 2730000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 610000,
+          "total": 2290000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -27722,6 +28050,78 @@
           "local": 480000,
           "total": 1800000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 1970000,
+          "total": 7360000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 900000,
+          "total": 3380000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 2030000,
+          "total": 7570000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 930000,
+          "total": 3480000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 890000,
+          "total": 3340000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 590000,
+          "total": 2210000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 620000,
+          "total": 2320000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 770000,
+          "total": 2870000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 770000,
+          "total": 2870000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -27781,7 +28181,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:09.886Z"
+      "timestamp": "2026-03-23T03:38:20.180Z"
     },
     {
       "parentName": "경기",
@@ -28567,7 +28967,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:09.934Z"
+      "timestamp": "2026-03-23T03:38:19.762Z"
     },
     {
       "parentName": "경기",
@@ -29433,7 +29833,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:10.222Z"
+      "timestamp": "2026-03-23T03:38:19.619Z"
     },
     {
       "parentName": "경기",
@@ -30299,7 +30699,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:10.066Z"
+      "timestamp": "2026-03-23T03:38:19.839Z"
     },
     {
       "parentName": "경기",
@@ -31165,7 +31565,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:10.022Z"
+      "timestamp": "2026-03-23T03:38:19.722Z"
     },
     {
       "parentName": "경기",
@@ -32031,7 +32431,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:10.277Z"
+      "timestamp": "2026-03-23T03:38:19.938Z"
     },
     {
       "parentName": "경기",
@@ -32897,7 +33297,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:10.134Z"
+      "timestamp": "2026-03-23T03:38:20.109Z"
     },
     {
       "parentName": "강원",
@@ -33763,7 +34163,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:09.836Z"
+      "timestamp": "2026-03-23T03:38:20.025Z"
     },
     {
       "parentName": "강원",
@@ -34549,7 +34949,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:14.394Z"
+      "timestamp": "2026-03-23T03:38:24.392Z"
     },
     {
       "parentName": "강원",
@@ -35105,8 +35505,8 @@
           "manufacturer": "테슬라코리아",
           "model": "Model 3 RWD(2025)",
           "national": 1680000,
-          "local": 0,
-          "total": 1680000
+          "local": 840000,
+          "total": 2520000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -35415,7 +35815,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:14.691Z"
+      "timestamp": "2026-03-23T03:38:24.049Z"
     },
     {
       "parentName": "강원",
@@ -36201,7 +36601,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:14.536Z"
+      "timestamp": "2026-03-23T03:38:24.549Z"
     },
     {
       "parentName": "강원",
@@ -36987,7 +37387,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:14.645Z"
+      "timestamp": "2026-03-23T03:38:24.166Z"
     },
     {
       "parentName": "강원",
@@ -37773,7 +38173,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:14.724Z"
+      "timestamp": "2026-03-23T03:38:24.356Z"
     },
     {
       "parentName": "강원",
@@ -38639,7 +39039,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:14.236Z"
+      "timestamp": "2026-03-23T03:38:24.277Z"
     },
     {
       "parentName": "강원",
@@ -39425,7 +39825,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:14.457Z"
+      "timestamp": "2026-03-23T03:38:24.243Z"
     },
     {
       "parentName": "강원",
@@ -40211,7 +40611,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:14.143Z"
+      "timestamp": "2026-03-23T03:38:24.468Z"
     },
     {
       "parentName": "강원",
@@ -40762,6 +41162,14 @@
           "local": 1000000,
           "total": 3000000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 840000,
+          "total": 2520000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -40938,6 +41346,78 @@
           "local": 660000,
           "total": 1980000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 2690000,
+          "total": 8080000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 1240000,
+          "total": 3720000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 2770000,
+          "total": 8310000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 1270000,
+          "total": 3820000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 1220000,
+          "total": 3670000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 810000,
+          "total": 2430000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 850000,
+          "total": 2550000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 1050000,
+          "total": 3150000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 1050000,
+          "total": 3150000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -40997,7 +41477,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:19.016Z"
+      "timestamp": "2026-03-23T03:38:28.638Z"
     },
     {
       "parentName": "강원",
@@ -41863,7 +42343,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:18.802Z"
+      "timestamp": "2026-03-23T03:38:28.594Z"
     },
     {
       "parentName": "강원",
@@ -42414,6 +42894,14 @@
           "local": 1000000,
           "total": 3000000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 840000,
+          "total": 2520000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -42590,6 +43078,78 @@
           "local": 660000,
           "total": 1980000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 2690000,
+          "total": 8080000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 1240000,
+          "total": 3720000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 2770000,
+          "total": 8310000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 1270000,
+          "total": 3820000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 1220000,
+          "total": 3670000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 810000,
+          "total": 2430000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 850000,
+          "total": 2550000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 1050000,
+          "total": 3150000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 1050000,
+          "total": 3150000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -42649,7 +43209,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:18.966Z"
+      "timestamp": "2026-03-23T03:38:28.870Z"
     },
     {
       "parentName": "강원",
@@ -43435,7 +43995,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:18.543Z"
+      "timestamp": "2026-03-23T03:38:28.904Z"
     },
     {
       "parentName": "강원",
@@ -44221,7 +44781,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:19.067Z"
+      "timestamp": "2026-03-23T03:38:28.773Z"
     },
     {
       "parentName": "강원",
@@ -45007,7 +45567,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:18.714Z"
+      "timestamp": "2026-03-23T03:38:28.527Z"
     },
     {
       "parentName": "강원",
@@ -45558,6 +46118,14 @@
           "local": 1000000,
           "total": 3000000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 840000,
+          "total": 2520000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -45734,6 +46302,78 @@
           "local": 660000,
           "total": 1980000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 2690000,
+          "total": 8080000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 1240000,
+          "total": 3720000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 2770000,
+          "total": 8310000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 1270000,
+          "total": 3820000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 1220000,
+          "total": 3670000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 810000,
+          "total": 2430000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 850000,
+          "total": 2550000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 1050000,
+          "total": 3150000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 1050000,
+          "total": 3150000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -45793,7 +46433,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:18.869Z"
+      "timestamp": "2026-03-23T03:38:28.729Z"
     },
     {
       "parentName": "강원",
@@ -46579,7 +47219,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:18.441Z"
+      "timestamp": "2026-03-23T03:38:28.251Z"
     },
     {
       "parentName": "강원",
@@ -47445,7 +48085,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:23.224Z"
+      "timestamp": "2026-03-23T03:38:33.064Z"
     },
     {
       "parentName": "충북",
@@ -48311,7 +48951,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:23.068Z"
+      "timestamp": "2026-03-23T03:38:32.961Z"
     },
     {
       "parentName": "충북",
@@ -49097,7 +49737,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:23.185Z"
+      "timestamp": "2026-03-23T03:38:32.796Z"
     },
     {
       "parentName": "충북",
@@ -49963,7 +50603,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:23.279Z"
+      "timestamp": "2026-03-23T03:38:33.119Z"
     },
     {
       "parentName": "충북",
@@ -50749,7 +51389,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:22.793Z"
+      "timestamp": "2026-03-23T03:38:32.682Z"
     },
     {
       "parentName": "충북",
@@ -51300,6 +51940,14 @@
           "local": 2000000,
           "total": 4000000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 1680000,
+          "total": 3360000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -51476,6 +52124,78 @@
           "local": 1320000,
           "total": 2640000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 5390000,
+          "total": 10000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 2480000,
+          "total": 4960000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 5540000,
+          "total": 10000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 2550000,
+          "total": 5100000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 2450000,
+          "total": 4900000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 1620000,
+          "total": 3240000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 1700000,
+          "total": 3400000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 2100000,
+          "total": 4200000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 2100000,
+          "total": 4200000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -51535,7 +52255,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:22.940Z"
+      "timestamp": "2026-03-23T03:38:33.429Z"
     },
     {
       "parentName": "충북",
@@ -52086,6 +52806,14 @@
           "local": 2000000,
           "total": 4000000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 1680000,
+          "total": 3360000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -52262,6 +52990,78 @@
           "local": 1320000,
           "total": 2640000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 5390000,
+          "total": 10000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 2480000,
+          "total": 4960000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 5540000,
+          "total": 10000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 2550000,
+          "total": 5100000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 2450000,
+          "total": 4900000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 1620000,
+          "total": 3240000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 1700000,
+          "total": 3400000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 2100000,
+          "total": 4200000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 2100000,
+          "total": 4200000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -52321,7 +53121,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:23.334Z"
+      "timestamp": "2026-03-23T03:38:32.885Z"
     },
     {
       "parentName": "충북",
@@ -53107,7 +53907,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:22.682Z"
+      "timestamp": "2026-03-23T03:38:32.922Z"
     },
     {
       "parentName": "충북",
@@ -53973,7 +54773,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:26.944Z"
+      "timestamp": "2026-03-23T03:38:37.528Z"
     },
     {
       "parentName": "충북",
@@ -54839,7 +55639,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:27.174Z"
+      "timestamp": "2026-03-23T03:38:37.636Z"
     },
     {
       "parentName": "충북",
@@ -55705,7 +56505,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:27.336Z"
+      "timestamp": "2026-03-23T03:38:37.378Z"
     },
     {
       "parentName": "충북",
@@ -56491,7 +57291,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:27.094Z"
+      "timestamp": "2026-03-23T03:38:37.416Z"
     },
     {
       "parentName": "충남",
@@ -57277,7 +58077,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:27.468Z"
+      "timestamp": "2026-03-23T03:38:37.195Z"
     },
     {
       "parentName": "충남",
@@ -58063,7 +58863,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:27.258Z"
+      "timestamp": "2026-03-23T03:38:37.669Z"
     },
     {
       "parentName": "충남",
@@ -58849,7 +59649,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:27.546Z"
+      "timestamp": "2026-03-23T03:38:37.275Z"
     },
     {
       "parentName": "충남",
@@ -59635,7 +60435,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:27.426Z"
+      "timestamp": "2026-03-23T03:38:37.562Z"
     },
     {
       "parentName": "충남",
@@ -60421,7 +61221,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:31.386Z"
+      "timestamp": "2026-03-23T03:38:41.889Z"
     },
     {
       "parentName": "충남",
@@ -61207,7 +62007,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:31.700Z"
+      "timestamp": "2026-03-23T03:38:41.713Z"
     },
     {
       "parentName": "충남",
@@ -61993,7 +62793,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:31.481Z"
+      "timestamp": "2026-03-23T03:38:41.762Z"
     },
     {
       "parentName": "충남",
@@ -62779,7 +63579,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:31.580Z"
+      "timestamp": "2026-03-23T03:38:41.857Z"
     },
     {
       "parentName": "충남",
@@ -63565,7 +64365,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:31.343Z"
+      "timestamp": "2026-03-23T03:38:41.613Z"
     },
     {
       "parentName": "충남",
@@ -64351,7 +65151,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:31.619Z"
+      "timestamp": "2026-03-23T03:38:41.921Z"
     },
     {
       "parentName": "충남",
@@ -65137,7 +65937,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:31.736Z"
+      "timestamp": "2026-03-23T03:38:41.431Z"
     },
     {
       "parentName": "충남",
@@ -65923,7 +66723,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:31.258Z"
+      "timestamp": "2026-03-23T03:38:41.527Z"
     },
     {
       "parentName": "충남",
@@ -66709,7 +67509,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:35.964Z"
+      "timestamp": "2026-03-23T03:38:46.083Z"
     },
     {
       "parentName": "충남",
@@ -67495,7 +68295,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:35.604Z"
+      "timestamp": "2026-03-23T03:38:46.146Z"
     },
     {
       "parentName": "충남",
@@ -68281,7 +69081,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:35.743Z"
+      "timestamp": "2026-03-23T03:38:46.214Z"
     },
     {
       "parentName": "전북",
@@ -69067,7 +69867,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:35.541Z"
+      "timestamp": "2026-03-23T03:38:45.987Z"
     },
     {
       "parentName": "전북",
@@ -69853,7 +70653,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:35.998Z"
+      "timestamp": "2026-03-23T03:38:45.726Z"
     },
     {
       "parentName": "전북",
@@ -70639,7 +71439,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:35.844Z"
+      "timestamp": "2026-03-23T03:38:45.936Z"
     },
     {
       "parentName": "전북",
@@ -71425,7 +72225,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:35.880Z"
+      "timestamp": "2026-03-23T03:38:45.853Z"
     },
     {
       "parentName": "전북",
@@ -72211,7 +73011,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:35.657Z"
+      "timestamp": "2026-03-23T03:38:46.019Z"
     },
     {
       "parentName": "전북",
@@ -72997,7 +73797,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:39.753Z"
+      "timestamp": "2026-03-23T03:38:50.114Z"
     },
     {
       "parentName": "전북",
@@ -73783,7 +74583,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:39.894Z"
+      "timestamp": "2026-03-23T03:38:50.276Z"
     },
     {
       "parentName": "전북",
@@ -74569,7 +75369,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:40.037Z"
+      "timestamp": "2026-03-23T03:38:50.355Z"
     },
     {
       "parentName": "전북",
@@ -75355,7 +76155,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:39.945Z"
+      "timestamp": "2026-03-23T03:38:49.941Z"
     },
     {
       "parentName": "전북",
@@ -76141,7 +76941,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:39.800Z"
+      "timestamp": "2026-03-23T03:38:50.155Z"
     },
     {
       "parentName": "전북",
@@ -76927,7 +77727,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:40.087Z"
+      "timestamp": "2026-03-23T03:38:50.245Z"
     },
     {
       "parentName": "전북",
@@ -77713,7 +78513,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:40.117Z"
+      "timestamp": "2026-03-23T03:38:50.386Z"
     },
     {
       "parentName": "전북",
@@ -78499,7 +79299,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:39.666Z"
+      "timestamp": "2026-03-23T03:38:49.876Z"
     },
     {
       "parentName": "전북",
@@ -79285,7 +80085,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:44.342Z"
+      "timestamp": "2026-03-23T03:38:54.232Z"
     },
     {
       "parentName": "전남",
@@ -80071,7 +80871,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:43.727Z"
+      "timestamp": "2026-03-23T03:38:54.361Z"
     },
     {
       "parentName": "전남",
@@ -80857,7 +81657,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:44.003Z"
+      "timestamp": "2026-03-23T03:38:54.468Z"
     },
     {
       "parentName": "전남",
@@ -81643,7 +82443,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:44.262Z"
+      "timestamp": "2026-03-23T03:38:54.271Z"
     },
     {
       "parentName": "전남",
@@ -82429,7 +83229,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:44.216Z"
+      "timestamp": "2026-03-23T03:38:54.066Z"
     },
     {
       "parentName": "전남",
@@ -83215,7 +84015,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:44.106Z"
+      "timestamp": "2026-03-23T03:38:54.172Z"
     },
     {
       "parentName": "전남",
@@ -83766,6 +84566,14 @@
           "local": 2580000,
           "total": 4580000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 2060000,
+          "total": 3740000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -83942,6 +84750,78 @@
           "local": 1700000,
           "total": 3020000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 6610000,
+          "total": 10000
+        },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 3040000,
+          "total": 5520000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 6790000,
+          "total": 10000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 3120000,
+          "total": 5670000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 3000000,
+          "total": 5450000
+        },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 1980000,
+          "total": 3600000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 2080000,
+          "total": 3780000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 2570000,
+          "total": 4670000
+        },
+        "테슬라코리아___Model Y L": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L",
+          "national": 2100000,
+          "local": 2570000,
+          "total": 4670000
+        },
         "기아___레이 EV 2WD 14인치 4인승 승용": {
           "type": "경·소형",
           "manufacturer": "기아",
@@ -84001,7 +84881,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:44.374Z"
+      "timestamp": "2026-03-23T03:38:54.392Z"
     },
     {
       "parentName": "전남",
@@ -84787,7 +85667,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:43.884Z"
+      "timestamp": "2026-03-23T03:38:53.978Z"
     },
     {
       "parentName": "전남",
@@ -85573,7 +86453,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:48.210Z"
+      "timestamp": "2026-03-23T03:38:58.279Z"
     },
     {
       "parentName": "전남",
@@ -86359,7 +87239,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:48.309Z"
+      "timestamp": "2026-03-23T03:38:58.182Z"
     },
     {
       "parentName": "전남",
@@ -87145,7 +88025,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:48.174Z"
+      "timestamp": "2026-03-23T03:38:58.320Z"
     },
     {
       "parentName": "전남",
@@ -87931,7 +88811,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:47.922Z"
+      "timestamp": "2026-03-23T03:38:58.395Z"
     },
     {
       "parentName": "전남",
@@ -88717,7 +89597,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:48.437Z"
+      "timestamp": "2026-03-23T03:38:58.526Z"
     },
     {
       "parentName": "전남",
@@ -89503,7 +90383,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:48.358Z"
+      "timestamp": "2026-03-23T03:38:58.562Z"
     },
     {
       "parentName": "전남",
@@ -90289,7 +91169,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:48.076Z"
+      "timestamp": "2026-03-23T03:38:58.051Z"
     },
     {
       "parentName": "전남",
@@ -91075,7 +91955,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:48.017Z"
+      "timestamp": "2026-03-23T03:38:58.427Z"
     },
     {
       "parentName": "전남",
@@ -91861,7 +92741,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:52.256Z"
+      "timestamp": "2026-03-23T03:39:02.530Z"
     },
     {
       "parentName": "전남",
@@ -92647,7 +93527,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:52.294Z"
+      "timestamp": "2026-03-23T03:39:02.494Z"
     },
     {
       "parentName": "전남",
@@ -93433,7 +94313,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:52.013Z"
+      "timestamp": "2026-03-23T03:39:02.631Z"
     },
     {
       "parentName": "전남",
@@ -94219,7 +95099,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:52.123Z"
+      "timestamp": "2026-03-23T03:39:02.252Z"
     },
     {
       "parentName": "전남",
@@ -95005,7 +95885,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:52.455Z"
+      "timestamp": "2026-03-23T03:39:02.562Z"
     },
     {
       "parentName": "전남",
@@ -95791,7 +96671,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:52.171Z"
+      "timestamp": "2026-03-23T03:39:02.662Z"
     },
     {
       "parentName": "전남",
@@ -96577,7 +97457,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:52.354Z"
+      "timestamp": "2026-03-23T03:39:02.317Z"
     },
     {
       "parentName": "경북",
@@ -97363,7 +98243,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:52.489Z"
+      "timestamp": "2026-03-23T03:39:02.401Z"
     },
     {
       "parentName": "경북",
@@ -98149,7 +99029,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:56.059Z"
+      "timestamp": "2026-03-23T03:39:06.462Z"
     },
     {
       "parentName": "경북",
@@ -98935,7 +99815,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:56.716Z"
+      "timestamp": "2026-03-23T03:39:06.561Z"
     },
     {
       "parentName": "경북",
@@ -99721,7 +100601,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:56.408Z"
+      "timestamp": "2026-03-23T03:39:06.662Z"
     },
     {
       "parentName": "경북",
@@ -100507,7 +101387,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:56.320Z"
+      "timestamp": "2026-03-23T03:39:06.425Z"
     },
     {
       "parentName": "경북",
@@ -101293,7 +102173,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:56.508Z"
+      "timestamp": "2026-03-23T03:39:06.298Z"
     },
     {
       "parentName": "경북",
@@ -102079,7 +102959,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:56.365Z"
+      "timestamp": "2026-03-23T03:39:06.360Z"
     },
     {
       "parentName": "경북",
@@ -102865,7 +103745,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:56.574Z"
+      "timestamp": "2026-03-23T03:39:06.157Z"
     },
     {
       "parentName": "경북",
@@ -103651,7 +104531,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:34:56.676Z"
+      "timestamp": "2026-03-23T03:39:06.594Z"
     },
     {
       "parentName": "경북",
@@ -104437,7 +105317,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:00.591Z"
+      "timestamp": "2026-03-23T03:39:10.865Z"
     },
     {
       "parentName": "경북",
@@ -105223,7 +106103,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:00.632Z"
+      "timestamp": "2026-03-23T03:39:10.644Z"
     },
     {
       "parentName": "경북",
@@ -106009,7 +106889,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:00.540Z"
+      "timestamp": "2026-03-23T03:39:10.897Z"
     },
     {
       "parentName": "경북",
@@ -106795,7 +107675,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:00.310Z"
+      "timestamp": "2026-03-23T03:39:10.810Z"
     },
     {
       "parentName": "경북",
@@ -107661,7 +108541,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:00.738Z"
+      "timestamp": "2026-03-23T03:39:10.556Z"
     },
     {
       "parentName": "경북",
@@ -108527,7 +109407,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:00.776Z"
+      "timestamp": "2026-03-23T03:39:10.482Z"
     },
     {
       "parentName": "경북",
@@ -109393,7 +110273,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:00.465Z"
+      "timestamp": "2026-03-23T03:39:10.777Z"
     },
     {
       "parentName": "경북",
@@ -110179,7 +111059,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:00.262Z"
+      "timestamp": "2026-03-23T03:39:10.745Z"
     },
     {
       "parentName": "경북",
@@ -110965,7 +111845,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:04.882Z"
+      "timestamp": "2026-03-23T03:39:14.602Z"
     },
     {
       "parentName": "경북",
@@ -111751,7 +112631,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:04.633Z"
+      "timestamp": "2026-03-23T03:39:14.920Z"
     },
     {
       "parentName": "경북",
@@ -112537,7 +113417,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:04.361Z"
+      "timestamp": "2026-03-23T03:39:15.196Z"
     },
     {
       "parentName": "경북",
@@ -113323,7 +114203,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:04.700Z"
+      "timestamp": "2026-03-23T03:39:14.730Z"
     },
     {
       "parentName": "경북",
@@ -114189,7 +115069,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:04.743Z"
+      "timestamp": "2026-03-23T03:39:14.825Z"
     },
     {
       "parentName": "경남",
@@ -114975,7 +115855,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:04.546Z"
+      "timestamp": "2026-03-23T03:39:14.697Z"
     },
     {
       "parentName": "경남",
@@ -115841,7 +116721,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:04.791Z"
+      "timestamp": "2026-03-23T03:39:14.489Z"
     },
     {
       "parentName": "경남",
@@ -116627,7 +117507,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:04.472Z"
+      "timestamp": "2026-03-23T03:39:14.860Z"
     },
     {
       "parentName": "경남",
@@ -117413,7 +118293,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:08.884Z"
+      "timestamp": "2026-03-23T03:39:18.715Z"
     },
     {
       "parentName": "경남",
@@ -118199,7 +119079,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:08.821Z"
+      "timestamp": "2026-03-23T03:39:19.253Z"
     },
     {
       "parentName": "경남",
@@ -118985,7 +119865,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:09.024Z"
+      "timestamp": "2026-03-23T03:39:19.113Z"
     },
     {
       "parentName": "경남",
@@ -119771,7 +120651,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:08.452Z"
+      "timestamp": "2026-03-23T03:39:18.883Z"
     },
     {
       "parentName": "경남",
@@ -120557,7 +121437,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:08.658Z"
+      "timestamp": "2026-03-23T03:39:19.183Z"
     },
     {
       "parentName": "경남",
@@ -121343,7 +122223,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:08.945Z"
+      "timestamp": "2026-03-23T03:39:19.286Z"
     },
     {
       "parentName": "경남",
@@ -122129,7 +123009,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:08.728Z"
+      "timestamp": "2026-03-23T03:39:18.985Z"
     },
     {
       "parentName": "경남",
@@ -122915,7 +123795,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:08.553Z"
+      "timestamp": "2026-03-23T03:39:19.037Z"
     },
     {
       "parentName": "경남",
@@ -123701,7 +124581,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:12.937Z"
+      "timestamp": "2026-03-23T03:39:23.424Z"
     },
     {
       "parentName": "경남",
@@ -124487,7 +125367,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:12.987Z"
+      "timestamp": "2026-03-23T03:39:23.246Z"
     },
     {
       "parentName": "경남",
@@ -125273,7 +126153,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:12.896Z"
+      "timestamp": "2026-03-23T03:39:23.102Z"
     },
     {
       "parentName": "경남",
@@ -126059,7 +126939,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:12.791Z"
+      "timestamp": "2026-03-23T03:39:23.332Z"
     },
     {
       "parentName": "경남",
@@ -126845,7 +127725,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:13.108Z"
+      "timestamp": "2026-03-23T03:39:22.918Z"
     },
     {
       "parentName": "경남",
@@ -127631,7 +128511,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:13.032Z"
+      "timestamp": "2026-03-23T03:39:23.365Z"
     },
     {
       "parentName": "경남",
@@ -128417,7 +129297,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:12.287Z"
+      "timestamp": "2026-03-23T03:39:23.210Z"
     },
     {
       "parentName": "제주",
@@ -129283,7 +130163,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:12.744Z"
+      "timestamp": "2026-03-23T03:39:23.135Z"
     },
     {
       "parentName": "공단",
@@ -130149,7 +131029,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-22T03:35:15.791Z"
+      "timestamp": "2026-03-23T03:39:26.276Z"
     }
   ]
 }
