@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-24T10:10:44.784Z",
+  "timestamp": "2026-03-24T10:20:41.572Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -101,16 +101,16 @@
           "registered_corporate": 50,
           "registered_taxi": 99,
           "registered_general": 1954,
-          "delivered_total": 2230,
+          "delivered_total": 2231,
           "delivered_priority": 781,
           "delivered_corporate": 37,
           "delivered_taxi": 69,
-          "delivered_general": 1343,
-          "remaining_total": 3930,
+          "delivered_general": 1344,
+          "remaining_total": 3929,
           "remaining_priority": 99,
           "remaining_corporate": 0,
           "remaining_taxi": 371,
-          "remaining_general": 3497,
+          "remaining_general": 3496,
           "note": "*** 2. 4. 일 18:00 화물차 신청 마감합니다. ***\n*** 접수 가능 숫자가 있더라도 예산 초과로 마감이므로 추가 신청이 안됩니다***\n*** 시스템 상 보이는 잔여대수 안맞습니다.***\n* 문의사항에 대해 공고문 보완(파란색 표시)해서 재첨부하였으니 확인바랍니다*\n***2026년 상반기 전기자동차 민간보급사업 안내***\n2026년 전기승용차 보급대수 : 8,800대\n- 1차 상반기 6,160대(70%) *택시 및 우선순위 물량 있음\n- 2차 하반기 2,640대(30%) * 통합진행\n- 신청접수는 1. 29.(목) 09:00부터 시작합니다\n- 신청양식은 인천시 양식으로 다운받아서 제출해주시기 바랍니다.\n- 보급대수는 보급여건에 따라 변동될수 있으며 상반기 목표대수 소진 시 조기 종료합니다.\n- 기타 사항은 첨부된 공고문을 참고하시기 바랍니다\n***지자체 문의처(연락처)는 조만간 변경예정이오니 수시로 공고를 확인하여 주시기 바랍니다***"
         },
         {
@@ -4157,13 +4157,13 @@
           "registered_corporate": 13,
           "registered_taxi": 105,
           "registered_general": 531,
-          "delivered_total": 555,
-          "delivered_priority": 273,
+          "delivered_total": 556,
+          "delivered_priority": 274,
           "delivered_corporate": 5,
           "delivered_taxi": 42,
           "delivered_general": 235,
-          "remaining_total": 3443,
-          "remaining_priority": 127,
+          "remaining_total": 3442,
+          "remaining_priority": 126,
           "remaining_corporate": 0,
           "remaining_taxi": 358,
           "remaining_general": 2963,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-24T10:10:44.700Z"
+      "timestamp": "2026-03-24T10:20:41.487Z"
     }
   ]
 }
