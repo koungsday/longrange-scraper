@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-24T10:00:46.133Z",
+  "timestamp": "2026-03-24T10:10:44.784Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 143,
           "registered_taxi": 443,
           "registered_general": 2654,
-          "delivered_total": 3302,
+          "delivered_total": 3303,
           "delivered_priority": 1021,
           "delivered_corporate": 104,
           "delivered_taxi": 269,
-          "delivered_general": 1908,
-          "remaining_total": 7198,
+          "delivered_general": 1909,
+          "remaining_total": 7197,
           "remaining_priority": 579,
           "remaining_corporate": 0,
           "remaining_taxi": 571,
-          "remaining_general": 6152,
+          "remaining_general": 6151,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -4157,16 +4157,16 @@
           "registered_corporate": 13,
           "registered_taxi": 105,
           "registered_general": 531,
-          "delivered_total": 553,
-          "delivered_priority": 272,
+          "delivered_total": 555,
+          "delivered_priority": 273,
           "delivered_corporate": 5,
           "delivered_taxi": 42,
-          "delivered_general": 234,
-          "remaining_total": 3445,
-          "remaining_priority": 128,
+          "delivered_general": 235,
+          "remaining_total": 3443,
+          "remaining_priority": 127,
           "remaining_corporate": 0,
           "remaining_taxi": 358,
-          "remaining_general": 2964,
+          "remaining_general": 2963,
           "note": "2026년도 전기자동차 보급 사업(상반기)\n○ 사업 개요\n- 사업명 : 2026년 상반기 전기자동차 보급사업\n- 보급대수 : 승용 3,000대, 화물 1,000대\n- 접수기간 : 2026. 2. 10.(화) 14:00 ~ 6. 30. 18:00\n(예산 소진 상황에 따라 접수 기간 종점은 변경될 수 있으며, 추가 변경 공고가 있을 수 있음)\n- 지원대상 : 제주 도민 및 제주도 내 기업？법인(3개월 이상 지속 거주 및 설립)\n※ 자세한 내용은 공고문을 참고하시기 바랍니다.\n※ 무공해차 누리집 출고잔여대수와 실제 잔여대수는 일치하지 않습니다."
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 9626,
           "registered_taxi": 51,
           "registered_general": 106,
-          "delivered_total": 4519,
+          "delivered_total": 4520,
           "delivered_priority": 2,
-          "delivered_corporate": 4451,
+          "delivered_corporate": 4452,
           "delivered_taxi": 28,
           "delivered_general": 38,
-          "remaining_total": 25481,
+          "remaining_total": 25480,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-24T10:00:46.041Z"
+      "timestamp": "2026-03-24T10:10:44.700Z"
     }
   ]
 }
