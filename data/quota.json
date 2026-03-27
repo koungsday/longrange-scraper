@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T09:30:44.840Z",
+  "timestamp": "2026-03-27T09:40:42.237Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3793,16 +3793,16 @@
           "registered_corporate": 31,
           "registered_taxi": 30,
           "registered_general": 717,
-          "delivered_total": 647,
+          "delivered_total": 648,
           "delivered_priority": 107,
           "delivered_corporate": 25,
           "delivered_taxi": 27,
-          "delivered_general": 488,
-          "remaining_total": 348,
+          "delivered_general": 489,
+          "remaining_total": 347,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 23,
-          "remaining_general": 357,
+          "remaining_general": 356,
           "note": "★★2026년도부터 차량 최초등록 이후 2년이내 타 지자체로 명의변경 및 등록 주소지 변경 시 회수요율에 따라 보조금(시비) 회수[최대 70%]★★\n-------------------------------------------------------------------------------------\n1차 공고: 1/26 ~   접수: 1/28 ~\n★2026년 김해시 전기자동차(승용)보급사업 공고\n- 지원대수 : 1000대\n※ 자세한 내용은 김해시 공고문 참조\n※ 반드시 공고문 숙지 후 신청바랍니다. 통화량이 많아 통화가 어려울 수 있습니다.\n★ 주의사항\n1. 출고기한이 만료된 기신청자는 지원신청서 재접수하여야 함\n2. 전기차 보조금 지원대상자로 선정되었으나, 보조금 지급 청구기간 미도래로 보조금 미청구시 출고물량으로 확인 안됨\n3. 잔여물량은 단순 참고용이며 실 잔여물량이 아님\n4. 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음"
         },
         {
@@ -4178,17 +4178,17 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 10274,
+          "registered_total": 10281,
           "registered_priority": 5,
-          "registered_corporate": 10087,
+          "registered_corporate": 10094,
           "registered_taxi": 59,
           "registered_general": 123,
-          "delivered_total": 5131,
+          "delivered_total": 5132,
           "delivered_priority": 2,
-          "delivered_corporate": 5043,
+          "delivered_corporate": 5044,
           "delivered_taxi": 36,
           "delivered_general": 50,
-          "remaining_total": 24869,
+          "remaining_total": 24868,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-27T09:30:44.795Z"
+      "timestamp": "2026-03-27T09:40:42.171Z"
     }
   ]
 }
