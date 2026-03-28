@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-28T00:20:39.765Z",
+  "timestamp": "2026-03-28T00:30:42.475Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1869,16 +1869,16 @@
           "registered_corporate": 13,
           "registered_taxi": 26,
           "registered_general": 586,
-          "delivered_total": 580,
+          "delivered_total": 581,
           "delivered_priority": 59,
           "delivered_corporate": 11,
           "delivered_taxi": 25,
-          "delivered_general": 485,
-          "remaining_total": 12,
+          "delivered_general": 486,
+          "remaining_total": 11,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 4,
-          "remaining_general": 19,
+          "remaining_general": 18,
           "note": "* 접수번호 774번 이후 접수한 경우는 대기하여야 함(취소분 나오는 대로 자격부여)\n* 택시 3대 지원 가능\n* 우선순위로 접수는 불가하나 추가지원금은 받을 수 있음(다자녀, 생애최초 등)\n<2026년 아산시 상반기 전기자동차(승용, 화물) 보급사업>\n1. 접수시작일 : [승용] ’26. 2. 05.(목) 10:00 ~\n2. 신청대상 : 만 18세 이상 아산시민, 법인, 단체 등(신청일 접수일 기준 90일 이전 거주)\n3. 보급대수: 승용 592  * 우선순위, 택시 물량 포함\n※ 차종별 보조금 차등지원 및 구매수요에 따라 보급물량은 별도 공고 없이 조정될 수 있음."
         },
         {
@@ -3065,16 +3065,16 @@
           "registered_corporate": 1,
           "registered_taxi": 0,
           "registered_general": 34,
-          "delivered_total": 27,
+          "delivered_total": 28,
           "delivered_priority": 8,
           "delivered_corporate": 1,
           "delivered_taxi": 0,
-          "delivered_general": 18,
-          "remaining_total": 113,
+          "delivered_general": 19,
+          "remaining_total": 112,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 115,
+          "remaining_general": 114,
           "note": "○ 2026년 상반기 전기자동차(승용,화물)보급사업 공고 ○\n1. 접수기간 : 2026. 2. 23.(월) ~ 상반기 예산소진시까지\n2. 보급대수 : 상반기 보급대수 131대(보급 여건 등에 따라 변동될 수 있음)\n가. 승용 98대(일반 86 / 우선 5 / 공공 7)\n나. 화물 33대(일반 29 / 우선 1 / 공공 3)\n3. 보급기준 : 개인 당 1대, 법인·기관 당 1대\n4. 선정기준 : 차량 출고·등록순(보조금 지원가능 확인 요청일 순)\n5. 지원대상 : 지원 신청일 기준으로 주민등록상 주소를 진도군에 연속하여3개월이상 둔 군민이면서 보조금 지원 대상 자동차를 군에 신규 등록한 자\n6. 지원차량 : 무공해차 통합누리집(ev.or.kr), 붙임에서 확인 가능\n7. 문의사항 : 진도군 환경수질과(☎061-540-3704)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-28T00:20:39.687Z"
+      "timestamp": "2026-03-28T00:30:42.417Z"
     }
   ]
 }
