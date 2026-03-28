@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-28T13:30:47.368Z",
+  "timestamp": "2026-03-28T13:40:45.857Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1063,16 +1063,16 @@
           "registered_corporate": 12,
           "registered_taxi": 24,
           "registered_general": 395,
-          "delivered_total": 484,
+          "delivered_total": 483,
           "delivered_priority": 171,
           "delivered_corporate": 9,
           "delivered_taxi": 23,
-          "delivered_general": 281,
-          "remaining_total": 716,
+          "delivered_general": 280,
+          "remaining_total": 717,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 27,
-          "remaining_general": 719,
+          "remaining_general": 720,
           "note": "○ 2026. 2. 23. 변경 공고(변경 사항 적색 표시)\n○ 전기승용 신청접수일 : 2026. 2. 3.(화) 09:00\n○ 연간 총 보급대수 1,840대 / 상반기 1,200대, 하반기 640대\n- 보급대수는 차종별 보조금 차등 지원 및 국비 추가 지급 등에 따라 변동될 수 있습니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-28T13:30:47.304Z"
+      "timestamp": "2026-03-28T13:40:45.807Z"
     }
   ]
 }
