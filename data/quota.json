@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-29T23:00:51.619Z",
+  "timestamp": "2026-03-29T23:10:43.914Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 156,
           "registered_taxi": 471,
           "registered_general": 2825,
-          "delivered_total": 3707,
+          "delivered_total": 3708,
           "delivered_priority": 1148,
           "delivered_corporate": 112,
           "delivered_taxi": 321,
-          "delivered_general": 2126,
-          "remaining_total": 7633,
+          "delivered_general": 2127,
+          "remaining_total": 7632,
           "remaining_priority": 452,
           "remaining_corporate": 0,
           "remaining_taxi": 519,
-          "remaining_general": 6774,
+          "remaining_general": 6773,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -49,12 +49,12 @@
           "registered_corporate": 60,
           "registered_taxi": 366,
           "registered_general": 1488,
-          "delivered_total": 2002,
+          "delivered_total": 2003,
           "delivered_priority": 561,
           "delivered_corporate": 45,
-          "delivered_taxi": 295,
+          "delivered_taxi": 296,
           "delivered_general": 1101,
-          "remaining_total": 2124,
+          "remaining_total": 2123,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4183,12 +4183,12 @@
           "registered_corporate": 10096,
           "registered_taxi": 59,
           "registered_general": 123,
-          "delivered_total": 5147,
+          "delivered_total": 5148,
           "delivered_priority": 2,
-          "delivered_corporate": 5059,
+          "delivered_corporate": 5060,
           "delivered_taxi": 36,
           "delivered_general": 50,
-          "remaining_total": 24853,
+          "remaining_total": 24852,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-29T23:00:51.561Z"
+      "timestamp": "2026-03-29T23:10:43.854Z"
     }
   ]
 }
