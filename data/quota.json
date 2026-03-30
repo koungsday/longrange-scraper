@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-30T23:00:56.015Z",
+  "timestamp": "2026-03-30T23:10:41.481Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 162,
           "registered_taxi": 482,
           "registered_general": 2919,
-          "delivered_total": 3787,
+          "delivered_total": 3788,
           "delivered_priority": 1165,
           "delivered_corporate": 113,
           "delivered_taxi": 342,
-          "delivered_general": 2167,
-          "remaining_total": 7553,
+          "delivered_general": 2168,
+          "remaining_total": 7552,
           "remaining_priority": 435,
           "remaining_corporate": 0,
           "remaining_taxi": 498,
-          "remaining_general": 6733,
+          "remaining_general": 6732,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -569,16 +569,16 @@
           "registered_corporate": 10,
           "registered_taxi": 3,
           "registered_general": 294,
-          "delivered_total": 302,
+          "delivered_total": 303,
           "delivered_priority": 103,
           "delivered_corporate": 8,
           "delivered_taxi": 2,
-          "delivered_general": 189,
-          "remaining_total": 298,
+          "delivered_general": 190,
+          "remaining_total": 297,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 28,
-          "remaining_general": 321,
+          "remaining_general": 320,
           "note": "◀◀ 2026. 3. 27. 18시 기준, 전기승용 잔여대수 81대\n**26.2.2. 변경공고 게시, \"전기화물차 구매자 중 기존 경유화물자 폐차 미이행자 구매보조금 차감액 변경\"**\n○ 신청접수기간 : 2026. 2. 2.(월) 10:00 ~ 2026. 6. 30.(화) 18:00\n※ 예산소진시 조기마감될 수 있음\n○ 보급 대수\n- 전기승용 : 600대 (일반 510대, 우선순위 60대, 택시 30대)\n- 전기화물 : 60대 (일반 51대, 우선순위 6대, 택배 3대)\n○ 신청방법 : 구매계약 후 신청서 작성하여 전기차 판매점 통해 신청\n○ 보조금 지원대상 차량 및 지원금액 : 무공해차 통합누리집에서 조회가능\n※ 조회방법 : 구매 및 지원 > 지자체 차종별 보조금 클릭 > 해당 지자체 조회\n* 전화문의가 많아 오히려 업무처리가 지연될 수 있습니다. 서류심사 및 자격부여까지 2~3일 소요되므로 단순문의 등 독촉전화 자제 부탁드립니다.\n* 시스템 접수 순으로 서류검토 후 처리합니다.  접수 시 정확히 전화번호를 기재해주시면 자격부여 및 대상자 선정 문자 안내드립니다.\n* 추가지원대상 여부는 구매자가 반드시 확인하시고 신청바라며 보조금 지급절차 종료 이후 소급지급이 불가합니다."
         },
         {
@@ -1271,16 +1271,16 @@
           "registered_corporate": 0,
           "registered_taxi": 1,
           "registered_general": 20,
-          "delivered_total": 24,
+          "delivered_total": 25,
           "delivered_priority": 9,
           "delivered_corporate": 0,
           "delivered_taxi": 1,
-          "delivered_general": 14,
-          "remaining_total": 106,
+          "delivered_general": 15,
+          "remaining_total": 105,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 6,
-          "remaining_general": 109,
+          "remaining_general": 108,
           "note": ""
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 10471,
+          "registered_total": 10476,
           "registered_priority": 5,
-          "registered_corporate": 10278,
+          "registered_corporate": 10283,
           "registered_taxi": 61,
           "registered_general": 127,
           "delivered_total": 5291,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-30T23:00:55.952Z"
+      "timestamp": "2026-03-30T23:10:41.415Z"
     }
   ]
 }
