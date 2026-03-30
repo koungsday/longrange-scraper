@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-30T22:50:40.139Z",
+  "timestamp": "2026-03-30T23:00:56.015Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,15 +23,15 @@
           "registered_corporate": 162,
           "registered_taxi": 482,
           "registered_general": 2919,
-          "delivered_total": 3784,
+          "delivered_total": 3787,
           "delivered_priority": 1165,
           "delivered_corporate": 113,
-          "delivered_taxi": 339,
+          "delivered_taxi": 342,
           "delivered_general": 2167,
-          "remaining_total": 7556,
+          "remaining_total": 7553,
           "remaining_priority": 435,
           "remaining_corporate": 0,
-          "remaining_taxi": 501,
+          "remaining_taxi": 498,
           "remaining_general": 6733,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
@@ -49,12 +49,12 @@
           "registered_corporate": 67,
           "registered_taxi": 442,
           "registered_general": 1593,
-          "delivered_total": 2030,
+          "delivered_total": 2031,
           "delivered_priority": 565,
           "delivered_corporate": 45,
-          "delivered_taxi": 299,
+          "delivered_taxi": 300,
           "delivered_general": 1121,
-          "remaining_total": 2096,
+          "remaining_total": 2095,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-30T22:50:40.076Z"
+      "timestamp": "2026-03-30T23:00:55.952Z"
     }
   ]
 }
