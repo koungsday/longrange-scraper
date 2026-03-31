@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-31T03:40:43.778Z",
+  "timestamp": "2026-03-31T03:50:40.459Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,11 +18,11 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8900,
-          "registered_total": 5163,
+          "registered_total": 5164,
           "registered_priority": 1554,
           "registered_corporate": 163,
           "registered_taxi": 489,
-          "registered_general": 2957,
+          "registered_general": 2958,
           "delivered_total": 3829,
           "delivered_priority": 1173,
           "delivered_corporate": 115,
@@ -44,10 +44,10 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 4126,
-          "registered_total": 3082,
-          "registered_priority": 880,
+          "registered_total": 3084,
+          "registered_priority": 881,
           "registered_corporate": 73,
-          "registered_taxi": 467,
+          "registered_taxi": 468,
           "registered_general": 1662,
           "delivered_total": 2043,
           "delivered_priority": 567,
@@ -699,16 +699,16 @@
           "registered_corporate": 24,
           "registered_taxi": 47,
           "registered_general": 1068,
-          "delivered_total": 1337,
+          "delivered_total": 1339,
           "delivered_priority": 473,
           "delivered_corporate": 22,
           "delivered_taxi": 34,
-          "delivered_general": 808,
-          "remaining_total": 663,
+          "delivered_general": 810,
+          "remaining_total": 661,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 26,
-          "remaining_general": 932,
+          "remaining_general": 930,
           "note": "★ 화물 - 마감 (2026.2.5.) / 추경계획 없음 /  하반기 사업 7월초 시작 예정 ★\n★ 승용-: 일반물량 마감 (2026.3.26.)  / 추경계획 없음 / 하반기 사업 7월초 시작 예정 / 택시 18대 신청 가능 ★\n■ 2026년 상반기 전기자동차( 보급사업 공고 ■\n1. 신청기간 : 2026. 2. 2.(월) 9:00 ~ 2026. 6. 30.(화) 18:00 (예산소진시 조기마감)\n※ 상반기 신청 건 중 대상자 미선정 건은 하반기 물량으로 연계되지 않으므로 취소 후 재신청 필요\n2. 보급대수: 총 2,156대\n○ 승용 2,000대 (일반  1,740개, 우선순위 200대, 택시 60대)\n○ 화물 150대 (일반 127대, 우선순위 15대, 택배 8대)\n○ 승합 6대(개인승합 3대, 어린이통학버스 3대)\n※ 지원 차종 및 국비 추가 지원 등 예산소진 현황에 따라 총 보급물량은 변동 가능\n3. 지원금액: 차종별 구매보조금 차등 지급\n4. 신청대상 및 자격조건\n○ 신청일 기준 90일 전부터 연속하여 용인시에 주소를 둔 만 18세 이상 개인\n○ 용인시 내 위치한 법인, 단체 및 기관 등\n5. 선정기준 : 출고·등록순\n※ 반드시 공고문 확인하시고 신청하시기 바랍니다.\n※ 사업개시 후 신청 폭주로 전화응대가 어려울 수 있습니다. 독촉여부와 상관없이 접수된 순서대로 공정하게 처리하오니 단순 확인. 독촉 전화 등은 삼가주시기 바랍니다.\n신청 당일 처리가 불가할 수 있으니 출고일 확인 후 미리 신청해주시기 바랍니다."
         },
         {
@@ -1073,7 +1073,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 27,
           "remaining_general": 710,
-          "note": "○ 전기화물 마감\n○ 2026. 2. 23. 변경 공고(변경 사항 적색 표시)\n○ 전기승용 신청접수일 : 2026. 2. 3.(화) 09:00\n○ 연간 총 보급대수 1,840대 / 상반기 1,200대, 하반기 640대\n- 보급대수는 차종별 보조금 차등 지원 및 국비 추가 지급 등에 따라 변동될 수 있습니다."
+          "note": "○ 전기화물 마감\n○ 무공해차 통합누리집 내 출고잔여대수와 실제 잔여대수는 일치하지 않음\n○ 3. 31. 기준 승용 잔여대수 약 100대\n○ 2026. 2. 23. 변경 공고(변경 사항 적색 표시)\n○ 전기승용 신청접수일 : 2026. 2. 3.(화) 09:00\n○ 연간 총 보급대수 1,840대 / 상반기 1,200대, 하반기 640대\n- 보급대수는 차종별 보조금 차등 지원 및 국비 추가 지급 등에 따라 변동될 수 있습니다."
         },
         {
           "sido": "강원",
@@ -4152,11 +4152,11 @@
           "quota_corporate": 0,
           "quota_taxi": 400,
           "quota_general": 3198,
-          "registered_total": 1451,
+          "registered_total": 1452,
           "registered_priority": 707,
           "registered_corporate": 16,
           "registered_taxi": 114,
-          "registered_general": 614,
+          "registered_general": 615,
           "delivered_total": 707,
           "delivered_priority": 349,
           "delivered_corporate": 6,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-31T03:40:43.716Z"
+      "timestamp": "2026-03-31T03:50:40.408Z"
     }
   ]
 }
