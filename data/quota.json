@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-31T09:10:43.239Z",
+  "timestamp": "2026-03-31T09:20:46.589Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -824,11 +824,11 @@
           "quota_corporate": 0,
           "quota_taxi": 140,
           "quota_general": 3237,
-          "registered_total": 2245,
+          "registered_total": 2244,
           "registered_priority": 798,
           "registered_corporate": 63,
           "registered_taxi": 55,
-          "registered_general": 1329,
+          "registered_general": 1328,
           "delivered_total": 1523,
           "delivered_priority": 544,
           "delivered_corporate": 45,
@@ -1760,8 +1760,8 @@
           "quota_corporate": 0,
           "quota_taxi": 3,
           "quota_general": 102,
-          "registered_total": 82,
-          "registered_priority": 21,
+          "registered_total": 83,
+          "registered_priority": 22,
           "registered_corporate": 4,
           "registered_taxi": 1,
           "registered_general": 56,
@@ -2597,16 +2597,16 @@
           "registered_corporate": 8,
           "registered_taxi": 39,
           "registered_general": 277,
-          "delivered_total": 461,
+          "delivered_total": 462,
           "delivered_priority": 154,
           "delivered_corporate": 6,
           "delivered_taxi": 39,
-          "delivered_general": 262,
-          "remaining_total": 39,
+          "delivered_general": 263,
+          "remaining_total": 38,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 163,
+          "remaining_general": 162,
           "note": "※ 2026-02-26 11:14 전기승용 공고대수 500대 접수마감입니다.(+ 검토보류 1건)\n※ 전환지원금 및 추가지원금 지방비 예산도 고려하여 산정한 대수(예비 대수 포함)로 접수하셨더라도 대상자 선정이 되지 않으실 수 있는 점 유의하여 주시기 바랍니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-31T09:10:43.189Z"
+      "timestamp": "2026-03-31T09:20:46.529Z"
     }
   ]
 }
