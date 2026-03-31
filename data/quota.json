@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-31T10:30:52.062Z",
+  "timestamp": "2026-03-31T10:40:40.733Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1500,11 +1500,11 @@
           "quota_corporate": 0,
           "quota_taxi": 225,
           "quota_general": 1800,
-          "registered_total": 1659,
+          "registered_total": 1653,
           "registered_priority": 371,
           "registered_corporate": 27,
           "registered_taxi": 132,
-          "registered_general": 1129,
+          "registered_general": 1123,
           "delivered_total": 1058,
           "delivered_priority": 288,
           "delivered_corporate": 15,
@@ -3091,16 +3091,16 @@
           "registered_corporate": 1,
           "registered_taxi": 0,
           "registered_general": 63,
-          "delivered_total": 57,
+          "delivered_total": 56,
           "delivered_priority": 6,
           "delivered_corporate": 1,
           "delivered_taxi": 0,
-          "delivered_general": 50,
-          "remaining_total": 13,
+          "delivered_general": 49,
+          "remaining_total": 14,
           "remaining_priority": 1,
           "remaining_corporate": 0,
           "remaining_taxi": 3,
-          "remaining_general": 10,
+          "remaining_general": 11,
           "note": "2026년 전기자동차 민간보급사업 공고(1차)\n가. 보급대수 : 120대(승용 70대, 화물 50대)\n※ 보급여건 및 예산범위 내에서 물량 변동가능\n나. 신청기간 : 2026. 2. 9.(월) ~ 예산소진시까지\n다. 신청방법 : 온라인신청(무공해차 구매보조금 지원시스템)\n라. 신청대수 : 개인, 법인당 1대\n마. 선정방법 : 신청기간 내 구매지원 신청서 접수순 선정"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-03-31T10:30:51.994Z"
+      "timestamp": "2026-03-31T10:40:40.671Z"
     }
   ]
 }
