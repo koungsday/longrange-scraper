@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-01T03:50:38.817Z",
+  "timestamp": "2026-04-01T04:00:44.194Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -179,16 +179,16 @@
           "registered_corporate": 21,
           "registered_taxi": 78,
           "registered_general": 751,
-          "delivered_total": 929,
+          "delivered_total": 930,
           "delivered_priority": 284,
           "delivered_corporate": 16,
           "delivered_taxi": 63,
-          "delivered_general": 566,
-          "remaining_total": 807,
+          "delivered_general": 567,
+          "remaining_total": 806,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1170,
+          "remaining_general": 1169,
           "note": "★★★ 잔여대수 문의 전화 자제해 주시기 바랍니다. 예산소진여부는 무공해차 통합누리집을 통해 확인하시기 바랍니다.\n★ 누락된 서류가 없는지 필히 확인하여 주시기 바랍니다. (보완요청시 검토 순서가 후순위로 밀릴 수 있음)\n★ 지급 신청 시 별지 제2호 서식 지급신청서를 첨부하여 주시기 바랍니다.\n<2026년 상반기 전기자동차(승용) 보급사업 안내>\n○ 접수기간 : 2026. 1. 26.(월) 09:00 ~ 6. 30.(화) 예산소진시 조기마감\n○ 보급대수 : 1,736대   * 예산 범위 내에서 변동 될 수 있음\n( 총보급대수 2,480대 / 상반기 1,736대, 하반기 744대)\n* 기타 자세한 내용 공고문 참조\n* 지원(지급)신청서 등 모든파일은 1개의 PDF파일로 저장하여 업로드\n* (전환지원금)판매 및 폐차 관련 서류는 지급 신청 전까지 제출\n- 대리점에서는 전환지원금 Y로 선택(판매, 폐차 등 지원대상은 모두 Y로 선택)\n- 전환지원금은 \"개인\"만 가능 (개인사업자, 법인 불가)\n※ 본공고1 : 공고문, 본공고2 : 차종별 국시비 보조금, 본공고3 : 별지서식"
         },
         {
@@ -824,8 +824,8 @@
           "quota_corporate": 0,
           "quota_taxi": 140,
           "quota_general": 3237,
-          "registered_total": 2273,
-          "registered_priority": 813,
+          "registered_total": 2274,
+          "registered_priority": 814,
           "registered_corporate": 63,
           "registered_taxi": 55,
           "registered_general": 1342,
@@ -2311,16 +2311,16 @@
           "registered_corporate": 5,
           "registered_taxi": 8,
           "registered_general": 140,
-          "delivered_total": 157,
+          "delivered_total": 158,
           "delivered_priority": 33,
           "delivered_corporate": 3,
           "delivered_taxi": 6,
-          "delivered_general": 115,
-          "remaining_total": 21,
+          "delivered_general": 116,
+          "remaining_total": 20,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 3,
-          "remaining_general": 36,
+          "remaining_general": 35,
           "note": "- 상반기 신청기간 : 2025.2.20.(금) 10:00 ~ 2025.6.30.(화) 18:00 [예산소진시 조기마감]\n- 상반기 보급대수 : 승용 178대/ 화물 119대\n※ 기타 자세한 사항은 공고문 참고"
         },
         {
@@ -4152,11 +4152,11 @@
           "quota_corporate": 0,
           "quota_taxi": 400,
           "quota_general": 3198,
-          "registered_total": 1494,
+          "registered_total": 1495,
           "registered_priority": 724,
           "registered_corporate": 17,
           "registered_taxi": 116,
-          "registered_general": 637,
+          "registered_general": 638,
           "delivered_total": 731,
           "delivered_priority": 363,
           "delivered_corporate": 6,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-01T03:50:38.748Z"
+      "timestamp": "2026-04-01T04:00:44.147Z"
     }
   ]
 }
