@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-04-01T03:58:20.242Z",
-  "total_vehicles": 107,
+  "timestamp": "2026-04-02T03:39:10.433Z",
+  "total_vehicles": 110,
   "vehicles": {
     "현대자동차___GV60 스탠다드 2WD 19인치": {
       "type": "일반승용",
@@ -309,17 +309,35 @@
       "model": "EV5 롱레인지 2WD",
       "national": 5520000
     },
+    "기아___EV5 롱레인지 4WD 18인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV5 롱레인지 4WD 18인치",
+      "national": 4990000
+    },
     "기아___Pv5 WAV(비용 지원)": {
       "type": "일반승용",
       "manufacturer": "기아",
       "model": "Pv5 WAV(비용 지원)",
       "national": 4480000
     },
+    "기아___EV5 롱레인지 4WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV5 롱레인지 4WD 19인치",
+      "national": 4930000
+    },
     "기아___Pv5 WAV(비용 미지원)": {
       "type": "일반승용",
       "manufacturer": "기아",
       "model": "Pv5 WAV(비용 미지원)",
       "national": 6480000
+    },
+    "기아___EV5 GT": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV5 GT",
+      "national": 2320000
     },
     "BMW___MINI Cooper SE": {
       "type": "일반승용",
