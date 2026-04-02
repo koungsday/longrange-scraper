@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-02T21:30:52.691Z",
+  "timestamp": "2026-04-02T21:40:41.424Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3949,16 +3949,16 @@
           "registered_corporate": 0,
           "registered_taxi": 1,
           "registered_general": 101,
-          "delivered_total": 88,
+          "delivered_total": 89,
           "delivered_priority": 24,
           "delivered_corporate": 0,
           "delivered_taxi": 0,
-          "delivered_general": 64,
-          "remaining_total": 82,
+          "delivered_general": 65,
+          "remaining_total": 81,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 106,
+          "remaining_general": 105,
           "note": "**승용 1차 마감\n전환지원금 시스템 기준으로 적용(공고랑 오차 발생가능)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-02T21:30:52.628Z"
+      "timestamp": "2026-04-02T21:40:41.364Z"
     }
   ]
 }
