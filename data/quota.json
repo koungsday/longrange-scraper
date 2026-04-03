@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-03T23:30:44.288Z",
+  "timestamp": "2026-04-03T23:40:39.872Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1869,15 +1869,15 @@
           "registered_corporate": 14,
           "registered_taxi": 26,
           "registered_general": 592,
-          "delivered_total": 607,
+          "delivered_total": 608,
           "delivered_priority": 59,
           "delivered_corporate": 11,
-          "delivered_taxi": 25,
+          "delivered_taxi": 26,
           "delivered_general": 512,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 4,
+          "remaining_taxi": 3,
           "remaining_general": 0,
           "note": "* 접수번호 779번 이후 접수한 경우는 대기하여야 함(취소분 나오는 대로 자격부여)\n* 택시 3대 지원 가능\n*** 신청접수 마감(4. 1. 18:00)"
         },
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-03T23:30:44.216Z"
+      "timestamp": "2026-04-03T23:40:39.805Z"
     }
   ]
 }
