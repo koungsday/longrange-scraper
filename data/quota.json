@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-05T01:10:41.160Z",
+  "timestamp": "2026-04-05T01:20:43.117Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3793,16 +3793,16 @@
           "registered_corporate": 32,
           "registered_taxi": 35,
           "registered_general": 796,
-          "delivered_total": 730,
+          "delivered_total": 729,
           "delivered_priority": 108,
           "delivered_corporate": 28,
           "delivered_taxi": 27,
-          "delivered_general": 567,
-          "remaining_total": 265,
+          "delivered_general": 566,
+          "remaining_total": 266,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 23,
-          "remaining_general": 278,
+          "remaining_general": 279,
           "note": "★★2026년도부터 차량 최초등록 이후 2년이내 타 지자체로 명의변경 및 등록 주소지 변경 시 회수요율에 따라 보조금(시비) 회수[최대 70%]★★\n-------------------------------------------------------------------------------------\n1차 공고: 1/26 ~   접수: 1/28 ~\n★2026년 김해시 전기자동차(승용)보급사업 공고\n- 지원대수 : 1000대\n※ 자세한 내용은 김해시 공고문 참조\n※ 반드시 공고문 숙지 후 신청바랍니다. 통화량이 많아 통화가 어려울 수 있습니다.\n★ 주의사항\n1. 출고기한이 만료된 기신청자는 지원신청서 재접수하여야 함\n2. 전기차 보조금 지원대상자로 선정되었으나, 보조금 지급 청구기간 미도래로 보조금 미청구시 출고물량으로 확인 안됨\n3. 잔여물량은 단순 참고용이며 실 잔여물량이 아님\n4. 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음"
         },
         {
@@ -4157,12 +4157,12 @@
           "registered_corporate": 19,
           "registered_taxi": 122,
           "registered_general": 690,
-          "delivered_total": 843,
-          "delivered_priority": 413,
+          "delivered_total": 844,
+          "delivered_priority": 414,
           "delivered_corporate": 8,
           "delivered_taxi": 69,
           "delivered_general": 353,
-          "remaining_total": 3155,
+          "remaining_total": 3154,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 331,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-05T01:10:41.088Z"
+      "timestamp": "2026-04-05T01:20:43.055Z"
     }
   ]
 }
