@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-06T11:30:49.049Z",
+  "timestamp": "2026-04-06T11:40:39.211Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -49,16 +49,16 @@
           "registered_corporate": 77,
           "registered_taxi": 526,
           "registered_general": 1942,
-          "delivered_total": 2393,
-          "delivered_priority": 684,
+          "delivered_total": 2396,
+          "delivered_priority": 686,
           "delivered_corporate": 55,
           "delivered_taxi": 338,
-          "delivered_general": 1316,
-          "remaining_total": 1733,
+          "delivered_general": 1317,
+          "remaining_total": 1730,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 2810,
+          "remaining_general": 2809,
           "note": "*  지역할인제 예산소진으로 마감예정입니다.( 3.31 신청분까지 인정)\nㅇ 상반기 보급대수 : 5023대(승용차 4,126, 화물차 846, 승합 38, 어린이통학차 13)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음\nㅇ 보급기간 : `26. 1. 28.(수)  ∼ ‘26. 12. 11.(금)\n(※ 보급기간 내 지급신청까지 완료하여야 하며, 예산소진 시 신청마감)\n* 신청서 및 각종 첨부서류는 1개의 PDF파일로 업로드해주세요\n* 대상자 선정 전 차량 출고 시 보조금 지급되지 않습니다. 주의바랍니다.\n* 전환지원금은  26.1.1일 이후 판매 또는 폐차건부터 지급신청전까지 인정되오니 \"지급신청 이후\"에 판매 또는 폐차건은 불인정됩니다\n* 지역할인참여 대상 차종에는 이미 \"30만원\"포함된 시비금액입니다. 업무에 착오 없으시길 바랍니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-06T11:30:48.986Z"
+      "timestamp": "2026-04-06T11:40:39.145Z"
     }
   ]
 }
