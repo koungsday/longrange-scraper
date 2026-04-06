@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-06T10:50:45.207Z",
+  "timestamp": "2026-04-06T11:00:48.789Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -49,16 +49,16 @@
           "registered_corporate": 77,
           "registered_taxi": 526,
           "registered_general": 1942,
-          "delivered_total": 2384,
-          "delivered_priority": 681,
+          "delivered_total": 2387,
+          "delivered_priority": 682,
           "delivered_corporate": 55,
           "delivered_taxi": 338,
-          "delivered_general": 1310,
-          "remaining_total": 1742,
+          "delivered_general": 1312,
+          "remaining_total": 1739,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 2816,
+          "remaining_general": 2814,
           "note": "*  지역할인제 예산소진으로 마감예정입니다.( 3.31 신청분까지 인정)\nㅇ 상반기 보급대수 : 5023대(승용차 4,126, 화물차 846, 승합 38, 어린이통학차 13)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음\nㅇ 보급기간 : `26. 1. 28.(수)  ∼ ‘26. 12. 11.(금)\n(※ 보급기간 내 지급신청까지 완료하여야 하며, 예산소진 시 신청마감)\n* 신청서 및 각종 첨부서류는 1개의 PDF파일로 업로드해주세요\n* 대상자 선정 전 차량 출고 시 보조금 지급되지 않습니다. 주의바랍니다.\n* 전환지원금은  26.1.1일 이후 판매 또는 폐차건부터 지급신청전까지 인정되오니 \"지급신청 이후\"에 판매 또는 폐차건은 불인정됩니다\n* 지역할인참여 대상 차종에는 이미 \"30만원\"포함된 시비금액입니다. 업무에 착오 없으시길 바랍니다."
         },
         {
@@ -1760,9 +1760,9 @@
           "quota_corporate": 0,
           "quota_taxi": 3,
           "quota_general": 102,
-          "registered_total": 93,
+          "registered_total": 94,
           "registered_priority": 26,
-          "registered_corporate": 5,
+          "registered_corporate": 6,
           "registered_taxi": 1,
           "registered_general": 61,
           "delivered_total": 67,
@@ -2519,16 +2519,16 @@
           "registered_corporate": 0,
           "registered_taxi": 0,
           "registered_general": 66,
-          "delivered_total": 67,
+          "delivered_total": 68,
           "delivered_priority": 8,
           "delivered_corporate": 0,
           "delivered_taxi": 0,
-          "delivered_general": 59,
-          "remaining_total": 9,
+          "delivered_general": 60,
+          "remaining_total": 8,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 8,
-          "remaining_general": 1,
+          "remaining_general": 0,
           "note": "<< 부안군 상반기 전기차 보조금 지급신청 안내>>\n◎ 상반기 신청 기간 : 2026.2.23.(월) 9:00 ~ 2026.6.26.(금) 18:00 [예산소진 시 조기마감]\n◎ 상반기 보급대수 : 승용 76대 화물 41대\n◎ 지원대상 : 부안군에 연속하여 60일 이상 주소를 둔 만18세 이상의 군민\n◎ 선정방법 : 출고 및 등록순\n----------------------------------------------------------------------------\n※ 차종별 보조금 차등 지원에 따른 보급대수 예산범위내 변동가능\n※ 전환지원금을 위한 폐차 및 판매 증빙서류는 보조금 지급신청 전까지 제출\n- [신청 시 전환지원금 Y체크] 추후 별도 신청 및 지급 불가\n※ 누락 서류 및 오기입된 서류가 없는지 확인 바랍니다.\n※ 자세한 사항은 공고문 참조\n※시스템의 출고 잔여대수는 실제 잔여대수와 다를수 있으므로 담당자에게 확인바랍니다.\n----------------------------------------------------------------------------\n★ 단순 접수 알림 및 독촉전화 자제 부탁드리고 당일신청 당일 출고 지양바랍니다.\n★ 지급신청 후 지원서류 및 지급신청 서류 원본제출\n[우편주소: 전북특별자치도 부안군 부안읍 당산로 91, 부안군청 환경과 전기차 담당자 앞]"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 11922,
+          "registered_total": 11937,
           "registered_priority": 5,
-          "registered_corporate": 11674,
+          "registered_corporate": 11689,
           "registered_taxi": 69,
           "registered_general": 174,
           "delivered_total": 6195,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-06T10:50:45.156Z"
+      "timestamp": "2026-04-06T11:00:48.723Z"
     }
   ]
 }
