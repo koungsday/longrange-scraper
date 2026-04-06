@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-06T10:40:41.356Z",
+  "timestamp": "2026-04-06T10:50:45.207Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -49,16 +49,16 @@
           "registered_corporate": 77,
           "registered_taxi": 526,
           "registered_general": 1942,
-          "delivered_total": 2383,
+          "delivered_total": 2384,
           "delivered_priority": 681,
           "delivered_corporate": 55,
           "delivered_taxi": 338,
-          "delivered_general": 1309,
-          "remaining_total": 1743,
+          "delivered_general": 1310,
+          "remaining_total": 1742,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 2817,
+          "remaining_general": 2816,
           "note": "*  지역할인제 예산소진으로 마감예정입니다.( 3.31 신청분까지 인정)\nㅇ 상반기 보급대수 : 5023대(승용차 4,126, 화물차 846, 승합 38, 어린이통학차 13)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음\nㅇ 보급기간 : `26. 1. 28.(수)  ∼ ‘26. 12. 11.(금)\n(※ 보급기간 내 지급신청까지 완료하여야 하며, 예산소진 시 신청마감)\n* 신청서 및 각종 첨부서류는 1개의 PDF파일로 업로드해주세요\n* 대상자 선정 전 차량 출고 시 보조금 지급되지 않습니다. 주의바랍니다.\n* 전환지원금은  26.1.1일 이후 판매 또는 폐차건부터 지급신청전까지 인정되오니 \"지급신청 이후\"에 판매 또는 폐차건은 불인정됩니다\n* 지역할인참여 대상 차종에는 이미 \"30만원\"포함된 시비금액입니다. 업무에 착오 없으시길 바랍니다."
         },
         {
@@ -101,12 +101,12 @@
           "registered_corporate": 69,
           "registered_taxi": 123,
           "registered_general": 2692,
-          "delivered_total": 3023,
-          "delivered_priority": 1044,
+          "delivered_total": 3024,
+          "delivered_priority": 1045,
           "delivered_corporate": 47,
           "delivered_taxi": 98,
           "delivered_general": 1834,
-          "remaining_total": 1677,
+          "remaining_total": 1676,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 237,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 11915,
+          "registered_total": 11922,
           "registered_priority": 5,
-          "registered_corporate": 11667,
+          "registered_corporate": 11674,
           "registered_taxi": 69,
           "registered_general": 174,
           "delivered_total": 6195,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-06T10:40:41.288Z"
+      "timestamp": "2026-04-06T10:50:45.156Z"
     }
   ]
 }
