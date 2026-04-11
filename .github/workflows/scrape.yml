@@ -5,10 +5,10 @@ on:
     - cron: '0 1 * * *'  # 매일 오전 10시 KST (UTC+9)
   workflow_dispatch:     # 수동 실행 버튼
 
-# scrape-quota.yml과 GitHub Pages 배포 충돌 방지
+# 동시 실행 방지 (수동 중복 트리거 등)
 concurrency:
-  group: scraper-pipeline
-  cancel-in-progress: false  # 대기 후 실행
+  group: subsidy-scraper
+  cancel-in-progress: false  # 서브시디는 30분 소요, 대기 후 실행
 
 env:
   TZ: Asia/Seoul
