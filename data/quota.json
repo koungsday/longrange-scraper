@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-11T03:30:44.593Z",
+  "timestamp": "2026-04-11T03:40:38.692Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1895,16 +1895,16 @@
           "registered_corporate": 5,
           "registered_taxi": 8,
           "registered_general": 145,
-          "delivered_total": 245,
+          "delivered_total": 246,
           "delivered_priority": 89,
           "delivered_corporate": 5,
           "delivered_taxi": 7,
-          "delivered_general": 144,
-          "remaining_total": 92,
+          "delivered_general": 145,
+          "remaining_total": 91,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 17,
-          "remaining_general": 121,
+          "remaining_general": 120,
           "note": "★ 내연차전환지원금 지원기준을 정정 [본공고2첨부]('26.2.13.)\n※ 차종별 보조금이 상이하므로 예산범위 내 보급대수는 조정될 수 있음.\n- (상반기) 승용차 - 일반, 우선순위 접수 마감(택시만 가능)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-11T03:30:44.532Z"
+      "timestamp": "2026-04-11T03:40:38.633Z"
     }
   ]
 }
