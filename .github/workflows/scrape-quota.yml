@@ -3,10 +3,11 @@ name: EV Quota Scraper
 on:
   workflow_dispatch:     # cron-job.org에서 10분마다 트리거
 
-# scrape.yml과 GitHub Pages 배포 충돌 방지
+# 10분마다 실행되므로 오래된 런은 즉시 취소하고 최신 런만 실행
+# scrape.yml과는 별도 그룹 사용 (Pages 충돌은 continue-on-error로 처리)
 concurrency:
-  group: scraper-pipeline
-  cancel-in-progress: false  # 대기 후 실행
+  group: quota-scraper
+  cancel-in-progress: true
 
 env:
   TZ: Asia/Seoul
@@ -158,10 +159,12 @@ jobs:
       - name: Setup Pages
         if: steps.validate.outputs.valid == 'true'
         uses: actions/configure-pages@v5
+        continue-on-error: true  # subsidy 배포와 충돌 시 무시 (10분 후 재시도)
 
       - name: Upload Pages artifact
         if: steps.validate.outputs.valid == 'true'
         uses: actions/upload-pages-artifact@v3
+        continue-on-error: true
         with:
           path: data/
 
@@ -169,6 +172,7 @@ jobs:
         if: steps.validate.outputs.valid == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
+        continue-on-error: true  # 충돌 시 워크플로우 전체 실패 방지
 
       # ========================================
       # 7. 결과 로그
