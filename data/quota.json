@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-14T09:20:50.067Z",
+  "timestamp": "2026-04-14T09:30:49.577Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 218,
           "registered_taxi": 624,
           "registered_general": 3934,
-          "delivered_total": 5228,
+          "delivered_total": 5229,
           "delivered_priority": 1561,
           "delivered_corporate": 166,
           "delivered_taxi": 510,
-          "delivered_general": 2991,
-          "remaining_total": 6112,
+          "delivered_general": 2992,
+          "remaining_total": 6111,
           "remaining_priority": 39,
           "remaining_corporate": 0,
           "remaining_taxi": 330,
-          "remaining_general": 5909,
+          "remaining_general": 5908,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -751,16 +751,16 @@
           "registered_corporate": 11,
           "registered_taxi": 13,
           "registered_general": 321,
-          "delivered_total": 405,
+          "delivered_total": 406,
           "delivered_priority": 147,
           "delivered_corporate": 9,
           "delivered_taxi": 11,
-          "delivered_general": 238,
-          "remaining_total": 263,
+          "delivered_general": 239,
+          "remaining_total": 262,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 22,
-          "remaining_general": 331,
+          "remaining_general": 330,
           "note": "「2026년 상반기 전기자동차 보급사업」\n1. 사업기간 : 2026. 1. 30. (금) ~ 2026. 6.30.(화) (예산 소진 시 종료)\n2. 보급대수\n- 승용 : 668대\n- 화물 : 104대\n- 일반승합 : 2대\n- 어린이통학승합 : 1대\n3. 선정기준 : 출고·등록순\n※ 전화폭주로 업무처리가 지연되고 있습니다. 전화자제 및 공고문 참조\n※ 자세한 사항은 붙임의 공고문을 반드시 확인하여 주시기 바랍니다.\n※ 지원신청 및 지급신청(원본대조필 날인)시 1개의 PDF파일로 스캔하여 첨부\n※ 신청 관련 사항은 지점 및 대리점에 문의"
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 13735,
           "registered_taxi": 99,
           "registered_general": 222,
-          "delivered_total": 7667,
+          "delivered_total": 7688,
           "delivered_priority": 4,
-          "delivered_corporate": 7494,
+          "delivered_corporate": 7515,
           "delivered_taxi": 59,
           "delivered_general": 110,
-          "remaining_total": 22333,
+          "remaining_total": 22312,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-14T09:20:49.999Z"
+      "timestamp": "2026-04-14T09:30:49.509Z"
     }
   ]
 }
