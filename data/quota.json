@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-14T13:00:54.792Z",
+  "timestamp": "2026-04-14T13:10:48.290Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3143,16 +3143,16 @@
           "registered_corporate": 24,
           "registered_taxi": 49,
           "registered_general": 410,
-          "delivered_total": 580,
+          "delivered_total": 579,
           "delivered_priority": 154,
           "delivered_corporate": 20,
           "delivered_taxi": 48,
-          "delivered_general": 358,
-          "remaining_total": 392,
+          "delivered_general": 357,
+          "remaining_total": 393,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 469,
+          "remaining_general": 470,
           "note": "<<< 출고잔여대수는 보조금 선정대상 잔여대수와 관계없는 숫자입니다.\n★ 3.3. 16:00 기준 상반기 경주시 전기승용차 마감합니다. (3.16. 오전9시 기준 택시 마감)\n- 취소분 없음. 모두 출고완료함.\n- 7월 중 하반기사업 실시 예정입니다. (그 사이 추경 등으로 예산 조정되더라도 하반기 물량에 포함하여 진행예정)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-14T13:00:54.714Z"
+      "timestamp": "2026-04-14T13:10:47.445Z"
     }
   ]
 }
