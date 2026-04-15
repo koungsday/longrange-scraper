@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-15T09:50:47.083Z",
+  "timestamp": "2026-04-15T10:00:47.810Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -751,16 +751,16 @@
           "registered_corporate": 11,
           "registered_taxi": 13,
           "registered_general": 324,
-          "delivered_total": 416,
+          "delivered_total": 417,
           "delivered_priority": 151,
           "delivered_corporate": 9,
           "delivered_taxi": 11,
-          "delivered_general": 245,
-          "remaining_total": 252,
+          "delivered_general": 246,
+          "remaining_total": 251,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 22,
-          "remaining_general": 324,
+          "remaining_general": 323,
           "note": "「2026년 상반기 전기자동차 보급사업」\n1. 사업기간 : 2026. 1. 30. (금) ~ 2026. 6.30.(화) (예산 소진 시 종료)\n2. 보급대수\n- 승용 : 668대\n- 화물 : 104대\n- 일반승합 : 2대\n- 어린이통학승합 : 1대\n3. 선정기준 : 출고·등록순\n※ 전화폭주로 업무처리가 지연되고 있습니다. 전화자제 및 공고문 참조\n※ 자세한 사항은 붙임의 공고문을 반드시 확인하여 주시기 바랍니다.\n※ 지원신청 및 지급신청(원본대조필 날인)시 1개의 PDF파일로 스캔하여 첨부\n※ 신청 관련 사항은 지점 및 대리점에 문의"
         },
         {
@@ -1032,11 +1032,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 800,
-          "registered_total": 620,
+          "registered_total": 621,
           "registered_priority": 200,
           "registered_corporate": 3,
           "registered_taxi": 25,
-          "registered_general": 392,
+          "registered_general": 393,
           "delivered_total": 475,
           "delivered_priority": 156,
           "delivered_corporate": 2,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-15T09:50:47.022Z"
+      "timestamp": "2026-04-15T10:00:47.750Z"
     }
   ]
 }
