@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-17T03:10:44.611Z",
+  "timestamp": "2026-04-17T03:20:41.252Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -304,11 +304,11 @@
           "quota_corporate": 0,
           "quota_taxi": 50,
           "quota_general": 1300,
-          "registered_total": 734,
+          "registered_total": 735,
           "registered_priority": 236,
           "registered_corporate": 9,
           "registered_taxi": 40,
-          "registered_general": 449,
+          "registered_general": 450,
           "delivered_total": 488,
           "delivered_priority": 145,
           "delivered_corporate": 5,
@@ -4053,16 +4053,16 @@
           "registered_corporate": 0,
           "registered_taxi": 0,
           "registered_general": 31,
-          "delivered_total": 36,
+          "delivered_total": 37,
           "delivered_priority": 9,
           "delivered_corporate": 0,
           "delivered_taxi": 0,
-          "delivered_general": 27,
-          "remaining_total": 84,
+          "delivered_general": 28,
+          "remaining_total": 83,
           "remaining_priority": 3,
           "remaining_corporate": 4,
           "remaining_taxi": 5,
-          "remaining_general": 72,
+          "remaining_general": 71,
           "note": ""
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 14725,
           "registered_taxi": 104,
           "registered_general": 233,
-          "delivered_total": 8465,
+          "delivered_total": 8467,
           "delivered_priority": 4,
-          "delivered_corporate": 8273,
+          "delivered_corporate": 8275,
           "delivered_taxi": 62,
           "delivered_general": 126,
-          "remaining_total": 21535,
+          "remaining_total": 21533,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-17T03:10:44.543Z"
+      "timestamp": "2026-04-17T03:20:41.183Z"
     }
   ]
 }
