@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-19T04:00:44.794Z",
+  "timestamp": "2026-04-19T04:10:37.752Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1885,11 +1885,11 @@
           "sido": "충남",
           "region": "서산시",
           "vehicleType": "전기승용",
-          "quota_total": 337,
+          "quota_total": 479,
           "quota_priority": 48,
           "quota_corporate": 0,
           "quota_taxi": 24,
-          "quota_general": 265,
+          "quota_general": 407,
           "registered_total": 247,
           "registered_priority": 89,
           "registered_corporate": 5,
@@ -1900,11 +1900,11 @@
           "delivered_corporate": 4,
           "delivered_taxi": 8,
           "delivered_general": 145,
-          "remaining_total": 91,
+          "remaining_total": 233,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 16,
-          "remaining_general": 120,
+          "remaining_general": 262,
           "note": "★ 내연차전환지원금 지원기준을 정정 [본공고2첨부]('26.2.13.)\n※ 차종별 보조금이 상이하므로 예산범위 내 보급대수는 조정될 수 있음.\n(1차) 승용차 - 택시만 접수 가능, 화물차 - 접수 마감\n(2차) 하반기 공고를 앞당겨 조기 공고 추진(공고일: 5/8)\n- 접수기간: 승용차 5/15, 화물차 5/21 예정\n접수 첫날은 서류 검토만 합니다.(자격부여X, 보완요청X)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-19T04:00:44.735Z"
+      "timestamp": "2026-04-19T04:10:37.693Z"
     }
   ]
 }
