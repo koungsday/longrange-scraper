@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-20T01:01:00.114Z",
+  "timestamp": "2026-04-20T01:10:39.662Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -70,11 +70,11 @@
           "quota_corporate": 0,
           "quota_taxi": 106,
           "quota_general": 1806,
-          "registered_total": 1141,
-          "registered_priority": 253,
-          "registered_corporate": 31,
-          "registered_taxi": 121,
-          "registered_general": 736,
+          "registered_total": 1198,
+          "registered_priority": 265,
+          "registered_corporate": 32,
+          "registered_taxi": 126,
+          "registered_general": 775,
           "delivered_total": 1121,
           "delivered_priority": 249,
           "delivered_corporate": 29,
@@ -709,7 +709,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 11,
           "remaining_general": 788,
-          "note": "★ 승용 상반기 2차 공고 안내  ★\n- 공고 : 2026. 4. 27.(월) 예정\n- 접수 : 2026. 5. 6.(수) 10:00 ~\n- 물량 : 800대  (차종 및 추가지원 여부에 따라 대수는 변동 가능)\n※전체 일반물량으로 진행되며 추가보조금은 대상에 따라 정상 지급됩니다.\n※ 반드시 공고문 확인하시고 신청하시기 바랍니다.\n※ 사업개시 후 신청 폭주로 전화응대가 어려울 수 있습니다. 독촉여부와 상관없이 접수된 순서대로 공정하게 처리하오니 단순 확인. 독촉 전화 등은 삼가주시기 바랍니다.\n사업개시일에는 신청 폭주로 당일 대상자 선정이 불가하오니 출고일 확인 후 미리 신청해주시기 바랍니다."
+          "note": "★ 진기승용 상반기 추가 공고 안내  ★\n- 공고 : 2026. 4. 27.(월) 예정\n- 접수 : 2026. 5. 6.(수) 10:00 ~\n- 물량 : 800대  (차종 및 추가지원 여부에 따라 대수는 변동 가능)\n※전체 일반물량으로 진행되며 추가보조금은 대상에 따라 정상 지급됩니다.\n※ 반드시 공고문 확인하시고 신청하시기 바랍니다.\n※ 사업개시 후 신청 폭주로 전화응대가 어려울 수 있습니다. 독촉여부와 상관없이 접수된 순서대로 공정하게 처리하오니 단순 확인. 독촉 전화 등은 삼가주시기 바랍니다.\n사업개시일에는 신청 폭주로 당일 대상자 선정이 불가하오니 출고일 확인 후 미리 신청해주시기 바랍니다."
         },
         {
           "sido": "경기",
@@ -824,11 +824,11 @@
           "quota_corporate": 0,
           "quota_taxi": 140,
           "quota_general": 3237,
-          "registered_total": 2980,
+          "registered_total": 2981,
           "registered_priority": 1057,
           "registered_corporate": 80,
           "registered_taxi": 59,
-          "registered_general": 1784,
+          "registered_general": 1785,
           "delivered_total": 2360,
           "delivered_priority": 839,
           "delivered_corporate": 61,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 15226,
+          "registered_total": 15227,
           "registered_priority": 6,
-          "registered_corporate": 14875,
+          "registered_corporate": 14876,
           "registered_taxi": 106,
           "registered_general": 239,
           "delivered_total": 8710,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-20T01:01:00.064Z"
+      "timestamp": "2026-04-20T01:10:39.596Z"
     }
   ]
 }
