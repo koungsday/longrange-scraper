@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-20T23:00:52.263Z",
+  "timestamp": "2026-04-20T23:10:38.492Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1167,16 +1167,16 @@
           "registered_corporate": 0,
           "registered_taxi": 11,
           "registered_general": 85,
-          "delivered_total": 111,
+          "delivered_total": 112,
           "delivered_priority": 41,
           "delivered_corporate": 0,
           "delivered_taxi": 11,
-          "delivered_general": 59,
-          "remaining_total": 77,
+          "delivered_general": 60,
+          "remaining_total": 76,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 129,
+          "remaining_general": 128,
           "note": "기존 예산에 비해 접수된 예산이 초과되어 국비 선지급 후 예산 조정하였으며, 이에 따라 지원 가능한 물량이 변경되었습니다.(4. 16.일자 변경공고)"
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 15134,
           "registered_taxi": 107,
           "registered_general": 246,
-          "delivered_total": 8851,
+          "delivered_total": 8852,
           "delivered_priority": 4,
-          "delivered_corporate": 8649,
+          "delivered_corporate": 8650,
           "delivered_taxi": 66,
           "delivered_general": 132,
-          "remaining_total": 21149,
+          "remaining_total": 21148,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-20T23:00:52.200Z"
+      "timestamp": "2026-04-20T23:10:38.434Z"
     }
   ]
 }
