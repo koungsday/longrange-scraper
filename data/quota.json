@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-21T03:30:42.309Z",
+  "timestamp": "2026-04-21T03:40:38.400Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,8 +18,8 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8900,
-          "registered_total": 7690,
-          "registered_priority": 2287,
+          "registered_total": 7691,
+          "registered_priority": 2288,
           "registered_corporate": 247,
           "registered_taxi": 674,
           "registered_general": 4482,
@@ -252,11 +252,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 1949,
-          "registered_total": 1315,
+          "registered_total": 1317,
           "registered_priority": 410,
           "registered_corporate": 36,
           "registered_taxi": 45,
-          "registered_general": 824,
+          "registered_general": 826,
           "delivered_total": 991,
           "delivered_priority": 293,
           "delivered_corporate": 24,
@@ -3845,16 +3845,16 @@
           "registered_corporate": 10,
           "registered_taxi": 39,
           "registered_general": 346,
-          "delivered_total": 505,
+          "delivered_total": 506,
           "delivered_priority": 171,
           "delivered_corporate": 8,
           "delivered_taxi": 38,
-          "delivered_general": 288,
-          "remaining_total": 545,
+          "delivered_general": 289,
+          "remaining_total": 544,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 15,
-          "remaining_general": 602,
+          "remaining_general": 601,
           "note": "* 신청기간(상반기)\n- 승용·화물 : 2026. 1. 29.(목) 10:00 ~ 2026. 6. 30.(화)(예산소진 시 조기종료)\n* 선정방법\n- 승용, 화물 : (자격부여) 신청서 접수 순 / (대상자 선정) 출고·등록 순(지원가능확인 요청 순)\n* 2026.4.20. 예산잔액 기준 110대 정도 대상자 선정 가능합니다.\n잔여대수는 매일 10대를 기준으로 업데이트 하고 있으며, 무공해차 통합누리집상 공지사항을 먼저 확인하시지 않고 업무시간 중 단순히 몇대 남았는지 문의전화 자제 바랍니다.\n당일 신청건은 5시 이후 건이 아니면, 당일 검토 후 처리하고 있으니 서류 올리자마자 검토하라는 독촉전화 삼가바랍니다.\n-  대상자 선정 건수기준이므로,  자격부여까지만 된 차량은 제외된 수치입니다\n-  예산 소진 전 반드시 차량출고예정 증빙서류 제출하여 보조금 대상자 선정받으시길 바랍니다.\n* 5시 이후 접수 및 지원확인 요청건은 당일 처리 어려울 수 있습니다. 급한 건은 반드시 5시 이전에 올려주세요~"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-21T03:30:42.242Z"
+      "timestamp": "2026-04-21T03:40:38.330Z"
     }
   ]
 }
