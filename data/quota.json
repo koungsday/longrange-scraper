@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-21T03:40:38.400Z",
+  "timestamp": "2026-04-21T03:50:41.189Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -465,16 +465,16 @@
           "registered_corporate": 36,
           "registered_taxi": 33,
           "registered_general": 1183,
-          "delivered_total": 1368,
-          "delivered_priority": 407,
+          "delivered_total": 1370,
+          "delivered_priority": 408,
           "delivered_corporate": 29,
           "delivered_taxi": 32,
-          "delivered_general": 900,
-          "remaining_total": 1132,
-          "remaining_priority": 13,
+          "delivered_general": 901,
+          "remaining_total": 1130,
+          "remaining_priority": 12,
           "remaining_corporate": 0,
           "remaining_taxi": 48,
-          "remaining_general": 1100,
+          "remaining_general": 1099,
           "note": "< 4.20. 전기승용 접수 마감되었습니다 >\n< 자격부여 건에 한하여 지원가능요청 순으로 대기자가 되며, 취소물량 발생 등으로 추가 선정이 가능한 경우 지원대상자로 선정하고 문자 안내드리겠습니다 >\n< 전기택시는 신청 가능함 >\n< 하반기 사업 일정은 현재 검토중입니다 >\n★문의 전 공고문을 확인하여 주시기 바라며, 단순 문의는 자제하여 주시기 바랍니다. 전화문의 응대로 인해 자격부여 및 대상자선정이 지연됩니다.\n☆차종별 보조금 확인 방법 : 무공해차 통합누리집 → 구매 및 지원 → 무공해차 구매보조금 지원 → 구매보조금 지급현황 → 지자체 차종별 보조금\n★무공해차 통합누리집 시스템상 잔여대수와 실제 지원가능 대수는 일치하지 않을 수 있습니다.\n★2026년 상반기 고양시 전기자동차 보급사업 공고★\n-보급대수 : 전기승용 2,500대 / 전기화물 200대 / 전기승합 10대 / 전기승합(어린이통학용) 2대\n(※ 차종별 보조금 및 보급대수는 예산범위 내에서 변동될 수 있음)\n-접수기간 : 2026. 2. 2.(월) 09:00 ~ 2026. 06. 30.(화) 18:00\n-자세한 사항은 공고문을 확인하여 주시기 바랍니다."
         },
         {
@@ -1500,10 +1500,10 @@
           "quota_corporate": 0,
           "quota_taxi": 225,
           "quota_general": 1800,
-          "registered_total": 1631,
+          "registered_total": 1632,
           "registered_priority": 365,
           "registered_corporate": 27,
-          "registered_taxi": 148,
+          "registered_taxi": 149,
           "registered_general": 1091,
           "delivered_total": 1084,
           "delivered_priority": 288,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-21T03:40:38.330Z"
+      "timestamp": "2026-04-21T03:50:41.130Z"
     }
   ]
 }
