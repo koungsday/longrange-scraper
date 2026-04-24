@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-24T09:00:53.419Z",
+  "timestamp": "2026-04-24T09:10:41.628Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,11 +18,11 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8900,
-          "registered_total": 8373,
+          "registered_total": 8374,
           "registered_priority": 2480,
           "registered_corporate": 271,
           "registered_taxi": 711,
-          "registered_general": 4911,
+          "registered_general": 4912,
           "delivered_total": 6415,
           "delivered_priority": 1909,
           "delivered_corporate": 206,
@@ -1032,8 +1032,8 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 800,
-          "registered_total": 772,
-          "registered_priority": 256,
+          "registered_total": 773,
+          "registered_priority": 257,
           "registered_corporate": 3,
           "registered_taxi": 37,
           "registered_general": 476,
@@ -1219,16 +1219,16 @@
           "registered_corporate": 2,
           "registered_taxi": 0,
           "registered_general": 78,
-          "delivered_total": 93,
+          "delivered_total": 94,
           "delivered_priority": 38,
           "delivered_corporate": 2,
           "delivered_taxi": 0,
-          "delivered_general": 53,
-          "remaining_total": 77,
+          "delivered_general": 54,
+          "remaining_total": 76,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 97,
+          "remaining_general": 96,
           "note": "신청기간: 2026.2.2.(월) 09:00 ~ 9.30.(수). 18:00\n총 보급대수: 승용 254, 화물 90, 승합 4\n- 1차 보급대수: 승용 170, 화물 60, 승합 4\n*접수 물량 및 예산 집행 상황에 따라 조기 마감 또는 변경 가능\n* 대상자 선정 전 차량 출고(등록)시 보조금 지급 불가"
         },
         {
@@ -4157,16 +4157,16 @@
           "registered_corporate": 26,
           "registered_taxi": 159,
           "registered_general": 1102,
-          "delivered_total": 1617,
+          "delivered_total": 1618,
           "delivered_priority": 769,
           "delivered_corporate": 19,
           "delivered_taxi": 121,
-          "delivered_general": 708,
-          "remaining_total": 2381,
+          "delivered_general": 709,
+          "remaining_total": 2380,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 279,
-          "remaining_general": 2490,
+          "remaining_general": 2489,
           "note": "2026년도 전기자동차 보급 사업(상반기)\n○ 사업 개요\n- 사업명 : 2026년 상반기 전기자동차 보급사업\n- 보급대수 : 승용 3,000대, 화물 1,000대\n- 접수기간 : 2026. 2. 10.(화) 14:00 ~ 6. 30. 18:00\n(예산 소진 상황에 따라 접수 기간 종점은 변경될 수 있으며, 추가 변경 공고가 있을 수 있음)\n- 지원대상 : 제주 도민 및 제주도 내 기업？법인(3개월 이상 지속 거주 및 설립)\n※ 자세한 내용은 공고문을 참고하시기 바랍니다.\n※ 무공해차 누리집 출고잔여대수와 실제 잔여대수는 일치하지 않습니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-24T09:00:53.366Z"
+      "timestamp": "2026-04-24T09:10:41.564Z"
     }
   ]
 }
