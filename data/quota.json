@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-24T03:50:41.693Z",
+  "timestamp": "2026-04-24T04:00:48.969Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,21 +18,21 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8900,
-          "registered_total": 8307,
+          "registered_total": 8308,
           "registered_priority": 2467,
-          "registered_corporate": 265,
+          "registered_corporate": 266,
           "registered_taxi": 708,
           "registered_general": 4867,
-          "delivered_total": 6338,
-          "delivered_priority": 1888,
+          "delivered_total": 6340,
+          "delivered_priority": 1889,
           "delivered_corporate": 202,
           "delivered_taxi": 609,
-          "delivered_general": 3639,
-          "remaining_total": 5002,
+          "delivered_general": 3640,
+          "remaining_total": 5000,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 231,
-          "remaining_general": 5261,
+          "remaining_general": 5260,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -4152,8 +4152,8 @@
           "quota_corporate": 0,
           "quota_taxi": 400,
           "quota_general": 3198,
-          "registered_total": 2455,
-          "registered_priority": 1189,
+          "registered_total": 2456,
+          "registered_priority": 1190,
           "registered_corporate": 26,
           "registered_taxi": 157,
           "registered_general": 1083,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 16884,
+          "registered_total": 16886,
           "registered_priority": 6,
-          "registered_corporate": 16493,
+          "registered_corporate": 16495,
           "registered_taxi": 116,
           "registered_general": 269,
           "delivered_total": 10000,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-24T03:50:41.633Z"
+      "timestamp": "2026-04-24T04:00:48.892Z"
     }
   ]
 }
