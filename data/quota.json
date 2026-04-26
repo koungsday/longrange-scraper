@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-26T02:30:40.203Z",
+  "timestamp": "2026-04-26T02:40:37.312Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2597,16 +2597,16 @@
           "registered_corporate": 7,
           "registered_taxi": 39,
           "registered_general": 273,
-          "delivered_total": 464,
+          "delivered_total": 463,
           "delivered_priority": 154,
           "delivered_corporate": 6,
           "delivered_taxi": 38,
-          "delivered_general": 266,
-          "remaining_total": 36,
+          "delivered_general": 265,
+          "remaining_total": 37,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 159,
+          "remaining_general": 160,
           "note": "※ 승용 상반기 접수마감\n※ 추가 공고 미정, 향후 예산 확보 시 공고 예정"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-26T02:30:40.129Z"
+      "timestamp": "2026-04-26T02:40:37.247Z"
     }
   ]
 }
