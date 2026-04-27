@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-27T22:40:38.578Z",
+  "timestamp": "2026-04-27T22:50:42.866Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1219,16 +1219,16 @@
           "registered_corporate": 2,
           "registered_taxi": 0,
           "registered_general": 79,
-          "delivered_total": 95,
+          "delivered_total": 96,
           "delivered_priority": 37,
           "delivered_corporate": 2,
           "delivered_taxi": 0,
-          "delivered_general": 56,
-          "remaining_total": 75,
+          "delivered_general": 57,
+          "remaining_total": 74,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 94,
+          "remaining_general": 93,
           "note": "신청기간: 2026.2.2.(월) 09:00 ~ 9.30.(수). 18:00\n총 보급대수: 승용 254, 화물 90, 승합 4\n- 1차 보급대수: 승용 170, 화물 60, 승합 4\n*접수 물량 및 예산 집행 상황에 따라 조기 마감 또는 변경 가능\n* 대상자 선정 전 차량 출고(등록)시 보조금 지급 불가"
         },
         {
@@ -4178,17 +4178,17 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 17315,
+          "registered_total": 17321,
           "registered_priority": 6,
-          "registered_corporate": 16905,
+          "registered_corporate": 16911,
           "registered_taxi": 123,
           "registered_general": 281,
-          "delivered_total": 10470,
+          "delivered_total": 10471,
           "delivered_priority": 4,
-          "delivered_corporate": 10213,
+          "delivered_corporate": 10214,
           "delivered_taxi": 83,
           "delivered_general": 170,
-          "remaining_total": 19530,
+          "remaining_total": 19529,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-27T22:40:38.518Z"
+      "timestamp": "2026-04-27T22:50:42.807Z"
     }
   ]
 }
