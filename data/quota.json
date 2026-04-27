@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-27T10:00:47.506Z",
+  "timestamp": "2026-04-27T10:10:37.339Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -309,12 +309,12 @@
           "registered_corporate": 12,
           "registered_taxi": 44,
           "registered_general": 511,
-          "delivered_total": 629,
-          "delivered_priority": 198,
+          "delivered_total": 630,
+          "delivered_priority": 199,
           "delivered_corporate": 7,
           "delivered_taxi": 36,
           "delivered_general": 388,
-          "remaining_total": 721,
+          "remaining_total": 720,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 14,
@@ -4157,16 +4157,16 @@
           "registered_corporate": 30,
           "registered_taxi": 160,
           "registered_general": 1142,
-          "delivered_total": 1676,
+          "delivered_total": 1677,
           "delivered_priority": 799,
           "delivered_corporate": 19,
           "delivered_taxi": 123,
-          "delivered_general": 735,
-          "remaining_total": 2322,
+          "delivered_general": 736,
+          "remaining_total": 2321,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 277,
-          "remaining_general": 2463,
+          "remaining_general": 2462,
           "note": "2026년도 전기자동차 보급 사업(상반기)\n○ 사업 개요\n- 사업명 : 2026년 상반기 전기자동차 보급사업\n- 보급대수 : 승용 3,000대, 화물 1,000대\n- 접수기간 : 2026. 2. 10.(화) 14:00 ~ 6. 30. 18:00\n(예산 소진 상황에 따라 접수 기간 종점은 변경될 수 있으며, 추가 변경 공고가 있을 수 있음)\n- 지원대상 : 제주 도민 및 제주도 내 기업？법인(3개월 이상 지속 거주 및 설립)\n※ 자세한 내용은 공고문을 참고하시기 바랍니다.\n※ 무공해차 누리집 출고잔여대수와 실제 잔여대수는 일치하지 않습니다."
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 17289,
+          "registered_total": 17288,
           "registered_priority": 6,
-          "registered_corporate": 16879,
+          "registered_corporate": 16878,
           "registered_taxi": 123,
           "registered_general": 281,
           "delivered_total": 10470,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-27T10:00:47.426Z"
+      "timestamp": "2026-04-27T10:10:37.287Z"
     }
   ]
 }
