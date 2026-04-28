@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-28T23:30:51.518Z",
+  "timestamp": "2026-04-28T23:40:42.040Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 280,
           "registered_taxi": 728,
           "registered_general": 5003,
-          "delivered_total": 6753,
+          "delivered_total": 6754,
           "delivered_priority": 2011,
           "delivered_corporate": 217,
           "delivered_taxi": 644,
-          "delivered_general": 3881,
-          "remaining_total": 4587,
+          "delivered_general": 3882,
+          "remaining_total": 4586,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 196,
-          "remaining_general": 5019,
+          "remaining_general": 5018,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -4178,17 +4178,17 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 17499,
+          "registered_total": 17516,
           "registered_priority": 6,
-          "registered_corporate": 17086,
+          "registered_corporate": 17103,
           "registered_taxi": 124,
           "registered_general": 283,
-          "delivered_total": 10825,
+          "delivered_total": 10841,
           "delivered_priority": 4,
-          "delivered_corporate": 10560,
+          "delivered_corporate": 10576,
           "delivered_taxi": 88,
           "delivered_general": 173,
-          "remaining_total": 19175,
+          "remaining_total": 19159,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-28T23:30:51.465Z"
+      "timestamp": "2026-04-28T23:40:41.888Z"
     }
   ]
 }
