@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-28T09:40:42.643Z",
+  "timestamp": "2026-04-28T09:50:51.913Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1177,7 +1177,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 116,
-          "note": "기존 예산에 비해 접수된 예산이 초과되어 국비 선지급 후 예산 조정하였으며, 이에 따라 지원 가능한 물량이 변경되었습니다.(4. 16.일자 변경공고)\n4. 28.일자 단가 기준으로 계산된 접수 가능 잔여물량은 5대이며, 이는 추가보조금 등으로 인해 잔여예산 조정 될 경우 실제 접수 가능한 잔여 대수와 다를 수 있습니다.\n(기재된 잔여물량은 5대이나, 보조금 지급은 출고등록순이므로  5대 접수 이후 추가로 접수 가능합니다. 다만, 출고등록으로 인해 보조금 지급이 불가할 수 있다는 점 참고 바랍니다.)"
+          "note": "기존 예산에 비해 접수된 예산이 초과되어 국비 선지급 후 예산 조정하였으며, 이에 따라 지원 가능한 물량이 변경되었습니다.(4. 16.일자 변경공고)\n4. 28.일자 접수 가능합니다. 다만, 출고등록으로 인해 보조금 지급이 불가할 수 있다는 점 참고 바랍니다."
         },
         {
           "sido": "강원",
@@ -4178,17 +4178,17 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 17498,
+          "registered_total": 17499,
           "registered_priority": 6,
-          "registered_corporate": 17085,
+          "registered_corporate": 17086,
           "registered_taxi": 124,
           "registered_general": 283,
-          "delivered_total": 10801,
+          "delivered_total": 10804,
           "delivered_priority": 4,
-          "delivered_corporate": 10536,
+          "delivered_corporate": 10539,
           "delivered_taxi": 88,
           "delivered_general": 173,
-          "remaining_total": 19199,
+          "remaining_total": 19196,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-28T09:40:42.586Z"
+      "timestamp": "2026-04-28T09:50:51.705Z"
     }
   ]
 }
