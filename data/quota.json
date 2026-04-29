@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-29T09:30:48.863Z",
+  "timestamp": "2026-04-29T09:40:51.053Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,10 +18,10 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8900,
-          "registered_total": 8606,
+          "registered_total": 8607,
           "registered_priority": 2549,
           "registered_corporate": 284,
-          "registered_taxi": 750,
+          "registered_taxi": 751,
           "registered_general": 5023,
           "delivered_total": 6894,
           "delivered_priority": 2046,
@@ -465,16 +465,16 @@
           "registered_corporate": 36,
           "registered_taxi": 37,
           "registered_general": 1177,
-          "delivered_total": 1584,
+          "delivered_total": 1585,
           "delivered_priority": 479,
           "delivered_corporate": 33,
           "delivered_taxi": 33,
-          "delivered_general": 1039,
-          "remaining_total": 916,
+          "delivered_general": 1040,
+          "remaining_total": 915,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 47,
-          "remaining_general": 961,
+          "remaining_general": 960,
           "note": "< 4.20. 전기승용 마감되었습니다 >\n< 자격부여 건에 한하여 지원가능요청 순으로 대기자가 되며, 취소물량 발생 등으로 추가 선정이 가능한 경우 지원대상자로 선정하고 문자 안내드리겠습니다 >\n< 전기택시는 신청 가능함 >\n< 하반기 사업 일정은 현재 검토중입니다 >\n★문의 전 공고문을 확인하여 주시기 바라며, 단순 문의는 자제하여 주시기 바랍니다. 전화문의 응대로 인해 자격부여 및 대상자선정이 지연됩니다.\n☆차종별 보조금 확인 방법 : 무공해차 통합누리집 → 구매 및 지원 → 무공해차 구매보조금 지원 → 구매보조금 지급현황 → 지자체 차종별 보조금\n★무공해차 통합누리집 시스템상 잔여대수와 실제 지원가능 대수는 일치하지 않을 수 있습니다.\n★2026년 상반기 고양시 전기자동차 보급사업 공고★\n-보급대수 : 전기승용 2,500대 / 전기화물 200대 / 전기승합 10대 / 전기승합(어린이통학용) 2대\n(※ 차종별 보조금 및 보급대수는 예산범위 내에서 변동될 수 있음)\n-접수기간 : 2026. 2. 2.(월) 09:00 ~ 2026. 06. 30.(화) 18:00\n-자세한 사항은 공고문을 확인하여 주시기 바랍니다."
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 17849,
+          "registered_total": 17857,
           "registered_priority": 6,
-          "registered_corporate": 17425,
+          "registered_corporate": 17433,
           "registered_taxi": 129,
           "registered_general": 289,
           "delivered_total": 11308,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-29T09:30:48.811Z"
+      "timestamp": "2026-04-29T09:40:50.996Z"
     }
   ]
 }
