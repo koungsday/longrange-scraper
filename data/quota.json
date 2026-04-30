@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-30T09:30:50.148Z",
+  "timestamp": "2026-04-30T09:40:42.431Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -356,11 +356,11 @@
           "quota_corporate": 0,
           "quota_taxi": 30,
           "quota_general": 685,
-          "registered_total": 367,
+          "registered_total": 366,
           "registered_priority": 111,
           "registered_corporate": 11,
           "registered_taxi": 5,
-          "registered_general": 240,
+          "registered_general": 239,
           "delivered_total": 341,
           "delivered_priority": 107,
           "delivered_corporate": 10,
@@ -1037,16 +1037,16 @@
           "registered_corporate": 3,
           "registered_taxi": 37,
           "registered_general": 514,
-          "delivered_total": 647,
+          "delivered_total": 648,
           "delivered_priority": 210,
           "delivered_corporate": 3,
           "delivered_taxi": 32,
-          "delivered_general": 402,
-          "remaining_total": 153,
+          "delivered_general": 403,
+          "remaining_total": 152,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 398,
+          "remaining_general": 397,
           "note": "★★ 4. 30.(목) 18:00 기준 승용 잔여대수: 접수기준 초과 / 대상자선정 기준 약 20대\n- 화물 잔여대수 없음\n★★★ 무공해차통합누리집 상 잔여대수와 실제 잔여대수 간 차이가 있으므로, 반드시 해당 비고란을 참고하시기 바랍니다.(매주 잔여대수 공지 예정)\n<2026년 전기자동차 보급사업 안내(3차)>\n○ 신청기간 : 2026. 4. 15.(수) 10:00 ~ 12. 11.(금) 18:00 / 예산소진 시 조기 마감\n○ 보급대수 : 승용 400대, 화물 30대     * 예산 범위 내에서 변동 될 수 있음\n○ 기타 자세한 내용은 공고문 참조(4. 15. 게시 예정)\n* 대상자 선정 전 차량 출고(등록) 시 보조금 지급 불가하오니 주의하여 주시기 바랍니다.\n** 전환지원금 관련 기존 차량 폐차, 판매는 지급신청 전까지 완료하시면 됩니다.(차량등록일로부터 10일 이내)"
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 17583,
           "registered_taxi": 132,
           "registered_general": 289,
-          "delivered_total": 11569,
+          "delivered_total": 11572,
           "delivered_priority": 4,
-          "delivered_corporate": 11287,
+          "delivered_corporate": 11290,
           "delivered_taxi": 94,
           "delivered_general": 184,
-          "remaining_total": 18431,
+          "remaining_total": 18428,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-30T09:30:50.082Z"
+      "timestamp": "2026-04-30T09:40:42.371Z"
     }
   ]
 }
