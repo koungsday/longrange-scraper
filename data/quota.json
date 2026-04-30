@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-30T09:10:49.488Z",
+  "timestamp": "2026-04-30T09:20:42.422Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 285,
           "registered_taxi": 762,
           "registered_general": 5044,
-          "delivered_total": 7056,
+          "delivered_total": 7058,
           "delivered_priority": 2100,
           "delivered_corporate": 223,
           "delivered_taxi": 654,
-          "delivered_general": 4079,
-          "remaining_total": 4284,
+          "delivered_general": 4081,
+          "remaining_total": 4282,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 186,
-          "remaining_general": 4821,
+          "remaining_general": 4819,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -2441,16 +2441,16 @@
           "registered_corporate": 0,
           "registered_taxi": 0,
           "registered_general": 45,
-          "delivered_total": 63,
+          "delivered_total": 64,
           "delivered_priority": 20,
           "delivered_corporate": 0,
           "delivered_taxi": 0,
-          "delivered_general": 43,
-          "remaining_total": 4,
+          "delivered_general": 44,
+          "remaining_total": 3,
           "remaining_priority": 0,
           "remaining_corporate": 1,
           "remaining_taxi": 0,
-          "remaining_general": 13,
+          "remaining_general": 12,
           "note": "*상반기 승용 마감\n*하반기 7월 접수 예정\n***********************\n[2026년 상반기 임실군 전기자동차 민간보급사업 공고]\n1. 신청기간: 2026. 2. 24.(화) 10:00 ~ 6. 30.(화) 18:00  ※예산소진시 조기마감\n2. 보급물량: 전기승용 67대, 전기화물 24대\n3. 선정방법: 출고등록순\n4. 지원한도: 차종당 1인 1대\n5. 신청대상: (공통)신청접수일 이전부터 연속하여 3개월(90일) 이상 임실군에 주소를 둔 자\n6. 보급대상차량: 환경부 무공해차 통합누리집(ev.or.kr) 구매 및 지원 → 무공해차 구매보조금 지원 → 구매보조금 지급현황 → 차종, 세부 차종, 기준년도 선택 → 지자체 차종별 보조금 클릭 → 해당 지자체 조회\n◆ 의무운행기간 미준수(타도시군판매,말소 등)시에 환수율에 따라 보조금(지방비)환수\n----------------------------------------------------------------------------------------------------------\n▶ 자세한 사항은 공고문 확인.\n▶▶ 시스템 잔여대수는 실제 잔여대수와 다를 수 있으므로 담당자에게 확인바랍니다.\n▶ 자격부여 및 대상자 선정 후 문자통보 없음. 시스템 직접 확인 요망."
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 17584,
           "registered_taxi": 132,
           "registered_general": 289,
-          "delivered_total": 11565,
+          "delivered_total": 11567,
           "delivered_priority": 4,
-          "delivered_corporate": 11283,
+          "delivered_corporate": 11285,
           "delivered_taxi": 94,
           "delivered_general": 184,
-          "remaining_total": 18435,
+          "remaining_total": 18433,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-04-30T09:10:49.425Z"
+      "timestamp": "2026-04-30T09:20:42.347Z"
     }
   ]
 }
