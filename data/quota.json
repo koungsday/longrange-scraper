@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-01T00:30:41.164Z",
+  "timestamp": "2026-05-01T00:40:36.984Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1957,7 +1957,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 13,
           "remaining_general": 56,
-          "note": "상반기 마감\n추가공고: 5월4일 예정\n추가접수: 5월15일 예정"
+          "note": "신청기간 : 2026. 5. 15.(금) 10:00 ~ 6. 30.(화) ※ 예산 소진 시 조기마감\n선정방법 : 출고·등록순 (지원가능확인요청 순)"
         },
         {
           "sido": "충남",
@@ -2597,16 +2597,16 @@
           "registered_corporate": 7,
           "registered_taxi": 39,
           "registered_general": 273,
-          "delivered_total": 470,
+          "delivered_total": 469,
           "delivered_priority": 156,
           "delivered_corporate": 6,
           "delivered_taxi": 38,
-          "delivered_general": 270,
-          "remaining_total": 30,
+          "delivered_general": 269,
+          "remaining_total": 31,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 155,
+          "remaining_general": 156,
           "note": "※ 승용 상반기 접수마감\n※ 추가 공고 미정, 향후 예산 확보 시 공고 예정"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-01T00:30:41.112Z"
+      "timestamp": "2026-05-01T00:40:36.919Z"
     }
   ]
 }
