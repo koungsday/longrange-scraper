@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-02T01:00:48.928Z",
+  "timestamp": "2026-05-02T01:10:41.686Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -75,12 +75,12 @@
           "registered_corporate": 53,
           "registered_taxi": 231,
           "registered_general": 1390,
-          "delivered_total": 1461,
-          "delivered_priority": 337,
+          "delivered_total": 1462,
+          "delivered_priority": 338,
           "delivered_corporate": 37,
           "delivered_taxi": 156,
           "delivered_general": 931,
-          "remaining_total": 664,
+          "remaining_total": 663,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -2155,16 +2155,16 @@
           "registered_corporate": 2,
           "registered_taxi": 0,
           "registered_general": 111,
-          "delivered_total": 119,
+          "delivered_total": 120,
           "delivered_priority": 10,
           "delivered_corporate": 2,
           "delivered_taxi": 0,
-          "delivered_general": 107,
-          "remaining_total": 86,
+          "delivered_general": 108,
+          "remaining_total": 85,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 10,
-          "remaining_general": 78,
+          "remaining_general": 77,
           "note": "전기승용 상반기 마감(택시 제외)\n전기화물 상반기 마감(택배 제외)\n→ 무공해차 누리집의 출고 잔여댓수는 실제 잔여댓수와 다를 수 있음\n--------------------------------------------------------------------------------------------------\n※ 상반기 잔여물량(택시, 택배) 및 하반기 물량 전량 상반기 2차 공고 예정\n- 공 고 일 : 5월 6일(수) 예정\n- 접수기간 : 5월 18일(월) ~ 예산소진 시 까지\n→ 자세한 사항은 공고문 참조(5월 6일 태안군 홈페이지(일반공고) 및 시스템 확인 가능)\n→ 상반기 1차 신청분 그대로 유지 가능하나, 자격부여일이 2개월 지난 신청자는 자격부여 선정 취소 예정\n→ 차량 출고 후 보조금 지급 신청서 원본서류 제출 必(구매지원서류 및 보조금지급서류 일체)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-02T01:00:48.866Z"
+      "timestamp": "2026-05-02T01:10:41.629Z"
     }
   ]
 }
