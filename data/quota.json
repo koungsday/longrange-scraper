@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-04T09:00:54.502Z",
+  "timestamp": "2026-05-04T09:10:37.956Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 285,
           "registered_taxi": 767,
           "registered_general": 5077,
-          "delivered_total": 7187,
+          "delivered_total": 7188,
           "delivered_priority": 2139,
           "delivered_corporate": 228,
           "delivered_taxi": 658,
-          "delivered_general": 4162,
-          "remaining_total": 4153,
+          "delivered_general": 4163,
+          "remaining_total": 4152,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 182,
-          "remaining_general": 4738,
+          "remaining_general": 4737,
           "note": "ㅇ 상반기 보급대수 : 승용 10,500대(일반 8,900대, 우선순위 1,600대)\n※ 연간 총 보급대수 : 승용차 15,094대, 화물차 1,779대, 승합 76대 (총 16,949대)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고,   3/4분기부터 우선순위？택배？중소기업 물량을 일반 물량과 통합 집행"
         },
         {
@@ -3918,11 +3918,11 @@
           "quota_corporate": 0,
           "quota_taxi": 15,
           "quota_general": 118,
-          "registered_total": 98,
+          "registered_total": 97,
           "registered_priority": 17,
           "registered_corporate": 6,
           "registered_taxi": 3,
-          "registered_general": 72,
+          "registered_general": 71,
           "delivered_total": 74,
           "delivered_priority": 10,
           "delivered_corporate": 3,
@@ -4178,10 +4178,10 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 18005,
+          "registered_total": 18007,
           "registered_priority": 6,
-          "registered_corporate": 17572,
-          "registered_taxi": 136,
+          "registered_corporate": 17573,
+          "registered_taxi": 137,
           "registered_general": 291,
           "delivered_total": 11704,
           "delivered_priority": 4,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-04T09:00:54.442Z"
+      "timestamp": "2026-05-04T09:10:37.906Z"
     }
   ]
 }
