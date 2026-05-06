@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-06T23:30:48.479Z",
+  "timestamp": "2026-05-06T23:40:45.517Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -465,16 +465,16 @@
           "registered_corporate": 36,
           "registered_taxi": 39,
           "registered_general": 1175,
-          "delivered_total": 1659,
+          "delivered_total": 1660,
           "delivered_priority": 501,
           "delivered_corporate": 34,
           "delivered_taxi": 34,
-          "delivered_general": 1090,
-          "remaining_total": 841,
+          "delivered_general": 1091,
+          "remaining_total": 840,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 46,
-          "remaining_general": 910,
+          "remaining_general": 909,
           "note": "< 4.20. 전기승용 마감되었습니다 >\n< 자격부여 건에 한하여 지원가능요청 순으로 대기자가 되며, 취소물량 발생 등으로 추가 선정이 가능한 경우 지원대상자로 선정하고 문자 안내드리겠습니다 >\n< 전기택시는 신청 가능함 >\n< 하반기 사업 일정은 현재 검토중입니다 >\n★문의 전 공고문을 확인하여 주시기 바라며, 단순 문의는 자제하여 주시기 바랍니다. 전화문의 응대로 인해 자격부여 및 대상자선정이 지연됩니다.\n☆차종별 보조금 확인 방법 : 무공해차 통합누리집 → 구매 및 지원 → 무공해차 구매보조금 지원 → 구매보조금 지급현황 → 지자체 차종별 보조금\n★무공해차 통합누리집 시스템상 잔여대수와 실제 지원가능 대수는 일치하지 않을 수 있습니다.\n★2026년 상반기 고양시 전기자동차 보급사업 공고★\n-보급대수 : 전기승용 2,500대 / 전기화물 200대 / 전기승합 10대 / 전기승합(어린이통학용) 2대\n(※ 차종별 보조금 및 보급대수는 예산범위 내에서 변동될 수 있음)\n-접수기간 : 2026. 2. 2.(월) 09:00 ~ 2026. 06. 30.(화) 18:00\n-자세한 사항은 공고문을 확인하여 주시기 바랍니다."
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 18206,
+          "registered_total": 18205,
           "registered_priority": 6,
-          "registered_corporate": 17764,
+          "registered_corporate": 17763,
           "registered_taxi": 140,
           "registered_general": 296,
           "delivered_total": 11886,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T23:30:48.420Z"
+      "timestamp": "2026-05-06T23:40:45.451Z"
     }
   ]
 }
