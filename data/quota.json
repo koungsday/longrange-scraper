@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-07T09:50:40.856Z",
+  "timestamp": "2026-05-07T10:00:52.636Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -75,16 +75,16 @@
           "registered_corporate": 53,
           "registered_taxi": 230,
           "registered_general": 1383,
-          "delivered_total": 1733,
+          "delivered_total": 1734,
           "delivered_priority": 419,
           "delivered_corporate": 44,
           "delivered_taxi": 178,
-          "delivered_general": 1092,
-          "remaining_total": 392,
+          "delivered_general": 1093,
+          "remaining_total": 391,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 714,
+          "remaining_general": 713,
           "note": "★ 승용 2차 접수 마감되었습니다. ★\n★ 화물 2차 접수 마감되었습니다. ★\n★ 접수 후 빠른 처리를 위해 단순 문의 및 처리 독촉 전화는 자제해주시길 바랍니다. ★\n*2026년 전기자동차 민간보급사업 안내 (2차)*\n- 보급기간  : 마감\n- 보급물량 : 1,063대(승용차 910대, 화물차 150대, 승합차 3대)\n* 보급수량은 차종별 보조금 차등지원 및 차종별 구매수요에 따라 가감될 수 있습니다.\n※ 2026년 전기차 보급대수 : 3,542대(승용차 3,035,  화물차 500, 승합차 7)\n1차 : 마감,     2차 : 마감,     3차 : 7월 예정\n-> 보급추이 및 여건에 따라 회차 및 시기는 조정될수 있습니다.\n- 신청양식 : 대구시 양식(공고문 양식 다운로드)\n- 기타 상세 사항은 공고문을 참고하시기 바랍니다."
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 18031,
           "registered_taxi": 143,
           "registered_general": 298,
-          "delivered_total": 12106,
+          "delivered_total": 12107,
           "delivered_priority": 5,
-          "delivered_corporate": 11801,
+          "delivered_corporate": 11802,
           "delivered_taxi": 99,
           "delivered_general": 201,
-          "remaining_total": 17894,
+          "remaining_total": 17893,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-07T09:50:40.795Z"
+      "timestamp": "2026-05-07T10:00:52.577Z"
     }
   ]
 }
