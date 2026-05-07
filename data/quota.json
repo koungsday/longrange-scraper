@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-07T11:30:53.477Z",
+  "timestamp": "2026-05-07T11:40:41.881Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,8 +18,8 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 8900,
-          "registered_total": 9279,
-          "registered_priority": 2738,
+          "registered_total": 9280,
+          "registered_priority": 2739,
           "registered_corporate": 301,
           "registered_taxi": 791,
           "registered_general": 5449,
@@ -777,16 +777,16 @@
           "registered_corporate": 19,
           "registered_taxi": 8,
           "registered_general": 278,
-          "delivered_total": 379,
+          "delivered_total": 380,
           "delivered_priority": 115,
           "delivered_corporate": 16,
           "delivered_taxi": 7,
-          "delivered_general": 241,
-          "remaining_total": 273,
+          "delivered_general": 242,
+          "remaining_total": 272,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 411,
+          "remaining_general": 410,
           "note": "★전기승용 마감되었습니다.★\n하반기 공고는 7월 초 예정입니다.(공고대수 미정)\n-------------------------------------------------------------------------------------------\n<2026년 전기자동차 보급사업 변경 공고(상반기 2차)>\n1. 신청기간 : 2026. 4. 20.(월)  ~ 6. 30.(화) 예산 소진시 조기마감\n2. 보급대수: 승용 210대(차종별 보조금 상이하므로 보급대수는 변경될 수 있음)\n※ 자세한 사항은 공고문 참고\n※ 전환지원금은 개인(개인사업자 불가)만 신청가능하며 판매 및 폐차관련서류는 보조금 지급신청전까지 제출(대리점에서는 전환지원금 Y로 체크)\n※ 지원 신청 후 자격부여까지는 최대 7일이 소요되며 그 결과는 문자로 안내하오니, 빠른 처리를 위한 단순 접수알림, 처리 독촉 전화 자제 요망\n붙임  1. 공고문(한글) 1부. 2. 공고문(PDF) 1부. 3. 차종별 보조금 및 전환지원금(EXCEL) 1부.  끝."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-07T11:30:53.427Z"
+      "timestamp": "2026-05-07T11:40:41.814Z"
     }
   ]
 }
