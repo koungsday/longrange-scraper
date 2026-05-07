@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-05-06T04:29:32.010Z",
+  "timestamp": "2026-05-07T04:30:04.532Z",
   "total_regions": 161,
   "success_count": 161,
   "failed_count": 0,
@@ -893,7 +893,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:27:57.969Z"
+      "timestamp": "2026-05-07T04:28:29.629Z"
     },
     {
       "parentName": "부산",
@@ -1783,7 +1783,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:27:58.018Z"
+      "timestamp": "2026-05-07T04:28:29.676Z"
     },
     {
       "parentName": "대구",
@@ -2673,7 +2673,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:27:57.418Z"
+      "timestamp": "2026-05-07T04:28:29.473Z"
     },
     {
       "parentName": "인천",
@@ -3563,7 +3563,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:27:57.684Z"
+      "timestamp": "2026-05-07T04:28:29.514Z"
     },
     {
       "parentName": "광주",
@@ -4453,7 +4453,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:27:57.854Z"
+      "timestamp": "2026-05-07T04:28:29.392Z"
     },
     {
       "parentName": "대전",
@@ -4668,6 +4668,14 @@
           "local": 1440000,
           "total": 6250000
         },
+        "기아___EV5 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 GT",
+          "national": 2320000,
+          "local": 690000,
+          "total": 3010000
+        },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -4675,6 +4683,22 @@
           "national": 5520000,
           "local": 1650000,
           "total": 7170000
+        },
+        "기아___EV5 롱레인지 4WD 18인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 18인치",
+          "national": 4990000,
+          "local": 1490000,
+          "total": 6480000
+        },
+        "기아___EV5 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 19인치",
+          "national": 4930000,
+          "local": 1470000,
+          "total": 6400000
         },
         "기아___EV9 GT": {
           "type": "일반승용",
@@ -5319,7 +5343,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:27:57.567Z"
+      "timestamp": "2026-05-07T04:28:29.557Z"
     },
     {
       "parentName": "울산",
@@ -6209,7 +6233,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:27:57.730Z"
+      "timestamp": "2026-05-07T04:28:29.224Z"
     },
     {
       "parentName": "세종",
@@ -7099,7 +7123,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:27:57.904Z"
+      "timestamp": "2026-05-07T04:28:29.117Z"
     },
     {
       "parentName": "경기",
@@ -7989,7 +8013,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:02.652Z"
+      "timestamp": "2026-05-07T04:28:34.979Z"
     },
     {
       "parentName": "경기",
@@ -8879,7 +8903,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:03.769Z"
+      "timestamp": "2026-05-07T04:28:34.248Z"
     },
     {
       "parentName": "경기",
@@ -9769,7 +9793,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:02.259Z"
+      "timestamp": "2026-05-07T04:28:34.882Z"
     },
     {
       "parentName": "경기",
@@ -10659,7 +10683,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:02.706Z"
+      "timestamp": "2026-05-07T04:28:35.134Z"
     },
     {
       "parentName": "경기",
@@ -11549,7 +11573,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:02.926Z"
+      "timestamp": "2026-05-07T04:28:34.436Z"
     },
     {
       "parentName": "경기",
@@ -12439,7 +12463,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:02.594Z"
+      "timestamp": "2026-05-07T04:28:34.739Z"
     },
     {
       "parentName": "경기",
@@ -13329,7 +13353,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:02.404Z"
+      "timestamp": "2026-05-07T04:28:35.054Z"
     },
     {
       "parentName": "경기",
@@ -14219,7 +14243,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:02.493Z"
+      "timestamp": "2026-05-07T04:28:34.499Z"
     },
     {
       "parentName": "경기",
@@ -15109,7 +15133,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:08.444Z"
+      "timestamp": "2026-05-07T04:28:39.856Z"
     },
     {
       "parentName": "경기",
@@ -15999,7 +16023,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:08.397Z"
+      "timestamp": "2026-05-07T04:28:40.134Z"
     },
     {
       "parentName": "경기",
@@ -16889,7 +16913,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:08.033Z"
+      "timestamp": "2026-05-07T04:28:40.033Z"
     },
     {
       "parentName": "경기",
@@ -17779,7 +17803,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:09.080Z"
+      "timestamp": "2026-05-07T04:28:40.185Z"
     },
     {
       "parentName": "경기",
@@ -18669,7 +18693,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:08.214Z"
+      "timestamp": "2026-05-07T04:28:40.265Z"
     },
     {
       "parentName": "경기",
@@ -19559,7 +19583,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:08.349Z"
+      "timestamp": "2026-05-07T04:28:39.945Z"
     },
     {
       "parentName": "경기",
@@ -20449,7 +20473,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:07.957Z"
+      "timestamp": "2026-05-07T04:28:39.738Z"
     },
     {
       "parentName": "경기",
@@ -21339,7 +21363,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:08.133Z"
+      "timestamp": "2026-05-07T04:28:39.653Z"
     },
     {
       "parentName": "경기",
@@ -22229,7 +22253,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:12.811Z"
+      "timestamp": "2026-05-07T04:28:45.440Z"
     },
     {
       "parentName": "경기",
@@ -23119,7 +23143,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:14.137Z"
+      "timestamp": "2026-05-07T04:28:44.991Z"
     },
     {
       "parentName": "경기",
@@ -24009,7 +24033,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:13.386Z"
+      "timestamp": "2026-05-07T04:28:45.199Z"
     },
     {
       "parentName": "경기",
@@ -24899,7 +24923,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:13.548Z"
+      "timestamp": "2026-05-07T04:28:45.238Z"
     },
     {
       "parentName": "경기",
@@ -25789,7 +25813,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:13.626Z"
+      "timestamp": "2026-05-07T04:28:45.100Z"
     },
     {
       "parentName": "경기",
@@ -26679,7 +26703,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:13.171Z"
+      "timestamp": "2026-05-07T04:28:45.358Z"
     },
     {
       "parentName": "경기",
@@ -27569,7 +27593,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:13.449Z"
+      "timestamp": "2026-05-07T04:28:45.395Z"
     },
     {
       "parentName": "경기",
@@ -28459,7 +28483,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:13.296Z"
+      "timestamp": "2026-05-07T04:28:44.225Z"
     },
     {
       "parentName": "경기",
@@ -29349,7 +29373,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:18.183Z"
+      "timestamp": "2026-05-07T04:28:50.391Z"
     },
     {
       "parentName": "경기",
@@ -30239,7 +30263,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:18.672Z"
+      "timestamp": "2026-05-07T04:28:50.064Z"
     },
     {
       "parentName": "경기",
@@ -31129,7 +31153,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:18.415Z"
+      "timestamp": "2026-05-07T04:28:49.925Z"
     },
     {
       "parentName": "경기",
@@ -32019,7 +32043,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:18.290Z"
+      "timestamp": "2026-05-07T04:28:49.700Z"
     },
     {
       "parentName": "경기",
@@ -32909,7 +32933,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:18.508Z"
+      "timestamp": "2026-05-07T04:28:49.961Z"
     },
     {
       "parentName": "경기",
@@ -33799,7 +33823,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:18.472Z"
+      "timestamp": "2026-05-07T04:28:49.777Z"
     },
     {
       "parentName": "경기",
@@ -34689,7 +34713,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:18.327Z"
+      "timestamp": "2026-05-07T04:28:50.201Z"
     },
     {
       "parentName": "강원",
@@ -35579,7 +35603,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:19.039Z"
+      "timestamp": "2026-05-07T04:28:50.102Z"
     },
     {
       "parentName": "강원",
@@ -36469,7 +36493,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:22.789Z"
+      "timestamp": "2026-05-07T04:28:54.983Z"
     },
     {
       "parentName": "강원",
@@ -37359,7 +37383,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:23.514Z"
+      "timestamp": "2026-05-07T04:28:55.017Z"
     },
     {
       "parentName": "강원",
@@ -38249,7 +38273,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:23.076Z"
+      "timestamp": "2026-05-07T04:28:54.879Z"
     },
     {
       "parentName": "강원",
@@ -39139,7 +39163,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:23.373Z"
+      "timestamp": "2026-05-07T04:28:55.128Z"
     },
     {
       "parentName": "강원",
@@ -40029,7 +40053,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:23.549Z"
+      "timestamp": "2026-05-07T04:28:55.213Z"
     },
     {
       "parentName": "강원",
@@ -40919,7 +40943,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:23.267Z"
+      "timestamp": "2026-05-07T04:28:54.806Z"
     },
     {
       "parentName": "강원",
@@ -41809,7 +41833,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:23.983Z"
+      "timestamp": "2026-05-07T04:28:55.297Z"
     },
     {
       "parentName": "강원",
@@ -42699,7 +42723,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:23.409Z"
+      "timestamp": "2026-05-07T04:28:55.165Z"
     },
     {
       "parentName": "강원",
@@ -43565,7 +43589,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:28.391Z"
+      "timestamp": "2026-05-07T04:28:59.743Z"
     },
     {
       "parentName": "강원",
@@ -44455,7 +44479,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:27.529Z"
+      "timestamp": "2026-05-07T04:28:59.831Z"
     },
     {
       "parentName": "강원",
@@ -45345,7 +45369,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:27.910Z"
+      "timestamp": "2026-05-07T04:29:00.120Z"
     },
     {
       "parentName": "강원",
@@ -46235,7 +46259,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:27.995Z"
+      "timestamp": "2026-05-07T04:28:59.245Z"
     },
     {
       "parentName": "강원",
@@ -47125,7 +47149,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:28.424Z"
+      "timestamp": "2026-05-07T04:29:00.201Z"
     },
     {
       "parentName": "강원",
@@ -48015,7 +48039,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:28.189Z"
+      "timestamp": "2026-05-07T04:28:59.877Z"
     },
     {
       "parentName": "강원",
@@ -48905,7 +48929,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:28.145Z"
+      "timestamp": "2026-05-07T04:28:59.966Z"
     },
     {
       "parentName": "강원",
@@ -49795,7 +49819,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:28.898Z"
+      "timestamp": "2026-05-07T04:28:59.658Z"
     },
     {
       "parentName": "강원",
@@ -50685,7 +50709,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:33.111Z"
+      "timestamp": "2026-05-07T04:29:05.041Z"
     },
     {
       "parentName": "충북",
@@ -51575,7 +51599,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:32.637Z"
+      "timestamp": "2026-05-07T04:29:04.921Z"
     },
     {
       "parentName": "충북",
@@ -52465,7 +52489,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:33.238Z"
+      "timestamp": "2026-05-07T04:29:04.181Z"
     },
     {
       "parentName": "충북",
@@ -53355,7 +53379,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:32.819Z"
+      "timestamp": "2026-05-07T04:29:04.787Z"
     },
     {
       "parentName": "충북",
@@ -54245,7 +54269,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:33.043Z"
+      "timestamp": "2026-05-07T04:29:04.868Z"
     },
     {
       "parentName": "충북",
@@ -55135,7 +55159,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:33.191Z"
+      "timestamp": "2026-05-07T04:29:04.962Z"
     },
     {
       "parentName": "충북",
@@ -56025,7 +56049,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:33.721Z"
+      "timestamp": "2026-05-07T04:29:05.136Z"
     },
     {
       "parentName": "충북",
@@ -56811,7 +56835,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:32.954Z"
+      "timestamp": "2026-05-07T04:29:04.697Z"
     },
     {
       "parentName": "충북",
@@ -57701,7 +57725,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:37.705Z"
+      "timestamp": "2026-05-07T04:29:09.899Z"
     },
     {
       "parentName": "충북",
@@ -58591,7 +58615,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:37.414Z"
+      "timestamp": "2026-05-07T04:29:09.495Z"
     },
     {
       "parentName": "충북",
@@ -59481,7 +59505,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:37.952Z"
+      "timestamp": "2026-05-07T04:29:09.699Z"
     },
     {
       "parentName": "충북",
@@ -60371,7 +60395,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:37.548Z"
+      "timestamp": "2026-05-07T04:29:09.856Z"
     },
     {
       "parentName": "충남",
@@ -61237,7 +61261,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:37.799Z"
+      "timestamp": "2026-05-07T04:29:09.750Z"
     },
     {
       "parentName": "충남",
@@ -62127,7 +62151,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:37.608Z"
+      "timestamp": "2026-05-07T04:29:09.577Z"
     },
     {
       "parentName": "충남",
@@ -63017,7 +63041,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:38.285Z"
+      "timestamp": "2026-05-07T04:29:09.223Z"
     },
     {
       "parentName": "충남",
@@ -63907,7 +63931,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:37.877Z"
+      "timestamp": "2026-05-07T04:29:09.954Z"
     },
     {
       "parentName": "충남",
@@ -64797,7 +64821,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:42.582Z"
+      "timestamp": "2026-05-07T04:29:14.717Z"
     },
     {
       "parentName": "충남",
@@ -65687,7 +65711,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:42.623Z"
+      "timestamp": "2026-05-07T04:29:14.651Z"
     },
     {
       "parentName": "충남",
@@ -66577,7 +66601,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:41.845Z"
+      "timestamp": "2026-05-07T04:29:14.364Z"
     },
     {
       "parentName": "충남",
@@ -67467,7 +67491,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:42.489Z"
+      "timestamp": "2026-05-07T04:29:14.521Z"
     },
     {
       "parentName": "충남",
@@ -68357,7 +68381,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:42.198Z"
+      "timestamp": "2026-05-07T04:29:14.279Z"
     },
     {
       "parentName": "충남",
@@ -69143,7 +69167,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:42.338Z"
+      "timestamp": "2026-05-07T04:29:14.417Z"
     },
     {
       "parentName": "충남",
@@ -70033,7 +70057,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:42.401Z"
+      "timestamp": "2026-05-07T04:29:14.556Z"
     },
     {
       "parentName": "충남",
@@ -70923,7 +70947,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:43.114Z"
+      "timestamp": "2026-05-07T04:29:14.231Z"
     },
     {
       "parentName": "충남",
@@ -71709,7 +71733,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:47.232Z"
+      "timestamp": "2026-05-07T04:29:19.395Z"
     },
     {
       "parentName": "충남",
@@ -72599,7 +72623,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:47.177Z"
+      "timestamp": "2026-05-07T04:29:18.772Z"
     },
     {
       "parentName": "충남",
@@ -73489,7 +73513,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:47.082Z"
+      "timestamp": "2026-05-07T04:29:19.459Z"
     },
     {
       "parentName": "전북",
@@ -74275,7 +74299,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:46.578Z"
+      "timestamp": "2026-05-07T04:29:19.427Z"
     },
     {
       "parentName": "전북",
@@ -75061,7 +75085,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:46.983Z"
+      "timestamp": "2026-05-07T04:29:19.052Z"
     },
     {
       "parentName": "전북",
@@ -75951,7 +75975,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:47.850Z"
+      "timestamp": "2026-05-07T04:29:19.279Z"
     },
     {
       "parentName": "전북",
@@ -76841,7 +76865,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:47.265Z"
+      "timestamp": "2026-05-07T04:29:19.172Z"
     },
     {
       "parentName": "전북",
@@ -77627,7 +77651,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:46.874Z"
+      "timestamp": "2026-05-07T04:29:18.880Z"
     },
     {
       "parentName": "전북",
@@ -78413,7 +78437,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:51.352Z"
+      "timestamp": "2026-05-07T04:29:23.984Z"
     },
     {
       "parentName": "전북",
@@ -79303,7 +79327,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:52.562Z"
+      "timestamp": "2026-05-07T04:29:23.554Z"
     },
     {
       "parentName": "전북",
@@ -79422,6 +79446,14 @@
           "local": 2320000,
           "total": 4460000
         },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 2690000,
+          "total": 5170000
+        },
         "기아___EV3 롱레인지 2WD 17인치": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -79438,6 +79470,14 @@
           "local": 6020000,
           "total": 10000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 5850000,
+          "total": 10000
+        },
         "기아___EV3 스탠다드 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -79445,6 +79485,14 @@
           "national": 4690000,
           "local": 5090000,
           "total": 9780000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 2760000,
+          "total": 5310000
         },
         "기아___EV4 롱레인지 2WD 17인치": {
           "type": "일반승용",
@@ -79460,6 +79508,14 @@
           "model": "EV4 롱레인지 2WD 19인치",
           "national": 5550000,
           "local": 6020000,
+          "total": 10000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 6010000,
           "total": 10000
         },
         "기아___EV4 롱레인지 GTL 2WD 19인치": {
@@ -79486,6 +79542,14 @@
           "local": 5220000,
           "total": 10000
         },
+        "기아___EV5 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 GT",
+          "national": 2320000,
+          "local": 2520000,
+          "total": 4840000
+        },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -79493,6 +79557,30 @@
           "national": 5520000,
           "local": 5990000,
           "total": 10000
+        },
+        "기아___EV5 롱레인지 4WD 18인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 18인치",
+          "national": 4990000,
+          "local": 5420000,
+          "total": 10000
+        },
+        "기아___EV5 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 19인치",
+          "national": 4930000,
+          "local": 5350000,
+          "total": 10000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 2660000,
+          "total": 5110000
         },
         "기아___EV9 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -79654,6 +79742,14 @@
           "local": 1670000,
           "total": 3210000
         },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 1750000,
+          "total": 3370000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -79774,6 +79870,30 @@
           "local": 1820000,
           "total": 3500000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 1820000,
+          "total": 3500000
+        },
+        "테슬라코리아___Model Y L AWD": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L AWD",
+          "national": 2100000,
+          "local": 2280000,
+          "total": 4380000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 2280000,
+          "total": 4380000
+        },
         "테슬라코리아___Model Y Premium Long Range": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -79786,6 +79906,14 @@
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
           "model": "Model Y Premium RWD",
+          "national": 1700000,
+          "local": 1840000,
+          "total": 3540000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
           "national": 1700000,
           "local": 1840000,
           "total": 3540000
@@ -80089,7 +80217,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:51.601Z"
+      "timestamp": "2026-05-07T04:29:23.647Z"
     },
     {
       "parentName": "전북",
@@ -80875,7 +81003,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:51.996Z"
+      "timestamp": "2026-05-07T04:29:24.075Z"
     },
     {
       "parentName": "전북",
@@ -81765,7 +81893,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:51.896Z"
+      "timestamp": "2026-05-07T04:29:23.780Z"
     },
     {
       "parentName": "전북",
@@ -82655,7 +82783,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:52.159Z"
+      "timestamp": "2026-05-07T04:29:23.872Z"
     },
     {
       "parentName": "전북",
@@ -83545,7 +83673,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:52.076Z"
+      "timestamp": "2026-05-07T04:29:23.744Z"
     },
     {
       "parentName": "전북",
@@ -84331,7 +84459,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:51.800Z"
+      "timestamp": "2026-05-07T04:29:23.940Z"
     },
     {
       "parentName": "전북",
@@ -85117,7 +85245,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:56.580Z"
+      "timestamp": "2026-05-07T04:29:28.520Z"
     },
     {
       "parentName": "전남",
@@ -85903,7 +86031,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:56.425Z"
+      "timestamp": "2026-05-07T04:29:28.598Z"
     },
     {
       "parentName": "전남",
@@ -86793,7 +86921,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:56.700Z"
+      "timestamp": "2026-05-07T04:29:28.258Z"
     },
     {
       "parentName": "전남",
@@ -87683,7 +87811,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:56.782Z"
+      "timestamp": "2026-05-07T04:29:28.851Z"
     },
     {
       "parentName": "전남",
@@ -88573,7 +88701,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:56.542Z"
+      "timestamp": "2026-05-07T04:29:28.451Z"
     },
     {
       "parentName": "전남",
@@ -89463,7 +89591,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:56.626Z"
+      "timestamp": "2026-05-07T04:29:28.698Z"
     },
     {
       "parentName": "전남",
@@ -90353,7 +90481,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:56.016Z"
+      "timestamp": "2026-05-07T04:29:28.761Z"
     },
     {
       "parentName": "전남",
@@ -91243,7 +91371,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:28:57.286Z"
+      "timestamp": "2026-05-07T04:29:28.078Z"
     },
     {
       "parentName": "전남",
@@ -92133,7 +92261,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:01.140Z"
+      "timestamp": "2026-05-07T04:29:33.201Z"
     },
     {
       "parentName": "전남",
@@ -93023,7 +93151,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:00.924Z"
+      "timestamp": "2026-05-07T04:29:33.536Z"
     },
     {
       "parentName": "전남",
@@ -93913,7 +94041,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:01.230Z"
+      "timestamp": "2026-05-07T04:29:33.363Z"
     },
     {
       "parentName": "전남",
@@ -94699,7 +94827,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:01.376Z"
+      "timestamp": "2026-05-07T04:29:33.265Z"
     },
     {
       "parentName": "전남",
@@ -95589,7 +95717,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:01.099Z"
+      "timestamp": "2026-05-07T04:29:33.121Z"
     },
     {
       "parentName": "전남",
@@ -96479,7 +96607,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:01.416Z"
+      "timestamp": "2026-05-07T04:29:33.485Z"
     },
     {
       "parentName": "전남",
@@ -97369,7 +97497,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:01.939Z"
+      "timestamp": "2026-05-07T04:29:33.428Z"
     },
     {
       "parentName": "전남",
@@ -98259,7 +98387,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:01.469Z"
+      "timestamp": "2026-05-07T04:29:32.701Z"
     },
     {
       "parentName": "전남",
@@ -99045,7 +99173,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:06.012Z"
+      "timestamp": "2026-05-07T04:29:37.851Z"
     },
     {
       "parentName": "전남",
@@ -99935,7 +100063,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:05.909Z"
+      "timestamp": "2026-05-07T04:29:37.579Z"
     },
     {
       "parentName": "전남",
@@ -100825,7 +100953,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:05.797Z"
+      "timestamp": "2026-05-07T04:29:38.095Z"
     },
     {
       "parentName": "전남",
@@ -101611,7 +101739,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:05.599Z"
+      "timestamp": "2026-05-07T04:29:37.399Z"
     },
     {
       "parentName": "전남",
@@ -102501,7 +102629,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:05.686Z"
+      "timestamp": "2026-05-07T04:29:38.020Z"
     },
     {
       "parentName": "전남",
@@ -103287,7 +103415,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:06.409Z"
+      "timestamp": "2026-05-07T04:29:37.660Z"
     },
     {
       "parentName": "전남",
@@ -104177,7 +104305,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:06.056Z"
+      "timestamp": "2026-05-07T04:29:37.946Z"
     },
     {
       "parentName": "경북",
@@ -104301,8 +104429,8 @@
           "manufacturer": "기아",
           "model": "EV3 GT",
           "national": 2480000,
-          "local": 0,
-          "total": 2480000
+          "local": 2550000,
+          "total": 5030000
         },
         "기아___EV3 롱레인지 2WD 17인치": {
           "type": "일반승용",
@@ -104325,8 +104453,8 @@
           "manufacturer": "기아",
           "model": "EV3 롱레인지 4WD 19인치",
           "national": 5390000,
-          "local": 0,
-          "total": 5390000
+          "local": 5550000,
+          "total": 10000
         },
         "기아___EV3 스탠다드 2WD": {
           "type": "일반승용",
@@ -104341,8 +104469,8 @@
           "manufacturer": "기아",
           "model": "EV4 GT",
           "national": 2550000,
-          "local": 0,
-          "total": 2550000
+          "local": 2620000,
+          "total": 5170000
         },
         "기아___EV4 롱레인지 2WD 17인치": {
           "type": "일반승용",
@@ -104365,8 +104493,8 @@
           "manufacturer": "기아",
           "model": "EV4 롱레인지 4WD 19인치",
           "national": 5540000,
-          "local": 0,
-          "total": 5540000
+          "local": 5700000,
+          "total": 10000
         },
         "기아___EV4 롱레인지 GTL 2WD 19인치": {
           "type": "일반승용",
@@ -104397,8 +104525,8 @@
           "manufacturer": "기아",
           "model": "EV5 GT",
           "national": 2320000,
-          "local": 0,
-          "total": 2320000
+          "local": 2380000,
+          "total": 4700000
         },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
@@ -104413,24 +104541,24 @@
           "manufacturer": "기아",
           "model": "EV5 롱레인지 4WD 18인치",
           "national": 4990000,
-          "local": 0,
-          "total": 4990000
+          "local": 5130000,
+          "total": 10000
         },
         "기아___EV5 롱레인지 4WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV5 롱레인지 4WD 19인치",
           "national": 4930000,
-          "local": 0,
-          "total": 4930000
+          "local": 5070000,
+          "total": 10000
         },
         "기아___EV9 GT": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV9 GT",
           "national": 2450000,
-          "local": 0,
-          "total": 2450000
+          "local": 2520000,
+          "total": 4970000
         },
         "기아___EV9 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -105067,7 +105195,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:05.836Z"
+      "timestamp": "2026-05-07T04:29:38.178Z"
     },
     {
       "parentName": "경북",
@@ -105957,7 +106085,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:10.458Z"
+      "timestamp": "2026-05-07T04:29:42.764Z"
     },
     {
       "parentName": "경북",
@@ -106847,7 +106975,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:09.811Z"
+      "timestamp": "2026-05-07T04:29:42.602Z"
     },
     {
       "parentName": "경북",
@@ -107737,7 +107865,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:10.603Z"
+      "timestamp": "2026-05-07T04:29:42.372Z"
     },
     {
       "parentName": "경북",
@@ -108627,7 +108755,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:11.191Z"
+      "timestamp": "2026-05-07T04:29:42.805Z"
     },
     {
       "parentName": "경북",
@@ -109517,7 +109645,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:10.418Z"
+      "timestamp": "2026-05-07T04:29:42.464Z"
     },
     {
       "parentName": "경북",
@@ -110407,7 +110535,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:10.542Z"
+      "timestamp": "2026-05-07T04:29:42.883Z"
     },
     {
       "parentName": "경북",
@@ -111297,7 +111425,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:10.645Z"
+      "timestamp": "2026-05-07T04:29:42.565Z"
     },
     {
       "parentName": "경북",
@@ -112187,7 +112315,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:10.050Z"
+      "timestamp": "2026-05-07T04:29:42.665Z"
     },
     {
       "parentName": "경북",
@@ -112973,7 +113101,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:15.452Z"
+      "timestamp": "2026-05-07T04:29:47.358Z"
     },
     {
       "parentName": "경북",
@@ -113863,7 +113991,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:15.139Z"
+      "timestamp": "2026-05-07T04:29:47.477Z"
     },
     {
       "parentName": "경북",
@@ -114649,7 +114777,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:14.414Z"
+      "timestamp": "2026-05-07T04:29:47.031Z"
     },
     {
       "parentName": "경북",
@@ -115539,7 +115667,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:15.020Z"
+      "timestamp": "2026-05-07T04:29:47.445Z"
     },
     {
       "parentName": "경북",
@@ -116429,7 +116557,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:14.879Z"
+      "timestamp": "2026-05-07T04:29:46.810Z"
     },
     {
       "parentName": "경북",
@@ -117319,7 +117447,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:15.098Z"
+      "timestamp": "2026-05-07T04:29:47.112Z"
     },
     {
       "parentName": "경북",
@@ -118209,7 +118337,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:14.983Z"
+      "timestamp": "2026-05-07T04:29:47.256Z"
     },
     {
       "parentName": "경북",
@@ -118995,7 +119123,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:15.209Z"
+      "timestamp": "2026-05-07T04:29:46.961Z"
     },
     {
       "parentName": "경북",
@@ -119885,7 +120013,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:19.368Z"
+      "timestamp": "2026-05-07T04:29:51.971Z"
     },
     {
       "parentName": "경북",
@@ -120671,7 +120799,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:19.455Z"
+      "timestamp": "2026-05-07T04:29:51.671Z"
     },
     {
       "parentName": "경북",
@@ -121561,7 +121689,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:19.161Z"
+      "timestamp": "2026-05-07T04:29:51.743Z"
     },
     {
       "parentName": "경북",
@@ -122451,7 +122579,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:19.588Z"
+      "timestamp": "2026-05-07T04:29:51.813Z"
     },
     {
       "parentName": "경북",
@@ -123341,7 +123469,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:19.626Z"
+      "timestamp": "2026-05-07T04:29:52.009Z"
     },
     {
       "parentName": "경남",
@@ -124231,7 +124359,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:19.300Z"
+      "timestamp": "2026-05-07T04:29:51.588Z"
     },
     {
       "parentName": "경남",
@@ -125121,7 +125249,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:19.488Z"
+      "timestamp": "2026-05-07T04:29:51.470Z"
     },
     {
       "parentName": "경남",
@@ -126011,7 +126139,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:18.821Z"
+      "timestamp": "2026-05-07T04:29:51.876Z"
     },
     {
       "parentName": "경남",
@@ -126901,7 +127029,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:23.538Z"
+      "timestamp": "2026-05-07T04:29:56.079Z"
     },
     {
       "parentName": "경남",
@@ -127791,7 +127919,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:23.399Z"
+      "timestamp": "2026-05-07T04:29:55.912Z"
     },
     {
       "parentName": "경남",
@@ -127910,6 +128038,14 @@
           "local": 650000,
           "total": 2790000
         },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 750000,
+          "total": 3230000
+        },
         "기아___EV3 롱레인지 2WD 17인치": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -127926,6 +128062,14 @@
           "local": 1670000,
           "total": 7220000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 1620000,
+          "total": 7010000
+        },
         "기아___EV3 스탠다드 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -127933,6 +128077,14 @@
           "national": 4690000,
           "local": 1410000,
           "total": 6100000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 770000,
+          "total": 3320000
         },
         "기아___EV4 롱레인지 2WD 17인치": {
           "type": "일반승용",
@@ -127949,6 +128101,14 @@
           "national": 5550000,
           "local": 1670000,
           "total": 7220000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 1670000,
+          "total": 7210000
         },
         "기아___EV4 롱레인지 GTL 2WD 19인치": {
           "type": "일반승용",
@@ -127974,6 +128134,14 @@
           "local": 1450000,
           "total": 6260000
         },
+        "기아___EV5 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 GT",
+          "national": 2320000,
+          "local": 700000,
+          "total": 3020000
+        },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -127981,6 +128149,30 @@
           "national": 5520000,
           "local": 1660000,
           "total": 7180000
+        },
+        "기아___EV5 롱레인지 4WD 18인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 18인치",
+          "national": 4990000,
+          "local": 1500000,
+          "total": 6490000
+        },
+        "기아___EV5 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 19인치",
+          "national": 4930000,
+          "local": 1480000,
+          "total": 6410000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 740000,
+          "total": 3190000
         },
         "기아___EV9 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -128142,6 +128334,14 @@
           "local": 470000,
           "total": 2010000
         },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 490000,
+          "total": 2110000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -128262,6 +128462,30 @@
           "local": 510000,
           "total": 2190000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 510000,
+          "total": 2190000
+        },
+        "테슬라코리아___Model Y L AWD": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L AWD",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
+        },
         "테슬라코리아___Model Y Premium Long Range": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -128274,6 +128498,14 @@
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
           "model": "Model Y Premium RWD",
+          "national": 1700000,
+          "local": 510000,
+          "total": 2210000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
           "national": 1700000,
           "local": 510000,
           "total": 2210000
@@ -128347,8 +128579,8 @@
           "manufacturer": "현대자동차",
           "model": "GV60 스탠다드 AWD 19인치",
           "national": 2720000,
-          "local": 860000,
-          "total": 3580000
+          "local": 840000,
+          "total": 3560000
         },
         "현대자동차___GV60 스탠다드 AWD 20인치": {
           "type": "일반승용",
@@ -128577,7 +128809,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:23.503Z"
+      "timestamp": "2026-05-07T04:29:56.385Z"
     },
     {
       "parentName": "경남",
@@ -129467,7 +129699,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:23.938Z"
+      "timestamp": "2026-05-07T04:29:56.314Z"
     },
     {
       "parentName": "경남",
@@ -130357,7 +130589,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:23.692Z"
+      "timestamp": "2026-05-07T04:29:56.184Z"
     },
     {
       "parentName": "경남",
@@ -131247,7 +131479,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:23.031Z"
+      "timestamp": "2026-05-07T04:29:56.464Z"
     },
     {
       "parentName": "경남",
@@ -132137,7 +132369,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:23.614Z"
+      "timestamp": "2026-05-07T04:29:56.047Z"
     },
     {
       "parentName": "경남",
@@ -133027,7 +133259,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:23.185Z"
+      "timestamp": "2026-05-07T04:29:56.218Z"
     },
     {
       "parentName": "경남",
@@ -133917,7 +134149,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:27.241Z"
+      "timestamp": "2026-05-07T04:30:00.886Z"
     },
     {
       "parentName": "경남",
@@ -134807,7 +135039,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:27.707Z"
+      "timestamp": "2026-05-07T04:30:00.651Z"
     },
     {
       "parentName": "경남",
@@ -135673,7 +135905,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:27.770Z"
+      "timestamp": "2026-05-07T04:30:00.398Z"
     },
     {
       "parentName": "경남",
@@ -136539,7 +136771,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:28.094Z"
+      "timestamp": "2026-05-07T04:30:00.968Z"
     },
     {
       "parentName": "경남",
@@ -137429,7 +137661,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:28.167Z"
+      "timestamp": "2026-05-07T04:30:00.597Z"
     },
     {
       "parentName": "경남",
@@ -138319,7 +138551,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:27.823Z"
+      "timestamp": "2026-05-07T04:30:01.031Z"
     },
     {
       "parentName": "경남",
@@ -139209,7 +139441,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:27.940Z"
+      "timestamp": "2026-05-07T04:30:00.790Z"
     },
     {
       "parentName": "제주",
@@ -140099,7 +140331,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:28.032Z"
+      "timestamp": "2026-05-07T04:30:00.682Z"
     },
     {
       "parentName": "공단",
@@ -140989,7 +141221,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-06T04:29:31.859Z"
+      "timestamp": "2026-05-07T04:30:04.345Z"
     }
   ]
 }
