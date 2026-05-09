@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-09T05:00:50.743Z",
+  "timestamp": "2026-05-09T05:10:48.013Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -413,16 +413,16 @@
           "registered_corporate": 1,
           "registered_taxi": 0,
           "registered_general": 87,
-          "delivered_total": 100,
+          "delivered_total": 101,
           "delivered_priority": 18,
           "delivered_corporate": 1,
           "delivered_taxi": 0,
-          "delivered_general": 81,
-          "remaining_total": 65,
+          "delivered_general": 82,
+          "remaining_total": 64,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 5,
-          "remaining_general": 62,
+          "remaining_general": 61,
           "note": "1. 접수기간 : (상반기_2차) 2026. 5. 15.(금) 09:00 ~ 2026. 6. 30.(화) 18:00\n※ 예산 소진 시 조기마감\n2. 사 업 량 : (상반기) 총 94대 [전기승용 80대, 전기화물 11대, 승합 3대(일반2, 어린이통학1)]\n3. 신청자격 : 구매지원신청서 접수일 기준 1개월 이상 연속하여 동두천시에 주소를 둔\n- 개인 / 개인사업자 / 법인 / 외국인 / 기관\n4. 자세한 내용은 동두천시 공고 제2026-796호 참고"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-09T05:00:50.684Z"
+      "timestamp": "2026-05-09T05:10:47.955Z"
     }
   ]
 }
