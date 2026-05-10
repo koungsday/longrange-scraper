@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-10T04:30:42.827Z",
+  "timestamp": "2026-05-10T04:40:41.593Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -75,16 +75,16 @@
           "registered_corporate": 53,
           "registered_taxi": 230,
           "registered_general": 1382,
-          "delivered_total": 1792,
+          "delivered_total": 1793,
           "delivered_priority": 442,
           "delivered_corporate": 44,
           "delivered_taxi": 181,
-          "delivered_general": 1125,
-          "remaining_total": 333,
+          "delivered_general": 1126,
+          "remaining_total": 332,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 681,
+          "remaining_general": 680,
           "note": "★ 승용 2차 접수 마감되었습니다. ★\n★ 화물 2차 접수 마감되었습니다. ★\n★ 접수 후 빠른 처리를 위해 단순 문의 및 처리 독촉 전화는 자제해주시길 바랍니다. ★\n*2026년 전기자동차 민간보급사업 안내 (2차)*\n- 보급기간  : 마감\n- 보급물량 : 1,063대(승용차 910대, 화물차 150대, 승합차 3대)\n* 보급수량은 차종별 보조금 차등지원 및 차종별 구매수요에 따라 가감될 수 있습니다.\n※ 2026년 전기차 보급대수 : 3,542대(승용차 3,035,  화물차 500, 승합차 7)\n1차 : 마감,     2차 : 마감,     3차 : 7월 예정\n-> 보급추이 및 여건에 따라 회차 및 시기는 조정될수 있습니다.\n- 신청양식 : 대구시 양식(공고문 양식 다운로드)\n- 기타 상세 사항은 공고문을 참고하시기 바랍니다."
         },
         {
@@ -2333,10 +2333,10 @@
           "quota_taxi": 10,
           "quota_general": 170,
           "registered_total": 337,
-          "registered_priority": 28,
+          "registered_priority": 22,
           "registered_corporate": 7,
           "registered_taxi": 5,
-          "registered_general": 297,
+          "registered_general": 303,
           "delivered_total": 157,
           "delivered_priority": 16,
           "delivered_corporate": 4,
@@ -3372,11 +3372,11 @@
           "quota_corporate": 0,
           "quota_taxi": 12,
           "quota_general": 214,
-          "registered_total": 133,
+          "registered_total": 134,
           "registered_priority": 41,
           "registered_corporate": 2,
           "registered_taxi": 0,
-          "registered_general": 90,
+          "registered_general": 91,
           "delivered_total": 86,
           "delivered_priority": 24,
           "delivered_corporate": 1,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-10T04:30:42.767Z"
+      "timestamp": "2026-05-10T04:40:41.543Z"
     }
   ]
 }
