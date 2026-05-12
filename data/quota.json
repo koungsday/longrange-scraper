@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-12T10:00:48.979Z",
+  "timestamp": "2026-05-12T10:10:41.630Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -257,12 +257,12 @@
           "registered_corporate": 49,
           "registered_taxi": 60,
           "registered_general": 1090,
-          "delivered_total": 1518,
-          "delivered_priority": 476,
+          "delivered_total": 1519,
+          "delivered_priority": 477,
           "delivered_corporate": 43,
           "delivered_taxi": 52,
           "delivered_general": 947,
-          "remaining_total": 431,
+          "remaining_total": 430,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -501,7 +501,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 224,
-          "note": "<2026년 과천시 전기자동차 하반기 보급사업>\n▶사업(접수)기간: 2026. 5. 6.(수) 9:00 ~ 2026. 12. 11.(금) 18:00\n▶하반기 보급대수: 승용 112대 화물 8대, 승합(버스) 2대\n▶신청대상: 지원신청일로부터 30일 이상 과천시에 주소를 둔 자\n▶선정방법: 차량 출고·등록순\n※신청서를 포함한 모든 서류 원본대조필 날인 후 첨부 (원본 우편 발송 불필요)\n※자세한 사항은 공고문을 참고하시기 바랍니다.\n★ 전기자동차 구매 예정자는 전기차 비공용 완속충전기 보급지원사업도 진행중이오니 세부사항은 과천시 누리집(고시/공고)에서 확인바랍니다.\n★ 시스템상 잔여대수와 실제 예산내 가능대수는 일치하지 않습니다.\n★  차량보조금 지급액 등 단순문의는 가급적 자제해 주시기 바랍니다."
+          "note": "전기화물 마감(26.5.11.기준)\n--------------------------------------------------------------------------------\n<2026년 과천시 전기자동차 하반기 보급사업>\n▶사업(접수)기간: 2026. 5. 6.(수) 9:00 ~ 2026. 12. 11.(금) 18:00\n▶하반기 보급대수: 승용 112대 화물 8대, 승합(버스) 2대\n▶신청대상: 지원신청일로부터 30일 이상 과천시에 주소를 둔 자\n▶선정방법: 차량 출고·등록순\n※신청서를 포함한 모든 서류 원본대조필 날인 후 첨부 (원본 우편 발송 불필요)\n※자세한 사항은 공고문을 참고하시기 바랍니다.\n★ 전기자동차 구매 예정자는 전기차 비공용 완속충전기 보급지원사업도 진행중이오니 세부사항은 과천시 누리집(고시/공고)에서 확인바랍니다.\n★ 시스템상 잔여대수와 실제 예산내 가능대수는 일치하지 않습니다.\n★  차량보조금 지급액 등 단순문의는 가급적 자제해 주시기 바랍니다."
         },
         {
           "sido": "경기",
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 19439,
+          "registered_total": 19441,
           "registered_priority": 6,
-          "registered_corporate": 18973,
+          "registered_corporate": 18975,
           "registered_taxi": 151,
           "registered_general": 309,
           "delivered_total": 13554,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-12T10:00:48.907Z"
+      "timestamp": "2026-05-12T10:10:41.559Z"
     }
   ]
 }
