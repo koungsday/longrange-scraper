@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-13T22:50:37.846Z",
+  "timestamp": "2026-05-13T23:00:47.403Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1167,8 +1167,8 @@
           "registered_corporate": 0,
           "registered_taxi": 12,
           "registered_general": 102,
-          "delivered_total": 153,
-          "delivered_priority": 51,
+          "delivered_total": 154,
+          "delivered_priority": 52,
           "delivered_corporate": 0,
           "delivered_taxi": 12,
           "delivered_general": 90,
@@ -4157,16 +4157,16 @@
           "registered_corporate": 39,
           "registered_taxi": 190,
           "registered_general": 1395,
-          "delivered_total": 2195,
+          "delivered_total": 2196,
           "delivered_priority": 1046,
           "delivered_corporate": 29,
           "delivered_taxi": 146,
-          "delivered_general": 974,
-          "remaining_total": 1803,
+          "delivered_general": 975,
+          "remaining_total": 1802,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 254,
-          "remaining_general": 2224,
+          "remaining_general": 2223,
           "note": "2026년도 전기자동차 보급 사업(상반기)\n○ 사업 개요\n- 사업명 : 2026년 상반기 전기자동차 보급사업\n- 보급대수 : 승용 3,000대, 화물 1,000대\n- 접수기간 : 2026. 2. 10.(화) 14:00 ~ 6. 30. 18:00\n(예산 소진 상황에 따라 접수 기간 종점은 변경될 수 있으며, 추가 변경 공고가 있을 수 있음)\n- 지원대상 : 제주 도민 및 제주도 내 기업？법인(3개월 이상 지속 거주 및 설립)\n※ 자세한 내용은 공고문을 참고하시기 바랍니다.\n※ 무공해차 누리집 출고잔여대수와 실제 잔여대수는 일치하지 않습니다."
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 19377,
           "registered_taxi": 153,
           "registered_general": 317,
-          "delivered_total": 13799,
+          "delivered_total": 13801,
           "delivered_priority": 6,
-          "delivered_corporate": 13441,
+          "delivered_corporate": 13443,
           "delivered_taxi": 115,
           "delivered_general": 237,
-          "remaining_total": 16201,
+          "remaining_total": 16199,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-13T22:50:37.792Z"
+      "timestamp": "2026-05-13T23:00:47.361Z"
     }
   ]
 }
