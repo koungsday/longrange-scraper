@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-13T10:10:41.909Z",
+  "timestamp": "2026-05-13T10:20:43.358Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 19852,
+          "registered_total": 19853,
           "registered_priority": 6,
-          "registered_corporate": 19376,
+          "registered_corporate": 19377,
           "registered_taxi": 153,
           "registered_general": 317,
           "delivered_total": 13799,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-13T10:10:41.840Z"
+      "timestamp": "2026-05-13T10:20:43.291Z"
     }
   ]
 }
