@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-14T23:20:42.374Z",
+  "timestamp": "2026-05-14T23:30:46.762Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,15 +23,15 @@
           "registered_corporate": 325,
           "registered_taxi": 852,
           "registered_general": 5925,
-          "delivered_total": 8252,
-          "delivered_priority": 2455,
+          "delivered_total": 8255,
+          "delivered_priority": 2456,
           "delivered_corporate": 269,
-          "delivered_taxi": 731,
+          "delivered_taxi": 733,
           "delivered_general": 4797,
-          "remaining_total": 3949,
+          "remaining_total": 3946,
           "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 109,
+          "remaining_taxi": 107,
           "remaining_general": 4964,
           "note": "**2026.5.13. 기준 상반기 서울시 전기승용차 보급 현황 알려 드립니다.\n(택시 840대 미포함)\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 9,064대\nㅇ 잔여대수: 2,297대\n-----------------------------\nㅇ 택시 잔여대수: 0대\n** 상반기 보급물량 소진시에는 당초 일정보다 조기에 마감할 계획입니다."
         },
@@ -699,16 +699,16 @@
           "registered_corporate": 37,
           "registered_taxi": 59,
           "registered_general": 1623,
-          "delivered_total": 1646,
+          "delivered_total": 1647,
           "delivered_priority": 571,
           "delivered_corporate": 24,
           "delivered_taxi": 56,
-          "delivered_general": 995,
-          "remaining_total": 1154,
+          "delivered_general": 996,
+          "remaining_total": 1153,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 4,
-          "remaining_general": 1545,
+          "remaining_general": 1544,
           "note": "★ 화물 - 마감 (2026.2.5.) / 하반기 물량 : 6월말 공고, 7월초 접수 예정 ★\n★★  승용 : 상반기 추가 공고 물량 조기마감 (2026.5.13. 기준)★★\n■ 전기자동차 승용 상반기 추가 공고 안내  ■\n- 공고 : 2026. 4. 27.(월)\n- 접수 : 2026. 5. 6.(수) 10:00 ~\n- 물량 : 800대 (예정) (차종 및 추가지원 여부에 따라 대수는 변동 가능)\n※전체 일반물량으로 진행되며 추가보조금은 대상에 따라 정상 지급됩니다.\n★ 기존 접수 건은 취소 후 다시 신청하시기 바랍니다. (출고지연 취소 및 보완처리로 인한 처리지연 문제 발생) ★\n※ 반드시 공고문 확인하시고 신청하시기 바랍니다.\n※ 사업개시 후 신청 폭주로 전화응대가 어려울 수 있습니다. 독촉여부와 상관없이 접수된 순서대로 공정하게 처리하오니 단순 확인. 독촉 전화 등은 삼가주시기 바랍니다.\n사업개시일 오후 2시부터 자격부여 진행합니다. 오전에는 자격부여하지 않으니 참고하시기 바랍니다.\n사업개시일에는 신청 폭주로 당일 대상자 선정이 불가합니다. 향후에도 당일신청 당일 대상자선정은 어려울 수 있으니 출고일 전에 미리 신청해주시기 바랍니다."
         },
         {
@@ -3117,12 +3117,12 @@
           "registered_corporate": 22,
           "registered_taxi": 93,
           "registered_general": 777,
-          "delivered_total": 586,
-          "delivered_priority": 161,
+          "delivered_total": 588,
+          "delivered_priority": 163,
           "delivered_corporate": 12,
           "delivered_taxi": 93,
           "delivered_general": 320,
-          "remaining_total": 223,
+          "remaining_total": 221,
           "remaining_priority": 0,
           "remaining_corporate": 18,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-14T23:20:42.297Z"
+      "timestamp": "2026-05-14T23:30:46.684Z"
     }
   ]
 }
