@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-14T12:20:39.095Z",
+  "timestamp": "2026-05-14T12:30:44.569Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -923,11 +923,11 @@
           "sido": "경기",
           "region": "여주시",
           "vehicleType": "전기승용",
-          "quota_total": 255,
-          "quota_priority": 25,
+          "quota_total": 509,
+          "quota_priority": 50,
           "quota_corporate": 0,
-          "quota_taxi": 5,
-          "quota_general": 225,
+          "quota_taxi": 10,
+          "quota_general": 449,
           "registered_total": 168,
           "registered_priority": 41,
           "registered_corporate": 4,
@@ -938,11 +938,11 @@
           "delivered_corporate": 4,
           "delivered_taxi": 4,
           "delivered_general": 118,
-          "remaining_total": 88,
-          "remaining_priority": 0,
+          "remaining_total": 342,
+          "remaining_priority": 9,
           "remaining_corporate": 0,
-          "remaining_taxi": 1,
-          "remaining_general": 107,
+          "remaining_taxi": 6,
+          "remaining_general": 331,
           "note": "※ 여주시는 전기승용, 전기화물 상반기 물량 접수가 마감되었으며, 추경계획 없습니다.\n※ 하반기 물량[전기승용 254대(국비 300만원 기준), 전기화물 78대(국비 1,000만원 기준)]은 7월1일부터 접수 시작합니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-14T12:20:39.030Z"
+      "timestamp": "2026-05-14T12:30:44.501Z"
     }
   ]
 }
