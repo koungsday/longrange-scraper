@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-14T09:00:47.511Z",
+  "timestamp": "2026-05-14T09:10:50.407Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -465,16 +465,16 @@
           "registered_corporate": 35,
           "registered_taxi": 42,
           "registered_general": 1149,
-          "delivered_total": 1695,
+          "delivered_total": 1696,
           "delivered_priority": 506,
           "delivered_corporate": 34,
           "delivered_taxi": 37,
-          "delivered_general": 1118,
-          "remaining_total": 805,
+          "delivered_general": 1119,
+          "remaining_total": 804,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 43,
-          "remaining_general": 882,
+          "remaining_general": 881,
           "note": "< 4.20. 전기승용 마감되었습니다 >\n< 자격부여 건에 한하여 지원가능요청 순으로 대기자가 되며, 취소물량 발생 등으로 추가 선정이 가능한 경우 지원대상자로 선정하고 문자 안내드리겠습니다 >\n< 전기택시는 신청 가능함 >\n< 하반기 사업 일정은 현재 검토중입니다 >\n★문의 전 공고문을 확인하여 주시기 바라며, 단순 문의는 자제하여 주시기 바랍니다. 전화문의 응대로 인해 자격부여 및 대상자선정이 지연됩니다.\n☆차종별 보조금 확인 방법 : 무공해차 통합누리집 → 구매 및 지원 → 무공해차 구매보조금 지원 → 구매보조금 지급현황 → 지자체 차종별 보조금\n★무공해차 통합누리집 시스템상 잔여대수와 실제 지원가능 대수는 일치하지 않을 수 있습니다.\n★2026년 상반기 고양시 전기자동차 보급사업 공고★\n-보급대수 : 전기승용 2,500대 / 전기화물 200대 / 전기승합 10대 / 전기승합(어린이통학용) 2대\n(※ 차종별 보조금 및 보급대수는 예산범위 내에서 변동될 수 있음)\n-접수기간 : 2026. 2. 2.(월) 09:00 ~ 2026. 06. 30.(화) 18:00\n-자세한 사항은 공고문을 확인하여 주시기 바랍니다."
         },
         {
@@ -595,16 +595,16 @@
           "registered_corporate": 21,
           "registered_taxi": 33,
           "registered_general": 715,
-          "delivered_total": 493,
+          "delivered_total": 494,
           "delivered_priority": 58,
           "delivered_corporate": 13,
           "delivered_taxi": 22,
-          "delivered_general": 400,
-          "remaining_total": 509,
+          "delivered_general": 401,
+          "remaining_total": 508,
           "remaining_priority": 27,
           "remaining_corporate": 0,
           "remaining_taxi": 28,
-          "remaining_general": 467,
+          "remaining_general": 466,
           "note": "※전기승용차 대상자선정 완료되었습니다.(25.5.12. 17:00), 취소가 나올경우 지원가능확인요청 순으로 연락드리겠습니다.(자격부여는 대상자로 선정된것이 아니오니 착오없으시길 바랍니다)\n※전기화물차 대상자선정 완료되었습니다. 취소가 나올경우 순차적으로 연락드리겠습니다.(지원가능확인요청, 자격부여 단계는 대상자로 선정된것이 아니오니 착오없으시길 바랍니다)\n★★차종별 보조금액이 상이하므로 공고 대수와 실제 보급 대수는 상이합니다.\n☜시스템상 잔여대수와 실제 잔여대수는 일치하지 않습니다★★\n<2026년 전기자동차 보급사업 2차 공고>\n○ 접수기간\n- (화물) 5.6.(수) 11:00 ~ 예산소진 시 까지\n- (승용) 5.8.(금) 11:00 ~ 예산소진 시 까지\n○ 보급대수: 승용(352대), 화물(75대), 승합(2대), 어린이통학차량(3대)\n○ 자격조건 : 시흥시 거주 90일 이상\n○  선정방법: 출고등록순\n※자세한 사항은 공고문으로 확인 바랍니다."
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 19638,
           "registered_taxi": 156,
           "registered_general": 327,
-          "delivered_total": 14000,
+          "delivered_total": 14001,
           "delivered_priority": 6,
-          "delivered_corporate": 13638,
+          "delivered_corporate": 13639,
           "delivered_taxi": 117,
           "delivered_general": 239,
-          "remaining_total": 16000,
+          "remaining_total": 15999,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-14T09:00:47.462Z"
+      "timestamp": "2026-05-14T09:10:50.335Z"
     }
   ]
 }
