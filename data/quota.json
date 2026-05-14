@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-14T22:40:37.340Z",
+  "timestamp": "2026-05-14T22:50:44.598Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1635,16 +1635,16 @@
           "registered_corporate": 3,
           "registered_taxi": 3,
           "registered_general": 114,
-          "delivered_total": 126,
+          "delivered_total": 127,
           "delivered_priority": 36,
           "delivered_corporate": 3,
           "delivered_taxi": 3,
-          "delivered_general": 84,
-          "remaining_total": 52,
+          "delivered_general": 85,
+          "remaining_total": 51,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 6,
-          "remaining_general": 67,
+          "remaining_general": 66,
           "note": "2026년 상반기 전기자동차 보급지원사업\n○ 공고일 : 2026.1.29.\n○ 접수기간 : 2026. 2. 2. ~ 2026. 6. 30. (예산소진시 조기마감)\n○ 보급대수 : 전기승용 180대(일반 153,우선순위 18,택시9)"
         },
         {
@@ -4053,13 +4053,13 @@
           "registered_corporate": 0,
           "registered_taxi": 0,
           "registered_general": 41,
-          "delivered_total": 46,
-          "delivered_priority": 11,
+          "delivered_total": 47,
+          "delivered_priority": 12,
           "delivered_corporate": 0,
           "delivered_taxi": 0,
           "delivered_general": 35,
-          "remaining_total": 74,
-          "remaining_priority": 1,
+          "remaining_total": 73,
+          "remaining_priority": 0,
           "remaining_corporate": 4,
           "remaining_taxi": 5,
           "remaining_general": 64,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-14T22:40:37.284Z"
+      "timestamp": "2026-05-14T22:50:44.545Z"
     }
   ]
 }
