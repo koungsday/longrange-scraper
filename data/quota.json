@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-14T10:30:44.609Z",
+  "timestamp": "2026-05-14T10:40:45.723Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2155,16 +2155,16 @@
           "registered_corporate": 2,
           "registered_taxi": 0,
           "registered_general": 111,
-          "delivered_total": 119,
+          "delivered_total": 118,
           "delivered_priority": 10,
           "delivered_corporate": 2,
           "delivered_taxi": 0,
-          "delivered_general": 107,
-          "remaining_total": 86,
+          "delivered_general": 106,
+          "remaining_total": 87,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 10,
-          "remaining_general": 78,
+          "remaining_general": 79,
           "note": "※ 상반기 공고 마감\n----------------------------------------------------------------------------------------------------\n※ 상반기 추가 공고\n- 공 고 일 : 5월 6일(수)\n- 접수기간 : 5월 18일(월) ~ 6. 30.(화)  09:00 ~ 18:00, 예산소진 시 까지\n* 차종별 보조금 차등지원 및 추가지원금으로 인하여 보급대수는 조정될 수 있음\n→ 무공해차 누리집의 출고 잔여대수는 실제 잔여대수와 다를 수 있음\n* 상반기 1차 신청분 그대로 유지 가능하나, 자격부여일이 2개월 지난 신청자는 자격부여 선정 취소 예정\n* 우선순위, 승용택시, 택배 물량은 상반기 1차 공고만 진행\n* 차량 출고 후 보조금 지급 신청서 원본서류 제출 必(구매지원서류 및 보조금지급서류 일체)\n※ 자세한 사항은 공고문 참고하시기 바랍니다.(태안군 공고 제2026-919호)"
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 19635,
           "registered_taxi": 156,
           "registered_general": 327,
-          "delivered_total": 14026,
+          "delivered_total": 14032,
           "delivered_priority": 6,
-          "delivered_corporate": 13662,
+          "delivered_corporate": 13668,
           "delivered_taxi": 119,
           "delivered_general": 239,
-          "remaining_total": 15974,
+          "remaining_total": 15968,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-14T10:30:44.539Z"
+      "timestamp": "2026-05-14T10:40:45.655Z"
     }
   ]
 }
