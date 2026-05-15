@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-15T03:30:45.680Z",
+  "timestamp": "2026-05-15T03:40:43.079Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1063,15 +1063,15 @@
           "registered_corporate": 17,
           "registered_taxi": 40,
           "registered_general": 716,
-          "delivered_total": 998,
+          "delivered_total": 999,
           "delivered_priority": 339,
           "delivered_corporate": 14,
-          "delivered_taxi": 34,
+          "delivered_taxi": 35,
           "delivered_general": 611,
-          "remaining_total": 542,
+          "remaining_total": 541,
           "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 16,
+          "remaining_taxi": 15,
           "remaining_general": 729,
           "note": "○ 제조수입사는 공고문 필독하시기 바랍니다. 공고 미숙지 및 시스템 오기입 등으로 인한 보완 발생 시 순번 밀릴 수 있으며, 시는 책임지지 않습니다.\n○ 추경 9월 예정(일정 확정은 아니지만 유력하며, 변동 또는 확정 시 해당 페이지에 기재합니다)\n○ 5. 7. 승용 마감(대상자 선정 건 중 취소 물량 발생할 경우 지원가능확인요청순으로 추가 선정 / 신청은 가능합니다)\n○ 무공해차 통합누리집 내 출고잔여대수와 실제 잔여대수는 일치하지 않음\n○ 지급신청서 원주시 공고 서식 사용 및 원본서류 일체 발송\n○ 2차 공고 안내\n- 공고일: 4. 23.\n- 접수일: 4. 28. 09:00 ~\n- 공고대수: 승용 340대, 화물 90대, 승합(개인) 3대\n○ 전기승용 신청접수일(2차) : 2026. 4. 28.(화) 09:00\n○ 1차 공고 마감일: 4. 14.(대상자선정 마감)\n○ 연간 총 보급대수 1,540대(1차 1,200대, 2차 340대)\n- 보급대수는 차종별 보조금 차등 지원 및 국비 추가 지급 등에 따라 변동될 수 있습니다."
         },
@@ -4152,17 +4152,17 @@
           "quota_corporate": 0,
           "quota_taxi": 400,
           "quota_general": 3198,
-          "registered_total": 3236,
+          "registered_total": 3237,
           "registered_priority": 1547,
           "registered_corporate": 39,
           "registered_taxi": 195,
-          "registered_general": 1455,
-          "delivered_total": 2248,
+          "registered_general": 1456,
+          "delivered_total": 2249,
           "delivered_priority": 1067,
-          "delivered_corporate": 30,
+          "delivered_corporate": 31,
           "delivered_taxi": 150,
           "delivered_general": 1001,
-          "remaining_total": 1750,
+          "remaining_total": 1749,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 250,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-15T03:30:45.623Z"
+      "timestamp": "2026-05-15T03:40:43.009Z"
     }
   ]
 }
