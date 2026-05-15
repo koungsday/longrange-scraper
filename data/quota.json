@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-15T03:51:07.754Z",
+  "timestamp": "2026-05-15T04:01:17.527Z",
   "total_regions": 1,
   "success_count": 0,
   "failed_count": 1,
@@ -12,7 +12,7 @@
       "success": false,
       "error": "Waiting for selector `table` failed: Waiting failed: 10000ms exceeded",
       "attempts": 3,
-      "timestamp": "2026-05-15T03:51:07.712Z"
+      "timestamp": "2026-05-15T04:01:17.480Z"
     }
   ]
 }
