@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-15T09:30:47.914Z",
+  "timestamp": "2026-05-15T09:40:40.286Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -439,16 +439,16 @@
           "registered_corporate": 35,
           "registered_taxi": 39,
           "registered_general": 481,
-          "delivered_total": 593,
+          "delivered_total": 594,
           "delivered_priority": 165,
           "delivered_corporate": 28,
           "delivered_taxi": 33,
-          "delivered_general": 367,
-          "remaining_total": 657,
+          "delivered_general": 368,
+          "remaining_total": 656,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 27,
-          "remaining_general": 763,
+          "remaining_general": 762,
           "note": "★  전기승용차 잔여물량(보조금 확정 기준) 약 210대(2026. 5.15. 15:30 기준)\n★  전기화물 대상자선정 마감\n- 자격부여 건에 한하여 지원가능여부 요청 순으로 대기자가 되며 취소 물량 발생 시 추가 선정 가능함\n★  신청서를 포함한 모든 서류 원본대조필 날인 후 첨부 (원본 우편 발송 불필요)\n★  생애최초(청년) 구매자 증빙서류 발급 절차는 파일(추경 1차 3)에서 확인 가능\n<2026년도 전기자동차 보급사업 2차 변경 공고>\n□ 사업(접수)기간 : (화물, 승합) 2026. 5. 6.(수) 09:00  ~ 2026. 12. 4.(금) 18:00\n(승용)         2026. 5. 11.(월) 09:00 ~ 2026. 12. 4.(금) 18:00\n※ 예산 소진 시 조기 마감\n□ 변경내용 : 승합 신청기간, 전환지원금 제외대상 추가\n□ 보급대수 : 승용 450대, 화물 118대, 승합 6대\n※ 보급대수는 차종별 보조금 차등지원 및 차종별 구매수요에 따라 변동될 수 있습니다.\n□ 신청대상 : 구매신청서 접수일 기준 연속하여 30일 이상 안산시에 주소를 둔 개인·개인사업자, 법인 등\n□ 선정방법 : 출고·등록순에 의한 선정\n※ 반드시 공고문을 읽고 신청하여 주시기 바랍니다.\n※ 차량보조금 지급액 등 단순문의는 가급적 자제해 주시기 바랍니다."
         },
         {
@@ -538,11 +538,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 2330,
-          "registered_total": 1560,
+          "registered_total": 1561,
           "registered_priority": 527,
           "registered_corporate": 30,
           "registered_taxi": 26,
-          "registered_general": 977,
+          "registered_general": 978,
           "delivered_total": 996,
           "delivered_priority": 348,
           "delivered_corporate": 22,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-15T09:30:47.832Z"
+      "timestamp": "2026-05-15T09:40:40.189Z"
     }
   ]
 }
