@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-16T14:40:38.090Z",
+  "timestamp": "2026-05-16T14:50:37.467Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3679,11 +3679,11 @@
           "sido": "경남",
           "region": "창원시",
           "vehicleType": "전기승용",
-          "quota_total": 1400,
-          "quota_priority": 140,
+          "quota_total": 2500,
+          "quota_priority": 240,
           "quota_corporate": 0,
-          "quota_taxi": 70,
-          "quota_general": 1190,
+          "quota_taxi": 120,
+          "quota_general": 2140,
           "registered_total": 1419,
           "registered_priority": 140,
           "registered_corporate": 19,
@@ -3694,11 +3694,11 @@
           "delivered_corporate": 19,
           "delivered_taxi": 70,
           "delivered_general": 1190,
-          "remaining_total": 0,
-          "remaining_priority": 1,
+          "remaining_total": 1082,
+          "remaining_priority": 101,
           "remaining_corporate": 0,
-          "remaining_taxi": 0,
-          "remaining_general": 0,
+          "remaining_taxi": 50,
+          "remaining_general": 950,
           "note": "<2026년 창원시 상반기 전기자동차 보급사업(2차) 안내>\n1. 신청기간: 2026. 5. 22.(금) 10:00 ~ 예산 소진 시\n*화물 14:00 접수시작\n2. 보급물량\n- 승용 1,100대 (일반 950 우선순위 100 택시 50)\n- 화물 200대 (일반 170 우선순위 20 택배 10)\n- 승합 4대 (일반승합 2, 어린이통학 2)\n※ 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음\n3. 선정기준: 차량 출고등록순\n4. 차종별 지원금액: 창원시 추경1차2 엑셀파일 참고\n☞ 전환지원금 단가는 참고용으로, 시스템상 자동계산금액으로 반영합니다!\n※ 전환지원금 개인만 가능 (개인사업자, 법인 지급 불가)\n※ 일반승합 개인만 지원 가능 (개인사업자, 법인 지급 불가)\n※ 공고문 반드시 확인 부탁드립니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-16T14:40:38.025Z"
+      "timestamp": "2026-05-16T14:50:37.407Z"
     }
   ]
 }
