@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-17T22:30:40.827Z",
+  "timestamp": "2026-05-17T22:40:36.668Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3377,16 +3377,16 @@
           "registered_corporate": 3,
           "registered_taxi": 0,
           "registered_general": 96,
-          "delivered_total": 93,
+          "delivered_total": 94,
           "delivered_priority": 25,
           "delivered_corporate": 1,
           "delivered_taxi": 0,
-          "delivered_general": 67,
-          "remaining_total": 157,
+          "delivered_general": 68,
+          "remaining_total": 156,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 12,
-          "remaining_general": 147,
+          "remaining_general": 146,
           "note": "※ 2차 접수 마감되었습니다. 7~8월중 3차접수 예정(단가기준 100대)이므로 잔여물량, 추가접수 등에 대한 유선 문의 자제 요청드립니다.\n단순 민원(접수확인, 추가보조금금액 문의 등)은 공고문 및 통합누리집을 참고해주시기 바랍니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-17T22:30:40.748Z"
+      "timestamp": "2026-05-17T22:40:36.604Z"
     }
   ]
 }
