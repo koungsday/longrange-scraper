@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "lastUpdated": "2026. 5. 17. PM 11:50:37 KST",
+  "lastUpdated": "2026. 5. 18. AM 12:00:56 KST",
   "regions": {
     "1100": {
       "name": "서울특별시",
@@ -412827,6 +412827,5128 @@
       }
     },
     "2026-05-17": {
+      "1100": {
+        "전기승용": {
+          "total": {
+            "total": 12201,
+            "priority": 1600,
+            "corporate": 0,
+            "taxi": 840,
+            "general": 9761
+          },
+          "remaining": {
+            "total": 3808,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 93,
+            "general": 4879
+          },
+          "registered": {
+            "total": 10137,
+            "priority": 2974,
+            "corporate": 326,
+            "taxi": 850,
+            "general": 5987
+          },
+          "delivered": {
+            "total": 8393,
+            "priority": 2491,
+            "corporate": 273,
+            "taxi": 747,
+            "general": 4882
+          }
+        }
+      },
+      "2600": {
+        "전기승용": {
+          "total": {
+            "total": 4126,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 4126
+          },
+          "remaining": {
+            "total": 44,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 1871
+          },
+          "registered": {
+            "total": 4083,
+            "priority": 1188,
+            "corporate": 94,
+            "taxi": 545,
+            "general": 2256
+          },
+          "delivered": {
+            "total": 4082,
+            "priority": 1188,
+            "corporate": 94,
+            "taxi": 545,
+            "general": 2255
+          }
+        }
+      },
+      "2700": {
+        "전기승용": {
+          "total": {
+            "total": 2125,
+            "priority": 213,
+            "corporate": 0,
+            "taxi": 106,
+            "general": 1806
+          },
+          "remaining": {
+            "total": 199,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 603
+          },
+          "registered": {
+            "total": 2197,
+            "priority": 536,
+            "corporate": 53,
+            "taxi": 230,
+            "general": 1378
+          },
+          "delivered": {
+            "total": 1926,
+            "priority": 476,
+            "corporate": 49,
+            "taxi": 198,
+            "general": 1203
+          }
+        }
+      },
+      "2800": {
+        "전기승용": {
+          "total": {
+            "total": 4700,
+            "priority": 670,
+            "corporate": 0,
+            "taxi": 335,
+            "general": 3695
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 183,
+            "general": 785
+          },
+          "registered": {
+            "total": 4885,
+            "priority": 1649,
+            "corporate": 78,
+            "taxi": 171,
+            "general": 2987
+          },
+          "delivered": {
+            "total": 4755,
+            "priority": 1615,
+            "corporate": 78,
+            "taxi": 152,
+            "general": 2910
+          }
+        }
+      },
+      "2900": {
+        "전기승용": {
+          "total": {
+            "total": 1930,
+            "priority": 193,
+            "corporate": 0,
+            "taxi": 97,
+            "general": 1640
+          },
+          "remaining": {
+            "total": 49,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 184
+          },
+          "registered": {
+            "total": 1895,
+            "priority": 215,
+            "corporate": 41,
+            "taxi": 181,
+            "general": 1458
+          },
+          "delivered": {
+            "total": 1881,
+            "priority": 214,
+            "corporate": 41,
+            "taxi": 170,
+            "general": 1456
+          }
+        }
+      },
+      "3000": {
+        "전기승용": {
+          "total": {
+            "total": 924,
+            "priority": 92,
+            "corporate": 0,
+            "taxi": 46,
+            "general": 786
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 39
+          },
+          "registered": {
+            "total": 1280,
+            "priority": 387,
+            "corporate": 32,
+            "taxi": 91,
+            "general": 770
+          },
+          "delivered": {
+            "total": 1239,
+            "priority": 372,
+            "corporate": 31,
+            "taxi": 89,
+            "general": 747
+          }
+        }
+      },
+      "3100": {
+        "전기승용": {
+          "total": {
+            "total": 1736,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 1736
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 492
+          },
+          "registered": {
+            "total": 2166,
+            "priority": 730,
+            "corporate": 32,
+            "taxi": 115,
+            "general": 1289
+          },
+          "delivered": {
+            "total": 2103,
+            "priority": 712,
+            "corporate": 32,
+            "taxi": 115,
+            "general": 1244
+          }
+        }
+      },
+      "3611": {
+        "전기승용": {
+          "total": {
+            "total": 797,
+            "priority": 120,
+            "corporate": 0,
+            "taxi": 40,
+            "general": 637
+          },
+          "remaining": {
+            "total": 276,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 34,
+            "general": 334
+          },
+          "registered": {
+            "total": 539,
+            "priority": 214,
+            "corporate": 4,
+            "taxi": 6,
+            "general": 315
+          },
+          "delivered": {
+            "total": 521,
+            "priority": 208,
+            "corporate": 4,
+            "taxi": 6,
+            "general": 303
+          }
+        }
+      },
+      "4111": {
+        "전기승용": {
+          "total": {
+            "total": 3870,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 193,
+            "general": 3677
+          },
+          "remaining": {
+            "total": 1924,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 118,
+            "general": 2467
+          },
+          "registered": {
+            "total": 2684,
+            "priority": 856,
+            "corporate": 31,
+            "taxi": 110,
+            "general": 1687
+          },
+          "delivered": {
+            "total": 1946,
+            "priority": 638,
+            "corporate": 23,
+            "taxi": 75,
+            "general": 1210
+          }
+        }
+      },
+      "4113": {
+        "전기승용": {
+          "total": {
+            "total": 1949,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 1949
+          },
+          "remaining": {
+            "total": 309,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 926
+          },
+          "registered": {
+            "total": 1747,
+            "priority": 549,
+            "corporate": 49,
+            "taxi": 60,
+            "general": 1089
+          },
+          "delivered": {
+            "total": 1640,
+            "priority": 514,
+            "corporate": 48,
+            "taxi": 55,
+            "general": 1023
+          }
+        }
+      },
+      "4115": {
+        "전기승용": {
+          "total": {
+            "total": 700,
+            "priority": 70,
+            "corporate": 0,
+            "taxi": 35,
+            "general": 595
+          },
+          "remaining": {
+            "total": 157,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 16,
+            "general": 245
+          },
+          "registered": {
+            "total": 609,
+            "priority": 187,
+            "corporate": 3,
+            "taxi": 20,
+            "general": 399
+          },
+          "delivered": {
+            "total": 543,
+            "priority": 171,
+            "corporate": 3,
+            "taxi": 19,
+            "general": 350
+          }
+        }
+      },
+      "4117": {
+        "전기승용": {
+          "total": {
+            "total": 2080,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 104,
+            "general": 1976
+          },
+          "remaining": {
+            "total": 1207,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 60,
+            "general": 1453
+          },
+          "registered": {
+            "total": 991,
+            "priority": 327,
+            "corporate": 17,
+            "taxi": 51,
+            "general": 596
+          },
+          "delivered": {
+            "total": 873,
+            "priority": 295,
+            "corporate": 11,
+            "taxi": 44,
+            "general": 523
+          }
+        }
+      },
+      "4119": {
+        "전기승용": {
+          "total": {
+            "total": 550,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 550
+          },
+          "remaining": {
+            "total": 222,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 356
+          },
+          "registered": {
+            "total": 572,
+            "priority": 154,
+            "corporate": 10,
+            "taxi": 51,
+            "general": 357
+          },
+          "delivered": {
+            "total": 328,
+            "priority": 99,
+            "corporate": 6,
+            "taxi": 29,
+            "general": 194
+          }
+        }
+      },
+      "4121": {
+        "전기승용": {
+          "total": {
+            "total": 750,
+            "priority": 35,
+            "corporate": 0,
+            "taxi": 30,
+            "general": 685
+          },
+          "remaining": {
+            "total": 397,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 25,
+            "general": 460
+          },
+          "registered": {
+            "total": 571,
+            "priority": 176,
+            "corporate": 16,
+            "taxi": 6,
+            "general": 373
+          },
+          "delivered": {
+            "total": 353,
+            "priority": 111,
+            "corporate": 12,
+            "taxi": 5,
+            "general": 225
+          }
+        }
+      },
+      "4122": {
+        "전기승용": {
+          "total": {
+            "total": 1840,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 1840
+          },
+          "remaining": {
+            "total": 531,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 1050
+          },
+          "registered": {
+            "total": 1487,
+            "priority": 523,
+            "corporate": 29,
+            "taxi": 28,
+            "general": 907
+          },
+          "delivered": {
+            "total": 1309,
+            "priority": 467,
+            "corporate": 25,
+            "taxi": 27,
+            "general": 790
+          }
+        }
+      },
+      "4125": {
+        "전기승용": {
+          "total": {
+            "total": 165,
+            "priority": 17,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 143
+          },
+          "remaining": {
+            "total": 62,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 59
+          },
+          "registered": {
+            "total": 133,
+            "priority": 24,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 108
+          },
+          "delivered": {
+            "total": 103,
+            "priority": 18,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 84
+          }
+        }
+      },
+      "4127": {
+        "전기승용": {
+          "total": {
+            "total": 1250,
+            "priority": 60,
+            "corporate": 0,
+            "taxi": 60,
+            "general": 1130
+          },
+          "remaining": {
+            "total": 654,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 27,
+            "general": 761
+          },
+          "registered": {
+            "total": 780,
+            "priority": 225,
+            "corporate": 35,
+            "taxi": 39,
+            "general": 481
+          },
+          "delivered": {
+            "total": 596,
+            "priority": 166,
+            "corporate": 28,
+            "taxi": 33,
+            "general": 369
+          }
+        }
+      },
+      "4128": {
+        "전기승용": {
+          "total": {
+            "total": 2500,
+            "priority": 420,
+            "corporate": 0,
+            "taxi": 80,
+            "general": 2000
+          },
+          "remaining": {
+            "total": 798,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 43,
+            "general": 876
+          },
+          "registered": {
+            "total": 1742,
+            "priority": 515,
+            "corporate": 35,
+            "taxi": 43,
+            "general": 1149
+          },
+          "delivered": {
+            "total": 1702,
+            "priority": 507,
+            "corporate": 34,
+            "taxi": 37,
+            "general": 1124
+          }
+        }
+      },
+      "4129": {
+        "전기승용": {
+          "total": {
+            "total": 314,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 314
+          },
+          "remaining": {
+            "total": 133,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 222
+          },
+          "registered": {
+            "total": 234,
+            "priority": 101,
+            "corporate": 6,
+            "taxi": 4,
+            "general": 123
+          },
+          "delivered": {
+            "total": 181,
+            "priority": 81,
+            "corporate": 5,
+            "taxi": 3,
+            "general": 92
+          }
+        }
+      },
+      "4131": {
+        "전기승용": {
+          "total": {
+            "total": 400,
+            "priority": 40,
+            "corporate": 0,
+            "taxi": 20,
+            "general": 340
+          },
+          "remaining": {
+            "total": 122,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 8,
+            "general": 155
+          },
+          "registered": {
+            "total": 295,
+            "priority": 76,
+            "corporate": 7,
+            "taxi": 12,
+            "general": 200
+          },
+          "delivered": {
+            "total": 278,
+            "priority": 74,
+            "corporate": 7,
+            "taxi": 12,
+            "general": 185
+          }
+        }
+      },
+      "4136": {
+        "전기승용": {
+          "total": {
+            "total": 2330,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 2330
+          },
+          "remaining": {
+            "total": 1334,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 1719
+          },
+          "registered": {
+            "total": 1561,
+            "priority": 527,
+            "corporate": 30,
+            "taxi": 26,
+            "general": 978
+          },
+          "delivered": {
+            "total": 996,
+            "priority": 348,
+            "corporate": 22,
+            "taxi": 15,
+            "general": 611
+          }
+        }
+      },
+      "4137": {
+        "전기승용": {
+          "total": {
+            "total": 1000,
+            "priority": 60,
+            "corporate": 0,
+            "taxi": 30,
+            "general": 910
+          },
+          "remaining": {
+            "total": 578,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 26,
+            "general": 639
+          },
+          "registered": {
+            "total": 568,
+            "priority": 191,
+            "corporate": 12,
+            "taxi": 6,
+            "general": 359
+          },
+          "delivered": {
+            "total": 422,
+            "priority": 137,
+            "corporate": 10,
+            "taxi": 4,
+            "general": 271
+          }
+        }
+      },
+      "4139": {
+        "전기승용": {
+          "total": {
+            "total": 1002,
+            "priority": 85,
+            "corporate": 0,
+            "taxi": 50,
+            "general": 867
+          },
+          "remaining": {
+            "total": 495,
+            "priority": 26,
+            "corporate": 0,
+            "taxi": 26,
+            "general": 456
+          },
+          "registered": {
+            "total": 882,
+            "priority": 114,
+            "corporate": 21,
+            "taxi": 33,
+            "general": 714
+          },
+          "delivered": {
+            "total": 507,
+            "priority": 59,
+            "corporate": 13,
+            "taxi": 24,
+            "general": 411
+          }
+        }
+      },
+      "4141": {
+        "전기승용": {
+          "total": {
+            "total": 750,
+            "priority": 60,
+            "corporate": 0,
+            "taxi": 23,
+            "general": 667
+          },
+          "remaining": {
+            "total": 409,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 21,
+            "general": 440
+          },
+          "registered": {
+            "total": 349,
+            "priority": 105,
+            "corporate": 10,
+            "taxi": 2,
+            "general": 232
+          },
+          "delivered": {
+            "total": 341,
+            "priority": 103,
+            "corporate": 9,
+            "taxi": 2,
+            "general": 227
+          }
+        }
+      },
+      "4143": {
+        "전기승용": {
+          "total": {
+            "total": 661,
+            "priority": 20,
+            "corporate": 0,
+            "taxi": 15,
+            "general": 626
+          },
+          "remaining": {
+            "total": 422,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 481
+          },
+          "registered": {
+            "total": 364,
+            "priority": 121,
+            "corporate": 6,
+            "taxi": 13,
+            "general": 224
+          },
+          "delivered": {
+            "total": 239,
+            "priority": 87,
+            "corporate": 2,
+            "taxi": 5,
+            "general": 145
+          }
+        }
+      },
+      "4145": {
+        "전기승용": {
+          "total": {
+            "total": 630,
+            "priority": 50,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 580
+          },
+          "remaining": {
+            "total": 59,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 112
+          },
+          "registered": {
+            "total": 590,
+            "priority": 88,
+            "corporate": 16,
+            "taxi": 5,
+            "general": 481
+          },
+          "delivered": {
+            "total": 571,
+            "priority": 83,
+            "corporate": 16,
+            "taxi": 4,
+            "general": 468
+          }
+        }
+      },
+      "4146": {
+        "전기승용": {
+          "total": {
+            "total": 4627,
+            "priority": 200,
+            "corporate": 0,
+            "taxi": 60,
+            "general": 4367
+          },
+          "remaining": {
+            "total": 2948,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 3349
+          },
+          "registered": {
+            "total": 2634,
+            "priority": 916,
+            "corporate": 38,
+            "taxi": 59,
+            "general": 1621
+          },
+          "delivered": {
+            "total": 1679,
+            "priority": 580,
+            "corporate": 24,
+            "taxi": 57,
+            "general": 1018
+          }
+        }
+      },
+      "4148": {
+        "전기승용": {
+          "total": {
+            "total": 1229,
+            "priority": 120,
+            "corporate": 0,
+            "taxi": 60,
+            "general": 1049
+          },
+          "remaining": {
+            "total": 330,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 40,
+            "general": 492
+          },
+          "registered": {
+            "total": 958,
+            "priority": 323,
+            "corporate": 17,
+            "taxi": 22,
+            "general": 596
+          },
+          "delivered": {
+            "total": 899,
+            "priority": 306,
+            "corporate": 16,
+            "taxi": 20,
+            "general": 557
+          }
+        }
+      },
+      "4150": {
+        "전기승용": {
+          "total": {
+            "total": 668,
+            "priority": 66,
+            "corporate": 0,
+            "taxi": 33,
+            "general": 569
+          },
+          "remaining": {
+            "total": 170,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 21,
+            "general": 273
+          },
+          "registered": {
+            "total": 527,
+            "priority": 188,
+            "corporate": 10,
+            "taxi": 12,
+            "general": 317
+          },
+          "delivered": {
+            "total": 498,
+            "priority": 180,
+            "corporate": 10,
+            "taxi": 12,
+            "general": 296
+          }
+        }
+      },
+      "4155": {
+        "전기승용": {
+          "total": {
+            "total": 652,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 652
+          },
+          "remaining": {
+            "total": 252,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 396
+          },
+          "registered": {
+            "total": 427,
+            "priority": 123,
+            "corporate": 19,
+            "taxi": 8,
+            "general": 277
+          },
+          "delivered": {
+            "total": 400,
+            "priority": 120,
+            "corporate": 17,
+            "taxi": 7,
+            "general": 256
+          }
+        }
+      },
+      "4157": {
+        "전기승용": {
+          "total": {
+            "total": 1031,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 1031
+          },
+          "remaining": {
+            "total": 254,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 585
+          },
+          "registered": {
+            "total": 840,
+            "priority": 305,
+            "corporate": 26,
+            "taxi": 12,
+            "general": 497
+          },
+          "delivered": {
+            "total": 777,
+            "priority": 293,
+            "corporate": 26,
+            "taxi": 12,
+            "general": 446
+          }
+        }
+      },
+      "4159": {
+        "전기승용": {
+          "total": {
+            "total": 3407,
+            "priority": 30,
+            "corporate": 0,
+            "taxi": 140,
+            "general": 3237
+          },
+          "remaining": {
+            "total": 688,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 83,
+            "general": 1605
+          },
+          "registered": {
+            "total": 2917,
+            "priority": 1026,
+            "corporate": 79,
+            "taxi": 59,
+            "general": 1753
+          },
+          "delivered": {
+            "total": 2719,
+            "priority": 955,
+            "corporate": 75,
+            "taxi": 57,
+            "general": 1632
+          }
+        }
+      },
+      "4161": {
+        "전기승용": {
+          "total": {
+            "total": 775,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 775
+          },
+          "remaining": {
+            "total": 144,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 333
+          },
+          "registered": {
+            "total": 647,
+            "priority": 175,
+            "corporate": 15,
+            "taxi": 3,
+            "general": 454
+          },
+          "delivered": {
+            "total": 631,
+            "priority": 171,
+            "corporate": 15,
+            "taxi": 3,
+            "general": 442
+          }
+        }
+      },
+      "4163": {
+        "전기승용": {
+          "total": {
+            "total": 1118,
+            "priority": 55,
+            "corporate": 0,
+            "taxi": 20,
+            "general": 1043
+          },
+          "remaining": {
+            "total": 357,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 7,
+            "general": 540
+          },
+          "registered": {
+            "total": 848,
+            "priority": 265,
+            "corporate": 12,
+            "taxi": 13,
+            "general": 558
+          },
+          "delivered": {
+            "total": 761,
+            "priority": 234,
+            "corporate": 11,
+            "taxi": 13,
+            "general": 503
+          }
+        }
+      },
+      "4165": {
+        "전기승용": {
+          "total": {
+            "total": 420,
+            "priority": 43,
+            "corporate": 10,
+            "taxi": 10,
+            "general": 357
+          },
+          "remaining": {
+            "total": 219,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 231
+          },
+          "registered": {
+            "total": 251,
+            "priority": 56,
+            "corporate": 24,
+            "taxi": 9,
+            "general": 162
+          },
+          "delivered": {
+            "total": 201,
+            "priority": 48,
+            "corporate": 19,
+            "taxi": 8,
+            "general": 126
+          }
+        }
+      },
+      "4167": {
+        "전기승용": {
+          "total": {
+            "total": 509,
+            "priority": 50,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 449
+          },
+          "remaining": {
+            "total": 342,
+            "priority": 9,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 331
+          },
+          "registered": {
+            "total": 168,
+            "priority": 41,
+            "corporate": 4,
+            "taxi": 4,
+            "general": 119
+          },
+          "delivered": {
+            "total": 167,
+            "priority": 41,
+            "corporate": 4,
+            "taxi": 4,
+            "general": 118
+          }
+        }
+      },
+      "4180": {
+        "전기승용": {
+          "total": {
+            "total": 174,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 174
+          },
+          "remaining": {
+            "total": 72,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 107
+          },
+          "registered": {
+            "total": 106,
+            "priority": 27,
+            "corporate": 5,
+            "taxi": 4,
+            "general": 70
+          },
+          "delivered": {
+            "total": 102,
+            "priority": 26,
+            "corporate": 5,
+            "taxi": 4,
+            "general": 67
+          }
+        }
+      },
+      "4182": {
+        "전기승용": {
+          "total": {
+            "total": 170,
+            "priority": 17,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 153
+          },
+          "remaining": {
+            "total": 38,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 56
+          },
+          "registered": {
+            "total": 157,
+            "priority": 37,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 117
+          },
+          "delivered": {
+            "total": 132,
+            "priority": 32,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 97
+          }
+        }
+      },
+      "4183": {
+        "전기승용": {
+          "total": {
+            "total": 627,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 627
+          },
+          "remaining": {
+            "total": 241,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 360
+          },
+          "registered": {
+            "total": 450,
+            "priority": 121,
+            "corporate": 5,
+            "taxi": 10,
+            "general": 314
+          },
+          "delivered": {
+            "total": 386,
+            "priority": 104,
+            "corporate": 5,
+            "taxi": 10,
+            "general": 267
+          }
+        }
+      },
+      "4211": {
+        "전기승용": {
+          "total": {
+            "total": 800,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 800
+          },
+          "remaining": {
+            "total": 16,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 314
+          },
+          "registered": {
+            "total": 843,
+            "priority": 278,
+            "corporate": 3,
+            "taxi": 37,
+            "general": 525
+          },
+          "delivered": {
+            "total": 784,
+            "priority": 261,
+            "corporate": 3,
+            "taxi": 34,
+            "general": 486
+          }
+        }
+      },
+      "4213": {
+        "전기승용": {
+          "total": {
+            "total": 1540,
+            "priority": 150,
+            "corporate": 0,
+            "taxi": 50,
+            "general": 1340
+          },
+          "remaining": {
+            "total": 529,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 15,
+            "general": 723
+          },
+          "registered": {
+            "total": 1164,
+            "priority": 393,
+            "corporate": 17,
+            "taxi": 40,
+            "general": 714
+          },
+          "delivered": {
+            "total": 1011,
+            "priority": 345,
+            "corporate": 14,
+            "taxi": 35,
+            "general": 617
+          }
+        }
+      },
+      "4215": {
+        "전기승용": {
+          "total": {
+            "total": 795,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 795
+          },
+          "remaining": {
+            "total": 359,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 521
+          },
+          "registered": {
+            "total": 531,
+            "priority": 156,
+            "corporate": 7,
+            "taxi": 27,
+            "general": 341
+          },
+          "delivered": {
+            "total": 436,
+            "priority": 134,
+            "corporate": 5,
+            "taxi": 23,
+            "general": 274
+          }
+        }
+      },
+      "4217": {
+        "전기승용": {
+          "total": {
+            "total": 280,
+            "priority": 20,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 250
+          },
+          "remaining": {
+            "total": 143,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 141
+          },
+          "registered": {
+            "total": 192,
+            "priority": 22,
+            "corporate": 3,
+            "taxi": 8,
+            "general": 159
+          },
+          "delivered": {
+            "total": 137,
+            "priority": 21,
+            "corporate": 2,
+            "taxi": 5,
+            "general": 109
+          }
+        }
+      },
+      "4219": {
+        "전기승용": {
+          "total": {
+            "total": 228,
+            "priority": 15,
+            "corporate": 0,
+            "taxi": 7,
+            "general": 206
+          },
+          "remaining": {
+            "total": 154,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 171
+          },
+          "registered": {
+            "total": 99,
+            "priority": 45,
+            "corporate": 0,
+            "taxi": 9,
+            "general": 45
+          },
+          "delivered": {
+            "total": 74,
+            "priority": 32,
+            "corporate": 0,
+            "taxi": 7,
+            "general": 35
+          }
+        }
+      },
+      "4221": {
+        "전기승용": {
+          "total": {
+            "total": 58,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 58
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 0
+          },
+          "registered": {
+            "total": 169,
+            "priority": 55,
+            "corporate": 0,
+            "taxi": 12,
+            "general": 102
+          },
+          "delivered": {
+            "total": 157,
+            "priority": 54,
+            "corporate": 0,
+            "taxi": 12,
+            "general": 91
+          }
+        }
+      },
+      "4223": {
+        "전기승용": {
+          "total": {
+            "total": 220,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 220
+          },
+          "remaining": {
+            "total": 116,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 157
+          },
+          "registered": {
+            "total": 117,
+            "priority": 42,
+            "corporate": 1,
+            "taxi": 2,
+            "general": 72
+          },
+          "delivered": {
+            "total": 104,
+            "priority": 39,
+            "corporate": 1,
+            "taxi": 1,
+            "general": 63
+          }
+        }
+      },
+      "4272": {
+        "전기승용": {
+          "total": {
+            "total": 170,
+            "priority": 20,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 150
+          },
+          "remaining": {
+            "total": 44,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 71
+          },
+          "registered": {
+            "total": 149,
+            "priority": 52,
+            "corporate": 2,
+            "taxi": 1,
+            "general": 94
+          },
+          "delivered": {
+            "total": 126,
+            "priority": 45,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 79
+          }
+        }
+      },
+      "4273": {
+        "전기승용": {
+          "total": {
+            "total": 150,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 150
+          },
+          "remaining": {
+            "total": 81,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 98
+          },
+          "registered": {
+            "total": 74,
+            "priority": 14,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 57
+          },
+          "delivered": {
+            "total": 69,
+            "priority": 14,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 52
+          }
+        }
+      },
+      "4275": {
+        "전기승용": {
+          "total": {
+            "total": 130,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 7,
+            "general": 123
+          },
+          "remaining": {
+            "total": 76,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 88
+          },
+          "registered": {
+            "total": 75,
+            "priority": 22,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 51
+          },
+          "delivered": {
+            "total": 54,
+            "priority": 18,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 35
+          }
+        }
+      },
+      "4276": {
+        "전기승용": {
+          "total": {
+            "total": 130,
+            "priority": 13,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 117
+          },
+          "remaining": {
+            "total": 61,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 79
+          },
+          "registered": {
+            "total": 88,
+            "priority": 30,
+            "corporate": 4,
+            "taxi": 2,
+            "general": 52
+          },
+          "delivered": {
+            "total": 69,
+            "priority": 26,
+            "corporate": 4,
+            "taxi": 1,
+            "general": 38
+          }
+        }
+      },
+      "4277": {
+        "전기승용": {
+          "total": {
+            "total": 100,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 100
+          },
+          "remaining": {
+            "total": 40,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 58
+          },
+          "registered": {
+            "total": 77,
+            "priority": 22,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 53
+          },
+          "delivered": {
+            "total": 60,
+            "priority": 16,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 42
+          }
+        }
+      },
+      "4278": {
+        "전기승용": {
+          "total": {
+            "total": 140,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 140
+          },
+          "remaining": {
+            "total": 79,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 104
+          },
+          "registered": {
+            "total": 76,
+            "priority": 25,
+            "corporate": 5,
+            "taxi": 1,
+            "general": 45
+          },
+          "delivered": {
+            "total": 61,
+            "priority": 20,
+            "corporate": 4,
+            "taxi": 1,
+            "general": 36
+          }
+        }
+      },
+      "4279": {
+        "전기승용": {
+          "total": {
+            "total": 35,
+            "priority": 2,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 33
+          },
+          "remaining": {
+            "total": 8,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 20
+          },
+          "registered": {
+            "total": 31,
+            "priority": 15,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 15
+          },
+          "delivered": {
+            "total": 27,
+            "priority": 13,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 13
+          }
+        }
+      },
+      "4280": {
+        "전기승용": {
+          "total": {
+            "total": 120,
+            "priority": 8,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 112
+          },
+          "remaining": {
+            "total": 69,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 78
+          },
+          "registered": {
+            "total": 61,
+            "priority": 14,
+            "corporate": 1,
+            "taxi": 3,
+            "general": 43
+          },
+          "delivered": {
+            "total": 51,
+            "priority": 13,
+            "corporate": 1,
+            "taxi": 3,
+            "general": 34
+          }
+        }
+      },
+      "4281": {
+        "전기승용": {
+          "total": {
+            "total": 150,
+            "priority": 15,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 135
+          },
+          "remaining": {
+            "total": 86,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 98
+          },
+          "registered": {
+            "total": 74,
+            "priority": 28,
+            "corporate": 3,
+            "taxi": 1,
+            "general": 42
+          },
+          "delivered": {
+            "total": 64,
+            "priority": 24,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 37
+          }
+        }
+      },
+      "4283": {
+        "전기승용": {
+          "total": {
+            "total": 120,
+            "priority": 6,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 108
+          },
+          "remaining": {
+            "total": 75,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 74
+          },
+          "registered": {
+            "total": 54,
+            "priority": 8,
+            "corporate": 2,
+            "taxi": 2,
+            "general": 42
+          },
+          "delivered": {
+            "total": 45,
+            "priority": 8,
+            "corporate": 2,
+            "taxi": 1,
+            "general": 34
+          }
+        }
+      },
+      "4311": {
+        "전기승용": {
+          "total": {
+            "total": 2250,
+            "priority": 225,
+            "corporate": 0,
+            "taxi": 225,
+            "general": 1800
+          },
+          "remaining": {
+            "total": 1150,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 74,
+            "general": 1154
+          },
+          "registered": {
+            "total": 1114,
+            "priority": 288,
+            "corporate": 15,
+            "taxi": 165,
+            "general": 646
+          },
+          "delivered": {
+            "total": 1100,
+            "priority": 288,
+            "corporate": 15,
+            "taxi": 151,
+            "general": 646
+          }
+        }
+      },
+      "4313": {
+        "전기승용": {
+          "total": {
+            "total": 400,
+            "priority": 40,
+            "corporate": 0,
+            "taxi": 20,
+            "general": 340
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 0
+          },
+          "registered": {
+            "total": 680,
+            "priority": 234,
+            "corporate": 7,
+            "taxi": 19,
+            "general": 420
+          },
+          "delivered": {
+            "total": 677,
+            "priority": 232,
+            "corporate": 7,
+            "taxi": 19,
+            "general": 419
+          }
+        }
+      },
+      "4315": {
+        "전기승용": {
+          "total": {
+            "total": 800,
+            "priority": 80,
+            "corporate": 0,
+            "taxi": 40,
+            "general": 680
+          },
+          "remaining": {
+            "total": 357,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 14,
+            "general": 395
+          },
+          "registered": {
+            "total": 464,
+            "priority": 133,
+            "corporate": 5,
+            "taxi": 26,
+            "general": 300
+          },
+          "delivered": {
+            "total": 443,
+            "priority": 127,
+            "corporate": 5,
+            "taxi": 26,
+            "general": 285
+          }
+        }
+      },
+      "4372": {
+        "전기승용": {
+          "total": {
+            "total": 100,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 100
+          },
+          "remaining": {
+            "total": 2,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 32
+          },
+          "registered": {
+            "total": 115,
+            "priority": 31,
+            "corporate": 5,
+            "taxi": 0,
+            "general": 79
+          },
+          "delivered": {
+            "total": 98,
+            "priority": 26,
+            "corporate": 4,
+            "taxi": 0,
+            "general": 68
+          }
+        }
+      },
+      "4373": {
+        "전기승용": {
+          "total": {
+            "total": 100,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 100
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 38
+          },
+          "registered": {
+            "total": 103,
+            "priority": 32,
+            "corporate": 1,
+            "taxi": 6,
+            "general": 64
+          },
+          "delivered": {
+            "total": 101,
+            "priority": 32,
+            "corporate": 1,
+            "taxi": 6,
+            "general": 62
+          }
+        }
+      },
+      "4374": {
+        "전기승용": {
+          "total": {
+            "total": 178,
+            "priority": 18,
+            "corporate": 0,
+            "taxi": 9,
+            "general": 151
+          },
+          "remaining": {
+            "total": 49,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 64
+          },
+          "registered": {
+            "total": 165,
+            "priority": 44,
+            "corporate": 3,
+            "taxi": 3,
+            "general": 115
+          },
+          "delivered": {
+            "total": 129,
+            "priority": 36,
+            "corporate": 3,
+            "taxi": 3,
+            "general": 87
+          }
+        }
+      },
+      "4375": {
+        "전기승용": {
+          "total": {
+            "total": 200,
+            "priority": 100,
+            "corporate": 0,
+            "taxi": 30,
+            "general": 70
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 25,
+            "general": 0
+          },
+          "registered": {
+            "total": 504,
+            "priority": 126,
+            "corporate": 10,
+            "taxi": 6,
+            "general": 362
+          },
+          "delivered": {
+            "total": 489,
+            "priority": 125,
+            "corporate": 10,
+            "taxi": 5,
+            "general": 349
+          }
+        }
+      },
+      "4376": {
+        "전기승용": {
+          "total": {
+            "total": 109,
+            "priority": 11,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 93
+          },
+          "remaining": {
+            "total": 44,
+            "priority": 1,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 41
+          },
+          "registered": {
+            "total": 85,
+            "priority": 15,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 67
+          },
+          "delivered": {
+            "total": 65,
+            "priority": 10,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 52
+          }
+        }
+      },
+      "4377": {
+        "전기승용": {
+          "total": {
+            "total": 240,
+            "priority": 24,
+            "corporate": 0,
+            "taxi": 12,
+            "general": 204
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 0
+          },
+          "registered": {
+            "total": 395,
+            "priority": 97,
+            "corporate": 15,
+            "taxi": 3,
+            "general": 280
+          },
+          "delivered": {
+            "total": 351,
+            "priority": 90,
+            "corporate": 12,
+            "taxi": 2,
+            "general": 247
+          }
+        }
+      },
+      "4380": {
+        "전기승용": {
+          "total": {
+            "total": 155,
+            "priority": 20,
+            "corporate": 30,
+            "taxi": 3,
+            "general": 102
+          },
+          "remaining": {
+            "total": 42,
+            "priority": 0,
+            "corporate": 23,
+            "taxi": 2,
+            "general": 24
+          },
+          "registered": {
+            "total": 146,
+            "priority": 36,
+            "corporate": 8,
+            "taxi": 1,
+            "general": 101
+          },
+          "delivered": {
+            "total": 113,
+            "priority": 27,
+            "corporate": 7,
+            "taxi": 1,
+            "general": 78
+          }
+        }
+      },
+      "4413": {
+        "전기승용": {
+          "total": {
+            "total": 856,
+            "priority": 85,
+            "corporate": 0,
+            "taxi": 42,
+            "general": 729
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 89
+          },
+          "registered": {
+            "total": 1102,
+            "priority": 334,
+            "corporate": 28,
+            "taxi": 91,
+            "general": 649
+          },
+          "delivered": {
+            "total": 1078,
+            "priority": 323,
+            "corporate": 27,
+            "taxi": 88,
+            "general": 640
+          }
+        }
+      },
+      "4415": {
+        "전기승용": {
+          "total": {
+            "total": 130,
+            "priority": 14,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 110
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 19
+          },
+          "registered": {
+            "total": 322,
+            "priority": 83,
+            "corporate": 9,
+            "taxi": 14,
+            "general": 216
+          },
+          "delivered": {
+            "total": 133,
+            "priority": 32,
+            "corporate": 3,
+            "taxi": 7,
+            "general": 91
+          }
+        }
+      },
+      "4418": {
+        "전기승용": {
+          "total": {
+            "total": 203,
+            "priority": 16,
+            "corporate": 0,
+            "taxi": 7,
+            "general": 180
+          },
+          "remaining": {
+            "total": 84,
+            "priority": 9,
+            "corporate": 0,
+            "taxi": 4,
+            "general": 71
+          },
+          "registered": {
+            "total": 203,
+            "priority": 16,
+            "corporate": 0,
+            "taxi": 8,
+            "general": 179
+          },
+          "delivered": {
+            "total": 119,
+            "priority": 7,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 109
+          }
+        }
+      },
+      "4420": {
+        "전기승용": {
+          "total": {
+            "total": 592,
+            "priority": 59,
+            "corporate": 0,
+            "taxi": 29,
+            "general": 504
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 0
+          },
+          "registered": {
+            "total": 659,
+            "priority": 64,
+            "corporate": 12,
+            "taxi": 29,
+            "general": 554
+          },
+          "delivered": {
+            "total": 655,
+            "priority": 64,
+            "corporate": 12,
+            "taxi": 27,
+            "general": 552
+          }
+        }
+      },
+      "4421": {
+        "전기승용": {
+          "total": {
+            "total": 479,
+            "priority": 48,
+            "corporate": 0,
+            "taxi": 17,
+            "general": 414
+          },
+          "remaining": {
+            "total": 232,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 9,
+            "general": 269
+          },
+          "registered": {
+            "total": 579,
+            "priority": 179,
+            "corporate": 13,
+            "taxi": 9,
+            "general": 378
+          },
+          "delivered": {
+            "total": 247,
+            "priority": 89,
+            "corporate": 5,
+            "taxi": 8,
+            "general": 145
+          }
+        }
+      },
+      "4423": {
+        "전기승용": {
+          "total": {
+            "total": 192,
+            "priority": 20,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 172
+          },
+          "remaining": {
+            "total": 39,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 77
+          },
+          "registered": {
+            "total": 155,
+            "priority": 53,
+            "corporate": 5,
+            "taxi": 2,
+            "general": 95
+          },
+          "delivered": {
+            "total": 153,
+            "priority": 52,
+            "corporate": 5,
+            "taxi": 1,
+            "general": 95
+          }
+        }
+      },
+      "4425": {
+        "전기승용": {
+          "total": {
+            "total": 177,
+            "priority": 19,
+            "corporate": 0,
+            "taxi": 13,
+            "general": 145
+          },
+          "remaining": {
+            "total": 60,
+            "priority": 6,
+            "corporate": 0,
+            "taxi": 13,
+            "general": 43
+          },
+          "registered": {
+            "total": 317,
+            "priority": 83,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 232
+          },
+          "delivered": {
+            "total": 117,
+            "priority": 13,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 102
+          }
+        }
+      },
+      "4427": {
+        "전기승용": {
+          "total": {
+            "total": 362,
+            "priority": 48,
+            "corporate": 0,
+            "taxi": 15,
+            "general": 299
+          },
+          "remaining": {
+            "total": 115,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 154
+          },
+          "registered": {
+            "total": 581,
+            "priority": 207,
+            "corporate": 6,
+            "taxi": 11,
+            "general": 357
+          },
+          "delivered": {
+            "total": 247,
+            "priority": 89,
+            "corporate": 4,
+            "taxi": 9,
+            "general": 145
+          }
+        }
+      },
+      "4471": {
+        "전기승용": {
+          "total": {
+            "total": 180,
+            "priority": 18,
+            "corporate": 0,
+            "taxi": 18,
+            "general": 144
+          },
+          "remaining": {
+            "total": 64,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 16,
+            "general": 59
+          },
+          "registered": {
+            "total": 189,
+            "priority": 40,
+            "corporate": 10,
+            "taxi": 2,
+            "general": 137
+          },
+          "delivered": {
+            "total": 116,
+            "priority": 24,
+            "corporate": 5,
+            "taxi": 2,
+            "general": 85
+          }
+        }
+      },
+      "4476": {
+        "전기승용": {
+          "total": {
+            "total": 190,
+            "priority": 18,
+            "corporate": 0,
+            "taxi": 16,
+            "general": 156
+          },
+          "remaining": {
+            "total": 95,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 9,
+            "general": 88
+          },
+          "registered": {
+            "total": 171,
+            "priority": 33,
+            "corporate": 2,
+            "taxi": 7,
+            "general": 129
+          },
+          "delivered": {
+            "total": 95,
+            "priority": 18,
+            "corporate": 2,
+            "taxi": 7,
+            "general": 68
+          }
+        }
+      },
+      "4477": {
+        "전기승용": {
+          "total": {
+            "total": 96,
+            "priority": 9,
+            "corporate": 0,
+            "taxi": 9,
+            "general": 78
+          },
+          "remaining": {
+            "total": 36,
+            "priority": 3,
+            "corporate": 0,
+            "taxi": 9,
+            "general": 25
+          },
+          "registered": {
+            "total": 125,
+            "priority": 16,
+            "corporate": 5,
+            "taxi": 0,
+            "general": 104
+          },
+          "delivered": {
+            "total": 60,
+            "priority": 6,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 53
+          }
+        }
+      },
+      "4479": {
+        "전기승용": {
+          "total": {
+            "total": 130,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 130
+          },
+          "remaining": {
+            "total": 64,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 82
+          },
+          "registered": {
+            "total": 66,
+            "priority": 17,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 48
+          },
+          "delivered": {
+            "total": 66,
+            "priority": 17,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 48
+          }
+        }
+      },
+      "4480": {
+        "전기승용": {
+          "total": {
+            "total": 100,
+            "priority": 10,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 85
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 0
+          },
+          "registered": {
+            "total": 136,
+            "priority": 41,
+            "corporate": 5,
+            "taxi": 5,
+            "general": 85
+          },
+          "delivered": {
+            "total": 133,
+            "priority": 38,
+            "corporate": 5,
+            "taxi": 5,
+            "general": 85
+          }
+        }
+      },
+      "4481": {
+        "전기승용": {
+          "total": {
+            "total": 200,
+            "priority": 20,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 170
+          },
+          "remaining": {
+            "total": 114,
+            "priority": 5,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 106
+          },
+          "registered": {
+            "total": 226,
+            "priority": 47,
+            "corporate": 6,
+            "taxi": 9,
+            "general": 164
+          },
+          "delivered": {
+            "total": 86,
+            "priority": 15,
+            "corporate": 3,
+            "taxi": 4,
+            "general": 64
+          }
+        }
+      },
+      "4511": {
+        "전기승용": {
+          "total": {
+            "total": 640,
+            "priority": 64,
+            "corporate": 0,
+            "taxi": 32,
+            "general": 544
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 7
+          },
+          "registered": {
+            "total": 820,
+            "priority": 84,
+            "corporate": 15,
+            "taxi": 56,
+            "general": 665
+          },
+          "delivered": {
+            "total": 641,
+            "priority": 65,
+            "corporate": 6,
+            "taxi": 33,
+            "general": 537
+          }
+        }
+      },
+      "4513": {
+        "전기승용": {
+          "total": {
+            "total": 474,
+            "priority": 47,
+            "corporate": 2,
+            "taxi": 24,
+            "general": 401
+          },
+          "remaining": {
+            "total": 88,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 152
+          },
+          "registered": {
+            "total": 386,
+            "priority": 111,
+            "corporate": 7,
+            "taxi": 19,
+            "general": 249
+          },
+          "delivered": {
+            "total": 386,
+            "priority": 111,
+            "corporate": 7,
+            "taxi": 19,
+            "general": 249
+          }
+        }
+      },
+      "4514": {
+        "전기승용": {
+          "total": {
+            "total": 200,
+            "priority": 10,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 180
+          },
+          "remaining": {
+            "total": 1,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 33
+          },
+          "registered": {
+            "total": 312,
+            "priority": 52,
+            "corporate": 1,
+            "taxi": 30,
+            "general": 229
+          },
+          "delivered": {
+            "total": 199,
+            "priority": 41,
+            "corporate": 1,
+            "taxi": 10,
+            "general": 147
+          }
+        }
+      },
+      "4518": {
+        "전기승용": {
+          "total": {
+            "total": 140,
+            "priority": 14,
+            "corporate": 0,
+            "taxi": 7,
+            "general": 119
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 28
+          },
+          "registered": {
+            "total": 179,
+            "priority": 60,
+            "corporate": 6,
+            "taxi": 6,
+            "general": 107
+          },
+          "delivered": {
+            "total": 149,
+            "priority": 49,
+            "corporate": 4,
+            "taxi": 5,
+            "general": 91
+          }
+        }
+      },
+      "4519": {
+        "전기승용": {
+          "total": {
+            "total": 120,
+            "priority": 12,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 102
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 11
+          },
+          "registered": {
+            "total": 121,
+            "priority": 24,
+            "corporate": 1,
+            "taxi": 5,
+            "general": 91
+          },
+          "delivered": {
+            "total": 121,
+            "priority": 24,
+            "corporate": 1,
+            "taxi": 5,
+            "general": 91
+          }
+        }
+      },
+      "4521": {
+        "전기승용": {
+          "total": {
+            "total": 178,
+            "priority": 18,
+            "corporate": 0,
+            "taxi": 9,
+            "general": 151
+          },
+          "remaining": {
+            "total": 2,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 21
+          },
+          "registered": {
+            "total": 184,
+            "priority": 35,
+            "corporate": 5,
+            "taxi": 9,
+            "general": 135
+          },
+          "delivered": {
+            "total": 176,
+            "priority": 34,
+            "corporate": 3,
+            "taxi": 9,
+            "general": 130
+          }
+        }
+      },
+      "4571": {
+        "전기승용": {
+          "total": {
+            "total": 196,
+            "priority": 16,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 170
+          },
+          "remaining": {
+            "total": 40,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 39
+          },
+          "registered": {
+            "total": 386,
+            "priority": 16,
+            "corporate": 8,
+            "taxi": 8,
+            "general": 354
+          },
+          "delivered": {
+            "total": 156,
+            "priority": 16,
+            "corporate": 4,
+            "taxi": 5,
+            "general": 131
+          }
+        }
+      },
+      "4572": {
+        "전기승용": {
+          "total": {
+            "total": 60,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 58
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 8
+          },
+          "registered": {
+            "total": 60,
+            "priority": 9,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 50
+          },
+          "delivered": {
+            "total": 60,
+            "priority": 9,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 50
+          }
+        }
+      },
+      "4573": {
+        "전기승용": {
+          "total": {
+            "total": 37,
+            "priority": 4,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 31
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 0
+          },
+          "registered": {
+            "total": 39,
+            "priority": 4,
+            "corporate": 1,
+            "taxi": 2,
+            "general": 32
+          },
+          "delivered": {
+            "total": 39,
+            "priority": 4,
+            "corporate": 1,
+            "taxi": 2,
+            "general": 32
+          }
+        }
+      },
+      "4574": {
+        "전기승용": {
+          "total": {
+            "total": 44,
+            "priority": 3,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 39
+          },
+          "remaining": {
+            "total": 2,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 4
+          },
+          "registered": {
+            "total": 48,
+            "priority": 7,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 40
+          },
+          "delivered": {
+            "total": 42,
+            "priority": 6,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 35
+          }
+        }
+      },
+      "4575": {
+        "전기승용": {
+          "total": {
+            "total": 67,
+            "priority": 10,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 56
+          },
+          "remaining": {
+            "total": 1,
+            "priority": 0,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 11
+          },
+          "registered": {
+            "total": 66,
+            "priority": 21,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 45
+          },
+          "delivered": {
+            "total": 66,
+            "priority": 21,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 45
+          }
+        }
+      },
+      "4577": {
+        "전기승용": {
+          "total": {
+            "total": 54,
+            "priority": 13,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 40
+          },
+          "remaining": {
+            "total": 3,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 4
+          },
+          "registered": {
+            "total": 53,
+            "priority": 13,
+            "corporate": 1,
+            "taxi": 1,
+            "general": 38
+          },
+          "delivered": {
+            "total": 51,
+            "priority": 13,
+            "corporate": 1,
+            "taxi": 1,
+            "general": 36
+          }
+        }
+      },
+      "4579": {
+        "전기승용": {
+          "total": {
+            "total": 57,
+            "priority": 10,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 42
+          },
+          "remaining": {
+            "total": 1,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 1
+          },
+          "registered": {
+            "total": 59,
+            "priority": 12,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 44
+          },
+          "delivered": {
+            "total": 56,
+            "priority": 12,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 41
+          }
+        }
+      },
+      "4580": {
+        "전기승용": {
+          "total": {
+            "total": 76,
+            "priority": 8,
+            "corporate": 0,
+            "taxi": 8,
+            "general": 60
+          },
+          "remaining": {
+            "total": 8,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 8,
+            "general": 0
+          },
+          "registered": {
+            "total": 73,
+            "priority": 8,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 65
+          },
+          "delivered": {
+            "total": 68,
+            "priority": 8,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 60
+          }
+        }
+      },
+      "4611": {
+        "전기승용": {
+          "total": {
+            "total": 151,
+            "priority": 4,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 145
+          },
+          "remaining": {
+            "total": 94,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 98
+          },
+          "registered": {
+            "total": 57,
+            "priority": 5,
+            "corporate": 3,
+            "taxi": 2,
+            "general": 47
+          },
+          "delivered": {
+            "total": 57,
+            "priority": 5,
+            "corporate": 3,
+            "taxi": 2,
+            "general": 47
+          }
+        }
+      },
+      "4613": {
+        "전기승용": {
+          "total": {
+            "total": 600,
+            "priority": 60,
+            "corporate": 0,
+            "taxi": 30,
+            "general": 510
+          },
+          "remaining": {
+            "total": 255,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 310
+          },
+          "registered": {
+            "total": 345,
+            "priority": 101,
+            "corporate": 1,
+            "taxi": 43,
+            "general": 200
+          },
+          "delivered": {
+            "total": 345,
+            "priority": 101,
+            "corporate": 1,
+            "taxi": 43,
+            "general": 200
+          }
+        }
+      },
+      "4615": {
+        "전기승용": {
+          "total": {
+            "total": 500,
+            "priority": 50,
+            "corporate": 0,
+            "taxi": 25,
+            "general": 425
+          },
+          "remaining": {
+            "total": 29,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 153
+          },
+          "registered": {
+            "total": 474,
+            "priority": 156,
+            "corporate": 6,
+            "taxi": 39,
+            "general": 273
+          },
+          "delivered": {
+            "total": 471,
+            "priority": 155,
+            "corporate": 6,
+            "taxi": 38,
+            "general": 272
+          }
+        }
+      },
+      "4617": {
+        "전기승용": {
+          "total": {
+            "total": 150,
+            "priority": 15,
+            "corporate": 0,
+            "taxi": 8,
+            "general": 127
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 30
+          },
+          "registered": {
+            "total": 151,
+            "priority": 43,
+            "corporate": 3,
+            "taxi": 8,
+            "general": 97
+          },
+          "delivered": {
+            "total": 151,
+            "priority": 43,
+            "corporate": 3,
+            "taxi": 8,
+            "general": 97
+          }
+        }
+      },
+      "4623": {
+        "전기승용": {
+          "total": {
+            "total": 300,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 300
+          },
+          "remaining": {
+            "total": 7,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 74
+          },
+          "registered": {
+            "total": 298,
+            "priority": 55,
+            "corporate": 6,
+            "taxi": 8,
+            "general": 229
+          },
+          "delivered": {
+            "total": 293,
+            "priority": 54,
+            "corporate": 5,
+            "taxi": 8,
+            "general": 226
+          }
+        }
+      },
+      "4671": {
+        "전기승용": {
+          "total": {
+            "total": 40,
+            "priority": 4,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 34
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 0
+          },
+          "registered": {
+            "total": 65,
+            "priority": 20,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 43
+          },
+          "delivered": {
+            "total": 60,
+            "priority": 19,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 39
+          }
+        }
+      },
+      "4672": {
+        "전기승용": {
+          "total": {
+            "total": 70,
+            "priority": 23,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 45
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 0
+          },
+          "registered": {
+            "total": 71,
+            "priority": 23,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 46
+          },
+          "delivered": {
+            "total": 71,
+            "priority": 23,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 46
+          }
+        }
+      },
+      "4673": {
+        "전기승용": {
+          "total": {
+            "total": 54,
+            "priority": 6,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 45
+          },
+          "remaining": {
+            "total": 2,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 3
+          },
+          "registered": {
+            "total": 53,
+            "priority": 8,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 43
+          },
+          "delivered": {
+            "total": 52,
+            "priority": 8,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 42
+          }
+        }
+      },
+      "4677": {
+        "전기승용": {
+          "total": {
+            "total": 70,
+            "priority": 7,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 60
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 0
+          },
+          "registered": {
+            "total": 96,
+            "priority": 15,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 78
+          },
+          "delivered": {
+            "total": 84,
+            "priority": 14,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 68
+          }
+        }
+      },
+      "4678": {
+        "전기승용": {
+          "total": {
+            "total": 20,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 15
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 4,
+            "general": 0
+          },
+          "registered": {
+            "total": 88,
+            "priority": 25,
+            "corporate": 4,
+            "taxi": 1,
+            "general": 58
+          },
+          "delivered": {
+            "total": 86,
+            "priority": 25,
+            "corporate": 4,
+            "taxi": 1,
+            "general": 56
+          }
+        }
+      },
+      "4679": {
+        "전기승용": {
+          "total": {
+            "total": 90,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 90
+          },
+          "remaining": {
+            "total": 12,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 34
+          },
+          "registered": {
+            "total": 137,
+            "priority": 29,
+            "corporate": 9,
+            "taxi": 1,
+            "general": 98
+          },
+          "delivered": {
+            "total": 78,
+            "priority": 16,
+            "corporate": 6,
+            "taxi": 0,
+            "general": 56
+          }
+        }
+      },
+      "4680": {
+        "전기승용": {
+          "total": {
+            "total": 90,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 88
+          },
+          "remaining": {
+            "total": 12,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 2,
+            "general": 36
+          },
+          "registered": {
+            "total": 116,
+            "priority": 29,
+            "corporate": 4,
+            "taxi": 2,
+            "general": 81
+          },
+          "delivered": {
+            "total": 78,
+            "priority": 22,
+            "corporate": 4,
+            "taxi": 0,
+            "general": 52
+          }
+        }
+      },
+      "4681": {
+        "전기승용": {
+          "total": {
+            "total": 40,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 40
+          },
+          "remaining": {
+            "total": 3,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 12
+          },
+          "registered": {
+            "total": 38,
+            "priority": 7,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 29
+          },
+          "delivered": {
+            "total": 37,
+            "priority": 7,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 28
+          }
+        }
+      },
+      "4682": {
+        "전기승용": {
+          "total": {
+            "total": 497,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 497
+          },
+          "remaining": {
+            "total": 262,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 336
+          },
+          "registered": {
+            "total": 288,
+            "priority": 77,
+            "corporate": 9,
+            "taxi": 4,
+            "general": 198
+          },
+          "delivered": {
+            "total": 235,
+            "priority": 63,
+            "corporate": 9,
+            "taxi": 2,
+            "general": 161
+          }
+        }
+      },
+      "4683": {
+        "전기승용": {
+          "total": {
+            "total": 75,
+            "priority": 7,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 68
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 4
+          },
+          "registered": {
+            "total": 77,
+            "priority": 8,
+            "corporate": 5,
+            "taxi": 0,
+            "general": 64
+          },
+          "delivered": {
+            "total": 77,
+            "priority": 8,
+            "corporate": 5,
+            "taxi": 0,
+            "general": 64
+          }
+        }
+      },
+      "4684": {
+        "전기승용": {
+          "total": {
+            "total": 140,
+            "priority": 14,
+            "corporate": 0,
+            "taxi": 4,
+            "general": 122
+          },
+          "remaining": {
+            "total": 60,
+            "priority": 4,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 57
+          },
+          "registered": {
+            "total": 147,
+            "priority": 26,
+            "corporate": 2,
+            "taxi": 4,
+            "general": 115
+          },
+          "delivered": {
+            "total": 80,
+            "priority": 10,
+            "corporate": 2,
+            "taxi": 3,
+            "general": 65
+          }
+        }
+      },
+      "4686": {
+        "전기승용": {
+          "total": {
+            "total": 158,
+            "priority": 16,
+            "corporate": 0,
+            "taxi": 15,
+            "general": 127
+          },
+          "remaining": {
+            "total": 76,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 15,
+            "general": 68
+          },
+          "registered": {
+            "total": 103,
+            "priority": 26,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 76
+          },
+          "delivered": {
+            "total": 82,
+            "priority": 22,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 59
+          }
+        }
+      },
+      "4687": {
+        "전기승용": {
+          "total": {
+            "total": 138,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 138
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 9
+          },
+          "registered": {
+            "total": 198,
+            "priority": 68,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 129
+          },
+          "delivered": {
+            "total": 198,
+            "priority": 68,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 129
+          }
+        }
+      },
+      "4688": {
+        "전기승용": {
+          "total": {
+            "total": 112,
+            "priority": 20,
+            "corporate": 0,
+            "taxi": 4,
+            "general": 88
+          },
+          "remaining": {
+            "total": 2,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 3
+          },
+          "registered": {
+            "total": 121,
+            "priority": 21,
+            "corporate": 5,
+            "taxi": 1,
+            "general": 94
+          },
+          "delivered": {
+            "total": 110,
+            "priority": 20,
+            "corporate": 4,
+            "taxi": 1,
+            "general": 85
+          }
+        }
+      },
+      "4689": {
+        "전기승용": {
+          "total": {
+            "total": 20,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 20
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 0
+          },
+          "registered": {
+            "total": 41,
+            "priority": 12,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 28
+          },
+          "delivered": {
+            "total": 41,
+            "priority": 12,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 28
+          }
+        }
+      },
+      "4690": {
+        "전기승용": {
+          "total": {
+            "total": 140,
+            "priority": 7,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 133
+          },
+          "remaining": {
+            "total": 55,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 64
+          },
+          "registered": {
+            "total": 90,
+            "priority": 15,
+            "corporate": 1,
+            "taxi": 1,
+            "general": 73
+          },
+          "delivered": {
+            "total": 85,
+            "priority": 15,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 69
+          }
+        }
+      },
+      "4691": {
+        "전기승용": {
+          "total": {
+            "total": 70,
+            "priority": 7,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 60
+          },
+          "remaining": {
+            "total": 3,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 1
+          },
+          "registered": {
+            "total": 70,
+            "priority": 7,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 62
+          },
+          "delivered": {
+            "total": 67,
+            "priority": 7,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 59
+          }
+        }
+      },
+      "4711": {
+        "전기승용": {
+          "total": {
+            "total": 809,
+            "priority": 105,
+            "corporate": 30,
+            "taxi": 93,
+            "general": 581
+          },
+          "remaining": {
+            "total": 207,
+            "priority": 0,
+            "corporate": 18,
+            "taxi": 0,
+            "general": 252
+          },
+          "registered": {
+            "total": 1263,
+            "priority": 399,
+            "corporate": 21,
+            "taxi": 93,
+            "general": 750
+          },
+          "delivered": {
+            "total": 602,
+            "priority": 168,
+            "corporate": 12,
+            "taxi": 93,
+            "general": 329
+          }
+        }
+      },
+      "4713": {
+        "전기승용": {
+          "total": {
+            "total": 972,
+            "priority": 97,
+            "corporate": 0,
+            "taxi": 48,
+            "general": 827
+          },
+          "remaining": {
+            "total": 375,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 462
+          },
+          "registered": {
+            "total": 597,
+            "priority": 162,
+            "corporate": 22,
+            "taxi": 48,
+            "general": 365
+          },
+          "delivered": {
+            "total": 597,
+            "priority": 162,
+            "corporate": 22,
+            "taxi": 48,
+            "general": 365
+          }
+        }
+      },
+      "4715": {
+        "전기승용": {
+          "total": {
+            "total": 900,
+            "priority": 60,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 835
+          },
+          "remaining": {
+            "total": 497,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 592
+          },
+          "registered": {
+            "total": 569,
+            "priority": 187,
+            "corporate": 10,
+            "taxi": 24,
+            "general": 348
+          },
+          "delivered": {
+            "total": 403,
+            "priority": 136,
+            "corporate": 9,
+            "taxi": 15,
+            "general": 243
+          }
+        }
+      },
+      "4717": {
+        "전기승용": {
+          "total": {
+            "total": 620,
+            "priority": 32,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 585
+          },
+          "remaining": {
+            "total": 287,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 368
+          },
+          "registered": {
+            "total": 588,
+            "priority": 190,
+            "corporate": 5,
+            "taxi": 11,
+            "general": 382
+          },
+          "delivered": {
+            "total": 333,
+            "priority": 106,
+            "corporate": 2,
+            "taxi": 8,
+            "general": 217
+          }
+        }
+      },
+      "4719": {
+        "전기승용": {
+          "total": {
+            "total": 1050,
+            "priority": 105,
+            "corporate": 0,
+            "taxi": 52,
+            "general": 893
+          },
+          "remaining": {
+            "total": 339,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 29,
+            "general": 471
+          },
+          "registered": {
+            "total": 711,
+            "priority": 253,
+            "corporate": 13,
+            "taxi": 23,
+            "general": 422
+          },
+          "delivered": {
+            "total": 711,
+            "priority": 253,
+            "corporate": 13,
+            "taxi": 23,
+            "general": 422
+          }
+        }
+      },
+      "4721": {
+        "전기승용": {
+          "total": {
+            "total": 470,
+            "priority": 47,
+            "corporate": 0,
+            "taxi": 23,
+            "general": 400
+          },
+          "remaining": {
+            "total": 304,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 18,
+            "general": 300
+          },
+          "registered": {
+            "total": 166,
+            "priority": 58,
+            "corporate": 3,
+            "taxi": 5,
+            "general": 100
+          },
+          "delivered": {
+            "total": 166,
+            "priority": 58,
+            "corporate": 3,
+            "taxi": 5,
+            "general": 100
+          }
+        }
+      },
+      "4723": {
+        "전기승용": {
+          "total": {
+            "total": 300,
+            "priority": 46,
+            "corporate": 0,
+            "taxi": 14,
+            "general": 240
+          },
+          "remaining": {
+            "total": 218,
+            "priority": 21,
+            "corporate": 0,
+            "taxi": 11,
+            "general": 187
+          },
+          "registered": {
+            "total": 239,
+            "priority": 67,
+            "corporate": 6,
+            "taxi": 3,
+            "general": 163
+          },
+          "delivered": {
+            "total": 82,
+            "priority": 25,
+            "corporate": 1,
+            "taxi": 3,
+            "general": 53
+          }
+        }
+      },
+      "4725": {
+        "전기승용": {
+          "total": {
+            "total": 600,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 600
+          },
+          "remaining": {
+            "total": 404,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 476
+          },
+          "registered": {
+            "total": 319,
+            "priority": 95,
+            "corporate": 9,
+            "taxi": 2,
+            "general": 213
+          },
+          "delivered": {
+            "total": 196,
+            "priority": 63,
+            "corporate": 7,
+            "taxi": 2,
+            "general": 124
+          }
+        }
+      },
+      "4728": {
+        "전기승용": {
+          "total": {
+            "total": 250,
+            "priority": 10,
+            "corporate": 0,
+            "taxi": 15,
+            "general": 225
+          },
+          "remaining": {
+            "total": 94,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 12,
+            "general": 118
+          },
+          "registered": {
+            "total": 187,
+            "priority": 54,
+            "corporate": 2,
+            "taxi": 3,
+            "general": 128
+          },
+          "delivered": {
+            "total": 156,
+            "priority": 44,
+            "corporate": 2,
+            "taxi": 3,
+            "general": 107
+          }
+        }
+      },
+      "4729": {
+        "전기승용": {
+          "total": {
+            "total": 700,
+            "priority": 70,
+            "corporate": 0,
+            "taxi": 35,
+            "general": 595
+          },
+          "remaining": {
+            "total": 237,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 21,
+            "general": 289
+          },
+          "registered": {
+            "total": 488,
+            "priority": 140,
+            "corporate": 11,
+            "taxi": 14,
+            "general": 323
+          },
+          "delivered": {
+            "total": 463,
+            "priority": 132,
+            "corporate": 11,
+            "taxi": 14,
+            "general": 306
+          }
+        }
+      },
+      "4773": {
+        "전기승용": {
+          "total": {
+            "total": 250,
+            "priority": 24,
+            "corporate": 0,
+            "taxi": 12,
+            "general": 214
+          },
+          "remaining": {
+            "total": 157,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 12,
+            "general": 147
+          },
+          "registered": {
+            "total": 142,
+            "priority": 43,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 96
+          },
+          "delivered": {
+            "total": 93,
+            "priority": 25,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 67
+          }
+        }
+      },
+      "4775": {
+        "전기승용": {
+          "total": {
+            "total": 150,
+            "priority": 10,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 130
+          },
+          "remaining": {
+            "total": 89,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 92
+          },
+          "registered": {
+            "total": 91,
+            "priority": 29,
+            "corporate": 1,
+            "taxi": 1,
+            "general": 60
+          },
+          "delivered": {
+            "total": 61,
+            "priority": 23,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 38
+          }
+        }
+      },
+      "4776": {
+        "전기승용": {
+          "total": {
+            "total": 49,
+            "priority": 10,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 29
+          },
+          "remaining": {
+            "total": 24,
+            "priority": 5,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 9
+          },
+          "registered": {
+            "total": 51,
+            "priority": 11,
+            "corporate": 1,
+            "taxi": 0,
+            "general": 39
+          },
+          "delivered": {
+            "total": 25,
+            "priority": 5,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 20
+          }
+        }
+      },
+      "4777": {
+        "전기승용": {
+          "total": {
+            "total": 80,
+            "priority": 8,
+            "corporate": 0,
+            "taxi": 4,
+            "general": 68
+          },
+          "remaining": {
+            "total": 25,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 4,
+            "general": 29
+          },
+          "registered": {
+            "total": 58,
+            "priority": 16,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 42
+          },
+          "delivered": {
+            "total": 55,
+            "priority": 16,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 39
+          }
+        }
+      },
+      "4782": {
+        "전기승용": {
+          "total": {
+            "total": 120,
+            "priority": 12,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 102
+          },
+          "remaining": {
+            "total": 19,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 29
+          },
+          "registered": {
+            "total": 134,
+            "priority": 32,
+            "corporate": 2,
+            "taxi": 1,
+            "general": 99
+          },
+          "delivered": {
+            "total": 101,
+            "priority": 25,
+            "corporate": 2,
+            "taxi": 1,
+            "general": 73
+          }
+        }
+      },
+      "4783": {
+        "전기승용": {
+          "total": {
+            "total": 54,
+            "priority": 6,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 48
+          },
+          "remaining": {
+            "total": 1,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 10
+          },
+          "registered": {
+            "total": 53,
+            "priority": 12,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 38
+          },
+          "delivered": {
+            "total": 53,
+            "priority": 12,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 38
+          }
+        }
+      },
+      "4784": {
+        "전기승용": {
+          "total": {
+            "total": 189,
+            "priority": 40,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 146
+          },
+          "remaining": {
+            "total": 61,
+            "priority": 2,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 64
+          },
+          "registered": {
+            "total": 180,
+            "priority": 56,
+            "corporate": 9,
+            "taxi": 0,
+            "general": 115
+          },
+          "delivered": {
+            "total": 128,
+            "priority": 38,
+            "corporate": 8,
+            "taxi": 0,
+            "general": 82
+          }
+        }
+      },
+      "4785": {
+        "전기승용": {
+          "total": {
+            "total": 396,
+            "priority": 41,
+            "corporate": 0,
+            "taxi": 21,
+            "general": 334
+          },
+          "remaining": {
+            "total": 217,
+            "priority": 7,
+            "corporate": 0,
+            "taxi": 11,
+            "general": 214
+          },
+          "registered": {
+            "total": 179,
+            "priority": 34,
+            "corporate": 15,
+            "taxi": 10,
+            "general": 120
+          },
+          "delivered": {
+            "total": 179,
+            "priority": 34,
+            "corporate": 15,
+            "taxi": 10,
+            "general": 120
+          }
+        }
+      },
+      "4790": {
+        "전기승용": {
+          "total": {
+            "total": 100,
+            "priority": 10,
+            "corporate": 5,
+            "taxi": 5,
+            "general": 80
+          },
+          "remaining": {
+            "total": 9,
+            "priority": 0,
+            "corporate": 3,
+            "taxi": 5,
+            "general": 24
+          },
+          "registered": {
+            "total": 153,
+            "priority": 53,
+            "corporate": 4,
+            "taxi": 0,
+            "general": 96
+          },
+          "delivered": {
+            "total": 91,
+            "priority": 33,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 56
+          }
+        }
+      },
+      "4792": {
+        "전기승용": {
+          "total": {
+            "total": 110,
+            "priority": 17,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 93
+          },
+          "remaining": {
+            "total": 50,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 54
+          },
+          "registered": {
+            "total": 60,
+            "priority": 20,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 39
+          },
+          "delivered": {
+            "total": 60,
+            "priority": 20,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 39
+          }
+        }
+      },
+      "4793": {
+        "전기승용": {
+          "total": {
+            "total": 100,
+            "priority": 10,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 80
+          },
+          "remaining": {
+            "total": 3,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 9,
+            "general": 16
+          },
+          "registered": {
+            "total": 98,
+            "priority": 32,
+            "corporate": 1,
+            "taxi": 1,
+            "general": 64
+          },
+          "delivered": {
+            "total": 97,
+            "priority": 31,
+            "corporate": 1,
+            "taxi": 1,
+            "general": 64
+          }
+        }
+      },
+      "4794": {
+        "전기승용": {
+          "total": {
+            "total": 101,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 13,
+            "general": 88
+          },
+          "remaining": {
+            "total": 4,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 19
+          },
+          "registered": {
+            "total": 100,
+            "priority": 14,
+            "corporate": 1,
+            "taxi": 13,
+            "general": 72
+          },
+          "delivered": {
+            "total": 97,
+            "priority": 14,
+            "corporate": 1,
+            "taxi": 13,
+            "general": 69
+          }
+        }
+      },
+      "4812": {
+        "전기승용": {
+          "total": {
+            "total": 2500,
+            "priority": 240,
+            "corporate": 0,
+            "taxi": 120,
+            "general": 2140
+          },
+          "remaining": {
+            "total": 1082,
+            "priority": 101,
+            "corporate": 0,
+            "taxi": 50,
+            "general": 950
+          },
+          "registered": {
+            "total": 1419,
+            "priority": 140,
+            "corporate": 19,
+            "taxi": 70,
+            "general": 1190
+          },
+          "delivered": {
+            "total": 1418,
+            "priority": 139,
+            "corporate": 19,
+            "taxi": 70,
+            "general": 1190
+          }
+        }
+      },
+      "4817": {
+        "전기승용": {
+          "total": {
+            "total": 650,
+            "priority": 65,
+            "corporate": 0,
+            "taxi": 25,
+            "general": 560
+          },
+          "remaining": {
+            "total": 130,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 243
+          },
+          "registered": {
+            "total": 520,
+            "priority": 169,
+            "corporate": 5,
+            "taxi": 29,
+            "general": 317
+          },
+          "delivered": {
+            "total": 520,
+            "priority": 169,
+            "corporate": 5,
+            "taxi": 29,
+            "general": 317
+          }
+        }
+      },
+      "4822": {
+        "전기승용": {
+          "total": {
+            "total": 260,
+            "priority": 14,
+            "corporate": 0,
+            "taxi": 14,
+            "general": 232
+          },
+          "remaining": {
+            "total": 117,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 148
+          },
+          "registered": {
+            "total": 337,
+            "priority": 109,
+            "corporate": 4,
+            "taxi": 29,
+            "general": 195
+          },
+          "delivered": {
+            "total": 143,
+            "priority": 35,
+            "corporate": 3,
+            "taxi": 21,
+            "general": 84
+          }
+        }
+      },
+      "4824": {
+        "전기승용": {
+          "total": {
+            "total": 308,
+            "priority": 37,
+            "corporate": 0,
+            "taxi": 19,
+            "general": 252
+          },
+          "remaining": {
+            "total": 120,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 126
+          },
+          "registered": {
+            "total": 220,
+            "priority": 51,
+            "corporate": 9,
+            "taxi": 15,
+            "general": 145
+          },
+          "delivered": {
+            "total": 188,
+            "priority": 41,
+            "corporate": 8,
+            "taxi": 13,
+            "general": 126
+          }
+        }
+      },
+      "4825": {
+        "전기승용": {
+          "total": {
+            "total": 1245,
+            "priority": 125,
+            "corporate": 0,
+            "taxi": 68,
+            "general": 1052
+          },
+          "remaining": {
+            "total": 282,
+            "priority": 11,
+            "corporate": 0,
+            "taxi": 29,
+            "general": 275
+          },
+          "registered": {
+            "total": 978,
+            "priority": 114,
+            "corporate": 33,
+            "taxi": 39,
+            "general": 792
+          },
+          "delivered": {
+            "total": 963,
+            "priority": 114,
+            "corporate": 33,
+            "taxi": 39,
+            "general": 777
+          }
+        }
+      },
+      "4827": {
+        "전기승용": {
+          "total": {
+            "total": 500,
+            "priority": 50,
+            "corporate": 0,
+            "taxi": 25,
+            "general": 425
+          },
+          "remaining": {
+            "total": 308,
+            "priority": 27,
+            "corporate": 0,
+            "taxi": 11,
+            "general": 278
+          },
+          "registered": {
+            "total": 220,
+            "priority": 23,
+            "corporate": 8,
+            "taxi": 14,
+            "general": 175
+          },
+          "delivered": {
+            "total": 192,
+            "priority": 23,
+            "corporate": 8,
+            "taxi": 14,
+            "general": 147
+          }
+        }
+      },
+      "4831": {
+        "전기승용": {
+          "total": {
+            "total": 1050,
+            "priority": 105,
+            "corporate": 2,
+            "taxi": 53,
+            "general": 890
+          },
+          "remaining": {
+            "total": 397,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 512
+          },
+          "registered": {
+            "total": 710,
+            "priority": 239,
+            "corporate": 12,
+            "taxi": 43,
+            "general": 416
+          },
+          "delivered": {
+            "total": 653,
+            "priority": 222,
+            "corporate": 10,
+            "taxi": 43,
+            "general": 378
+          }
+        }
+      },
+      "4833": {
+        "전기승용": {
+          "total": {
+            "total": 755,
+            "priority": 38,
+            "corporate": 0,
+            "taxi": 38,
+            "general": 679
+          },
+          "remaining": {
+            "total": 105,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 18,
+            "general": 294
+          },
+          "registered": {
+            "total": 650,
+            "priority": 236,
+            "corporate": 9,
+            "taxi": 20,
+            "general": 385
+          },
+          "delivered": {
+            "total": 650,
+            "priority": 236,
+            "corporate": 9,
+            "taxi": 20,
+            "general": 385
+          }
+        }
+      },
+      "4872": {
+        "전기승용": {
+          "total": {
+            "total": 70,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 70
+          },
+          "remaining": {
+            "total": 19,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 30
+          },
+          "registered": {
+            "total": 56,
+            "priority": 12,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 44
+          },
+          "delivered": {
+            "total": 51,
+            "priority": 11,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 40
+          }
+        }
+      },
+      "4873": {
+        "전기승용": {
+          "total": {
+            "total": 148,
+            "priority": 15,
+            "corporate": 0,
+            "taxi": 15,
+            "general": 118
+          },
+          "remaining": {
+            "total": 62,
+            "priority": 2,
+            "corporate": 0,
+            "taxi": 12,
+            "general": 53
+          },
+          "registered": {
+            "total": 105,
+            "priority": 15,
+            "corporate": 7,
+            "taxi": 5,
+            "general": 78
+          },
+          "delivered": {
+            "total": 86,
+            "priority": 13,
+            "corporate": 5,
+            "taxi": 3,
+            "general": 65
+          }
+        }
+      },
+      "4874": {
+        "전기승용": {
+          "total": {
+            "total": 190,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 190
+          },
+          "remaining": {
+            "total": 61,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 95
+          },
+          "registered": {
+            "total": 163,
+            "priority": 39,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 123
+          },
+          "delivered": {
+            "total": 129,
+            "priority": 33,
+            "corporate": 0,
+            "taxi": 1,
+            "general": 95
+          }
+        }
+      },
+      "4882": {
+        "전기승용": {
+          "total": {
+            "total": 150,
+            "priority": 8,
+            "corporate": 0,
+            "taxi": 7,
+            "general": 135
+          },
+          "remaining": {
+            "total": 71,
+            "priority": 1,
+            "corporate": 0,
+            "taxi": 4,
+            "general": 76
+          },
+          "registered": {
+            "total": 89,
+            "priority": 9,
+            "corporate": 11,
+            "taxi": 4,
+            "general": 65
+          },
+          "delivered": {
+            "total": 79,
+            "priority": 7,
+            "corporate": 10,
+            "taxi": 3,
+            "general": 59
+          }
+        }
+      },
+      "4884": {
+        "전기승용": {
+          "total": {
+            "total": 100,
+            "priority": 5,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 90
+          },
+          "remaining": {
+            "total": 56,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 3,
+            "general": 59
+          },
+          "registered": {
+            "total": 48,
+            "priority": 10,
+            "corporate": 1,
+            "taxi": 2,
+            "general": 35
+          },
+          "delivered": {
+            "total": 44,
+            "priority": 10,
+            "corporate": 1,
+            "taxi": 2,
+            "general": 31
+          }
+        }
+      },
+      "4885": {
+        "전기승용": {
+          "total": {
+            "total": 110,
+            "priority": 11,
+            "corporate": 0,
+            "taxi": 11,
+            "general": 88
+          },
+          "remaining": {
+            "total": 57,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 11,
+            "general": 49
+          },
+          "registered": {
+            "total": 59,
+            "priority": 11,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 45
+          },
+          "delivered": {
+            "total": 53,
+            "priority": 11,
+            "corporate": 3,
+            "taxi": 0,
+            "general": 39
+          }
+        }
+      },
+      "4886": {
+        "전기승용": {
+          "total": {
+            "total": 120,
+            "priority": 12,
+            "corporate": 4,
+            "taxi": 5,
+            "general": 99
+          },
+          "remaining": {
+            "total": 71,
+            "priority": 0,
+            "corporate": 4,
+            "taxi": 5,
+            "general": 62
+          },
+          "registered": {
+            "total": 54,
+            "priority": 13,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 41
+          },
+          "delivered": {
+            "total": 49,
+            "priority": 12,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 37
+          }
+        }
+      },
+      "4887": {
+        "전기승용": {
+          "total": {
+            "total": 104,
+            "priority": 11,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 87
+          },
+          "remaining": {
+            "total": 72,
+            "priority": 3,
+            "corporate": 0,
+            "taxi": 6,
+            "general": 65
+          },
+          "registered": {
+            "total": 32,
+            "priority": 8,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 22
+          },
+          "delivered": {
+            "total": 32,
+            "priority": 8,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 22
+          }
+        }
+      },
+      "4888": {
+        "전기승용": {
+          "total": {
+            "total": 60,
+            "priority": 6,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 54
+          },
+          "remaining": {
+            "total": 0,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 14
+          },
+          "registered": {
+            "total": 60,
+            "priority": 20,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 40
+          },
+          "delivered": {
+            "total": 60,
+            "priority": 20,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 40
+          }
+        }
+      },
+      "4889": {
+        "전기승용": {
+          "total": {
+            "total": 98,
+            "priority": 15,
+            "corporate": 2,
+            "taxi": 5,
+            "general": 76
+          },
+          "remaining": {
+            "total": 25,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 26
+          },
+          "registered": {
+            "total": 160,
+            "priority": 39,
+            "corporate": 5,
+            "taxi": 5,
+            "general": 111
+          },
+          "delivered": {
+            "total": 73,
+            "priority": 15,
+            "corporate": 3,
+            "taxi": 5,
+            "general": 50
+          }
+        }
+      },
+      "5000": {
+        "전기승용": {
+          "total": {
+            "total": 3998,
+            "priority": 400,
+            "corporate": 0,
+            "taxi": 400,
+            "general": 3198
+          },
+          "remaining": {
+            "total": 1693,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 249,
+            "general": 2177
+          },
+          "registered": {
+            "total": 3261,
+            "priority": 1557,
+            "corporate": 40,
+            "taxi": 195,
+            "general": 1469
+          },
+          "delivered": {
+            "total": 2305,
+            "priority": 1102,
+            "corporate": 31,
+            "taxi": 151,
+            "general": 1021
+          }
+        }
+      },
+      "9999": {
+        "전기승용": {
+          "total": {
+            "total": 30000,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 30000
+          },
+          "remaining": {
+            "total": 15781,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 0,
+            "general": 29759
+          },
+          "registered": {
+            "total": 20353,
+            "priority": 8,
+            "corporate": 19854,
+            "taxi": 159,
+            "general": 332
+          },
+          "delivered": {
+            "total": 14219,
+            "priority": 6,
+            "corporate": 13852,
+            "taxi": 120,
+            "general": 241
+          }
+        }
+      },
+      "43745": {
+        "전기승용": {
+          "total": {
+            "total": 100,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 95
+          },
+          "remaining": {
+            "total": 45,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 5,
+            "general": 42
+          },
+          "registered": {
+            "total": 55,
+            "priority": 0,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 53
+          },
+          "delivered": {
+            "total": 55,
+            "priority": 0,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 53
+          }
+        }
+      },
+      "44825": {
+        "전기승용": {
+          "total": {
+            "total": 295,
+            "priority": 10,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 275
+          },
+          "remaining": {
+            "total": 176,
+            "priority": 0,
+            "corporate": 0,
+            "taxi": 10,
+            "general": 168
+          },
+          "registered": {
+            "total": 123,
+            "priority": 10,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 111
+          },
+          "delivered": {
+            "total": 119,
+            "priority": 10,
+            "corporate": 2,
+            "taxi": 0,
+            "general": 107
+          }
+        }
+      }
+    },
+    "2026-05-18": {
       "1100": {
         "전기승용": {
           "total": {
