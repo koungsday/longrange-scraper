@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-17T12:50:41.783Z",
+  "timestamp": "2026-05-17T13:00:50.487Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2093,11 +2093,11 @@
           "sido": "충남",
           "region": "홍성군",
           "vehicleType": "전기승용",
-          "quota_total": 200,
-          "quota_priority": 40,
+          "quota_total": 100,
+          "quota_priority": 10,
           "quota_corporate": 0,
-          "quota_taxi": 10,
-          "quota_general": 150,
+          "quota_taxi": 5,
+          "quota_general": 85,
           "registered_total": 136,
           "registered_priority": 41,
           "registered_corporate": 5,
@@ -2108,11 +2108,11 @@
           "delivered_corporate": 5,
           "delivered_taxi": 5,
           "delivered_general": 85,
-          "remaining_total": 67,
-          "remaining_priority": 2,
+          "remaining_total": 0,
+          "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 5,
-          "remaining_general": 65,
+          "remaining_taxi": 0,
+          "remaining_general": 0,
           "note": "☆하반기 사업 조기 공고☆\n접수일 : 2026. 5. 18.(월) 09시~ 예산 소진시까지\n★2026년 상반기 사업 대비 달라진 점★\n기 존 : 접수일 기준 다음날 09시부터 지원가능확인요청 가능\n변 경 : ‘26. 5. 18. ~ 19. 접수 건은 ’26. 5. 20. 09시부터 지원가능확인요청 가능"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-17T12:50:41.732Z"
+      "timestamp": "2026-05-17T13:00:50.401Z"
     }
   ]
 }
