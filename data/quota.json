@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-18T10:30:44.899Z",
+  "timestamp": "2026-05-18T10:40:42.942Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -33,7 +33,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 76,
           "remaining_general": 4767,
-          "note": "**2026.5.15. 기준, 상반기 서울시 전기승용차 보급 현황 알려 드립니다.\n(택시 840대 미포함)\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 9,298대\nㅇ 잔여대수: 2,063대\n-----------------------------\nㅇ 택시 잔여대수: 0대\n** 상반기 보급물량 소진시에는 당초 일정보다 조기에 마감할 계획입니다."
+          "note": "**2026.5.18. 기준, 상반기 서울시 전기승용차 보급 현황 알려 드립니다.\n(택시 840대 미포함)\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 9,398대\nㅇ 잔여대수: 1,963대\n-----------------------------\nㅇ 택시 잔여대수: 0대\n** 상반기 보급물량 소진시에는 당초 일정보다 조기에 마감할 계획입니다."
         },
         {
           "sido": "부산",
@@ -283,16 +283,16 @@
           "registered_corporate": 3,
           "registered_taxi": 20,
           "registered_general": 399,
-          "delivered_total": 539,
+          "delivered_total": 540,
           "delivered_priority": 171,
           "delivered_corporate": 3,
           "delivered_taxi": 19,
-          "delivered_general": 346,
-          "remaining_total": 161,
+          "delivered_general": 347,
+          "remaining_total": 160,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 16,
-          "remaining_general": 249,
+          "remaining_general": 248,
           "note": "★ ★ (2026. 4. 21. 11:30 기준) 전기자동차 보조금 잔여 물량 소진 완료 ★ ★\n* 전기자동차 물량 소진은 '대상자선정' 기준임.\n* 취소분 발생할 경우에 한하여, '지원가능확인' 순으로 '대상자선정' 추가(취소분 발생 가능성에 따라 신청 차단 x)\n* 보조금 대상 및 지급은 출고순 기준(신청순 x)으로 확정됩니다.\n☆ ☆ 2026년 하반기 전기자동차 보조금 공고 승용 6월 예정 ☆ ☆\n☆ ☆ 2026년 하반기 전기자동차 보조금 공고 화물 7월 예정 ☆ ☆"
         },
         {
@@ -699,12 +699,12 @@
           "registered_corporate": 39,
           "registered_taxi": 59,
           "registered_general": 1659,
-          "delivered_total": 1842,
-          "delivered_priority": 638,
+          "delivered_total": 1843,
+          "delivered_priority": 639,
           "delivered_corporate": 25,
           "delivered_taxi": 57,
           "delivered_general": 1122,
-          "remaining_total": 2785,
+          "remaining_total": 2784,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 3,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-18T10:30:44.815Z"
+      "timestamp": "2026-05-18T10:40:42.868Z"
     }
   ]
 }
