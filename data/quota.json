@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-18T10:00:43.244Z",
+  "timestamp": "2026-05-18T10:10:39.719Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -491,12 +491,12 @@
           "registered_corporate": 6,
           "registered_taxi": 4,
           "registered_general": 124,
-          "delivered_total": 183,
-          "delivered_priority": 83,
+          "delivered_total": 182,
+          "delivered_priority": 82,
           "delivered_corporate": 5,
           "delivered_taxi": 3,
           "delivered_general": 92,
-          "remaining_total": 131,
+          "remaining_total": 132,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -725,16 +725,16 @@
           "registered_corporate": 17,
           "registered_taxi": 22,
           "registered_general": 593,
-          "delivered_total": 899,
+          "delivered_total": 898,
           "delivered_priority": 306,
           "delivered_corporate": 16,
           "delivered_taxi": 20,
-          "delivered_general": 557,
-          "remaining_total": 330,
+          "delivered_general": 556,
+          "remaining_total": 331,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 40,
-          "remaining_general": 492,
+          "remaining_general": 493,
           "note": "★ 상반기 마감\n★ 2026. 5. 21. 또는 5. 22. 모집 공고 예정\n★ 2026. 6. 8.(월)부터 접수 시작"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-18T10:00:43.168Z"
+      "timestamp": "2026-05-18T10:10:39.650Z"
     }
   ]
 }
