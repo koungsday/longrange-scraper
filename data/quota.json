@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-19T14:10:45.928Z",
+  "timestamp": "2026-05-19T14:20:45.990Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2094,12 +2094,12 @@
           "region": "홍성군",
           "vehicleType": "전기승용",
           "quota_total": 234,
-          "quota_priority": 38,
+          "quota_priority": 37,
           "quota_corporate": 0,
           "quota_taxi": 10,
-          "quota_general": 186,
-          "registered_total": 402,
-          "registered_priority": 127,
+          "quota_general": 187,
+          "registered_total": 401,
+          "registered_priority": 126,
           "registered_corporate": 9,
           "registered_taxi": 8,
           "registered_general": 258,
@@ -2109,10 +2109,10 @@
           "delivered_taxi": 5,
           "delivered_general": 96,
           "remaining_total": 101,
-          "remaining_priority": 11,
+          "remaining_priority": 10,
           "remaining_corporate": 0,
           "remaining_taxi": 5,
-          "remaining_general": 90,
+          "remaining_general": 91,
           "note": "☆하반기 사업 조기 공고☆\n접수일 : 2026. 5. 18.(월) 09시~ 예산 소진시까지\n★2026년 상반기 사업 대비 달라진 점★\n기 존 : 접수일 기준 다음날 09시부터 지원가능확인요청 가능\n변 경 : ‘26. 5. 18. ~ 19. 접수 건은 ’26. 5. 20. 09시부터 지원가능확인요청 가능"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-19T14:10:45.854Z"
+      "timestamp": "2026-05-19T14:20:45.916Z"
     }
   ]
 }
