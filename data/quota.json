@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-19T12:20:42.343Z",
+  "timestamp": "2026-05-19T12:30:52.605Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,12 +23,12 @@
           "registered_corporate": 333,
           "registered_taxi": 859,
           "registered_general": 6089,
-          "delivered_total": 8726,
-          "delivered_priority": 2568,
+          "delivered_total": 8725,
+          "delivered_priority": 2567,
           "delivered_corporate": 282,
           "delivered_taxi": 772,
           "delivered_general": 5104,
-          "remaining_total": 3475,
+          "remaining_total": 3476,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 68,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 21052,
+          "registered_total": 21086,
           "registered_priority": 9,
-          "registered_corporate": 20514,
+          "registered_corporate": 20548,
           "registered_taxi": 172,
           "registered_general": 357,
           "delivered_total": 14577,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-19T12:20:42.272Z"
+      "timestamp": "2026-05-19T12:30:52.518Z"
     }
   ]
 }
