@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-19T13:30:48.792Z",
+  "timestamp": "2026-05-19T13:40:46.232Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2099,20 +2099,20 @@
           "quota_taxi": 10,
           "quota_general": 186,
           "registered_total": 403,
-          "registered_priority": 139,
+          "registered_priority": 132,
           "registered_corporate": 9,
           "registered_taxi": 8,
-          "registered_general": 247,
+          "registered_general": 254,
           "delivered_total": 133,
-          "delivered_priority": 38,
+          "delivered_priority": 31,
           "delivered_corporate": 5,
           "delivered_taxi": 5,
-          "delivered_general": 85,
+          "delivered_general": 92,
           "remaining_total": 101,
-          "remaining_priority": 0,
+          "remaining_priority": 7,
           "remaining_corporate": 0,
           "remaining_taxi": 5,
-          "remaining_general": 101,
+          "remaining_general": 94,
           "note": "☆하반기 사업 조기 공고☆\n접수일 : 2026. 5. 18.(월) 09시~ 예산 소진시까지\n★2026년 상반기 사업 대비 달라진 점★\n기 존 : 접수일 기준 다음날 09시부터 지원가능확인요청 가능\n변 경 : ‘26. 5. 18. ~ 19. 접수 건은 ’26. 5. 20. 09시부터 지원가능확인요청 가능"
         },
         {
@@ -4178,11 +4178,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 21099,
-          "registered_priority": 9,
+          "registered_total": 21079,
+          "registered_priority": 8,
           "registered_corporate": 20561,
           "registered_taxi": 172,
-          "registered_general": 357,
+          "registered_general": 338,
           "delivered_total": 14577,
           "delivered_priority": 6,
           "delivered_corporate": 14199,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-19T13:30:48.725Z"
+      "timestamp": "2026-05-19T13:40:46.165Z"
     }
   ]
 }
