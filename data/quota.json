@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-20T12:40:45.120Z",
+  "timestamp": "2026-05-20T12:50:46.618Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 334,
           "registered_taxi": 862,
           "registered_general": 6125,
-          "delivered_total": 8932,
+          "delivered_total": 8933,
           "delivered_priority": 2630,
           "delivered_corporate": 285,
           "delivered_taxi": 784,
-          "delivered_general": 5233,
-          "remaining_total": 3269,
+          "delivered_general": 5234,
+          "remaining_total": 3268,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 56,
-          "remaining_general": 4528,
+          "remaining_general": 4527,
           "note": "**2026.5.18. 기준, 상반기 서울시 전기승용차 보급 현황 알려 드립니다.\n(택시 840대 미포함)\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 9,398대\nㅇ 잔여대수: 1,963대\n-----------------------------\nㅇ 택시 잔여대수: 0대\n** 상반기 보급물량 소진시에는 당초 일정보다 조기에 마감할 계획입니다."
         },
         {
@@ -2113,7 +2113,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 5,
           "remaining_general": 91,
-          "note": "☆하반기 사업 조기 공고☆\n접수일 : 2026. 5. 18.(월) 09시~ 예산 소진시까지\n★2026년 상반기 사업 대비 달라진 점★\n기 존 : 접수일 기준 다음날 09시부터 지원가능확인요청 가능\n변 경 : ‘26. 5. 18. ~ 19. 접수 건은 ’26. 5. 20. 09시부터 지원가능확인요청 가능"
+          "note": "☆하반기 사업 조기 공고☆\n택시 1대 남았습니다.(우선순위, 일반 물량 마감)"
         },
         {
           "sido": "충남",
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-20T12:40:45.048Z"
+      "timestamp": "2026-05-20T12:50:46.564Z"
     }
   ]
 }
