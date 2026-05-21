@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-21T22:40:43.212Z",
+  "timestamp": "2026-05-21T22:50:42.028Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -75,16 +75,16 @@
           "registered_corporate": 53,
           "registered_taxi": 231,
           "registered_general": 1370,
-          "delivered_total": 2006,
+          "delivered_total": 2007,
           "delivered_priority": 496,
           "delivered_corporate": 50,
           "delivered_taxi": 205,
-          "delivered_general": 1255,
-          "remaining_total": 119,
+          "delivered_general": 1256,
+          "remaining_total": 118,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 551,
+          "remaining_general": 550,
           "note": "★ 승용 2차 접수 마감되었습니다. ★\n★ 화물 2차 접수 마감되었습니다. ★\n★ 접수 후 빠른 처리를 위해 단순 문의 및 처리 독촉 전화는 자제해주시길 바랍니다. ★\n*2026년 전기자동차 민간보급사업 안내 (2차)*\n- 보급기간  : 마감\n- 보급물량 : 1,063대(승용차 910대, 화물차 150대, 승합차 3대)\n* 보급수량은 차종별 보조금 차등지원 및 차종별 구매수요에 따라 가감될 수 있습니다.\n※ 2026년 전기차 보급대수 : 3,542대(승용차 3,035,  화물차 500, 승합차 7)\n1차 : 마감,     2차 : 마감,     3차 : 7월 예정\n-> 보급추이 및 여건에 따라 회차 및 시기는 조정될수 있습니다.\n- 신청양식 : 대구시 양식(공고문 양식 다운로드)\n- 기타 상세 사항은 공고문을 참고하시기 바랍니다."
         },
         {
@@ -226,11 +226,11 @@
           "quota_corporate": 0,
           "quota_taxi": 193,
           "quota_general": 3677,
-          "registered_total": 2756,
+          "registered_total": 2755,
           "registered_priority": 884,
           "registered_corporate": 31,
           "registered_taxi": 96,
-          "registered_general": 1745,
+          "registered_general": 1744,
           "delivered_total": 2128,
           "delivered_priority": 701,
           "delivered_corporate": 25,
@@ -465,16 +465,16 @@
           "registered_corporate": 35,
           "registered_taxi": 43,
           "registered_general": 1144,
-          "delivered_total": 1721,
+          "delivered_total": 1722,
           "delivered_priority": 513,
           "delivered_corporate": 34,
           "delivered_taxi": 40,
-          "delivered_general": 1134,
-          "remaining_total": 1079,
+          "delivered_general": 1135,
+          "remaining_total": 1078,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 40,
-          "remaining_general": 1166,
+          "remaining_general": 1165,
           "note": "< 고양시 전기자동차 보급사업(2차) 공고 >\n★ \"추경1차\"의 공고문을 확인하고 신청하시기 바라며, 공고 미숙지로 인한 불이익은 고양시가 책임지지 않습니다.\n★ 단순 문의 및 처리 독촉 전화는 자제하여 주시기 바랍니다. 전화문의 응대로 업무처리가 지연됩니다.\n▷ 2차 접수기간 : 5. 27.(수) 11:00 ~ 12. 4.(금) 18:00 (※ 예산 소진 시 조기마감)\n▷ 2차 보급대수 : 승용 1,050대 / 화물 250대 / 승합 10대\n(※ 차종·모델별 지원금액 차이, 추가보조금 지원 여부 등으로 인해 실제 보급대수는 변동될 수 있습니다.)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-21T22:40:43.152Z"
+      "timestamp": "2026-05-21T22:50:41.956Z"
     }
   ]
 }
