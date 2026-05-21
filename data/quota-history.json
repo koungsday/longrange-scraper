@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "lastUpdated": "2026. 5. 21. PM 7:50:46 KST",
+  "lastUpdated": "2026. 5. 21. PM 8:00:51 KST",
   "regions": {
     "1100": {
       "name": "서울특별시",
@@ -436749,11 +436749,11 @@
             "general": 497
           },
           "remaining": {
-            "total": 245,
+            "total": 246,
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
-            "general": 325
+            "general": 326
           },
           "registered": {
             "total": 298,
@@ -436763,11 +436763,11 @@
             "general": 202
           },
           "delivered": {
-            "total": 252,
+            "total": 251,
             "priority": 69,
             "corporate": 9,
             "taxi": 2,
-            "general": 172
+            "general": 171
           }
         }
       },
@@ -436806,18 +436806,18 @@
       "4684": {
         "전기승용": {
           "total": {
-            "total": 140,
-            "priority": 14,
+            "total": 100,
+            "priority": 10,
             "corporate": 0,
-            "taxi": 4,
-            "general": 122
+            "taxi": 5,
+            "general": 85
           },
           "remaining": {
-            "total": 60,
-            "priority": 4,
+            "total": 20,
+            "priority": 0,
             "corporate": 0,
-            "taxi": 1,
-            "general": 57
+            "taxi": 2,
+            "general": 20
           },
           "registered": {
             "total": 96,
@@ -438349,7 +438349,7 @@
             "general": 30000
           },
           "remaining": {
-            "total": 14839,
+            "total": 14838,
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
@@ -438363,9 +438363,9 @@
             "general": 347
           },
           "delivered": {
-            "total": 15161,
+            "total": 15162,
             "priority": 6,
-            "corporate": 14771,
+            "corporate": 14772,
             "taxi": 132,
             "general": 252
           }
