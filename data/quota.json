@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-24T02:30:46.036Z",
+  "timestamp": "2026-05-24T02:40:43.703Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3497,11 +3497,11 @@
           "sido": "경북",
           "region": "고령군",
           "vehicleType": "전기승용",
-          "quota_total": 54,
-          "quota_priority": 6,
+          "quota_total": 39,
+          "quota_priority": 0,
           "quota_corporate": 0,
           "quota_taxi": 0,
-          "quota_general": 48,
+          "quota_general": 39,
           "registered_total": 53,
           "registered_priority": 12,
           "registered_corporate": 3,
@@ -3512,11 +3512,11 @@
           "delivered_corporate": 3,
           "delivered_taxi": 0,
           "delivered_general": 38,
-          "remaining_total": 1,
+          "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 10,
+          "remaining_general": 1,
           "note": "[2026년 고령군 전기자동차 상반기 2차 보급사업]\n-신청기간: 2026. 5. 27.(수) 10:00 - 2026. 6. 30.(화) 18:00\n※예산 소진시 조기 마감\n-지원대수: 70대(승용50대, 화물20대)\n-대상자 선정: 출고·등록 순\n-지원대상: 신청서 접수일 기준 고령군에 60일 이상 연속하여 거주하거나 고령군에 60일 이상 사무소를 두고 사업자 등록을 한 자로서 관련 요건을 충족한 자(자세한 요건 공고문 참조)\n- 기타 자세한사항은 공고문을 참조하시기 바랍니다.\n※ 공고문 및 차종별 지원금 확인 경로\n:고령군청 홈페이지 > 대가야고령 > 고령알리미 > 고시/공고\n◀◀왼쪽의 잔여대수와 실잔여대수는 다릅니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-24T02:30:45.966Z"
+      "timestamp": "2026-05-24T02:40:43.648Z"
     }
   ]
 }
