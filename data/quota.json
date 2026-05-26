@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-26T22:50:44.364Z",
+  "timestamp": "2026-05-26T23:00:52.699Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 341,
           "registered_taxi": 880,
           "registered_general": 6264,
-          "delivered_total": 9234,
+          "delivered_total": 9235,
           "delivered_priority": 2707,
           "delivered_corporate": 293,
           "delivered_taxi": 798,
-          "delivered_general": 5436,
-          "remaining_total": 2967,
+          "delivered_general": 5437,
+          "remaining_total": 2966,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 42,
-          "remaining_general": 4325,
+          "remaining_general": 4324,
           "note": "**2026.5.22. 기준, 상반기 서울시 전기승용차 보급 현황 알려 드립니다.\n(택시 840대 미포함)\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 9,610대\nㅇ 잔여대수: 1,751대\n-----------------------------\nㅇ 택시 잔여대수: 0대\n** 상반기 보급물량 소진시에는 당초 일정보다 조기에 마감할 계획입니다."
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 22236,
           "registered_taxi": 182,
           "registered_general": 356,
-          "delivered_total": 15886,
+          "delivered_total": 15887,
           "delivered_priority": 6,
-          "delivered_corporate": 15489,
+          "delivered_corporate": 15490,
           "delivered_taxi": 135,
           "delivered_general": 256,
-          "remaining_total": 14114,
+          "remaining_total": 14113,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-26T22:50:44.300Z"
+      "timestamp": "2026-05-26T23:00:52.632Z"
     }
   ]
 }
