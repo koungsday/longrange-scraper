@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-26T10:00:57.381Z",
+  "timestamp": "2026-05-26T10:10:48.584Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1193,16 +1193,16 @@
           "registered_corporate": 1,
           "registered_taxi": 2,
           "registered_general": 77,
-          "delivered_total": 106,
+          "delivered_total": 107,
           "delivered_priority": 40,
           "delivered_corporate": 1,
           "delivered_taxi": 2,
-          "delivered_general": 63,
-          "remaining_total": 114,
+          "delivered_general": 64,
+          "remaining_total": 113,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 157,
+          "remaining_general": 156,
           "note": "★5.26.기준 잔여대수 : 승용 17대, 화물 17대, 승합 각 1대\n★5.27.(수)~5.29.(금) 담당자 부재\n-2026년 공고물량 : 승용 220대, 화물 70대, 승합(개인) 1대, 승합(어린이통학용) 1대\n-현재 신청 건이 많아 상반기 내 예산 소진 예상됩니다.\n-추가 물량 확보 여부는 현재 확실하지 않으며, 기후에너지환경부 추경 계획에 따라 변동될 수 있습니다.\n-전환지원금은 지원신청 시 신청하여 보조금 확정 후 지급신청 전까지 차량 판매 또는 폐차 완료하여야 합니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-26T10:00:57.310Z"
+      "timestamp": "2026-05-26T10:10:48.516Z"
     }
   ]
 }
