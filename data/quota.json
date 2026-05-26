@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-26T10:20:46.013Z",
+  "timestamp": "2026-05-26T10:30:53.122Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -699,16 +699,16 @@
           "registered_corporate": 42,
           "registered_taxi": 62,
           "registered_general": 1756,
-          "delivered_total": 2389,
+          "delivered_total": 2390,
           "delivered_priority": 839,
           "delivered_corporate": 34,
           "delivered_taxi": 58,
-          "delivered_general": 1458,
-          "remaining_total": 2238,
+          "delivered_general": 1459,
+          "remaining_total": 2237,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 2,
-          "remaining_general": 2909,
+          "remaining_general": 2908,
           "note": "★ 화물 - 마감 (2026.2.5.) / 하반기 물량 : 6월말 공고, 7월초 접수 예정 ★\n■ 전기자동차 승용 상반기 추가 보급사업 변경공고 안내  ■\n- 변경공고 : 2026. 5. 15.(금)\n- 변경공고 접수기간 : 2026. 5. 15.(금) 14:00 ~  예산소진 시   (신청 공고 구분 : 추경1)\n※기존 추경1 접수 건은 재신청 없이 연계하여 그대로 처리함\n- 물량 : 2,627대 (예산물량) (차종 및 추가지원 여부에 따라 대수는 변동 가능)\n※ 변경 전 800대 → 변경 후 2,627대\n※전체 일반물량으로 진행되며 추가보조금은 대상에 따라 정상 지급됩니다.\n★ 잔여물량 500대 이하부터 게시할 에정이오니 단순 잔여대수 확인 문의는 삼가주시기 바랍니다.\n※ 반드시 공고문 확인하시고 신청하시기 바랍니다.\n※ 하루 50개 내외로 신청서류 검토 및 자격부여되오니 차량 출고일 등 감안하여 신청하시기 바랍니다."
         },
         {
@@ -1115,16 +1115,16 @@
           "registered_corporate": 3,
           "registered_taxi": 8,
           "registered_general": 159,
-          "delivered_total": 171,
+          "delivered_total": 172,
           "delivered_priority": 22,
           "delivered_corporate": 3,
           "delivered_taxi": 7,
-          "delivered_general": 139,
-          "remaining_total": 109,
+          "delivered_general": 140,
+          "remaining_total": 108,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 3,
-          "remaining_general": 111,
+          "remaining_general": 110,
           "note": "★ 5월12일 13:50기준 2차공고 승용 접수 마감합니다. ★\n★ 대상자선정건중 취소물량이 나올경우 지원가능확인요청순으로 후순위 지원합니다. ★\n★ 택시 우선순위 기 접수건중 1대 취소로 2대 남았습니다.(5월까지 신청없을경우 6월 일반물량으로 전환되어 지원가능확인요청순으로 후순위 지원합니다.) ★\n<2차 공고>\n○ 접수일정 : 마감\n○ 추가물량 : 승용 70대, 화물 20대, 승합(개인) 2대(상반기 잔여물량 미포함)\n※ 상반기 잔여 물량 : 승합(개인) 3대, 승합(어린이통학) 1대\n※ 택시 우선순위 잔여물량은 6월부터 일반물량 통합\n※ 자격부여는 예산을 초과하여 접수함(대상자확정 기준으로 예산소진시 마감)\n*** '26.1.1.이후 계약건에 대해서만 보조금 지급이 가능합니다!!\n* 대상자 선정 전 차량 출고(등록) 시 보조금 지급 불가하오니 주의하여 주시기 바랍니다.\n* 전환지원금은 개인(개인사업자,법인 등 불가)만 신청가능하며 판매 및 폐차관련서류는 보조금 지급신청전까지 제출\n* 다자녀, 생애최초의 경우 \"만\"나이 기준(다자녀 만18세이하, 생애최초 만19세~만34세)\n* 지급신청시 시스템에서는 미첨부하도록 되어있으나, 붙임4의 지급신청서도 별도첨부해주시기 바랍니다!!"
         },
         {
@@ -4157,12 +4157,12 @@
           "registered_corporate": 44,
           "registered_taxi": 213,
           "registered_general": 1605,
-          "delivered_total": 2609,
-          "delivered_priority": 1248,
+          "delivered_total": 2611,
+          "delivered_priority": 1250,
           "delivered_corporate": 35,
           "delivered_taxi": 164,
           "delivered_general": 1162,
-          "remaining_total": 1389,
+          "remaining_total": 1387,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 236,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-26T10:20:45.947Z"
+      "timestamp": "2026-05-26T10:30:53.051Z"
     }
   ]
 }
