@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-27T11:10:46.666Z",
+  "timestamp": "2026-05-27T11:20:49.159Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -4183,22 +4183,22 @@
           "registered_corporate": 22360,
           "registered_taxi": 181,
           "registered_general": 356,
-          "delivered_total": 16299,
+          "delivered_total": 16300,
           "delivered_priority": 6,
           "delivered_corporate": 15891,
           "delivered_taxi": 137,
-          "delivered_general": 265,
-          "remaining_total": 13701,
+          "delivered_general": 266,
+          "remaining_total": 13700,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 29735,
+          "remaining_general": 29734,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.\n* 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-27T11:10:46.586Z"
+      "timestamp": "2026-05-27T11:20:48.019Z"
     }
   ]
 }
