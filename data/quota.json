@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-27T09:30:53.831Z",
+  "timestamp": "2026-05-27T09:40:45.505Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -293,7 +293,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 16,
           "remaining_general": 240,
-          "note": "★ ★ (2026. 4. 21. 11:30 기준) 전기자동차 보조금 잔여 물량 소진 완료 ★ ★\n* 전기자동차 물량 소진은 '대상자선정' 기준임.\n* 취소분 발생할 경우에 한하여, '지원가능확인' 순으로 '대상자선정' 추가(취소분 발생 가능성에 따라 신청 차단 x)\n* 보조금 대상 및 지급은 출고순 기준(신청순 x)으로 확정됩니다.\n☆ ☆ 2026년 하반기 전기자동차 보조금 공고 승용 6월 예정 ☆ ☆\n☆ ☆ 2026년 하반기 전기자동차 보조금 공고 화물 7월 예정 ☆ ☆"
+          "note": "★ ★2026년 2차 전기자동차(승용) 구매지원 보급사업★ ★\n공고일: 2026. 05. 28.(목)\n접수일: 2026. 06. 11.(목) 10:00~ 예산소진시까지\n공고물량: 승용 371대\n* (2026. 4. 21. 11:30 기준) 전기자동차 보조금 잔여 물량 소진 완료\n* 전기자동차 물량 소진은 '대상자선정' 기준임.\n* 취소분 발생할 경우에 한하여, '지원가능확인' 순으로 '대상자선정' 추가(취소분 발생 가능성에 따라 신청 차단 x)\n* 보조금 대상 및 지급은 출고순 기준(신청순 x)으로 확정됩니다.\n☆ ☆ 2026년 하반기 전기자동차 보조금 공고 승용 6월 예정 ☆ ☆\n☆ ☆ 2026년 하반기 전기자동차 보조금 공고 화물 7월 예정 ☆ ☆"
         },
         {
           "sido": "경기",
@@ -1765,12 +1765,12 @@
           "registered_corporate": 9,
           "registered_taxi": 1,
           "registered_general": 107,
-          "delivered_total": 129,
-          "delivered_priority": 31,
+          "delivered_total": 130,
+          "delivered_priority": 32,
           "delivered_corporate": 7,
           "delivered_taxi": 1,
           "delivered_general": 90,
-          "remaining_total": 26,
+          "remaining_total": 25,
           "remaining_priority": 0,
           "remaining_corporate": 23,
           "remaining_taxi": 2,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-27T09:30:53.737Z"
+      "timestamp": "2026-05-27T09:40:45.445Z"
     }
   ]
 }
