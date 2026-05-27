@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-27T11:20:49.159Z",
+  "timestamp": "2026-05-27T11:30:50.895Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2805,16 +2805,16 @@
           "registered_corporate": 9,
           "registered_taxi": 1,
           "registered_general": 96,
-          "delivered_total": 92,
+          "delivered_total": 93,
           "delivered_priority": 19,
           "delivered_corporate": 8,
           "delivered_taxi": 0,
-          "delivered_general": 65,
+          "delivered_general": 66,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 25,
+          "remaining_general": 24,
           "note": "< 2026년 화순군 전기승용차 보급사업 2차 공고 >\n**************화순군 승용 2차공고 접수 마감**************"
         },
         {
@@ -2961,16 +2961,16 @@
           "registered_corporate": 1,
           "registered_taxi": 0,
           "registered_general": 83,
-          "delivered_total": 98,
+          "delivered_total": 99,
           "delivered_priority": 26,
           "delivered_corporate": 1,
           "delivered_taxi": 0,
-          "delivered_general": 71,
-          "remaining_total": 60,
+          "delivered_general": 72,
+          "remaining_total": 59,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 15,
-          "remaining_general": 56,
+          "remaining_general": 55,
           "note": ""
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-27T11:20:48.019Z"
+      "timestamp": "2026-05-27T11:30:50.819Z"
     }
   ]
 }
