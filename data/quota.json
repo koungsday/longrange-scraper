@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T03:20:43.662Z",
+  "timestamp": "2026-05-28T03:30:48.085Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 341,
           "registered_taxi": 925,
           "registered_general": 6319,
-          "delivered_total": 9457,
+          "delivered_total": 9458,
           "delivered_priority": 2787,
           "delivered_corporate": 298,
           "delivered_taxi": 800,
-          "delivered_general": 5572,
-          "remaining_total": 2744,
+          "delivered_general": 5573,
+          "remaining_total": 2743,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 40,
-          "remaining_general": 4189,
+          "remaining_general": 4188,
           "note": "**2026.5.26. 기준, 상반기 서울시 전기승용차 보급 현황 알려 드립니다.\n(택시 940대 미포함)\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 9,703대\nㅇ 잔여대수: 1,658대\n-----------------------------\n** 상반기 보급물량 소진시에는 당초 일정보다 조기에 마감할 계획입니다."
         },
         {
@@ -137,7 +137,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 791,
-          "note": "o 2차 접수기간     ※ 예산(물량)소진시까지\n- (승용) : '26.5.28.(목) 10:00 ~ 12.4.(금) 18:00\n- (화물) : '26.6.1.(목) 10:00 ~ 12.4.(금) 18:00\n※ 승합은 예산(물량)소진시까지 계속 접수 받는 중(1/30(금)~12/4(금))\no 2차 보급대수 : 총 469대(승용 350대, 화물 100대, 승합 19대)\n* 보급대수는 보급 여건, 예산범위 내에서 변동될 수 있으며, 보급물량(예산) 초과시 여유물량(취소건 감안)을 추가로 받은 후, 사전 공지 없이 신규접수 마감\n(대상자 선정은 출고순)\n★ (주의사항: 신청조건) 신청일로부터 최소 2일(휴일 제외) 이후 출고 예정인 차량으로 접수해야 합니다.(어길 시 보완요청, 후순위 배정)\n- 순차적으로 자격부여 검토, 지원가능확인요청은 바로 가능하나, 대상자 선정은 최소 2일 이후부터 확정됨\n★ 접수 후 빠른 처리를 위해 단순 접수 알림, 처리 독촉 전화는 자제 부탁드립니다."
+          "note": "★ 승용 2차 접수 마감됐습니다.\no 2차 접수기간\n- (승용) : '26.5.28.(목) 10:00 ~ 12.4.(금) 18:00\n- (화물) : '26.6.1.(목) 10:00 ~ 12.4.(금) 18:00\n※ 승합은 예산(물량)소진시까지 계속 접수 받는 중(1/30(금)~12/4(금))\no 2차 보급대수 : 총 469대(승용 350대, 화물 100대, 승합 19대)\n* 보급대수는 보급 여건, 예산범위 내에서 변동될 수 있으며, 보급물량(예산) 초과시 여유물량(취소건 감안)을 추가로 받은 후, 사전 공지 없이 신규접수 마감\n(대상자 선정은 출고순)\n★ (주의사항: 신청조건) 신청일로부터 최소 2일(휴일 제외) 이후 출고 예정인 차량으로 접수해야 합니다.(어길 시 보완요청, 후순위 배정)\n- 순차적으로 자격부여 검토, 지원가능확인요청은 바로 가능하나, 대상자 선정은 최소 2일 이후부터 확정됨\n★ 접수 후 빠른 처리를 위해 단순 접수 알림, 처리 독촉 전화는 자제 부탁드립니다."
         },
         {
           "sido": "대전",
@@ -1947,12 +1947,12 @@
           "registered_corporate": 2,
           "registered_taxi": 0,
           "registered_general": 220,
-          "delivered_total": 137,
-          "delivered_priority": 20,
+          "delivered_total": 138,
+          "delivered_priority": 21,
           "delivered_corporate": 2,
           "delivered_taxi": 0,
           "delivered_general": 115,
-          "remaining_total": 40,
+          "remaining_total": 39,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 13,
@@ -4178,17 +4178,17 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 22950,
+          "registered_total": 22951,
           "registered_priority": 9,
-          "registered_corporate": 22402,
+          "registered_corporate": 22403,
           "registered_taxi": 180,
           "registered_general": 359,
-          "delivered_total": 16506,
+          "delivered_total": 16510,
           "delivered_priority": 6,
-          "delivered_corporate": 16093,
+          "delivered_corporate": 16097,
           "delivered_taxi": 139,
           "delivered_general": 268,
-          "remaining_total": 13494,
+          "remaining_total": 13490,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-28T03:20:43.585Z"
+      "timestamp": "2026-05-28T03:30:48.017Z"
     }
   ]
 }
