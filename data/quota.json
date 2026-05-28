@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T23:20:45.854Z",
+  "timestamp": "2026-05-28T23:30:46.269Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1344,11 +1344,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 140,
-          "registered_total": 81,
+          "registered_total": 82,
           "registered_priority": 26,
           "registered_corporate": 6,
           "registered_taxi": 1,
-          "registered_general": 48,
+          "registered_general": 49,
           "delivered_total": 69,
           "delivered_priority": 22,
           "delivered_corporate": 4,
@@ -2103,16 +2103,16 @@
           "registered_corporate": 9,
           "registered_taxi": 9,
           "registered_general": 285,
-          "delivered_total": 150,
+          "delivered_total": 151,
           "delivered_priority": 31,
           "delivered_corporate": 5,
           "delivered_taxi": 5,
-          "delivered_general": 109,
-          "remaining_total": 84,
+          "delivered_general": 110,
+          "remaining_total": 83,
           "remaining_priority": 6,
           "remaining_corporate": 0,
           "remaining_taxi": 4,
-          "remaining_general": 79,
+          "remaining_general": 78,
           "note": "☆하반기 사업 조기 공고☆\n택시 1대 남았습니다.(우선순위, 일반 물량 마감)"
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 22604,
           "registered_taxi": 181,
           "registered_general": 363,
-          "delivered_total": 16792,
+          "delivered_total": 16802,
           "delivered_priority": 6,
-          "delivered_corporate": 16370,
+          "delivered_corporate": 16380,
           "delivered_taxi": 141,
           "delivered_general": 275,
-          "remaining_total": 13208,
+          "remaining_total": 13198,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-28T23:20:45.755Z"
+      "timestamp": "2026-05-28T23:30:46.202Z"
     }
   ]
 }
