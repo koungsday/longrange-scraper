@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-29T10:40:44.226Z",
+  "timestamp": "2026-05-29T10:50:46.857Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -101,16 +101,16 @@
           "registered_corporate": 100,
           "registered_taxi": 199,
           "registered_general": 3942,
-          "delivered_total": 5010,
+          "delivered_total": 5011,
           "delivered_priority": 1690,
           "delivered_corporate": 80,
           "delivered_taxi": 168,
-          "delivered_general": 3072,
-          "remaining_total": 1523,
+          "delivered_general": 3073,
+          "remaining_total": 1522,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 167,
-          "remaining_general": 2456,
+          "remaining_general": 2455,
           "note": "*** 전기승용차 하반기 사업 잔여대수 안내(26. 5. 29. 09:00기준)***\n○ 보급대수 조정 : 일반 2,000대 -> 1,600대 (400대 감소)\n※ 조정사유: 보조금 높은 차종이 많이 접수되어 1대당 지급 단가 상승으로 예산 범위 내 보급대수 감소함\n○ 잔여대수(접수기준) : 일반 180대, 택시 135대\n----------------------------------------------------------\n*** 전기승용차 하반기 사업 안내***\n- 접수시작: 2026. 5. 20. 09:00~  (접수번호 5310번부터 시작이니 참고 바랍니다)\n- 공고문을 올렸으니 참고하시기 바랍니다\n* 공고문명: 2026년도 2차 전기자동차 민간보급사업 공고\n- 1차 대상자 선정 이전단계(지원가능확인, 자격부여, 신청, 접수 건 등) 진행 건들은 시에서 19일까지 일괄 취소(불가) 처리 할 예정이므로 보조금 받으실려면  2차 사업(5.20)에 다시 접수하셔야 합니다.\n** 전기화물차는 하반기 사업 없습니다, 추경예산을 확보해야 추가사업 가능하며, 추경예산 확보하면 8~9월에나 사업 진행 가능합니다**"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-29T10:40:44.149Z"
+      "timestamp": "2026-05-29T10:50:46.773Z"
     }
   ]
 }
