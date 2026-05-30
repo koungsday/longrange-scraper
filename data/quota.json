@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-30T00:30:47.314Z",
+  "timestamp": "2026-05-30T00:40:44.654Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1531,16 +1531,16 @@
           "registered_corporate": 13,
           "registered_taxi": 33,
           "registered_general": 708,
-          "delivered_total": 751,
+          "delivered_total": 752,
           "delivered_priority": 249,
           "delivered_corporate": 8,
           "delivered_taxi": 26,
-          "delivered_general": 468,
-          "remaining_total": 326,
+          "delivered_general": 469,
+          "remaining_total": 325,
           "remaining_priority": 23,
           "remaining_corporate": 0,
           "remaining_taxi": 15,
-          "remaining_general": 289,
+          "remaining_general": 288,
           "note": "※충주시 전기자동차 보급사업(2차) --> 마감되었습니다.\n○ 공  고 일 : 2026. 4. 30.(목)\n○ 신청기간 : 2026. 5. 19.(화) 15:30 ~ 예산 소진 시 까지\n○ 접수방법 : 저공해차 구매보조금 시스템(www.ev.or.kr/ps)\n○ 사 업 량\n- 승용 : 약 400대(지원금액에 따라 변동 가능)\n- 화물 : 약 100대(지원금액에 따라 변동 가능)\n- 승합(일반) : 약 2대(1,2차 통합 물량의 잔량)\n- 승합(어린이) : 마감\n★ 전화량 폭주로 반드시 공고문 확인하시고 신청바랍니다. ★\n★ 신청개시 후 신청 폭주로 전화 응대가 어려울 수 있습니다. 전화 여부와 관계없이 접수된 순서대로 처리합니다.\n★ 신청개시일 오후 2시부터 접수된 순서대로 자격부여 진행합니다.\n★ 신청개시일은 신청 폭주로 대상자 선정 불가합니다. 당일신청 당일 대상자 선정을 어려울 수 있으니 이점 염두해 두시고 진행하시기 바랍니다."
         },
         {
@@ -2545,16 +2545,16 @@
           "registered_corporate": 6,
           "registered_taxi": 13,
           "registered_general": 137,
-          "delivered_total": 69,
+          "delivered_total": 71,
           "delivered_priority": 9,
           "delivered_corporate": 3,
           "delivered_taxi": 3,
-          "delivered_general": 54,
-          "remaining_total": 82,
+          "delivered_general": 56,
+          "remaining_total": 80,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 91,
+          "remaining_general": 89,
           "note": "2026년 전기자동차(승용) 보급사업(2차)  공고 안내\n○ 신청기간 : 2026 5. 20. ~ 6. 30. (평일 9 ~18시)\n☆★○ 지원가능 확인요청 : 2026. 5. 22. ~ 6. 30.  (평일 9 ~18시)\n○ 보급대수 : 55대\n○ 선정방법 : 지원가능 확인요청 순(출고등록순)\n※ 보급대수는 차량별 보조금 차등지원에 따라 예산범위 내에서 변동될 수 있음"
         },
         {
@@ -3299,16 +3299,16 @@
           "registered_corporate": 9,
           "registered_taxi": 2,
           "registered_general": 240,
-          "delivered_total": 283,
+          "delivered_total": 284,
           "delivered_priority": 85,
           "delivered_corporate": 7,
           "delivered_taxi": 2,
-          "delivered_general": 189,
-          "remaining_total": 317,
+          "delivered_general": 190,
+          "remaining_total": 316,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 411,
+          "remaining_general": 410,
           "note": "승용, 화물 1차 ,2차 마감\n3차 사업은 미정(만약 할 예정이면 공고)\n마감, 3차 사업 문의 하지 말아주세요(전화가 너무 많이 옵니다)"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 23343,
+          "registered_total": 23344,
           "registered_priority": 10,
-          "registered_corporate": 22777,
+          "registered_corporate": 22778,
           "registered_taxi": 188,
           "registered_general": 368,
           "delivered_total": 17030,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-30T00:30:47.086Z"
+      "timestamp": "2026-05-30T00:40:44.606Z"
     }
   ]
 }
