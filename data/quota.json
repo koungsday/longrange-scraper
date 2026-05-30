@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-30T02:20:43.727Z",
+  "timestamp": "2026-05-30T02:30:46.130Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,8 +18,8 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 9761,
-          "registered_total": 10776,
-          "registered_priority": 3135,
+          "registered_total": 10777,
+          "registered_priority": 3136,
           "registered_corporate": 342,
           "registered_taxi": 946,
           "registered_general": 6353,
@@ -2103,16 +2103,16 @@
           "registered_corporate": 9,
           "registered_taxi": 9,
           "registered_general": 280,
-          "delivered_total": 169,
+          "delivered_total": 170,
           "delivered_priority": 32,
           "delivered_corporate": 5,
           "delivered_taxi": 7,
-          "delivered_general": 125,
-          "remaining_total": 65,
+          "delivered_general": 126,
+          "remaining_total": 64,
           "remaining_priority": 5,
           "remaining_corporate": 0,
           "remaining_taxi": 2,
-          "remaining_general": 63,
+          "remaining_general": 62,
           "note": "☆하반기 사업 조기 공고☆\n택시 1대 남았습니다.(우선순위, 일반 물량 마감)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-05-30T02:20:43.659Z"
+      "timestamp": "2026-05-30T02:30:46.045Z"
     }
   ]
 }
