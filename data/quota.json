@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-02T10:40:48.786Z",
+  "timestamp": "2026-06-02T10:50:44.013Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -929,10 +929,10 @@
           "quota_taxi": 10,
           "quota_general": 449,
           "registered_total": 283,
-          "registered_priority": 66,
+          "registered_priority": 67,
           "registered_corporate": 6,
           "registered_taxi": 4,
-          "registered_general": 207,
+          "registered_general": 206,
           "delivered_total": 167,
           "delivered_priority": 41,
           "delivered_corporate": 4,
@@ -2857,16 +2857,16 @@
           "registered_corporate": 4,
           "registered_taxi": 2,
           "registered_general": 71,
-          "delivered_total": 47,
+          "delivered_total": 48,
           "delivered_priority": 7,
           "delivered_corporate": 2,
           "delivered_taxi": 0,
-          "delivered_general": 38,
-          "remaining_total": 33,
+          "delivered_general": 39,
+          "remaining_total": 32,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 2,
-          "remaining_general": 40,
+          "remaining_general": 39,
           "note": "<2차 공고>\n마감되었습니다."
         },
         {
@@ -4157,12 +4157,12 @@
           "registered_corporate": 46,
           "registered_taxi": 217,
           "registered_general": 1687,
-          "delivered_total": 2838,
-          "delivered_priority": 1341,
+          "delivered_total": 2839,
+          "delivered_priority": 1342,
           "delivered_corporate": 39,
           "delivered_taxi": 180,
           "delivered_general": 1278,
-          "remaining_total": 1160,
+          "remaining_total": 1159,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 220,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T10:40:48.692Z"
+      "timestamp": "2026-06-02T10:50:43.959Z"
     }
   ]
 }
