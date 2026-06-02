@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-06-01T05:53:15.999Z",
-  "total_vehicles": 110,
+  "timestamp": "2026-06-02T05:21:14.793Z",
+  "total_vehicles": 113,
   "vehicles": {
     "BMW___MINI Aceman E": {
       "type": "일반승용",
@@ -315,6 +315,18 @@
       "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
       "national": 1620000
     },
+    "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+      "type": "일반승용",
+      "manufacturer": "볼보자동차코리아",
+      "model": "볼보 EX30 Single Motor ER",
+      "national": 2470000
+    },
+    "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+      "type": "일반승용",
+      "manufacturer": "볼보자동차코리아",
+      "model": "볼보 EX30CC Twin Motor Perf",
+      "national": 2220000
+    },
     "비와이디코리아___BYD ATTO 3": {
       "type": "일반승용",
       "manufacturer": "비와이디코리아",
@@ -590,6 +602,12 @@
       "manufacturer": "현대자동차",
       "model": "더 뉴 아이오닉6 AWD 롱레인지 N라인 20인치",
       "national": 5370000
+    },
+    "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "스타리아 리무진 일렉트릭 6인승",
+      "national": 2290000
     },
     "현대자동차___아이오닉6 N": {
       "type": "일반승용",
