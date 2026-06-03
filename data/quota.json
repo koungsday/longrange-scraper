@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T01:30:51.591Z",
+  "timestamp": "2026-06-03T01:40:43.095Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -96,11 +96,11 @@
           "quota_corporate": 0,
           "quota_taxi": 335,
           "quota_general": 5528,
-          "registered_total": 6455,
+          "registered_total": 6456,
           "registered_priority": 2151,
           "registered_corporate": 101,
           "registered_taxi": 201,
-          "registered_general": 4002,
+          "registered_general": 4003,
           "delivered_total": 5195,
           "delivered_priority": 1751,
           "delivered_corporate": 83,
@@ -2961,16 +2961,16 @@
           "registered_corporate": 2,
           "registered_taxi": 0,
           "registered_general": 90,
-          "delivered_total": 100,
+          "delivered_total": 101,
           "delivered_priority": 26,
           "delivered_corporate": 1,
           "delivered_taxi": 0,
-          "delivered_general": 73,
-          "remaining_total": 58,
+          "delivered_general": 74,
+          "remaining_total": 57,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 15,
-          "remaining_general": 54,
+          "remaining_general": 53,
           "note": ""
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 23269,
           "registered_taxi": 206,
           "registered_general": 393,
-          "delivered_total": 17563,
+          "delivered_total": 17565,
           "delivered_priority": 6,
-          "delivered_corporate": 17116,
+          "delivered_corporate": 17118,
           "delivered_taxi": 150,
           "delivered_general": 291,
-          "remaining_total": 12437,
+          "remaining_total": 12435,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-03T01:30:51.520Z"
+      "timestamp": "2026-06-03T01:40:43.008Z"
     }
   ]
 }
