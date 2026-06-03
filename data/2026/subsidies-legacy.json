@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-06-02T05:21:14.793Z",
+  "timestamp": "2026-06-03T05:55:28.435Z",
   "total_regions": 161,
   "success_count": 161,
   "failed_count": 0,
@@ -917,7 +917,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:51.937Z"
+      "timestamp": "2026-06-03T05:54:10.552Z"
     },
     {
       "parentName": "부산",
@@ -1831,7 +1831,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:51.987Z"
+      "timestamp": "2026-06-03T05:54:11.042Z"
     },
     {
       "parentName": "대구",
@@ -2254,6 +2254,22 @@
           "local": 480000,
           "total": 2100000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 740000,
+          "total": 3210000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 660000,
+          "total": 2880000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -2622,6 +2638,14 @@
           "local": 1610000,
           "total": 6980000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 0,
+          "total": 2290000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -2721,7 +2745,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:51.707Z"
+      "timestamp": "2026-06-03T05:54:10.986Z"
     },
     {
       "parentName": "인천",
@@ -3635,7 +3659,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:51.534Z"
+      "timestamp": "2026-06-03T05:54:10.737Z"
     },
     {
       "parentName": "광주",
@@ -4549,7 +4573,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:51.818Z"
+      "timestamp": "2026-06-03T05:54:10.842Z"
     },
     {
       "parentName": "대전",
@@ -5439,7 +5463,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:51.867Z"
+      "timestamp": "2026-06-03T05:54:10.887Z"
     },
     {
       "parentName": "울산",
@@ -6353,7 +6377,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:51.459Z"
+      "timestamp": "2026-06-03T05:54:10.659Z"
     },
     {
       "parentName": "세종",
@@ -6501,8 +6525,8 @@
           "manufacturer": "기아",
           "model": "EV3 롱레인지 4WD 19인치",
           "national": 5390000,
-          "local": 1620000,
-          "total": 7010000
+          "local": 1610000,
+          "total": 7000000
         },
         "기아___EV3 스탠다드 2WD": {
           "type": "일반승용",
@@ -6517,8 +6541,8 @@
           "manufacturer": "기아",
           "model": "EV4 GT",
           "national": 2550000,
-          "local": 770000,
-          "total": 3320000
+          "local": 760000,
+          "total": 3310000
         },
         "기아___EV4 롱레인지 2WD 17인치": {
           "type": "일반승용",
@@ -6573,8 +6597,8 @@
           "manufacturer": "기아",
           "model": "EV5 GT",
           "national": 2320000,
-          "local": 700000,
-          "total": 3020000
+          "local": 690000,
+          "total": 3010000
         },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
@@ -6589,24 +6613,24 @@
           "manufacturer": "기아",
           "model": "EV5 롱레인지 4WD 18인치",
           "national": 4990000,
-          "local": 1500000,
-          "total": 6490000
+          "local": 1490000,
+          "total": 6480000
         },
         "기아___EV5 롱레인지 4WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV5 롱레인지 4WD 19인치",
           "national": 4930000,
-          "local": 1480000,
-          "total": 6410000
+          "local": 1470000,
+          "total": 6400000
         },
         "기아___EV9 GT": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV9 GT",
           "national": 2450000,
-          "local": 740000,
-          "total": 3190000
+          "local": 730000,
+          "total": 3180000
         },
         "기아___EV9 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -6773,8 +6797,24 @@
           "manufacturer": "메르세데스벤츠코리아",
           "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
           "national": 1620000,
-          "local": 490000,
-          "total": 2110000
+          "local": 480000,
+          "total": 2100000
+        },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 740000,
+          "total": 3210000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 660000,
+          "total": 2880000
         },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
@@ -7144,6 +7184,14 @@
           "local": 1610000,
           "total": 6980000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 680000,
+          "total": 2970000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -7243,7 +7291,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:51.760Z"
+      "timestamp": "2026-06-03T05:54:10.941Z"
     },
     {
       "parentName": "경기",
@@ -8157,7 +8205,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:55.657Z"
+      "timestamp": "2026-06-03T05:54:15.059Z"
     },
     {
       "parentName": "경기",
@@ -9047,7 +9095,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:55.874Z"
+      "timestamp": "2026-06-03T05:54:14.701Z"
     },
     {
       "parentName": "경기",
@@ -9961,7 +10009,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:56.154Z"
+      "timestamp": "2026-06-03T05:54:14.850Z"
     },
     {
       "parentName": "경기",
@@ -10384,6 +10432,22 @@
           "local": 1130000,
           "total": 2750000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 1720000,
+          "total": 4190000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 1550000,
+          "total": 3770000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -10752,6 +10816,14 @@
           "local": 3750000,
           "total": 9120000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 1600000,
+          "total": 3890000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -10851,7 +10923,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:55.770Z"
+      "timestamp": "2026-06-03T05:54:14.807Z"
     },
     {
       "parentName": "경기",
@@ -11765,7 +11837,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:56.378Z"
+      "timestamp": "2026-06-03T05:54:14.922Z"
     },
     {
       "parentName": "경기",
@@ -12655,7 +12727,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:55.969Z"
+      "timestamp": "2026-06-03T05:54:14.587Z"
     },
     {
       "parentName": "경기",
@@ -13569,7 +13641,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:56.541Z"
+      "timestamp": "2026-06-03T05:54:14.973Z"
     },
     {
       "parentName": "경기",
@@ -14483,7 +14555,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:19:56.287Z"
+      "timestamp": "2026-06-03T05:54:15.217Z"
     },
     {
       "parentName": "경기",
@@ -15397,7 +15469,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:00.929Z"
+      "timestamp": "2026-06-03T05:54:19.115Z"
     },
     {
       "parentName": "경기",
@@ -15820,6 +15892,22 @@
           "local": 810000,
           "total": 2430000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 1230000,
+          "total": 3700000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 1110000,
+          "total": 3330000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -16188,6 +16276,14 @@
           "local": 2680000,
           "total": 8050000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 1140000,
+          "total": 3430000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -16287,7 +16383,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:00.671Z"
+      "timestamp": "2026-06-03T05:54:18.930Z"
     },
     {
       "parentName": "경기",
@@ -17201,7 +17297,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:00.545Z"
+      "timestamp": "2026-06-03T05:54:19.032Z"
     },
     {
       "parentName": "경기",
@@ -18115,7 +18211,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:00.797Z"
+      "timestamp": "2026-06-03T05:54:18.796Z"
     },
     {
       "parentName": "경기",
@@ -19029,7 +19125,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:00.855Z"
+      "timestamp": "2026-06-03T05:54:19.158Z"
     },
     {
       "parentName": "경기",
@@ -19452,6 +19548,22 @@
           "local": 540000,
           "total": 2160000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 820000,
+          "total": 3290000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 740000,
+          "total": 2960000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -19820,6 +19932,14 @@
           "local": 1790000,
           "total": 7160000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 760000,
+          "total": 3050000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -19919,7 +20039,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:00.622Z"
+      "timestamp": "2026-06-03T05:54:19.069Z"
     },
     {
       "parentName": "경기",
@@ -20809,7 +20929,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:00.893Z"
+      "timestamp": "2026-06-03T05:54:19.221Z"
     },
     {
       "parentName": "경기",
@@ -21723,7 +21843,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:00.456Z"
+      "timestamp": "2026-06-03T05:54:18.883Z"
     },
     {
       "parentName": "경기",
@@ -22613,7 +22733,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:04.892Z"
+      "timestamp": "2026-06-03T05:54:23.119Z"
     },
     {
       "parentName": "경기",
@@ -23527,7 +23647,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:05.258Z"
+      "timestamp": "2026-06-03T05:54:22.915Z"
     },
     {
       "parentName": "경기",
@@ -24441,7 +24561,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:05.194Z"
+      "timestamp": "2026-06-03T05:54:22.426Z"
     },
     {
       "parentName": "경기",
@@ -25331,7 +25451,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:04.969Z"
+      "timestamp": "2026-06-03T05:54:23.155Z"
     },
     {
       "parentName": "경기",
@@ -26245,7 +26365,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:05.046Z"
+      "timestamp": "2026-06-03T05:54:23.211Z"
     },
     {
       "parentName": "경기",
@@ -26668,6 +26788,22 @@
           "local": 480000,
           "total": 2100000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 740000,
+          "total": 3210000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 660000,
+          "total": 2880000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -26905,8 +27041,8 @@
           "manufacturer": "현대자동차",
           "model": "GV60 스탠다드 AWD 19인치",
           "national": 2720000,
-          "local": 820000,
-          "total": 3540000
+          "local": 810000,
+          "total": 3530000
         },
         "현대자동차___GV60 스탠다드 AWD 20인치": {
           "type": "일반승용",
@@ -27036,6 +27172,14 @@
           "local": 1610000,
           "total": 6980000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 0,
+          "total": 2290000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -27135,7 +27279,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:05.152Z"
+      "timestamp": "2026-06-03T05:54:22.972Z"
     },
     {
       "parentName": "경기",
@@ -27558,6 +27702,22 @@
           "local": 640000,
           "total": 2260000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 980000,
+          "total": 3450000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 880000,
+          "total": 3100000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -27926,6 +28086,14 @@
           "local": 2140000,
           "total": 7510000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 910000,
+          "total": 3200000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -28025,7 +28193,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:05.428Z"
+      "timestamp": "2026-06-03T05:54:22.807Z"
     },
     {
       "parentName": "경기",
@@ -28939,7 +29107,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:05.516Z"
+      "timestamp": "2026-06-03T05:54:23.088Z"
     },
     {
       "parentName": "경기",
@@ -29853,7 +30021,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:09.877Z"
+      "timestamp": "2026-06-03T05:54:26.962Z"
     },
     {
       "parentName": "경기",
@@ -30281,16 +30449,16 @@
           "manufacturer": "볼보자동차코리아",
           "model": "볼보 EX30 Single Motor ER",
           "national": 2470000,
-          "local": 0,
-          "total": 2470000
+          "local": 740000,
+          "total": 3210000
         },
         "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
           "type": "일반승용",
           "manufacturer": "볼보자동차코리아",
           "model": "볼보 EX30CC Twin Motor Perf",
           "national": 2220000,
-          "local": 0,
-          "total": 2220000
+          "local": 660000,
+          "total": 2880000
         },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
@@ -30767,7 +30935,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:09.591Z"
+      "timestamp": "2026-06-03T05:54:27.013Z"
     },
     {
       "parentName": "경기",
@@ -31681,7 +31849,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:09.426Z"
+      "timestamp": "2026-06-03T05:54:26.707Z"
     },
     {
       "parentName": "경기",
@@ -32595,7 +32763,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:09.497Z"
+      "timestamp": "2026-06-03T05:54:26.778Z"
     },
     {
       "parentName": "경기",
@@ -33509,7 +33677,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:09.838Z"
+      "timestamp": "2026-06-03T05:54:27.044Z"
     },
     {
       "parentName": "경기",
@@ -34423,7 +34591,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:09.726Z"
+      "timestamp": "2026-06-03T05:54:26.860Z"
     },
     {
       "parentName": "경기",
@@ -35337,7 +35505,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:09.632Z"
+      "timestamp": "2026-06-03T05:54:27.082Z"
     },
     {
       "parentName": "강원",
@@ -36227,7 +36395,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:09.789Z"
+      "timestamp": "2026-06-03T05:54:26.830Z"
     },
     {
       "parentName": "강원",
@@ -37141,7 +37309,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:13.622Z"
+      "timestamp": "2026-06-03T05:54:30.928Z"
     },
     {
       "parentName": "강원",
@@ -38031,7 +38199,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:13.723Z"
+      "timestamp": "2026-06-03T05:54:30.559Z"
     },
     {
       "parentName": "강원",
@@ -38459,16 +38627,16 @@
           "manufacturer": "볼보자동차코리아",
           "model": "볼보 EX30 Single Motor ER",
           "national": 2470000,
-          "local": 0,
-          "total": 2470000
+          "local": 1230000,
+          "total": 3700000
         },
         "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
           "type": "일반승용",
           "manufacturer": "볼보자동차코리아",
           "model": "볼보 EX30CC Twin Motor Perf",
           "national": 2220000,
-          "local": 0,
-          "total": 2220000
+          "local": 1110000,
+          "total": 3330000
         },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
@@ -38945,7 +39113,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:14.111Z"
+      "timestamp": "2026-06-03T05:54:30.830Z"
     },
     {
       "parentName": "강원",
@@ -39859,7 +40027,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:14.074Z"
+      "timestamp": "2026-06-03T05:54:30.737Z"
     },
     {
       "parentName": "강원",
@@ -40749,7 +40917,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:13.847Z"
+      "timestamp": "2026-06-03T05:54:30.691Z"
     },
     {
       "parentName": "강원",
@@ -41639,7 +41807,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:13.960Z"
+      "timestamp": "2026-06-03T05:54:30.865Z"
     },
     {
       "parentName": "강원",
@@ -42529,7 +42697,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:13.802Z"
+      "timestamp": "2026-06-03T05:54:30.622Z"
     },
     {
       "parentName": "강원",
@@ -42952,6 +43120,22 @@
           "local": 810000,
           "total": 2430000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 1230000,
+          "total": 3700000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 1110000,
+          "total": 3330000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -43320,6 +43504,14 @@
           "local": 2680000,
           "total": 8050000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 1140000,
+          "total": 3430000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -43419,7 +43611,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:14.029Z"
+      "timestamp": "2026-06-03T05:54:30.992Z"
     },
     {
       "parentName": "강원",
@@ -44285,7 +44477,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:18.367Z"
+      "timestamp": "2026-06-03T05:54:35.075Z"
     },
     {
       "parentName": "강원",
@@ -45175,7 +45367,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:18.082Z"
+      "timestamp": "2026-06-03T05:54:35.441Z"
     },
     {
       "parentName": "강원",
@@ -46089,7 +46281,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:18.011Z"
+      "timestamp": "2026-06-03T05:54:35.119Z"
     },
     {
       "parentName": "강원",
@@ -46979,7 +47171,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:18.230Z"
+      "timestamp": "2026-06-03T05:54:35.158Z"
     },
     {
       "parentName": "강원",
@@ -47869,7 +48061,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:18.413Z"
+      "timestamp": "2026-06-03T05:54:35.409Z"
     },
     {
       "parentName": "강원",
@@ -48292,6 +48484,22 @@
           "local": 810000,
           "total": 2430000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 1230000,
+          "total": 3700000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 1110000,
+          "total": 3330000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -48660,6 +48868,14 @@
           "local": 2680000,
           "total": 8050000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 1140000,
+          "total": 3430000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -48759,7 +48975,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:18.283Z"
+      "timestamp": "2026-06-03T05:54:35.325Z"
     },
     {
       "parentName": "강원",
@@ -49649,7 +49865,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:18.173Z"
+      "timestamp": "2026-06-03T05:54:35.007Z"
     },
     {
       "parentName": "강원",
@@ -50539,7 +50755,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:17.909Z"
+      "timestamp": "2026-06-03T05:54:35.266Z"
     },
     {
       "parentName": "강원",
@@ -51453,7 +51669,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:22.356Z"
+      "timestamp": "2026-06-03T05:54:39.494Z"
     },
     {
       "parentName": "충북",
@@ -51876,6 +52092,22 @@
           "local": 1620000,
           "total": 3240000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2470000,
+          "total": 4940000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2220000,
+          "total": 4440000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -52244,6 +52476,14 @@
           "local": 5370000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2290000,
+          "total": 4580000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -52343,7 +52583,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:22.204Z"
+      "timestamp": "2026-06-03T05:54:39.317Z"
     },
     {
       "parentName": "충북",
@@ -53233,7 +53473,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:22.306Z"
+      "timestamp": "2026-06-03T05:54:39.418Z"
     },
     {
       "parentName": "충북",
@@ -53397,8 +53637,8 @@
           "manufacturer": "기아",
           "model": "EV4 GT",
           "national": 2550000,
-          "local": 0,
-          "total": 2550000
+          "local": 2550000,
+          "total": 5100000
         },
         "기아___EV4 롱레인지 2WD 17인치": {
           "type": "일반승용",
@@ -53485,8 +53725,8 @@
           "manufacturer": "기아",
           "model": "EV9 GT",
           "national": 2450000,
-          "local": 0,
-          "total": 2450000
+          "local": 2450000,
+          "total": 4900000
         },
         "기아___EV9 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -53655,6 +53895,22 @@
           "national": 1620000,
           "local": 1620000,
           "total": 3240000
+        },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2470000,
+          "total": 4940000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2220000,
+          "total": 4440000
         },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
@@ -54024,6 +54280,14 @@
           "local": 5370000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2290000,
+          "total": 4580000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -54123,7 +54387,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:22.436Z"
+      "timestamp": "2026-06-03T05:54:39.245Z"
     },
     {
       "parentName": "충북",
@@ -55013,7 +55277,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:21.863Z"
+      "timestamp": "2026-06-03T05:54:39.529Z"
     },
     {
       "parentName": "충북",
@@ -55927,7 +56191,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:22.481Z"
+      "timestamp": "2026-06-03T05:54:39.177Z"
     },
     {
       "parentName": "충북",
@@ -56841,7 +57105,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:22.524Z"
+      "timestamp": "2026-06-03T05:54:39.449Z"
     },
     {
       "parentName": "충북",
@@ -57264,6 +57528,22 @@
           "local": 1620000,
           "total": 3240000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 0,
+          "total": 2470000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 0,
+          "total": 2220000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -57632,6 +57912,14 @@
           "local": 5370000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2290000,
+          "total": 4580000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -57731,7 +58019,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:22.618Z"
+      "timestamp": "2026-06-03T05:54:39.106Z"
     },
     {
       "parentName": "충북",
@@ -58621,7 +58909,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:26.446Z"
+      "timestamp": "2026-06-03T05:54:43.366Z"
     },
     {
       "parentName": "충북",
@@ -59535,7 +59823,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:26.375Z"
+      "timestamp": "2026-06-03T05:54:43.147Z"
     },
     {
       "parentName": "충북",
@@ -60449,7 +60737,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:26.528Z"
+      "timestamp": "2026-06-03T05:54:43.187Z"
     },
     {
       "parentName": "충북",
@@ -61339,7 +61627,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:26.826Z"
+      "timestamp": "2026-06-03T05:54:43.508Z"
     },
     {
       "parentName": "충남",
@@ -62253,7 +62541,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:26.603Z"
+      "timestamp": "2026-06-03T05:54:43.274Z"
     },
     {
       "parentName": "충남",
@@ -63167,7 +63455,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:26.792Z"
+      "timestamp": "2026-06-03T05:54:43.038Z"
     },
     {
       "parentName": "충남",
@@ -63590,6 +63878,22 @@
           "local": 1680000,
           "total": 3300000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2550000,
+          "total": 5020000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2300000,
+          "total": 4520000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -63958,6 +64262,14 @@
           "local": 5550000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2370000,
+          "total": 4660000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -64057,7 +64369,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:26.662Z"
+      "timestamp": "2026-06-03T05:54:43.435Z"
     },
     {
       "parentName": "충남",
@@ -64971,7 +65283,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:26.758Z"
+      "timestamp": "2026-06-03T05:54:43.321Z"
     },
     {
       "parentName": "충남",
@@ -65861,7 +66173,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:30.910Z"
+      "timestamp": "2026-06-03T05:54:46.899Z"
     },
     {
       "parentName": "충남",
@@ -66751,7 +67063,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:30.549Z"
+      "timestamp": "2026-06-03T05:54:47.031Z"
     },
     {
       "parentName": "충남",
@@ -67641,7 +67953,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:30.945Z"
+      "timestamp": "2026-06-03T05:54:47.165Z"
     },
     {
       "parentName": "충남",
@@ -68064,6 +68376,22 @@
           "local": 1680000,
           "total": 3300000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2550000,
+          "total": 5020000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2300000,
+          "total": 4520000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -68432,6 +68760,14 @@
           "local": 5550000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2370000,
+          "total": 4660000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -68531,7 +68867,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:30.472Z"
+      "timestamp": "2026-06-03T05:54:47.203Z"
     },
     {
       "parentName": "충남",
@@ -69445,7 +69781,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:30.605Z"
+      "timestamp": "2026-06-03T05:54:47.240Z"
     },
     {
       "parentName": "충남",
@@ -70335,7 +70671,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:30.837Z"
+      "timestamp": "2026-06-03T05:54:47.106Z"
     },
     {
       "parentName": "충남",
@@ -71249,7 +71585,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:30.793Z"
+      "timestamp": "2026-06-03T05:54:46.963Z"
     },
     {
       "parentName": "충남",
@@ -72163,7 +72499,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:30.695Z"
+      "timestamp": "2026-06-03T05:54:47.326Z"
     },
     {
       "parentName": "충남",
@@ -73053,7 +73389,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:34.793Z"
+      "timestamp": "2026-06-03T05:54:50.939Z"
     },
     {
       "parentName": "충남",
@@ -73943,7 +74279,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:35.052Z"
+      "timestamp": "2026-06-03T05:54:50.708Z"
     },
     {
       "parentName": "충남",
@@ -74833,7 +75169,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:35.002Z"
+      "timestamp": "2026-06-03T05:54:51.017Z"
     },
     {
       "parentName": "전북",
@@ -75619,7 +75955,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:34.698Z"
+      "timestamp": "2026-06-03T05:54:50.905Z"
     },
     {
       "parentName": "전북",
@@ -76042,6 +76378,22 @@
           "local": 1750000,
           "total": 3370000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2680000,
+          "total": 5150000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2410000,
+          "total": 4630000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -76410,6 +76762,14 @@
           "local": 5830000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2480000,
+          "total": 4770000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -76509,7 +76869,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:34.858Z"
+      "timestamp": "2026-06-03T05:54:51.097Z"
     },
     {
       "parentName": "전북",
@@ -76932,6 +77292,22 @@
           "local": 1750000,
           "total": 3370000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2680000,
+          "total": 5150000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2410000,
+          "total": 4630000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -77300,6 +77676,14 @@
           "local": 5830000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2480000,
+          "total": 4770000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -77399,7 +77783,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:35.086Z"
+      "timestamp": "2026-06-03T05:54:51.063Z"
     },
     {
       "parentName": "전북",
@@ -78289,7 +78673,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:34.656Z"
+      "timestamp": "2026-06-03T05:54:50.777Z"
     },
     {
       "parentName": "전북",
@@ -78408,6 +78792,14 @@
           "local": 2320000,
           "total": 4460000
         },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 0,
+          "total": 2480000
+        },
         "기아___EV3 롱레인지 2WD 17인치": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -78424,6 +78816,14 @@
           "local": 6020000,
           "total": 10000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 0,
+          "total": 5390000
+        },
         "기아___EV3 스탠다드 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -78431,6 +78831,14 @@
           "national": 4690000,
           "local": 5090000,
           "total": 9780000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 0,
+          "total": 2550000
         },
         "기아___EV4 롱레인지 2WD 17인치": {
           "type": "일반승용",
@@ -78447,6 +78855,14 @@
           "national": 5550000,
           "local": 6020000,
           "total": 10000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 0,
+          "total": 5540000
         },
         "기아___EV4 롱레인지 GTL 2WD 19인치": {
           "type": "일반승용",
@@ -78472,6 +78888,14 @@
           "local": 5220000,
           "total": 10000
         },
+        "기아___EV5 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 GT",
+          "national": 2320000,
+          "local": 2520000,
+          "total": 4840000
+        },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -78479,6 +78903,30 @@
           "national": 5520000,
           "local": 5990000,
           "total": 10000
+        },
+        "기아___EV5 롱레인지 4WD 18인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 18인치",
+          "national": 4990000,
+          "local": 5420000,
+          "total": 10000
+        },
+        "기아___EV5 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 19인치",
+          "national": 4930000,
+          "local": 5350000,
+          "total": 10000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 0,
+          "total": 2450000
         },
         "기아___EV9 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -78640,6 +79088,30 @@
           "local": 1670000,
           "total": 3210000
         },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 1750000,
+          "total": 3370000
+        },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2680000,
+          "total": 5150000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2410000,
+          "total": 4630000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -78760,6 +79232,30 @@
           "local": 1820000,
           "total": 3500000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 1820000,
+          "total": 3500000
+        },
+        "테슬라코리아___Model Y L AWD": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L AWD",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
+        },
         "테슬라코리아___Model Y Premium Long Range": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -78775,6 +79271,14 @@
           "national": 1700000,
           "local": 1840000,
           "total": 3540000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
+          "national": 1700000,
+          "local": 0,
+          "total": 1700000
         },
         "폭스바겐그룹코리아___ID.4 Pro": {
           "type": "일반승용",
@@ -78976,6 +79480,14 @@
           "local": 5830000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2480000,
+          "total": 4770000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -79075,7 +79587,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:34.901Z"
+      "timestamp": "2026-06-03T05:54:50.644Z"
     },
     {
       "parentName": "전북",
@@ -79861,7 +80373,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:38.756Z"
+      "timestamp": "2026-06-03T05:54:54.825Z"
     },
     {
       "parentName": "전북",
@@ -80751,7 +81263,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:39.070Z"
+      "timestamp": "2026-06-03T05:54:54.480Z"
     },
     {
       "parentName": "전북",
@@ -81641,7 +82153,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:38.886Z"
+      "timestamp": "2026-06-03T05:54:54.550Z"
     },
     {
       "parentName": "전북",
@@ -82531,7 +83043,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:39.122Z"
+      "timestamp": "2026-06-03T05:54:54.601Z"
     },
     {
       "parentName": "전북",
@@ -83421,7 +83933,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:39.018Z"
+      "timestamp": "2026-06-03T05:54:54.852Z"
     },
     {
       "parentName": "전북",
@@ -83844,6 +84356,22 @@
           "local": 1750000,
           "total": 3370000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 0,
+          "total": 2470000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 0,
+          "total": 2220000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -84212,6 +84740,14 @@
           "local": 5830000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2480000,
+          "total": 4770000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -84311,7 +84847,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:38.670Z"
+      "timestamp": "2026-06-03T05:54:54.797Z"
     },
     {
       "parentName": "전북",
@@ -85201,7 +85737,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:38.926Z"
+      "timestamp": "2026-06-03T05:54:54.646Z"
     },
     {
       "parentName": "전북",
@@ -86091,7 +86627,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:39.213Z"
+      "timestamp": "2026-06-03T05:54:54.746Z"
     },
     {
       "parentName": "전북",
@@ -86210,6 +86746,14 @@
           "local": 2320000,
           "total": 4460000
         },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 2690000,
+          "total": 5170000
+        },
         "기아___EV3 롱레인지 2WD 17인치": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -86226,6 +86770,14 @@
           "local": 6020000,
           "total": 10000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 5850000,
+          "total": 10000
+        },
         "기아___EV3 스탠다드 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -86233,6 +86785,14 @@
           "national": 4690000,
           "local": 5090000,
           "total": 9780000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 2760000,
+          "total": 5310000
         },
         "기아___EV4 롱레인지 2WD 17인치": {
           "type": "일반승용",
@@ -86248,6 +86808,14 @@
           "model": "EV4 롱레인지 2WD 19인치",
           "national": 5550000,
           "local": 6020000,
+          "total": 10000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 6010000,
           "total": 10000
         },
         "기아___EV4 롱레인지 GTL 2WD 19인치": {
@@ -86274,6 +86842,14 @@
           "local": 5220000,
           "total": 10000
         },
+        "기아___EV5 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 GT",
+          "national": 2320000,
+          "local": 2520000,
+          "total": 4840000
+        },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -86281,6 +86857,30 @@
           "national": 5520000,
           "local": 5990000,
           "total": 10000
+        },
+        "기아___EV5 롱레인지 4WD 18인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 18인치",
+          "national": 4990000,
+          "local": 5420000,
+          "total": 10000
+        },
+        "기아___EV5 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 19인치",
+          "national": 4930000,
+          "local": 5350000,
+          "total": 10000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 2660000,
+          "total": 5110000
         },
         "기아___EV9 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -86442,6 +87042,30 @@
           "local": 1670000,
           "total": 3210000
         },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 1750000,
+          "total": 3370000
+        },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2680000,
+          "total": 5150000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2410000,
+          "total": 4630000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -86562,6 +87186,30 @@
           "local": 1820000,
           "total": 3500000
         },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 1820000,
+          "total": 3500000
+        },
+        "테슬라코리아___Model Y L AWD": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L AWD",
+          "national": 2100000,
+          "local": 2280000,
+          "total": 4380000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 2280000,
+          "total": 4380000
+        },
         "테슬라코리아___Model Y Premium Long Range": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -86574,6 +87222,14 @@
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
           "model": "Model Y Premium RWD",
+          "national": 1700000,
+          "local": 1840000,
+          "total": 3540000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
           "national": 1700000,
           "local": 1840000,
           "total": 3540000
@@ -86778,6 +87434,14 @@
           "local": 5830000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2480000,
+          "total": 4770000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -86877,7 +87541,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:43.161Z"
+      "timestamp": "2026-06-03T05:54:58.639Z"
     },
     {
       "parentName": "전남",
@@ -87767,7 +88431,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:43.026Z"
+      "timestamp": "2026-06-03T05:54:58.757Z"
     },
     {
       "parentName": "전남",
@@ -88190,6 +88854,22 @@
           "local": 1130000,
           "total": 2750000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 1720000,
+          "total": 4190000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 1550000,
+          "total": 3770000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -88558,6 +89238,14 @@
           "local": 3750000,
           "total": 9120000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 1600000,
+          "total": 3890000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -88657,7 +89345,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:43.078Z"
+      "timestamp": "2026-06-03T05:54:58.859Z"
     },
     {
       "parentName": "전남",
@@ -89571,7 +90259,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:43.316Z"
+      "timestamp": "2026-06-03T05:54:58.793Z"
     },
     {
       "parentName": "전남",
@@ -89999,16 +90687,16 @@
           "manufacturer": "볼보자동차코리아",
           "model": "볼보 EX30 Single Motor ER",
           "national": 2470000,
-          "local": 1230000,
-          "total": 3700000
+          "local": 1500000,
+          "total": 3970000
         },
         "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
           "type": "일반승용",
           "manufacturer": "볼보자동차코리아",
           "model": "볼보 EX30CC Twin Motor Perf",
           "national": 2220000,
-          "local": 1110000,
-          "total": 3330000
+          "local": 1500000,
+          "total": 3720000
         },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
@@ -90485,7 +91173,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:42.977Z"
+      "timestamp": "2026-06-03T05:54:58.671Z"
     },
     {
       "parentName": "전남",
@@ -90905,8 +91593,24 @@
           "manufacturer": "메르세데스벤츠코리아",
           "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
           "national": 1620000,
-          "local": 0,
-          "total": 1620000
+          "local": 2160000,
+          "total": 3780000
+        },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 3290000,
+          "total": 5760000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2960000,
+          "total": 5180000
         },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
@@ -91033,24 +91737,24 @@
           "manufacturer": "테슬라코리아",
           "model": "Model 3 RWD(2025)",
           "national": 1680000,
-          "local": 0,
-          "total": 1680000
+          "local": 2240000,
+          "total": 3920000
         },
         "테슬라코리아___Model Y L AWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
           "model": "Model Y L AWD",
           "national": 2100000,
-          "local": 0,
-          "total": 2100000
+          "local": 2800000,
+          "total": 4900000
         },
         "테슬라코리아___Model Y Long Range(2025)": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
           "model": "Model Y Long Range(2025)",
           "national": 2100000,
-          "local": 0,
-          "total": 2100000
+          "local": 2800000,
+          "total": 4900000
         },
         "테슬라코리아___Model Y Premium Long Range": {
           "type": "일반승용",
@@ -91073,8 +91777,8 @@
           "manufacturer": "테슬라코리아",
           "model": "Model Y RWD(2025)",
           "national": 1700000,
-          "local": 0,
-          "total": 1700000
+          "local": 2260000,
+          "total": 3960000
         },
         "폭스바겐그룹코리아___ID.4 Pro": {
           "type": "일반승용",
@@ -91276,6 +91980,14 @@
           "local": 7160000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 3050000,
+          "total": 5340000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -91375,7 +92087,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:43.226Z"
+      "timestamp": "2026-06-03T05:54:58.891Z"
     },
     {
       "parentName": "전남",
@@ -92265,7 +92977,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:43.278Z"
+      "timestamp": "2026-06-03T05:54:58.556Z"
     },
     {
       "parentName": "전남",
@@ -93155,7 +93867,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:42.435Z"
+      "timestamp": "2026-06-03T05:54:58.351Z"
     },
     {
       "parentName": "전남",
@@ -94045,7 +94757,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:46.893Z"
+      "timestamp": "2026-06-03T05:55:02.328Z"
     },
     {
       "parentName": "전남",
@@ -94935,7 +95647,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:47.106Z"
+      "timestamp": "2026-06-03T05:55:02.748Z"
     },
     {
       "parentName": "전남",
@@ -95825,7 +96537,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:47.426Z"
+      "timestamp": "2026-06-03T05:55:02.509Z"
     },
     {
       "parentName": "전남",
@@ -96715,7 +97427,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:47.332Z"
+      "timestamp": "2026-06-03T05:55:02.404Z"
     },
     {
       "parentName": "전남",
@@ -96863,7 +97575,7 @@
           "manufacturer": "기아",
           "model": "EV3 롱레인지 4WD 19인치",
           "national": 5390000,
-          "local": 6450000,
+          "local": 6460000,
           "total": 10000
         },
         "기아___EV3 스탠다드 2WD": {
@@ -96879,8 +97591,8 @@
           "manufacturer": "기아",
           "model": "EV4 GT",
           "national": 2550000,
-          "local": 3050000,
-          "total": 5600000
+          "local": 3060000,
+          "total": 5610000
         },
         "기아___EV4 롱레인지 2WD 17인치": {
           "type": "일반승용",
@@ -96903,7 +97615,7 @@
           "manufacturer": "기아",
           "model": "EV4 롱레인지 4WD 19인치",
           "national": 5540000,
-          "local": 6630000,
+          "local": 6640000,
           "total": 10000
         },
         "기아___EV4 롱레인지 GTL 2WD 19인치": {
@@ -96967,8 +97679,8 @@
           "manufacturer": "기아",
           "model": "EV9 GT",
           "national": 2450000,
-          "local": 2930000,
-          "total": 5380000
+          "local": 2940000,
+          "total": 5390000
         },
         "기아___EV9 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -97138,6 +97850,22 @@
           "local": 1940000,
           "total": 3560000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2960000,
+          "total": 5430000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2660000,
+          "total": 4880000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -97271,16 +97999,16 @@
           "manufacturer": "테슬라코리아",
           "model": "Model Y L AWD",
           "national": 2100000,
-          "local": 2510000,
-          "total": 4610000
+          "local": 2520000,
+          "total": 4620000
         },
         "테슬라코리아___Model Y Long Range(2025)": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
           "model": "Model Y Long Range(2025)",
           "national": 2100000,
-          "local": 2510000,
-          "total": 4610000
+          "local": 2520000,
+          "total": 4620000
         },
         "테슬라코리아___Model Y Premium Long Range": {
           "type": "일반승용",
@@ -97506,6 +98234,14 @@
           "local": 6440000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2740000,
+          "total": 5030000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -97605,7 +98341,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:47.462Z"
+      "timestamp": "2026-06-03T05:55:02.630Z"
     },
     {
       "parentName": "전남",
@@ -98028,6 +98764,22 @@
           "local": 1620000,
           "total": 3240000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2470000,
+          "total": 4940000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2220000,
+          "total": 4440000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -98396,6 +99148,14 @@
           "local": 5370000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2290000,
+          "total": 4580000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -98495,7 +99255,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:47.275Z"
+      "timestamp": "2026-06-03T05:55:02.478Z"
     },
     {
       "parentName": "전남",
@@ -99385,7 +100145,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:47.208Z"
+      "timestamp": "2026-06-03T05:55:02.721Z"
     },
     {
       "parentName": "전남",
@@ -100299,7 +101059,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:46.986Z"
+      "timestamp": "2026-06-03T05:55:02.567Z"
     },
     {
       "parentName": "전남",
@@ -101189,7 +101949,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:51.209Z"
+      "timestamp": "2026-06-03T05:55:07.016Z"
     },
     {
       "parentName": "전남",
@@ -101612,6 +102372,22 @@
           "local": 2430000,
           "total": 4050000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 3700000,
+          "total": 6170000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 3330000,
+          "total": 5550000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -101980,6 +102756,14 @@
           "local": 8050000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 0,
+          "total": 2290000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -102079,7 +102863,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:51.320Z"
+      "timestamp": "2026-06-03T05:55:07.160Z"
     },
     {
       "parentName": "전남",
@@ -102969,7 +103753,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:51.561Z"
+      "timestamp": "2026-06-03T05:55:06.936Z"
     },
     {
       "parentName": "전남",
@@ -103755,7 +104539,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:51.405Z"
+      "timestamp": "2026-06-03T05:55:06.888Z"
     },
     {
       "parentName": "전남",
@@ -104645,7 +105429,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:51.137Z"
+      "timestamp": "2026-06-03T05:55:07.115Z"
     },
     {
       "parentName": "전남",
@@ -104764,6 +105548,14 @@
           "local": 3210000,
           "total": 5350000
         },
+        "기아___EV3 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 GT",
+          "national": 2480000,
+          "local": 3720000,
+          "total": 6200000
+        },
         "기아___EV3 롱레인지 2WD 17인치": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -104780,6 +105572,14 @@
           "local": 8320000,
           "total": 10000
         },
+        "기아___EV3 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV3 롱레인지 4WD 19인치",
+          "national": 5390000,
+          "local": 8080000,
+          "total": 10000
+        },
         "기아___EV3 스탠다드 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -104787,6 +105587,14 @@
           "national": 4690000,
           "local": 7030000,
           "total": 10000
+        },
+        "기아___EV4 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 GT",
+          "national": 2550000,
+          "local": 3820000,
+          "total": 6370000
         },
         "기아___EV4 롱레인지 2WD 17인치": {
           "type": "일반승용",
@@ -104802,6 +105610,14 @@
           "model": "EV4 롱레인지 2WD 19인치",
           "national": 5550000,
           "local": 8320000,
+          "total": 10000
+        },
+        "기아___EV4 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV4 롱레인지 4WD 19인치",
+          "national": 5540000,
+          "local": 8310000,
           "total": 10000
         },
         "기아___EV4 롱레인지 GTL 2WD 19인치": {
@@ -104828,6 +105644,14 @@
           "local": 7210000,
           "total": 10000
         },
+        "기아___EV5 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 GT",
+          "national": 2320000,
+          "local": 3480000,
+          "total": 5800000
+        },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -104835,6 +105659,30 @@
           "national": 5520000,
           "local": 8280000,
           "total": 10000
+        },
+        "기아___EV5 롱레인지 4WD 18인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 18인치",
+          "national": 4990000,
+          "local": 7480000,
+          "total": 10000
+        },
+        "기아___EV5 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 19인치",
+          "national": 4930000,
+          "local": 7390000,
+          "total": 10000
+        },
+        "기아___EV9 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV9 GT",
+          "national": 2450000,
+          "local": 3670000,
+          "total": 6120000
         },
         "기아___EV9 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -104996,6 +105844,30 @@
           "local": 2310000,
           "total": 3850000
         },
+        "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+          "type": "일반승용",
+          "manufacturer": "메르세데스벤츠코리아",
+          "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+          "national": 1620000,
+          "local": 2430000,
+          "total": 4050000
+        },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 3700000,
+          "total": 6170000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 3330000,
+          "total": 5550000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -105113,8 +105985,32 @@
           "manufacturer": "테슬라코리아",
           "model": "Model 3 RWD",
           "national": 1680000,
-          "local": 3000000,
-          "total": 4680000
+          "local": 2520000,
+          "total": 4200000
+        },
+        "테슬라코리아___Model 3 RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 RWD(2025)",
+          "national": 1680000,
+          "local": 2520000,
+          "total": 4200000
+        },
+        "테슬라코리아___Model Y L AWD": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y L AWD",
+          "national": 2100000,
+          "local": 3150000,
+          "total": 5250000
+        },
+        "테슬라코리아___Model Y Long Range(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y Long Range(2025)",
+          "national": 2100000,
+          "local": 3150000,
+          "total": 5250000
         },
         "테슬라코리아___Model Y Premium Long Range": {
           "type": "일반승용",
@@ -105128,6 +106024,14 @@
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
           "model": "Model Y Premium RWD",
+          "national": 1700000,
+          "local": 2550000,
+          "total": 4250000
+        },
+        "테슬라코리아___Model Y RWD(2025)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model Y RWD(2025)",
           "national": 1700000,
           "local": 2550000,
           "total": 4250000
@@ -105332,6 +106236,14 @@
           "local": 8050000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 3430000,
+          "total": 5720000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -105431,7 +106343,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:51.525Z"
+      "timestamp": "2026-06-03T05:55:07.059Z"
     },
     {
       "parentName": "전남",
@@ -106321,7 +107233,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:51.084Z"
+      "timestamp": "2026-06-03T05:55:07.237Z"
     },
     {
       "parentName": "경북",
@@ -107211,7 +108123,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:51.268Z"
+      "timestamp": "2026-06-03T05:55:06.820Z"
     },
     {
       "parentName": "경북",
@@ -108101,7 +109013,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:55.341Z"
+      "timestamp": "2026-06-03T05:55:10.787Z"
     },
     {
       "parentName": "경북",
@@ -109015,7 +109927,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:55.431Z"
+      "timestamp": "2026-06-03T05:55:10.950Z"
     },
     {
       "parentName": "경북",
@@ -109929,7 +110841,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:55.709Z"
+      "timestamp": "2026-06-03T05:55:10.663Z"
     },
     {
       "parentName": "경북",
@@ -110819,7 +111731,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:55.670Z"
+      "timestamp": "2026-06-03T05:55:10.874Z"
     },
     {
       "parentName": "경북",
@@ -111709,7 +112621,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:55.260Z"
+      "timestamp": "2026-06-03T05:55:10.749Z"
     },
     {
       "parentName": "경북",
@@ -112599,7 +113511,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:55.483Z"
+      "timestamp": "2026-06-03T05:55:10.626Z"
     },
     {
       "parentName": "경북",
@@ -113489,7 +114401,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:55.211Z"
+      "timestamp": "2026-06-03T05:55:10.840Z"
     },
     {
       "parentName": "경북",
@@ -113912,6 +114824,22 @@
           "local": 1660000,
           "total": 3280000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2540000,
+          "total": 5010000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2280000,
+          "total": 4500000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -114280,6 +115208,14 @@
           "local": 5530000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2350000,
+          "total": 4640000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -114379,7 +115315,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:55.576Z"
+      "timestamp": "2026-06-03T05:55:10.557Z"
     },
     {
       "parentName": "경북",
@@ -115269,7 +116205,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:59.368Z"
+      "timestamp": "2026-06-03T05:55:14.203Z"
     },
     {
       "parentName": "경북",
@@ -116159,7 +117095,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:59.661Z"
+      "timestamp": "2026-06-03T05:55:14.240Z"
     },
     {
       "parentName": "경북",
@@ -117049,7 +117985,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:59.567Z"
+      "timestamp": "2026-06-03T05:55:14.393Z"
     },
     {
       "parentName": "경북",
@@ -117963,7 +118899,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:59.248Z"
+      "timestamp": "2026-06-03T05:55:14.318Z"
     },
     {
       "parentName": "경북",
@@ -118386,6 +119322,22 @@
           "local": 1660000,
           "total": 3280000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 2540000,
+          "total": 5010000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2280000,
+          "total": 4500000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -118754,6 +119706,14 @@
           "local": 5530000,
           "total": 10000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2350000,
+          "total": 4640000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -118853,7 +119813,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:59.313Z"
+      "timestamp": "2026-06-03T05:55:14.512Z"
     },
     {
       "parentName": "경북",
@@ -119743,7 +120703,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:59.522Z"
+      "timestamp": "2026-06-03T05:55:14.540Z"
     },
     {
       "parentName": "경북",
@@ -120633,7 +121593,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:59.482Z"
+      "timestamp": "2026-06-03T05:55:14.471Z"
     },
     {
       "parentName": "경북",
@@ -121419,7 +122379,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:20:59.172Z"
+      "timestamp": "2026-06-03T05:55:14.145Z"
     },
     {
       "parentName": "경북",
@@ -122309,7 +123269,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:03.248Z"
+      "timestamp": "2026-06-03T05:55:17.982Z"
     },
     {
       "parentName": "경북",
@@ -123199,7 +124159,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:03.566Z"
+      "timestamp": "2026-06-03T05:55:17.927Z"
     },
     {
       "parentName": "경북",
@@ -124089,7 +125049,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:03.319Z"
+      "timestamp": "2026-06-03T05:55:18.173Z"
     },
     {
       "parentName": "경북",
@@ -124979,7 +125939,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:03.415Z"
+      "timestamp": "2026-06-03T05:55:18.303Z"
     },
     {
       "parentName": "경북",
@@ -125869,7 +126829,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:03.171Z"
+      "timestamp": "2026-06-03T05:55:18.229Z"
     },
     {
       "parentName": "경남",
@@ -126292,6 +127252,22 @@
           "local": 490000,
           "total": 2110000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 750000,
+          "total": 3220000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 670000,
+          "total": 2890000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -126660,6 +127636,14 @@
           "local": 1620000,
           "total": 6990000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 690000,
+          "total": 2980000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -126759,7 +127743,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:03.469Z"
+      "timestamp": "2026-06-03T05:55:18.331Z"
     },
     {
       "parentName": "경남",
@@ -127649,7 +128633,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:03.506Z"
+      "timestamp": "2026-06-03T05:55:18.261Z"
     },
     {
       "parentName": "경남",
@@ -128072,6 +129056,22 @@
           "local": 570000,
           "total": 2190000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 870000,
+          "total": 3340000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 780000,
+          "total": 3000000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -128440,6 +129440,14 @@
           "local": 1880000,
           "total": 7250000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 810000,
+          "total": 3100000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -128539,7 +129547,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:03.097Z"
+      "timestamp": "2026-06-03T05:55:18.086Z"
     },
     {
       "parentName": "경남",
@@ -128962,6 +129970,22 @@
           "local": 640000,
           "total": 2260000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 1000000,
+          "total": 3470000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 880000,
+          "total": 3100000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -129330,6 +130354,14 @@
           "local": 2160000,
           "total": 7530000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 920000,
+          "total": 3210000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -129429,7 +130461,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:07.152Z"
+      "timestamp": "2026-06-03T05:55:21.699Z"
     },
     {
       "parentName": "경남",
@@ -129852,6 +130884,22 @@
           "local": 490000,
           "total": 2110000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 750000,
+          "total": 3220000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 670000,
+          "total": 2890000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -130220,6 +131268,14 @@
           "local": 1610000,
           "total": 6980000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 690000,
+          "total": 2980000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -130319,7 +131375,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:07.562Z"
+      "timestamp": "2026-06-03T05:55:21.665Z"
     },
     {
       "parentName": "경남",
@@ -131209,7 +132265,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:07.272Z"
+      "timestamp": "2026-06-03T05:55:21.509Z"
     },
     {
       "parentName": "경남",
@@ -132099,7 +133155,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:07.326Z"
+      "timestamp": "2026-06-03T05:55:21.885Z"
     },
     {
       "parentName": "경남",
@@ -132522,6 +133578,22 @@
           "local": 490000,
           "total": 2110000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 750000,
+          "total": 3220000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 670000,
+          "total": 2890000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -132890,6 +133962,14 @@
           "local": 1620000,
           "total": 6990000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 690000,
+          "total": 2980000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -132989,7 +134069,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:07.525Z"
+      "timestamp": "2026-06-03T05:55:21.920Z"
     },
     {
       "parentName": "경남",
@@ -133412,6 +134492,22 @@
           "local": 490000,
           "total": 2110000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 750000,
+          "total": 3220000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 670000,
+          "total": 2890000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -133780,6 +134876,14 @@
           "local": 1620000,
           "total": 6990000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 690000,
+          "total": 2980000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -133879,7 +134983,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:07.376Z"
+      "timestamp": "2026-06-03T05:55:21.743Z"
     },
     {
       "parentName": "경남",
@@ -134769,7 +135873,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:07.201Z"
+      "timestamp": "2026-06-03T05:55:21.840Z"
     },
     {
       "parentName": "경남",
@@ -135192,6 +136296,22 @@
           "local": 570000,
           "total": 2190000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 870000,
+          "total": 3340000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 780000,
+          "total": 3000000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -135560,6 +136680,14 @@
           "local": 1880000,
           "total": 7250000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 810000,
+          "total": 3100000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -135659,7 +136787,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:07.471Z"
+      "timestamp": "2026-06-03T05:55:21.584Z"
     },
     {
       "parentName": "경남",
@@ -136549,7 +137677,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:11.048Z"
+      "timestamp": "2026-06-03T05:55:25.545Z"
     },
     {
       "parentName": "경남",
@@ -137439,7 +138567,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:11.393Z"
+      "timestamp": "2026-06-03T05:55:25.272Z"
     },
     {
       "parentName": "경남",
@@ -138305,7 +139433,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:11.579Z"
+      "timestamp": "2026-06-03T05:55:25.308Z"
     },
     {
       "parentName": "경남",
@@ -138520,6 +139648,14 @@
           "local": 1450000,
           "total": 6260000
         },
+        "기아___EV5 GT": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 GT",
+          "national": 2320000,
+          "local": 700000,
+          "total": 3020000
+        },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -138527,6 +139663,22 @@
           "national": 5520000,
           "local": 1660000,
           "total": 7180000
+        },
+        "기아___EV5 롱레인지 4WD 18인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 18인치",
+          "national": 4990000,
+          "local": 1500000,
+          "total": 6490000
+        },
+        "기아___EV5 롱레인지 4WD 19인치": {
+          "type": "일반승용",
+          "manufacturer": "기아",
+          "model": "EV5 롱레인지 4WD 19인치",
+          "national": 4930000,
+          "local": 1480000,
+          "total": 6410000
         },
         "기아___EV9 GT": {
           "type": "일반승용",
@@ -138703,6 +139855,22 @@
           "national": 1620000,
           "local": 490000,
           "total": 2110000
+        },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 750000,
+          "total": 3220000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 670000,
+          "total": 2890000
         },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
@@ -139072,6 +140240,14 @@
           "local": 1620000,
           "total": 6990000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 690000,
+          "total": 2980000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -139171,7 +140347,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:11.090Z"
+      "timestamp": "2026-06-03T05:55:25.167Z"
     },
     {
       "parentName": "경남",
@@ -140061,7 +141237,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:11.280Z"
+      "timestamp": "2026-06-03T05:55:25.473Z"
     },
     {
       "parentName": "경남",
@@ -140484,6 +141660,22 @@
           "local": 1000000,
           "total": 2620000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 1530000,
+          "total": 4000000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 1370000,
+          "total": 3590000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -140852,6 +142044,14 @@
           "local": 3320000,
           "total": 8690000
         },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 1420000,
+          "total": 3710000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -140951,7 +142151,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:11.443Z"
+      "timestamp": "2026-06-03T05:55:25.578Z"
     },
     {
       "parentName": "경남",
@@ -141841,7 +143041,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:11.476Z"
+      "timestamp": "2026-06-03T05:55:25.402Z"
     },
     {
       "parentName": "제주",
@@ -142731,7 +143931,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:11.242Z"
+      "timestamp": "2026-06-03T05:55:25.433Z"
     },
     {
       "parentName": "공단",
@@ -143645,7 +144845,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-02T05:21:14.654Z"
+      "timestamp": "2026-06-03T05:55:28.293Z"
     }
   ]
 }
