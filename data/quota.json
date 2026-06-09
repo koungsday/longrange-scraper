@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-09T10:20:48.421Z",
+  "timestamp": "2026-06-09T10:30:55.846Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1635,16 +1635,16 @@
           "registered_corporate": 3,
           "registered_taxi": 3,
           "registered_general": 124,
-          "delivered_total": 159,
+          "delivered_total": 160,
           "delivered_priority": 40,
           "delivered_corporate": 3,
           "delivered_taxi": 3,
-          "delivered_general": 113,
-          "remaining_total": 21,
+          "delivered_general": 114,
+          "remaining_total": 20,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 12,
-          "remaining_general": 22,
+          "remaining_general": 21,
           "note": "2026년 전기자동차 보급지원사업\n승용, 화물  예산소진으로 마감되었습니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-09T10:20:48.364Z"
+      "timestamp": "2026-06-09T10:30:55.773Z"
     }
   ]
 }
