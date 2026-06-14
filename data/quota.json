@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-14T23:01:09.508Z",
+  "timestamp": "2026-06-14T23:10:58.869Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -855,12 +855,12 @@
           "registered_corporate": 23,
           "registered_taxi": 8,
           "registered_general": 600,
-          "delivered_total": 675,
-          "delivered_priority": 186,
+          "delivered_total": 676,
+          "delivered_priority": 187,
           "delivered_corporate": 16,
           "delivered_taxi": 4,
           "delivered_general": 469,
-          "remaining_total": 525,
+          "remaining_total": 524,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -3559,15 +3559,15 @@
           "registered_corporate": 23,
           "registered_taxi": 14,
           "registered_general": 212,
-          "delivered_total": 246,
+          "delivered_total": 247,
           "delivered_priority": 49,
           "delivered_corporate": 20,
-          "delivered_taxi": 13,
+          "delivered_taxi": 14,
           "delivered_general": 164,
-          "remaining_total": 150,
+          "remaining_total": 149,
           "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 8,
+          "remaining_taxi": 7,
           "remaining_general": 170,
           "note": "* 2차 보급사업(승용, 화물) 선정 마감. 취소 분 발생 시 지원가능확인요청 순으로 대상자 선정\n* 3차 예정:  7.1.(수) 09:00 시작(승용 40대, 화물 10대 정도)\n- 지원가능확인요청 순으로 예산범위 내에서 대상자 확정\n- 보급대수는 예산편성 단가기준 수량이며, 신청 차종에 따라 보조금이 상이하므로 실제 물량은 공고 물량과 다를 수 있음\n- 보급여건 및 예산증감에 따라 보급대수 변동가능\n- 문의처: 054-979-6757"
         },
@@ -3923,16 +3923,16 @@
           "registered_corporate": 7,
           "registered_taxi": 5,
           "registered_general": 90,
-          "delivered_total": 105,
+          "delivered_total": 106,
           "delivered_priority": 15,
           "delivered_corporate": 7,
           "delivered_taxi": 5,
-          "delivered_general": 78,
-          "remaining_total": 43,
+          "delivered_general": 79,
+          "remaining_total": 42,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 10,
-          "remaining_general": 40,
+          "remaining_general": 39,
           "note": "함안군 예산 소진으로 인하여 더 이상 접수 불가함을 알려드립니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-14T23:01:09.448Z"
+      "timestamp": "2026-06-14T23:10:58.795Z"
     }
   ]
 }
