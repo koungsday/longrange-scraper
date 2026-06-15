@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-15T10:31:03.753Z",
+  "timestamp": "2026-06-15T10:41:28.937Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -642,11 +642,11 @@
           "quota_corporate": 0,
           "quota_taxi": 15,
           "quota_general": 626,
-          "registered_total": 436,
+          "registered_total": 437,
           "registered_priority": 140,
           "registered_corporate": 7,
           "registered_taxi": 15,
-          "registered_general": 274,
+          "registered_general": 275,
           "delivered_total": 378,
           "delivered_priority": 126,
           "delivered_corporate": 6,
@@ -798,11 +798,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 1931,
-          "registered_total": 1208,
+          "registered_total": 1209,
           "registered_priority": 424,
           "registered_corporate": 37,
           "registered_taxi": 17,
-          "registered_general": 730,
+          "registered_general": 731,
           "delivered_total": 892,
           "delivered_priority": 327,
           "delivered_corporate": 29,
@@ -3793,16 +3793,16 @@
           "registered_corporate": 45,
           "registered_taxi": 45,
           "registered_general": 959,
-          "delivered_total": 1178,
+          "delivered_total": 1179,
           "delivered_priority": 165,
           "delivered_corporate": 44,
           "delivered_taxi": 44,
-          "delivered_general": 925,
-          "remaining_total": 67,
+          "delivered_general": 926,
+          "remaining_total": 66,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 24,
-          "remaining_general": 127,
+          "remaining_general": 126,
           "note": "★★2026년도부터 차량 최초등록 이후 2년이내 김해시 외의 지역으로 매매시 회수요율에 따라 보조금(시비) 회수[최대 70%]되오니 유의하시기 바랍니다★★\n★★★★ 공고마감 ★★★★\n26. 5. 18.  15:55  접수마감했습니다    * (구)버전 아닌 신규 버전으로 입력바랍니다\n이후 7월 공고예정입니다.\n-------------------------------------------------------------------------------------\n1차 공고: 1/26 ~   접수: 1/28 ~4/6\n★2026년 김해시 전기자동차(승용)보급사업 공고\n- 지원대수 : 1000대\n※ 자세한 내용은 김해시 공고문 참조바랍니다.\n※ 반드시 공고문 숙지 후 신청바랍니다. 통화량이 많아 통화가 어려울 수 있습니다.\n★ 주의사항\n1. 출고기한이 만료된 기신청자는 지원신청서 재접수하여야 함\n2. 전기차 보조금 지원대상자로 선정되었으나, 보조금 지급 청구기간 미도래로 보조금 미청구시 출고물량으로 확인 안됨\n3. 잔여물량은 단순 참고용이며 실 잔여물량이 아님\n4. 보급대수는 보급여건 및 예산범위 내에서 변동될 수 있음"
         },
         {
@@ -4197,8 +4197,8 @@
         }
       ],
       "success": true,
-      "attempts": 1,
-      "timestamp": "2026-06-15T10:31:03.701Z"
+      "attempts": 2,
+      "timestamp": "2026-06-15T10:41:28.757Z"
     }
   ]
 }
