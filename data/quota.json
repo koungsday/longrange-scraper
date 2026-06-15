@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-15T11:31:08.292Z",
+  "timestamp": "2026-06-15T11:40:58.099Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,11 +18,11 @@
           "quota_corporate": 0,
           "quota_taxi": 840,
           "quota_general": 9761,
-          "registered_total": 11397,
+          "registered_total": 11398,
           "registered_priority": 3310,
           "registered_corporate": 352,
           "registered_taxi": 966,
-          "registered_general": 6769,
+          "registered_general": 6770,
           "delivered_total": 10361,
           "delivered_priority": 3044,
           "delivered_corporate": 321,
@@ -1895,16 +1895,16 @@
           "registered_corporate": 12,
           "registered_taxi": 12,
           "registered_general": 330,
-          "delivered_total": 344,
+          "delivered_total": 343,
           "delivered_priority": 113,
           "delivered_corporate": 7,
           "delivered_taxi": 10,
-          "delivered_general": 214,
-          "remaining_total": 135,
+          "delivered_general": 213,
+          "remaining_total": 136,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 7,
-          "remaining_general": 200,
+          "remaining_general": 201,
           "note": "2차 공고문 pdf 파일 추경1차 첨부2에 올렸습니다.\n차종별 보조금 차등 지원에 따라 예산범위 내 보급대수는 조정될 수 있음.\n자격부여(서류검토) → 지원가능확인요청(대리점) → 예산 범위 내 대상자선정\n※ 2차 사업 : 승용차, 화물차 접수 마감★\n※ 2차 사업 대상자선정 건 중 취소 물량 발생 시 지원가능여부 요청번호★ 승용차 418번부터, 화물차 159번부터 별도 연락드립니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-15T11:31:08.220Z"
+      "timestamp": "2026-06-15T11:40:58.044Z"
     }
   ]
 }
