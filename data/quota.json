@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-15T11:40:58.099Z",
+  "timestamp": "2026-06-15T11:50:57.000Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 352,
           "registered_taxi": 966,
           "registered_general": 6770,
-          "delivered_total": 10361,
+          "delivered_total": 10362,
           "delivered_priority": 3044,
           "delivered_corporate": 321,
           "delivered_taxi": 870,
-          "delivered_general": 6126,
-          "remaining_total": 1840,
+          "delivered_general": 6127,
+          "remaining_total": 1839,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 3635,
+          "remaining_general": 3634,
           "note": "**2026.6.14. 기준, 상반기 서울시 전기승용차 보급 현황 알려 드립니다.\n(택시 마감)\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 10,380대\nㅇ 잔여대수: 981대\n-----------------------------\n** 상반기 보급물량 소진시에는 당초 일정보다 조기에 마감할 계획입니다."
         },
         {
@@ -439,16 +439,16 @@
           "registered_corporate": 37,
           "registered_taxi": 46,
           "registered_general": 577,
-          "delivered_total": 811,
+          "delivered_total": 812,
           "delivered_priority": 242,
           "delivered_corporate": 31,
           "delivered_taxi": 43,
-          "delivered_general": 495,
-          "remaining_total": 439,
+          "delivered_general": 496,
+          "remaining_total": 438,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 17,
-          "remaining_general": 635,
+          "remaining_general": 634,
           "note": "★  전기승용차 잔여물량(대상자선정 기준) 약 38대(2026. 6. 12.(금) 17:40 기준)\n★  전기화물 대상자선정 마감\n- 자격부여 건에 한하여 지원가능여부 요청 순으로 대기자가 되며 취소 물량 발생 시 추가 선정 가능함\n★  신청서를 포함한 모든 서류 원본대조필 날인 후 첨부 (원본 우편 발송 불필요)\n★  차종별 보조금(전환지원금 포함) 파일(추경 1차 2)에서 확인 가능\n★  생애최초(청년) 구매자 증빙서류 발급 절차는 파일(추경 1차 3)에서 확인 가능\n<2026년도 전기자동차 보급사업 2차 변경 공고>\n□ 사업(접수)기간 : (화물, 승합) 2026. 5. 6.(수) 09:00  ~ 2026. 12. 4.(금) 18:00\n(승용)         2026. 5. 11.(월) 09:00 ~ 2026. 12. 4.(금) 18:00\n※ 예산 소진 시 조기 마감\n□ 보급대수 : 승용 450대, 화물 118대, 승합 6대\n※ 보급대수는 차종별 보조금 차등지원 및 차종별 구매수요에 따라 변동될 수 있습니다.\n□ 신청대상 : 구매신청서 접수일 기준 연속하여 30일 이상 안산시에 주소를 둔 개인·개인사업자, 법인 등\n□ 선정방법 : 출고·등록순에 의한 선정\n※ 반드시 공고문을 읽고 신청하여 주시기 바랍니다.\n※ 차량보조금 지급액 등 단순문의는 가급적 자제해 주시기 바랍니다."
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 27145,
+          "registered_total": 27146,
           "registered_priority": 9,
-          "registered_corporate": 26433,
+          "registered_corporate": 26434,
           "registered_taxi": 252,
           "registered_general": 451,
           "delivered_total": 19596,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-15T11:40:58.044Z"
+      "timestamp": "2026-06-15T11:50:56.920Z"
     }
   ]
 }
