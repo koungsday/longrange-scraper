@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-16T10:50:58.536Z",
+  "timestamp": "2026-06-16T11:01:14.922Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1141,16 +1141,16 @@
           "registered_corporate": 0,
           "registered_taxi": 10,
           "registered_general": 56,
-          "delivered_total": 102,
+          "delivered_total": 103,
           "delivered_priority": 44,
           "delivered_corporate": 0,
           "delivered_taxi": 10,
-          "delivered_general": 48,
-          "remaining_total": 126,
+          "delivered_general": 49,
+          "remaining_total": 125,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 158,
+          "remaining_general": 157,
           "note": "제1차(본공고) 보급공고 물량: 승용 150대, 화물 30대\n제2차(추경1차) 보급공고 물량: 승욜 80대, 화물 20대\n-전환지원금 관련 국비, 지방비 만원이하 반올림 등 수정사항이 있어 전환지원금은 변경가능성 있음\n-지급청구 시 원본 우편 제출 필요(온실가스 감축실적 활용동의서 원본도 함께 제출)\n-대상자 선정은 출고 등록순(대상자 확정 물량에 따라 신청 마감 예정)"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 27356,
+          "registered_total": 27357,
           "registered_priority": 9,
-          "registered_corporate": 26629,
+          "registered_corporate": 26630,
           "registered_taxi": 263,
           "registered_general": 455,
           "delivered_total": 19814,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-16T10:50:58.445Z"
+      "timestamp": "2026-06-16T11:01:14.859Z"
     }
   ]
 }
