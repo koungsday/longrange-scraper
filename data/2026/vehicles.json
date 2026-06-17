@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-06-16T06:22:55.114Z",
-  "total_vehicles": 113,
+  "timestamp": "2026-06-17T05:58:15.636Z",
+  "total_vehicles": 116,
   "vehicles": {
     "BMW___MINI Aceman E": {
       "type": "일반승용",
@@ -86,6 +86,12 @@
       "manufacturer": "BMW",
       "model": "iX2 eDrive20",
       "national": 2140000
+    },
+    "BMW___iX3 50 xDrive": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX3 50 xDrive",
+      "national": 2750000
     },
     "기아___EV3 GT": {
       "type": "일반승용",
@@ -477,6 +483,12 @@
       "model": "Q6 e-tron performance",
       "national": 2200000
     },
+    "폭스바겐그룹코리아___iD.5 Pro": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "iD.5 Pro",
+      "national": 4730000
+    },
     "현대자동차___ELECTRIFIED G80": {
       "type": "일반승용",
       "manufacturer": "현대자동차",
@@ -602,6 +614,12 @@
       "manufacturer": "현대자동차",
       "model": "더 뉴 아이오닉6 AWD 롱레인지 N라인 20인치",
       "national": 5370000
+    },
+    "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "스타리아 라운지 일렉트릭 7인승",
+      "national": 2290000
     },
     "현대자동차___스타리아 리무진 일렉트릭 6인승": {
       "type": "일반승용",
