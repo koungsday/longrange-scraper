@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-17T09:21:05.302Z",
+  "timestamp": "2026-06-17T09:31:10.958Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -694,8 +694,8 @@
           "quota_corporate": 0,
           "quota_taxi": 60,
           "quota_general": 4367,
-          "registered_total": 3262,
-          "registered_priority": 1108,
+          "registered_total": 3263,
+          "registered_priority": 1109,
           "registered_corporate": 50,
           "registered_taxi": 70,
           "registered_general": 2034,
@@ -3507,16 +3507,16 @@
           "registered_corporate": 6,
           "registered_taxi": 0,
           "registered_general": 72,
-          "delivered_total": 84,
+          "delivered_total": 85,
           "delivered_priority": 21,
           "delivered_corporate": 6,
           "delivered_taxi": 0,
-          "delivered_general": 57,
-          "remaining_total": 96,
+          "delivered_general": 58,
+          "remaining_total": 95,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 123,
+          "remaining_general": 122,
           "note": "[2026년 고령군 전기자동차 상반기 2차 보급사업]\n-신청기간: 2026. 5. 27.(수) 10:00 - 2026. 6. 30.(화) 18:00\n※예산 소진시 조기 마감\n-지원대수: 70대(승용50대, 화물20대)\n-대상자 선정: 출고·등록 순\n-지원대상: 신청서 접수일 기준 고령군에 60일 이상 연속하여 거주하거나 고령군에 60일 이상 사무소를 두고 사업자 등록을 한 자로서 관련 요건을 충족한 자(자세한 요건 공고문 참조)\n- 기타 자세한사항은 공고문을 참조하시기 바랍니다.\n※ 공고문 및 차종별 지원금 확인 경로\n:고령군청 홈페이지 > 대가야고령 > 고령알리미 > 고시/공고\n◀◀왼쪽의 잔여대수와 실잔여대수는 다릅니다.\n------------------------------------------------------------------------------------------------------\n고령군 상반기2차 민간보급사업 승용 26.06.08. 11:06 / 화물 26.05.28. 16:00 마감했습니다.\n------------------------------------------------------------------------------------------------------"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 28266,
+          "registered_total": 28311,
           "registered_priority": 9,
-          "registered_corporate": 27533,
+          "registered_corporate": 27578,
           "registered_taxi": 267,
           "registered_general": 457,
           "delivered_total": 20356,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T09:21:05.249Z"
+      "timestamp": "2026-06-17T09:31:10.905Z"
     }
   ]
 }
