@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-06-17T05:58:15.636Z",
+  "timestamp": "2026-06-18T05:28:15.185Z",
   "total_regions": 161,
   "success_count": 161,
   "failed_count": 0,
@@ -127,8 +127,8 @@
           "manufacturer": "BMW",
           "model": "iX3 50 xDrive",
           "national": 2750000,
-          "local": 0,
-          "total": 2750000
+          "local": 820000,
+          "total": 3570000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -655,8 +655,8 @@
           "manufacturer": "폭스바겐그룹코리아",
           "model": "iD.5 Pro",
           "national": 4730000,
-          "local": 0,
-          "total": 4730000
+          "local": 1410000,
+          "total": 6140000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -941,7 +941,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:51.926Z"
+      "timestamp": "2026-06-18T05:26:40.298Z"
     },
     {
       "parentName": "부산",
@@ -1879,7 +1879,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:51.965Z"
+      "timestamp": "2026-06-18T05:26:40.145Z"
     },
     {
       "parentName": "대구",
@@ -2793,7 +2793,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:51.487Z"
+      "timestamp": "2026-06-18T05:26:40.560Z"
     },
     {
       "parentName": "인천",
@@ -3731,7 +3731,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:51.666Z"
+      "timestamp": "2026-06-18T05:26:40.436Z"
     },
     {
       "parentName": "광주",
@@ -4669,7 +4669,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:51.547Z"
+      "timestamp": "2026-06-18T05:26:40.799Z"
     },
     {
       "parentName": "대전",
@@ -5583,7 +5583,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:51.797Z"
+      "timestamp": "2026-06-18T05:26:40.745Z"
     },
     {
       "parentName": "울산",
@@ -6521,7 +6521,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:51.350Z"
+      "timestamp": "2026-06-18T05:26:40.495Z"
     },
     {
       "parentName": "세종",
@@ -7435,7 +7435,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:51.858Z"
+      "timestamp": "2026-06-18T05:26:40.704Z"
     },
     {
       "parentName": "경기",
@@ -8373,7 +8373,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:56.181Z"
+      "timestamp": "2026-06-18T05:26:45.705Z"
     },
     {
       "parentName": "경기",
@@ -9311,7 +9311,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:56.072Z"
+      "timestamp": "2026-06-18T05:26:45.093Z"
     },
     {
       "parentName": "경기",
@@ -10249,7 +10249,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:56.018Z"
+      "timestamp": "2026-06-18T05:26:45.538Z"
     },
     {
       "parentName": "경기",
@@ -11163,7 +11163,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:56.289Z"
+      "timestamp": "2026-06-18T05:26:45.380Z"
     },
     {
       "parentName": "경기",
@@ -12101,7 +12101,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:56.240Z"
+      "timestamp": "2026-06-18T05:26:45.291Z"
     },
     {
       "parentName": "경기",
@@ -13015,7 +13015,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:56.341Z"
+      "timestamp": "2026-06-18T05:26:45.634Z"
     },
     {
       "parentName": "경기",
@@ -13133,6 +13133,14 @@
           "national": 2140000,
           "local": 640000,
           "total": 2780000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 820000,
+          "total": 3570000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -13654,6 +13662,14 @@
           "local": 660000,
           "total": 2860000
         },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 1410000,
+          "total": 6140000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -13822,6 +13838,14 @@
           "local": 1610000,
           "total": 6980000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 680000,
+          "total": 2970000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -13929,7 +13953,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:56.421Z"
+      "timestamp": "2026-06-18T05:26:45.483Z"
     },
     {
       "parentName": "경기",
@@ -14843,7 +14867,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:56:56.521Z"
+      "timestamp": "2026-06-18T05:26:46.132Z"
     },
     {
       "parentName": "경기",
@@ -15781,7 +15805,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:00.695Z"
+      "timestamp": "2026-06-18T05:26:51.074Z"
     },
     {
       "parentName": "경기",
@@ -16719,7 +16743,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:00.925Z"
+      "timestamp": "2026-06-18T05:26:51.131Z"
     },
     {
       "parentName": "경기",
@@ -17657,7 +17681,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:01.003Z"
+      "timestamp": "2026-06-18T05:26:50.896Z"
     },
     {
       "parentName": "경기",
@@ -18595,7 +18619,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:00.563Z"
+      "timestamp": "2026-06-18T05:26:50.968Z"
     },
     {
       "parentName": "경기",
@@ -19533,7 +19557,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:00.743Z"
+      "timestamp": "2026-06-18T05:26:50.717Z"
     },
     {
       "parentName": "경기",
@@ -20471,7 +20495,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:00.344Z"
+      "timestamp": "2026-06-18T05:26:51.190Z"
     },
     {
       "parentName": "경기",
@@ -21361,7 +21385,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:00.816Z"
+      "timestamp": "2026-06-18T05:26:51.244Z"
     },
     {
       "parentName": "경기",
@@ -22299,7 +22323,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:00.884Z"
+      "timestamp": "2026-06-18T05:26:50.853Z"
     },
     {
       "parentName": "경기",
@@ -23189,7 +23213,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:05.131Z"
+      "timestamp": "2026-06-18T05:26:56.112Z"
     },
     {
       "parentName": "경기",
@@ -24127,7 +24151,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:05.171Z"
+      "timestamp": "2026-06-18T05:26:56.285Z"
     },
     {
       "parentName": "경기",
@@ -25065,7 +25089,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:05.276Z"
+      "timestamp": "2026-06-18T05:26:55.980Z"
     },
     {
       "parentName": "경기",
@@ -26003,7 +26027,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:04.973Z"
+      "timestamp": "2026-06-18T05:26:55.868Z"
     },
     {
       "parentName": "경기",
@@ -26941,7 +26965,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:05.031Z"
+      "timestamp": "2026-06-18T05:26:55.807Z"
     },
     {
       "parentName": "경기",
@@ -27879,7 +27903,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:05.337Z"
+      "timestamp": "2026-06-18T05:26:56.331Z"
     },
     {
       "parentName": "경기",
@@ -28793,7 +28817,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:05.397Z"
+      "timestamp": "2026-06-18T05:26:56.211Z"
     },
     {
       "parentName": "경기",
@@ -29731,7 +29755,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:05.437Z"
+      "timestamp": "2026-06-18T05:26:56.044Z"
     },
     {
       "parentName": "경기",
@@ -30669,7 +30693,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:09.366Z"
+      "timestamp": "2026-06-18T05:27:00.952Z"
     },
     {
       "parentName": "경기",
@@ -31583,7 +31607,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:09.913Z"
+      "timestamp": "2026-06-18T05:27:01.213Z"
     },
     {
       "parentName": "경기",
@@ -32521,7 +32545,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:09.802Z"
+      "timestamp": "2026-06-18T05:27:01.379Z"
     },
     {
       "parentName": "경기",
@@ -33459,7 +33483,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:09.560Z"
+      "timestamp": "2026-06-18T05:27:00.847Z"
     },
     {
       "parentName": "경기",
@@ -34397,7 +34421,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:09.862Z"
+      "timestamp": "2026-06-18T05:27:00.545Z"
     },
     {
       "parentName": "경기",
@@ -35335,7 +35359,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:09.467Z"
+      "timestamp": "2026-06-18T05:27:01.082Z"
     },
     {
       "parentName": "경기",
@@ -36249,7 +36273,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:09.715Z"
+      "timestamp": "2026-06-18T05:27:01.270Z"
     },
     {
       "parentName": "강원",
@@ -37139,7 +37163,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:09.287Z"
+      "timestamp": "2026-06-18T05:27:01.327Z"
     },
     {
       "parentName": "강원",
@@ -37257,6 +37281,14 @@
           "national": 2140000,
           "local": 1070000,
           "total": 3210000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 1370000,
+          "total": 4120000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -37778,6 +37810,14 @@
           "local": 1100000,
           "total": 3300000
         },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 2360000,
+          "total": 7090000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -37946,6 +37986,14 @@
           "local": 2680000,
           "total": 8050000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 1140000,
+          "total": 3430000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -38053,7 +38101,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:14.229Z"
+      "timestamp": "2026-06-18T05:27:05.911Z"
     },
     {
       "parentName": "강원",
@@ -38991,7 +39039,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:14.013Z"
+      "timestamp": "2026-06-18T05:27:06.117Z"
     },
     {
       "parentName": "강원",
@@ -39109,6 +39157,14 @@
           "national": 2140000,
           "local": 1070000,
           "total": 3210000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 1370000,
+          "total": 4120000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -39630,6 +39686,14 @@
           "local": 1100000,
           "total": 3300000
         },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 2360000,
+          "total": 7090000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -39798,6 +39862,14 @@
           "local": 2680000,
           "total": 8050000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 1140000,
+          "total": 3430000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -39905,7 +39977,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:13.963Z"
+      "timestamp": "2026-06-18T05:27:06.293Z"
     },
     {
       "parentName": "강원",
@@ -40843,7 +40915,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:13.608Z"
+      "timestamp": "2026-06-18T05:27:06.062Z"
     },
     {
       "parentName": "강원",
@@ -41757,7 +41829,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:13.768Z"
+      "timestamp": "2026-06-18T05:27:06.204Z"
     },
     {
       "parentName": "강원",
@@ -41876,6 +41948,14 @@
           "local": 1070000,
           "total": 3210000
         },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 1370000,
+          "total": 4120000
+        },
         "기아___EV3 GT": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -42396,6 +42476,14 @@
           "local": 1100000,
           "total": 3300000
         },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 2360000,
+          "total": 7090000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -42564,6 +42652,14 @@
           "local": 2680000,
           "total": 8050000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 1370000,
+          "total": 3660000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -42671,7 +42767,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:14.175Z"
+      "timestamp": "2026-06-18T05:27:06.335Z"
     },
     {
       "parentName": "강원",
@@ -42790,6 +42886,14 @@
           "local": 1070000,
           "total": 3210000
         },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 1370000,
+          "total": 4120000
+        },
         "기아___EV3 GT": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -43310,6 +43414,14 @@
           "local": 1100000,
           "total": 3300000
         },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 2360000,
+          "total": 7090000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -43478,6 +43590,14 @@
           "local": 2680000,
           "total": 8050000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 1140000,
+          "total": 3430000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -43585,7 +43705,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:14.128Z"
+      "timestamp": "2026-06-18T05:27:05.791Z"
     },
     {
       "parentName": "강원",
@@ -44499,7 +44619,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:13.860Z"
+      "timestamp": "2026-06-18T05:27:05.654Z"
     },
     {
       "parentName": "강원",
@@ -45413,7 +45533,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:18.362Z"
+      "timestamp": "2026-06-18T05:27:11.287Z"
     },
     {
       "parentName": "강원",
@@ -46327,7 +46447,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:18.402Z"
+      "timestamp": "2026-06-18T05:27:11.091Z"
     },
     {
       "parentName": "강원",
@@ -47265,7 +47385,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:18.439Z"
+      "timestamp": "2026-06-18T05:27:10.966Z"
     },
     {
       "parentName": "강원",
@@ -48179,7 +48299,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:18.248Z"
+      "timestamp": "2026-06-18T05:27:11.225Z"
     },
     {
       "parentName": "강원",
@@ -49069,7 +49189,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:18.514Z"
+      "timestamp": "2026-06-18T05:27:11.038Z"
     },
     {
       "parentName": "강원",
@@ -50007,7 +50127,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:18.067Z"
+      "timestamp": "2026-06-18T05:27:11.352Z"
     },
     {
       "parentName": "강원",
@@ -50945,7 +51065,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:18.143Z"
+      "timestamp": "2026-06-18T05:27:11.133Z"
     },
     {
       "parentName": "강원",
@@ -51859,7 +51979,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:17.884Z"
+      "timestamp": "2026-06-18T05:27:10.860Z"
     },
     {
       "parentName": "강원",
@@ -52773,7 +52893,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:22.393Z"
+      "timestamp": "2026-06-18T05:27:15.573Z"
     },
     {
       "parentName": "충북",
@@ -53711,7 +53831,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:22.740Z"
+      "timestamp": "2026-06-18T05:27:16.180Z"
     },
     {
       "parentName": "충북",
@@ -54625,7 +54745,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:22.526Z"
+      "timestamp": "2026-06-18T05:27:15.744Z"
     },
     {
       "parentName": "충북",
@@ -55539,7 +55659,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:22.679Z"
+      "timestamp": "2026-06-18T05:27:16.082Z"
     },
     {
       "parentName": "충북",
@@ -56453,7 +56573,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:22.625Z"
+      "timestamp": "2026-06-18T05:27:15.890Z"
     },
     {
       "parentName": "충북",
@@ -57367,7 +57487,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:22.583Z"
+      "timestamp": "2026-06-18T05:27:15.837Z"
     },
     {
       "parentName": "충북",
@@ -58305,7 +58425,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:22.331Z"
+      "timestamp": "2026-06-18T05:27:16.026Z"
     },
     {
       "parentName": "충북",
@@ -59243,7 +59363,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:22.822Z"
+      "timestamp": "2026-06-18T05:27:16.133Z"
     },
     {
       "parentName": "충북",
@@ -60181,7 +60301,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:26.580Z"
+      "timestamp": "2026-06-18T05:27:20.536Z"
     },
     {
       "parentName": "충북",
@@ -61119,7 +61239,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:26.983Z"
+      "timestamp": "2026-06-18T05:27:20.971Z"
     },
     {
       "parentName": "충북",
@@ -62033,7 +62153,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:26.702Z"
+      "timestamp": "2026-06-18T05:27:21.020Z"
     },
     {
       "parentName": "충북",
@@ -62923,7 +63043,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:26.849Z"
+      "timestamp": "2026-06-18T05:27:20.720Z"
     },
     {
       "parentName": "충남",
@@ -63861,7 +63981,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:26.737Z"
+      "timestamp": "2026-06-18T05:27:20.433Z"
     },
     {
       "parentName": "충남",
@@ -64775,7 +64895,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:27.105Z"
+      "timestamp": "2026-06-18T05:27:20.858Z"
     },
     {
       "parentName": "충남",
@@ -65689,7 +65809,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:26.904Z"
+      "timestamp": "2026-06-18T05:27:20.648Z"
     },
     {
       "parentName": "충남",
@@ -66603,7 +66723,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:27.068Z"
+      "timestamp": "2026-06-18T05:27:20.915Z"
     },
     {
       "parentName": "충남",
@@ -67541,7 +67661,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:31.168Z"
+      "timestamp": "2026-06-18T05:27:25.785Z"
     },
     {
       "parentName": "충남",
@@ -68431,7 +68551,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:30.929Z"
+      "timestamp": "2026-06-18T05:27:25.534Z"
     },
     {
       "parentName": "충남",
@@ -69321,7 +69441,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:31.221Z"
+      "timestamp": "2026-06-18T05:27:25.237Z"
     },
     {
       "parentName": "충남",
@@ -69439,6 +69559,14 @@
           "national": 2140000,
           "local": 2220000,
           "total": 4360000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 2850000,
+          "total": 5600000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -69960,6 +70088,14 @@
           "local": 2280000,
           "total": 4480000
         },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 4890000,
+          "total": 9620000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -70128,6 +70264,14 @@
           "local": 5550000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 2370000,
+          "total": 4660000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -70235,7 +70379,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:30.842Z"
+      "timestamp": "2026-06-18T05:27:25.695Z"
     },
     {
       "parentName": "충남",
@@ -71173,7 +71317,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:31.116Z"
+      "timestamp": "2026-06-18T05:27:25.637Z"
     },
     {
       "parentName": "충남",
@@ -72063,7 +72207,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:31.021Z"
+      "timestamp": "2026-06-18T05:27:25.470Z"
     },
     {
       "parentName": "충남",
@@ -72977,7 +73121,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:30.728Z"
+      "timestamp": "2026-06-18T05:27:25.744Z"
     },
     {
       "parentName": "충남",
@@ -73891,7 +74035,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:31.313Z"
+      "timestamp": "2026-06-18T05:27:25.354Z"
     },
     {
       "parentName": "충남",
@@ -74781,7 +74925,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:35.051Z"
+      "timestamp": "2026-06-18T05:27:30.145Z"
     },
     {
       "parentName": "충남",
@@ -75671,7 +75815,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:35.315Z"
+      "timestamp": "2026-06-18T05:27:30.469Z"
     },
     {
       "parentName": "충남",
@@ -76585,7 +76729,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:35.432Z"
+      "timestamp": "2026-06-18T05:27:29.946Z"
     },
     {
       "parentName": "전북",
@@ -77523,7 +77667,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:34.905Z"
+      "timestamp": "2026-06-18T05:27:30.422Z"
     },
     {
       "parentName": "전북",
@@ -78461,7 +78605,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:35.235Z"
+      "timestamp": "2026-06-18T05:27:30.379Z"
     },
     {
       "parentName": "전북",
@@ -79375,7 +79519,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:35.184Z"
+      "timestamp": "2026-06-18T05:27:30.319Z"
     },
     {
       "parentName": "전북",
@@ -80313,7 +80457,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:35.091Z"
+      "timestamp": "2026-06-18T05:27:30.033Z"
     },
     {
       "parentName": "전북",
@@ -81227,7 +81371,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:35.396Z"
+      "timestamp": "2026-06-18T05:27:30.190Z"
     },
     {
       "parentName": "전북",
@@ -82013,7 +82157,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:39.452Z"
+      "timestamp": "2026-06-18T05:27:34.811Z"
     },
     {
       "parentName": "전북",
@@ -82903,7 +83047,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:40.049Z"
+      "timestamp": "2026-06-18T05:27:35.002Z"
     },
     {
       "parentName": "전북",
@@ -83841,7 +83985,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:38.995Z"
+      "timestamp": "2026-06-18T05:27:35.046Z"
     },
     {
       "parentName": "전북",
@@ -84755,7 +84899,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:39.134Z"
+      "timestamp": "2026-06-18T05:27:34.937Z"
     },
     {
       "parentName": "전북",
@@ -85669,7 +85813,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:39.296Z"
+      "timestamp": "2026-06-18T05:27:34.662Z"
     },
     {
       "parentName": "전북",
@@ -86583,7 +86727,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:39.240Z"
+      "timestamp": "2026-06-18T05:27:35.080Z"
     },
     {
       "parentName": "전북",
@@ -87497,7 +87641,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:39.403Z"
+      "timestamp": "2026-06-18T05:27:34.768Z"
     },
     {
       "parentName": "전북",
@@ -87615,6 +87759,14 @@
           "national": 2140000,
           "local": 2320000,
           "total": 4460000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 2980000,
+          "total": 5730000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -88136,6 +88288,14 @@
           "local": 2380000,
           "total": 4580000
         },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 5130000,
+          "total": 9860000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -88304,6 +88464,14 @@
           "local": 5830000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 2480000,
+          "total": 4770000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -88411,7 +88579,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:38.810Z"
+      "timestamp": "2026-06-18T05:27:34.514Z"
     },
     {
       "parentName": "전북",
@@ -89349,7 +89517,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:43.656Z"
+      "timestamp": "2026-06-18T05:27:39.800Z"
     },
     {
       "parentName": "전남",
@@ -90239,7 +90407,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:44.022Z"
+      "timestamp": "2026-06-18T05:27:39.203Z"
     },
     {
       "parentName": "전남",
@@ -91153,7 +91321,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:43.746Z"
+      "timestamp": "2026-06-18T05:27:39.721Z"
     },
     {
       "parentName": "전남",
@@ -92091,7 +92259,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:43.938Z"
+      "timestamp": "2026-06-18T05:27:39.662Z"
     },
     {
       "parentName": "전남",
@@ -93029,7 +93197,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:43.985Z"
+      "timestamp": "2026-06-18T05:27:39.390Z"
     },
     {
       "parentName": "전남",
@@ -93943,7 +94111,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:44.201Z"
+      "timestamp": "2026-06-18T05:27:39.556Z"
     },
     {
       "parentName": "전남",
@@ -94833,7 +95001,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:43.847Z"
+      "timestamp": "2026-06-18T05:27:39.836Z"
     },
     {
       "parentName": "전남",
@@ -95747,7 +95915,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:43.471Z"
+      "timestamp": "2026-06-18T05:27:39.499Z"
     },
     {
       "parentName": "전남",
@@ -96637,7 +96805,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:48.341Z"
+      "timestamp": "2026-06-18T05:27:43.972Z"
     },
     {
       "parentName": "전남",
@@ -97527,7 +97695,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:48.421Z"
+      "timestamp": "2026-06-18T05:27:44.580Z"
     },
     {
       "parentName": "전남",
@@ -98441,7 +98609,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:48.162Z"
+      "timestamp": "2026-06-18T05:27:44.486Z"
     },
     {
       "parentName": "전남",
@@ -99331,7 +99499,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:48.006Z"
+      "timestamp": "2026-06-18T05:27:44.180Z"
     },
     {
       "parentName": "전남",
@@ -100269,7 +100437,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:48.111Z"
+      "timestamp": "2026-06-18T05:27:44.230Z"
     },
     {
       "parentName": "전남",
@@ -101183,7 +101351,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:48.201Z"
+      "timestamp": "2026-06-18T05:27:44.440Z"
     },
     {
       "parentName": "전남",
@@ -102097,7 +102265,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:47.948Z"
+      "timestamp": "2026-06-18T05:27:44.528Z"
     },
     {
       "parentName": "전남",
@@ -103035,7 +103203,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:48.295Z"
+      "timestamp": "2026-06-18T05:27:44.348Z"
     },
     {
       "parentName": "전남",
@@ -103949,7 +104117,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:52.533Z"
+      "timestamp": "2026-06-18T05:27:48.747Z"
     },
     {
       "parentName": "전남",
@@ -104887,7 +105055,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:52.059Z"
+      "timestamp": "2026-06-18T05:27:49.099Z"
     },
     {
       "parentName": "전남",
@@ -105005,6 +105173,14 @@
           "national": 2140000,
           "local": 2850000,
           "total": 4990000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 3660000,
+          "total": 6410000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -105310,6 +105486,22 @@
           "local": 2160000,
           "total": 3780000
         },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 3290000,
+          "total": 5760000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2960000,
+          "total": 5180000
+        },
         "비와이디코리아___BYD ATTO 3": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
@@ -105510,6 +105702,14 @@
           "local": 2930000,
           "total": 5130000
         },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 6300000,
+          "total": 10000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -105678,6 +105878,22 @@
           "local": 7160000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 3050000,
+          "total": 5340000
+        },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 3050000,
+          "total": 5340000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -105777,7 +105993,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:52.014Z"
+      "timestamp": "2026-06-18T05:27:49.055Z"
     },
     {
       "parentName": "전남",
@@ -106563,7 +106779,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:52.436Z"
+      "timestamp": "2026-06-18T05:27:48.854Z"
     },
     {
       "parentName": "전남",
@@ -107477,7 +107693,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:52.288Z"
+      "timestamp": "2026-06-18T05:27:48.989Z"
     },
     {
       "parentName": "전남",
@@ -108391,7 +108607,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:52.165Z"
+      "timestamp": "2026-06-18T05:27:48.905Z"
     },
     {
       "parentName": "전남",
@@ -109305,7 +109521,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:52.251Z"
+      "timestamp": "2026-06-18T05:27:48.652Z"
     },
     {
       "parentName": "경북",
@@ -110219,7 +110435,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:52.354Z"
+      "timestamp": "2026-06-18T05:27:49.181Z"
     },
     {
       "parentName": "경북",
@@ -111133,7 +111349,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:56.251Z"
+      "timestamp": "2026-06-18T05:27:53.395Z"
     },
     {
       "parentName": "경북",
@@ -112047,7 +112263,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:56.096Z"
+      "timestamp": "2026-06-18T05:27:53.648Z"
     },
     {
       "parentName": "경북",
@@ -112961,7 +113177,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:56.368Z"
+      "timestamp": "2026-06-18T05:27:53.822Z"
     },
     {
       "parentName": "경북",
@@ -113899,7 +114115,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:56.613Z"
+      "timestamp": "2026-06-18T05:27:53.213Z"
     },
     {
       "parentName": "경북",
@@ -114789,7 +115005,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:56.499Z"
+      "timestamp": "2026-06-18T05:27:53.551Z"
     },
     {
       "parentName": "경북",
@@ -115703,7 +115919,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:56.415Z"
+      "timestamp": "2026-06-18T05:27:53.740Z"
     },
     {
       "parentName": "경북",
@@ -116617,7 +116833,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:56.534Z"
+      "timestamp": "2026-06-18T05:27:53.787Z"
     },
     {
       "parentName": "경북",
@@ -117555,7 +117771,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:57:56.192Z"
+      "timestamp": "2026-06-18T05:27:53.491Z"
     },
     {
       "parentName": "경북",
@@ -118469,7 +118685,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:00.765Z"
+      "timestamp": "2026-06-18T05:27:58.141Z"
     },
     {
       "parentName": "경북",
@@ -119359,7 +119575,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:00.529Z"
+      "timestamp": "2026-06-18T05:27:58.082Z"
     },
     {
       "parentName": "경북",
@@ -120273,7 +120489,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:00.249Z"
+      "timestamp": "2026-06-18T05:27:57.778Z"
     },
     {
       "parentName": "경북",
@@ -121211,7 +121427,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:00.611Z"
+      "timestamp": "2026-06-18T05:27:58.450Z"
     },
     {
       "parentName": "경북",
@@ -122149,7 +122365,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:00.418Z"
+      "timestamp": "2026-06-18T05:27:58.358Z"
     },
     {
       "parentName": "경북",
@@ -123063,7 +123279,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:00.687Z"
+      "timestamp": "2026-06-18T05:27:58.293Z"
     },
     {
       "parentName": "경북",
@@ -123977,7 +124193,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:00.730Z"
+      "timestamp": "2026-06-18T05:27:57.854Z"
     },
     {
       "parentName": "경북",
@@ -124763,7 +124979,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:00.351Z"
+      "timestamp": "2026-06-18T05:27:58.190Z"
     },
     {
       "parentName": "경북",
@@ -124881,6 +125097,14 @@
           "national": 2140000,
           "local": 2200000,
           "total": 4340000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 2830000,
+          "total": 5580000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -125402,6 +125626,14 @@
           "local": 2260000,
           "total": 4460000
         },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 4870000,
+          "total": 9600000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -125570,6 +125802,14 @@
           "local": 5530000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 2350000,
+          "total": 4640000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -125677,7 +125917,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:04.475Z"
+      "timestamp": "2026-06-18T05:28:02.827Z"
     },
     {
       "parentName": "경북",
@@ -126567,7 +126807,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:04.366Z"
+      "timestamp": "2026-06-18T05:28:02.553Z"
     },
     {
       "parentName": "경북",
@@ -127481,7 +127721,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:04.233Z"
+      "timestamp": "2026-06-18T05:28:02.933Z"
     },
     {
       "parentName": "경북",
@@ -128371,7 +128611,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:04.695Z"
+      "timestamp": "2026-06-18T05:28:02.440Z"
     },
     {
       "parentName": "경북",
@@ -129261,7 +129501,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:04.583Z"
+      "timestamp": "2026-06-18T05:28:02.891Z"
     },
     {
       "parentName": "경남",
@@ -130199,7 +130439,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:04.322Z"
+      "timestamp": "2026-06-18T05:28:02.252Z"
     },
     {
       "parentName": "경남",
@@ -131137,7 +131377,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:04.538Z"
+      "timestamp": "2026-06-18T05:28:02.759Z"
     },
     {
       "parentName": "경남",
@@ -132075,7 +132315,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:04.734Z"
+      "timestamp": "2026-06-18T05:28:02.646Z"
     },
     {
       "parentName": "경남",
@@ -133013,7 +133253,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:08.558Z"
+      "timestamp": "2026-06-18T05:28:07.231Z"
     },
     {
       "parentName": "경남",
@@ -133951,7 +134191,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:08.265Z"
+      "timestamp": "2026-06-18T05:28:07.053Z"
     },
     {
       "parentName": "경남",
@@ -134841,7 +135081,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:08.711Z"
+      "timestamp": "2026-06-18T05:28:06.813Z"
     },
     {
       "parentName": "경남",
@@ -135779,7 +136019,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:08.468Z"
+      "timestamp": "2026-06-18T05:28:07.273Z"
     },
     {
       "parentName": "경남",
@@ -136693,7 +136933,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:08.518Z"
+      "timestamp": "2026-06-18T05:28:07.169Z"
     },
     {
       "parentName": "경남",
@@ -137607,7 +137847,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:08.656Z"
+      "timestamp": "2026-06-18T05:28:07.010Z"
     },
     {
       "parentName": "경남",
@@ -138545,7 +138785,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:08.356Z"
+      "timestamp": "2026-06-18T05:28:07.309Z"
     },
     {
       "parentName": "경남",
@@ -139483,7 +139723,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:08.118Z"
+      "timestamp": "2026-06-18T05:28:06.912Z"
     },
     {
       "parentName": "경남",
@@ -140421,7 +140661,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:12.698Z"
+      "timestamp": "2026-06-18T05:28:11.669Z"
     },
     {
       "parentName": "경남",
@@ -141359,7 +141599,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:12.595Z"
+      "timestamp": "2026-06-18T05:28:11.719Z"
     },
     {
       "parentName": "경남",
@@ -141478,6 +141718,14 @@
           "local": 650000,
           "total": 2790000
         },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 0,
+          "total": 2750000
+        },
         "기아___EV3 GT": {
           "type": "일반승용",
           "manufacturer": "기아",
@@ -141579,8 +141827,8 @@
           "manufacturer": "기아",
           "model": "EV5 GT",
           "national": 2320000,
-          "local": 0,
-          "total": 2320000
+          "local": 700000,
+          "total": 3020000
         },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
@@ -141595,16 +141843,16 @@
           "manufacturer": "기아",
           "model": "EV5 롱레인지 4WD 18인치",
           "national": 4990000,
-          "local": 0,
-          "total": 4990000
+          "local": 1500000,
+          "total": 6490000
         },
         "기아___EV5 롱레인지 4WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV5 롱레인지 4WD 19인치",
           "national": 4930000,
-          "local": 0,
-          "total": 4930000
+          "local": 1480000,
+          "total": 6410000
         },
         "기아___EV9 GT": {
           "type": "일반승용",
@@ -141998,6 +142246,14 @@
           "local": 660000,
           "total": 2860000
         },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 1420000,
+          "total": 6150000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -142166,6 +142422,14 @@
           "local": 1620000,
           "total": 6990000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 690000,
+          "total": 2980000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -142273,7 +142537,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:12.369Z"
+      "timestamp": "2026-06-18T05:28:11.621Z"
     },
     {
       "parentName": "경남",
@@ -143187,7 +143451,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:12.530Z"
+      "timestamp": "2026-06-18T05:28:11.220Z"
     },
     {
       "parentName": "경남",
@@ -144125,7 +144389,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:12.283Z"
+      "timestamp": "2026-06-18T05:28:11.381Z"
     },
     {
       "parentName": "경남",
@@ -145063,7 +145327,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:12.150Z"
+      "timestamp": "2026-06-18T05:28:11.321Z"
     },
     {
       "parentName": "경남",
@@ -146001,7 +146265,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:12.663Z"
+      "timestamp": "2026-06-18T05:28:11.563Z"
     },
     {
       "parentName": "제주",
@@ -146915,7 +147179,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:12.430Z"
+      "timestamp": "2026-06-18T05:28:11.452Z"
     },
     {
       "parentName": "공단",
@@ -147853,7 +148117,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-17T05:58:15.488Z"
+      "timestamp": "2026-06-18T05:28:15.010Z"
     }
   ]
 }
