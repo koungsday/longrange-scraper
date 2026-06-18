@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-18T23:01:03.058Z",
+  "timestamp": "2026-06-18T23:10:51.007Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -127,16 +127,16 @@
           "registered_corporate": 54,
           "registered_taxi": 218,
           "registered_general": 1759,
-          "delivered_total": 2169,
+          "delivered_total": 2170,
           "delivered_priority": 282,
           "delivered_corporate": 48,
           "delivered_taxi": 206,
-          "delivered_general": 1633,
-          "remaining_total": 77,
+          "delivered_general": 1634,
+          "remaining_total": 76,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 613,
+          "remaining_general": 612,
           "note": "★ 승용 2차 접수 마감됐습니다. / ※ 하반기 보급 미정\no 2차 접수기간\n- (승용) : '26.5.28.(목) 10:00 ~ 12.4.(금) 18:00\n- (화물) : '26.6.1.(목) 10:00 ~ 12.4.(금) 18:00\n※ 승합은 예산(물량)소진시까지 계속 접수 받는 중(1/30(금)~12/4(금))\no 2차 보급대수 : 총 469대(승용 350대, 화물 100대, 승합 19대)\n* 보급대수는 보급 여건, 예산범위 내에서 변동될 수 있으며, 보급물량(예산) 초과시 여유물량(취소건 감안)을 추가로 받은 후, 사전 공지 없이 신규접수 마감\n(대상자 선정은 출고순)\n★ (주의사항: 신청조건) 신청일로부터 최소 2일(휴일 제외) 이후 출고 예정인 차량으로 접수해야 합니다.(어길 시 보완요청, 후순위 배정)\n- 순차적으로 자격부여 검토, 지원가능확인요청은 바로 가능하나, 대상자 선정은 최소 2일 이후부터 확정됨\n★ 접수 후 빠른 처리를 위해 단순 접수 알림, 처리 독촉 전화는 자제 부탁드립니다."
         },
         {
@@ -205,12 +205,12 @@
           "registered_corporate": 7,
           "registered_taxi": 10,
           "registered_general": 553,
-          "delivered_total": 528,
-          "delivered_priority": 210,
+          "delivered_total": 529,
+          "delivered_priority": 211,
           "delivered_corporate": 4,
           "delivered_taxi": 7,
           "delivered_general": 307,
-          "remaining_total": 520,
+          "remaining_total": 519,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 46,
@@ -3685,10 +3685,10 @@
           "quota_taxi": 120,
           "quota_general": 2140,
           "registered_total": 2578,
-          "registered_priority": 243,
+          "registered_priority": 244,
           "registered_corporate": 37,
           "registered_taxi": 121,
-          "registered_general": 2177,
+          "registered_general": 2176,
           "delivered_total": 2139,
           "delivered_priority": 239,
           "delivered_corporate": 30,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-18T23:01:03.005Z"
+      "timestamp": "2026-06-18T23:10:50.943Z"
     }
   ]
 }
