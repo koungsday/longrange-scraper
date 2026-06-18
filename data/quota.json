@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-18T10:20:54.200Z",
+  "timestamp": "2026-06-18T10:30:59.615Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 372,
           "registered_taxi": 966,
           "registered_general": 6932,
-          "delivered_total": 10515,
+          "delivered_total": 10516,
           "delivered_priority": 3082,
           "delivered_corporate": 326,
           "delivered_taxi": 875,
-          "delivered_general": 6232,
-          "remaining_total": 1686,
+          "delivered_general": 6233,
+          "remaining_total": 1685,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 3529,
+          "remaining_general": 3528,
           "note": "**2026.6.17. 마감 기준, 상반기 서울시 전기승용차 보급 현황 알려 드립니다.\n(택시 마감)\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 10,612대\nㅇ 잔여대수: 749대\n-----------------------------\n** 상반기 보급물량 소진시에는 당초 일정보다 조기에 마감할 계획입니다."
         },
         {
@@ -876,9 +876,9 @@
           "quota_corporate": 0,
           "quota_taxi": 20,
           "quota_general": 1043,
-          "registered_total": 842,
+          "registered_total": 841,
           "registered_priority": 263,
-          "registered_corporate": 12,
+          "registered_corporate": 11,
           "registered_taxi": 13,
           "registered_general": 554,
           "delivered_total": 798,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 29062,
+          "registered_total": 29061,
           "registered_priority": 9,
-          "registered_corporate": 28327,
+          "registered_corporate": 28326,
           "registered_taxi": 270,
           "registered_general": 456,
           "delivered_total": 20679,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-18T10:20:54.130Z"
+      "timestamp": "2026-06-18T10:30:59.568Z"
     }
   ]
 }
