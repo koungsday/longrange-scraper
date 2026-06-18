@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-18T09:50:55.473Z",
+  "timestamp": "2026-06-18T10:01:11.185Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -669,10 +669,10 @@
           "quota_taxi": 0,
           "quota_general": 1317,
           "registered_total": 848,
-          "registered_priority": 184,
+          "registered_priority": 183,
           "registered_corporate": 24,
           "registered_taxi": 6,
-          "registered_general": 634,
+          "registered_general": 635,
           "delivered_total": 586,
           "delivered_priority": 93,
           "delivered_corporate": 16,
@@ -699,16 +699,16 @@
           "registered_corporate": 53,
           "registered_taxi": 72,
           "registered_general": 2088,
-          "delivered_total": 2871,
+          "delivered_total": 2872,
           "delivered_priority": 989,
           "delivered_corporate": 43,
           "delivered_taxi": 64,
-          "delivered_general": 1775,
-          "remaining_total": 1756,
+          "delivered_general": 1776,
+          "remaining_total": 1755,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 2592,
+          "remaining_general": 2591,
           "note": "★ 화물 - 마감 (2026.2.5.) / 하반기 물량 : 6월말 공고, 7월초 접수 예정 ★\n■ 전기자동차 승용 상반기 추가 보급사업 변경공고 안내  ■\n- 변경공고 : 2026. 5. 15.(금)\n- 변경공고 접수기간 : 2026. 5. 15.(금) 14:00 ~  예산소진 시   (신청 공고 구분 : 추경1)\n※기존 추경1 접수 건은 재신청 없이 연계하여 그대로 처리함\n- 물량 : 2,627대 (예산물량) (차종 및 추가지원 여부에 따라 대수는 변동 가능)\n※ 변경 전 800대 → 변경 후 2,627대\n※전체 일반물량으로 진행되며 추가보조금은 대상에 따라 정상 지급됩니다.\n★ 잔여물량 500대 이하부터 게시할 에정이오니 단순 잔여대수 확인 문의는 삼가주시기 바랍니다.\n※ 반드시 공고문 확인하시고 신청하시기 바랍니다.\n※ 하루 50개 내외로 신청서류 검토 및 자격부여되오니 차량 출고일 등 감안하여 신청하시기 바랍니다."
         },
         {
@@ -2857,16 +2857,16 @@
           "registered_corporate": 4,
           "registered_taxi": 2,
           "registered_general": 70,
-          "delivered_total": 76,
+          "delivered_total": 77,
           "delivered_priority": 10,
           "delivered_corporate": 2,
           "delivered_taxi": 2,
-          "delivered_general": 62,
-          "remaining_total": 4,
+          "delivered_general": 63,
+          "remaining_total": 3,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 16,
+          "remaining_general": 15,
           "note": "<2차 공고>\n마감되었습니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-18T09:50:55.387Z"
+      "timestamp": "2026-06-18T10:01:11.115Z"
     }
   ]
 }
