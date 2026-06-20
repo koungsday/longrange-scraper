@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-20T10:50:56.936Z",
+  "timestamp": "2026-06-20T11:01:05.820Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -439,16 +439,16 @@
           "registered_corporate": 39,
           "registered_taxi": 49,
           "registered_general": 592,
-          "delivered_total": 829,
+          "delivered_total": 830,
           "delivered_priority": 246,
           "delivered_corporate": 31,
           "delivered_taxi": 45,
-          "delivered_general": 507,
-          "remaining_total": 421,
+          "delivered_general": 508,
+          "remaining_total": 420,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 15,
-          "remaining_general": 623,
+          "remaining_general": 622,
           "note": "★  하반기 공고 미정(추후 예산확보 시 가능)\n……………………………………………………………………………………………\n★  전기승용 신청접수 마감(2026.6.19.(금) 13:00)\n★  전기승용차 대상자선정마감(2026.6.19.(금) 10:10)\n- 취소물량 발생 시 지원가능확인요청순(차량 '배정' +10일 이내 출고)으로 대기자가 되며 별도 연락 예정임\n- 지원가능 확인요청은 차량 '배정'건만 선정\n……………………………………………………………………………………………\n★  신청서를 포함한 모든 서류 원본대조필 날인 후 첨부 (원본 우편 발송 불필요)\n★  차종별 보조금(전환지원금 포함) 파일(추경 1차 2)에서 확인 가능\n★  생애최초(청년) 구매자 증빙서류 발급 절차는 파일(추경 1차 3)에서 확인 가능\n<2026년도 전기자동차 보급사업 2차 변경 공고>\n□ 사업(접수)기간 : (화물, 승합) 2026. 5. 6.(수) 09:00  ~ 2026. 12. 4.(금) 18:00\n(승용)         2026. 5. 11.(월) 09:00 ~ 2026. 12. 4.(금) 18:00\n※ 예산 소진 시 조기 마감\n□ 보급대수 : 승용 450대, 화물 118대, 승합 6대\n※ 보급대수는 차종별 보조금 차등지원 및 차종별 구매수요에 따라 변동될 수 있습니다.\n□ 신청대상 : 구매신청서 접수일 기준 연속하여 30일 이상 안산시에 주소를 둔 개인·개인사업자, 법인 등\n□ 선정방법 : 출고·등록순에 의한 선정\n※ 반드시 공고문을 읽고 신청하여 주시기 바랍니다.\n※ 차량보조금 지급액 등 단순문의는 가급적 자제해 주시기 바랍니다."
         },
         {
@@ -669,10 +669,10 @@
           "quota_taxi": 0,
           "quota_general": 1317,
           "registered_total": 872,
-          "registered_priority": 174,
+          "registered_priority": 173,
           "registered_corporate": 25,
           "registered_taxi": 6,
-          "registered_general": 667,
+          "registered_general": 668,
           "delivered_total": 596,
           "delivered_priority": 98,
           "delivered_corporate": 16,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-20T10:50:56.812Z"
+      "timestamp": "2026-06-20T11:01:05.729Z"
     }
   ]
 }
