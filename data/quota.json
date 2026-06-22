@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-22T12:31:10.999Z",
+  "timestamp": "2026-06-22T12:40:56.742Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -101,16 +101,16 @@
           "registered_corporate": 113,
           "registered_taxi": 228,
           "registered_general": 4419,
-          "delivered_total": 6109,
+          "delivered_total": 6110,
           "delivered_priority": 2051,
           "delivered_corporate": 93,
           "delivered_taxi": 203,
-          "delivered_general": 3762,
-          "remaining_total": 424,
+          "delivered_general": 3763,
+          "remaining_total": 423,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 132,
-          "remaining_general": 1766,
+          "remaining_general": 1765,
           "note": "***출고예정일 조작 금지***\n- 출고예정일 조작 적발 시 해당 대리점 대상자 선정 건 재확인후 취소할 수 있습니다.\n*** 전기승용차 하반기 사업 잔여대수 안내(26. 6.22. 09:00기준)***\n○ 일단 대상자 선정은 6.22. 출고건까지만 승인하고 마감합니다. 택시 전환 물량은 7.1일에 진행합니다.\n- 출고예정일 = 출고일 = 세금계산서 날짜가 일치해야 합니다\n○ 대상자선정 기준 잔여대수 :  일반 0대, 택시 107대\n** 대상자 선정 순이므로 접수대수가 끝나더라도 대상자선정 잔여대수 소화시까지 더 접수받을 예정입니다. 접수가 늦더라도 출고가 빠르면 대상자 선정 먼저됩니다\n** 7월 1일 이후부터는 택시잔여 물량도 일반으로 전환됩니다. 이경우 지원가능을 먼저 신청하고 출고가 빠른 순으로 대상자 선정을 진행합니다\n----------------------------------------------------------\n*** 전기승용차 하반기 사업 안내***\n- 접수시작: 2026. 5. 20. 09:00~  (접수번호 5310번부터 시작이니 참고 바랍니다)\n- 공고문을 올렸으니 참고하시기 바랍니다\n* 공고문명: 2026년도 2차 전기자동차 민간보급사업 공고\n- 1차 대상자 선정 이전단계(지원가능확인, 자격부여, 신청, 접수 건 등) 진행 건들은 시에서 19일까지 일괄 취소(불가) 처리 할 예정이므로 보조금 받으실려면  2차 사업(5.20)에 다시 접수하셔야 합니다.\n** 전기화물차는 하반기 사업 없습니다, 추경예산을 확보해야 추가사업 가능하며, 추경예산 확보하면 8~9월에나 사업 진행 가능합니다**"
         },
         {
@@ -824,11 +824,11 @@
           "quota_corporate": 0,
           "quota_taxi": 160,
           "quota_general": 4607,
-          "registered_total": 3993,
+          "registered_total": 3992,
           "registered_priority": 1411,
           "registered_corporate": 100,
           "registered_taxi": 89,
-          "registered_general": 2393,
+          "registered_general": 2392,
           "delivered_total": 2721,
           "delivered_priority": 956,
           "delivered_corporate": 75,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T12:31:10.942Z"
+      "timestamp": "2026-06-22T12:40:56.690Z"
     }
   ]
 }
