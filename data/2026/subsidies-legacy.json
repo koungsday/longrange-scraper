@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-06-22T06:19:12.309Z",
+  "timestamp": "2026-06-23T04:54:20.226Z",
   "total_regions": 161,
   "success_count": 161,
   "failed_count": 0,
@@ -642,10 +642,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -941,7 +941,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:33.178Z"
+      "timestamp": "2026-06-23T04:52:50.734Z"
     },
     {
       "parentName": "부산",
@@ -1580,10 +1580,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -1879,7 +1879,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:33.238Z"
+      "timestamp": "2026-06-23T04:52:50.957Z"
     },
     {
       "parentName": "대구",
@@ -2518,10 +2518,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -2817,7 +2817,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:33.115Z"
+      "timestamp": "2026-06-23T04:52:51.316Z"
     },
     {
       "parentName": "인천",
@@ -3456,10 +3456,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -3755,7 +3755,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:33.062Z"
+      "timestamp": "2026-06-23T04:52:51.096Z"
     },
     {
       "parentName": "광주",
@@ -4394,10 +4394,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -4693,7 +4693,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:32.513Z"
+      "timestamp": "2026-06-23T04:52:51.269Z"
     },
     {
       "parentName": "대전",
@@ -4811,6 +4811,14 @@
           "national": 2140000,
           "local": 640000,
           "total": 2780000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 820000,
+          "total": 3570000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -5324,13 +5332,21 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 1410000,
+          "total": 6140000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -5500,6 +5516,14 @@
           "local": 1610000,
           "total": 6980000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 680000,
+          "total": 2970000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -5607,7 +5631,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:32.995Z"
+      "timestamp": "2026-06-23T04:52:51.160Z"
     },
     {
       "parentName": "울산",
@@ -6246,10 +6270,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -6545,7 +6569,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:32.631Z"
+      "timestamp": "2026-06-23T04:52:51.219Z"
     },
     {
       "parentName": "세종",
@@ -7176,10 +7200,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -7459,7 +7483,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:32.933Z"
+      "timestamp": "2026-06-23T04:52:50.867Z"
     },
     {
       "parentName": "경기",
@@ -8098,10 +8122,10 @@
           "local": 850000,
           "total": 2910000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 910000,
           "total": 3110000
@@ -8397,7 +8421,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:38.246Z"
+      "timestamp": "2026-06-23T04:52:55.330Z"
     },
     {
       "parentName": "경기",
@@ -9036,10 +9060,10 @@
           "local": 920000,
           "total": 2980000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 990000,
           "total": 3190000
@@ -9335,7 +9359,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:38.091Z"
+      "timestamp": "2026-06-23T04:52:55.667Z"
     },
     {
       "parentName": "경기",
@@ -9974,10 +9998,10 @@
           "local": 870000,
           "total": 2930000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 930000,
           "total": 3130000
@@ -10273,7 +10297,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:38.410Z"
+      "timestamp": "2026-06-23T04:52:55.291Z"
     },
     {
       "parentName": "경기",
@@ -10904,10 +10928,10 @@
           "local": 1440000,
           "total": 3500000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1540000,
           "total": 3740000
@@ -11187,7 +11211,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:38.014Z"
+      "timestamp": "2026-06-23T04:52:55.818Z"
     },
     {
       "parentName": "경기",
@@ -11826,10 +11850,10 @@
           "local": 1150000,
           "total": 3210000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1230000,
           "total": 3430000
@@ -12125,7 +12149,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:37.761Z"
+      "timestamp": "2026-06-23T04:52:55.233Z"
     },
     {
       "parentName": "경기",
@@ -12756,10 +12780,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -13039,7 +13063,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:37.867Z"
+      "timestamp": "2026-06-23T04:52:56.009Z"
     },
     {
       "parentName": "경기",
@@ -13678,10 +13702,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -13977,7 +14001,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:38.627Z"
+      "timestamp": "2026-06-23T04:52:54.698Z"
     },
     {
       "parentName": "경기",
@@ -14608,10 +14632,10 @@
           "local": 960000,
           "total": 3020000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1020000,
           "total": 3220000
@@ -14891,7 +14915,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:38.710Z"
+      "timestamp": "2026-06-23T04:52:54.609Z"
     },
     {
       "parentName": "경기",
@@ -15530,10 +15554,10 @@
           "local": 990000,
           "total": 3050000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1060000,
           "total": 3260000
@@ -15829,7 +15853,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:43.628Z"
+      "timestamp": "2026-06-23T04:52:59.914Z"
     },
     {
       "parentName": "경기",
@@ -16468,10 +16492,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -16767,7 +16791,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:43.696Z"
+      "timestamp": "2026-06-23T04:52:59.841Z"
     },
     {
       "parentName": "경기",
@@ -17406,10 +17430,10 @@
           "local": 890000,
           "total": 2950000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 950000,
           "total": 3150000
@@ -17705,7 +17729,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:43.421Z"
+      "timestamp": "2026-06-23T04:52:59.747Z"
     },
     {
       "parentName": "경기",
@@ -18344,10 +18368,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -18643,7 +18667,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:43.051Z"
+      "timestamp": "2026-06-23T04:52:59.664Z"
     },
     {
       "parentName": "경기",
@@ -19282,10 +19306,10 @@
           "local": 820000,
           "total": 2880000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 880000,
           "total": 3080000
@@ -19581,7 +19605,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:43.756Z"
+      "timestamp": "2026-06-23T04:52:59.569Z"
     },
     {
       "parentName": "경기",
@@ -20220,10 +20244,10 @@
           "local": 680000,
           "total": 2740000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 730000,
           "total": 2930000
@@ -20519,7 +20543,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:43.858Z"
+      "timestamp": "2026-06-23T04:52:59.476Z"
     },
     {
       "parentName": "경기",
@@ -21134,10 +21158,10 @@
           "local": 850000,
           "total": 2910000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 910000,
           "total": 3110000
@@ -21409,7 +21433,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:43.516Z"
+      "timestamp": "2026-06-23T04:52:59.390Z"
     },
     {
       "parentName": "경기",
@@ -22048,10 +22072,10 @@
           "local": 1420000,
           "total": 3480000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1510000,
           "total": 3710000
@@ -22347,7 +22371,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:44.160Z"
+      "timestamp": "2026-06-23T04:52:59.294Z"
     },
     {
       "parentName": "경기",
@@ -22962,10 +22986,10 @@
           "local": 1370000,
           "total": 3430000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1460000,
           "total": 3660000
@@ -23237,7 +23261,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:51.263Z"
+      "timestamp": "2026-06-23T04:53:03.883Z"
     },
     {
       "parentName": "경기",
@@ -23876,10 +23900,10 @@
           "local": 1370000,
           "total": 3430000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1460000,
           "total": 3660000
@@ -24175,7 +24199,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:49.008Z"
+      "timestamp": "2026-06-23T04:53:03.800Z"
     },
     {
       "parentName": "경기",
@@ -24814,10 +24838,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -25113,7 +25137,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:48.748Z"
+      "timestamp": "2026-06-23T04:53:03.710Z"
     },
     {
       "parentName": "경기",
@@ -25752,10 +25776,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -26051,7 +26075,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:48.548Z"
+      "timestamp": "2026-06-23T04:53:03.627Z"
     },
     {
       "parentName": "경기",
@@ -26690,10 +26714,10 @@
           "local": 1230000,
           "total": 3290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1320000,
           "total": 3520000
@@ -26989,7 +27013,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:48.943Z"
+      "timestamp": "2026-06-23T04:53:03.453Z"
     },
     {
       "parentName": "경기",
@@ -27628,10 +27652,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -27927,7 +27951,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:48.874Z"
+      "timestamp": "2026-06-23T04:53:03.353Z"
     },
     {
       "parentName": "경기",
@@ -28558,10 +28582,10 @@
           "local": 820000,
           "total": 2880000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 880000,
           "total": 3080000
@@ -28841,7 +28865,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:49.076Z"
+      "timestamp": "2026-06-23T04:53:03.253Z"
     },
     {
       "parentName": "경기",
@@ -29480,10 +29504,10 @@
           "local": 1950000,
           "total": 4010000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2090000,
           "total": 4290000
@@ -29779,7 +29803,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:48.651Z"
+      "timestamp": "2026-06-23T04:53:03.166Z"
     },
     {
       "parentName": "경기",
@@ -30418,10 +30442,10 @@
           "local": 750000,
           "total": 2810000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 800000,
           "total": 3000000
@@ -30717,7 +30741,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:56.218Z"
+      "timestamp": "2026-06-23T04:53:07.921Z"
     },
     {
       "parentName": "경기",
@@ -31348,10 +31372,10 @@
           "local": 610000,
           "total": 2670000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -31631,7 +31655,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:56.282Z"
+      "timestamp": "2026-06-23T04:53:07.679Z"
     },
     {
       "parentName": "경기",
@@ -32270,10 +32294,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -32569,7 +32593,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:55.820Z"
+      "timestamp": "2026-06-23T04:53:07.877Z"
     },
     {
       "parentName": "경기",
@@ -33208,10 +33232,10 @@
           "local": 820000,
           "total": 2880000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 880000,
           "total": 3080000
@@ -33507,7 +33531,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:56.084Z"
+      "timestamp": "2026-06-23T04:53:08.169Z"
     },
     {
       "parentName": "경기",
@@ -34146,10 +34170,10 @@
           "local": 820000,
           "total": 2880000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 880000,
           "total": 3080000
@@ -34445,7 +34469,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:57.088Z"
+      "timestamp": "2026-06-23T04:53:08.083Z"
     },
     {
       "parentName": "경기",
@@ -35084,10 +35108,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -35383,7 +35407,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:55.973Z"
+      "timestamp": "2026-06-23T04:53:08.126Z"
     },
     {
       "parentName": "경기",
@@ -36014,10 +36038,10 @@
           "local": 820000,
           "total": 2880000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 880000,
           "total": 3080000
@@ -36297,7 +36321,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:56.146Z"
+      "timestamp": "2026-06-23T04:53:07.974Z"
     },
     {
       "parentName": "강원",
@@ -36912,10 +36936,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -37187,7 +37211,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:17:55.520Z"
+      "timestamp": "2026-06-23T04:53:06.588Z"
     },
     {
       "parentName": "강원",
@@ -37826,10 +37850,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -38125,7 +38149,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:01.756Z"
+      "timestamp": "2026-06-23T04:53:12.480Z"
     },
     {
       "parentName": "강원",
@@ -38764,10 +38788,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -39063,7 +39087,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:01.113Z"
+      "timestamp": "2026-06-23T04:53:12.392Z"
     },
     {
       "parentName": "강원",
@@ -39702,10 +39726,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -40001,7 +40025,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:01.807Z"
+      "timestamp": "2026-06-23T04:53:12.329Z"
     },
     {
       "parentName": "강원",
@@ -40640,10 +40664,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -40939,7 +40963,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:01.663Z"
+      "timestamp": "2026-06-23T04:53:12.024Z"
     },
     {
       "parentName": "강원",
@@ -41570,10 +41594,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -41853,7 +41877,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:01.872Z"
+      "timestamp": "2026-06-23T04:53:11.978Z"
     },
     {
       "parentName": "강원",
@@ -42492,10 +42516,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -42791,7 +42815,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:02.285Z"
+      "timestamp": "2026-06-23T04:53:12.231Z"
     },
     {
       "parentName": "강원",
@@ -43430,10 +43454,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -43729,7 +43753,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:01.362Z"
+      "timestamp": "2026-06-23T04:53:12.146Z"
     },
     {
       "parentName": "강원",
@@ -44360,10 +44384,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -44643,7 +44667,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:01.524Z"
+      "timestamp": "2026-06-23T04:53:10.898Z"
     },
     {
       "parentName": "강원",
@@ -45282,10 +45306,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -45581,7 +45605,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:07.218Z"
+      "timestamp": "2026-06-23T04:53:16.324Z"
     },
     {
       "parentName": "강원",
@@ -46212,10 +46236,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -46495,7 +46519,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:06.948Z"
+      "timestamp": "2026-06-23T04:53:16.718Z"
     },
     {
       "parentName": "강원",
@@ -47134,10 +47158,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -47433,7 +47457,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:06.708Z"
+      "timestamp": "2026-06-23T04:53:16.478Z"
     },
     {
       "parentName": "강원",
@@ -48064,10 +48088,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -48347,7 +48371,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:07.471Z"
+      "timestamp": "2026-06-23T04:53:16.525Z"
     },
     {
       "parentName": "강원",
@@ -48962,10 +48986,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -49237,7 +49261,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:07.299Z"
+      "timestamp": "2026-06-23T04:53:16.619Z"
     },
     {
       "parentName": "강원",
@@ -49876,10 +49900,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -50175,7 +50199,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:07.003Z"
+      "timestamp": "2026-06-23T04:53:16.425Z"
     },
     {
       "parentName": "강원",
@@ -50814,10 +50838,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -51113,7 +51137,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:06.827Z"
+      "timestamp": "2026-06-23T04:53:16.289Z"
     },
     {
       "parentName": "강원",
@@ -51744,10 +51768,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -52027,7 +52051,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:06.634Z"
+      "timestamp": "2026-06-23T04:53:15.176Z"
     },
     {
       "parentName": "강원",
@@ -52658,10 +52682,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -52941,7 +52965,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:12.247Z"
+      "timestamp": "2026-06-23T04:53:20.987Z"
     },
     {
       "parentName": "충북",
@@ -53580,10 +53604,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -53879,7 +53903,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:12.201Z"
+      "timestamp": "2026-06-23T04:53:20.678Z"
     },
     {
       "parentName": "충북",
@@ -54510,10 +54534,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -54793,7 +54817,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:11.875Z"
+      "timestamp": "2026-06-23T04:53:20.715Z"
     },
     {
       "parentName": "충북",
@@ -54911,6 +54935,14 @@
           "national": 2140000,
           "local": 2140000,
           "total": 4280000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 2750000,
+          "total": 5500000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -55424,13 +55456,21 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 4730000,
+          "total": 9460000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -55600,6 +55640,14 @@
           "local": 5370000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 2290000,
+          "total": 4580000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -55707,7 +55755,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:12.129Z"
+      "timestamp": "2026-06-23T04:53:20.909Z"
     },
     {
       "parentName": "충북",
@@ -56338,10 +56386,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -56621,7 +56669,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:12.038Z"
+      "timestamp": "2026-06-23T04:53:20.808Z"
     },
     {
       "parentName": "충북",
@@ -57252,10 +57300,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -57535,7 +57583,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:11.982Z"
+      "timestamp": "2026-06-23T04:53:20.632Z"
     },
     {
       "parentName": "충북",
@@ -58174,10 +58222,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -58473,7 +58521,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:12.390Z"
+      "timestamp": "2026-06-23T04:53:20.585Z"
     },
     {
       "parentName": "충북",
@@ -59112,10 +59160,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -59411,7 +59459,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:11.811Z"
+      "timestamp": "2026-06-23T04:53:19.423Z"
     },
     {
       "parentName": "충북",
@@ -60050,10 +60098,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -60349,7 +60397,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:17.053Z"
+      "timestamp": "2026-06-23T04:53:24.936Z"
     },
     {
       "parentName": "충북",
@@ -60988,10 +61036,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -61287,7 +61335,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:17.279Z"
+      "timestamp": "2026-06-23T04:53:24.970Z"
     },
     {
       "parentName": "충북",
@@ -61918,10 +61966,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -62201,7 +62249,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:17.116Z"
+      "timestamp": "2026-06-23T04:53:24.843Z"
     },
     {
       "parentName": "충북",
@@ -62816,10 +62864,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -63091,7 +63139,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:16.867Z"
+      "timestamp": "2026-06-23T04:53:24.749Z"
     },
     {
       "parentName": "충남",
@@ -63730,10 +63778,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -64029,7 +64077,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:17.176Z"
+      "timestamp": "2026-06-23T04:53:24.658Z"
     },
     {
       "parentName": "충남",
@@ -64660,10 +64708,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -64943,7 +64991,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:16.709Z"
+      "timestamp": "2026-06-23T04:53:24.575Z"
     },
     {
       "parentName": "충남",
@@ -65574,10 +65622,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -65857,7 +65905,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:16.931Z"
+      "timestamp": "2026-06-23T04:53:24.468Z"
     },
     {
       "parentName": "충남",
@@ -66488,10 +66536,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -66771,7 +66819,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:16.655Z"
+      "timestamp": "2026-06-23T04:53:24.387Z"
     },
     {
       "parentName": "충남",
@@ -67410,10 +67458,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -67709,7 +67757,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:21.603Z"
+      "timestamp": "2026-06-23T04:53:28.810Z"
     },
     {
       "parentName": "충남",
@@ -68324,10 +68372,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -68599,7 +68647,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:22.114Z"
+      "timestamp": "2026-06-23T04:53:28.739Z"
     },
     {
       "parentName": "충남",
@@ -69214,10 +69262,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -69489,7 +69537,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:21.946Z"
+      "timestamp": "2026-06-23T04:53:28.642Z"
     },
     {
       "parentName": "충남",
@@ -70128,10 +70176,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -70427,7 +70475,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:21.400Z"
+      "timestamp": "2026-06-23T04:53:28.551Z"
     },
     {
       "parentName": "충남",
@@ -71066,10 +71114,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -71365,7 +71413,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:22.019Z"
+      "timestamp": "2026-06-23T04:53:28.458Z"
     },
     {
       "parentName": "충남",
@@ -71980,10 +72028,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -72255,7 +72303,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:21.779Z"
+      "timestamp": "2026-06-23T04:53:28.374Z"
     },
     {
       "parentName": "충남",
@@ -72886,10 +72934,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -73169,7 +73217,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:21.720Z"
+      "timestamp": "2026-06-23T04:53:28.286Z"
     },
     {
       "parentName": "충남",
@@ -73800,10 +73848,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -74083,7 +74131,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:21.903Z"
+      "timestamp": "2026-06-23T04:53:28.204Z"
     },
     {
       "parentName": "충남",
@@ -74698,10 +74746,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -74973,7 +75021,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:26.562Z"
+      "timestamp": "2026-06-23T04:53:32.852Z"
     },
     {
       "parentName": "충남",
@@ -75588,10 +75636,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -75863,7 +75911,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:26.439Z"
+      "timestamp": "2026-06-23T04:53:32.479Z"
     },
     {
       "parentName": "충남",
@@ -76494,10 +76542,10 @@
           "local": 2130000,
           "total": 4190000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
@@ -76777,7 +76825,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:26.880Z"
+      "timestamp": "2026-06-23T04:53:32.903Z"
     },
     {
       "parentName": "전북",
@@ -77416,10 +77464,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -77715,7 +77763,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:26.696Z"
+      "timestamp": "2026-06-23T04:53:33.923Z"
     },
     {
       "parentName": "전북",
@@ -78354,10 +78402,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -78653,7 +78701,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:26.275Z"
+      "timestamp": "2026-06-23T04:53:32.943Z"
     },
     {
       "parentName": "전북",
@@ -79284,10 +79332,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -79567,7 +79615,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:26.762Z"
+      "timestamp": "2026-06-23T04:53:32.765Z"
     },
     {
       "parentName": "전북",
@@ -80206,10 +80254,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -80505,7 +80553,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:26.369Z"
+      "timestamp": "2026-06-23T04:53:33.846Z"
     },
     {
       "parentName": "전북",
@@ -81136,10 +81184,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -81419,7 +81467,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:26.629Z"
+      "timestamp": "2026-06-23T04:53:32.049Z"
     },
     {
       "parentName": "전북",
@@ -81930,10 +81978,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -82205,7 +82253,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:31.334Z"
+      "timestamp": "2026-06-23T04:53:37.879Z"
     },
     {
       "parentName": "전북",
@@ -82844,10 +82892,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -83143,7 +83191,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:31.139Z"
+      "timestamp": "2026-06-23T04:53:38.274Z"
     },
     {
       "parentName": "전북",
@@ -83782,10 +83830,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -84081,7 +84129,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:31.209Z"
+      "timestamp": "2026-06-23T04:53:37.921Z"
     },
     {
       "parentName": "전북",
@@ -84712,10 +84760,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -84995,7 +85043,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:31.538Z"
+      "timestamp": "2026-06-23T04:53:38.203Z"
     },
     {
       "parentName": "전북",
@@ -85626,10 +85674,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -85909,7 +85957,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:31.395Z"
+      "timestamp": "2026-06-23T04:53:37.570Z"
     },
     {
       "parentName": "전북",
@@ -86540,10 +86588,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -86823,7 +86871,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:30.918Z"
+      "timestamp": "2026-06-23T04:53:38.102Z"
     },
     {
       "parentName": "전북",
@@ -87454,10 +87502,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -87737,7 +87785,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:31.037Z"
+      "timestamp": "2026-06-23T04:53:38.010Z"
     },
     {
       "parentName": "전북",
@@ -88376,10 +88424,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -88675,7 +88723,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:31.440Z"
+      "timestamp": "2026-06-23T04:53:36.639Z"
     },
     {
       "parentName": "전북",
@@ -89314,10 +89362,10 @@
           "local": 2230000,
           "total": 4290000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2380000,
           "total": 4580000
@@ -89613,7 +89661,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:36.094Z"
+      "timestamp": "2026-06-23T04:53:42.528Z"
     },
     {
       "parentName": "전남",
@@ -90228,10 +90276,10 @@
           "local": 1440000,
           "total": 3500000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1540000,
           "total": 3740000
@@ -90503,7 +90551,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:35.849Z"
+      "timestamp": "2026-06-23T04:53:42.453Z"
     },
     {
       "parentName": "전남",
@@ -91134,10 +91182,10 @@
           "local": 1440000,
           "total": 3500000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1540000,
           "total": 3740000
@@ -91417,7 +91465,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:36.201Z"
+      "timestamp": "2026-06-23T04:53:42.347Z"
     },
     {
       "parentName": "전남",
@@ -92056,10 +92104,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -92355,7 +92403,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:36.154Z"
+      "timestamp": "2026-06-23T04:53:42.112Z"
     },
     {
       "parentName": "전남",
@@ -92994,10 +93042,10 @@
           "local": 1030000,
           "total": 3090000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
@@ -93293,7 +93341,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:36.243Z"
+      "timestamp": "2026-06-23T04:53:42.049Z"
     },
     {
       "parentName": "전남",
@@ -93924,10 +93972,10 @@
           "local": 2740000,
           "total": 4800000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2930000,
           "total": 5130000
@@ -94207,7 +94255,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:35.744Z"
+      "timestamp": "2026-06-23T04:53:41.937Z"
     },
     {
       "parentName": "전남",
@@ -94822,10 +94870,10 @@
           "local": 2660000,
           "total": 4720000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2840000,
           "total": 5040000
@@ -95097,7 +95145,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:35.998Z"
+      "timestamp": "2026-06-23T04:53:42.259Z"
     },
     {
       "parentName": "전남",
@@ -95728,10 +95776,10 @@
           "local": 3090000,
           "total": 5150000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 3300000,
           "total": 5500000
@@ -96011,7 +96059,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:35.923Z"
+      "timestamp": "2026-06-23T04:53:41.009Z"
     },
     {
       "parentName": "전남",
@@ -96626,10 +96674,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -96901,7 +96949,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:40.841Z"
+      "timestamp": "2026-06-23T04:53:46.702Z"
     },
     {
       "parentName": "전남",
@@ -97516,10 +97564,10 @@
           "local": 2740000,
           "total": 4800000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2930000,
           "total": 5130000
@@ -97791,7 +97839,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:41.156Z"
+      "timestamp": "2026-06-23T04:53:46.353Z"
     },
     {
       "parentName": "전남",
@@ -98422,10 +98470,10 @@
           "local": 2810000,
           "total": 4870000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2950000,
           "total": 5150000
@@ -98705,7 +98753,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:40.772Z"
+      "timestamp": "2026-06-23T04:53:46.203Z"
     },
     {
       "parentName": "전남",
@@ -99320,10 +99368,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -99595,7 +99643,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:40.939Z"
+      "timestamp": "2026-06-23T04:53:46.388Z"
     },
     {
       "parentName": "전남",
@@ -100234,10 +100282,10 @@
           "local": 2470000,
           "total": 4530000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2640000,
           "total": 4840000
@@ -100533,7 +100581,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:40.535Z"
+      "timestamp": "2026-06-23T04:53:46.593Z"
     },
     {
       "parentName": "전남",
@@ -101164,10 +101212,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -101447,7 +101495,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:41.103Z"
+      "timestamp": "2026-06-23T04:53:46.624Z"
     },
     {
       "parentName": "전남",
@@ -102078,10 +102126,10 @@
           "local": 2810000,
           "total": 4870000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2950000,
           "total": 5150000
@@ -102361,7 +102409,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:40.645Z"
+      "timestamp": "2026-06-23T04:53:46.481Z"
     },
     {
       "parentName": "전남",
@@ -103000,10 +103048,10 @@
           "local": 1440000,
           "total": 3500000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1540000,
           "total": 3740000
@@ -103299,7 +103347,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:41.046Z"
+      "timestamp": "2026-06-23T04:53:46.309Z"
     },
     {
       "parentName": "전남",
@@ -103930,10 +103978,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -104213,7 +104261,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:45.795Z"
+      "timestamp": "2026-06-23T04:53:50.946Z"
     },
     {
       "parentName": "전남",
@@ -104852,10 +104900,10 @@
           "local": 3090000,
           "total": 5150000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 3300000,
           "total": 5500000
@@ -105151,7 +105199,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:45.363Z"
+      "timestamp": "2026-06-23T04:53:50.870Z"
     },
     {
       "parentName": "전남",
@@ -105790,10 +105838,10 @@
           "local": 2740000,
           "total": 4800000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2930000,
           "total": 5130000
@@ -106089,7 +106137,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:45.747Z"
+      "timestamp": "2026-06-23T04:53:50.776Z"
     },
     {
       "parentName": "전남",
@@ -106600,10 +106648,10 @@
           "local": 2190000,
           "total": 4250000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2290000,
           "total": 4490000
@@ -106875,7 +106923,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:45.446Z"
+      "timestamp": "2026-06-23T04:53:50.597Z"
     },
     {
       "parentName": "전남",
@@ -107506,10 +107554,10 @@
           "local": 2400000,
           "total": 4460000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2560000,
           "total": 4760000
@@ -107789,7 +107837,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:45.853Z"
+      "timestamp": "2026-06-23T04:53:50.679Z"
     },
     {
       "parentName": "전남",
@@ -108420,10 +108468,10 @@
           "local": 3090000,
           "total": 5150000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 3300000,
           "total": 5500000
@@ -108703,7 +108751,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:45.549Z"
+      "timestamp": "2026-06-23T04:53:50.565Z"
     },
     {
       "parentName": "전남",
@@ -109334,10 +109382,10 @@
           "local": 2060000,
           "total": 4120000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
@@ -109617,7 +109665,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:45.906Z"
+      "timestamp": "2026-06-23T04:53:50.455Z"
     },
     {
       "parentName": "경북",
@@ -110248,10 +110296,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -110531,7 +110579,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:45.678Z"
+      "timestamp": "2026-06-23T04:53:49.412Z"
     },
     {
       "parentName": "경북",
@@ -111162,10 +111210,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -111445,7 +111493,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:50.535Z"
+      "timestamp": "2026-06-23T04:53:54.938Z"
     },
     {
       "parentName": "경북",
@@ -112076,10 +112124,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -112359,7 +112407,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:50.124Z"
+      "timestamp": "2026-06-23T04:53:54.852Z"
     },
     {
       "parentName": "경북",
@@ -112990,10 +113038,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -113273,7 +113321,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:50.025Z"
+      "timestamp": "2026-06-23T04:53:54.774Z"
     },
     {
       "parentName": "경북",
@@ -113912,10 +113960,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -114211,7 +114259,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:50.632Z"
+      "timestamp": "2026-06-23T04:53:54.679Z"
     },
     {
       "parentName": "경북",
@@ -114850,10 +114898,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -115149,7 +115197,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:50.394Z"
+      "timestamp": "2026-06-23T04:53:54.591Z"
     },
     {
       "parentName": "경북",
@@ -115267,6 +115315,14 @@
           "national": 2140000,
           "local": 2200000,
           "total": 4340000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 2830000,
+          "total": 5580000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -115780,13 +115836,21 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 4870000,
+          "total": 9600000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -115956,6 +116020,14 @@
           "local": 5530000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 2350000,
+          "total": 4640000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -116063,7 +116135,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:50.473Z"
+      "timestamp": "2026-06-23T04:53:54.508Z"
     },
     {
       "parentName": "경북",
@@ -116694,10 +116766,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -116977,7 +117049,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:50.295Z"
+      "timestamp": "2026-06-23T04:53:54.401Z"
     },
     {
       "parentName": "경북",
@@ -117616,10 +117688,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -117915,7 +117987,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:50.669Z"
+      "timestamp": "2026-06-23T04:53:54.314Z"
     },
     {
       "parentName": "경북",
@@ -118546,10 +118618,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -118829,7 +118901,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:54.790Z"
+      "timestamp": "2026-06-23T04:53:59.333Z"
     },
     {
       "parentName": "경북",
@@ -119444,10 +119516,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -119719,7 +119791,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:54.879Z"
+      "timestamp": "2026-06-23T04:53:58.874Z"
     },
     {
       "parentName": "경북",
@@ -120350,10 +120422,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -120633,7 +120705,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:55.169Z"
+      "timestamp": "2026-06-23T04:53:58.726Z"
     },
     {
       "parentName": "경북",
@@ -121272,10 +121344,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -121571,7 +121643,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:55.334Z"
+      "timestamp": "2026-06-23T04:54:01.095Z"
     },
     {
       "parentName": "경북",
@@ -122210,10 +122282,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -122509,7 +122581,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:55.038Z"
+      "timestamp": "2026-06-23T04:53:59.041Z"
     },
     {
       "parentName": "경북",
@@ -123140,10 +123212,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -123423,7 +123495,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:55.291Z"
+      "timestamp": "2026-06-23T04:53:58.807Z"
     },
     {
       "parentName": "경북",
@@ -124054,10 +124126,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -124337,7 +124409,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:55.216Z"
+      "timestamp": "2026-06-23T04:53:58.960Z"
     },
     {
       "parentName": "경북",
@@ -124848,10 +124920,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -125123,7 +125195,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:54.996Z"
+      "timestamp": "2026-06-23T04:53:57.653Z"
     },
     {
       "parentName": "경북",
@@ -125762,10 +125834,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -126061,7 +126133,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:59.782Z"
+      "timestamp": "2026-06-23T04:54:05.256Z"
     },
     {
       "parentName": "경북",
@@ -126676,10 +126748,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -126951,7 +127023,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:59.836Z"
+      "timestamp": "2026-06-23T04:54:05.205Z"
     },
     {
       "parentName": "경북",
@@ -127590,10 +127662,10 @@
           "local": 2120000,
           "total": 4180000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
@@ -127889,7 +127961,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:59.353Z"
+      "timestamp": "2026-06-23T04:54:06.175Z"
     },
     {
       "parentName": "경북",
@@ -128504,10 +128576,10 @@
           "local": 0,
           "total": 2060000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 0,
           "total": 2200000
@@ -128779,7 +128851,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:59.628Z"
+      "timestamp": "2026-06-23T04:54:04.133Z"
     },
     {
       "parentName": "경북",
@@ -129394,10 +129466,10 @@
           "local": 3890000,
           "total": 5950000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 4150000,
           "total": 6350000
@@ -129669,7 +129741,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:59.526Z"
+      "timestamp": "2026-06-23T04:54:03.793Z"
     },
     {
       "parentName": "경남",
@@ -130308,10 +130380,10 @@
           "local": 620000,
           "total": 2680000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -130607,7 +130679,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:59.302Z"
+      "timestamp": "2026-06-23T04:54:04.022Z"
     },
     {
       "parentName": "경남",
@@ -131246,10 +131318,10 @@
           "local": 1960000,
           "total": 4020000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2090000,
           "total": 4290000
@@ -131545,7 +131617,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:59.706Z"
+      "timestamp": "2026-06-23T04:54:03.940Z"
     },
     {
       "parentName": "경남",
@@ -132184,10 +132256,10 @@
           "local": 730000,
           "total": 2790000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 770000,
           "total": 2970000
@@ -132483,7 +132555,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:18:59.468Z"
+      "timestamp": "2026-06-23T04:54:03.851Z"
     },
     {
       "parentName": "경남",
@@ -133122,10 +133194,10 @@
           "local": 840000,
           "total": 2900000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 880000,
           "total": 3080000
@@ -133421,7 +133493,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:04.038Z"
+      "timestamp": "2026-06-23T04:54:09.891Z"
     },
     {
       "parentName": "경남",
@@ -134060,10 +134132,10 @@
           "local": 620000,
           "total": 2680000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -134359,7 +134431,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:04.311Z"
+      "timestamp": "2026-06-23T04:54:10.450Z"
     },
     {
       "parentName": "경남",
@@ -134974,10 +135046,10 @@
           "local": 620000,
           "total": 2680000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -135249,7 +135321,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:04.158Z"
+      "timestamp": "2026-06-23T04:54:09.993Z"
     },
     {
       "parentName": "경남",
@@ -135888,10 +135960,10 @@
           "local": 1470000,
           "total": 3530000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1540000,
           "total": 3740000
@@ -136187,7 +136259,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:03.862Z"
+      "timestamp": "2026-06-23T04:54:11.410Z"
     },
     {
       "parentName": "경남",
@@ -136818,10 +136890,10 @@
           "local": 620000,
           "total": 2680000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -137101,7 +137173,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:03.924Z"
+      "timestamp": "2026-06-23T04:54:10.082Z"
     },
     {
       "parentName": "경남",
@@ -137732,10 +137804,10 @@
           "local": 620000,
           "total": 2680000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -138015,7 +138087,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:03.778Z"
+      "timestamp": "2026-06-23T04:54:09.955Z"
     },
     {
       "parentName": "경남",
@@ -138654,10 +138726,10 @@
           "local": 620000,
           "total": 2680000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -138953,7 +139025,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:04.095Z"
+      "timestamp": "2026-06-23T04:54:08.989Z"
     },
     {
       "parentName": "경남",
@@ -139592,10 +139664,10 @@
           "local": 730000,
           "total": 2790000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 770000,
           "total": 2970000
@@ -139891,7 +139963,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:04.219Z"
+      "timestamp": "2026-06-23T04:54:08.887Z"
     },
     {
       "parentName": "경남",
@@ -140530,10 +140602,10 @@
           "local": 620000,
           "total": 2680000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -140829,7 +140901,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:08.645Z"
+      "timestamp": "2026-06-23T04:54:16.259Z"
     },
     {
       "parentName": "경남",
@@ -141468,10 +141540,10 @@
           "local": 620000,
           "total": 2680000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -141767,7 +141839,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:08.599Z"
+      "timestamp": "2026-06-23T04:54:14.121Z"
     },
     {
       "parentName": "경남",
@@ -142406,10 +142478,10 @@
           "local": 620000,
           "total": 2680000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -142705,7 +142777,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:08.410Z"
+      "timestamp": "2026-06-23T04:54:15.014Z"
     },
     {
       "parentName": "경남",
@@ -143336,10 +143408,10 @@
           "local": 620000,
           "total": 2680000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 660000,
           "total": 2860000
@@ -143619,7 +143691,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:08.206Z"
+      "timestamp": "2026-06-23T04:54:14.174Z"
     },
     {
       "parentName": "경남",
@@ -144258,10 +144330,10 @@
           "local": 790000,
           "total": 2850000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 840000,
           "total": 3040000
@@ -144557,7 +144629,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:08.521Z"
+      "timestamp": "2026-06-23T04:54:14.931Z"
     },
     {
       "parentName": "경남",
@@ -145196,10 +145268,10 @@
           "local": 1280000,
           "total": 3340000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1360000,
           "total": 3560000
@@ -145495,7 +145567,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:08.737Z"
+      "timestamp": "2026-06-23T04:54:14.847Z"
     },
     {
       "parentName": "경남",
@@ -146134,10 +146206,10 @@
           "local": 2520000,
           "total": 4580000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 2690000,
           "total": 4890000
@@ -146433,7 +146505,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:08.349Z"
+      "timestamp": "2026-06-23T04:54:14.759Z"
     },
     {
       "parentName": "제주",
@@ -147064,10 +147136,10 @@
           "local": 1420000,
           "total": 3480000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 1510000,
           "total": 3710000
@@ -147347,7 +147419,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:08.078Z"
+      "timestamp": "2026-06-23T04:54:14.660Z"
     },
     {
       "parentName": "공단",
@@ -147986,10 +148058,10 @@
           "local": 0,
           "total": 2060000
         },
-        "폭스바겐그룹코리아___Q6 e-tron performance": {
+        "폭스바겐그룹코리아___(단종)Q6 e-tron performance": {
           "type": "일반승용",
           "manufacturer": "폭스바겐그룹코리아",
-          "model": "Q6 e-tron performance",
+          "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
           "local": 0,
           "total": 2200000
@@ -148285,7 +148357,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-22T06:19:12.133Z"
+      "timestamp": "2026-06-23T04:54:20.083Z"
     }
   ]
 }
