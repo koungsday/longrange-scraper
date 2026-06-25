@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-25T13:10:56.299Z",
+  "timestamp": "2026-06-25T13:20:55.860Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3471,11 +3471,11 @@
           "sido": "경북",
           "region": "청도군",
           "vehicleType": "전기승용",
-          "quota_total": 120,
+          "quota_total": 200,
           "quota_priority": 12,
           "quota_corporate": 0,
           "quota_taxi": 6,
-          "quota_general": 102,
+          "quota_general": 182,
           "registered_total": 130,
           "registered_priority": 31,
           "registered_corporate": 2,
@@ -3486,11 +3486,11 @@
           "delivered_corporate": 2,
           "delivered_taxi": 1,
           "delivered_general": 91,
-          "remaining_total": 0,
+          "remaining_total": 78,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 5,
-          "remaining_general": 11,
+          "remaining_general": 91,
           "note": "★ 5.14. 전기승용 마감되었습니다 ★\n< 자격부여 건에 한하여 지원가능요청 순으로 대기자가 되며, 취소물량 발생 등으로 추가 선정이 가능한 경우 지원대상자로 선정하고 문자 안내드리겠습니다 >\n<2026년 전기자동차 보급지원 사업 2차 공고>\n1. 접수기간 : 2026. 5. 13.(수) 09:00 ~ 예산소진 시까지\n2. 2차 보급대수 : 100대(승용40대, 화물60대)\n※ 지원 차종 및 국비 추가 지원 등 예산소진 현황에 따라 총 보급물량은 변동 가능\n3.대상자 선정 : 출고등록순\n4. 문 의 처 : 청도군청 환경산림과 (☎ 054-370-2185)\n※ 화물은  계속 접수 받고 있습니다.\n※ 지원가능확인요청 순으로 예산범위 내에서 대상자로 확정되며 대리점에서 지원가능확인요청을 누른 시점을 기준으로 순서가 결정됩니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-25T13:10:56.219Z"
+      "timestamp": "2026-06-25T13:20:55.802Z"
     }
   ]
 }
