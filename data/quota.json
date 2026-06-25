@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-25T22:50:58.331Z",
+  "timestamp": "2026-06-25T23:01:04.265Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -101,16 +101,16 @@
           "registered_corporate": 113,
           "registered_taxi": 243,
           "registered_general": 4411,
-          "delivered_total": 6238,
+          "delivered_total": 6240,
           "delivered_priority": 2089,
           "delivered_corporate": 98,
           "delivered_taxi": 205,
-          "delivered_general": 3846,
-          "remaining_total": 295,
+          "delivered_general": 3848,
+          "remaining_total": 293,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 130,
-          "remaining_general": 1682,
+          "remaining_general": 1680,
           "note": "***출고예정일 조작 금지***\n- 출고예정일 조작 적발 시 해당 대리점 대상자 선정 건 재확인후 취소할 수 있습니다.\n*** 전기승용차 하반기 사업 잔여대수 안내(26. 6.23. 09:00기준)***\n○ 대상자선정 기준 잔여대수 :  일반 0대, 택시 107대\n○ 일단 대상자 선정은 6.22. 출고건까지만 승인하고 마감합니다. 택시 전환 물량은 7.1일에 진행합니다.\n- 출고예정일 = 출고일 = 세금계산서 날짜가 일치해야 합니다\n○  일반물량 신규 접수는 6.23.까지만 받고 마감합니다 택시전환물량도 거의 다 찼습니다.\n** 7월 1일 이후부터는 택시잔여 물량도 일반으로 전환됩니다. 이경우 지원가능을 먼저 신청하고 출고가 빠른 순으로 대상자 선정을 진행합니다\n** 전기승용차 및 화물차는 하반기 사업 없습니다(올해 예산 다 소진하였습니다.)\n추경예산을 확보해야 추가사업 가능하며, 추경예산 확보하면 9월에나 사업 진행 가능합니다"
         },
         {
@@ -1786,9 +1786,9 @@
           "quota_corporate": 0,
           "quota_taxi": 52,
           "quota_general": 899,
-          "registered_total": 1551,
+          "registered_total": 1550,
           "registered_priority": 437,
-          "registered_corporate": 41,
+          "registered_corporate": 40,
           "registered_taxi": 110,
           "registered_general": 963,
           "delivered_total": 1079,
@@ -2233,16 +2233,16 @@
           "registered_corporate": 9,
           "registered_taxi": 45,
           "registered_general": 449,
-          "delivered_total": 209,
+          "delivered_total": 210,
           "delivered_priority": 45,
           "delivered_corporate": 2,
           "delivered_taxi": 12,
-          "delivered_general": 150,
-          "remaining_total": 75,
+          "delivered_general": 151,
+          "remaining_total": 74,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 2,
-          "remaining_general": 106,
+          "remaining_general": 105,
           "note": "<2026년 익산시 전기자동차(승용, 화물) 민간보급 사업 공고(2차)>\n□ 신청 및 지원가능 기간    (* 예산소진시 조기마감)\n가. 승용\n- 신      청 : 2026. 06. 15.(월) ~ 2026. 06. 16.(화)\n- 지원가능 : 2026. 06. 19.(금) 09:00\n나. 화물\n- 신      청 : 2026. 06. 22.(월) ~ 2026. 06. 23.(화)\n- 지원가능 : 2026. 06. 26.(금) 09:00\n□ 보급대수: 총 118대(승용 84대, 화물 34대)\n※ 보급여건, 예산증감에 따라 변동 가능\n□ 선정방법: 출고등록순\n□ 지원한도: 1인 1대, 법인 1대\n□ 신청자격: (공통)신청 접수일 기준 연속 3개월 이상 익산시에 주소를 둔 자\n□ 보급차량: 환경부 무공해차 통합누리집(ev.or.kr.)에서 열람\n-----------------------------------------------------------------------------------------------\n★ 자세한 사항은 공고문 확인\n★ 원본서류 : 전북 익산시 인북로32길 1 익산시청 7층 환경정책과 제출(미제출 시 보조금 미지급)\n★ 자격부여 및 대상자 선정 후 문자통보 없음, 시스템 직접 확인 요망\n★ 우선 처리 요청 전화 자제, 신청순서에 따라 공정하게 서류 심사(서류 접수 후 1~2일 소요)"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-25T22:50:58.250Z"
+      "timestamp": "2026-06-25T23:01:04.150Z"
     }
   ]
 }
