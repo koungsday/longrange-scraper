@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-27T09:10:55.084Z",
+  "timestamp": "2026-06-27T09:20:54.572Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -101,16 +101,16 @@
           "registered_corporate": 114,
           "registered_taxi": 246,
           "registered_general": 4406,
-          "delivered_total": 6292,
+          "delivered_total": 6293,
           "delivered_priority": 2100,
           "delivered_corporate": 98,
           "delivered_taxi": 210,
-          "delivered_general": 3884,
-          "remaining_total": 241,
+          "delivered_general": 3885,
+          "remaining_total": 240,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 125,
-          "remaining_general": 1644,
+          "remaining_general": 1643,
           "note": "***출고예정일 조작 금지***\n- 출고예정일 조작 적발 시 해당 대리점 대상자 선정 건 재확인후 취소할 수 있습니다.\n*** 전기승용차 하반기 사업 잔여대수 안내(26. 6.23. 09:00기준)***\n○ 대상자선정 기준 잔여대수 :  일반 0대, 택시 107대\n○ 일단 대상자 선정은 6.22. 출고건까지만 승인하고 마감합니다. 택시 전환 물량은 7.1일에 진행합니다.\n- 출고예정일 = 출고일 = 세금계산서 날짜가 일치해야 합니다\n○  일반물량 신규 접수는 6.23.까지만 받고 마감합니다 택시전환물량도 거의 다 찼습니다.\n** 7월 1일 이후부터는 택시잔여 물량도 일반으로 전환됩니다. 이경우 지원가능을 먼저 신청하고 출고가 빠른 순으로 대상자 선정을 진행합니다\n** 전기승용차 및 화물차는 하반기 사업 없습니다(올해 예산 다 소진하였습니다.)\n추경예산을 확보해야 추가사업 가능하며, 추경예산 확보하면 9월에나 사업 진행 가능합니다"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-27T09:10:55.008Z"
+      "timestamp": "2026-06-27T09:20:54.498Z"
     }
   ]
 }
