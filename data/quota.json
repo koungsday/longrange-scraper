@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-29T03:20:56.113Z",
+  "timestamp": "2026-06-29T03:31:01.386Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 390,
           "registered_taxi": 961,
           "registered_general": 7322,
-          "delivered_total": 10888,
+          "delivered_total": 10889,
           "delivered_priority": 3209,
           "delivered_corporate": 336,
           "delivered_taxi": 895,
-          "delivered_general": 6448,
-          "remaining_total": 1313,
+          "delivered_general": 6449,
+          "remaining_total": 1312,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 3313,
+          "remaining_general": 3312,
           "note": "★★2026.6.22. 18시 기준,\n상반기 서울시 전기승용차(전기택시 포함) 접수 마감되었습니다.★★\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 11,361대\nㅇ 잔여대수: 0대\n-----------------------------\n※ 하반기 전기자동차 보급사업은 7월중순 이후에 진행할 예정입니다."
         },
         {
@@ -382,11 +382,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 3044,
-          "registered_total": 2120,
+          "registered_total": 2121,
           "registered_priority": 749,
           "registered_corporate": 35,
           "registered_taxi": 41,
-          "registered_general": 1295,
+          "registered_general": 1296,
           "delivered_total": 1521,
           "delivered_priority": 543,
           "delivered_corporate": 25,
@@ -4183,12 +4183,12 @@
           "registered_corporate": 32076,
           "registered_taxi": 297,
           "registered_general": 508,
-          "delivered_total": 22762,
+          "delivered_total": 22763,
           "delivered_priority": 8,
-          "delivered_corporate": 22160,
+          "delivered_corporate": 22161,
           "delivered_taxi": 224,
           "delivered_general": 370,
-          "remaining_total": 7238,
+          "remaining_total": 7237,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-29T03:20:56.045Z"
+      "timestamp": "2026-06-29T03:31:01.315Z"
     }
   ]
 }
