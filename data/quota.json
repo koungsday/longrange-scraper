@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-30T10:21:01.930Z",
+  "timestamp": "2026-06-30T10:31:11.841Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -387,16 +387,16 @@
           "registered_corporate": 34,
           "registered_taxi": 41,
           "registered_general": 1320,
-          "delivered_total": 1625,
+          "delivered_total": 1626,
           "delivered_priority": 586,
           "delivered_corporate": 28,
           "delivered_taxi": 31,
-          "delivered_general": 980,
-          "remaining_total": 1419,
+          "delivered_general": 981,
+          "remaining_total": 1418,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 2064,
+          "remaining_general": 2063,
           "note": "★ '26.6.29. 11:00 기준 승용 잔여대수 약 220대 ★\n★하반기 전기화물 신청접수, 대상자 선정 마감★\n★자격부여는 대상자선정이 아닙니다.★\n★★★자격부여 ,대상자선정까지 순차적으로 선정되니 단순 독촉 전화문의 자제바랍니다.(업무 지연)★★★\n★2026년 평택시 하반기 전기자동차 공고★\nㅇ 지원대수\n- (승용) 1,204대, (화물) 72대\n* 차종별 보조금 지급액 상이하여(국비 추가 보조 등) 사업량 별도 공고 없이 변동됨\nㅇ 신청기간 :\n- (승용) 2026. 6. 17.(수) ~ 예산 소진 시까지\n- (화물) 2026. 6. 24.(수) ~ 예산 소진 시까지 (마감)\n* 예산 소진 시 조기 마감\nㅇ 선정기준 : 차량 출고 · 등록 순\nㅇ 보조금 관련 서류는 원본대조필 날인 후 시스템 첨부(우편발송 X)\n** 공고문에 첨부된 양식으로 신청해 주시기 바랍니다. **\n** 자세한 내용은 공고문 참조하시기 바랍니다. **"
         },
         {
@@ -4178,17 +4178,17 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 33518,
+          "registered_total": 33519,
           "registered_priority": 9,
-          "registered_corporate": 32674,
+          "registered_corporate": 32675,
           "registered_taxi": 310,
           "registered_general": 525,
-          "delivered_total": 23391,
+          "delivered_total": 23393,
           "delivered_priority": 8,
-          "delivered_corporate": 22776,
+          "delivered_corporate": 22778,
           "delivered_taxi": 227,
           "delivered_general": 380,
-          "remaining_total": 6609,
+          "remaining_total": 6607,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-30T10:21:01.859Z"
+      "timestamp": "2026-06-30T10:31:11.791Z"
     }
   ]
 }
