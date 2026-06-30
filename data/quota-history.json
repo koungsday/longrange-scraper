@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "lastUpdated": "2026. 6. 30. PM 12:51:01 KST",
+  "lastUpdated": "2026. 6. 30. PM 1:01:11 KST",
   "regions": {
     "1100": {
       "name": "서울특별시",
@@ -640801,7 +640801,7 @@
             "priority": 0,
             "corporate": 0,
             "taxi": 1,
-            "general": 86
+            "general": 85
           },
           "registered": {
             "total": 771,
@@ -640811,11 +640811,11 @@
             "general": 525
           },
           "delivered": {
-            "total": 481,
+            "total": 482,
             "priority": 133,
             "corporate": 10,
             "taxi": 23,
-            "general": 315
+            "general": 316
           }
         }
       },
@@ -642500,8 +642500,8 @@
             "general": 8
           },
           "registered": {
-            "total": 196,
-            "priority": 73,
+            "total": 197,
+            "priority": 74,
             "corporate": 6,
             "taxi": 0,
             "general": 117
@@ -643201,7 +643201,7 @@
             "priority": 0,
             "corporate": 0,
             "taxi": 193,
-            "general": 613
+            "general": 612
           },
           "registered": {
             "total": 3684,
@@ -643211,11 +643211,11 @@
             "general": 1671
           },
           "delivered": {
-            "total": 3495,
+            "total": 3496,
             "priority": 1655,
             "corporate": 46,
             "taxi": 207,
-            "general": 1587
+            "general": 1588
           }
         }
       },
@@ -643229,7 +643229,7 @@
             "general": 30000
           },
           "remaining": {
-            "total": 6832,
+            "total": 6830,
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
@@ -643243,9 +643243,9 @@
             "general": 519
           },
           "delivered": {
-            "total": 23168,
+            "total": 23170,
             "priority": 8,
-            "corporate": 22555,
+            "corporate": 22557,
             "taxi": 226,
             "general": 379
           }
