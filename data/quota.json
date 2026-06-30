@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-30T03:31:06.611Z",
+  "timestamp": "2026-06-30T03:41:06.809Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,12 +23,12 @@
           "registered_corporate": 390,
           "registered_taxi": 959,
           "registered_general": 7321,
-          "delivered_total": 11009,
+          "delivered_total": 11010,
           "delivered_priority": 3244,
-          "delivered_corporate": 340,
+          "delivered_corporate": 341,
           "delivered_taxi": 897,
           "delivered_general": 6528,
-          "remaining_total": 1192,
+          "remaining_total": 1191,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -850,11 +850,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 1200,
-          "registered_total": 1025,
+          "registered_total": 1026,
           "registered_priority": 301,
           "registered_corporate": 27,
           "registered_taxi": 9,
-          "registered_general": 688,
+          "registered_general": 689,
           "delivered_total": 854,
           "delivered_priority": 245,
           "delivered_corporate": 21,
@@ -1791,16 +1791,16 @@
           "registered_corporate": 40,
           "registered_taxi": 110,
           "registered_general": 950,
-          "delivered_total": 1117,
+          "delivered_total": 1118,
           "delivered_priority": 339,
           "delivered_corporate": 28,
           "delivered_taxi": 89,
-          "delivered_general": 661,
+          "delivered_general": 662,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 238,
+          "remaining_general": 237,
           "note": "2026년 전기자동차 보급사업(2차) 승용차 접수 마감\n하반기 전기자동차 보급사업 8월 말~9월예정"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-06-30T03:31:06.559Z"
+      "timestamp": "2026-06-30T03:41:06.738Z"
     }
   ]
 }
