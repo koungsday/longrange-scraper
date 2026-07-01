@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T10:41:05.527Z",
+  "timestamp": "2026-07-01T10:51:08.556Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -543,16 +543,16 @@
           "registered_corporate": 43,
           "registered_taxi": 30,
           "registered_general": 1382,
-          "delivered_total": 1750,
+          "delivered_total": 1751,
           "delivered_priority": 593,
           "delivered_corporate": 30,
           "delivered_taxi": 26,
-          "delivered_general": 1101,
-          "remaining_total": 580,
+          "delivered_general": 1102,
+          "remaining_total": 579,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1229,
+          "remaining_general": 1228,
           "note": "★대상자 확정 수 (2026.06.29.기준)\n- 승용 1,995대 / 2,330대\n- 화물 300대 추진완료. <마감>\n- 전환지원금 782대 / 900대(200대 추가확보완료) >> 전환지원금 예산 소진 시 전환지원금 추가보조금은 지급하지 않습니다.\n- 버스 2대 / 14대\n- 어린이통학버스 1대 / 3대\n※ 우리시는 전기자동차, 수소전기차, 전기이륜차, LPG차 등 자동차 보조금을\n담당자 1명이 전화부터 서류검토 및 보조금 지급까지 담당하고 있습니다.\n접수 및 전화량이 많아 처리가 계속 지연되오니,\n자동차 보조금액, 처리요청 등 단순문의는 공고문을 꼭 확인하여주시기 바랍니다.\n-  보급대수 :  총2,637대 (승용 2,330대 / 화물 290대 / 버스 14대 / 어린이통학버스 3대)\n상반기 1,244대(승용 1,000대 / 화물 230대 / 버스 14대)\n하반기 1,393대 (승용 1,330대 / 화물 60대 / 어린이통학버스 3대)\n※ 차종별 보조금 변경 및 보급물량은 예산범위 내에서 변동될 수 있음"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 34108,
+          "registered_total": 34109,
           "registered_priority": 10,
-          "registered_corporate": 33254,
+          "registered_corporate": 33255,
           "registered_taxi": 317,
           "registered_general": 527,
           "delivered_total": 23551,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-01T10:41:05.401Z"
+      "timestamp": "2026-07-01T10:51:08.488Z"
     }
   ]
 }
