@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-07-02T04:52:36.973Z",
+  "timestamp": "2026-07-03T04:34:50.167Z",
   "total_regions": 161,
   "success_count": 161,
   "failed_count": 0,
@@ -338,10 +338,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -561,6 +561,14 @@
           "national": 4200000,
           "local": 1260000,
           "total": 5460000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -941,7 +949,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:11.125Z"
+      "timestamp": "2026-07-03T04:33:19.397Z"
     },
     {
       "parentName": "부산",
@@ -1073,213 +1081,213 @@
           "manufacturer": "기아",
           "model": "EV3 GT",
           "national": 2480000,
-          "local": 740000,
-          "total": 3220000
+          "local": 1040000,
+          "total": 3520000
         },
         "기아___EV3 롱레인지 2WD 17인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV3 롱레인지 2WD 17인치",
           "national": 5550000,
-          "local": 1660000,
-          "total": 7210000
+          "local": 1960000,
+          "total": 7510000
         },
         "기아___EV3 롱레인지 2WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV3 롱레인지 2WD 19인치",
           "national": 5550000,
-          "local": 1660000,
-          "total": 7210000
+          "local": 1960000,
+          "total": 7510000
         },
         "기아___EV3 롱레인지 4WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV3 롱레인지 4WD 19인치",
           "national": 5390000,
-          "local": 1610000,
-          "total": 7000000
+          "local": 1910000,
+          "total": 7300000
         },
         "기아___EV3 스탠다드 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV3 스탠다드 2WD",
           "national": 4690000,
-          "local": 1400000,
-          "total": 6090000
+          "local": 1700000,
+          "total": 6390000
         },
         "기아___EV4 GT": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV4 GT",
           "national": 2550000,
-          "local": 760000,
-          "total": 3310000
+          "local": 1060000,
+          "total": 3610000
         },
         "기아___EV4 롱레인지 2WD 17인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV4 롱레인지 2WD 17인치",
           "national": 5550000,
-          "local": 1660000,
-          "total": 7210000
+          "local": 1960000,
+          "total": 7510000
         },
         "기아___EV4 롱레인지 2WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV4 롱레인지 2WD 19인치",
           "national": 5550000,
-          "local": 1660000,
-          "total": 7210000
+          "local": 1960000,
+          "total": 7510000
         },
         "기아___EV4 롱레인지 4WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV4 롱레인지 4WD 19인치",
           "national": 5540000,
-          "local": 1660000,
-          "total": 7200000
+          "local": 1960000,
+          "total": 7500000
         },
         "기아___EV4 롱레인지 GTL 2WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV4 롱레인지 GTL 2WD 19인치",
           "national": 5550000,
-          "local": 1660000,
-          "total": 7210000
+          "local": 1960000,
+          "total": 7510000
         },
         "기아___EV4 스탠다드 2WD 17인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV4 스탠다드 2WD 17인치",
           "national": 5120000,
-          "local": 1530000,
-          "total": 6650000
+          "local": 1830000,
+          "total": 6950000
         },
         "기아___EV4 스탠다드 2WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV4 스탠다드 2WD 19인치",
           "national": 4810000,
-          "local": 1440000,
-          "total": 6250000
+          "local": 1740000,
+          "total": 6550000
         },
         "기아___EV5 GT": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV5 GT",
           "national": 2320000,
-          "local": 690000,
-          "total": 3010000
+          "local": 990000,
+          "total": 3310000
         },
         "기아___EV5 롱레인지 2WD": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV5 롱레인지 2WD",
           "national": 5520000,
-          "local": 1650000,
-          "total": 7170000
+          "local": 1950000,
+          "total": 7470000
         },
         "기아___EV5 롱레인지 4WD 18인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV5 롱레인지 4WD 18인치",
           "national": 4990000,
-          "local": 1490000,
-          "total": 6480000
+          "local": 1790000,
+          "total": 6780000
         },
         "기아___EV5 롱레인지 4WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV5 롱레인지 4WD 19인치",
           "national": 4930000,
-          "local": 1470000,
-          "total": 6400000
+          "local": 1770000,
+          "total": 6700000
         },
         "기아___EV9 GT": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV9 GT",
           "national": 2450000,
-          "local": 730000,
-          "total": 3180000
+          "local": 1030000,
+          "total": 3480000
         },
         "기아___EV9 롱레인지 2WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV9 롱레인지 2WD 19인치",
           "national": 2700000,
-          "local": 810000,
-          "total": 3510000
+          "local": 1110000,
+          "total": 3810000
         },
         "기아___EV9 롱레인지 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV9 롱레인지 2WD 20인치",
           "national": 2680000,
-          "local": 800000,
-          "total": 3480000
+          "local": 1100000,
+          "total": 3780000
         },
         "기아___EV9 롱레인지 4WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV9 롱레인지 4WD 19인치",
           "national": 2540000,
-          "local": 760000,
-          "total": 3300000
+          "local": 1060000,
+          "total": 3600000
         },
         "기아___EV9 롱레인지 4WD 21인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV9 롱레인지 4WD 21인치",
           "national": 2600000,
-          "local": 780000,
-          "total": 3380000
+          "local": 1080000,
+          "total": 3680000
         },
         "기아___EV9 롱레인지 GTL 4WD 21인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV9 롱레인지 GTL 4WD 21인치",
           "national": 2520000,
-          "local": 750000,
-          "total": 3270000
+          "local": 1050000,
+          "total": 3570000
         },
         "기아___EV9 스탠다드": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "EV9 스탠다드",
           "national": 2370000,
-          "local": 710000,
-          "total": 3080000
+          "local": 1010000,
+          "total": 3380000
         },
         "기아___PV5 패신저 5인승 롱레인지": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "PV5 패신저 5인승 롱레인지",
           "national": 4580000,
-          "local": 1370000,
-          "total": 5950000
+          "local": 1670000,
+          "total": 6250000
         },
         "기아___Pv5 WAV(비용 미지원)": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "Pv5 WAV(비용 미지원)",
           "national": 6480000,
-          "local": 1940000,
-          "total": 8420000
+          "local": 2240000,
+          "total": 8720000
         },
         "기아___Pv5 WAV(비용 지원)": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "Pv5 WAV(비용 지원)",
           "national": 4480000,
-          "local": 1340000,
-          "total": 5820000
+          "local": 1640000,
+          "total": 6120000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -1289,40 +1297,40 @@
           "manufacturer": "기아",
           "model": "더뉴EV6 롱레인지 2WD 19인치",
           "national": 5700000,
-          "local": 1710000,
-          "total": 7410000
+          "local": 2010000,
+          "total": 7710000
         },
         "기아___더뉴EV6 롱레인지 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "더뉴EV6 롱레인지 2WD 20인치",
           "national": 5590000,
-          "local": 1670000,
-          "total": 7260000
+          "local": 1970000,
+          "total": 7560000
         },
         "기아___더뉴EV6 롱레인지 4WD 19인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "더뉴EV6 롱레인지 4WD 19인치",
           "national": 5610000,
-          "local": 1680000,
-          "total": 7290000
+          "local": 1980000,
+          "total": 7590000
         },
         "기아___더뉴EV6 롱레인지 4WD 20인치": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "더뉴EV6 롱레인지 4WD 20인치",
           "national": 5320000,
-          "local": 1590000,
-          "total": 6910000
+          "local": 1890000,
+          "total": 7210000
         },
         "기아___더뉴EV6 스탠다드": {
           "type": "일반승용",
           "manufacturer": "기아",
           "model": "더뉴EV6 스탠다드",
           "national": 5010000,
-          "local": 1500000,
-          "total": 6510000
+          "local": 1800000,
+          "total": 6810000
         },
         "기아___레이 EV 2WD 14인치 1인승 밴": {
           "type": "경·소형",
@@ -1441,32 +1449,32 @@
           "manufacturer": "케이지모빌리티",
           "model": "토레스 EVX 18인치",
           "national": 3540000,
-          "local": 1060000,
-          "total": 4600000
+          "local": 1360000,
+          "total": 4900000
         },
         "케이지모빌리티___토레스 EVX 18인치(2026)": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "토레스 EVX 18인치(2026)",
           "national": 3610000,
-          "local": 1080000,
-          "total": 4690000
+          "local": 1380000,
+          "total": 4990000
         },
         "케이지모빌리티___토레스 EVX 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "토레스 EVX 20인치",
           "national": 3440000,
-          "local": 1030000,
-          "total": 4470000
+          "local": 1330000,
+          "total": 4770000
         },
         "케이지모빌리티___토레스 EVX 20인치(2026)": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "토레스 EVX 20인치(2026)",
           "national": 3540000,
-          "local": 1060000,
-          "total": 4600000
+          "local": 1360000,
+          "total": 4900000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 18인치": {
           "type": "일반승용",
@@ -1499,6 +1507,14 @@
           "national": 4200000,
           "local": 1260000,
           "total": 5460000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -1601,168 +1617,168 @@
           "manufacturer": "현대자동차",
           "model": "ELECTRIFIED G80",
           "national": 2700000,
-          "local": 810000,
-          "total": 3510000
+          "local": 1110000,
+          "total": 3810000
         },
         "현대자동차___ELECTRIFIED GV70 AWD 19인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "ELECTRIFIED GV70 AWD 19인치",
           "national": 2610000,
-          "local": 780000,
-          "total": 3390000
+          "local": 1080000,
+          "total": 3690000
         },
         "현대자동차___ELECTRIFIED GV70 AWD 20인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "ELECTRIFIED GV70 AWD 20인치",
           "national": 2450000,
-          "local": 730000,
-          "total": 3180000
+          "local": 1030000,
+          "total": 3480000
         },
         "현대자동차___GV60 스탠다드 2WD 19인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "GV60 스탠다드 2WD 19인치",
           "national": 2850000,
-          "local": 850000,
-          "total": 3700000
+          "local": 1150000,
+          "total": 4000000
         },
         "현대자동차___GV60 스탠다드 AWD 19인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "GV60 스탠다드 AWD 19인치",
           "national": 2720000,
-          "local": 810000,
-          "total": 3530000
+          "local": 1110000,
+          "total": 3830000
         },
         "현대자동차___GV60 스탠다드 AWD 20인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "GV60 스탠다드 AWD 20인치",
           "national": 2610000,
-          "local": 780000,
-          "total": 3390000
+          "local": 1080000,
+          "total": 3690000
         },
         "현대자동차___더 뉴 아이오닉5 2WD 롱레인지 19인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉5 2WD 롱레인지 19인치",
           "national": 5640000,
-          "local": 1690000,
-          "total": 7330000
+          "local": 1990000,
+          "total": 7630000
         },
         "현대자동차___더 뉴 아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용",
           "national": 5670000,
-          "local": 1700000,
-          "total": 7370000
+          "local": 2000000,
+          "total": 7670000
         },
         "현대자동차___더 뉴 아이오닉5 2WD 롱레인지 20인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉5 2WD 롱레인지 20인치",
           "national": 5590000,
-          "local": 1670000,
-          "total": 7260000
+          "local": 1970000,
+          "total": 7560000
         },
         "현대자동차___더 뉴 아이오닉5 2WD 롱레인지 N라인 20인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉5 2WD 롱레인지 N라인 20인치",
           "national": 5410000,
-          "local": 1620000,
-          "total": 7030000
+          "local": 1920000,
+          "total": 7330000
         },
         "현대자동차___더 뉴 아이오닉5 2WD 스탠다드 19인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉5 2WD 스탠다드 19인치",
           "national": 4830000,
-          "local": 1440000,
-          "total": 6270000
+          "local": 1740000,
+          "total": 6570000
         },
         "현대자동차___더 뉴 아이오닉5 AWD 롱레인지 19인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉5 AWD 롱레인지 19인치",
           "national": 5580000,
-          "local": 1670000,
-          "total": 7250000
+          "local": 1970000,
+          "total": 7550000
         },
         "현대자동차___더 뉴 아이오닉5 AWD 롱레인지 20인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉5 AWD 롱레인지 20인치",
           "national": 5320000,
-          "local": 1590000,
-          "total": 6910000
+          "local": 1890000,
+          "total": 7210000
         },
         "현대자동차___더 뉴 아이오닉5 AWD 롱레인지 N라인 20인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉5 AWD 롱레인지 N라인 20인치",
           "national": 5100000,
-          "local": 1530000,
-          "total": 6630000
+          "local": 1830000,
+          "total": 6930000
         },
         "현대자동차___더 뉴 아이오닉6 2WD 롱레인지 18인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉6 2WD 롱레인지 18인치",
           "national": 5700000,
-          "local": 1710000,
-          "total": 7410000
+          "local": 2010000,
+          "total": 7710000
         },
         "현대자동차___더 뉴 아이오닉6 2WD 롱레인지 20인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉6 2WD 롱레인지 20인치",
           "national": 5700000,
-          "local": 1710000,
-          "total": 7410000
+          "local": 2010000,
+          "total": 7710000
         },
         "현대자동차___더 뉴 아이오닉6 2WD 롱레인지 N라인 20인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉6 2WD 롱레인지 N라인 20인치",
           "national": 5700000,
-          "local": 1710000,
-          "total": 7410000
+          "local": 2010000,
+          "total": 7710000
         },
         "현대자동차___더 뉴 아이오닉6 2WD 스탠다드 18인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉6 2WD 스탠다드 18인치",
           "national": 5600000,
-          "local": 1680000,
-          "total": 7280000
+          "local": 1980000,
+          "total": 7580000
         },
         "현대자동차___더 뉴 아이오닉6 AWD 롱레인지 18인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉6 AWD 롱레인지 18인치",
           "national": 5700000,
-          "local": 1710000,
-          "total": 7410000
+          "local": 2010000,
+          "total": 7710000
         },
         "현대자동차___더 뉴 아이오닉6 AWD 롱레인지 20인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉6 AWD 롱레인지 20인치",
           "national": 5530000,
-          "local": 1650000,
-          "total": 7180000
+          "local": 1950000,
+          "total": 7480000
         },
         "현대자동차___더 뉴 아이오닉6 AWD 롱레인지 N라인 20인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "더 뉴 아이오닉6 AWD 롱레인지 N라인 20인치",
           "national": 5370000,
-          "local": 1610000,
-          "total": 6980000
+          "local": 1910000,
+          "total": 7280000
         },
         "현대자동차___스타리아 라운지 일렉트릭 7인승": {
           "type": "일반승용",
@@ -1785,32 +1801,32 @@
           "manufacturer": "현대자동차",
           "model": "아이오닉6 N",
           "national": 2500000,
-          "local": 750000,
-          "total": 3250000
+          "local": 1050000,
+          "total": 3550000
         },
         "현대자동차___아이오닉9 성능형 AWD": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "아이오닉9 성능형 AWD",
           "national": 2720000,
-          "local": 810000,
-          "total": 3530000
+          "local": 1110000,
+          "total": 3830000
         },
         "현대자동차___아이오닉9 항속형 2WD": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "아이오닉9 항속형 2WD",
           "national": 2740000,
-          "local": 820000,
-          "total": 3560000
+          "local": 1120000,
+          "total": 3860000
         },
         "현대자동차___아이오닉9 항속형 AWD": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "아이오닉9 항속형 AWD",
           "national": 2710000,
-          "local": 810000,
-          "total": 3520000
+          "local": 1110000,
+          "total": 3820000
         },
         "현대자동차___캐스퍼 일렉트릭 기본형 15인치": {
           "type": "경·소형",
@@ -1849,37 +1865,37 @@
           "manufacturer": "현대자동차",
           "model": "코나 일렉트릭 2WD 롱레인지 17인치",
           "national": 5140000,
-          "local": 1540000,
-          "total": 6680000
+          "local": 1840000,
+          "total": 6980000
         },
         "현대자동차___코나 일렉트릭 2WD 롱레인지 17인치 빌트인 캠 미적용": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "코나 일렉트릭 2WD 롱레인지 17인치 빌트인 캠 미적용",
           "national": 5140000,
-          "local": 1540000,
-          "total": 6680000
+          "local": 1840000,
+          "total": 6980000
         },
         "현대자동차___코나 일렉트릭 2WD 롱레인지 19인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "코나 일렉트릭 2WD 롱레인지 19인치",
           "national": 4590000,
-          "local": 1370000,
-          "total": 5960000
+          "local": 1670000,
+          "total": 6260000
         },
         "현대자동차___코나 일렉트릭 2WD 스탠다드 17인치": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "코나 일렉트릭 2WD 스탠다드 17인치",
           "national": 4370000,
-          "local": 1310000,
-          "total": 5680000
+          "local": 1610000,
+          "total": 5980000
         }
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:11.084Z"
+      "timestamp": "2026-07-03T04:33:19.834Z"
     },
     {
       "parentName": "대구",
@@ -2214,10 +2230,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -2817,7 +2833,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:10.936Z"
+      "timestamp": "2026-07-03T04:33:19.693Z"
     },
     {
       "parentName": "인천",
@@ -3152,10 +3168,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -3755,7 +3771,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:11.012Z"
+      "timestamp": "2026-07-03T04:33:19.565Z"
     },
     {
       "parentName": "광주",
@@ -4090,10 +4106,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -4693,7 +4709,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:10.831Z"
+      "timestamp": "2026-07-03T04:33:19.302Z"
     },
     {
       "parentName": "대전",
@@ -5028,10 +5044,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -5631,7 +5647,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:10.633Z"
+      "timestamp": "2026-07-03T04:33:19.634Z"
     },
     {
       "parentName": "울산",
@@ -5966,10 +5982,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -6189,6 +6205,14 @@
           "national": 4200000,
           "local": 1260000,
           "total": 5460000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -6569,7 +6593,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:10.881Z"
+      "timestamp": "2026-07-03T04:33:19.753Z"
     },
     {
       "parentName": "세종",
@@ -6896,10 +6920,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -7483,7 +7507,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:10.551Z"
+      "timestamp": "2026-07-03T04:33:19.798Z"
     },
     {
       "parentName": "경기",
@@ -7818,10 +7842,10 @@
           "local": 1860000,
           "total": 6340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2030000,
           "total": 6920000
@@ -8041,6 +8065,14 @@
           "national": 4200000,
           "local": 1750000,
           "total": 5950000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 870000,
+          "total": 2970000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -8421,7 +8453,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:15.882Z"
+      "timestamp": "2026-07-03T04:33:24.689Z"
     },
     {
       "parentName": "경기",
@@ -8756,10 +8788,10 @@
           "local": 2010000,
           "total": 6490000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2200000,
           "total": 7090000
@@ -9359,7 +9391,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:15.509Z"
+      "timestamp": "2026-07-03T04:33:24.787Z"
     },
     {
       "parentName": "경기",
@@ -9694,10 +9726,10 @@
           "local": 1900000,
           "total": 6380000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2070000,
           "total": 6960000
@@ -10297,7 +10329,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:15.379Z"
+      "timestamp": "2026-07-03T04:33:24.742Z"
     },
     {
       "parentName": "경기",
@@ -10632,10 +10664,10 @@
           "local": 3130000,
           "total": 7610000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 3420000,
           "total": 8310000
@@ -11235,7 +11267,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:15.778Z"
+      "timestamp": "2026-07-03T04:33:24.399Z"
     },
     {
       "parentName": "경기",
@@ -11570,10 +11602,10 @@
           "local": 2500000,
           "total": 6980000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2730000,
           "total": 7620000
@@ -11793,6 +11825,14 @@
           "national": 4200000,
           "local": 2350000,
           "total": 6550000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 1170000,
+          "total": 3270000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -12173,7 +12213,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:15.150Z"
+      "timestamp": "2026-07-03T04:33:24.487Z"
     },
     {
       "parentName": "경기",
@@ -12508,10 +12548,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -13111,7 +13151,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:15.282Z"
+      "timestamp": "2026-07-03T04:33:24.886Z"
     },
     {
       "parentName": "경기",
@@ -13446,10 +13486,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -13669,6 +13709,14 @@
           "national": 4200000,
           "local": 1260000,
           "total": 5460000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -14049,7 +14097,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:15.642Z"
+      "timestamp": "2026-07-03T04:33:24.290Z"
     },
     {
       "parentName": "경기",
@@ -14167,6 +14215,14 @@
           "national": 2140000,
           "local": 990000,
           "total": 3130000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 1280000,
+          "total": 4030000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -14376,10 +14432,10 @@
           "local": 2090000,
           "total": 6570000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2280000,
           "total": 7170000
@@ -14600,6 +14656,14 @@
           "local": 1960000,
           "total": 6160000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 980000,
+          "total": 3080000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -14687,6 +14751,14 @@
           "national": 2200000,
           "local": 1020000,
           "total": 3220000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 2200000,
+          "total": 6930000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -14856,6 +14928,14 @@
           "local": 2500000,
           "total": 7870000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 1060000,
+          "total": 3350000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -14963,7 +15043,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:15.941Z"
+      "timestamp": "2026-07-03T04:33:24.968Z"
     },
     {
       "parentName": "경기",
@@ -15298,10 +15378,10 @@
           "local": 2160000,
           "total": 6640000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2360000,
           "total": 7250000
@@ -15521,6 +15601,14 @@
           "national": 4200000,
           "local": 2030000,
           "total": 6230000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 1010000,
+          "total": 3110000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -15901,7 +15989,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:20.390Z"
+      "timestamp": "2026-07-03T04:33:29.823Z"
     },
     {
       "parentName": "경기",
@@ -16236,10 +16324,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -16839,7 +16927,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:20.652Z"
+      "timestamp": "2026-07-03T04:33:29.305Z"
     },
     {
       "parentName": "경기",
@@ -17174,10 +17262,10 @@
           "local": 1940000,
           "total": 6420000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2110000,
           "total": 7000000
@@ -17397,6 +17485,14 @@
           "national": 4200000,
           "local": 1820000,
           "total": 6020000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 900000,
+          "total": 3000000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -17777,7 +17873,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:20.287Z"
+      "timestamp": "2026-07-03T04:33:29.410Z"
     },
     {
       "parentName": "경기",
@@ -18112,10 +18208,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -18715,7 +18811,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:20.113Z"
+      "timestamp": "2026-07-03T04:33:29.691Z"
     },
     {
       "parentName": "경기",
@@ -19050,10 +19146,10 @@
           "local": 1790000,
           "total": 6270000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1950000,
           "total": 6840000
@@ -19273,6 +19369,14 @@
           "national": 4200000,
           "local": 1680000,
           "total": 5880000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 840000,
+          "total": 2940000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -19653,7 +19757,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:20.519Z"
+      "timestamp": "2026-07-03T04:33:29.645Z"
     },
     {
       "parentName": "경기",
@@ -19988,10 +20092,10 @@
           "local": 1490000,
           "total": 5970000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1630000,
           "total": 6520000
@@ -20591,7 +20695,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:20.195Z"
+      "timestamp": "2026-07-03T04:33:29.734Z"
     },
     {
       "parentName": "경기",
@@ -20926,10 +21030,10 @@
           "local": 1860000,
           "total": 6340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2030000,
           "total": 6920000
@@ -21529,7 +21633,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:20.461Z"
+      "timestamp": "2026-07-03T04:33:29.872Z"
     },
     {
       "parentName": "경기",
@@ -21864,10 +21968,10 @@
           "local": 3080000,
           "total": 7560000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 3370000,
           "total": 8260000
@@ -22467,7 +22571,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:20.613Z"
+      "timestamp": "2026-07-03T04:33:29.538Z"
     },
     {
       "parentName": "경기",
@@ -22802,10 +22906,10 @@
           "local": 1490000,
           "total": 5970000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1630000,
           "total": 6520000
@@ -23025,6 +23129,14 @@
           "national": 4200000,
           "local": 1400000,
           "total": 5600000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -23405,7 +23517,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:25.322Z"
+      "timestamp": "2026-07-03T04:33:34.623Z"
     },
     {
       "parentName": "경기",
@@ -23740,10 +23852,10 @@
           "local": 2980000,
           "total": 7460000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 3260000,
           "total": 8150000
@@ -24343,7 +24455,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:25.216Z"
+      "timestamp": "2026-07-03T04:33:34.216Z"
     },
     {
       "parentName": "경기",
@@ -24678,10 +24790,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -24901,6 +25013,14 @@
           "national": 4200000,
           "local": 1260000,
           "total": 5460000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -25281,7 +25401,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:24.795Z"
+      "timestamp": "2026-07-03T04:33:34.521Z"
     },
     {
       "parentName": "경기",
@@ -25616,10 +25736,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -25839,6 +25959,14 @@
           "national": 4200000,
           "local": 2100000,
           "total": 6300000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 1050000,
+          "total": 3150000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -26219,7 +26347,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:25.144Z"
+      "timestamp": "2026-07-03T04:33:34.575Z"
     },
     {
       "parentName": "경기",
@@ -26554,10 +26682,10 @@
           "local": 2680000,
           "total": 7160000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2930000,
           "total": 7820000
@@ -26777,6 +26905,14 @@
           "national": 4200000,
           "local": 2520000,
           "total": 6720000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 1260000,
+          "total": 3360000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -27157,7 +27293,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:25.269Z"
+      "timestamp": "2026-07-03T04:33:34.658Z"
     },
     {
       "parentName": "경기",
@@ -27492,10 +27628,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -28095,7 +28231,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:25.029Z"
+      "timestamp": "2026-07-03T04:33:34.138Z"
     },
     {
       "parentName": "경기",
@@ -28422,10 +28558,10 @@
           "local": 1790000,
           "total": 6270000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1950000,
           "total": 6840000
@@ -29009,7 +29145,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:24.970Z"
+      "timestamp": "2026-07-03T04:33:34.691Z"
     },
     {
       "parentName": "경기",
@@ -29344,10 +29480,10 @@
           "local": 4250000,
           "total": 8730000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4640000,
           "total": 9530000
@@ -29567,6 +29703,14 @@
           "national": 4200000,
           "local": 3990000,
           "total": 8190000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 1990000,
+          "total": 4090000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -29947,7 +30091,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:24.860Z"
+      "timestamp": "2026-07-03T04:33:34.480Z"
     },
     {
       "parentName": "경기",
@@ -30282,10 +30426,10 @@
           "local": 1640000,
           "total": 6120000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1790000,
           "total": 6680000
@@ -30885,7 +31029,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:29.625Z"
+      "timestamp": "2026-07-03T04:33:39.101Z"
     },
     {
       "parentName": "경기",
@@ -31220,10 +31364,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1460000,
           "total": 6350000
@@ -31443,6 +31587,14 @@
           "national": 4200000,
           "local": 1260000,
           "total": 5460000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -31823,7 +31975,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:29.553Z"
+      "timestamp": "2026-07-03T04:33:38.931Z"
     },
     {
       "parentName": "경기",
@@ -32158,10 +32310,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -32761,7 +32913,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:29.431Z"
+      "timestamp": "2026-07-03T04:33:39.342Z"
     },
     {
       "parentName": "경기",
@@ -33096,13 +33248,13 @@
           "local": 1790000,
           "total": 6270000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
-          "local": 1950000,
-          "total": 6840000
+          "local": 0,
+          "total": 4890000
         },
         "기아___더뉴EV6 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -33213,48 +33365,48 @@
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD ATTO 3",
           "national": 1260000,
-          "local": 500000,
-          "total": 1760000
+          "local": 0,
+          "total": 1260000
         },
         "비와이디코리아___(단종)BYD DOLPHIN": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN",
           "national": 1090000,
-          "local": 430000,
-          "total": 1520000
+          "local": 0,
+          "total": 1090000
         },
         "비와이디코리아___(단종)BYD DOLPHIN Active": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN Active",
           "national": 1320000,
-          "local": 520000,
-          "total": 1840000
+          "local": 0,
+          "total": 1320000
         },
         "비와이디코리아___(단종)BYD SEAL": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL",
           "national": 1690000,
-          "local": 670000,
-          "total": 2360000
+          "local": 0,
+          "total": 1690000
         },
         "비와이디코리아___(단종)BYD SEAL Dynamic AWD": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL Dynamic AWD",
           "national": 1510000,
-          "local": 600000,
-          "total": 2110000
+          "local": 0,
+          "total": 1510000
         },
         "비와이디코리아___(단종)BYD SEALION 7": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEALION 7",
           "national": 1520000,
-          "local": 600000,
-          "total": 2120000
+          "local": 0,
+          "total": 1520000
         },
         "케이지모빌리티___토레스 EVX 18인치": {
           "type": "일반승용",
@@ -33293,16 +33445,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 1300000,
-          "total": 4570000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 1240000,
-          "total": 4360000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -33319,6 +33471,14 @@
           "national": 4200000,
           "local": 1680000,
           "total": 5880000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -33699,7 +33859,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:29.896Z"
+      "timestamp": "2026-07-03T04:33:39.306Z"
     },
     {
       "parentName": "경기",
@@ -34034,10 +34194,10 @@
           "local": 1790000,
           "total": 6270000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1950000,
           "total": 6840000
@@ -34637,7 +34797,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:29.367Z"
+      "timestamp": "2026-07-03T04:33:39.007Z"
     },
     {
       "parentName": "경기",
@@ -34972,10 +35132,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -35575,7 +35735,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:29.701Z"
+      "timestamp": "2026-07-03T04:33:39.244Z"
     },
     {
       "parentName": "경기",
@@ -35902,10 +36062,10 @@
           "local": 1790000,
           "total": 6270000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1950000,
           "total": 6840000
@@ -36489,7 +36649,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:29.845Z"
+      "timestamp": "2026-07-03T04:33:39.156Z"
     },
     {
       "parentName": "강원",
@@ -36816,10 +36976,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -37379,7 +37539,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:29.742Z"
+      "timestamp": "2026-07-03T04:33:39.423Z"
     },
     {
       "parentName": "강원",
@@ -37714,10 +37874,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -38317,7 +38477,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:33.903Z"
+      "timestamp": "2026-07-03T04:33:43.730Z"
     },
     {
       "parentName": "강원",
@@ -38652,10 +38812,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -39255,7 +39415,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:34.091Z"
+      "timestamp": "2026-07-03T04:33:43.763Z"
     },
     {
       "parentName": "강원",
@@ -39590,10 +39750,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -40193,7 +40353,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:34.260Z"
+      "timestamp": "2026-07-03T04:33:43.857Z"
     },
     {
       "parentName": "강원",
@@ -40528,10 +40688,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -41131,7 +41291,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:34.206Z"
+      "timestamp": "2026-07-03T04:33:44.036Z"
     },
     {
       "parentName": "강원",
@@ -41458,10 +41618,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -42045,7 +42205,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:34.317Z"
+      "timestamp": "2026-07-03T04:33:43.616Z"
     },
     {
       "parentName": "강원",
@@ -42380,10 +42540,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -42983,7 +43143,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:34.417Z"
+      "timestamp": "2026-07-03T04:33:43.889Z"
     },
     {
       "parentName": "강원",
@@ -43318,10 +43478,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -43921,7 +44081,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:34.478Z"
+      "timestamp": "2026-07-03T04:33:44.003Z"
     },
     {
       "parentName": "강원",
@@ -44248,10 +44408,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -44835,7 +44995,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:34.539Z"
+      "timestamp": "2026-07-03T04:33:44.079Z"
     },
     {
       "parentName": "강원",
@@ -45170,10 +45330,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -45773,7 +45933,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:38.914Z"
+      "timestamp": "2026-07-03T04:33:48.458Z"
     },
     {
       "parentName": "강원",
@@ -46108,10 +46268,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -46711,7 +46871,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:38.620Z"
+      "timestamp": "2026-07-03T04:33:48.695Z"
     },
     {
       "parentName": "강원",
@@ -47046,10 +47206,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -47649,7 +47809,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:38.686Z"
+      "timestamp": "2026-07-03T04:33:48.613Z"
     },
     {
       "parentName": "강원",
@@ -47976,10 +48136,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -48563,7 +48723,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:38.855Z"
+      "timestamp": "2026-07-03T04:33:48.220Z"
     },
     {
       "parentName": "강원",
@@ -48890,10 +49050,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -49453,7 +49613,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:38.970Z"
+      "timestamp": "2026-07-03T04:33:48.663Z"
     },
     {
       "parentName": "강원",
@@ -49788,10 +49948,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -50391,7 +50551,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:38.794Z"
+      "timestamp": "2026-07-03T04:33:48.344Z"
     },
     {
       "parentName": "강원",
@@ -50726,10 +50886,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -51329,7 +51489,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:39.051Z"
+      "timestamp": "2026-07-03T04:33:48.511Z"
     },
     {
       "parentName": "강원",
@@ -51656,10 +51816,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -52243,7 +52403,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:38.377Z"
+      "timestamp": "2026-07-03T04:33:48.130Z"
     },
     {
       "parentName": "강원",
@@ -52361,6 +52521,14 @@
           "national": 2140000,
           "local": 1070000,
           "total": 3210000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 1370000,
+          "total": 4120000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -52570,10 +52738,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -52794,6 +52962,14 @@
           "local": 2100000,
           "total": 6300000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -52881,6 +53057,14 @@
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 2360000,
+          "total": 7090000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -53050,6 +53234,14 @@
           "local": 2680000,
           "total": 8050000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 1140000,
+          "total": 3430000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -53157,7 +53349,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:43.388Z"
+      "timestamp": "2026-07-03T04:33:53.087Z"
     },
     {
       "parentName": "충북",
@@ -53492,10 +53684,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -54095,7 +54287,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:42.984Z"
+      "timestamp": "2026-07-03T04:33:53.003Z"
     },
     {
       "parentName": "충북",
@@ -54422,10 +54614,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -55009,7 +55201,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:42.881Z"
+      "timestamp": "2026-07-03T04:33:52.809Z"
     },
     {
       "parentName": "충북",
@@ -55344,13 +55536,13 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
-          "local": 4890000,
-          "total": 9780000
+          "local": 0,
+          "total": 4890000
         },
         "기아___더뉴EV6 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -55541,16 +55733,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 3270000,
-          "total": 6540000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 3120000,
-          "total": 6240000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -55567,6 +55759,14 @@
           "national": 4200000,
           "local": 4200000,
           "total": 8400000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -55947,7 +56147,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:43.151Z"
+      "timestamp": "2026-07-03T04:33:52.926Z"
     },
     {
       "parentName": "충북",
@@ -56274,10 +56474,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -56861,7 +57061,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:43.279Z"
+      "timestamp": "2026-07-03T04:33:53.188Z"
     },
     {
       "parentName": "충북",
@@ -57196,10 +57396,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -57799,7 +57999,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:43.333Z"
+      "timestamp": "2026-07-03T04:33:53.231Z"
     },
     {
       "parentName": "충북",
@@ -58134,10 +58334,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -58737,7 +58937,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:43.233Z"
+      "timestamp": "2026-07-03T04:33:53.307Z"
     },
     {
       "parentName": "충북",
@@ -59072,10 +59272,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -59675,7 +59875,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:43.026Z"
+      "timestamp": "2026-07-03T04:33:52.691Z"
     },
     {
       "parentName": "충북",
@@ -60010,10 +60210,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -60613,7 +60813,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:47.255Z"
+      "timestamp": "2026-07-03T04:33:57.500Z"
     },
     {
       "parentName": "충북",
@@ -60948,10 +61148,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -61551,7 +61751,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:47.735Z"
+      "timestamp": "2026-07-03T04:33:57.887Z"
     },
     {
       "parentName": "충북",
@@ -61669,6 +61869,14 @@
           "national": 2140000,
           "local": 2140000,
           "total": 4280000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 0,
+          "total": 2750000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -61878,10 +62086,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -61995,48 +62203,48 @@
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD ATTO 3",
           "national": 1260000,
-          "local": 1260000,
-          "total": 2520000
+          "local": 0,
+          "total": 1260000
         },
         "비와이디코리아___(단종)BYD DOLPHIN": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN",
           "national": 1090000,
-          "local": 1090000,
-          "total": 2180000
+          "local": 0,
+          "total": 1090000
         },
         "비와이디코리아___(단종)BYD DOLPHIN Active": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN Active",
           "national": 1320000,
-          "local": 1320000,
-          "total": 2640000
+          "local": 0,
+          "total": 1320000
         },
         "비와이디코리아___(단종)BYD SEAL": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL",
           "national": 1690000,
-          "local": 1690000,
-          "total": 3380000
+          "local": 0,
+          "total": 1690000
         },
         "비와이디코리아___(단종)BYD SEAL Dynamic AWD": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL Dynamic AWD",
           "national": 1510000,
-          "local": 1510000,
-          "total": 3020000
+          "local": 0,
+          "total": 1510000
         },
         "비와이디코리아___(단종)BYD SEALION 7": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEALION 7",
           "national": 1520000,
-          "local": 1520000,
-          "total": 3040000
+          "local": 0,
+          "total": 1520000
         },
         "케이지모빌리티___토레스 EVX 18인치": {
           "type": "일반승용",
@@ -62075,16 +62283,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 3270000,
-          "total": 6540000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 3120000,
-          "total": 6240000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -62101,6 +62309,14 @@
           "national": 4200000,
           "local": 4200000,
           "total": 8400000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -62189,6 +62405,14 @@
           "national": 2200000,
           "local": 2200000,
           "total": 4400000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 4730000,
+          "total": 9460000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -62358,6 +62582,14 @@
           "local": 5370000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 0,
+          "total": 2290000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -62465,7 +62697,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:47.339Z"
+      "timestamp": "2026-07-03T04:33:57.964Z"
     },
     {
       "parentName": "충북",
@@ -62792,10 +63024,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -63355,7 +63587,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:47.618Z"
+      "timestamp": "2026-07-03T04:33:58.000Z"
     },
     {
       "parentName": "충남",
@@ -63690,10 +63922,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -64293,7 +64525,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:47.679Z"
+      "timestamp": "2026-07-03T04:33:57.575Z"
     },
     {
       "parentName": "충남",
@@ -64620,10 +64852,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -65207,7 +65439,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:47.508Z"
+      "timestamp": "2026-07-03T04:33:57.802Z"
     },
     {
       "parentName": "충남",
@@ -65542,10 +65774,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -66145,7 +66377,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:47.800Z"
+      "timestamp": "2026-07-03T04:33:57.749Z"
     },
     {
       "parentName": "충남",
@@ -66472,10 +66704,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -67059,7 +67291,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:47.443Z"
+      "timestamp": "2026-07-03T04:33:57.634Z"
     },
     {
       "parentName": "충남",
@@ -67394,10 +67626,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -67997,7 +68229,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:51.842Z"
+      "timestamp": "2026-07-03T04:34:02.378Z"
     },
     {
       "parentName": "충남",
@@ -68324,10 +68556,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -68887,7 +69119,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:51.739Z"
+      "timestamp": "2026-07-03T04:34:02.257Z"
     },
     {
       "parentName": "충남",
@@ -69222,10 +69454,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -69825,7 +70057,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:51.688Z"
+      "timestamp": "2026-07-03T04:34:02.335Z"
     },
     {
       "parentName": "충남",
@@ -70160,10 +70392,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -70763,7 +70995,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:51.893Z"
+      "timestamp": "2026-07-03T04:34:02.122Z"
     },
     {
       "parentName": "충남",
@@ -71098,10 +71330,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -71701,7 +71933,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:52.098Z"
+      "timestamp": "2026-07-03T04:34:02.074Z"
     },
     {
       "parentName": "충남",
@@ -72028,10 +72260,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -72591,7 +72823,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:52.063Z"
+      "timestamp": "2026-07-03T04:34:02.524Z"
     },
     {
       "parentName": "충남",
@@ -72918,10 +73150,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -73505,7 +73737,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:51.603Z"
+      "timestamp": "2026-07-03T04:34:02.468Z"
     },
     {
       "parentName": "충남",
@@ -73623,6 +73855,14 @@
           "national": 2140000,
           "local": 2220000,
           "total": 4360000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 2850000,
+          "total": 5600000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -73832,10 +74072,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -74056,6 +74296,14 @@
           "local": 4350000,
           "total": 8550000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 2170000,
+          "total": 4270000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -74143,6 +74391,14 @@
           "national": 2200000,
           "local": 2280000,
           "total": 4480000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 4890000,
+          "total": 9620000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -74312,6 +74568,14 @@
           "local": 5550000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 2370000,
+          "total": 4660000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -74419,7 +74683,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:51.994Z"
+      "timestamp": "2026-07-03T04:34:02.583Z"
     },
     {
       "parentName": "충남",
@@ -74746,10 +75010,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -75309,7 +75573,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:56.018Z"
+      "timestamp": "2026-07-03T04:34:07.009Z"
     },
     {
       "parentName": "충남",
@@ -75636,10 +75900,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -76199,7 +76463,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:56.111Z"
+      "timestamp": "2026-07-03T04:34:06.922Z"
     },
     {
       "parentName": "충남",
@@ -76526,10 +76790,10 @@
           "local": 4630000,
           "total": 9110000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5060000,
           "total": 9950000
@@ -77113,7 +77377,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:55.966Z"
+      "timestamp": "2026-07-03T04:34:06.651Z"
     },
     {
       "parentName": "전북",
@@ -77448,10 +77712,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -78051,7 +78315,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:56.393Z"
+      "timestamp": "2026-07-03T04:34:07.044Z"
     },
     {
       "parentName": "전북",
@@ -78386,10 +78650,10 @@
           "local": 7030000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -78989,7 +79253,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:56.173Z"
+      "timestamp": "2026-07-03T04:34:06.841Z"
     },
     {
       "parentName": "전북",
@@ -79324,10 +79588,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -79927,7 +80191,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:56.267Z"
+      "timestamp": "2026-07-03T04:34:06.886Z"
     },
     {
       "parentName": "전북",
@@ -80262,10 +80526,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -80865,7 +81129,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:56.444Z"
+      "timestamp": "2026-07-03T04:34:06.575Z"
     },
     {
       "parentName": "전북",
@@ -81200,10 +81464,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -81803,7 +82067,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:51:56.349Z"
+      "timestamp": "2026-07-03T04:34:06.733Z"
     },
     {
       "parentName": "전북",
@@ -82066,10 +82330,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -82589,7 +82853,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:00.477Z"
+      "timestamp": "2026-07-03T04:34:11.150Z"
     },
     {
       "parentName": "전북",
@@ -82924,10 +83188,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -83527,7 +83791,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:00.649Z"
+      "timestamp": "2026-07-03T04:34:11.402Z"
     },
     {
       "parentName": "전북",
@@ -83862,10 +84126,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -84085,6 +84349,14 @@
           "national": 4200000,
           "local": 4560000,
           "total": 8760000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 2280000,
+          "total": 4380000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -84465,7 +84737,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:00.427Z"
+      "timestamp": "2026-07-03T04:34:11.363Z"
     },
     {
       "parentName": "전북",
@@ -84792,10 +85064,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -85379,7 +85651,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:00.724Z"
+      "timestamp": "2026-07-03T04:34:11.332Z"
     },
     {
       "parentName": "전북",
@@ -85706,10 +85978,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -86293,7 +86565,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:00.269Z"
+      "timestamp": "2026-07-03T04:34:11.444Z"
     },
     {
       "parentName": "전북",
@@ -86620,10 +86892,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -87207,7 +87479,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:00.586Z"
+      "timestamp": "2026-07-03T04:34:11.210Z"
     },
     {
       "parentName": "전북",
@@ -87542,10 +87814,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -88145,7 +88417,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:00.543Z"
+      "timestamp": "2026-07-03T04:34:11.078Z"
     },
     {
       "parentName": "전북",
@@ -88480,10 +88752,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -89083,7 +89355,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:00.214Z"
+      "timestamp": "2026-07-03T04:34:10.980Z"
     },
     {
       "parentName": "전북",
@@ -89418,10 +89690,10 @@
           "local": 4860000,
           "total": 9340000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5310000,
           "total": 10000
@@ -90021,7 +90293,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:04.913Z"
+      "timestamp": "2026-07-03T04:34:15.825Z"
     },
     {
       "parentName": "전남",
@@ -90348,10 +90620,10 @@
           "local": 3130000,
           "total": 7610000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 3420000,
           "total": 8310000
@@ -90911,7 +91183,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:04.698Z"
+      "timestamp": "2026-07-03T04:34:15.425Z"
     },
     {
       "parentName": "전남",
@@ -91246,10 +91518,10 @@
           "local": 3130000,
           "total": 7610000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 3420000,
           "total": 8310000
@@ -91849,7 +92121,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:04.753Z"
+      "timestamp": "2026-07-03T04:34:15.709Z"
     },
     {
       "parentName": "전남",
@@ -92184,10 +92456,10 @@
           "local": 3130000,
           "total": 7610000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 3420000,
           "total": 8310000
@@ -92787,7 +93059,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:04.852Z"
+      "timestamp": "2026-07-03T04:34:15.550Z"
     },
     {
       "parentName": "전남",
@@ -93122,10 +93394,10 @@
           "local": 2240000,
           "total": 6720000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 2440000,
           "total": 7330000
@@ -93725,7 +93997,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:04.392Z"
+      "timestamp": "2026-07-03T04:34:15.656Z"
     },
     {
       "parentName": "전남",
@@ -94052,10 +94324,10 @@
           "local": 5970000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 6520000,
           "total": 10000
@@ -94639,7 +94911,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:04.643Z"
+      "timestamp": "2026-07-03T04:34:15.515Z"
     },
     {
       "parentName": "전남",
@@ -94757,6 +95029,14 @@
           "national": 2140000,
           "local": 2760000,
           "total": 4900000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 3370000,
+          "total": 6120000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -94966,10 +95246,10 @@
           "local": 5790000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 6320000,
           "total": 10000
@@ -95061,6 +95341,22 @@
           "national": 1620000,
           "local": 1980000,
           "total": 3600000
+        },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 3020000,
+          "total": 5490000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 2720000,
+          "total": 4940000
         },
         "비와이디코리아___(단종)BYD ATTO 3": {
           "type": "일반승용",
@@ -95174,6 +95470,14 @@
           "local": 5430000,
           "total": 9630000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 2570000,
+          "total": 4670000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -95261,6 +95565,14 @@
           "national": 2200000,
           "local": 2840000,
           "total": 5040000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 6550000,
+          "total": 10000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -95430,6 +95742,22 @@
           "local": 6940000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 2800000,
+          "total": 5090000
+        },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 2800000,
+          "total": 5090000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -95529,7 +95857,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:04.589Z"
+      "timestamp": "2026-07-03T04:34:15.793Z"
     },
     {
       "parentName": "전남",
@@ -95864,10 +96192,10 @@
           "local": 6720000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 7330000,
           "total": 10000
@@ -96467,7 +96795,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:04.466Z"
+      "timestamp": "2026-07-03T04:34:15.901Z"
     },
     {
       "parentName": "전남",
@@ -96794,10 +97122,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -97357,7 +97685,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:08.975Z"
+      "timestamp": "2026-07-03T04:34:20.395Z"
     },
     {
       "parentName": "전남",
@@ -97684,10 +98012,10 @@
           "local": 5970000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 6520000,
           "total": 10000
@@ -98247,7 +98575,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:08.767Z"
+      "timestamp": "2026-07-03T04:34:20.509Z"
     },
     {
       "parentName": "전남",
@@ -98574,10 +98902,10 @@
           "local": 5980000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 6390000,
           "total": 10000
@@ -99161,7 +99489,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:08.823Z"
+      "timestamp": "2026-07-03T04:34:20.266Z"
     },
     {
       "parentName": "전남",
@@ -99488,10 +99816,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -100051,7 +100379,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:08.668Z"
+      "timestamp": "2026-07-03T04:34:20.213Z"
     },
     {
       "parentName": "전남",
@@ -100386,10 +100714,10 @@
           "local": 5370000,
           "total": 9850000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5860000,
           "total": 10000
@@ -100989,7 +101317,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:08.904Z"
+      "timestamp": "2026-07-03T04:34:20.476Z"
     },
     {
       "parentName": "전남",
@@ -101316,10 +101644,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -101903,7 +102231,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:09.013Z"
+      "timestamp": "2026-07-03T04:34:20.435Z"
     },
     {
       "parentName": "전남",
@@ -102230,10 +102558,10 @@
           "local": 5980000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 6390000,
           "total": 10000
@@ -102817,7 +103145,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:08.590Z"
+      "timestamp": "2026-07-03T04:34:20.177Z"
     },
     {
       "parentName": "전남",
@@ -103152,10 +103480,10 @@
           "local": 3130000,
           "total": 7610000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 3420000,
           "total": 8310000
@@ -103755,7 +104083,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:08.410Z"
+      "timestamp": "2026-07-03T04:34:20.072Z"
     },
     {
       "parentName": "전남",
@@ -104082,10 +104410,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -104669,7 +104997,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:12.956Z"
+      "timestamp": "2026-07-03T04:34:24.725Z"
     },
     {
       "parentName": "전남",
@@ -105004,10 +105332,10 @@
           "local": 6720000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 7330000,
           "total": 10000
@@ -105607,7 +105935,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:12.743Z"
+      "timestamp": "2026-07-03T04:34:24.947Z"
     },
     {
       "parentName": "전남",
@@ -105942,10 +106270,10 @@
           "local": 5970000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 6520000,
           "total": 10000
@@ -106545,7 +106873,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:12.838Z"
+      "timestamp": "2026-07-03T04:34:24.985Z"
     },
     {
       "parentName": "전남",
@@ -106808,10 +107136,10 @@
           "local": 4640000,
           "total": 9120000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4920000,
           "total": 9810000
@@ -107331,7 +107659,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:12.648Z"
+      "timestamp": "2026-07-03T04:34:24.539Z"
     },
     {
       "parentName": "전남",
@@ -107658,10 +107986,10 @@
           "local": 5220000,
           "total": 9700000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5700000,
           "total": 10000
@@ -108245,7 +108573,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:12.905Z"
+      "timestamp": "2026-07-03T04:34:24.881Z"
     },
     {
       "parentName": "전남",
@@ -108580,10 +108908,10 @@
           "local": 6720000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 7330000,
           "total": 10000
@@ -109183,7 +109511,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:13.156Z"
+      "timestamp": "2026-07-03T04:34:25.016Z"
     },
     {
       "parentName": "전남",
@@ -109518,10 +109846,10 @@
           "local": 4480000,
           "total": 8960000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4890000,
           "total": 9780000
@@ -110121,7 +110449,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:13.067Z"
+      "timestamp": "2026-07-03T04:34:24.780Z"
     },
     {
       "parentName": "경북",
@@ -110456,10 +110784,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -111059,7 +111387,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:13.120Z"
+      "timestamp": "2026-07-03T04:34:24.637Z"
     },
     {
       "parentName": "경북",
@@ -111394,10 +111722,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -111997,7 +112325,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:16.861Z"
+      "timestamp": "2026-07-03T04:34:29.248Z"
     },
     {
       "parentName": "경북",
@@ -112324,10 +112652,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -112911,7 +113239,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:17.304Z"
+      "timestamp": "2026-07-03T04:34:29.444Z"
     },
     {
       "parentName": "경북",
@@ -113246,10 +113574,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -113849,7 +114177,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:17.165Z"
+      "timestamp": "2026-07-03T04:34:28.950Z"
     },
     {
       "parentName": "경북",
@@ -114184,13 +114512,13 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
-          "local": 5030000,
-          "total": 9920000
+          "local": 0,
+          "total": 4890000
         },
         "기아___더뉴EV6 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -114381,16 +114709,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 3360000,
-          "total": 6630000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 3210000,
-          "total": 6330000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -114407,6 +114735,14 @@
           "national": 4200000,
           "local": 4320000,
           "total": 8520000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -114787,7 +115123,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:17.214Z"
+      "timestamp": "2026-07-03T04:34:29.106Z"
     },
     {
       "parentName": "경북",
@@ -115122,10 +115458,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -115725,7 +116061,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:16.921Z"
+      "timestamp": "2026-07-03T04:34:29.483Z"
     },
     {
       "parentName": "경북",
@@ -116060,10 +116396,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -116663,7 +116999,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:16.971Z"
+      "timestamp": "2026-07-03T04:34:29.347Z"
     },
     {
       "parentName": "경북",
@@ -116990,10 +117326,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -117577,7 +117913,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:17.095Z"
+      "timestamp": "2026-07-03T04:34:29.070Z"
     },
     {
       "parentName": "경북",
@@ -117912,10 +118248,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -118515,7 +118851,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:17.265Z"
+      "timestamp": "2026-07-03T04:34:29.202Z"
     },
     {
       "parentName": "경북",
@@ -118850,10 +119186,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -119453,7 +119789,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:21.552Z"
+      "timestamp": "2026-07-03T04:34:33.718Z"
     },
     {
       "parentName": "경북",
@@ -119780,10 +120116,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -120343,7 +120679,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:21.412Z"
+      "timestamp": "2026-07-03T04:34:33.675Z"
     },
     {
       "parentName": "경북",
@@ -120670,10 +121006,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -121257,7 +121593,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:21.503Z"
+      "timestamp": "2026-07-03T04:34:33.345Z"
     },
     {
       "parentName": "경북",
@@ -121592,10 +121928,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -122195,7 +122531,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:21.279Z"
+      "timestamp": "2026-07-03T04:34:33.759Z"
     },
     {
       "parentName": "경북",
@@ -122530,10 +122866,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -123133,7 +123469,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:21.210Z"
+      "timestamp": "2026-07-03T04:34:33.504Z"
     },
     {
       "parentName": "경북",
@@ -123251,6 +123587,14 @@
           "national": 2140000,
           "local": 2200000,
           "total": 4340000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 2830000,
+          "total": 5580000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -123460,13 +123804,13 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
-          "local": 5030000,
-          "total": 9920000
+          "local": 0,
+          "total": 4890000
         },
         "기아___더뉴EV6 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -123657,16 +124001,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 3360000,
-          "total": 6630000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 3210000,
-          "total": 6330000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -123683,6 +124027,14 @@
           "national": 4200000,
           "local": 4320000,
           "total": 8520000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 2160000,
+          "total": 4260000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -123771,6 +124123,14 @@
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 4870000,
+          "total": 9600000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -123940,13 +124300,21 @@
           "local": 5530000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 2350000,
+          "total": 4640000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
           "model": "스타리아 리무진 일렉트릭 6인승",
           "national": 2290000,
-          "local": 0,
-          "total": 2290000
+          "local": 2350000,
+          "total": 4640000
         },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
@@ -123993,7 +124361,7 @@
           "manufacturer": "현대자동차",
           "model": "캐스퍼 일렉트릭 크로스 17인치",
           "national": 4870000,
-          "local": 5530000,
+          "local": 5500000,
           "total": 10000
         },
         "현대자동차___캐스퍼 일렉트릭 항속형 15인치": {
@@ -124047,7 +124415,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:21.011Z"
+      "timestamp": "2026-07-03T04:34:33.903Z"
     },
     {
       "parentName": "경북",
@@ -124165,6 +124533,14 @@
           "national": 2140000,
           "local": 2200000,
           "total": 4340000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 2830000,
+          "total": 5580000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -124374,13 +124750,13 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
-          "local": 5030000,
-          "total": 9920000
+          "local": 0,
+          "total": 4890000
         },
         "기아___더뉴EV6 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -124475,16 +124851,16 @@
           "manufacturer": "볼보자동차코리아",
           "model": "볼보 EX30 Single Motor ER",
           "national": 2470000,
-          "local": 0,
-          "total": 2470000
+          "local": 2540000,
+          "total": 5010000
         },
         "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
           "type": "일반승용",
           "manufacturer": "볼보자동차코리아",
           "model": "볼보 EX30CC Twin Motor Perf",
           "national": 2220000,
-          "local": 0,
-          "total": 2220000
+          "local": 2280000,
+          "total": 4500000
         },
         "비와이디코리아___(단종)BYD ATTO 3": {
           "type": "일반승용",
@@ -124571,16 +124947,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 3360000,
-          "total": 6630000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 3210000,
-          "total": 6330000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -124597,6 +124973,14 @@
           "national": 4200000,
           "local": 4320000,
           "total": 8520000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -124685,6 +125069,14 @@
           "national": 2200000,
           "local": 2260000,
           "total": 4460000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 4870000,
+          "total": 9600000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -124854,6 +125246,14 @@
           "local": 5530000,
           "total": 10000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 2350000,
+          "total": 4640000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -124961,7 +125361,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:21.459Z"
+      "timestamp": "2026-07-03T04:34:33.869Z"
     },
     {
       "parentName": "경북",
@@ -125224,10 +125624,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -125747,7 +126147,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:21.114Z"
+      "timestamp": "2026-07-03T04:34:33.578Z"
     },
     {
       "parentName": "경북",
@@ -126082,13 +126482,13 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
-          "local": 5030000,
-          "total": 9920000
+          "local": 0,
+          "total": 4890000
         },
         "기아___더뉴EV6 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -126279,16 +126679,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 3360000,
-          "total": 6630000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 3210000,
-          "total": 6330000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -126305,6 +126705,14 @@
           "national": 4200000,
           "local": 4320000,
           "total": 8520000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -126685,7 +127093,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:25.581Z"
+      "timestamp": "2026-07-03T04:34:38.074Z"
     },
     {
       "parentName": "경북",
@@ -127020,10 +127428,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -127623,7 +128031,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:25.372Z"
+      "timestamp": "2026-07-03T04:34:37.943Z"
     },
     {
       "parentName": "경북",
@@ -127958,13 +128366,13 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
-          "local": 5030000,
-          "total": 9920000
+          "local": 0,
+          "total": 4890000
         },
         "기아___더뉴EV6 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -128075,48 +128483,48 @@
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD ATTO 3",
           "national": 1260000,
-          "local": 1290000,
-          "total": 2550000
+          "local": 0,
+          "total": 1260000
         },
         "비와이디코리아___(단종)BYD DOLPHIN": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN",
           "national": 1090000,
-          "local": 1120000,
-          "total": 2210000
+          "local": 0,
+          "total": 1090000
         },
         "비와이디코리아___(단종)BYD DOLPHIN Active": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN Active",
           "national": 1320000,
-          "local": 1350000,
-          "total": 2670000
+          "local": 0,
+          "total": 1320000
         },
         "비와이디코리아___(단종)BYD SEAL": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL",
           "national": 1690000,
-          "local": 1740000,
-          "total": 3430000
+          "local": 0,
+          "total": 1690000
         },
         "비와이디코리아___(단종)BYD SEAL Dynamic AWD": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL Dynamic AWD",
           "national": 1510000,
-          "local": 1550000,
-          "total": 3060000
+          "local": 0,
+          "total": 1510000
         },
         "비와이디코리아___(단종)BYD SEALION 7": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEALION 7",
           "national": 1520000,
-          "local": 1560000,
-          "total": 3080000
+          "local": 0,
+          "total": 1520000
         },
         "케이지모빌리티___토레스 EVX 18인치": {
           "type": "일반승용",
@@ -128155,16 +128563,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 3360000,
-          "total": 6630000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 3210000,
-          "total": 6330000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -128181,6 +128589,14 @@
           "national": 4200000,
           "local": 4320000,
           "total": 8520000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -128561,7 +128977,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:25.312Z"
+      "timestamp": "2026-07-03T04:34:38.204Z"
     },
     {
       "parentName": "경북",
@@ -128888,10 +129304,10 @@
           "local": 4610000,
           "total": 9090000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5030000,
           "total": 9920000
@@ -129451,7 +129867,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:25.493Z"
+      "timestamp": "2026-07-03T04:34:37.790Z"
     },
     {
       "parentName": "경북",
@@ -129786,10 +130202,10 @@
           "local": 8460000,
           "total": 10000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 9240000,
           "total": 10000
@@ -130389,7 +130805,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:25.632Z"
+      "timestamp": "2026-07-03T04:34:37.868Z"
     },
     {
       "parentName": "경남",
@@ -130724,10 +131140,10 @@
           "local": 1350000,
           "total": 5830000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1470000,
           "total": 6360000
@@ -130947,6 +131363,14 @@
           "national": 4200000,
           "local": 1260000,
           "total": 5460000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -131327,7 +131751,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:25.673Z"
+      "timestamp": "2026-07-03T04:34:38.157Z"
     },
     {
       "parentName": "경남",
@@ -131662,10 +132086,10 @@
           "local": 4260000,
           "total": 8740000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 4650000,
           "total": 9540000
@@ -132265,7 +132689,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:25.754Z"
+      "timestamp": "2026-07-03T04:34:38.240Z"
     },
     {
       "parentName": "경남",
@@ -132600,10 +133024,10 @@
           "local": 1570000,
           "total": 6050000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1720000,
           "total": 6610000
@@ -133203,7 +133627,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:25.212Z"
+      "timestamp": "2026-07-03T04:34:38.037Z"
     },
     {
       "parentName": "경남",
@@ -133538,10 +133962,10 @@
           "local": 1800000,
           "total": 6280000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1960000,
           "total": 6850000
@@ -134141,7 +134565,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:29.295Z"
+      "timestamp": "2026-07-03T04:34:42.420Z"
     },
     {
       "parentName": "경남",
@@ -134476,10 +134900,10 @@
           "local": 1340000,
           "total": 5820000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1470000,
           "total": 6360000
@@ -135079,7 +135503,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:29.773Z"
+      "timestamp": "2026-07-03T04:34:42.036Z"
     },
     {
       "parentName": "경남",
@@ -135406,10 +135830,10 @@
           "local": 1350000,
           "total": 5830000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1470000,
           "total": 6360000
@@ -135969,7 +136393,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:29.625Z"
+      "timestamp": "2026-07-03T04:34:42.178Z"
     },
     {
       "parentName": "경남",
@@ -136304,10 +136728,10 @@
           "local": 3150000,
           "total": 7630000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 3430000,
           "total": 8320000
@@ -136907,7 +137331,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:29.734Z"
+      "timestamp": "2026-07-03T04:34:42.224Z"
     },
     {
       "parentName": "경남",
@@ -137025,6 +137449,14 @@
           "national": 2140000,
           "local": 650000,
           "total": 2790000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 830000,
+          "total": 3580000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -137234,10 +137666,10 @@
           "local": 1350000,
           "total": 5830000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1470000,
           "total": 6360000
@@ -137458,6 +137890,14 @@
           "local": 1260000,
           "total": 5460000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -137545,6 +137985,14 @@
           "national": 2200000,
           "local": 660000,
           "total": 2860000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 1420000,
+          "total": 6150000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -137714,6 +138162,14 @@
           "local": 1620000,
           "total": 6990000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 690000,
+          "total": 2980000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -137821,7 +138277,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:29.455Z"
+      "timestamp": "2026-07-03T04:34:42.312Z"
     },
     {
       "parentName": "경남",
@@ -137939,6 +138395,14 @@
           "national": 2140000,
           "local": 650000,
           "total": 2790000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 0,
+          "total": 2750000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -138148,13 +138612,13 @@
           "local": 1350000,
           "total": 5830000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
-          "local": 1470000,
-          "total": 6360000
+          "local": 0,
+          "total": 4890000
         },
         "기아___더뉴EV6 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -138265,48 +138729,48 @@
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD ATTO 3",
           "national": 1260000,
-          "local": 380000,
-          "total": 1640000
+          "local": 0,
+          "total": 1260000
         },
         "비와이디코리아___(단종)BYD DOLPHIN": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN",
           "national": 1090000,
-          "local": 330000,
-          "total": 1420000
+          "local": 0,
+          "total": 1090000
         },
         "비와이디코리아___(단종)BYD DOLPHIN Active": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN Active",
           "national": 1320000,
-          "local": 400000,
-          "total": 1720000
+          "local": 0,
+          "total": 1320000
         },
         "비와이디코리아___(단종)BYD SEAL": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL",
           "national": 1690000,
-          "local": 510000,
-          "total": 2200000
+          "local": 0,
+          "total": 1690000
         },
         "비와이디코리아___(단종)BYD SEAL Dynamic AWD": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL Dynamic AWD",
           "national": 1510000,
-          "local": 460000,
-          "total": 1970000
+          "local": 0,
+          "total": 1510000
         },
         "비와이디코리아___(단종)BYD SEALION 7": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEALION 7",
           "national": 1520000,
-          "local": 460000,
-          "total": 1980000
+          "local": 0,
+          "total": 1520000
         },
         "케이지모빌리티___토레스 EVX 18인치": {
           "type": "일반승용",
@@ -138345,16 +138809,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 990000,
-          "total": 4260000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 940000,
-          "total": 4060000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -138371,6 +138835,14 @@
           "national": 4200000,
           "local": 1260000,
           "total": 5460000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -138457,8 +138929,16 @@
           "manufacturer": "폭스바겐그룹코리아",
           "model": "(단종)Q6 e-tron performance",
           "national": 2200000,
-          "local": 660000,
-          "total": 2860000
+          "local": 0,
+          "total": 2200000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 1420000,
+          "total": 6150000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -138628,6 +139108,14 @@
           "local": 1620000,
           "total": 6990000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 0,
+          "total": 2290000
+        },
         "현대자동차___스타리아 리무진 일렉트릭 6인승": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -138735,7 +139223,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:29.820Z"
+      "timestamp": "2026-07-03T04:34:42.140Z"
     },
     {
       "parentName": "경남",
@@ -139070,10 +139558,10 @@
           "local": 1350000,
           "total": 5830000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1470000,
           "total": 6360000
@@ -139673,7 +140161,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:29.561Z"
+      "timestamp": "2026-07-03T04:34:42.365Z"
     },
     {
       "parentName": "경남",
@@ -140008,10 +140496,10 @@
           "local": 1570000,
           "total": 6050000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1720000,
           "total": 6610000
@@ -140611,7 +141099,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:29.406Z"
+      "timestamp": "2026-07-03T04:34:42.512Z"
     },
     {
       "parentName": "경남",
@@ -140946,10 +141434,10 @@
           "local": 1350000,
           "total": 5830000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1470000,
           "total": 6360000
@@ -141549,7 +142037,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:33.812Z"
+      "timestamp": "2026-07-03T04:34:46.812Z"
     },
     {
       "parentName": "경남",
@@ -141884,10 +142372,10 @@
           "local": 1350000,
           "total": 5830000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1470000,
           "total": 6360000
@@ -142487,7 +142975,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:33.347Z"
+      "timestamp": "2026-07-03T04:34:46.720Z"
     },
     {
       "parentName": "경남",
@@ -142822,10 +143310,10 @@
           "local": 1350000,
           "total": 5830000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1470000,
           "total": 6360000
@@ -142939,48 +143427,48 @@
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD ATTO 3",
           "national": 1260000,
-          "local": 380000,
-          "total": 1640000
+          "local": 0,
+          "total": 1260000
         },
         "비와이디코리아___(단종)BYD DOLPHIN": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN",
           "national": 1090000,
-          "local": 330000,
-          "total": 1420000
+          "local": 0,
+          "total": 1090000
         },
         "비와이디코리아___(단종)BYD DOLPHIN Active": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN Active",
           "national": 1320000,
-          "local": 400000,
-          "total": 1720000
+          "local": 0,
+          "total": 1320000
         },
         "비와이디코리아___(단종)BYD SEAL": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL",
           "national": 1690000,
-          "local": 510000,
-          "total": 2200000
+          "local": 0,
+          "total": 1690000
         },
         "비와이디코리아___(단종)BYD SEAL Dynamic AWD": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL Dynamic AWD",
           "national": 1510000,
-          "local": 460000,
-          "total": 1970000
+          "local": 0,
+          "total": 1510000
         },
         "비와이디코리아___(단종)BYD SEALION 7": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEALION 7",
           "national": 1520000,
-          "local": 460000,
-          "total": 1980000
+          "local": 0,
+          "total": 1520000
         },
         "케이지모빌리티___토레스 EVX 18인치": {
           "type": "일반승용",
@@ -143019,16 +143507,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 990000,
-          "total": 4260000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 940000,
-          "total": 4060000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -143045,6 +143533,14 @@
           "national": 4200000,
           "local": 1260000,
           "total": 5460000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -143425,7 +143921,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:33.603Z"
+      "timestamp": "2026-07-03T04:34:46.332Z"
     },
     {
       "parentName": "경남",
@@ -143752,10 +144248,10 @@
           "local": 1350000,
           "total": 5830000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1470000,
           "total": 6360000
@@ -144339,7 +144835,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:33.849Z"
+      "timestamp": "2026-07-03T04:34:46.638Z"
     },
     {
       "parentName": "경남",
@@ -144674,10 +145170,10 @@
           "local": 1700000,
           "total": 6180000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 1860000,
           "total": 6750000
@@ -145277,7 +145773,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:33.933Z"
+      "timestamp": "2026-07-03T04:34:46.681Z"
     },
     {
       "parentName": "경남",
@@ -145612,13 +146108,13 @@
           "local": 2770000,
           "total": 7250000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
-          "local": 3020000,
-          "total": 7910000
+          "local": 0,
+          "total": 4890000
         },
         "기아___더뉴EV6 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -145729,48 +146225,48 @@
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD ATTO 3",
           "national": 1260000,
-          "local": 790000,
-          "total": 2050000
+          "local": 0,
+          "total": 1260000
         },
         "비와이디코리아___(단종)BYD DOLPHIN": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN",
           "national": 1090000,
-          "local": 680000,
-          "total": 1770000
+          "local": 0,
+          "total": 1090000
         },
         "비와이디코리아___(단종)BYD DOLPHIN Active": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD DOLPHIN Active",
           "national": 1320000,
-          "local": 820000,
-          "total": 2140000
+          "local": 0,
+          "total": 1320000
         },
         "비와이디코리아___(단종)BYD SEAL": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL",
           "national": 1690000,
-          "local": 1050000,
-          "total": 2740000
+          "local": 0,
+          "total": 1690000
         },
         "비와이디코리아___(단종)BYD SEAL Dynamic AWD": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEAL Dynamic AWD",
           "national": 1510000,
-          "local": 940000,
-          "total": 2450000
+          "local": 0,
+          "total": 1510000
         },
         "비와이디코리아___(단종)BYD SEALION 7": {
           "type": "일반승용",
           "manufacturer": "비와이디코리아",
           "model": "(단종)BYD SEALION 7",
           "national": 1520000,
-          "local": 940000,
-          "total": 2460000
+          "local": 0,
+          "total": 1520000
         },
         "케이지모빌리티___토레스 EVX 18인치": {
           "type": "일반승용",
@@ -145809,16 +146305,16 @@
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 18인치",
           "national": 3270000,
-          "local": 2030000,
-          "total": 5300000
+          "local": 0,
+          "total": 3270000
         },
         "케이지모빌리티___(단종)토레스 EVX 2WD 20인치": {
           "type": "일반승용",
           "manufacturer": "케이지모빌리티",
           "model": "(단종)토레스 EVX 2WD 20인치",
           "national": 3120000,
-          "local": 1930000,
-          "total": 5050000
+          "local": 0,
+          "total": 3120000
         },
         "테슬라코리아___Model 3 Performance": {
           "type": "일반승용",
@@ -145835,6 +146331,14 @@
           "national": 4200000,
           "local": 2600000,
           "total": 6800000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -146215,7 +146719,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:33.712Z"
+      "timestamp": "2026-07-03T04:34:46.488Z"
     },
     {
       "parentName": "경남",
@@ -146550,10 +147054,10 @@
           "local": 5470000,
           "total": 9950000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 5970000,
           "total": 10000
@@ -147153,7 +147657,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:33.475Z"
+      "timestamp": "2026-07-03T04:34:46.429Z"
     },
     {
       "parentName": "제주",
@@ -147488,10 +147992,10 @@
           "local": 3090000,
           "total": 7570000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 3370000,
           "total": 8260000
@@ -148091,7 +148595,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:33.641Z"
+      "timestamp": "2026-07-03T04:34:46.529Z"
     },
     {
       "parentName": "공단",
@@ -148426,10 +148930,10 @@
           "local": 0,
           "total": 4480000
         },
-        "기아___The all-new Kia Niro EV": {
+        "기아___(단종)The all-new Kia Niro EV": {
           "type": "일반승용",
           "manufacturer": "기아",
-          "model": "The all-new Kia Niro EV",
+          "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
           "local": 0,
           "total": 4890000
@@ -148649,6 +149153,14 @@
           "national": 4200000,
           "local": 0,
           "total": 4200000
+        },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -149029,7 +149541,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-02T04:52:36.821Z"
+      "timestamp": "2026-07-03T04:34:49.966Z"
     }
   ]
 }

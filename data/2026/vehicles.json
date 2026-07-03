@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-07-02T04:52:36.973Z",
-  "total_vehicles": 116,
+  "timestamp": "2026-07-03T04:34:50.167Z",
+  "total_vehicles": 117,
   "vehicles": {
     "BMW___MINI Aceman E": {
       "type": "일반승용",
@@ -249,10 +249,10 @@
       "model": "Pv5 WAV(비용 지원)",
       "national": 4480000
     },
-    "기아___The all-new Kia Niro EV": {
+    "기아___(단종)The all-new Kia Niro EV": {
       "type": "일반승용",
       "manufacturer": "기아",
-      "model": "The all-new Kia Niro EV",
+      "model": "(단종)The all-new Kia Niro EV",
       "national": 4890000
     },
     "기아___더뉴EV6 롱레인지 2WD 19인치": {
@@ -416,6 +416,12 @@
       "manufacturer": "테슬라코리아",
       "model": "Model 3 Premium Long Range RWD",
       "national": 4200000
+    },
+    "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 Premium Long Range RWD(5999만원)",
+      "national": 2100000
     },
     "테슬라코리아___Model 3 RWD": {
       "type": "일반승용",
