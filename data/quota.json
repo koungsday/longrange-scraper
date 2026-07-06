@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-06T23:21:17.500Z",
+  "timestamp": "2026-07-06T23:31:25.324Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -465,16 +465,16 @@
           "registered_corporate": 56,
           "registered_taxi": 61,
           "registered_general": 1912,
-          "delivered_total": 2384,
+          "delivered_total": 2385,
           "delivered_priority": 704,
           "delivered_corporate": 50,
           "delivered_taxi": 49,
-          "delivered_general": 1581,
-          "remaining_total": 416,
+          "delivered_general": 1582,
+          "remaining_total": 415,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 31,
-          "remaining_general": 719,
+          "remaining_general": 718,
           "note": "전기승용 잔여물량 :  약 20~30대 (7. 6. 16:00 / 대상자선정 기준)\n전기화물 마감 (6. 11. 16:00)\n< 고양시 전기자동차 보급사업(2차) 공고 >\n★ \"추경1차\"의 공고문을 확인하고 신청하시기 바라며, 공고 미숙지로 인한 불이익은 고양시가 책임지지 않습니다.\n★ 단순 문의 및 처리 독촉 전화는 자제하여 주시기 바랍니다. 전화문의 응대로 업무처리가 지연됩니다.\n★2차 접수 신청번호 : 승용 1906번~ / 화물 231번~\n▷ 2차 접수기간 : 5. 27.(수) 11:00 ~ 12. 4.(금) 18:00 (※ 예산 소진 시 조기마감)\n▷ 2차 보급대수 : 승용 1,050대 / 화물 250대 / 승합 10대\n(※ 차종·모델별 지원금액 차이, 추가보조금 지원 여부 등으로 인해 실제 보급대수는 변동될 수 있습니다.)"
         },
         {
@@ -798,8 +798,8 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 1931,
-          "registered_total": 1498,
-          "registered_priority": 529,
+          "registered_total": 1497,
+          "registered_priority": 528,
           "registered_corporate": 41,
           "registered_taxi": 18,
           "registered_general": 910,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 34713,
+          "registered_total": 34709,
           "registered_priority": 10,
-          "registered_corporate": 33814,
+          "registered_corporate": 33810,
           "registered_taxi": 330,
           "registered_general": 559,
           "delivered_total": 24473,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-06T23:21:17.405Z"
+      "timestamp": "2026-07-06T23:31:25.251Z"
     }
   ]
 }
