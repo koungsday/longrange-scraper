@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T09:31:24.901Z",
+  "timestamp": "2026-07-07T09:41:18.750Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -387,16 +387,16 @@
           "registered_corporate": 37,
           "registered_taxi": 42,
           "registered_general": 1405,
-          "delivered_total": 1864,
+          "delivered_total": 1865,
           "delivered_priority": 666,
           "delivered_corporate": 29,
           "delivered_taxi": 32,
-          "delivered_general": 1137,
-          "remaining_total": 1180,
+          "delivered_general": 1138,
+          "remaining_total": 1179,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1907,
+          "remaining_general": 1906,
           "note": "★ '26.7.7. 18:00 기준 승용 잔여대수 약 7대 ★\n★하반기 전기화물 신청접수, 대상자 선정 마감★\n★자격부여는 대상자선정이 아닙니다.★\n★★★자격부여 ,대상자선정까지 순차적으로 선정되니 단순 독촉 전화문의 자제바랍니다.(업무 지연)★★★\n★2026년 평택시 하반기 전기자동차 공고★\nㅇ 지원대수\n- (승용) 1,204대, (화물) 72대\n* 차종별 보조금 지급액 상이하여(국비 추가 보조 등) 사업량 별도 공고 없이 변동됨\nㅇ 신청기간 :\n- (승용) 2026. 6. 17.(수) ~ 예산 소진 시까지\n- (화물) 2026. 6. 24.(수) ~ 예산 소진 시까지 (마감)\n* 예산 소진 시 조기 마감\nㅇ 선정기준 : 차량 출고 · 등록 순\nㅇ 보조금 관련 서류는 원본대조필 날인 후 시스템 첨부(우편발송 X)\n** 공고문에 첨부된 양식으로 신청해 주시기 바랍니다. **\n** 자세한 내용은 공고문 참조하시기 바랍니다. **"
         },
         {
@@ -751,16 +751,16 @@
           "registered_corporate": 17,
           "registered_taxi": 18,
           "registered_general": 586,
-          "delivered_total": 783,
+          "delivered_total": 784,
           "delivered_priority": 272,
           "delivered_corporate": 16,
           "delivered_taxi": 17,
-          "delivered_general": 478,
-          "remaining_total": 396,
+          "delivered_general": 479,
+          "remaining_total": 395,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 16,
-          "remaining_general": 602,
+          "remaining_general": 601,
           "note": "※ 7월 7일, 7월 9일 담당자 출장으로 업무 불가합니다. 미리 일정 조율하여 신청해주세요. 감사합니다.\n※`26.7. 6. 20시 기준 전기승용 대상자접수 마감.(출고하지 않는 차량이 있으면 순서대로 대상자 선정해드릴 예저입니다.)\n※`26.7. 6. 20시 기준 전기화물 대상자접수 마감.(출고하지 않는 차량이 있으면 순서대로 대상자 선정해드릴 예정입니다.)\n※`26.6.23. 18시 기준 전기승합 일반 대상자 선정 1대. (잔여 3대.) / 어린이승합 대상자선정건 없음.\n※ 전화폭주로 업무처리가 지연되고 있습니다. 전화자제 및 공고문 참조\n※ 하반기 보급사업 : 첨부파일(본공고2) 참고\n------------------------------------------------------------------------------------------------------\n「2026년 하반기 전기자동차 보급사업」\n1. 사업기간 : 2026. 6. 8. (월) 오전 10시 ~ 2026. 12.11.(금) (예산 소진 시 종료)\n2. 보급대수\n- 승용 : 511대\n- 화물 : 77대\n- 일반승합 : 4대\n- 어린이통학승합 : 2대\n3. 선정기준 : 출고·등록순\n※ 자세한 사항은 붙임의 공고문을 반드시 확인하여 주시기 바랍니다.\n※ 지원신청 및 지급신청(원본대조필 날인)시 1개의 PDF파일로 스캔하여 첨부\n※ 신청 관련 사항은 지점 및 대리점에 문의"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 34934,
+          "registered_total": 34938,
           "registered_priority": 10,
-          "registered_corporate": 34013,
+          "registered_corporate": 34017,
           "registered_taxi": 333,
           "registered_general": 578,
           "delivered_total": 24698,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-07T09:31:24.825Z"
+      "timestamp": "2026-07-07T09:41:18.674Z"
     }
   ]
 }
