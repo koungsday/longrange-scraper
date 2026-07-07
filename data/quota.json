@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T10:41:16.634Z",
+  "timestamp": "2026-07-07T11:01:31.430Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -149,10 +149,10 @@
           "quota_taxi": 0,
           "quota_general": 1726,
           "registered_total": 2496,
-          "registered_priority": 747,
+          "registered_priority": 748,
           "registered_corporate": 58,
           "registered_taxi": 155,
-          "registered_general": 1536,
+          "registered_general": 1535,
           "delivered_total": 1240,
           "delivered_priority": 372,
           "delivered_corporate": 31,
@@ -1713,16 +1713,16 @@
           "registered_corporate": 4,
           "registered_taxi": 0,
           "registered_general": 83,
-          "delivered_total": 69,
+          "delivered_total": 70,
           "delivered_priority": 11,
           "delivered_corporate": 3,
           "delivered_taxi": 0,
-          "delivered_general": 55,
-          "remaining_total": 75,
+          "delivered_general": 56,
+          "remaining_total": 74,
           "remaining_priority": 3,
           "remaining_corporate": 0,
           "remaining_taxi": 10,
-          "remaining_general": 65,
+          "remaining_general": 64,
           "note": "★괴산군 하반기 공고 마감 ★\n- 대상자선정물량 중 취소물량이 나오면 지원대상가능확인요청중 순차적으로 대상자 선정예정\n★ 다음 추가공고(20대 정도 예상)는 최대한 빠르게 진행해서 8월말~9월초쯤 예정합니다\n-출고순으로 보조금이 지급되므로, 자격부여가 되어도 보조금 수령이 불가할수 있음\n-자격부여 후 2달이내 미출고, 대상자 선정 후 10일이내 미출고 시 - 대기자전환"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 34943,
+          "registered_total": 34944,
           "registered_priority": 10,
-          "registered_corporate": 34022,
+          "registered_corporate": 34023,
           "registered_taxi": 333,
           "registered_general": 578,
           "delivered_total": 24699,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-07T10:41:16.567Z"
+      "timestamp": "2026-07-07T11:01:31.351Z"
     }
   ]
 }
