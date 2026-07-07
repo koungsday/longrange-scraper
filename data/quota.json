@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T22:31:24.862Z",
+  "timestamp": "2026-07-07T22:41:14.797Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -148,11 +148,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 1726,
-          "registered_total": 2496,
-          "registered_priority": 749,
+          "registered_total": 2495,
+          "registered_priority": 750,
           "registered_corporate": 58,
           "registered_taxi": 155,
-          "registered_general": 1534,
+          "registered_general": 1532,
           "delivered_total": 1240,
           "delivered_priority": 372,
           "delivered_corporate": 31,
@@ -200,8 +200,8 @@
           "quota_corporate": 0,
           "quota_taxi": 53,
           "quota_general": 849,
-          "registered_total": 849,
-          "registered_priority": 324,
+          "registered_total": 848,
+          "registered_priority": 323,
           "registered_corporate": 7,
           "registered_taxi": 10,
           "registered_general": 508,
@@ -1869,15 +1869,15 @@
           "registered_corporate": 13,
           "registered_taxi": 34,
           "registered_general": 713,
-          "delivered_total": 769,
+          "delivered_total": 770,
           "delivered_priority": 91,
           "delivered_corporate": 13,
-          "delivered_taxi": 32,
+          "delivered_taxi": 33,
           "delivered_general": 633,
-          "remaining_total": 23,
+          "remaining_total": 22,
           "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 7,
+          "remaining_taxi": 6,
           "remaining_general": 41,
           "note": "* 승용 신청마감 / 택시 신청 가능(6대)\n* 신청번호 1025번까지 자격부여 완료 -> 취소나오는대로 순번대로 자격부여\n* 하반기 나머지 물량 8월 말 ~ 9월 초 접수예정(8월 중 공고예정)"
         },
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-07T22:31:24.811Z"
+      "timestamp": "2026-07-07T22:41:14.737Z"
     }
   ]
 }
