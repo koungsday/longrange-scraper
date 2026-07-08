@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-08T11:11:15.463Z",
+  "timestamp": "2026-07-08T11:21:19.288Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2649,16 +2649,16 @@
           "registered_corporate": 12,
           "registered_taxi": 14,
           "registered_general": 405,
-          "delivered_total": 409,
+          "delivered_total": 410,
           "delivered_priority": 107,
           "delivered_corporate": 9,
           "delivered_taxi": 13,
-          "delivered_general": 280,
-          "remaining_total": 91,
+          "delivered_general": 281,
+          "remaining_total": 90,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 220,
+          "remaining_general": 219,
           "note": "※2026년 광양시 2차 공고 전기승용차 6월 26일 현재 접수 마감됐습니다."
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-08T11:11:15.362Z"
+      "timestamp": "2026-07-08T11:21:19.081Z"
     }
   ]
 }
