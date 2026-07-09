@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-09T09:01:37.382Z",
+  "timestamp": "2026-07-09T09:16:26.362Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -101,16 +101,16 @@
           "registered_corporate": 114,
           "registered_taxi": 254,
           "registered_general": 4385,
-          "delivered_total": 6666,
+          "delivered_total": 6668,
           "delivered_priority": 2194,
           "delivered_corporate": 105,
           "delivered_taxi": 248,
-          "delivered_general": 4119,
+          "delivered_general": 4121,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 87,
-          "remaining_general": 1409,
+          "remaining_general": 1407,
           "note": "***전기승용차 하반기 사업 마감입니다. ***\n○ 하반기 사업 마감입니다. 추가 대상자 선정은 없으며, 현재 대상자 선정자 중 미출고 차량이 있을 경우에만 대기자 중에서 추가 선정 진행합니다.\n○ 추가 사업 추진은 추경예산 확보시에만 가능하며, 편성여부는 불투명합니다. 편성이 되면 9월 중에 사업 재개 가능할 것으로 예상됩니다.\n-------------------------------------------------------------------------------------------------------\n*** 전기승용차 하반기 사업 잔여대수 안내(26. 6.23. 09:00기준)***\n○ 대상자선정 기준 잔여대수 :  일반 0대, 택시 107대\n○ 일단 대상자 선정은 6.22. 출고건까지만 승인하고 마감합니다. 택시 전환 물량은 7.1일에 진행합니다.\n- 출고예정일 = 출고일 = 세금계산서 날짜가 일치해야 합니다\n○  일반물량 신규 접수는 6.23.까지만 받고 마감합니다 택시전환물량도 거의 다 찼습니다.\n** 7월 1일 이후부터는 택시잔여 물량도 일반으로 전환됩니다. 이경우 지원가능을 먼저 신청하고 출고가 빠른 순으로 대상자 선정을 진행합니다\n7월 1일에 택시 전환물량 소화를 위해 보조금 접수 신청을 재오픈하며, 사전 공지없이 신청 마감될수 있습니다.\n(기존에 출고예정일 잡혔다가 일반물량 마감때문에 대기상태에 있는 신청자들 우선 검토할 예정입니다.)\n** 전기승용차 및 화물차는 하반기 사업 없습니다(올해 예산 다 소진하였습니다.)\n추경예산을 확보해야 추가사업 가능하며, 추경예산 확보하면 9월에나 사업 진행 가능합니다"
         },
         {
@@ -855,16 +855,16 @@
           "registered_corporate": 27,
           "registered_taxi": 9,
           "registered_general": 719,
-          "delivered_total": 968,
+          "delivered_total": 969,
           "delivered_priority": 284,
           "delivered_corporate": 24,
           "delivered_taxi": 8,
-          "delivered_general": 652,
-          "remaining_total": 232,
+          "delivered_general": 653,
+          "remaining_total": 231,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 548,
+          "remaining_general": 547,
           "note": "<< 광주시 하반기 전기자동차 보급사업 공고문(접수일 미확정)>>\n○접수기간 :  8월말쯤 공고하여 9월에 접수로 예상되지만 미정상태임.\n○차량대수 : 사업량 승용 00대 , 화물 00대 잔여대수는 문의전화주세요.,\n전환보조금은 첨부파일 지방전환비는 국비전환의 30%\n전환지원금은 본공고 파일3  칸 참고.(대략 국비 만원 당 0.26이 전환지원금,\n세부계산법 국비가 192만원일때, 전환지원금은 49만원(전환국비 38 + 전환지방비 11 = 49)\n전환지원금 국비 금액 = 192 * 0.2 = 38\n전환지원금 지방비금액(전환지원금 국비금액의 30%) = 38*0.3 = 11\n★주의사항\n▶지원신청서 접수순으로 서류검토 후 자격부여함\n▶자격부여 후 10일이내 출고확정 시 지원가능확인요청\n▶‘지원가능 여부 확인 요청 순’으로 대상자 확정\n자세한 사항은 공고문 확인"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 35867,
+          "registered_total": 35869,
           "registered_priority": 10,
-          "registered_corporate": 34899,
+          "registered_corporate": 34901,
           "registered_taxi": 340,
           "registered_general": 618,
           "delivered_total": 25228,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-09T09:01:37.305Z"
+      "timestamp": "2026-07-09T09:16:26.294Z"
     }
   ]
 }
