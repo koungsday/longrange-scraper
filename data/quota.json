@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-11T06:51:20.942Z",
+  "timestamp": "2026-07-11T07:01:26.808Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 389,
           "registered_taxi": 958,
           "registered_general": 7294,
-          "delivered_total": 11862,
+          "delivered_total": 11863,
           "delivered_priority": 3496,
           "delivered_corporate": 373,
           "delivered_taxi": 925,
-          "delivered_general": 7068,
-          "remaining_total": 339,
+          "delivered_general": 7069,
+          "remaining_total": 338,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 2693,
+          "remaining_general": 2692,
           "note": "★★2026.6.22. 18시 기준,\n상반기 서울시 전기승용차(전기택시 포함) 접수 마감되었습니다.★★\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 11,361대\nㅇ 잔여대수: 0대\n-----------------------------\n※ 하반기 전기자동차 보급사업은 7월중순 이후에 진행할 예정입니다."
         },
         {
@@ -4183,12 +4183,12 @@
           "registered_corporate": 35344,
           "registered_taxi": 347,
           "registered_general": 638,
-          "delivered_total": 25660,
+          "delivered_total": 25661,
           "delivered_priority": 9,
-          "delivered_corporate": 24963,
+          "delivered_corporate": 24964,
           "delivered_taxi": 263,
           "delivered_general": 425,
-          "remaining_total": 4340,
+          "remaining_total": 4339,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-11T06:51:20.895Z"
+      "timestamp": "2026-07-11T07:01:26.749Z"
     }
   ]
 }
