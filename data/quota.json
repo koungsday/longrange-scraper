@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-13T22:51:15.194Z",
+  "timestamp": "2026-07-13T23:01:38.225Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 389,
           "registered_taxi": 958,
           "registered_general": 7292,
-          "delivered_total": 11903,
+          "delivered_total": 11904,
           "delivered_priority": 3504,
           "delivered_corporate": 377,
           "delivered_taxi": 925,
-          "delivered_general": 7097,
-          "remaining_total": 298,
+          "delivered_general": 7098,
+          "remaining_total": 297,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 2664,
+          "remaining_general": 2663,
           "note": "★★2026.6.22. 18시 기준,\n상반기 서울시 전기승용차(전기택시 포함) 접수 마감되었습니다.★★\nㅇ 보급목표: 11,361대\nㅇ 접수대수: 11,361대\nㅇ 잔여대수: 0대\n-----------------------------\n※ 하반기 전기자동차 보급사업은 7월중순 이후에 진행할 예정입니다."
         },
         {
@@ -309,12 +309,12 @@
           "registered_corporate": 24,
           "registered_taxi": 76,
           "registered_general": 924,
-          "delivered_total": 1280,
-          "delivered_priority": 409,
+          "delivered_total": 1281,
+          "delivered_priority": 410,
           "delivered_corporate": 22,
           "delivered_taxi": 68,
           "delivered_general": 781,
-          "remaining_total": 391,
+          "remaining_total": 390,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 36,
@@ -1682,11 +1682,11 @@
           "quota_corporate": 0,
           "quota_taxi": 24,
           "quota_general": 34,
-          "registered_total": 614,
+          "registered_total": 613,
           "registered_priority": 139,
           "registered_corporate": 14,
           "registered_taxi": 7,
-          "registered_general": 454,
+          "registered_general": 453,
           "delivered_total": 517,
           "delivered_priority": 129,
           "delivered_corporate": 10,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-13T22:51:15.144Z"
+      "timestamp": "2026-07-13T23:01:38.148Z"
     }
   ]
 }
