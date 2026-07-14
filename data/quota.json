@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-14T09:21:21.922Z",
+  "timestamp": "2026-07-14T09:31:27.262Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1141,16 +1141,16 @@
           "registered_corporate": 0,
           "registered_taxi": 13,
           "registered_general": 73,
-          "delivered_total": 131,
+          "delivered_total": 132,
           "delivered_priority": 57,
           "delivered_corporate": 0,
           "delivered_taxi": 11,
-          "delivered_general": 63,
-          "remaining_total": 97,
+          "delivered_general": 64,
+          "remaining_total": 96,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 143,
+          "remaining_general": 142,
           "note": "제1차(본공고) 보급공고 물량: 승용 150대, 화물 30대\n제2차(추경1차) 보급공고 물량: 승욜 80대, 화물 20대\n-전환지원금 관련 국비, 지방비 만원이하 반올림 등 수정사항이 있어 전환지원금은 변경가능성 있음\n-지급청구 시 원본 우편 제출 필요(온실가스 감축실적 활용동의서 원본도 함께 제출)\n-대상자 선정은 출고 등록순(대상자 확정 물량에 따라 신청 마감 예정)"
         },
         {
@@ -1786,11 +1786,11 @@
           "quota_corporate": 0,
           "quota_taxi": 52,
           "quota_general": 899,
-          "registered_total": 1507,
-          "registered_priority": 426,
+          "registered_total": 1503,
+          "registered_priority": 425,
           "registered_corporate": 38,
           "registered_taxi": 110,
-          "registered_general": 933,
+          "registered_general": 930,
           "delivered_total": 1304,
           "delivered_priority": 383,
           "delivered_corporate": 34,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 36764,
+          "registered_total": 36765,
           "registered_priority": 12,
-          "registered_corporate": 35721,
+          "registered_corporate": 35722,
           "registered_taxi": 363,
           "registered_general": 668,
           "delivered_total": 26128,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-14T09:21:21.847Z"
+      "timestamp": "2026-07-14T09:31:27.208Z"
     }
   ]
 }
