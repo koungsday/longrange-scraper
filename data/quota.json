@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-14T10:01:34.357Z",
+  "timestamp": "2026-07-14T10:11:20.853Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -699,16 +699,16 @@
           "registered_corporate": 58,
           "registered_taxi": 79,
           "registered_general": 2339,
-          "delivered_total": 3604,
+          "delivered_total": 3603,
           "delivered_priority": 1218,
           "delivered_corporate": 56,
           "delivered_taxi": 76,
-          "delivered_general": 2254,
-          "remaining_total": 1023,
+          "delivered_general": 2253,
+          "remaining_total": 1024,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 2113,
+          "remaining_general": 2114,
           "note": "★ 승용 추경1 - 대상자선정  마감 (2026. 7. 1. )\n★ 하반기 추가 공고 미정★\n■ 전기자동차 승용 보급사업 변경공고 안내  ■\n- 변경공고 : 2026. 5. 15.(금)\n- 변경공고 접수기간 : 2026. 5. 15.(금) 14:00 ~  예산소진 시   (신청 공고 구분 : 추경1)\n- 물량 : 2,627대 (예산물량) (차종 및 추가지원 여부에 따라 대수는 변동 가능)\n※ 변경 전 800대 → 변경 후 2,627대\n※전체 일반물량으로 진행되며 추가보조금은 대상에 따라 정상 지급됩니다.\n★ 잔여물량 500대 이하부터 게시할 에정이오니 단순 잔여대수 확인 문의는 삼가주시기 바랍니다.\n※ 반드시 공고문 확인하시고 신청하시기 바랍니다.\n※ 하루 50개 내외로 신청서류 검토 및 자격부여되오니 차량 출고일 등 감안하여 신청하시기 바랍니다."
         },
         {
@@ -2389,16 +2389,16 @@
           "registered_corporate": 1,
           "registered_taxi": 4,
           "registered_general": 68,
-          "delivered_total": 45,
+          "delivered_total": 46,
           "delivered_priority": 5,
           "delivered_corporate": 1,
           "delivered_taxi": 2,
-          "delivered_general": 37,
-          "remaining_total": 20,
+          "delivered_general": 38,
+          "remaining_total": 19,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 22,
+          "remaining_general": 21,
           "note": "무주군 2차공고 승용, 화물 마감되었습니다. 승합(스타리아) 2대 남아있습니다.\n- 시스템 오류에 제대로 대응하지 못해서 진심으로 죄송합니다.\n앞으로 전기자동차 업무시스템  과부화가 발생했을 때 대응책 및 기존 접수 방식에 대해 철저히 검토하여 혼란이 없도록 하겠습니다.\n정말 죄송합니다.\n잔여물량 승합 스타리아 기준 2대"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 36768,
+          "registered_total": 36774,
           "registered_priority": 12,
-          "registered_corporate": 35725,
+          "registered_corporate": 35731,
           "registered_taxi": 363,
           "registered_general": 668,
           "delivered_total": 26144,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-14T10:01:34.304Z"
+      "timestamp": "2026-07-14T10:11:20.754Z"
     }
   ]
 }
