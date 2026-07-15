@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-15T10:01:34.100Z",
+  "timestamp": "2026-07-15T10:11:18.677Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -75,16 +75,16 @@
           "registered_corporate": 88,
           "registered_taxi": 392,
           "registered_general": 2638,
-          "delivered_total": 2385,
+          "delivered_total": 2386,
           "delivered_priority": 604,
           "delivered_corporate": 56,
           "delivered_taxi": 279,
-          "delivered_general": 1446,
-          "remaining_total": 1702,
+          "delivered_general": 1447,
+          "remaining_total": 1701,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 2027,
+          "remaining_general": 2026,
           "note": "★ 승용, 화물 마감되었습니다 ★\n★ 전화 응대로 인해 그만큼 업무처리가 지연되고 있습니다 ★\n★ 접수번호 문의 등 단순문의는 해당 대리점(카마스터)에 문의하시길 바랍니다. ★\n*2026년 전기자동차 민간보급사업 안내 (3차)*\n- 보급기간 : 마감\n- 보급물량 : 2,757대(승용차 1,962대, 화물차 795대)\n* 보급수량은 차종별 보조금 차등지원 및 차종별 구매수요에 따라 가감될 수 있습니다.\n★ 빠른 처리를 위해 단순 문의 및 처리 독촉 전화는 자제해주시길 바랍니다. ★"
         },
         {
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 37085,
+          "registered_total": 37086,
           "registered_priority": 12,
-          "registered_corporate": 36022,
+          "registered_corporate": 36023,
           "registered_taxi": 372,
           "registered_general": 679,
           "delivered_total": 26431,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-15T10:01:34.022Z"
+      "timestamp": "2026-07-15T10:11:18.153Z"
     }
   ]
 }
