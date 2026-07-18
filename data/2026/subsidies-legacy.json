@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-07-17T03:55:20.375Z",
+  "timestamp": "2026-07-18T03:48:49.053Z",
   "total_regions": 161,
   "success_count": 161,
   "failed_count": 0,
@@ -949,7 +949,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:49.407Z"
+      "timestamp": "2026-07-18T03:47:15.303Z"
     },
     {
       "parentName": "부산",
@@ -1895,7 +1895,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:48.675Z"
+      "timestamp": "2026-07-18T03:47:15.344Z"
     },
     {
       "parentName": "대구",
@@ -2841,7 +2841,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:49.123Z"
+      "timestamp": "2026-07-18T03:47:15.023Z"
     },
     {
       "parentName": "인천",
@@ -3779,7 +3779,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:49.178Z"
+      "timestamp": "2026-07-18T03:47:15.168Z"
     },
     {
       "parentName": "광주",
@@ -4725,7 +4725,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:49.340Z"
+      "timestamp": "2026-07-18T03:47:15.084Z"
     },
     {
       "parentName": "대전",
@@ -5671,7 +5671,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:48.879Z"
+      "timestamp": "2026-07-18T03:47:14.876Z"
     },
     {
       "parentName": "울산",
@@ -6617,7 +6617,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:49.082Z"
+      "timestamp": "2026-07-18T03:47:15.125Z"
     },
     {
       "parentName": "세종",
@@ -7563,7 +7563,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:49.033Z"
+      "timestamp": "2026-07-18T03:47:14.709Z"
     },
     {
       "parentName": "경기",
@@ -8541,7 +8541,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:53.600Z"
+      "timestamp": "2026-07-18T03:47:19.971Z"
     },
     {
       "parentName": "경기",
@@ -9487,7 +9487,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:53.932Z"
+      "timestamp": "2026-07-18T03:47:20.088Z"
     },
     {
       "parentName": "경기",
@@ -9590,6 +9590,14 @@
           "local": 900000,
           "total": 3020000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 990000,
+          "total": 3340000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -9605,6 +9613,14 @@
           "national": 2140000,
           "local": 900000,
           "total": 3040000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 1010000,
+          "total": 3400000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -10150,6 +10166,22 @@
           "local": 2010000,
           "total": 6740000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 710000,
+          "total": 2390000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 760000,
+          "total": 2570000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -10433,7 +10465,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:53.841Z"
+      "timestamp": "2026-07-18T03:47:19.817Z"
     },
     {
       "parentName": "경기",
@@ -11379,7 +11411,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:53.689Z"
+      "timestamp": "2026-07-18T03:47:20.274Z"
     },
     {
       "parentName": "경기",
@@ -12325,7 +12357,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:54.017Z"
+      "timestamp": "2026-07-18T03:47:20.236Z"
     },
     {
       "parentName": "경기",
@@ -13271,7 +13303,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:54.076Z"
+      "timestamp": "2026-07-18T03:47:20.185Z"
     },
     {
       "parentName": "경기",
@@ -14217,7 +14249,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:54.454Z"
+      "timestamp": "2026-07-18T03:47:20.364Z"
     },
     {
       "parentName": "경기",
@@ -15195,7 +15227,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:54.281Z"
+      "timestamp": "2026-07-18T03:47:20.674Z"
     },
     {
       "parentName": "경기",
@@ -16141,7 +16173,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:59.350Z"
+      "timestamp": "2026-07-18T03:47:25.014Z"
     },
     {
       "parentName": "경기",
@@ -17079,7 +17111,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:59.220Z"
+      "timestamp": "2026-07-18T03:47:25.773Z"
     },
     {
       "parentName": "경기",
@@ -18025,7 +18057,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:58.939Z"
+      "timestamp": "2026-07-18T03:47:25.329Z"
     },
     {
       "parentName": "경기",
@@ -18963,7 +18995,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:58.999Z"
+      "timestamp": "2026-07-18T03:47:25.680Z"
     },
     {
       "parentName": "경기",
@@ -19909,7 +19941,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:58.856Z"
+      "timestamp": "2026-07-18T03:47:25.739Z"
     },
     {
       "parentName": "경기",
@@ -20887,7 +20919,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:59.110Z"
+      "timestamp": "2026-07-18T03:47:25.447Z"
     },
     {
       "parentName": "경기",
@@ -21825,7 +21857,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:59.161Z"
+      "timestamp": "2026-07-18T03:47:25.566Z"
     },
     {
       "parentName": "경기",
@@ -22763,7 +22795,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:53:59.267Z"
+      "timestamp": "2026-07-18T03:47:25.380Z"
     },
     {
       "parentName": "경기",
@@ -23709,7 +23741,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:04.015Z"
+      "timestamp": "2026-07-18T03:47:30.549Z"
     },
     {
       "parentName": "경기",
@@ -24655,7 +24687,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:04.054Z"
+      "timestamp": "2026-07-18T03:47:30.658Z"
     },
     {
       "parentName": "경기",
@@ -25633,7 +25665,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:03.859Z"
+      "timestamp": "2026-07-18T03:47:30.755Z"
     },
     {
       "parentName": "경기",
@@ -26579,7 +26611,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:03.954Z"
+      "timestamp": "2026-07-18T03:47:30.389Z"
     },
     {
       "parentName": "경기",
@@ -27525,7 +27557,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:03.824Z"
+      "timestamp": "2026-07-18T03:47:30.711Z"
     },
     {
       "parentName": "경기",
@@ -28463,7 +28495,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:04.140Z"
+      "timestamp": "2026-07-18T03:47:30.801Z"
     },
     {
       "parentName": "경기",
@@ -29377,7 +29409,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:04.186Z"
+      "timestamp": "2026-07-18T03:47:30.310Z"
     },
     {
       "parentName": "경기",
@@ -30323,7 +30355,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:03.640Z"
+      "timestamp": "2026-07-18T03:47:30.494Z"
     },
     {
       "parentName": "경기",
@@ -31269,7 +31301,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:08.854Z"
+      "timestamp": "2026-07-18T03:47:35.290Z"
     },
     {
       "parentName": "경기",
@@ -32215,7 +32247,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:08.224Z"
+      "timestamp": "2026-07-18T03:47:35.878Z"
     },
     {
       "parentName": "경기",
@@ -33161,7 +33193,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:08.914Z"
+      "timestamp": "2026-07-18T03:47:35.923Z"
     },
     {
       "parentName": "경기",
@@ -34107,7 +34139,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:08.687Z"
+      "timestamp": "2026-07-18T03:47:35.671Z"
     },
     {
       "parentName": "경기",
@@ -35085,7 +35117,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:08.951Z"
+      "timestamp": "2026-07-18T03:47:35.729Z"
     },
     {
       "parentName": "경기",
@@ -36023,7 +36055,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:08.535Z"
+      "timestamp": "2026-07-18T03:47:35.830Z"
     },
     {
       "parentName": "경기",
@@ -36969,7 +37001,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:08.643Z"
+      "timestamp": "2026-07-18T03:47:35.513Z"
     },
     {
       "parentName": "강원",
@@ -37859,7 +37891,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:08.761Z"
+      "timestamp": "2026-07-18T03:47:35.621Z"
     },
     {
       "parentName": "강원",
@@ -38797,7 +38829,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:13.605Z"
+      "timestamp": "2026-07-18T03:47:40.453Z"
     },
     {
       "parentName": "강원",
@@ -39743,7 +39775,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:13.650Z"
+      "timestamp": "2026-07-18T03:47:40.526Z"
     },
     {
       "parentName": "강원",
@@ -40681,7 +40713,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:13.370Z"
+      "timestamp": "2026-07-18T03:47:40.759Z"
     },
     {
       "parentName": "강원",
@@ -41627,7 +41659,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:13.495Z"
+      "timestamp": "2026-07-18T03:47:40.085Z"
     },
     {
       "parentName": "강원",
@@ -42541,7 +42573,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:13.561Z"
+      "timestamp": "2026-07-18T03:47:40.685Z"
     },
     {
       "parentName": "강원",
@@ -43479,7 +43511,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:13.151Z"
+      "timestamp": "2026-07-18T03:47:40.811Z"
     },
     {
       "parentName": "강원",
@@ -44425,7 +44457,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:13.258Z"
+      "timestamp": "2026-07-18T03:47:40.626Z"
     },
     {
       "parentName": "강원",
@@ -45371,7 +45403,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:13.047Z"
+      "timestamp": "2026-07-18T03:47:40.860Z"
     },
     {
       "parentName": "강원",
@@ -46309,7 +46341,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:17.863Z"
+      "timestamp": "2026-07-18T03:47:45.561Z"
     },
     {
       "parentName": "강원",
@@ -47255,7 +47287,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:18.263Z"
+      "timestamp": "2026-07-18T03:47:45.500Z"
     },
     {
       "parentName": "강원",
@@ -48193,7 +48225,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:17.944Z"
+      "timestamp": "2026-07-18T03:47:45.635Z"
     },
     {
       "parentName": "강원",
@@ -49139,7 +49171,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:18.035Z"
+      "timestamp": "2026-07-18T03:47:45.203Z"
     },
     {
       "parentName": "강원",
@@ -50085,7 +50117,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:18.196Z"
+      "timestamp": "2026-07-18T03:47:45.293Z"
     },
     {
       "parentName": "강원",
@@ -51023,7 +51055,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:18.363Z"
+      "timestamp": "2026-07-18T03:47:45.666Z"
     },
     {
       "parentName": "강원",
@@ -51969,7 +52001,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:18.305Z"
+      "timestamp": "2026-07-18T03:47:45.338Z"
     },
     {
       "parentName": "강원",
@@ -52883,7 +52915,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:18.109Z"
+      "timestamp": "2026-07-18T03:47:45.440Z"
     },
     {
       "parentName": "강원",
@@ -53829,7 +53861,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:23.075Z"
+      "timestamp": "2026-07-18T03:47:50.382Z"
     },
     {
       "parentName": "충북",
@@ -54775,7 +54807,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:22.960Z"
+      "timestamp": "2026-07-18T03:47:50.236Z"
     },
     {
       "parentName": "충북",
@@ -55689,7 +55721,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:22.727Z"
+      "timestamp": "2026-07-18T03:47:50.154Z"
     },
     {
       "parentName": "충북",
@@ -56635,7 +56667,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:23.113Z"
+      "timestamp": "2026-07-18T03:47:50.110Z"
     },
     {
       "parentName": "충북",
@@ -57549,7 +57581,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:22.865Z"
+      "timestamp": "2026-07-18T03:47:50.339Z"
     },
     {
       "parentName": "충북",
@@ -58487,7 +58519,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:22.683Z"
+      "timestamp": "2026-07-18T03:47:49.856Z"
     },
     {
       "parentName": "충북",
@@ -59425,7 +59457,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:23.028Z"
+      "timestamp": "2026-07-18T03:47:50.461Z"
     },
     {
       "parentName": "충북",
@@ -60363,7 +60395,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:22.822Z"
+      "timestamp": "2026-07-18T03:47:50.010Z"
     },
     {
       "parentName": "충북",
@@ -61301,7 +61333,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:27.477Z"
+      "timestamp": "2026-07-18T03:47:55.131Z"
     },
     {
       "parentName": "충북",
@@ -62247,7 +62279,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:27.608Z"
+      "timestamp": "2026-07-18T03:47:54.814Z"
     },
     {
       "parentName": "충북",
@@ -63193,7 +63225,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:27.556Z"
+      "timestamp": "2026-07-18T03:47:55.215Z"
     },
     {
       "parentName": "충북",
@@ -64171,7 +64203,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:27.724Z"
+      "timestamp": "2026-07-18T03:47:55.071Z"
     },
     {
       "parentName": "충남",
@@ -65117,7 +65149,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:27.765Z"
+      "timestamp": "2026-07-18T03:47:55.261Z"
     },
     {
       "parentName": "충남",
@@ -66031,7 +66063,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:27.813Z"
+      "timestamp": "2026-07-18T03:47:54.858Z"
     },
     {
       "parentName": "충남",
@@ -66969,7 +67001,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:27.859Z"
+      "timestamp": "2026-07-18T03:47:55.020Z"
     },
     {
       "parentName": "충남",
@@ -67883,7 +67915,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:27.222Z"
+      "timestamp": "2026-07-18T03:47:54.974Z"
     },
     {
       "parentName": "충남",
@@ -68821,7 +68853,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:32.333Z"
+      "timestamp": "2026-07-18T03:47:59.888Z"
     },
     {
       "parentName": "충남",
@@ -69711,7 +69743,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:32.368Z"
+      "timestamp": "2026-07-18T03:47:59.705Z"
     },
     {
       "parentName": "충남",
@@ -70649,7 +70681,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:32.046Z"
+      "timestamp": "2026-07-18T03:47:59.852Z"
     },
     {
       "parentName": "충남",
@@ -71587,7 +71619,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:32.455Z"
+      "timestamp": "2026-07-18T03:48:00.036Z"
     },
     {
       "parentName": "충남",
@@ -72525,7 +72557,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:32.412Z"
+      "timestamp": "2026-07-18T03:47:59.994Z"
     },
     {
       "parentName": "충남",
@@ -73415,7 +73447,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:31.846Z"
+      "timestamp": "2026-07-18T03:47:59.756Z"
     },
     {
       "parentName": "충남",
@@ -74329,7 +74361,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:31.681Z"
+      "timestamp": "2026-07-18T03:47:59.208Z"
     },
     {
       "parentName": "충남",
@@ -75275,7 +75307,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:32.181Z"
+      "timestamp": "2026-07-18T03:47:59.517Z"
     },
     {
       "parentName": "충남",
@@ -76221,7 +76253,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:36.907Z"
+      "timestamp": "2026-07-18T03:48:04.512Z"
     },
     {
       "parentName": "충남",
@@ -77111,7 +77143,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:36.584Z"
+      "timestamp": "2026-07-18T03:48:04.276Z"
     },
     {
       "parentName": "충남",
@@ -78025,7 +78057,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:36.801Z"
+      "timestamp": "2026-07-18T03:48:04.592Z"
     },
     {
       "parentName": "전북",
@@ -78963,7 +78995,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:36.640Z"
+      "timestamp": "2026-07-18T03:48:04.552Z"
     },
     {
       "parentName": "전북",
@@ -79901,7 +79933,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:36.971Z"
+      "timestamp": "2026-07-18T03:48:04.465Z"
     },
     {
       "parentName": "전북",
@@ -80839,7 +80871,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:36.500Z"
+      "timestamp": "2026-07-18T03:48:04.141Z"
     },
     {
       "parentName": "전북",
@@ -81777,7 +81809,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:36.763Z"
+      "timestamp": "2026-07-18T03:48:04.232Z"
     },
     {
       "parentName": "전북",
@@ -82723,7 +82755,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:36.873Z"
+      "timestamp": "2026-07-18T03:48:04.348Z"
     },
     {
       "parentName": "전북",
@@ -83669,7 +83701,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:41.166Z"
+      "timestamp": "2026-07-18T03:48:08.862Z"
     },
     {
       "parentName": "전북",
@@ -84615,7 +84647,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:41.410Z"
+      "timestamp": "2026-07-18T03:48:09.027Z"
     },
     {
       "parentName": "전북",
@@ -85561,7 +85593,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:40.930Z"
+      "timestamp": "2026-07-18T03:48:09.227Z"
     },
     {
       "parentName": "전북",
@@ -86475,7 +86507,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:41.221Z"
+      "timestamp": "2026-07-18T03:48:09.170Z"
     },
     {
       "parentName": "전북",
@@ -87389,7 +87421,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:41.307Z"
+      "timestamp": "2026-07-18T03:48:09.117Z"
     },
     {
       "parentName": "전북",
@@ -88303,7 +88335,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:41.373Z"
+      "timestamp": "2026-07-18T03:48:08.685Z"
     },
     {
       "parentName": "전북",
@@ -89241,7 +89273,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:41.017Z"
+      "timestamp": "2026-07-18T03:48:08.980Z"
     },
     {
       "parentName": "전북",
@@ -90179,7 +90211,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:41.119Z"
+      "timestamp": "2026-07-18T03:48:08.786Z"
     },
     {
       "parentName": "전북",
@@ -91117,7 +91149,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:45.762Z"
+      "timestamp": "2026-07-18T03:48:13.719Z"
     },
     {
       "parentName": "전남",
@@ -92007,7 +92039,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:46.000Z"
+      "timestamp": "2026-07-18T03:48:13.553Z"
     },
     {
       "parentName": "전남",
@@ -92953,7 +92985,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:46.041Z"
+      "timestamp": "2026-07-18T03:48:13.765Z"
     },
     {
       "parentName": "전남",
@@ -93899,7 +93931,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:45.854Z"
+      "timestamp": "2026-07-18T03:48:13.340Z"
     },
     {
       "parentName": "전남",
@@ -94837,7 +94869,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:45.719Z"
+      "timestamp": "2026-07-18T03:48:13.422Z"
     },
     {
       "parentName": "전남",
@@ -95751,7 +95783,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:45.563Z"
+      "timestamp": "2026-07-18T03:48:13.505Z"
     },
     {
       "parentName": "전남",
@@ -96697,7 +96729,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:45.945Z"
+      "timestamp": "2026-07-18T03:48:13.803Z"
     },
     {
       "parentName": "전남",
@@ -97635,7 +97667,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:45.626Z"
+      "timestamp": "2026-07-18T03:48:13.684Z"
     },
     {
       "parentName": "전남",
@@ -98525,7 +98557,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:49.997Z"
+      "timestamp": "2026-07-18T03:48:18.193Z"
     },
     {
       "parentName": "전남",
@@ -99415,7 +99447,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:50.610Z"
+      "timestamp": "2026-07-18T03:48:18.337Z"
     },
     {
       "parentName": "전남",
@@ -100329,7 +100361,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:50.520Z"
+      "timestamp": "2026-07-18T03:48:18.027Z"
     },
     {
       "parentName": "전남",
@@ -101219,7 +101251,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:50.646Z"
+      "timestamp": "2026-07-18T03:48:18.240Z"
     },
     {
       "parentName": "전남",
@@ -102157,7 +102189,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:50.481Z"
+      "timestamp": "2026-07-18T03:48:18.388Z"
     },
     {
       "parentName": "전남",
@@ -103071,7 +103103,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:50.337Z"
+      "timestamp": "2026-07-18T03:48:18.101Z"
     },
     {
       "parentName": "전남",
@@ -103985,7 +104017,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:50.694Z"
+      "timestamp": "2026-07-18T03:48:18.418Z"
     },
     {
       "parentName": "전남",
@@ -104931,7 +104963,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:50.057Z"
+      "timestamp": "2026-07-18T03:48:17.787Z"
     },
     {
       "parentName": "전남",
@@ -105877,7 +105909,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:54.791Z"
+      "timestamp": "2026-07-18T03:48:23.249Z"
     },
     {
       "parentName": "전남",
@@ -106815,7 +106847,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:55.156Z"
+      "timestamp": "2026-07-18T03:48:23.133Z"
     },
     {
       "parentName": "전남",
@@ -107761,7 +107793,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:55.281Z"
+      "timestamp": "2026-07-18T03:48:22.781Z"
     },
     {
       "parentName": "전남",
@@ -108547,7 +108579,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:55.030Z"
+      "timestamp": "2026-07-18T03:48:22.634Z"
     },
     {
       "parentName": "전남",
@@ -109461,7 +109493,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:54.948Z"
+      "timestamp": "2026-07-18T03:48:23.167Z"
     },
     {
       "parentName": "전남",
@@ -110399,7 +110431,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:55.115Z"
+      "timestamp": "2026-07-18T03:48:23.015Z"
     },
     {
       "parentName": "전남",
@@ -111337,7 +111369,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:55.226Z"
+      "timestamp": "2026-07-18T03:48:22.886Z"
     },
     {
       "parentName": "경북",
@@ -112283,7 +112315,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:55.315Z"
+      "timestamp": "2026-07-18T03:48:22.965Z"
     },
     {
       "parentName": "경북",
@@ -113229,7 +113261,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:59.004Z"
+      "timestamp": "2026-07-18T03:48:27.482Z"
     },
     {
       "parentName": "경북",
@@ -114143,7 +114175,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:59.697Z"
+      "timestamp": "2026-07-18T03:48:27.300Z"
     },
     {
       "parentName": "경북",
@@ -115089,7 +115121,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:59.285Z"
+      "timestamp": "2026-07-18T03:48:27.565Z"
     },
     {
       "parentName": "경북",
@@ -116035,7 +116067,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:59.402Z"
+      "timestamp": "2026-07-18T03:48:27.644Z"
     },
     {
       "parentName": "경북",
@@ -116981,7 +117013,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:59.778Z"
+      "timestamp": "2026-07-18T03:48:27.734Z"
     },
     {
       "parentName": "경북",
@@ -117927,7 +117959,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:59.590Z"
+      "timestamp": "2026-07-18T03:48:27.121Z"
     },
     {
       "parentName": "경북",
@@ -118873,7 +118905,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:59.508Z"
+      "timestamp": "2026-07-18T03:48:27.406Z"
     },
     {
       "parentName": "경북",
@@ -119819,7 +119851,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:54:59.660Z"
+      "timestamp": "2026-07-18T03:48:27.767Z"
     },
     {
       "parentName": "경북",
@@ -120757,7 +120789,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:03.790Z"
+      "timestamp": "2026-07-18T03:48:31.957Z"
     },
     {
       "parentName": "경북",
@@ -121647,7 +121679,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:03.973Z"
+      "timestamp": "2026-07-18T03:48:31.855Z"
     },
     {
       "parentName": "경북",
@@ -122593,7 +122625,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:04.160Z"
+      "timestamp": "2026-07-18T03:48:31.776Z"
     },
     {
       "parentName": "경북",
@@ -123539,7 +123571,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:03.878Z"
+      "timestamp": "2026-07-18T03:48:32.048Z"
     },
     {
       "parentName": "경북",
@@ -124485,7 +124517,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:04.053Z"
+      "timestamp": "2026-07-18T03:48:32.210Z"
     },
     {
       "parentName": "경북",
@@ -125431,7 +125463,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:03.598Z"
+      "timestamp": "2026-07-18T03:48:32.247Z"
     },
     {
       "parentName": "경북",
@@ -126377,7 +126409,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:04.088Z"
+      "timestamp": "2026-07-18T03:48:32.106Z"
     },
     {
       "parentName": "경북",
@@ -127323,7 +127355,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:03.548Z"
+      "timestamp": "2026-07-18T03:48:31.614Z"
     },
     {
       "parentName": "경북",
@@ -128269,7 +128301,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:08.473Z"
+      "timestamp": "2026-07-18T03:48:36.495Z"
     },
     {
       "parentName": "경북",
@@ -129207,7 +129239,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:08.119Z"
+      "timestamp": "2026-07-18T03:48:36.582Z"
     },
     {
       "parentName": "경북",
@@ -130153,7 +130185,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:08.416Z"
+      "timestamp": "2026-07-18T03:48:36.241Z"
     },
     {
       "parentName": "경북",
@@ -131043,7 +131075,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:08.036Z"
+      "timestamp": "2026-07-18T03:48:36.285Z"
     },
     {
       "parentName": "경북",
@@ -131981,7 +132013,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:08.329Z"
+      "timestamp": "2026-07-18T03:48:36.708Z"
     },
     {
       "parentName": "경남",
@@ -132927,7 +132959,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:08.507Z"
+      "timestamp": "2026-07-18T03:48:36.534Z"
     },
     {
       "parentName": "경남",
@@ -133905,7 +133937,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:08.279Z"
+      "timestamp": "2026-07-18T03:48:36.676Z"
     },
     {
       "parentName": "경남",
@@ -134851,7 +134883,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:07.945Z"
+      "timestamp": "2026-07-18T03:48:36.380Z"
     },
     {
       "parentName": "경남",
@@ -135789,7 +135821,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:12.715Z"
+      "timestamp": "2026-07-18T03:48:40.995Z"
     },
     {
       "parentName": "경남",
@@ -136735,7 +136767,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:12.768Z"
+      "timestamp": "2026-07-18T03:48:41.064Z"
     },
     {
       "parentName": "경남",
@@ -137625,7 +137657,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:12.571Z"
+      "timestamp": "2026-07-18T03:48:40.888Z"
     },
     {
       "parentName": "경남",
@@ -138571,7 +138603,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:12.421Z"
+      "timestamp": "2026-07-18T03:48:41.142Z"
     },
     {
       "parentName": "경남",
@@ -139517,7 +139549,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:12.805Z"
+      "timestamp": "2026-07-18T03:48:40.840Z"
     },
     {
       "parentName": "경남",
@@ -140463,7 +140495,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:12.505Z"
+      "timestamp": "2026-07-18T03:48:40.685Z"
     },
     {
       "parentName": "경남",
@@ -141401,7 +141433,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:12.614Z"
+      "timestamp": "2026-07-18T03:48:41.111Z"
     },
     {
       "parentName": "경남",
@@ -142347,7 +142379,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:12.369Z"
+      "timestamp": "2026-07-18T03:48:40.801Z"
     },
     {
       "parentName": "경남",
@@ -143285,7 +143317,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:16.885Z"
+      "timestamp": "2026-07-18T03:48:45.165Z"
     },
     {
       "parentName": "경남",
@@ -144231,7 +144263,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:16.623Z"
+      "timestamp": "2026-07-18T03:48:45.255Z"
     },
     {
       "parentName": "경남",
@@ -145177,7 +145209,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:17.028Z"
+      "timestamp": "2026-07-18T03:48:45.401Z"
     },
     {
       "parentName": "경남",
@@ -146123,7 +146155,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:17.093Z"
+      "timestamp": "2026-07-18T03:48:45.339Z"
     },
     {
       "parentName": "경남",
@@ -147069,7 +147101,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:16.674Z"
+      "timestamp": "2026-07-18T03:48:45.100Z"
     },
     {
       "parentName": "경남",
@@ -148015,7 +148047,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:16.832Z"
+      "timestamp": "2026-07-18T03:48:45.434Z"
     },
     {
       "parentName": "경남",
@@ -148961,7 +148993,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:16.980Z"
+      "timestamp": "2026-07-18T03:48:45.614Z"
     },
     {
       "parentName": "제주",
@@ -149899,7 +149931,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:16.795Z"
+      "timestamp": "2026-07-18T03:48:45.520Z"
     },
     {
       "parentName": "공단",
@@ -150845,7 +150877,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-17T03:55:20.238Z"
+      "timestamp": "2026-07-18T03:48:48.960Z"
     }
   ]
 }
