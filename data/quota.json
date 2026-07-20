@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-20T09:01:05.721Z",
+  "timestamp": "2026-07-20T09:10:54.441Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -75,16 +75,16 @@
           "registered_corporate": 88,
           "registered_taxi": 392,
           "registered_general": 2620,
-          "delivered_total": 2711,
-          "delivered_priority": 744,
+          "delivered_total": 2715,
+          "delivered_priority": 745,
           "delivered_corporate": 65,
           "delivered_taxi": 293,
-          "delivered_general": 1609,
-          "remaining_total": 1376,
+          "delivered_general": 1612,
+          "remaining_total": 1372,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1864,
+          "remaining_general": 1861,
           "note": "★ 승용, 화물 마감되었습니다 ★\n★ 전화 응대로 인해 그만큼 업무처리가 지연되고 있습니다 ★\n★ 접수번호 문의 등 단순문의는 해당 대리점(카마스터)에 문의하시길 바랍니다. ★\n*2026년 전기자동차 민간보급사업 안내 (3차)*\n- 보급기간 : 마감\n- 보급물량 : 2,757대(승용차 1,962대, 화물차 795대)\n* 보급수량은 차종별 보조금 차등지원 및 차종별 구매수요에 따라 가감될 수 있습니다.\n★ 빠른 처리를 위해 단순 문의 및 처리 독촉 전화는 자제해주시길 바랍니다. ★"
         },
         {
@@ -387,16 +387,16 @@
           "registered_corporate": 37,
           "registered_taxi": 42,
           "registered_general": 1402,
-          "delivered_total": 2165,
+          "delivered_total": 2166,
           "delivered_priority": 774,
           "delivered_corporate": 33,
           "delivered_taxi": 38,
-          "delivered_general": 1320,
-          "remaining_total": 879,
+          "delivered_general": 1321,
+          "remaining_total": 878,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1724,
+          "remaining_general": 1723,
           "note": "★'26.7.8. 하반기 전기승용 신청접수, 대상자 선정 마감★\n- 승용 및 화물 추가 공고 미정(전체 물량 소진)\n★취소물량 발생 시 지원가능확인요청 순으로 대기번호 부여 및 별도 연락 예정★\n★자격부여는 대상자선정이 아닙니다.★\n★★★자격부여 ,대상자선정까지 순차적으로 선정되니 단순 독촉 전화문의 자제바랍니다.(업무 지연)★★★\n★2026년 평택시 하반기 전기자동차 공고★\nㅇ 지원대수\n- (승용) 1,204대, (화물) 72대\n* 차종별 보조금 지급액 상이하여(국비 추가 보조 등) 사업량 별도 공고 없이 변동됨\nㅇ 신청기간 :\n- (승용) 2026. 6. 17.(수) ~ 예산 소진 시까지 (마감)\n- (화물) 2026. 6. 24.(수) ~ 예산 소진 시까지 (마감)\n* 예산 소진 시 조기 마감\nㅇ 선정기준 : 차량 출고 · 등록 순\nㅇ 보조금 관련 서류는 원본대조필 날인 후 시스템 첨부(우편발송 X)\n** 공고문에 첨부된 양식으로 신청해 주시기 바랍니다. **\n** 자세한 내용은 공고문 참조하시기 바랍니다. **"
         },
         {
@@ -2280,8 +2280,8 @@
           "quota_corporate": 0,
           "quota_taxi": 9,
           "quota_general": 183,
-          "registered_total": 287,
-          "registered_priority": 71,
+          "registered_total": 286,
+          "registered_priority": 70,
           "registered_corporate": 2,
           "registered_taxi": 11,
           "registered_general": 203,
@@ -4178,9 +4178,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 38095,
+          "registered_total": 38146,
           "registered_priority": 12,
-          "registered_corporate": 36988,
+          "registered_corporate": 37039,
           "registered_taxi": 390,
           "registered_general": 705,
           "delivered_total": 26946,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-20T09:01:05.667Z"
+      "timestamp": "2026-07-20T09:10:54.367Z"
     }
   ]
 }
