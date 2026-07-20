@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-07-19T04:18:28.340Z",
+  "timestamp": "2026-07-20T04:31:03.689Z",
   "total_regions": 161,
   "success_count": 161,
   "failed_count": 0,
@@ -949,7 +949,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:52.196Z"
+      "timestamp": "2026-07-20T04:29:26.344Z"
     },
     {
       "parentName": "부산",
@@ -1927,7 +1927,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:52.126Z"
+      "timestamp": "2026-07-20T04:29:26.815Z"
     },
     {
       "parentName": "대구",
@@ -2873,7 +2873,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:51.908Z"
+      "timestamp": "2026-07-20T04:29:26.645Z"
     },
     {
       "parentName": "인천",
@@ -3811,7 +3811,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:52.427Z"
+      "timestamp": "2026-07-20T04:29:26.245Z"
     },
     {
       "parentName": "광주",
@@ -4757,7 +4757,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:51.764Z"
+      "timestamp": "2026-07-20T04:29:26.531Z"
     },
     {
       "parentName": "대전",
@@ -5703,7 +5703,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:52.054Z"
+      "timestamp": "2026-07-20T04:29:26.768Z"
     },
     {
       "parentName": "울산",
@@ -6649,7 +6649,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:52.287Z"
+      "timestamp": "2026-07-20T04:29:26.581Z"
     },
     {
       "parentName": "세종",
@@ -7595,7 +7595,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:52.364Z"
+      "timestamp": "2026-07-20T04:29:26.719Z"
     },
     {
       "parentName": "경기",
@@ -8573,7 +8573,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:57.822Z"
+      "timestamp": "2026-07-20T04:29:31.453Z"
     },
     {
       "parentName": "경기",
@@ -9519,7 +9519,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:57.305Z"
+      "timestamp": "2026-07-20T04:29:31.355Z"
     },
     {
       "parentName": "경기",
@@ -10497,7 +10497,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:57.098Z"
+      "timestamp": "2026-07-20T04:29:31.520Z"
     },
     {
       "parentName": "경기",
@@ -11443,7 +11443,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:57.476Z"
+      "timestamp": "2026-07-20T04:29:32.389Z"
     },
     {
       "parentName": "경기",
@@ -11546,6 +11546,14 @@
           "local": 1180000,
           "total": 3300000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 1310000,
+          "total": 3660000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -11562,13 +11570,21 @@
           "local": 1190000,
           "total": 3330000
         },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 1330000,
+          "total": 3720000
+        },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
           "manufacturer": "BMW",
           "model": "iX3 50 xDrive",
           "national": 2750000,
-          "local": 0,
-          "total": 2750000
+          "local": 1540000,
+          "total": 4290000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -12031,8 +12047,8 @@
           "manufacturer": "테슬라코리아",
           "model": "Model Y L AWD",
           "national": 2150000,
-          "local": 1170000,
-          "total": 3320000
+          "local": 1200000,
+          "total": 3350000
         },
         "테슬라코리아___Model Y Long Range(2025)": {
           "type": "일반승용",
@@ -12105,6 +12121,22 @@
           "national": 4730000,
           "local": 2640000,
           "total": 7370000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 940000,
+          "total": 2620000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 1010000,
+          "total": 2820000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -12389,7 +12421,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:57.194Z"
+      "timestamp": "2026-07-20T04:29:31.847Z"
     },
     {
       "parentName": "경기",
@@ -13335,7 +13367,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:57.360Z"
+      "timestamp": "2026-07-20T04:29:31.743Z"
     },
     {
       "parentName": "경기",
@@ -13438,6 +13470,14 @@
           "local": 630000,
           "total": 2750000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 0,
+          "total": 2350000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -13453,6 +13493,14 @@
           "national": 2140000,
           "local": 640000,
           "total": 2780000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 0,
+          "total": 2390000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -13998,6 +14046,22 @@
           "local": 1410000,
           "total": 6140000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 500000,
+          "total": 2180000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 540000,
+          "total": 2350000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -14281,7 +14345,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:57.729Z"
+      "timestamp": "2026-07-20T04:29:31.788Z"
     },
     {
       "parentName": "경기",
@@ -15259,7 +15323,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:16:57.529Z"
+      "timestamp": "2026-07-20T04:29:32.351Z"
     },
     {
       "parentName": "경기",
@@ -16205,7 +16269,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:02.639Z"
+      "timestamp": "2026-07-20T04:29:37.216Z"
     },
     {
       "parentName": "경기",
@@ -17143,7 +17207,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:02.475Z"
+      "timestamp": "2026-07-20T04:29:37.049Z"
     },
     {
       "parentName": "경기",
@@ -18089,7 +18153,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:02.807Z"
+      "timestamp": "2026-07-20T04:29:37.346Z"
     },
     {
       "parentName": "경기",
@@ -19027,7 +19091,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:02.575Z"
+      "timestamp": "2026-07-20T04:29:37.123Z"
     },
     {
       "parentName": "경기",
@@ -19973,7 +20037,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:02.367Z"
+      "timestamp": "2026-07-20T04:29:37.496Z"
     },
     {
       "parentName": "경기",
@@ -20951,7 +21015,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:02.741Z"
+      "timestamp": "2026-07-20T04:29:37.440Z"
     },
     {
       "parentName": "경기",
@@ -21054,6 +21118,14 @@
           "local": 880000,
           "total": 3000000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 970000,
+          "total": 3320000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -21069,6 +21141,14 @@
           "national": 2140000,
           "local": 890000,
           "total": 3030000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 990000,
+          "total": 3380000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -21510,6 +21590,14 @@
           "local": 1750000,
           "total": 5950000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 870000,
+          "total": 2970000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -21531,8 +21619,8 @@
           "manufacturer": "테슬라코리아",
           "model": "Model Y L AWD",
           "national": 2150000,
-          "local": 870000,
-          "total": 3020000
+          "local": 890000,
+          "total": 3040000
         },
         "테슬라코리아___Model Y Long Range(2025)": {
           "type": "일반승용",
@@ -21605,6 +21693,22 @@
           "national": 4730000,
           "local": 1970000,
           "total": 6700000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 700000,
+          "total": 2380000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 750000,
+          "total": 2560000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -21889,7 +21993,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:02.876Z"
+      "timestamp": "2026-07-20T04:29:37.536Z"
     },
     {
       "parentName": "경기",
@@ -22827,7 +22931,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:02.076Z"
+      "timestamp": "2026-07-20T04:29:37.297Z"
     },
     {
       "parentName": "경기",
@@ -22930,6 +23034,14 @@
           "local": 700000,
           "total": 2820000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 0,
+          "total": 2350000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -22945,6 +23057,14 @@
           "national": 2140000,
           "local": 710000,
           "total": 2850000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 0,
+          "total": 2390000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -23490,6 +23610,22 @@
           "local": 1570000,
           "total": 6300000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 560000,
+          "total": 2240000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 600000,
+          "total": 2410000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -23773,7 +23909,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:07.786Z"
+      "timestamp": "2026-07-20T04:29:42.213Z"
     },
     {
       "parentName": "경기",
@@ -24719,7 +24855,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:07.943Z"
+      "timestamp": "2026-07-20T04:29:42.541Z"
     },
     {
       "parentName": "경기",
@@ -25697,7 +25833,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:07.437Z"
+      "timestamp": "2026-07-20T04:29:42.655Z"
     },
     {
       "parentName": "경기",
@@ -26643,7 +26779,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:07.896Z"
+      "timestamp": "2026-07-20T04:29:42.708Z"
     },
     {
       "parentName": "경기",
@@ -27589,7 +27725,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:07.614Z"
+      "timestamp": "2026-07-20T04:29:42.753Z"
     },
     {
       "parentName": "경기",
@@ -28527,7 +28663,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:07.375Z"
+      "timestamp": "2026-07-20T04:29:42.801Z"
     },
     {
       "parentName": "경기",
@@ -29441,7 +29577,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:07.281Z"
+      "timestamp": "2026-07-20T04:29:42.325Z"
     },
     {
       "parentName": "경기",
@@ -30387,7 +30523,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:07.561Z"
+      "timestamp": "2026-07-20T04:29:42.464Z"
     },
     {
       "parentName": "경기",
@@ -31333,7 +31469,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:12.655Z"
+      "timestamp": "2026-07-20T04:29:47.820Z"
     },
     {
       "parentName": "경기",
@@ -32279,7 +32415,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:12.803Z"
+      "timestamp": "2026-07-20T04:29:47.980Z"
     },
     {
       "parentName": "경기",
@@ -32382,6 +32518,14 @@
           "local": 1060000,
           "total": 3180000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 1170000,
+          "total": 3520000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -32397,6 +32541,14 @@
           "national": 2140000,
           "local": 1070000,
           "total": 3210000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 1190000,
+          "total": 3580000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -32942,6 +33094,22 @@
           "local": 2360000,
           "total": 7090000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 840000,
+          "total": 2520000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 900000,
+          "total": 2710000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -33225,7 +33393,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:12.977Z"
+      "timestamp": "2026-07-20T04:29:47.552Z"
     },
     {
       "parentName": "경기",
@@ -34171,7 +34339,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:13.066Z"
+      "timestamp": "2026-07-20T04:29:47.717Z"
     },
     {
       "parentName": "경기",
@@ -35149,7 +35317,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:12.489Z"
+      "timestamp": "2026-07-20T04:29:47.888Z"
     },
     {
       "parentName": "경기",
@@ -36087,7 +36255,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:12.867Z"
+      "timestamp": "2026-07-20T04:29:47.942Z"
     },
     {
       "parentName": "경기",
@@ -37033,7 +37201,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:12.919Z"
+      "timestamp": "2026-07-20T04:29:47.471Z"
     },
     {
       "parentName": "강원",
@@ -37136,6 +37304,14 @@
           "local": 1060000,
           "total": 3180000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 1170000,
+          "total": 3520000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -37151,6 +37327,22 @@
           "national": 2140000,
           "local": 1070000,
           "total": 3210000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 1190000,
+          "total": 3580000
+        },
+        "BMW___iX3 50 xDrive": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX3 50 xDrive",
+          "national": 2750000,
+          "local": 1370000,
+          "total": 4120000
         },
         "기아___EV3 GT": {
           "type": "일반승용",
@@ -37365,8 +37557,8 @@
           "manufacturer": "기아",
           "model": "(단종)The all-new Kia Niro EV",
           "national": 4890000,
-          "local": 2440000,
-          "total": 7330000
+          "local": 0,
+          "total": 4890000
         },
         "기아___더뉴EV6 롱레인지 2WD 19인치": {
           "type": "일반승용",
@@ -37455,6 +37647,22 @@
           "national": 1620000,
           "local": 810000,
           "total": 2430000
+        },
+        "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30 Single Motor ER",
+          "national": 2470000,
+          "local": 1230000,
+          "total": 3700000
+        },
+        "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+          "type": "일반승용",
+          "manufacturer": "볼보자동차코리아",
+          "model": "볼보 EX30CC Twin Motor Perf",
+          "national": 2220000,
+          "local": 1110000,
+          "total": 3330000
         },
         "비와이디코리아___(단종)BYD ATTO 3": {
           "type": "일반승용",
@@ -37568,6 +37776,14 @@
           "local": 2100000,
           "total": 6300000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -37655,6 +37871,30 @@
           "national": 2200000,
           "local": 1100000,
           "total": 3300000
+        },
+        "폭스바겐그룹코리아___iD.5 Pro": {
+          "type": "일반승용",
+          "manufacturer": "폭스바겐그룹코리아",
+          "model": "iD.5 Pro",
+          "national": 4730000,
+          "local": 2360000,
+          "total": 7090000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 840000,
+          "total": 2520000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 900000,
+          "total": 2710000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -37824,6 +38064,22 @@
           "local": 2680000,
           "total": 8050000
         },
+        "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 라운지 일렉트릭 7인승",
+          "national": 2290000,
+          "local": 1140000,
+          "total": 3430000
+        },
+        "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+          "type": "일반승용",
+          "manufacturer": "현대자동차",
+          "model": "스타리아 리무진 일렉트릭 6인승",
+          "national": 2290000,
+          "local": 1140000,
+          "total": 3430000
+        },
         "현대자동차___아이오닉6 N": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -37923,7 +38179,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:12.559Z"
+      "timestamp": "2026-07-20T04:29:47.663Z"
     },
     {
       "parentName": "강원",
@@ -38026,6 +38282,14 @@
           "local": 1060000,
           "total": 3180000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 1170000,
+          "total": 3520000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -38041,6 +38305,14 @@
           "national": 2140000,
           "local": 1070000,
           "total": 3210000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 1190000,
+          "total": 3580000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -38482,6 +38754,14 @@
           "local": 2100000,
           "total": 6300000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 1050000,
+          "total": 3150000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -38577,6 +38857,22 @@
           "national": 4730000,
           "local": 2360000,
           "total": 7090000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 840000,
+          "total": 2520000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 900000,
+          "total": 2710000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -38861,7 +39157,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:17.493Z"
+      "timestamp": "2026-07-20T04:29:52.687Z"
     },
     {
       "parentName": "강원",
@@ -38964,6 +39260,14 @@
           "local": 1060000,
           "total": 3180000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 1170000,
+          "total": 3520000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -38979,6 +39283,14 @@
           "national": 2140000,
           "local": 1070000,
           "total": 3210000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 1190000,
+          "total": 3580000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -39425,8 +39737,8 @@
           "manufacturer": "테슬라코리아",
           "model": "Model 3 Premium Long Range RWD(5999만원)",
           "national": 2100000,
-          "local": 0,
-          "total": 2100000
+          "local": 1050000,
+          "total": 3150000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -39523,6 +39835,22 @@
           "national": 4730000,
           "local": 2360000,
           "total": 7090000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 840000,
+          "total": 2520000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 900000,
+          "total": 2710000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -39807,7 +40135,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:18.011Z"
+      "timestamp": "2026-07-20T04:29:52.775Z"
     },
     {
       "parentName": "강원",
@@ -40745,7 +41073,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:17.194Z"
+      "timestamp": "2026-07-20T04:29:52.406Z"
     },
     {
       "parentName": "강원",
@@ -41691,7 +42019,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:17.702Z"
+      "timestamp": "2026-07-20T04:29:52.868Z"
     },
     {
       "parentName": "강원",
@@ -42605,7 +42933,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:17.972Z"
+      "timestamp": "2026-07-20T04:29:52.210Z"
     },
     {
       "parentName": "강원",
@@ -43543,7 +43871,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:17.769Z"
+      "timestamp": "2026-07-20T04:29:52.834Z"
     },
     {
       "parentName": "강원",
@@ -44489,7 +44817,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:17.881Z"
+      "timestamp": "2026-07-20T04:29:52.528Z"
     },
     {
       "parentName": "강원",
@@ -45435,7 +45763,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:17.624Z"
+      "timestamp": "2026-07-20T04:29:52.567Z"
     },
     {
       "parentName": "강원",
@@ -46373,7 +46701,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:22.645Z"
+      "timestamp": "2026-07-20T04:29:57.716Z"
     },
     {
       "parentName": "강원",
@@ -47319,7 +47647,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:22.370Z"
+      "timestamp": "2026-07-20T04:29:57.556Z"
     },
     {
       "parentName": "강원",
@@ -48257,7 +48585,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:22.511Z"
+      "timestamp": "2026-07-20T04:29:57.368Z"
     },
     {
       "parentName": "강원",
@@ -49203,7 +49531,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:22.845Z"
+      "timestamp": "2026-07-20T04:29:57.750Z"
     },
     {
       "parentName": "강원",
@@ -50149,7 +50477,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:22.411Z"
+      "timestamp": "2026-07-20T04:29:57.621Z"
     },
     {
       "parentName": "강원",
@@ -51087,7 +51415,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:22.806Z"
+      "timestamp": "2026-07-20T04:29:57.461Z"
     },
     {
       "parentName": "강원",
@@ -52033,7 +52361,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:22.895Z"
+      "timestamp": "2026-07-20T04:29:57.420Z"
     },
     {
       "parentName": "강원",
@@ -52947,7 +53275,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:22.596Z"
+      "timestamp": "2026-07-20T04:29:57.802Z"
     },
     {
       "parentName": "강원",
@@ -53893,7 +54221,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:27.817Z"
+      "timestamp": "2026-07-20T04:30:02.811Z"
     },
     {
       "parentName": "충북",
@@ -53996,6 +54324,14 @@
           "local": 2120000,
           "total": 4240000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 2350000,
+          "total": 4700000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -54011,6 +54347,14 @@
           "national": 2140000,
           "local": 2140000,
           "total": 4280000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 2390000,
+          "total": 4780000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -54556,6 +54900,22 @@
           "local": 4730000,
           "total": 9460000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 1680000,
+          "total": 3360000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 1810000,
+          "total": 3620000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -54839,7 +55199,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:27.187Z"
+      "timestamp": "2026-07-20T04:30:02.722Z"
     },
     {
       "parentName": "충북",
@@ -55753,7 +56113,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:27.713Z"
+      "timestamp": "2026-07-20T04:30:02.553Z"
     },
     {
       "parentName": "충북",
@@ -55856,6 +56216,14 @@
           "local": 2120000,
           "total": 4240000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 2350000,
+          "total": 4700000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -55871,6 +56239,14 @@
           "national": 2140000,
           "local": 2140000,
           "total": 4280000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 2390000,
+          "total": 4780000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -56317,8 +56693,8 @@
           "manufacturer": "테슬라코리아",
           "model": "Model 3 Premium Long Range RWD(5999만원)",
           "national": 2100000,
-          "local": 0,
-          "total": 2100000
+          "local": 2100000,
+          "total": 4200000
         },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
@@ -56341,8 +56717,8 @@
           "manufacturer": "테슬라코리아",
           "model": "Model Y L AWD",
           "national": 2150000,
-          "local": 2100000,
-          "total": 4250000
+          "local": 2150000,
+          "total": 4300000
         },
         "테슬라코리아___Model Y Long Range(2025)": {
           "type": "일반승용",
@@ -56415,6 +56791,22 @@
           "national": 4730000,
           "local": 4730000,
           "total": 9460000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 1680000,
+          "total": 3360000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 1810000,
+          "total": 3620000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -56699,7 +57091,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:27.668Z"
+      "timestamp": "2026-07-20T04:30:02.762Z"
     },
     {
       "parentName": "충북",
@@ -57613,7 +58005,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:27.560Z"
+      "timestamp": "2026-07-20T04:30:02.846Z"
     },
     {
       "parentName": "충북",
@@ -58551,7 +58943,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:27.865Z"
+      "timestamp": "2026-07-20T04:30:02.508Z"
     },
     {
       "parentName": "충북",
@@ -58654,6 +59046,14 @@
           "local": 2120000,
           "total": 4240000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 2350000,
+          "total": 4700000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -58669,6 +59069,14 @@
           "national": 2140000,
           "local": 2140000,
           "total": 4280000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 2390000,
+          "total": 4780000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -59110,6 +59518,14 @@
           "local": 4200000,
           "total": 8400000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 2100000,
+          "total": 4200000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -59205,6 +59621,22 @@
           "national": 4730000,
           "local": 4730000,
           "total": 9460000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 1680000,
+          "total": 3360000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 1810000,
+          "total": 3620000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -59489,7 +59921,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:27.294Z"
+      "timestamp": "2026-07-20T04:30:02.594Z"
     },
     {
       "parentName": "충북",
@@ -60427,7 +60859,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:27.455Z"
+      "timestamp": "2026-07-20T04:30:02.391Z"
     },
     {
       "parentName": "충북",
@@ -61365,7 +61797,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:32.444Z"
+      "timestamp": "2026-07-20T04:30:07.471Z"
     },
     {
       "parentName": "충북",
@@ -61468,6 +61900,14 @@
           "local": 2120000,
           "total": 4240000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 2350000,
+          "total": 4700000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -61483,6 +61923,14 @@
           "national": 2140000,
           "local": 2140000,
           "total": 4280000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 2390000,
+          "total": 4780000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -62028,6 +62476,22 @@
           "local": 4730000,
           "total": 9460000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 1680000,
+          "total": 3360000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 1810000,
+          "total": 3620000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -62311,7 +62775,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:32.361Z"
+      "timestamp": "2026-07-20T04:30:07.297Z"
     },
     {
       "parentName": "충북",
@@ -63257,7 +63721,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:32.652Z"
+      "timestamp": "2026-07-20T04:30:07.874Z"
     },
     {
       "parentName": "충북",
@@ -64235,7 +64699,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:32.700Z"
+      "timestamp": "2026-07-20T04:30:07.675Z"
     },
     {
       "parentName": "충남",
@@ -65181,7 +65645,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:32.839Z"
+      "timestamp": "2026-07-20T04:30:07.778Z"
     },
     {
       "parentName": "충남",
@@ -66095,7 +66559,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:32.773Z"
+      "timestamp": "2026-07-20T04:30:07.620Z"
     },
     {
       "parentName": "충남",
@@ -67033,7 +67497,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:32.607Z"
+      "timestamp": "2026-07-20T04:30:07.835Z"
     },
     {
       "parentName": "충남",
@@ -67947,7 +68411,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:32.266Z"
+      "timestamp": "2026-07-20T04:30:07.529Z"
     },
     {
       "parentName": "충남",
@@ -68885,7 +69349,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:37.385Z"
+      "timestamp": "2026-07-20T04:30:12.564Z"
     },
     {
       "parentName": "충남",
@@ -69775,7 +70239,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:37.243Z"
+      "timestamp": "2026-07-20T04:30:12.751Z"
     },
     {
       "parentName": "충남",
@@ -70713,7 +71177,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:37.436Z"
+      "timestamp": "2026-07-20T04:30:12.845Z"
     },
     {
       "parentName": "충남",
@@ -70816,6 +71280,14 @@
           "local": 2190000,
           "total": 4310000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 2430000,
+          "total": 4780000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -70831,6 +71303,14 @@
           "national": 2140000,
           "local": 2220000,
           "total": 4360000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 2470000,
+          "total": 4860000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -71272,6 +71752,14 @@
           "local": 4350000,
           "total": 8550000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -71367,6 +71855,22 @@
           "national": 4730000,
           "local": 4890000,
           "total": 9620000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 1740000,
+          "total": 3420000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 1870000,
+          "total": 3680000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -71651,7 +72155,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:37.669Z"
+      "timestamp": "2026-07-20T04:30:12.276Z"
     },
     {
       "parentName": "충남",
@@ -72589,7 +73093,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:37.558Z"
+      "timestamp": "2026-07-20T04:30:12.662Z"
     },
     {
       "parentName": "충남",
@@ -73479,7 +73983,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:37.774Z"
+      "timestamp": "2026-07-20T04:30:12.895Z"
     },
     {
       "parentName": "충남",
@@ -74393,7 +74897,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:37.614Z"
+      "timestamp": "2026-07-20T04:30:12.933Z"
     },
     {
       "parentName": "충남",
@@ -75339,7 +75843,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:37.155Z"
+      "timestamp": "2026-07-20T04:30:12.488Z"
     },
     {
       "parentName": "충남",
@@ -76285,7 +76789,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:42.179Z"
+      "timestamp": "2026-07-20T04:30:17.494Z"
     },
     {
       "parentName": "충남",
@@ -77175,7 +77679,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:42.361Z"
+      "timestamp": "2026-07-20T04:30:17.717Z"
     },
     {
       "parentName": "충남",
@@ -78089,7 +78593,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:42.238Z"
+      "timestamp": "2026-07-20T04:30:17.056Z"
     },
     {
       "parentName": "전북",
@@ -79027,7 +79531,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:42.639Z"
+      "timestamp": "2026-07-20T04:30:17.650Z"
     },
     {
       "parentName": "전북",
@@ -79965,7 +80469,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:42.418Z"
+      "timestamp": "2026-07-20T04:30:17.554Z"
     },
     {
       "parentName": "전북",
@@ -80903,7 +81407,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:42.555Z"
+      "timestamp": "2026-07-20T04:30:17.268Z"
     },
     {
       "parentName": "전북",
@@ -81841,7 +82345,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:41.890Z"
+      "timestamp": "2026-07-20T04:30:16.974Z"
     },
     {
       "parentName": "전북",
@@ -82787,7 +83291,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:42.491Z"
+      "timestamp": "2026-07-20T04:30:17.382Z"
     },
     {
       "parentName": "전북",
@@ -83733,7 +84237,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:47.068Z"
+      "timestamp": "2026-07-20T04:30:22.407Z"
     },
     {
       "parentName": "전북",
@@ -84679,7 +85183,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:46.824Z"
+      "timestamp": "2026-07-20T04:30:22.498Z"
     },
     {
       "parentName": "전북",
@@ -85625,7 +86129,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:47.275Z"
+      "timestamp": "2026-07-20T04:30:22.369Z"
     },
     {
       "parentName": "전북",
@@ -86539,7 +87043,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:47.321Z"
+      "timestamp": "2026-07-20T04:30:22.534Z"
     },
     {
       "parentName": "전북",
@@ -87453,7 +87957,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:46.970Z"
+      "timestamp": "2026-07-20T04:30:22.141Z"
     },
     {
       "parentName": "전북",
@@ -88367,7 +88871,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:47.209Z"
+      "timestamp": "2026-07-20T04:30:22.310Z"
     },
     {
       "parentName": "전북",
@@ -89305,7 +89809,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:46.875Z"
+      "timestamp": "2026-07-20T04:30:21.992Z"
     },
     {
       "parentName": "전북",
@@ -90243,7 +90747,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:47.116Z"
+      "timestamp": "2026-07-20T04:30:22.201Z"
     },
     {
       "parentName": "전북",
@@ -91181,7 +91685,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:52.169Z"
+      "timestamp": "2026-07-20T04:30:27.035Z"
     },
     {
       "parentName": "전남",
@@ -92071,7 +92575,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:51.861Z"
+      "timestamp": "2026-07-20T04:30:27.271Z"
     },
     {
       "parentName": "전남",
@@ -93017,7 +93521,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:52.104Z"
+      "timestamp": "2026-07-20T04:30:27.320Z"
     },
     {
       "parentName": "전남",
@@ -93120,6 +93624,14 @@
           "local": 1480000,
           "total": 3600000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 1640000,
+          "total": 3990000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -93135,6 +93647,14 @@
           "national": 2140000,
           "local": 1490000,
           "total": 3630000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 1670000,
+          "total": 4060000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -93680,6 +94200,22 @@
           "local": 3310000,
           "total": 8040000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 1170000,
+          "total": 2850000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 1260000,
+          "total": 3070000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -93963,7 +94499,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:51.951Z"
+      "timestamp": "2026-07-20T04:30:27.081Z"
     },
     {
       "parentName": "전남",
@@ -94901,7 +95437,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:51.800Z"
+      "timestamp": "2026-07-20T04:30:27.175Z"
     },
     {
       "parentName": "전남",
@@ -95815,7 +96351,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:51.628Z"
+      "timestamp": "2026-07-20T04:30:26.511Z"
     },
     {
       "parentName": "전남",
@@ -96761,7 +97297,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:52.064Z"
+      "timestamp": "2026-07-20T04:30:27.353Z"
     },
     {
       "parentName": "전남",
@@ -97699,7 +98235,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:51.376Z"
+      "timestamp": "2026-07-20T04:30:26.950Z"
     },
     {
       "parentName": "전남",
@@ -98589,7 +99125,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:56.758Z"
+      "timestamp": "2026-07-20T04:30:32.066Z"
     },
     {
       "parentName": "전남",
@@ -99479,7 +100015,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:56.196Z"
+      "timestamp": "2026-07-20T04:30:31.870Z"
     },
     {
       "parentName": "전남",
@@ -100393,7 +100929,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:56.559Z"
+      "timestamp": "2026-07-20T04:30:32.013Z"
     },
     {
       "parentName": "전남",
@@ -101283,7 +101819,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:56.807Z"
+      "timestamp": "2026-07-20T04:30:31.910Z"
     },
     {
       "parentName": "전남",
@@ -101386,6 +101922,14 @@
           "local": 2540000,
           "total": 4660000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 2820000,
+          "total": 5170000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -101401,6 +101945,14 @@
           "national": 2140000,
           "local": 2560000,
           "total": 4700000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 2860000,
+          "total": 5250000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -101842,6 +102394,14 @@
           "local": 5040000,
           "total": 9240000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 2520000,
+          "total": 4620000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -101937,6 +102497,22 @@
           "national": 4730000,
           "local": 5670000,
           "total": 10000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 2010000,
+          "total": 3690000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 2170000,
+          "total": 3980000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -102221,7 +102797,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:56.699Z"
+      "timestamp": "2026-07-20T04:30:32.289Z"
     },
     {
       "parentName": "전남",
@@ -103135,7 +103711,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:56.498Z"
+      "timestamp": "2026-07-20T04:30:32.177Z"
     },
     {
       "parentName": "전남",
@@ -104049,7 +104625,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:56.881Z"
+      "timestamp": "2026-07-20T04:30:32.212Z"
     },
     {
       "parentName": "전남",
@@ -104995,7 +105571,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:17:56.356Z"
+      "timestamp": "2026-07-20T04:30:31.543Z"
     },
     {
       "parentName": "전남",
@@ -105941,7 +106517,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:01.367Z"
+      "timestamp": "2026-07-20T04:30:36.613Z"
     },
     {
       "parentName": "전남",
@@ -106879,7 +107455,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:00.974Z"
+      "timestamp": "2026-07-20T04:30:36.831Z"
     },
     {
       "parentName": "전남",
@@ -107825,7 +108401,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:01.557Z"
+      "timestamp": "2026-07-20T04:30:36.458Z"
     },
     {
       "parentName": "전남",
@@ -108611,7 +109187,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:01.520Z"
+      "timestamp": "2026-07-20T04:30:36.902Z"
     },
     {
       "parentName": "전남",
@@ -109525,7 +110101,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:01.249Z"
+      "timestamp": "2026-07-20T04:30:36.689Z"
     },
     {
       "parentName": "전남",
@@ -110463,7 +111039,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:01.450Z"
+      "timestamp": "2026-07-20T04:30:36.793Z"
     },
     {
       "parentName": "전남",
@@ -111401,7 +111977,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:01.178Z"
+      "timestamp": "2026-07-20T04:30:36.995Z"
     },
     {
       "parentName": "경북",
@@ -112347,7 +112923,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:01.072Z"
+      "timestamp": "2026-07-20T04:30:37.043Z"
     },
     {
       "parentName": "경북",
@@ -112450,6 +113026,14 @@
           "local": 2180000,
           "total": 4300000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 2420000,
+          "total": 4770000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -112465,6 +113049,14 @@
           "national": 2140000,
           "local": 2200000,
           "total": 4340000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 2460000,
+          "total": 4850000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -113010,6 +113602,22 @@
           "local": 4870000,
           "total": 9600000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 1730000,
+          "total": 3410000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 1860000,
+          "total": 3670000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -113293,7 +113901,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:06.145Z"
+      "timestamp": "2026-07-20T04:30:41.964Z"
     },
     {
       "parentName": "경북",
@@ -114207,7 +114815,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:06.330Z"
+      "timestamp": "2026-07-20T04:30:42.008Z"
     },
     {
       "parentName": "경북",
@@ -115153,7 +115761,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:06.400Z"
+      "timestamp": "2026-07-20T04:30:41.690Z"
     },
     {
       "parentName": "경북",
@@ -116099,7 +116707,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:06.256Z"
+      "timestamp": "2026-07-20T04:30:41.739Z"
     },
     {
       "parentName": "경북",
@@ -117045,7 +117653,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:05.986Z"
+      "timestamp": "2026-07-20T04:30:41.451Z"
     },
     {
       "parentName": "경북",
@@ -117991,7 +118599,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:05.882Z"
+      "timestamp": "2026-07-20T04:30:41.789Z"
     },
     {
       "parentName": "경북",
@@ -118937,7 +119545,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:06.071Z"
+      "timestamp": "2026-07-20T04:30:41.594Z"
     },
     {
       "parentName": "경북",
@@ -119883,7 +120491,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:05.589Z"
+      "timestamp": "2026-07-20T04:30:41.902Z"
     },
     {
       "parentName": "경북",
@@ -120821,7 +121429,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:10.823Z"
+      "timestamp": "2026-07-20T04:30:46.435Z"
     },
     {
       "parentName": "경북",
@@ -121711,7 +122319,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:10.982Z"
+      "timestamp": "2026-07-20T04:30:46.477Z"
     },
     {
       "parentName": "경북",
@@ -122657,7 +123265,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:11.228Z"
+      "timestamp": "2026-07-20T04:30:46.559Z"
     },
     {
       "parentName": "경북",
@@ -123603,7 +124211,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:11.063Z"
+      "timestamp": "2026-07-20T04:30:46.178Z"
     },
     {
       "parentName": "경북",
@@ -123706,6 +124314,14 @@
           "local": 2180000,
           "total": 4300000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 2420000,
+          "total": 4770000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -123721,6 +124337,14 @@
           "national": 2140000,
           "local": 2200000,
           "total": 4340000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 2460000,
+          "total": 4850000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -124266,6 +124890,22 @@
           "local": 4870000,
           "total": 9600000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 1730000,
+          "total": 3410000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 1860000,
+          "total": 3670000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -124549,7 +125189,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:10.754Z"
+      "timestamp": "2026-07-20T04:30:45.967Z"
     },
     {
       "parentName": "경북",
@@ -125495,7 +126135,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:10.936Z"
+      "timestamp": "2026-07-20T04:30:46.269Z"
     },
     {
       "parentName": "경북",
@@ -126441,7 +127081,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:11.121Z"
+      "timestamp": "2026-07-20T04:30:46.135Z"
     },
     {
       "parentName": "경북",
@@ -127387,7 +128027,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:10.653Z"
+      "timestamp": "2026-07-20T04:30:46.395Z"
     },
     {
       "parentName": "경북",
@@ -128333,7 +128973,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:15.268Z"
+      "timestamp": "2026-07-20T04:30:50.880Z"
     },
     {
       "parentName": "경북",
@@ -129271,7 +129911,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:15.783Z"
+      "timestamp": "2026-07-20T04:30:50.923Z"
     },
     {
       "parentName": "경북",
@@ -130217,7 +130857,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:15.732Z"
+      "timestamp": "2026-07-20T04:30:51.050Z"
     },
     {
       "parentName": "경북",
@@ -131107,7 +131747,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:15.093Z"
+      "timestamp": "2026-07-20T04:30:50.638Z"
     },
     {
       "parentName": "경북",
@@ -132045,7 +132685,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:15.370Z"
+      "timestamp": "2026-07-20T04:30:51.007Z"
     },
     {
       "parentName": "경남",
@@ -132991,7 +133631,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:15.655Z"
+      "timestamp": "2026-07-20T04:30:50.785Z"
     },
     {
       "parentName": "경남",
@@ -133969,7 +134609,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:15.617Z"
+      "timestamp": "2026-07-20T04:30:50.743Z"
     },
     {
       "parentName": "경남",
@@ -134915,7 +135555,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:15.467Z"
+      "timestamp": "2026-07-20T04:30:50.526Z"
     },
     {
       "parentName": "경남",
@@ -135853,7 +136493,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:20.303Z"
+      "timestamp": "2026-07-20T04:30:55.327Z"
     },
     {
       "parentName": "경남",
@@ -136799,7 +137439,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:20.258Z"
+      "timestamp": "2026-07-20T04:30:55.144Z"
     },
     {
       "parentName": "경남",
@@ -137689,7 +138329,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:20.361Z"
+      "timestamp": "2026-07-20T04:30:55.191Z"
     },
     {
       "parentName": "경남",
@@ -138635,7 +139275,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:20.197Z"
+      "timestamp": "2026-07-20T04:30:55.536Z"
     },
     {
       "parentName": "경남",
@@ -139581,7 +140221,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:19.916Z"
+      "timestamp": "2026-07-20T04:30:55.280Z"
     },
     {
       "parentName": "경남",
@@ -140527,7 +141167,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:19.788Z"
+      "timestamp": "2026-07-20T04:30:55.503Z"
     },
     {
       "parentName": "경남",
@@ -140630,6 +141270,14 @@
           "local": 640000,
           "total": 2760000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 700000,
+          "total": 3050000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -140645,6 +141293,14 @@
           "national": 2140000,
           "local": 650000,
           "total": 2790000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 720000,
+          "total": 3110000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -141086,6 +141742,14 @@
           "local": 1260000,
           "total": 5460000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 630000,
+          "total": 2730000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -141107,8 +141771,8 @@
           "manufacturer": "테슬라코리아",
           "model": "Model Y L AWD",
           "national": 2150000,
-          "local": 630000,
-          "total": 2780000
+          "local": 650000,
+          "total": 2800000
         },
         "테슬라코리아___Model Y Long Range(2025)": {
           "type": "일반승용",
@@ -141181,6 +141845,22 @@
           "national": 4730000,
           "local": 1420000,
           "total": 6150000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 500000,
+          "total": 2180000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 550000,
+          "total": 2360000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -141465,7 +142145,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:20.078Z"
+      "timestamp": "2026-07-20T04:30:55.448Z"
     },
     {
       "parentName": "경남",
@@ -142411,7 +143091,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:19.682Z"
+      "timestamp": "2026-07-20T04:30:54.995Z"
     },
     {
       "parentName": "경남",
@@ -142514,6 +143194,14 @@
           "local": 640000,
           "total": 2760000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 710000,
+          "total": 3060000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -142529,6 +143217,14 @@
           "national": 2140000,
           "local": 650000,
           "total": 2790000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 720000,
+          "total": 3110000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -142970,6 +143666,14 @@
           "local": 1260000,
           "total": 5460000
         },
+        "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+          "type": "일반승용",
+          "manufacturer": "테슬라코리아",
+          "model": "Model 3 Premium Long Range RWD(5999만원)",
+          "national": 2100000,
+          "local": 0,
+          "total": 2100000
+        },
         "테슬라코리아___Model 3 RWD": {
           "type": "일반승용",
           "manufacturer": "테슬라코리아",
@@ -143065,6 +143769,22 @@
           "national": 4730000,
           "local": 1420000,
           "total": 6150000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 510000,
+          "total": 2190000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 550000,
+          "total": 2360000
         },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
@@ -143349,7 +144069,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:24.543Z"
+      "timestamp": "2026-07-20T04:31:00.047Z"
     },
     {
       "parentName": "경남",
@@ -143452,6 +144172,14 @@
           "local": 640000,
           "total": 2760000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 710000,
+          "total": 3060000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -143467,6 +144195,14 @@
           "national": 2140000,
           "local": 650000,
           "total": 2790000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 720000,
+          "total": 3110000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -144012,6 +144748,22 @@
           "local": 1420000,
           "total": 6150000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 510000,
+          "total": 2190000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 550000,
+          "total": 2360000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -144295,7 +145047,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:24.354Z"
+      "timestamp": "2026-07-20T04:30:59.831Z"
     },
     {
       "parentName": "경남",
@@ -145241,7 +145993,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:24.679Z"
+      "timestamp": "2026-07-20T04:30:59.711Z"
     },
     {
       "parentName": "경남",
@@ -146187,7 +146939,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:24.838Z"
+      "timestamp": "2026-07-20T04:30:59.666Z"
     },
     {
       "parentName": "경남",
@@ -146290,6 +147042,14 @@
           "local": 800000,
           "total": 2920000
         },
+        "BMW___iX1 eDrive20(11HM)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX1 eDrive20(11HM)",
+          "national": 2350000,
+          "local": 840000,
+          "total": 3190000
+        },
         "BMW___iX1 xDrive30": {
           "type": "일반승용",
           "manufacturer": "BMW",
@@ -146305,6 +147065,14 @@
           "national": 2140000,
           "local": 810000,
           "total": 2950000
+        },
+        "BMW___iX2 eDrive20(71GN)": {
+          "type": "일반승용",
+          "manufacturer": "BMW",
+          "model": "iX2 eDrive20(71GN)",
+          "national": 2390000,
+          "local": 840000,
+          "total": 3230000
         },
         "BMW___iX3 50 xDrive": {
           "type": "일반승용",
@@ -146850,6 +147618,22 @@
           "local": 1790000,
           "total": 6520000
         },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Dual Motor",
+          "national": 1680000,
+          "local": 710000,
+          "total": 2390000
+        },
+        "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+          "type": "일반승용",
+          "manufacturer": "폴스타오토모티브코리아",
+          "model": "Polestar 4 Coupe Rear Motor",
+          "national": 1810000,
+          "local": 690000,
+          "total": 2500000
+        },
         "현대자동차___ELECTRIFIED G80": {
           "type": "일반승용",
           "manufacturer": "현대자동차",
@@ -147133,7 +147917,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:24.896Z"
+      "timestamp": "2026-07-20T04:31:00.002Z"
     },
     {
       "parentName": "경남",
@@ -148079,7 +148863,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:24.791Z"
+      "timestamp": "2026-07-20T04:30:59.877Z"
     },
     {
       "parentName": "경남",
@@ -149025,7 +149809,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:24.453Z"
+      "timestamp": "2026-07-20T04:30:59.919Z"
     },
     {
       "parentName": "제주",
@@ -149963,7 +150747,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:24.625Z"
+      "timestamp": "2026-07-20T04:31:00.124Z"
     },
     {
       "parentName": "공단",
@@ -150909,7 +151693,7 @@
       },
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-07-19T04:18:28.150Z"
+      "timestamp": "2026-07-20T04:31:03.517Z"
     }
   ]
 }
