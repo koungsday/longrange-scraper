@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-07-20T04:31:03.689Z",
-  "total_vehicles": 117,
+  "timestamp": "2026-07-21T04:09:54.573Z",
+  "total_vehicles": 121,
   "vehicles": {
     "BMW___MINI Aceman E": {
       "type": "일반승용",
@@ -75,6 +75,12 @@
       "model": "iX1 eDrive20",
       "national": 2120000
     },
+    "BMW___iX1 eDrive20(11HM)": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX1 eDrive20(11HM)",
+      "national": 2350000
+    },
     "BMW___iX1 xDrive30": {
       "type": "일반승용",
       "manufacturer": "BMW",
@@ -86,6 +92,12 @@
       "manufacturer": "BMW",
       "model": "iX2 eDrive20",
       "national": 2140000
+    },
+    "BMW___iX2 eDrive20(71GN)": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX2 eDrive20(71GN)",
+      "national": 2390000
     },
     "BMW___iX3 50 xDrive": {
       "type": "일반승용",
@@ -494,6 +506,18 @@
       "manufacturer": "폭스바겐그룹코리아",
       "model": "iD.5 Pro",
       "national": 4730000
+    },
+    "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+      "type": "일반승용",
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "Polestar 4 Coupe Dual Motor",
+      "national": 1680000
+    },
+    "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+      "type": "일반승용",
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "Polestar 4 Coupe Rear Motor",
+      "national": 1810000
     },
     "현대자동차___ELECTRIFIED G80": {
       "type": "일반승용",
