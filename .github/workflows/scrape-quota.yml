@@ -117,7 +117,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-          git add data/quota.json data/quota-history*.json data/note-history/ || true
+          git add data/quota.json data/quota-history*.json data/note-history/ data/webhook-status.json || true
 
           if ! git diff --quiet --staged; then
             echo "Data changes detected. Committing and pushing..."
@@ -186,47 +186,57 @@ jobs:
         env:
           REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
         run: |
+          # 웹훅 헬스 기록 — 위생 다이제스트가 읽어 알림(변경 있었는데 ok=false면 웹훅 고장 신호).
+          # data/ 안이라 다음 주기 커밋·Pages 배포에 실림(1주기 지연 OK, 일일 점검용).
+          STATUS_FILE=data/webhook-status.json
+          write_status() { # $1=changed $2=ok(true/false) $3=http $4=reason
+            NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+            printf '{\n  "ts": "%s",\n  "changed": %s,\n  "ok": %s,\n  "http": "%s",\n  "reason": "%s"\n}\n' "$NOW" "$1" "$2" "$3" "$4" > "$STATUS_FILE"
+          }
+
           if [ -z "$REVALIDATE_SECRET" ]; then
-            echo "⚠️ REVALIDATE_SECRET 미설정 → 재검증 스킵 (fallback revalidate가 신선도 유지)"; exit 0
+            echo "⚠️ REVALIDATE_SECRET 미설정 → 재검증 스킵 (fallback revalidate가 신선도 유지)"
+            write_status 0 true 0 secret-missing; exit 0
           fi
           if [ ! -f changed-codes.json ]; then
-            echo "changed-codes.json 없음 → 스킵"; exit 0
+            echo "changed-codes.json 없음 → 스킵"; write_status 0 true 0 no-file; exit 0
           fi
           COUNT=$(node -pe "require('./changed-codes.json').count || 0" 2>/dev/null || echo 0)
           if [ "$COUNT" -eq 0 ]; then
-            echo "변경 지역 0개 → 재검증 불필요 (비용 0)"; exit 0
+            echo "변경 지역 0개 → 재검증 불필요 (비용 0)"; write_status 0 true 0 no-change; exit 0
           fi
           EXPECT_TS=$(node -pe "require('./data/quota.json').timestamp || ''" 2>/dev/null || echo "")
+          CODES=$(node -pe "JSON.stringify(require('./changed-codes.json').codes || [])" 2>/dev/null || echo "[]")
           echo "변경 지역 ${COUNT}개 · 새 timestamp=${EXPECT_TS}"
 
-          # (1) GitHub Pages가 새 quota.json 서빙할 때까지 폴링 (최대 ~90s).
-          #     vw-k 재검증은 이 URL을 재fetch → 전파 전 발사하면 낡은 데이터로 재생성돼 신선도 저하.
+          # 재시도 루프: (1)Pages 전파 확인 → (2)재검증 POST. 응답 body의 ok:true 일 때만 성공.
+          #   HTTP 200이어도 ok:false(전파 미완/defer)면 재시도 — 놓침을 거의 0으로. 최대 5회(사이 15s).
+          #   전파 전 발사하면 낡은 데이터로 재생성되므로 반드시 전파 확인 후 POST.
           PAGES_URL="https://koungsday.github.io/longrange-scraper/quota.json"
-          PROPAGATED=false
-          for i in $(seq 1 18); do
+          OK=false
+          HTTP=000
+          for attempt in $(seq 1 5); do
             LIVE_TS=$(curl -s --max-time 10 "$PAGES_URL" | node -pe "try{JSON.parse(require('fs').readFileSync(0,'utf8')).timestamp}catch(e){''}" 2>/dev/null || echo "")
-            if [ "$LIVE_TS" == "$EXPECT_TS" ]; then
-              echo "✅ Pages 전파 확인 (${i}회차)"; PROPAGATED=true; break
+            if [ "$LIVE_TS" != "$EXPECT_TS" ]; then
+              echo "  [시도 ${attempt}/5] Pages 미전파 (live=${LIVE_TS}) → 15s 대기"; sleep 15; continue
             fi
-            echo "  ...전파 대기 ${i}/18 (live=${LIVE_TS})"; sleep 5
+            HTTP=$(curl -s -o /tmp/reval-resp.json -w "%{http_code}" -X POST \
+              "https://www.vw-k.com/api/revalidate/subsidy" \
+              -H "Content-Type: application/json" \
+              -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+              --retry 2 --retry-delay 2 --max-time 30 \
+              -d "{\"codes\": $CODES, \"expectedTs\": \"$EXPECT_TS\"}" 2>/dev/null || echo "000")
+            OKBODY=$(node -pe "try{JSON.parse(require('fs').readFileSync('/tmp/reval-resp.json','utf8')).ok===true}catch(e){false}" 2>/dev/null || echo false)
+            echo "  [시도 ${attempt}/5] HTTP=${HTTP} ok=${OKBODY} $(cat /tmp/reval-resp.json 2>/dev/null)"
+            if [ "$HTTP" == "200" ] && [ "$OKBODY" == "true" ]; then OK=true; break; fi
+            echo "  → 재검증 미완료, 15s 후 재시도"; sleep 15
           done
-          if [ "$PROPAGATED" != "true" ]; then
-            echo "⚠️ 90s 내 Pages 전파 미확인 → 재검증 스킵 (stale 캐시 방지, fallback revalidate가 다음 주기 커버)"; exit 0
-          fi
 
-          # (2) 전파 확인됨 → 변경 지역만 온디맨드 재검증
-          CODES=$(node -pe "JSON.stringify(require('./changed-codes.json').codes || [])" 2>/dev/null || echo "[]")
-          HTTP=$(curl -s -o /tmp/reval-resp.json -w "%{http_code}" -X POST \
-            "https://www.vw-k.com/api/revalidate/subsidy" \
-            -H "Content-Type: application/json" \
-            -H "x-revalidate-secret: $REVALIDATE_SECRET" \
-            --retry 3 --retry-delay 2 --max-time 30 \
-            -d "{\"codes\": $CODES, \"expectedTs\": \"$EXPECT_TS\"}" 2>/dev/null || echo "000")
-          echo "재검증 응답 HTTP=$HTTP"; cat /tmp/reval-resp.json 2>/dev/null || true; echo ""
-          if [ "$HTTP" != "200" ]; then
-            echo "⚠️ 재검증 실패(HTTP=$HTTP) → fallback revalidate가 커버"
+          if [ "$OK" == "true" ]; then
+            echo "✅ 변경 지역 ${COUNT}개 재검증 완료"; write_status "$COUNT" true "$HTTP" ok
           else
-            echo "✅ 변경 지역 ${COUNT}개 재검증 완료"
+            echo "⚠️ 5회 재시도 후에도 재검증 미완료 (HTTP=${HTTP}) → fallback revalidate가 신선도 커버, 위생 다이제스트가 알림"
+            write_status "$COUNT" false "$HTTP" failed
           fi
 
       # ========================================
