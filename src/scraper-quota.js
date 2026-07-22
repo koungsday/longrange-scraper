@@ -438,12 +438,14 @@ async function main() {
     // [접수안내 이력] 지역별 note 변경 이력 → data/note-history/<code>.json (Pages 배포, 클라 fetch).
     // 지역당 파일: {code, lastUpdated, history:[{date,note}, ...최신순]}. 최근 15건 유지, note 1500자 캡.
     // 불변식: history[0].note(마지막 기록)와 현재 note가 다르고 비어있지 않을 때만 새 엔트리(중복 방지).
-    // 앞으로만 쌓임(과거 복구 불가). 성공+데이터 있을 때만. 실패해도 스크래핑 무영향(격리).
+    // 해당 년도분만 보관 — 연말/연초에 이전 년도 엔트리는 정리(현재 년도 필터). 과거 복구 불가.
+    // 앞으로만 쌓임. 성공+데이터 있을 때만. 실패해도 스크래핑 무영향(격리).
     try {
       if (result.success && result.quotaData.length > 0) {
         // 키 = "parentName(sido)\tlocalName" — regionNotes 키와 동일하게 맞춰 동명 지역 분리
         const pairToCode = {};
         for (const r of regions) pairToCode[`${r.parentName || ''}\t${r.localName}`] = r.code;
+        const curYear = new Date(outputData.timestamp).getFullYear();
         const notes = regionNotes(outputData);
         await fs.mkdir('data/note-history', { recursive: true });
         let changed = 0;
@@ -458,13 +460,23 @@ async function main() {
             const prev = JSON.parse(await fs.readFile(path, 'utf8'));
             if (Array.isArray(prev.history)) history = prev.history;
           } catch { /* 최초 → 시드 */ }
+          // 해당 년도분만 보관 (이전 년도 정리)
+          const prevLen = history.length;
+          history = history.filter(h => new Date(h.date).getFullYear() === curYear);
           const last = history.length ? history[0].note : null;
+          let write = false;
           if (note !== last) {
             history.unshift({ date: outputData.timestamp, note });
+            history = history.slice(0, 15);
+            write = true;
+          } else if (history.length !== prevLen) {
+            write = true; // note 동일하지만 이전 년도분 정리됨 → 갱신 저장
+          }
+          if (write) {
             await fs.writeFile(path, JSON.stringify({
               code,
               lastUpdated: outputData.timestamp,
-              history: history.slice(0, 15)
+              history
             }, null, 2));
             changed++;
           }
