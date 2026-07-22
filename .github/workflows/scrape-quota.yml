@@ -175,6 +175,61 @@ jobs:
         continue-on-error: true  # 충돌 시 워크플로우 전체 실패 방지
 
       # ========================================
+      # 6.5. vw-k 온디맨드 재검증 (변경 지역만) — Pages 전파 확인 후 발사
+      #  - 변경 지역이 없으면 아예 호출 안 함(비용 0).
+      #  - REVALIDATE_SECRET 미설정 시 스킵(안전) → fallback revalidate가 신선도 유지.
+      #  - Pages 전파 전 발사 금지: vw-k가 낡은 데이터로 재생성/캐시하면 오히려 신선도 저하.
+      # ========================================
+      - name: Revalidate vw-k subsidy pages (changed regions)
+        if: steps.validate.outputs.valid == 'true'
+        continue-on-error: true   # 실패해도 스크래핑/워크플로엔 영향 없음
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "⚠️ REVALIDATE_SECRET 미설정 → 재검증 스킵 (fallback revalidate가 신선도 유지)"; exit 0
+          fi
+          if [ ! -f changed-codes.json ]; then
+            echo "changed-codes.json 없음 → 스킵"; exit 0
+          fi
+          COUNT=$(node -pe "require('./changed-codes.json').count || 0" 2>/dev/null || echo 0)
+          if [ "$COUNT" -eq 0 ]; then
+            echo "변경 지역 0개 → 재검증 불필요 (비용 0)"; exit 0
+          fi
+          EXPECT_TS=$(node -pe "require('./data/quota.json').timestamp || ''" 2>/dev/null || echo "")
+          echo "변경 지역 ${COUNT}개 · 새 timestamp=${EXPECT_TS}"
+
+          # (1) GitHub Pages가 새 quota.json 서빙할 때까지 폴링 (최대 ~90s).
+          #     vw-k 재검증은 이 URL을 재fetch → 전파 전 발사하면 낡은 데이터로 재생성돼 신선도 저하.
+          PAGES_URL="https://koungsday.github.io/longrange-scraper/quota.json"
+          PROPAGATED=false
+          for i in $(seq 1 18); do
+            LIVE_TS=$(curl -s --max-time 10 "$PAGES_URL" | node -pe "try{JSON.parse(require('fs').readFileSync(0,'utf8')).timestamp}catch(e){''}" 2>/dev/null || echo "")
+            if [ "$LIVE_TS" == "$EXPECT_TS" ]; then
+              echo "✅ Pages 전파 확인 (${i}회차)"; PROPAGATED=true; break
+            fi
+            echo "  ...전파 대기 ${i}/18 (live=${LIVE_TS})"; sleep 5
+          done
+          if [ "$PROPAGATED" != "true" ]; then
+            echo "⚠️ 90s 내 Pages 전파 미확인 → 재검증 스킵 (stale 캐시 방지, fallback revalidate가 다음 주기 커버)"; exit 0
+          fi
+
+          # (2) 전파 확인됨 → 변경 지역만 온디맨드 재검증
+          CODES=$(node -pe "JSON.stringify(require('./changed-codes.json').codes || [])" 2>/dev/null || echo "[]")
+          HTTP=$(curl -s -o /tmp/reval-resp.json -w "%{http_code}" -X POST \
+            "https://www.vw-k.com/api/revalidate/subsidy" \
+            -H "Content-Type: application/json" \
+            -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+            --retry 3 --retry-delay 2 --max-time 30 \
+            -d "{\"codes\": $CODES, \"expectedTs\": \"$EXPECT_TS\"}" 2>/dev/null || echo "000")
+          echo "재검증 응답 HTTP=$HTTP"; cat /tmp/reval-resp.json 2>/dev/null || true; echo ""
+          if [ "$HTTP" != "200" ]; then
+            echo "⚠️ 재검증 실패(HTTP=$HTTP) → fallback revalidate가 커버"
+          else
+            echo "✅ 변경 지역 ${COUNT}개 재검증 완료"
+          fi
+
+      # ========================================
       # 7. 결과 로그
       # ========================================
       - name: Log result

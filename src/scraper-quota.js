@@ -264,6 +264,58 @@ async function saveQuotaHistory(quotaData, regions) {
   console.log(`💾 ${HISTORY_PATH} 저장 완료 (${totalDays}일 × ${totalRegions}개 지역)`);
 }
 
+/**
+ * quota.json → 지역별 시그니처 Map<지역명, string>.
+ * 한 지역의 모든 행(차종별)을 사용자가 보는 전체 필드(할당·등록·출고·잔여·비고)로 서명.
+ * 행 순서 무관하게 정렬 후 결합 → 순서만 바뀐 건 '변경'으로 오탐하지 않음.
+ */
+function regionSignatures(quotaJson) {
+  const sigs = new Map();
+  const rows = (quotaJson && quotaJson.data && quotaJson.data[0] && quotaJson.data[0].quotaData) || [];
+  const byRegion = new Map();
+  for (const r of rows) {
+    const name = r.region;
+    if (!name) continue;
+    if (!byRegion.has(name)) byRegion.set(name, []);
+    byRegion.get(name).push(JSON.stringify([
+      r.vehicleType,
+      r.quota_total, r.quota_priority, r.quota_corporate, r.quota_taxi, r.quota_general,
+      r.registered_total, r.registered_priority, r.registered_corporate, r.registered_taxi, r.registered_general,
+      r.delivered_total, r.delivered_priority, r.delivered_corporate, r.delivered_taxi, r.delivered_general,
+      r.remaining_total, r.remaining_priority, r.remaining_corporate, r.remaining_taxi, r.remaining_general,
+      r.note
+    ]));
+  }
+  for (const [name, arr] of byRegion) {
+    arr.sort();
+    sigs.set(name, arr.join('|'));
+  }
+  return sigs;
+}
+
+/**
+ * 이전 quota.json 대비 변경된 지역만 산출 → vw-k 온디맨드 재검증 대상 코드.
+ * - 이전에 없던 지역(신규)·시그니처가 달라진 지역만 changed.
+ * - nameToCode(donut)로 지역명→코드. 매핑 실패(코드 0/공백)는 제외(fallback revalidate가 커버).
+ * - 이전값 없음(최초 실행)이면 전 지역 changed(1회성, 정상).
+ */
+function computeChangedCodes(oldQuota, newQuota, nameToCode) {
+  const oldSigs = regionSignatures(oldQuota);
+  const newSigs = regionSignatures(newQuota);
+  const changedNames = [];
+  for (const [name, sig] of newSigs) {
+    if (oldSigs.get(name) !== sig) changedNames.push(name);
+  }
+  const codes = [];
+  const seen = new Set();
+  for (const name of changedNames) {
+    const code = String(nameToCode[name] || '').replace(/[^0-9]/g, '');
+    if (!code) continue;
+    if (!seen.has(code)) { seen.add(code); codes.push(code); }
+  }
+  return { codes, changedNames };
+}
+
 async function main() {
   console.log('🚀 전기차 보조금 접수현황 스크래핑 시작');
   console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
@@ -328,12 +380,43 @@ async function main() {
       data: results
     };
 
+    // [변경감지] 덮어쓰기 전 이전 quota.json 읽기 (git HEAD = 직전 커밋본)
+    let previousQuota = null;
+    try {
+      previousQuota = JSON.parse(await fs.readFile('data/quota.json', 'utf8'));
+    } catch { /* 최초 실행 등 → null (전 지역 changed 처리) */ }
+
     await fs.writeFile(
       'data/quota.json',
       JSON.stringify(outputData, null, 2)
     );
 
     console.log('💾 data/quota.json 저장 완료');
+
+    // [변경감지] 변경 지역 코드 산출 → data 밖(root)에 기록. 워크플로 웹훅이 읽어 vw-k 재검증.
+    // 스크랩 성공+데이터 있을 때만 실제 산출. 실패/빈데이터 → 빈 배열(전지역 오탐/재검증 폭주 방지).
+    // 실패해도 스크래핑 결과엔 영향 없음(try/catch 격리).
+    try {
+      let changedCodes = [];
+      let changedNames = [];
+      if (result.success && result.quotaData.length > 0) {
+        const nameToCode = {};
+        for (const r of regions) nameToCode[r.localName] = r.code;
+        const diff = computeChangedCodes(previousQuota, outputData, nameToCode);
+        changedCodes = diff.codes;
+        changedNames = diff.changedNames;
+      }
+      await fs.writeFile('changed-codes.json', JSON.stringify({
+        ts: new Date().toISOString(),
+        quotaTs: outputData.timestamp,   // vw-k가 자기 vantage에서 전파 재확인용(신선도 증명)
+        count: changedCodes.length,
+        codes: changedCodes,
+        names: changedNames
+      }, null, 2));
+      console.log(`🔔 변경 지역 ${changedCodes.length}개${changedNames.length ? ': ' + changedNames.slice(0, 10).join(', ') + (changedNames.length > 10 ? ' …' : '') : ''}`);
+    } catch (e) {
+      console.error('⚠️ 변경감지 실패(무시):', e.message);
+    }
 
     // 일일 스냅샷 히스토리 누적
     if (result.success && result.quotaData.length > 0) {
