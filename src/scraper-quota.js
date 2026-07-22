@@ -316,6 +316,23 @@ function computeChangedCodes(oldQuota, newQuota, nameToCode) {
   return { codes, changedNames };
 }
 
+/**
+ * quota.json → Map<"sido\t지역명", note>. 한 지역의 첫 비어있지 않은 note 사용(note는 지역 단위).
+ * 키에 sido 포함: 동명 지역(예: 강원 고성군 / 경남 고성군)을 분리 — 안 하면 한 코드에 다른 note가 섞임.
+ */
+function regionNotes(quotaJson) {
+  const m = new Map();
+  const rows = (quotaJson && quotaJson.data && quotaJson.data[0] && quotaJson.data[0].quotaData) || [];
+  for (const r of rows) {
+    if (!r.region) continue;
+    const key = `${r.sido || ''}\t${r.region}`;
+    const note = (r.note || '').trim();
+    if (!m.has(key)) m.set(key, note);
+    else if (!m.get(key) && note) m.set(key, note); // 첫 행이 비었으면 채움
+  }
+  return m;
+}
+
 async function main() {
   console.log('🚀 전기차 보조금 접수현황 스크래핑 시작');
   console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
@@ -416,6 +433,46 @@ async function main() {
       console.log(`🔔 변경 지역 ${changedCodes.length}개${changedNames.length ? ': ' + changedNames.slice(0, 10).join(', ') + (changedNames.length > 10 ? ' …' : '') : ''}`);
     } catch (e) {
       console.error('⚠️ 변경감지 실패(무시):', e.message);
+    }
+
+    // [접수안내 이력] 지역별 note 변경 이력 → data/note-history/<code>.json (Pages 배포, 클라 fetch).
+    // 지역당 파일: {code, lastUpdated, history:[{date,note}, ...최신순]}. 최근 15건 유지, note 1500자 캡.
+    // 불변식: history[0].note(마지막 기록)와 현재 note가 다르고 비어있지 않을 때만 새 엔트리(중복 방지).
+    // 앞으로만 쌓임(과거 복구 불가). 성공+데이터 있을 때만. 실패해도 스크래핑 무영향(격리).
+    try {
+      if (result.success && result.quotaData.length > 0) {
+        // 키 = "parentName(sido)\tlocalName" — regionNotes 키와 동일하게 맞춰 동명 지역 분리
+        const pairToCode = {};
+        for (const r of regions) pairToCode[`${r.parentName || ''}\t${r.localName}`] = r.code;
+        const notes = regionNotes(outputData);
+        await fs.mkdir('data/note-history', { recursive: true });
+        let changed = 0;
+        for (const [key, rawNote] of notes) {
+          if (!rawNote) continue;
+          const code = String(pairToCode[key] || '').replace(/[^0-9]/g, '');
+          if (!code) continue;
+          const note = rawNote.slice(0, 1500);
+          const path = `data/note-history/${code}.json`;
+          let history = [];
+          try {
+            const prev = JSON.parse(await fs.readFile(path, 'utf8'));
+            if (Array.isArray(prev.history)) history = prev.history;
+          } catch { /* 최초 → 시드 */ }
+          const last = history.length ? history[0].note : null;
+          if (note !== last) {
+            history.unshift({ date: outputData.timestamp, note });
+            await fs.writeFile(path, JSON.stringify({
+              code,
+              lastUpdated: outputData.timestamp,
+              history: history.slice(0, 15)
+            }, null, 2));
+            changed++;
+          }
+        }
+        console.log(`📝 접수안내 이력: ${changed}개 지역 파일 갱신`);
+      }
+    } catch (e) {
+      console.error('⚠️ 접수안내 이력 실패(무시):', e.message);
     }
 
     // 일일 스냅샷 히스토리 누적
