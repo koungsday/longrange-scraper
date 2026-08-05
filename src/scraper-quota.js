@@ -262,6 +262,36 @@ async function saveQuotaHistory(quotaData, regions) {
   const totalDays = Object.keys(history.snapshots).length;
   const totalRegions = Object.keys(todaySnapshot).length;
   console.log(`💾 ${HISTORY_PATH} 저장 완료 (${totalDays}일 × ${totalRegions}개 지역)`);
+
+  // [지역별 슬라이스] data/quota-history/<code>.json — 전체 파일(~17MB)과 동일 스키마의
+  // 1지역 슬라이스(minified ~50KB). vw-k 클라이언트가 지역 하나의 추이만 받도록(방문자 대역폭).
+  // 실데이터(스냅샷·메타·연도) 동일하면 미기록 — lastUpdated 만 바뀐 파일을 매 실행 커밋하지 않기 위함.
+  const SPLIT_DIR = 'data/quota-history';
+  await fs.mkdir(SPLIT_DIR, { recursive: true });
+  let written = 0;
+  const dates = Object.keys(history.snapshots);
+  for (const code of Object.keys(history.regions)) {
+    const snapshots = {};
+    for (const date of dates) {
+      const day = history.snapshots[date];
+      if (day && day[code]) snapshots[date] = { [code]: day[code] };
+    }
+    const slice = {
+      year: history.year,
+      lastUpdated: history.lastUpdated,
+      regions: { [code]: history.regions[code] },
+      snapshots
+    };
+    const path = `${SPLIT_DIR}/${code}.json`;
+    try {
+      const prev = JSON.parse(await fs.readFile(path, 'utf8'));
+      prev.lastUpdated = slice.lastUpdated; // 비교에서 제외
+      if (JSON.stringify(prev) === JSON.stringify(slice)) continue;
+    } catch { /* 최초 생성 */ }
+    await fs.writeFile(path, JSON.stringify(slice));
+    written++;
+  }
+  console.log(`💾 지역별 슬라이스 ${written}/${Object.keys(history.regions).length}개 갱신 (${SPLIT_DIR}/)`);
 }
 
 /**
