@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-10T03:40:57.246Z",
+  "timestamp": "2026-08-10T03:50:57.783Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3169,16 +3169,16 @@
           "registered_corporate": 16,
           "registered_taxi": 33,
           "registered_general": 554,
-          "delivered_total": 686,
+          "delivered_total": 687,
           "delivered_priority": 222,
           "delivered_corporate": 13,
           "delivered_taxi": 33,
-          "delivered_general": 418,
-          "remaining_total": 214,
+          "delivered_general": 419,
+          "remaining_total": 213,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 482,
+          "remaining_general": 481,
           "note": "★★★ 잔여 : 승용 약130대 /화물 약160대 (8.7.금)\n- 차종별 금액이 상이하므로 잔여대수는 변경될수있습니다.\n★ 접수기간 : 2026. 7. 27.(월) 14:00 ~ 예산 소진 시\n★ 지원대수 : 약 809대(승용 550대, 화물 250대, 승합 7대, 어린이통학 2대)\n★★★  승합 : 접수중\n※ 차종별 보조금 차등 지원으로, 잔여 예산에 따라 보급대수는 조정될 수 있음\n★기타 자세한 사항은 공고문 확인\n★★★순차적으로 처리하오니 원활한 진행을 위해 처리독촉 전화 자제 부탁드립니다"
         },
         {
@@ -4178,14 +4178,14 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 45843,
+          "registered_total": 45845,
           "registered_priority": 19,
-          "registered_corporate": 44403,
+          "registered_corporate": 44404,
           "registered_taxi": 588,
-          "registered_general": 833,
-          "delivered_total": 32953,
+          "registered_general": 834,
+          "delivered_total": 32954,
           "delivered_priority": 11,
-          "delivered_corporate": 31942,
+          "delivered_corporate": 31943,
           "delivered_taxi": 360,
           "delivered_general": 640,
           "remaining_total": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-10T03:40:57.187Z"
+      "timestamp": "2026-08-10T03:50:57.730Z"
     }
   ]
 }
