@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-12T09:01:08.882Z",
+  "timestamp": "2026-08-12T09:10:54.827Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3169,16 +3169,16 @@
           "registered_corporate": 17,
           "registered_taxi": 33,
           "registered_general": 580,
-          "delivered_total": 748,
+          "delivered_total": 749,
           "delivered_priority": 244,
           "delivered_corporate": 14,
           "delivered_taxi": 33,
-          "delivered_general": 457,
-          "remaining_total": 252,
+          "delivered_general": 458,
+          "remaining_total": 251,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 543,
+          "remaining_general": 542,
           "note": "★★★ 잔여 : 승용 약30대 /화물 약150대 (8.11.화)\n---------   차종간 물량조정 中 --------\n- 차종별 금액이 상이하므로 잔여대수는 변경될수있습니다.\n★ 접수기간 : 2026. 7. 27.(월) 14:00 ~ 예산 소진 시\n★ 지원대수 : 약 809대(승용 550대, 화물 250대, 승합 7대, 어린이통학 2대)\n★★★  승합 : 접수중\n※ 차종별 보조금 차등 지원으로, 잔여 예산에 따라 보급대수는 조정될 수 있음\n★기타 자세한 사항은 공고문 확인\n★★★순차적으로 처리하오니 원활한 진행을 위해 처리독촉 전화 자제 부탁드립니다"
         },
         {
@@ -3647,7 +3647,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 96,
-          "note": "<3차 공고 안내>\n○ 공고일 : 2026. 7. 27.(월) 울진군청 홈페이지 고시공고 제2026-1297호\n○ 접수일 : 2026. 8. 12.(수) 09:00\n○ 물량: 승용 35대, 화물 10대\n※ 기타 자세한 사항은 공고문을 참고하시기 바랍니다.\n※ 본공고2 : 차종별 보조금 상세내역\n※ 지원가능확인요청(10일 이내 출고 시) 순 예산범위 내에서 대상자 선정\n★ 신청서류 미비로 인한 보완요청 시 자격부여 순번이 후순위로 밀릴 수 있으니 대리점에서는 접수 시 누락된 서류 및 오기재, 서류 발급일자(유효기간)등 필히 확인하여 주시기 바랍니다. (접수순으로 서류 검토)\n★ 7월 28일 시스템 변경으로 접수일 기준 3일 전부터 임시저장 기능 사용 가능\n★ 신청(접수)번호 : 승용 188번~, 화물 55번~\n★ 대상자 선정 후 기한 내 미출고 시 선정취소 후 후보자에게 기회 제공"
+          "note": "<3차 접수마감>\n○ 물량: 승용 35대, 화물 10대\n○ 접수\n-  승용 72대(자격부여 21대 완료, 검토 중 51대로 내일 오전 9시부터 순차적으로 자격부여 예정)\n-  화물 14대(자격부여 완료, 예산 범위내 통보 예정)\n※ 지원가능확인요청(10일 이내 출고 시) 순 예산범위 내에서 대상자 선정\n★ 신청서류 미비로 인한 보완요청 시 자격부여 순번이 후순위로 밀릴 수 있음(접수순으로 서류 검토)\n★ 신청(접수)번호 : 승용 188번~, 화물 55번~\n★ 대상자 선정 후 기한 내 미출고 시 선정취소 후 후보자에게 기회 제공"
         },
         {
           "sido": "경북",
@@ -4178,14 +4178,14 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 46884,
+          "registered_total": 46887,
           "registered_priority": 19,
-          "registered_corporate": 45365,
-          "registered_taxi": 635,
+          "registered_corporate": 45367,
+          "registered_taxi": 636,
           "registered_general": 865,
-          "delivered_total": 34533,
+          "delivered_total": 34535,
           "delivered_priority": 12,
-          "delivered_corporate": 33483,
+          "delivered_corporate": 33485,
           "delivered_taxi": 375,
           "delivered_general": 663,
           "remaining_total": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-12T09:01:08.740Z"
+      "timestamp": "2026-08-12T09:10:54.739Z"
     }
   ]
 }
