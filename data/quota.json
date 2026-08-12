@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-12T10:51:01.234Z",
+  "timestamp": "2026-08-12T11:01:06.242Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2129,16 +2129,16 @@
           "registered_corporate": 7,
           "registered_taxi": 12,
           "registered_general": 212,
-          "delivered_total": 153,
+          "delivered_total": 154,
           "delivered_priority": 29,
           "delivered_corporate": 3,
           "delivered_taxi": 9,
-          "delivered_general": 112,
-          "remaining_total": 117,
+          "delivered_general": 113,
+          "remaining_total": 116,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 4,
-          "remaining_general": 118,
+          "remaining_general": 117,
           "note": "승용 예산 소진되어 마감\n대상자 확정 대수: 81대 / 잔여대수: 0대"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-12T10:51:01.185Z"
+      "timestamp": "2026-08-12T11:01:06.179Z"
     }
   ]
 }
