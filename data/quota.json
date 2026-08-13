@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-13T03:41:02.430Z",
+  "timestamp": "2026-08-13T03:51:04.829Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1552,11 +1552,11 @@
           "quota_corporate": 0,
           "quota_taxi": 60,
           "quota_general": 1020,
-          "registered_total": 797,
-          "registered_priority": 208,
+          "registered_total": 769,
+          "registered_priority": 202,
           "registered_corporate": 8,
           "registered_taxi": 34,
-          "registered_general": 547,
+          "registered_general": 525,
           "delivered_total": 685,
           "delivered_priority": 183,
           "delivered_corporate": 5,
@@ -4053,16 +4053,16 @@
           "registered_corporate": 2,
           "registered_taxi": 1,
           "registered_general": 65,
-          "delivered_total": 72,
+          "delivered_total": 73,
           "delivered_priority": 17,
           "delivered_corporate": 1,
           "delivered_taxi": 0,
-          "delivered_general": 54,
-          "remaining_total": 98,
+          "delivered_general": 55,
+          "remaining_total": 97,
           "remaining_priority": 0,
           "remaining_corporate": 4,
           "remaining_taxi": 5,
-          "remaining_general": 94,
+          "remaining_general": 93,
           "note": "○2차 공고 마감 안내\n※현재 승용, 화물 신청량이 많아 접수 마감되었습니다.\n추가 예산 확보 시 별도 공지 후 접수 재개하겠으나 승인을 받더라도 각 물량 13 ~ 15대 수준일 것으로 추정됩니다.\n참고하시기 바랍니다."
         },
         {
@@ -4183,9 +4183,9 @@
           "registered_corporate": 45742,
           "registered_taxi": 640,
           "registered_general": 868,
-          "delivered_total": 34780,
+          "delivered_total": 34781,
           "delivered_priority": 12,
-          "delivered_corporate": 33715,
+          "delivered_corporate": 33716,
           "delivered_taxi": 383,
           "delivered_general": 670,
           "remaining_total": 0,
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-13T03:41:02.368Z"
+      "timestamp": "2026-08-13T03:51:04.774Z"
     }
   ]
 }
