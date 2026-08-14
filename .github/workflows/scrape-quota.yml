@@ -249,6 +249,65 @@ jobs:
           fi
 
       # ========================================
+      # 6-b. 웹훅 상태 커밋 — ★이 파일만 따로 커밋해야 하는 이유
+      # ========================================
+      #  data/webhook-status.json 은 바로 위 재검증 스텝이 만든다. 즉 5번 커밋 스텝
+      #  *뒤*, 그리고 Pages 업로드 스텝 *뒤* 다 → git 에도 Pages 에도 영영 못 올라간다.
+      #  (이 이중 교착이 2026-07-22~08-09 데이터 18일 동결의 시발점이었다. 그때 원인인
+      #   git add pathspec 은 3cbf46c 로 고쳤지만, 이 파일 자체는 여전히 한 번도
+      #   커밋된 적이 없어 vw-k 의 웹훅 감시가 읽을 게 없는 상태로 죽어 있었다.)
+      #
+      #  ts 는 매 런 바뀐다 — 그대로 커밋하면 10분마다 커밋이 하나씩 늘어 하루 144개다.
+      #  → **의미 있는 필드(changed/ok/http/reason)가 바뀔 때만** 푸시한다.
+      #    상태가 안 바뀌면 커밋 0. 그래서 vw-k 는 이 파일의 ts 로 신선도를 재지 않는다
+      #    (그 역할은 quota.json 의 Last-Modified 가 맡는다 — 늘 발행되는 파일이므로).
+      #
+      #  발행까지 한 주기 지연된다: 이번 런이 푸시 → 다음 런 체크아웃에 포함 → 그 런의
+      #  Pages 배포로 공개. 최대 ~20분. 하루 1회 다이제스트엔 충분하다.
+      #  실패해도 접수·데이터에 영향이 없으므로 절대 런을 깨지 않는다(항상 exit 0).
+      - name: Commit webhook status (on state change)
+        if: always()
+        run: |
+          set +e
+          F=data/webhook-status.json
+          if [ ! -f "$F" ]; then
+            echo "상태 파일 없음 → 생략 (재검증 스텝이 안 돌았다는 뜻)"; exit 0
+          fi
+          sig() {  # 의미 있는 필드만. ts 는 일부러 뺀다.
+            node -e "
+              const fs=require('fs');
+              try{const d=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));
+                  process.stdout.write([d.changed,d.ok,d.http,d.reason].join('|'));}
+              catch(e){process.stdout.write('unreadable');}
+            " "$1"
+          }
+          NEW=$(sig "$F")
+          if git show "HEAD:$F" > /tmp/prev-webhook-status.json 2>/dev/null; then
+            OLD=$(sig /tmp/prev-webhook-status.json)
+          else
+            OLD="(없음)"
+          fi
+          if [ "$NEW" == "$OLD" ]; then
+            echo "웹훅 상태 변화 없음 ($NEW) → 커밋 생략"; exit 0
+          fi
+          echo "웹훅 상태 변화: $OLD  →  $NEW"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add "$F"
+          if git diff --quiet --staged; then
+            echo "스테이징 결과 변화 없음 → 생략"; exit 0
+          fi
+          git commit -m "webhook status: $NEW"
+          for i in 1 2 3; do
+            if git push; then echo "✅ 웹훅 상태 푸시 완료"; exit 0; fi
+            echo "  푸시 충돌 → pull 후 재시도 ($i/3)"
+            git pull --no-rebase -X ours origin main
+            sleep $((i * 3))
+          done
+          echo "⚠️ 웹훅 상태 푸시 실패 — 비치명(다음 런이 다시 시도한다)"
+          exit 0
+
+      # ========================================
       # 7. 결과 로그
       # ========================================
       - name: Log result
