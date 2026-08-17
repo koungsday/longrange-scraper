@@ -110,6 +110,34 @@ jobs:
           fi
 
       # ========================================
+      # 4.5. 공고 일정 변경 알림 (추경 개시 신호)
+      #   ★공고 차수가 새로 뜨거나 접수 일정이 바뀌면 곧 추경 접수가 시작된다.
+      #     물량이 새로 풀리는 순간이라 늦게 알수록 손해다 → 감지 즉시 카톡.
+      #   ★시크릿은 워크플로가 들고 있는다. 스크립트는 data/notice-alert.json 만 남긴다.
+      #   ★실패해도 스크랩엔 영향 없다.
+      # ========================================
+      - name: Notify notice schedule change
+        if: always()
+        continue-on-error: true
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+          WEB_URL: ${{ secrets.KOUNGS_DAY_WEB_URL }}
+        run: |
+          F=data/notice-alert.json
+          [ -f "$F" ] || { echo "공고 일정 변경 없음"; exit 0; }
+          if [ -z "$REVALIDATE_SECRET" ] || [ -z "$WEB_URL" ]; then
+            echo "시크릿 미설정 → 알림 생략"; rm -f "$F"; exit 0
+          fi
+          CODE=$(curl -s -o /tmp/alert-res.json -w '%{http_code}' --max-time 20 \
+            -X POST "$WEB_URL/api/subsidy/notice-alert" \
+            -H "Content-Type: application/json" \
+            -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+            --data-binary @"$F")
+          echo "알림 발송 HTTP $CODE — $(head -c 200 /tmp/alert-res.json)"
+          # ★보냈든 못 보냈든 파일은 지운다. 남겨 두면 다음 런이 같은 걸 또 쏜다.
+          rm -f "$F"
+
+      # ========================================
       # 5. scraper repo 커밋 (검증 결과와 무관하게 항상 커밋)
       # ========================================
       - name: Commit and push to scraper repo
@@ -124,7 +152,7 @@ jobs:
           #   그 결과 data/ 가 7.22 에 얼어붙었고, 변경감지의 전제("git HEAD = 직전 커밋본")가 깨져
           #   매 런 139개 지역이 거짓 변경으로 잡혀 vw-k 재검증을 폭주시켰다.
           #   → 경로별로 따로 add 한다. 하나가 없어도 나머지는 스테이징된다.
-          for p in data/quota.json data/quota-detail.json data/quota-detail-history*.json data/quota-history*.json data/quota-history data/note-history data/webhook-status.json; do
+          for p in data/quota.json data/quota-detail.json data/quota-detail-history*.json data/notice-schedule.json data/quota-history*.json data/quota-history data/note-history data/webhook-status.json data/*/subsidies.json data/*/vehicles.json data/*/subsidies-legacy.json data/years.json; do
             git add "$p" 2>/dev/null || true
           done
 

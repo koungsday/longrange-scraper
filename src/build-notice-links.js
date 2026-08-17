@@ -41,8 +41,10 @@ async function main() {
   //   NOTICE_FULL=1 로 강제 전수 가능.
   let prev = null;
   try { prev = JSON.parse(await fs.readFile(OUT, 'utf8')); } catch { /* 최초 */ }
-  const kstDay = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' })).getDay();
-  const full = process.env.NOTICE_FULL === '1' || kstDay === 1 || !prev;   // 월요일·최초는 전수
+  // ★전수는 **하루 1회(새벽 4시대)** 면 충분하다 — 새 '칸' 이 생기는 건 드물다.
+  //   나머지 시간은 알려진 칸만 보므로 3분이면 끝난다.
+  const kstHour = Number(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul', hour: '2-digit', hour12: false }));
+  const full = process.env.NOTICE_FULL === '1' || kstHour === 4 || !prev;
   console.log(full ? '🔍 전수 훑기 (새 첨부 탐색)' : '🔎 알려진 칸만 확인');
   const data = await buildNoticeLinks(regions, { probe: true, known: full ? null : prev.regions });
 

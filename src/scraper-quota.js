@@ -4,6 +4,8 @@ const fs = require('fs').promises;
 const os = require('os');
 const { parseQuotaXlsx, readSheets } = require('./parse-quota-xlsx');
 const { parseQuotaDetail, diffDetail } = require('./parse-quota-detail');
+const { parseNoticeSchedule, diffSchedule, formatAlert } = require('./parse-notice-schedule');
+const { parseSubsidyXlsx } = require('./parse-subsidy-xlsx');
 const { downloadExcel } = require('./ev-excel-download');
 
 const TEST_MODE = false;
@@ -72,11 +74,21 @@ async function scrapeRegionWithRetry(browser, region) {
       // ★부가 필드는 **본체를 죽이면 안 된다.** 실패해도 여기서 삼키고 사유만 남긴다.
       //   (quota 파싱은 위에서 던지는 게 맞다 — 틀린 숫자를 배포하느니 멈추는 게 낫다.)
       let detail = null;
+      let schedule = null;
+      let subsidy = null;
       try {
-        detail = parseQuotaDetail(readSheets(buf));
+        const sheets = readSheets(buf);
+        detail = parseQuotaDetail(sheets);
+        // ★공고별_일정 = 추경 개시 신호. 같은 Excel 이라 추가 요청 0.
+        schedule = parseNoticeSchedule(sheets);
       } catch (e) {
         detail = { available: false, timestamp: new Date().toISOString(),
           missing: [`파서 예외: ${e.message}`], fields: [], regions: {} };
+      }
+      // ★모델별 보조금 — 예전엔 별도 워크플로가 **같은 Excel 을 또 받아** 하루 1회
+      //   만들었다. 파싱만 하면 되므로 여기서 같이 한다(요청 0 추가, 10분마다 최신).
+      try { subsidy = parseSubsidyXlsx(buf); } catch (e) {
+        console.warn(`   ⚠️ 모델 보조금 파싱 실패(본체엔 영향 없음): ${e.message}`);
       }
       await page.close();
 
@@ -92,6 +104,8 @@ async function scrapeRegionWithRetry(browser, region) {
         code: region.code,
         quotaData: quotaData,
         detail,
+        schedule,
+        subsidy,
         success: true,
         attempts: attempt,
         timestamp: new Date().toISOString()
@@ -354,7 +368,9 @@ async function main() {
     //   여기에 12필드 × 161행을 더하면 방문자 대역폭이 그만큼 늘어난다.
     //   리뉴얼 때 쓸 데이터이므로 옆에 조용히 쌓아 두고, 지금 화면은 아무것도 안 바뀐다.
     const detail = results.find((r) => r && r.detail)?.detail || null;
-    for (const r of results) delete r.detail;   // quota.json 에 섞여 들어가지 않게
+    const schedule = results.find((r) => r && r.schedule)?.schedule || null;
+    const subsidy = results.find((r) => r && r.subsidy)?.subsidy || null;
+    for (const r of results) { delete r.detail; delete r.schedule; delete r.subsidy; }  // quota.json 오염 방지
 
     const outputData = {
       timestamp: new Date().toISOString(),
@@ -421,6 +437,68 @@ async function main() {
           try { await fs.access(HP); } catch { await fs.writeFile(HP, JSON.stringify(hist)); }
           console.log('📝 부가 필드 변경 없음');
         }
+      // ── 모델별 보조금 (예전 scrape.yml 이 하던 일) ─────────────────────
+      // ★파일이 크다(subsidies 1.2MB · legacy 5MB). 10분마다 그대로 커밋하면
+      //   저장소가 분다 → **내용이 같으면 안 쓴다.** 모델 보조금은 거의 안 바뀌므로
+      //   평소 커밋은 0이고, 바뀐 날만 기록된다.
+      if (subsidy) {
+        const yearDir = `data/${subsidy.subsidies.year || new Date().getFullYear()}`;
+        await fs.mkdir(yearDir, { recursive: true });
+        const files = [
+          [`${yearDir}/subsidies.json`, subsidy.subsidies],
+          [`${yearDir}/vehicles.json`, subsidy.vehicles],
+          [`${yearDir}/subsidies-legacy.json`, subsidy.legacy],
+        ];
+        let wrote = 0;
+        for (const [path, data] of files) {
+          let prev = null;
+          try { prev = JSON.parse(await fs.readFile(path, 'utf8')); } catch { /* 최초 */ }
+          const same = prev
+            && JSON.stringify({ ...prev, timestamp: 0 }) === JSON.stringify({ ...data, timestamp: 0 });
+          if (same) continue;
+          await fs.writeFile(path, JSON.stringify(data, null, 2));
+          wrote++;
+        }
+        console.log(wrote
+          ? `💾 모델 보조금 ${wrote}개 파일 갱신 (${subsidy.subsidies.total_regions}지역 · ${subsidy.vehicles.total_vehicles}모델 · 단위 ${subsidy.meta.unitName})`
+          : '💾 모델 보조금 변화 없음 → 미기록');
+        if (subsidy.meta.nationalConflicts.length) {
+          console.warn(`   ⚠️ 국비가 지역마다 다름: ${subsidy.meta.nationalConflicts.join(', ')}`);
+        }
+      }
+
+      // ── 공고 일정(추경 트리거) ───────────────────────────────────────
+      // ★여기서 감지만 하고, 알림 발송은 워크플로가 한다(시크릿을 코드로 안 내린다).
+      //   변경이 있으면 data/notice-alert.json 을 남기고 워크플로가 그걸 보고 쏜다.
+      if (schedule && schedule.available) {
+        const SP = 'data/notice-schedule.json';
+        let prevSch = null;
+        try { prevSch = JSON.parse(await fs.readFile(SP, 'utf8')); } catch { /* 최초 */ }
+        const d = diffSchedule(prevSch, schedule);
+
+        // ★최초 실행은 알리지 않는다 — 327건 전부가 '신규' 로 잡혀 카톡이 폭발한다.
+        if (!prevSch) {
+          console.log(`🗓 공고 일정 최초 수집 ${schedule.count}건 (알림 생략)`);
+        } else if (d.total) {
+          console.log(`🗓 공고 일정 변경 ${d.total}건 (신규 ${d.added.length} / 변경 ${d.changed.length} / 삭제 ${d.removed.length})`);
+          for (const a of d.added.slice(0, 5)) console.log(`   🆕 ${a.region} ${a.kind} — 접수 ${a.start || '?'}`);
+          for (const c of d.changed.slice(0, 5)) console.log(`   🔄 ${c.region} ${c.kind} — ${c.fields.join(',')}`);
+          await fs.writeFile('data/notice-alert.json', JSON.stringify({
+            ts: new Date().toISOString(),
+            added: d.added.length, changed: d.changed.length, removed: d.removed.length,
+            text: formatAlert(d),
+          }));
+        } else {
+          console.log('🗓 공고 일정 변경 없음');
+        }
+        // 내용이 같으면 안 쓴다(10분마다 35KB 헛 커밋 방지)
+        const schSame = prevSch
+          && JSON.stringify({ ...prevSch, timestamp: 0 }) === JSON.stringify({ ...schedule, timestamp: 0 });
+        if (!schSame) await fs.writeFile(SP, JSON.stringify(schedule));
+      } else if (schedule) {
+        console.warn(`⚠️ 공고 일정 수집 실패 — ${schedule.missing.join(' / ')}`);
+      }
+
       } else {
         console.warn(`⚠️ 부가 필드 수집 실패 — ${detail ? detail.missing.join(' / ') : 'detail 없음'}`);
         // 실패해도 파일은 남긴다. 안 보이는 실패를 만들지 않기 위해서다(위생 다이제스트가 읽는다).

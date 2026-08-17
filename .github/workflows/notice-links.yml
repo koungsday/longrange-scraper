@@ -1,0 +1,61 @@
+name: 공고문 첨부 링크
+
+# ★30분 주기. quota(10분)와 완전히 분리한다 —
+#   quota 는 cancel-in-progress 라 시간에 쫓기면 잔여대수 수집이 통째로 취소된다.
+#   10분 신선도가 상품이므로 거기에 3분짜리 작업을 얹지 않는다.
+# ★추경 개시 감지 자체는 quota 런의 「공고별_일정」이 10분마다 맡는다(추가 요청 0).
+#   이 워크플로는 "일정 변경 없이 파일만 교체된 경우"를 잡는 안전망이다.
+on:
+  schedule:
+    - cron: '5,35 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: notice-links
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Seoul
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25      # 알려진 칸 ≈3분 / 하루 1회 전수 ≈8분
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ★--ignore-scripts: 이 작업은 브라우저가 필요 없다(HEAD 요청뿐).
+      #   puppeteer 의 Chrome 내려받기(276MB)를 건너뛴다.
+      - name: Install dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+
+      - name: Build notice links
+        run: node src/build-notice-links.js
+
+      - name: Commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/notice-links.json 2>/dev/null || true
+          if git diff --quiet --staged; then
+            echo "변화 없음 → 커밋 생략"
+            exit 0
+          fi
+          git commit -m "Update notice links: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M KST')"
+          # ★Pages 배포는 여기서 안 한다 — data/ 에 커밋만 해두면 다음 quota 런
+          #   (10분 주기)이 data/ 전체를 발행하면서 같이 올린다. 충돌 회피.
+          for i in 1 2 3; do
+            git push && exit 0
+            echo "push 실패 — 최신 반영 후 재시도 ($i/3)"
+            git pull --no-rebase -X ours origin main
+            sleep $((2 ** i))
+          done
+          echo "❌ push 실패"; exit 1
