@@ -7,17 +7,17 @@
     "scrape": "node src/scraper.js"
   },
   "dependencies": {
-    "puppeteer": "^21.5.0",
-    "puppeteer-extra": "^3.3.6",
-    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "adm-zip": "^0.6.0",
     "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12",
-    "google-spreadsheet": "^4.1.2",
+    "dotenv": "^16.3.1",
     "google-auth-library": "^9.0.0",
-    "dotenv": "^16.3.1"
+    "google-spreadsheet": "^4.1.2",
+    "puppeteer": "^21.5.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
   },
   "engines": {
     "node": ">=18.0.0"
   }
 }
-

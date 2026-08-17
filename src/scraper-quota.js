@@ -1,10 +1,14 @@
 const puppeteer = require('puppeteer');
 const axios = require('axios');
-const cheerio = require('cheerio');
 const fs = require('fs').promises;
+const path = require('path');
+const os = require('os');
+const { parseQuotaXlsx } = require('./parse-quota-xlsx');
 
 const TEST_MODE = false;
 const MAX_RETRIES = 3;
+/** Excel 다운로드 대기 상한. 파일이 1.9MB 라 보통 몇 초면 끝난다. */
+const EXCEL_TIMEOUT_MS = 60000;
 
 async function getAllRegions() {
   console.log('📍 지역 목록 로딩...');
@@ -43,92 +47,47 @@ async function getAllRegions() {
 }
 
 
-function parseQuotaTable(html) {
-  const quotaData = [];
+/**
+ * 「Excel 다운로드」를 눌러 xlsx 를 받고 파싱한다.
+ *
+ * ★POST 를 직접 흉내내지 않는 이유: 요청에 난독화 스크립트(pnp4web)가 만드는
+ *   pnph 토큰이 붙는다. 브라우저 밖에서 재현하면 토큰 규칙이 바뀔 때마다 깨진다.
+ *   버튼을 누르면 그 토큰은 사이트가 알아서 만든다.
+ */
+async function downloadAndParseExcel(page) {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'evquota-'));
+  try {
+    const client = await page.target().createCDPSession();
+    await client.send('Page.setDownloadBehavior', { behavior: 'allow', downloadPath: dir });
 
-  if (!html || typeof html !== 'string') return quotaData;
-
-  const $ = cheerio.load(html);
-
-  // 가장 많은 행을 가진 테이블 찾기
-  let maxRows = 0;
-  let targetTableIndex = 0;
-
-  $('table').each((tableIdx, table) => {
-    const rows = $(table).find('tbody tr').length;
-    if (rows > maxRows) {
-      maxRows = rows;
-      targetTableIndex = tableIdx;
-    }
-  });
-
-  $('table').eq(targetTableIndex).find('tbody tr').each((i, row) => {
-    const cells = [];
-
-    $(row).find('td').each((j, cell) => {
-      // HTML 가져와서 br 기준으로 split
-      const html = $(cell).html() || '';
-      const parts = html.split(/<br\s*\/?>/i)
-        .map(p => $('<div>').html(p).text().trim())
-        .filter(p => p);
-
-      cells.push(parts);
+    // 버튼 문구가 'Excel 다운로드' 다. 아이콘만 바뀌어도 견디도록 부분일치로 찾는다.
+    const clicked = await page.evaluate(() => {
+      const els = [...document.querySelectorAll('button, a, input[type=button]')];
+      const t = els.find((e) => ((e.innerText || e.value || '').replace(/\s/g, '')).includes('Excel'));
+      if (!t) return false;
+      t.click();
+      return true;
     });
+    if (!clicked) throw new Error("'Excel 다운로드' 버튼을 찾지 못했습니다 (페이지가 또 바뀌었을 수 있음)");
 
-    // 총 10개 셀
-    if (cells.length >= 10) {
-      try {
-        const parseNum = (text) => {
-          if (!text) return 0;
-          const cleaned = text.replace(/[()]/g, '').trim();
-          return parseInt(cleaned) || 0;
-        };
-
-        const quota = cells[5] || [];
-        const registered = cells[6] || [];
-        const delivered = cells[7] || [];
-        const remaining = cells[8] || [];
-
-        const rowData = {
-          sido: (cells[0] && cells[0][0]) || '',
-          region: (cells[1] && cells[1][0]) || '',
-          vehicleType: (cells[2] && cells[2][0]) || '',
-
-          quota_total: parseNum(quota[0]),
-          quota_priority: parseNum(quota[1]),
-          quota_corporate: parseNum(quota[2]),
-          quota_taxi: parseNum(quota[3]),
-          quota_general: parseNum(quota[4]),
-
-          registered_total: parseNum(registered[0]),
-          registered_priority: parseNum(registered[1]),
-          registered_corporate: parseNum(registered[2]),
-          registered_taxi: parseNum(registered[3]),
-          registered_general: parseNum(registered[4]),
-
-          delivered_total: parseNum(delivered[0]),
-          delivered_priority: parseNum(delivered[1]),
-          delivered_corporate: parseNum(delivered[2]),
-          delivered_taxi: parseNum(delivered[3]),
-          delivered_general: parseNum(delivered[4]),
-
-          remaining_total: parseNum(remaining[0]),
-          remaining_priority: parseNum(remaining[1]),
-          remaining_corporate: parseNum(remaining[2]),
-          remaining_taxi: parseNum(remaining[3]),
-          remaining_general: parseNum(remaining[4]),
-
-          note: (cells[9] && cells[9].join('\n')) || ''
-        };
-
-        quotaData.push(rowData);
-      } catch (e) {
-        console.warn(`   ⚠️ 행 파싱 오류: ${e.message}`);
-      }
+    // .crdownload 가 사라지고 .xlsx 가 안정될 때까지 기다린다.
+    const deadline = Date.now() + EXCEL_TIMEOUT_MS;
+    let file = null;
+    while (Date.now() < deadline) {
+      const names = await fs.readdir(dir);
+      const done = names.filter((n) => n.toLowerCase().endsWith('.xlsx'));
+      const pending = names.some((n) => n.endsWith('.crdownload'));
+      if (done.length && !pending) { file = path.join(dir, done[0]); break; }
+      await new Promise((r) => setTimeout(r, 500));
     }
-  });
+    if (!file) throw new Error(`Excel 다운로드가 ${EXCEL_TIMEOUT_MS / 1000}초 안에 끝나지 않았습니다`);
 
-  return quotaData;
+    const buf = await fs.readFile(file);
+    console.log(`   📥 Excel ${(buf.length / 1024 / 1024).toFixed(1)}MB 수신`);
+    return parseQuotaXlsx(buf);
+  } finally {
+    await fs.rm(dir, { recursive: true, force: true }).catch(() => {});
+  }
 }
 
 async function scrapeRegionWithRetry(browser, region) {
@@ -142,17 +101,18 @@ async function scrapeRegionWithRetry(browser, region) {
       await page.setDefaultNavigationTimeout(30000);
       await page.setDefaultTimeout(30000);
 
+      // ★2026-08-16 개편 — 이 페이지에서 <table> 이 사라졌다(AG Grid 가상 스크롤).
+      //   161건 중 화면에 보이는 10건 남짓만 DOM 에 있어 HTML 파싱이 성립하지 않는다.
+      //   사이트가 제공하는 「Excel 다운로드」로 받는다 — 161건이 한 번에 온다.
       await page.goto(targetUrl, {
         waitUntil: 'networkidle2',
         timeout: 30000
       });
 
-      await page.waitForSelector('table', { timeout: 10000 });
-
-      const html = await page.content();
+      const quotaData = await downloadAndParseExcel(page);
       await page.close();
 
-      const quotaData = parseQuotaTable(html);
+      if (!quotaData.length) throw new Error('Excel 을 받았으나 행이 0건입니다');
 
       if (attempt > 1) {
         console.log(`   ✅ 재시도 ${attempt}회 성공`);
@@ -169,7 +129,8 @@ async function scrapeRegionWithRetry(browser, region) {
       };
 
     } catch (error) {
-      if (page) await page.close();
+      // 성공 경로에서 이미 닫은 뒤 실패할 수도 있다(행 0건 검사). 두 번 닫아도 죽지 않게.
+      if (page) await page.close().catch(() => {});
 
       if (attempt < MAX_RETRIES) {
         console.log(`   ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
