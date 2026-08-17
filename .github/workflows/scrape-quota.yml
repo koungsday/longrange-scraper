@@ -160,13 +160,18 @@ jobs:
             echo "Data changes detected. Committing and pushing..."
             git commit -m "Update EV quota data: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M:%S KST')"
 
-            MAX_RETRIES=5
+            # ★5→3: 최악 5.7분은 10분 주기에 너무 길다. 어차피 10분 뒤 다시 만든다.
+            MAX_RETRIES=3
             RETRY_COUNT=0
 
             while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
               echo "Push attempt $((RETRY_COUNT + 1))/$MAX_RETRIES..."
 
-              if git push; then
+              # ★timeout 30 — 2026-08-17 실측: 간헐적으로 git fetch 가 9분 29초
+              #   응답 없이 매달렸다(평소 1초). 이 워크플로는 cancel-in-progress 라
+              #   한 번 매달리면 10분 창을 넘겨 **다음 런이 이번 수집을 취소**한다.
+              #   막히면 기다리지 말고 끊고 다시 던진다.
+              if timeout 30 git push; then
                 echo "✅ Push successful!"
                 break
               else
@@ -174,7 +179,7 @@ jobs:
                 RETRY_COUNT=$((RETRY_COUNT + 1))
 
                 if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
-                  git pull --no-rebase -X ours origin main
+                  timeout 30 git pull --no-rebase -X ours origin main || echo "  pull 30초 초과 — 끊고 재시도"
                   WAIT_TIME=$((2 ** RETRY_COUNT))
                   echo "Waiting ${WAIT_TIME}s before retry..."
                   sleep $WAIT_TIME
@@ -327,7 +332,7 @@ jobs:
           fi
           git commit -m "webhook status: $NEW"
           for i in 1 2 3; do
-            if git push; then echo "✅ 웹훅 상태 푸시 완료"; exit 0; fi
+            if timeout 30 git push; then echo "✅ 웹훅 상태 푸시 완료"; exit 0; fi
             echo "  푸시 충돌 → pull 후 재시도 ($i/3)"
             git pull --no-rebase -X ours origin main
             sleep $((i * 3))
