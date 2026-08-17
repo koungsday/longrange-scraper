@@ -1,4 +1,6 @@
 const puppeteer = require('puppeteer');
+const { downloadExcel, PAGE_URL } = require('./ev-excel-download');
+const { parseSubsidyXlsx } = require('./parse-subsidy-xlsx');
 const cheerio = require('cheerio');
 const fs = require('fs').promises;
 
@@ -179,79 +181,7 @@ function parseEVTableALL(html) {
 // ==========================================
 // 3. 재시도 로직 포함 스크래핑
 // ==========================================
-async function scrapeRegionWithRetry(browser, region) {
-  const targetUrl = `https://ev.or.kr/nportal/buySupprt/psPopupLocalCarModelPrice.do?year=${CURRENT_YEAR}&local_cd=${region.code}&local_nm=${encodeURIComponent(region.localName)}&car_type=11&pnph=`;
-  
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    let page = null;
-    
-    try {
-      // ⭐ 브라우저 재사용: 새로운 페이지(탭)만 생성
-      page = await browser.newPage();
-      await page.setDefaultNavigationTimeout(30000);
-      await page.setDefaultTimeout(30000);
-      
-      await page.goto(targetUrl, { 
-        waitUntil: 'networkidle2',
-        timeout: 30000 
-      });
-      
-      await page.waitForSelector('table', { timeout: 10000 });
-      const html = await page.content();
-      
-      // 서울과 부산만 HTML 저장
-      if (region.code === 1100 || region.code === 2600) {
-        try {
-          await fs.mkdir('data', { recursive: true });
-          await fs.writeFile(`data/debug-subsidy-${region.code}.html`, html);
-          console.log(`    💾 debug-subsidy-${region.code}.html 저장됨`);
-        } catch (e) {
-          console.log(`    ⚠️ HTML 저장 실패 (무시)`);
-        }
-      }
-      
-      // ⭐ 브라우저 재사용: 페이지(탭)만 종료
-      await page.close();
-      
-      const vehicles = parseEVTableALL(html);
-      
-      if (attempt > 1) {
-        console.log(`    ✅ 재시도 ${attempt}회 성공`);
-      }
-      
-      return {
-        parentName: region.parentName,
-        localName: region.localName,
-        code: region.code,
-        vehicles: vehicles,
-        success: true,
-        attempts: attempt,
-        timestamp: new Date().toISOString()
-      };
-      
-    } catch (error) {
-      if (page) await page.close();
-      
-      if (attempt < MAX_RETRIES) {
-        console.log(`    ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
-        await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
-        continue;
-      } else {
-        console.error(`    ❌ 최종 실패: ${error.message}`);
-        return {
-          parentName: region.parentName,
-          localName: region.localName,
-          code: region.code,
-          vehicles: {},
-          success: false,
-          error: error.message,
-          attempts: attempt,
-          timestamp: new Date().toISOString()
-        };
-      }
-    }
-  }
-}
+
 
 // ==========================================
 // 4. 메인 실행
@@ -283,49 +213,35 @@ async function main() {
     console.log('✅ 브라우저 준비 완료');
     console.log('');
     
-    console.log('🟢 ===== 전체 스크래핑 시작 =====');
-    // ⚡ 최적화: 병렬 처리 개수를 5에서 8로 상향 조정
-    console.log('⚡ 병렬 처리: 8개씩 동시 스크래핑');
-    const results = [];
-    const CONCURRENT = 8; // 기존 5 -> 8로 증가
-    const BATCH_DELAY = 500; // 배치 사이 대기 시간 500ms -> 300ms로 감소
-    
-    for (let i = 0; i < regions.length; i += CONCURRENT) {
-      const batch = regions.slice(i, i + CONCURRENT);
-      const batchStart = i + 1;
-      const batchEnd = Math.min(i + CONCURRENT, regions.length);
-      
-      console.log(`\n📦 배치 [${batchStart}-${batchEnd}/${regions.length}]`);
-      
-      // 8개 동시 실행
-      const batchResults = await Promise.all(
-        batch.map(async (region, idx) => {
-          const regionNum = i + idx + 1;
-          console.log(`[${regionNum}/${regions.length}] ${region.parentName} ${region.localName}`);
-          
-          // ⭐ 브라우저 인스턴스를 전달
-          const result = await scrapeRegionWithRetry(browser, region);
-          
-          if (result.success && Object.keys(result.vehicles).length > 0) {
-            console.log(`    ✅ [${regionNum}] ${Object.keys(result.vehicles).length}개 차량`);
-          } else if (!result.success) {
-            console.log(`    ❌ [${regionNum}] 실패`);
-          } else {
-            console.log(`    ⚠️ [${regionNum}] 차량 없음`);
-          }
-          
-          return result;
-        })
-      );
-      
-      results.push(...batchResults);
-      
-      // 배치 사이 대기 (서버 부하 방지)
-      if (i + CONCURRENT < regions.length) {
-        await new Promise(resolve => setTimeout(resolve, BATCH_DELAY)); // 500ms -> 300ms로 감소
-      }
+    // ★2026-08-16 개편 — 지역별 팝업(psPopupLocalCarModelPrice.do)이 HTTP 500 으로
+    //   삭제됐다. 개편이 아니라 페이지 자체가 없어져 고쳐 쓸 대상이 없다.
+    //   같은 데이터가 현황 페이지의 「Excel 다운로드」 안에 전부 들어 있으므로
+    //   161개 팝업을 도는 대신 **파일 한 장**을 받는다(요청 161 → 1).
+    console.log('🟢 ===== Excel 한 장으로 전 지역 수집 =====');
+    const page = await browser.newPage();
+    await page.setDefaultNavigationTimeout(30000);
+    await page.setDefaultTimeout(30000);
+    await page.goto(PAGE_URL(1100), { waitUntil: 'networkidle2', timeout: 30000 });
+    const xlsx = await downloadExcel(page);
+    await page.close();
+    console.log(`   📥 Excel ${(xlsx.length / 1024 / 1024).toFixed(1)}MB 수신`);
+
+    const parsed = parseSubsidyXlsx(xlsx, { year: CURRENT_YEAR });
+    console.log(`   📊 금액 단위 ${parsed.meta.unitName}(×${parsed.meta.unit}) 자동 감지 · 지역 ${parsed.legacy.data.length}개`);
+    if (parsed.meta.nationalConflicts.length) {
+      console.warn(`   ⚠️ 국비가 지역마다 다릅니다: ${parsed.meta.nationalConflicts.join(', ')}`);
     }
-    
+
+    // 지역 목록 기준으로 채운다 — Excel 에 없는 지역은 실패로 남겨 개수를 정직하게 센다.
+    const byCode = new Map(parsed.legacy.data.map((d) => [String(d.code), d]));
+    const results = regions.map((r) => byCode.get(String(r.code)) || {
+      parentName: r.parentName, localName: r.localName, code: r.code,
+      vehicles: {}, success: false, error: 'Excel 에 이 지역이 없습니다',
+      attempts: 1, timestamp: new Date().toISOString(),
+    });
+    const missing = results.filter((r) => !r.success);
+    if (missing.length) console.warn(`   ⚠️ Excel 에 없는 지역 ${missing.length}개: ${missing.slice(0, 5).map((m) => m.localName).join(', ')}`);
+
     // ⭐ 핵심: 모든 작업이 끝난 후 브라우저를 종료 (Close Once)
     await browser.close();
     console.log('');

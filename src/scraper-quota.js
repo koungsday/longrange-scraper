@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 const axios = require('axios');
 const fs = require('fs').promises;
-const path = require('path');
 const os = require('os');
 const { parseQuotaXlsx } = require('./parse-quota-xlsx');
+const { downloadExcel } = require('./ev-excel-download');
 
 const TEST_MODE = false;
 const MAX_RETRIES = 3;
@@ -47,49 +47,6 @@ async function getAllRegions() {
 }
 
 
-/**
- * 「Excel 다운로드」를 눌러 xlsx 를 받고 파싱한다.
- *
- * ★POST 를 직접 흉내내지 않는 이유: 요청에 난독화 스크립트(pnp4web)가 만드는
- *   pnph 토큰이 붙는다. 브라우저 밖에서 재현하면 토큰 규칙이 바뀔 때마다 깨진다.
- *   버튼을 누르면 그 토큰은 사이트가 알아서 만든다.
- */
-async function downloadAndParseExcel(page) {
-  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'evquota-'));
-  try {
-    const client = await page.target().createCDPSession();
-    await client.send('Page.setDownloadBehavior', { behavior: 'allow', downloadPath: dir });
-
-    // 버튼 문구가 'Excel 다운로드' 다. 아이콘만 바뀌어도 견디도록 부분일치로 찾는다.
-    const clicked = await page.evaluate(() => {
-      const els = [...document.querySelectorAll('button, a, input[type=button]')];
-      const t = els.find((e) => ((e.innerText || e.value || '').replace(/\s/g, '')).includes('Excel'));
-      if (!t) return false;
-      t.click();
-      return true;
-    });
-    if (!clicked) throw new Error("'Excel 다운로드' 버튼을 찾지 못했습니다 (페이지가 또 바뀌었을 수 있음)");
-
-    // .crdownload 가 사라지고 .xlsx 가 안정될 때까지 기다린다.
-    const deadline = Date.now() + EXCEL_TIMEOUT_MS;
-    let file = null;
-    while (Date.now() < deadline) {
-      const names = await fs.readdir(dir);
-      const done = names.filter((n) => n.toLowerCase().endsWith('.xlsx'));
-      const pending = names.some((n) => n.endsWith('.crdownload'));
-      if (done.length && !pending) { file = path.join(dir, done[0]); break; }
-      await new Promise((r) => setTimeout(r, 500));
-    }
-    if (!file) throw new Error(`Excel 다운로드가 ${EXCEL_TIMEOUT_MS / 1000}초 안에 끝나지 않았습니다`);
-
-    const buf = await fs.readFile(file);
-    console.log(`   📥 Excel ${(buf.length / 1024 / 1024).toFixed(1)}MB 수신`);
-    return parseQuotaXlsx(buf);
-  } finally {
-    await fs.rm(dir, { recursive: true, force: true }).catch(() => {});
-  }
-}
-
 async function scrapeRegionWithRetry(browser, region) {
   const targetUrl = `https://ev.or.kr/nportal/buySupprt/initSubsidyPaymentCheckAction.do?local_cd=${region.code}`;
 
@@ -109,7 +66,7 @@ async function scrapeRegionWithRetry(browser, region) {
         timeout: 30000
       });
 
-      const quotaData = await downloadAndParseExcel(page);
+      const quotaData = parseQuotaXlsx(await downloadExcel(page, { timeoutMs: EXCEL_TIMEOUT_MS }));
       await page.close();
 
       if (!quotaData.length) throw new Error('Excel 을 받았으나 행이 0건입니다');
