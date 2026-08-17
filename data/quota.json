@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-17T01:21:00.959Z",
+  "timestamp": "2026-08-17T01:31:07.579Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1885,11 +1885,11 @@
           "sido": "충남",
           "region": "서산시",
           "vehicleType": "전기승용",
-          "quota_total": 407,
-          "quota_priority": 48,
+          "quota_total": 353,
+          "quota_priority": 32,
           "quota_corporate": 0,
-          "quota_taxi": 17,
-          "quota_general": 342,
+          "quota_taxi": 12,
+          "quota_general": 309,
           "registered_total": 353,
           "registered_priority": 115,
           "registered_corporate": 7,
@@ -1900,11 +1900,11 @@
           "delivered_corporate": 7,
           "delivered_taxi": 12,
           "delivered_general": 219,
-          "remaining_total": 54,
+          "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 5,
-          "remaining_general": 123,
+          "remaining_taxi": 0,
+          "remaining_general": 90,
           "note": "차종별 보조금 차등 지원에 따라 예산범위 내 보급대수는 조정될 수 있음.&#xa; 자격부여(서류검토) → 지원가능확인요청(대리점) → 예산 범위 내 대상자선정&#xa; &#xa; - 2차 사업 : 승용차, 화물차 접수 마감(예산소진)&#xa; - 3차 사업 : 10월 초 공고 예정(승용, 화물)&#xa;  ※ 9월 초 전기버스 별도 공고(승합-일반물량) &#xa; &#xa; ◎ 지원 절차 변경 사전 안내&#xa; : 접수 순번에 따라 자격부여하고 ★지정일부터 지원가능여부확인 요청순으로 대상자 선정"
         },
         {
@@ -4198,7 +4198,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-17T01:21:00.915Z"
+      "timestamp": "2026-08-17T01:31:07.525Z"
     }
   ]
 }
