@@ -29,22 +29,22 @@ async function main() {
   console.log('🔗 공고문 첨부 링크 목록 생성');
   console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
 
-  // ★주 1회(월요일)만. 다른 날은 즉시 끝난다 — 매일 도는 스크랩에 얹혀 있지만
-  //   실제 작업은 주 1회다. 수동 실행은 NOTICE_FORCE=1 로 요일을 무시한다.
-  const kstDay = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' })).getDay();
-  if (process.env.NOTICE_FORCE !== '1' && kstDay !== 1) {
-    console.log(`⏭️  오늘은 ${'일월화수목금토'[kstDay]}요일 — 링크 목록은 월요일에만 갱신한다(건너뜀)`);
-    return;
-  }
 
   const regions = await getRegions();
   console.log(`📍 지역 ${regions.length}개`);
 
-  // ★항상 넓게(11구분) 훑되 **주 1회만** 돈다.
-  //   공고문은 연 1~3회만 바뀐다(실측: 게시일이 전부 2026-01·02, 3월 이후 신규 0건).
-  //   매일 돌 이유가 없다. 주 1회 11분이면 충분하고, 넓게 훑으니 새 구분도 안 놓친다
-  //   (처음에 A계열만 보다가 B 93건·C 25건을 통째로 놓쳤다).
-  const data = await buildNoticeLinks(regions, { probe: true });
+  // ★평소엔 **알려진 칸만** 두드린다 (388회 ≈ 4.5분).
+  //   전수는 161×11=1,771 인데 실제 첨부는 388개다. 어디 있는지 이미 아는데도
+  //   빈 칸 1,383개를 매번 두드리던 게 전체 시간의 78% 였다.
+  // ★월요일엔 전수(1,771회 ≈ 20분) — 새로 생긴 첨부·새 구분을 찾는다.
+  //   처음에 A계열만 보다가 B 93건·C 25건을 통째로 놓쳤으므로 주 1회는 넓게 본다.
+  //   NOTICE_FULL=1 로 강제 전수 가능.
+  let prev = null;
+  try { prev = JSON.parse(await fs.readFile(OUT, 'utf8')); } catch { /* 최초 */ }
+  const kstDay = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' })).getDay();
+  const full = process.env.NOTICE_FULL === '1' || kstDay === 1 || !prev;   // 월요일·최초는 전수
+  console.log(full ? '🔍 전수 훑기 (새 첨부 탐색)' : '🔎 알려진 칸만 확인');
+  const data = await buildNoticeLinks(regions, { probe: true, known: full ? null : prev.regions });
 
   if (!data.fileCount) {
     // ★0건이면 쓰지 않는다. 서버가 잠깐 막았을 때 멀쩡한 목록을 빈 목록으로
@@ -53,8 +53,6 @@ async function main() {
     process.exit(1);
   }
 
-  let prev = null;
-  try { prev = JSON.parse(await fs.readFile(OUT, 'utf8')); } catch { /* 최초 */ }
   const same = prev && JSON.stringify({ ...prev, timestamp: 0 }) === JSON.stringify({ ...data, timestamp: 0 });
   if (same) {
     console.log('💾 변화 없음 → 미기록');

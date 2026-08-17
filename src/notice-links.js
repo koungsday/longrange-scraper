@@ -40,26 +40,50 @@ const describe = (name) => {
   return { ext, ...(KIND[ext] || { kind: ext ? ext.toUpperCase() : '파일', mobileOpen: false, note: '' }) };
 };
 
-/** 본문을 받지 않고 "무엇이 있는지"만. 없으면 null. */
-async function peek(code, gubun, year) {
-  try {
-    const res = await fetch(url(code, gubun, year), { method: 'HEAD', headers: UA });
-    if (!res.ok) return null;
-    const name = filenameOf(res.headers);
-    return name ? name : null;
-  } catch { return null; }
+/**
+ * 본문을 받지 않고 "무엇이 있는지"만.
+ * @returns {{ok:true, name:string|null} | {ok:false}}  ok:false = 확인 실패(모름)
+ * ★"없음"과 "확인 실패"를 반드시 구분한다. 둘을 섞으면 일시적 실패 하나가
+ *   멀쩡한 첨부를 목록에서 지워 버린다(그러면 화면에서 공고문이 사라진다).
+ */
+async function peek(code, gubun, year, tries = 2) {
+  for (let i = 0; i < tries; i++) {
+    try {
+      const res = await fetch(url(code, gubun, year), { method: 'HEAD', headers: UA });
+      if (res.status >= 500 && res.status !== 500) throw new Error('5xx');
+      // 500 은 "그 칸에 첨부가 없다"는 이 서버의 정상 응답이다(실측).
+      if (!res.ok) return { ok: true, name: null };
+      return { ok: true, name: filenameOf(res.headers) || null };
+    } catch {
+      if (i === tries - 1) return { ok: false };
+      await new Promise((s) => setTimeout(s, 300 * (i + 1)));
+    }
+  }
+  return { ok: false };
+}
+
+/** 동시 실행. ★4가 최적 — 8·12는 오히려 느려지고 실패가 는다(실측). */
+async function mapLimit(items, limit, fn) {
+  const q = [...items];
+  const out = [];
+  await Promise.all(Array.from({ length: limit }, async () => {
+    while (q.length) { const it = q.shift(); out.push(await fn(it)); }
+  }));
+  return out;
 }
 
 /**
  * @param {Array<{code:string|number, localName?:string, parentName?:string}>} regions
- * @param {{year?:number, delayMs?:number, probe?:boolean, log?:Function}} opt
+ * @param {{year?:number, delayMs?:number, probe?:boolean, known?:object, log?:Function}} opt
+ *   known: 이전 결과(regions). 주면 **알려진 칸만** 두드린다.
  */
 async function buildNoticeLinks(regions, opt = {}) {
   const year = opt.year || new Date().getFullYear();
   // ★HEAD 는 **제한이 없다**(실측: 간격 0초에서도 12/12, 150ms 로 100건 연속 100/100).
   //   제한은 본문 다운로드에만 걸린다. 처음에 1초를 붙였던 건 근거 없는 과잉이었고
   //   그 탓에 1,771건이 30분+ 걸렸다. 150ms 면 예의도 지키고 11분이면 끝난다.
-  const delay = opt.delayMs ?? 150;
+  const delay = opt.delayMs ?? 0;         // 병렬로 도니 개별 지연은 필요 없다
+  const conc = opt.concurrency ?? 4;      // ★4가 최적(실측: 8·12는 더 느리고 실패 증가)
   const log = opt.log || console.log;
   // ★가끔 넓게 훑는다. 처음에 A계열만 보다가 B(93건)·C(25건)를 통째로 놓쳤다.
   const list = opt.probe ? [...GUBUN, ...GUBUN_PROBE] : GUBUN;
@@ -67,12 +91,33 @@ async function buildNoticeLinks(regions, opt = {}) {
   const out = {};
   const surprises = [];
   let files = 0;
+  let asked = 0;
+  let unknown = 0;      // 확인 실패 — 이전 값을 그대로 지킨 건수
   for (const r of regions) {
     const code = String(r.code);
     const arr = [];
-    for (const g of list) {
-      const name = await peek(code, g, year);
-      await new Promise((s) => setTimeout(s, delay));
+    // ★알려진 칸만 두드린다.
+    //   전수로 훑으면 161×11=1,771 인데 실제 첨부는 388개다. 빈 칸 1,383개를
+    //   매번 두드리는 게 전체 시간의 78% 였다. 어디에 있는지 이미 아는데도.
+    //   새 첨부 발견은 주 1회 전수 훑기(known 없이 호출)가 맡는다.
+    const slots = opt.known?.[code]
+      ? list.filter((g) => opt.known[code].files.some((f) => f.gubun === g))
+      : list;
+    const results = await mapLimit(slots, conc, async (g) => {
+      asked++;
+      const r = await peek(code, g, year);
+      if (delay) await new Promise((s) => setTimeout(s, delay));
+      return [g, r];
+    });
+    for (const [g, r] of results.sort((a, b) => list.indexOf(a[0]) - list.indexOf(b[0]))) {
+      let name = r.ok ? r.name : null;
+      if (!r.ok) {
+        // ★확인 실패 → 이전에 있던 건 그대로 지킨다. 지우지 않는다.
+        const old = opt.known?.[code]?.files.find((f) => f.gubun === g)
+          || opt.prev?.[code]?.files.find((f) => f.gubun === g);
+        if (old) { arr.push({ ...old, stale: true }); files++; unknown++; }
+        continue;
+      }
       if (!name) continue;
       const d = describe(name);
       arr.push({ gubun: g, name, ext: d.ext, kind: d.kind, mobileOpen: d.mobileOpen, note: d.note,
@@ -94,13 +139,17 @@ async function buildNoticeLinks(regions, opt = {}) {
     note: '파일은 환경부 서버에서 직접 내려받습니다. 우리는 목록만 제공합니다.',
     regionCount: Object.keys(out).length,
     fileCount: files,
+    askedCount: asked,      // 이번에 실제로 두드린 칸 수 — 낭비를 눈에 보이게
+    unknownCount: unknown,  // 확인 실패로 이전 값을 유지한 건수 (0이어야 정상)
+    scanMode: opt.known ? 'known' : 'full',
     byExt,
     regionsWithPdf: withPdf,
     surprises: surprises.slice(0, 20),
     regions: out,
   };
-  log(`🔗 첨부 링크 ${files}건 · ${result.regionCount}개 지역 · 형식 ${JSON.stringify(byExt)}`);
+  log(`🔗 첨부 링크 ${files}건 · ${result.regionCount}개 지역 · ${opt.known ? '알려진 칸만' : '전수'} ${asked}회 두드림 · 형식 ${JSON.stringify(byExt)}`);
   log(`   PDF 가 있는 지역 ${withPdf}/${result.regionCount} (폰에서 바로 열림)`);
+  if (unknown) log(`   ⚠️ 확인 실패 ${unknown}건 — 이전 값을 유지했다(지우지 않음)`);
   if (surprises.length) log(`   ⚠️ 새 구분: ${surprises.join(' / ')} → notice-files.js GUBUN 확장 필요`);
   return result;
 }
