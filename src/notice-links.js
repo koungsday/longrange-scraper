@@ -11,8 +11,10 @@
  *   환경부 화면은 버튼이 **"다운로드 1 / 2 / 3"** 이 전부다. 호버해야
  *   "본공고 1 공고문 다운로드" 가 나오고, **형식도 크기도 파일명도 안 보인다**
  *   (실측: 본문에 hwp·pdf·KB·MB 어느 단어도 없음).
- *   → 모바일에서 .hwp 를 받으면 열지도 못한다. 우리는 Content-Disposition 에서
- *     파일명을 알므로 **무슨 형식인지, 폰에서 열리는지**를 미리 알려줄 수 있다.
+ *   → 뭘 받는지 모르고 누른다. 우리는 Content-Disposition 에서 파일명을 알므로
+ *     **파일명과 형식(PDF·한글문서·엑셀)** 을 미리 보여줄 수 있다.
+ *     ※"폰에서 열리는지" 까지는 말하지 않는다 — 뷰어 앱·브라우저가 있어 단정할 수
+ *       없고, 우리가 판단할 영역도 아니다.
  *
  * ※크기는 넣지 않는다 — HEAD 응답의 Content-Length 가 0 이라 알 수 없고,
  *   알려면 본문을 받아야 하는데 그러면 이 설계의 이점이 사라진다.
@@ -22,22 +24,27 @@ const { filenameOf, GUBUN, GUBUN_PROBE, url } = require('./notice-files');
 
 const UA = { 'User-Agent': 'Mozilla/5.0 (compatible; vw-k-subsidy-links/1.0)' };
 
-/** 확장자 → 사람이 읽는 형식 + 폰에서 바로 열리는지. */
+/**
+ * 확장자 → 사람이 읽는 형식.
+ * ★"폰에서 열리는지" 는 넣지 않는다. 한글 뷰어 앱도 브라우저 뷰어도 있어서
+ *   우리가 단정할 수 없고, 애초에 우리가 판단할 영역이 아니다.
+ *   **무슨 파일인지 알려주는 것까지**가 우리 몫이다.
+ */
 const KIND = {
-  pdf:  { kind: 'PDF',    mobileOpen: true,  note: '' },
-  hwpx: { kind: '한글문서', mobileOpen: false, note: '한글 프로그램 또는 뷰어 필요' },
-  hwtx: { kind: '한글서식', mobileOpen: false, note: '한글 프로그램 또는 뷰어 필요' },
-  hwp:  { kind: '한글문서(구형)', mobileOpen: false, note: '한글 프로그램 또는 뷰어 필요' },
-  xlsx: { kind: '엑셀',    mobileOpen: false, note: '엑셀 또는 뷰어 필요' },
-  xls:  { kind: '엑셀(구형)', mobileOpen: false, note: '엑셀 또는 뷰어 필요' },
-  zip:  { kind: '압축파일', mobileOpen: false, note: '압축을 풀어야 함' },
+  pdf:  { kind: 'PDF' },
+  hwpx: { kind: '한글문서' },
+  hwtx: { kind: '한글서식' },
+  hwp:  { kind: '한글문서(구형)' },
+  xlsx: { kind: '엑셀' },
+  xls:  { kind: '엑셀(구형)' },
+  zip:  { kind: '압축파일' },
 };
 const describe = (name) => {
   const s = String(name);
   // ★점이 없으면 확장자가 없는 것이다. split('.').pop() 은 이름 전체를 돌려주므로
   //   그대로 쓰면 "확장자없음" 같은 파일명이 형식으로 표시된다.
   const ext = s.includes('.') ? (s.split('.').pop() || '').toLowerCase() : '';
-  return { ext, ...(KIND[ext] || { kind: ext ? ext.toUpperCase() : '파일', mobileOpen: false, note: '' }) };
+  return { ext, ...(KIND[ext] || { kind: ext ? ext.toUpperCase() : '파일' }) };
 };
 
 /**
@@ -120,8 +127,7 @@ async function buildNoticeLinks(regions, opt = {}) {
       }
       if (!name) continue;
       const d = describe(name);
-      arr.push({ gubun: g, name, ext: d.ext, kind: d.kind, mobileOpen: d.mobileOpen, note: d.note,
-        url: url(code, g, year) });
+      arr.push({ gubun: g, name, ext: d.ext, kind: d.kind, url: url(code, g, year) });
       files++;
       if (!GUBUN.includes(g)) surprises.push(`${code}/${g}: ${name}`);
     }
@@ -130,7 +136,6 @@ async function buildNoticeLinks(regions, opt = {}) {
 
   const byExt = {};
   for (const v of Object.values(out)) for (const f of v.files) byExt[f.ext] = (byExt[f.ext] || 0) + 1;
-  const withPdf = Object.values(out).filter((v) => v.files.some((f) => f.ext === 'pdf')).length;
 
   const result = {
     year,
@@ -143,12 +148,10 @@ async function buildNoticeLinks(regions, opt = {}) {
     unknownCount: unknown,  // 확인 실패로 이전 값을 유지한 건수 (0이어야 정상)
     scanMode: opt.known ? 'known' : 'full',
     byExt,
-    regionsWithPdf: withPdf,
     surprises: surprises.slice(0, 20),
     regions: out,
   };
   log(`🔗 첨부 링크 ${files}건 · ${result.regionCount}개 지역 · ${opt.known ? '알려진 칸만' : '전수'} ${asked}회 두드림 · 형식 ${JSON.stringify(byExt)}`);
-  log(`   PDF 가 있는 지역 ${withPdf}/${result.regionCount} (폰에서 바로 열림)`);
   if (unknown) log(`   ⚠️ 확인 실패 ${unknown}건 — 이전 값을 유지했다(지우지 않음)`);
   if (surprises.length) log(`   ⚠️ 새 구분: ${surprises.join(' / ')} → notice-files.js GUBUN 확장 필요`);
   return result;
