@@ -124,7 +124,7 @@ jobs:
           #   그 결과 data/ 가 7.22 에 얼어붙었고, 변경감지의 전제("git HEAD = 직전 커밋본")가 깨져
           #   매 런 139개 지역이 거짓 변경으로 잡혀 vw-k 재검증을 폭주시켰다.
           #   → 경로별로 따로 add 한다. 하나가 없어도 나머지는 스테이징된다.
-          for p in data/quota.json data/quota-history*.json data/quota-history data/note-history data/webhook-status.json; do
+          for p in data/quota.json data/quota-detail.json data/quota-detail-history*.json data/quota-history*.json data/quota-history data/note-history data/webhook-status.json; do
             git add "$p" 2>/dev/null || true
           done
 

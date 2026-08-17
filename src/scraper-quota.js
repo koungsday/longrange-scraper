@@ -2,7 +2,8 @@ const puppeteer = require('puppeteer');
 const axios = require('axios');
 const fs = require('fs').promises;
 const os = require('os');
-const { parseQuotaXlsx } = require('./parse-quota-xlsx');
+const { parseQuotaXlsx, readSheets } = require('./parse-quota-xlsx');
+const { parseQuotaDetail, diffDetail } = require('./parse-quota-detail');
 const { downloadExcel } = require('./ev-excel-download');
 
 const TEST_MODE = false;
@@ -66,7 +67,17 @@ async function scrapeRegionWithRetry(browser, region) {
         timeout: 30000
       });
 
-      const quotaData = parseQuotaXlsx(await downloadExcel(page, { timeoutMs: EXCEL_TIMEOUT_MS }));
+      const buf = await downloadExcel(page, { timeoutMs: EXCEL_TIMEOUT_MS });
+      const quotaData = parseQuotaXlsx(buf);
+      // ★부가 필드는 **본체를 죽이면 안 된다.** 실패해도 여기서 삼키고 사유만 남긴다.
+      //   (quota 파싱은 위에서 던지는 게 맞다 — 틀린 숫자를 배포하느니 멈추는 게 낫다.)
+      let detail = null;
+      try {
+        detail = parseQuotaDetail(readSheets(buf));
+      } catch (e) {
+        detail = { available: false, timestamp: new Date().toISOString(),
+          missing: [`파서 예외: ${e.message}`], fields: [], regions: {} };
+      }
       await page.close();
 
       if (!quotaData.length) throw new Error('Excel 을 받았으나 행이 0건입니다');
@@ -80,6 +91,7 @@ async function scrapeRegionWithRetry(browser, region) {
         localName: region.localName,
         code: region.code,
         quotaData: quotaData,
+        detail,
         success: true,
         attempts: attempt,
         timestamp: new Date().toISOString()
@@ -337,6 +349,13 @@ async function main() {
 
     await fs.mkdir('data', { recursive: true });
 
+    // ★부가 필드(quota-detail)는 quota.json 안에 넣지 않는다.
+    //   quota.json 은 **방문자 브라우저가 직접 받는다**(vw-k RegionSubsidyStatus, 285KB).
+    //   여기에 12필드 × 161행을 더하면 방문자 대역폭이 그만큼 늘어난다.
+    //   리뉴얼 때 쓸 데이터이므로 옆에 조용히 쌓아 두고, 지금 화면은 아무것도 안 바뀐다.
+    const detail = results.find((r) => r && r.detail)?.detail || null;
+    for (const r of results) delete r.detail;   // quota.json 에 섞여 들어가지 않게
+
     const outputData = {
       timestamp: new Date().toISOString(),
       total_regions: 1,
@@ -357,6 +376,49 @@ async function main() {
     );
 
     console.log('💾 data/quota.json 저장 완료');
+
+    // ── 부가 필드 + 변경 이력 (리뉴얼 대비 선수집) ──────────────────────────
+    // ★여기서 예외가 나도 quota 수집은 이미 끝났다. 통째로 감싸 본체를 지킨다.
+    try {
+      if (detail && detail.available) {
+        let prevDetail = null;
+        try { prevDetail = JSON.parse(await fs.readFile('data/quota-detail.json', 'utf8')); } catch { /* 최초 */ }
+
+        await fs.writeFile('data/quota-detail.json', JSON.stringify(detail));
+        const kb = (JSON.stringify(detail).length / 1024).toFixed(0);
+        console.log(`💾 data/quota-detail.json 저장 (${detail.regionCount}지역 × ${detail.fields.length}필드, ${kb}KB)`);
+        if (detail.missing.length) console.warn(`   ⚠️ 못 찾은 열 ${detail.missing.length}건: ${detail.missing.join(' / ')}`);
+
+        // 변경 이력 — 바뀐 것만. {code, field, before, after} 라 필드가 늘어도 스키마 불변.
+        const HP = 'data/quota-detail-history.json';
+        const nowKst = new Date().toLocaleString('sv-SE', { timeZone: 'Asia/Seoul' }).replace(' ', 'T');
+        const year = Number(nowKst.slice(0, 4));
+        let hist;
+        try { hist = JSON.parse(await fs.readFile(HP, 'utf8')); } catch { hist = { year, lastUpdated: '', changes: [] }; }
+        if (hist.year !== year) {                       // 연도 롤오버 — quota-history 와 같은 방식
+          await fs.writeFile(`data/quota-detail-history-${hist.year}.json`, JSON.stringify(hist));
+          hist = { year, lastUpdated: '', changes: [] };
+        }
+        const changes = diffDetail(prevDetail, detail, nowKst);
+        if (changes.length) {
+          hist.changes.push(...changes);
+          hist.lastUpdated = nowKst;
+          await fs.writeFile(HP, JSON.stringify(hist));
+          const brief = changes.slice(0, 5).map((c) => `${c.region} ${c.field} ${c.before}→${c.after}`).join(' · ');
+          console.log(`📝 변경 ${changes.length}건 기록: ${brief}${changes.length > 5 ? ' …' : ''}`);
+        } else {
+          console.log('📝 부가 필드 변경 없음');
+        }
+      } else {
+        console.warn(`⚠️ 부가 필드 수집 실패 — ${detail ? detail.missing.join(' / ') : 'detail 없음'}`);
+        // 실패해도 파일은 남긴다. 안 보이는 실패를 만들지 않기 위해서다(위생 다이제스트가 읽는다).
+        await fs.writeFile('data/quota-detail.json', JSON.stringify(detail || {
+          available: false, timestamp: new Date().toISOString(), missing: ['수집 결과 없음'], fields: [], regions: {},
+        }));
+      }
+    } catch (e) {
+      console.error('⚠️ 부가 필드 단계 오류(본체엔 영향 없음):', e.message);
+    }
 
     // [변경감지] 변경 지역 코드 산출 → data 밖(root)에 기록. 워크플로 웹훅이 읽어 vw-k 재검증.
     // 스크랩 성공+데이터 있을 때만 실제 산출. 실패/빈데이터 → 빈 배열(전지역 오탐/재검증 폭주 방지).
