@@ -384,9 +384,17 @@ async function main() {
         let prevDetail = null;
         try { prevDetail = JSON.parse(await fs.readFile('data/quota-detail.json', 'utf8')); } catch { /* 최초 */ }
 
-        await fs.writeFile('data/quota-detail.json', JSON.stringify(detail));
+        // ★내용이 같으면 쓰지 않는다 — timestamp 만 바뀐 216KB 를 10분마다(하루 144회)
+        //   커밋하면 저장소만 부푼다. quota-history 슬라이스가 이미 쓰는 방식이다.
+        const sameAsPrev = prevDetail
+          && JSON.stringify({ ...prevDetail, timestamp: 0 }) === JSON.stringify({ ...detail, timestamp: 0 });
         const kb = (JSON.stringify(detail).length / 1024).toFixed(0);
-        console.log(`💾 data/quota-detail.json 저장 (${detail.regionCount}지역 × ${detail.fields.length}필드, ${kb}KB)`);
+        if (sameAsPrev) {
+          console.log(`💾 data/quota-detail.json 변화 없음 → 미기록 (${kb}KB 커밋 절약)`);
+        } else {
+          await fs.writeFile('data/quota-detail.json', JSON.stringify(detail));
+          console.log(`💾 data/quota-detail.json 저장 (${detail.regionCount}지역 × ${detail.fields.length}필드, ${kb}KB)`);
+        }
         if (detail.missing.length) console.warn(`   ⚠️ 못 찾은 열 ${detail.missing.length}건: ${detail.missing.join(' / ')}`);
 
         // 변경 이력 — 바뀐 것만. {code, field, before, after} 라 필드가 늘어도 스키마 불변.
@@ -407,6 +415,10 @@ async function main() {
           const brief = changes.slice(0, 5).map((c) => `${c.region} ${c.field} ${c.before}→${c.after}`).join(' · ');
           console.log(`📝 변경 ${changes.length}건 기록: ${brief}${changes.length > 5 ? ' …' : ''}`);
         } else {
+          // ★변경이 0건이어도 **파일은 있어야 한다.** 없으면 위생 다이제스트가
+          //   "감시 대상 없음" 으로 조용히 지나가고, 이력 수집이 죽어도 아무도 모른다.
+          //   (파일이 없어서 감시가 꺼져 있던 게 2026-08 웹훅 사고의 구조였다.)
+          try { await fs.access(HP); } catch { await fs.writeFile(HP, JSON.stringify(hist)); }
           console.log('📝 부가 필드 변경 없음');
         }
       } else {
