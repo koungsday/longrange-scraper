@@ -52,10 +52,24 @@ jobs:
           git commit -m "Update notice links: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M KST')"
           # ★Pages 배포는 여기서 안 한다 — data/ 에 커밋만 해두면 다음 quota 런
           #   (10분 주기)이 data/ 전체를 발행하면서 같이 올린다. 충돌 회피.
-          for i in 1 2 3; do
-            git push && exit 0
-            echo "push 실패 — 최신 반영 후 재시도 ($i/3)"
-            git pull --no-rebase -X ours origin main
-            sleep $((2 ** i))
+          #
+          # ★★git 명령마다 timeout 을 건다.
+          #   2026-08-17 실측: push 충돌 후 `git pull` 의 **fetch 가 9분 29초** 걸렸다
+          #   (머지는 0.3초, 바로 다음 pull 은 0.6초 — 간헐적 서버측 지연).
+          #   저장소가 150MB 이고 17.5MB 짜리 quota-history.json 이 10분마다 다시
+          #   커밋되는 압박이 배경으로 보인다. 원인을 우리가 못 고치므로
+          #   **한 번 막혔을 때 손해를 60초로 묶는다.**
+          #
+          # ★실패해도 exit 0 — 이 데이터는 30분마다 다시 만든다. 워크플로를
+          #   빨갛게 만들어 진짜 실패를 묻히게 하는 것이 더 나쁘다.
+          for i in 1 2; do
+            if timeout 30 git push; then
+              echo "✅ push 성공 ($i/2)"
+              exit 0
+            fi
+            echo "push 실패 — 최신 반영 후 재시도 ($i/2)"
+            timeout 30 git pull --no-rebase -X ours origin main || echo "  pull 시간초과(30초) — 다음 시도"
+            sleep 3
           done
-          echo "❌ push 실패"; exit 1
+          echo "⚠️ push 2회 실패 — 다음 30분 런이 다시 만든다(실패로 처리하지 않음)"
+          exit 0
