@@ -73,7 +73,16 @@ const won = (v, unit) => {
  * @returns {{subsidies: object, vehicles: object, legacy: object, meta: object}}
  */
 function parseSubsidyXlsx(buf, opt = {}) {
-  const sheets = readSheets(buf);
+  return buildFromSheets(readSheets(buf), opt);
+}
+
+/**
+ * 시트 객체({시트이름: 2차원배열})에서 산출물을 만든다.
+ * ★zip 과 분리해 둔 이유: 실패 경로(열 이름 변경·시트 소실·단위 소실)를
+ *   **합성 입력으로 확실히** 시험하기 위해서다. xlsx 를 뜯어 고치는 방식은
+ *   치환이 실제로 먹었는지 확신할 수 없어 검증을 못 믿게 만든다(실제로 겪음).
+ */
+function buildFromSheets(sheets, opt = {}) {
   const m = sheets['모델별_지방비'];
   if (!m || m.length < 2) throw new Error("Excel 에 '모델별_지방비' 시트가 없습니다");
 
@@ -156,4 +165,4 @@ function parseSubsidyXlsx(buf, opt = {}) {
   };
 }
 
-module.exports = { parseSubsidyXlsx, resolveMoneyUnit, UNIT_TO_WON };
+module.exports = { parseSubsidyXlsx, buildFromSheets, resolveMoneyUnit, UNIT_TO_WON };
