@@ -29,16 +29,22 @@ async function main() {
   console.log('🔗 공고문 첨부 링크 목록 생성');
   console.log('⏰ ' + new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
 
+  // ★주 1회(월요일)만. 다른 날은 즉시 끝난다 — 매일 도는 스크랩에 얹혀 있지만
+  //   실제 작업은 주 1회다. 수동 실행은 NOTICE_FORCE=1 로 요일을 무시한다.
+  const kstDay = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' })).getDay();
+  if (process.env.NOTICE_FORCE !== '1' && kstDay !== 1) {
+    console.log(`⏭️  오늘은 ${'일월화수목금토'[kstDay]}요일 — 링크 목록은 월요일에만 갱신한다(건너뜀)`);
+    return;
+  }
+
   const regions = await getRegions();
   console.log(`📍 지역 ${regions.length}개`);
 
-  // ★평소엔 확인된 5구분만(약 13분). **월요일에만** 여유분까지 넓게 훑는다(약 30분).
-  //   처음에 A계열만 보다가 B(93건)·C(25건)를 통째로 놓쳤다 — 새 구분이 생겨도
-  //   조용히 빠지지 않게 주 1회는 넓게 본다. HEAD 라 서버 부담은 작다.
-  const kstDay = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' })).getDay();
-  const probe = process.env.NOTICE_PROBE === '1' || kstDay === 1;   // 1 = 월요일
-  console.log(probe ? '🔍 넓게 훑기(월요일): 11구분' : '🔎 평소 훑기: 5구분');
-  const data = await buildNoticeLinks(regions, { probe, delayMs: 1000 });
+  // ★항상 넓게(11구분) 훑되 **주 1회만** 돈다.
+  //   공고문은 연 1~3회만 바뀐다(실측: 게시일이 전부 2026-01·02, 3월 이후 신규 0건).
+  //   매일 돌 이유가 없다. 주 1회 11분이면 충분하고, 넓게 훑으니 새 구분도 안 놓친다
+  //   (처음에 A계열만 보다가 B 93건·C 25건을 통째로 놓쳤다).
+  const data = await buildNoticeLinks(regions, { probe: true });
 
   if (!data.fileCount) {
     // ★0건이면 쓰지 않는다. 서버가 잠깐 막았을 때 멀쩡한 목록을 빈 목록으로

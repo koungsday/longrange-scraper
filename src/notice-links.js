@@ -56,7 +56,10 @@ async function peek(code, gubun, year) {
  */
 async function buildNoticeLinks(regions, opt = {}) {
   const year = opt.year || new Date().getFullYear();
-  const delay = opt.delayMs ?? 1000;      // HEAD 는 1초면 안정적(실측 6/6)
+  // ★HEAD 는 **제한이 없다**(실측: 간격 0초에서도 12/12, 150ms 로 100건 연속 100/100).
+  //   제한은 본문 다운로드에만 걸린다. 처음에 1초를 붙였던 건 근거 없는 과잉이었고
+  //   그 탓에 1,771건이 30분+ 걸렸다. 150ms 면 예의도 지키고 11분이면 끝난다.
+  const delay = opt.delayMs ?? 150;
   const log = opt.log || console.log;
   // ★가끔 넓게 훑는다. 처음에 A계열만 보다가 B(93건)·C(25건)를 통째로 놓쳤다.
   const list = opt.probe ? [...GUBUN, ...GUBUN_PROBE] : GUBUN;
