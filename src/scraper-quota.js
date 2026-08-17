@@ -470,10 +470,30 @@ async function main() {
       // ── 공고 일정(추경 트리거) ───────────────────────────────────────
       // ★여기서 감지만 하고, 알림 발송은 워크플로가 한다(시크릿을 코드로 안 내린다).
       //   변경이 있으면 data/notice-alert.json 을 남기고 워크플로가 그걸 보고 쏜다.
-      if (schedule && schedule.available) {
+      if (schedule) {
         const SP = 'data/notice-schedule.json';
         let prevSch = null;
         try { prevSch = JSON.parse(await fs.readFile(SP, 'utf8')); } catch { /* 최초 */ }
+
+      if (!schedule.available) {
+        // ★실패해도 **실패 사실을 남긴다.**
+        //   예전엔 실패 시 아무것도 안 썼다. 그러면 지난번 정상 파일이 그대로 남아
+        //   위생 감시가 available:true / count:327 을 읽고 "정상" 으로 판정한다.
+        //   감시를 붙여도 무력화되는 구조였다.
+        // ★items 는 지운다 — 지워야 다음 diff 기준선이 유지되어, 복구했을 때
+        //   깨져 있던 동안 놓친 변경을 그 시점에 한 번에 알려줄 수 있다.
+        // ★단 **상태가 바뀔 때만** 쓴다. 매 런 failedAt 만 갱신해 커밋하면
+        //   10분마다 59KB 헛 커밋이 된다(이 저장소가 부푼 것과 같은 함정).
+        console.warn(`⚠️ 공고 일정 수집 실패 — ${schedule.missing.join(' / ')}`);
+        if (!prevSch || prevSch.available !== false) {
+          await fs.writeFile(SP, JSON.stringify({
+            ...(prevSch || {}),
+            available: false,
+            missing: schedule.missing,
+            failedAt: new Date().toISOString(),   // 언제부터 깨졌는지
+          }));
+        }
+      } else {
         const d = diffSchedule(prevSch, schedule);
 
         // ★최초 실행은 알리지 않는다 — 327건 전부가 '신규' 로 잡혀 카톡이 폭발한다.
@@ -495,8 +515,7 @@ async function main() {
         const schSame = prevSch
           && JSON.stringify({ ...prevSch, timestamp: 0 }) === JSON.stringify({ ...schedule, timestamp: 0 });
         if (!schSame) await fs.writeFile(SP, JSON.stringify(schedule));
-      } else if (schedule) {
-        console.warn(`⚠️ 공고 일정 수집 실패 — ${schedule.missing.join(' / ')}`);
+      }
       }
 
       } else {
