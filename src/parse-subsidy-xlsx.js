@@ -149,12 +149,19 @@ function buildFromSheets(sheets, opt = {}) {
     }
     // 예전 산출물과 같은 모양: 지역별 subsidies 는 **지방비만** 담는다.
     regions[code].subsidies[key] = local;
-    regions[code]._vehicles[key] = {
-      type, manufacturer: maker, model, national, local, total,
-      convLocal, convTotal,          // 전환지원금 지방비 · 전환 포함 총액 (지역마다 다름)
-    };
+    regions[code]._vehicles[key] = { type, manufacturer: maker, model, national, local, total };
 
-    // 전환지원금 국비·제원은 전국 공통이라 vehicles 쪽에 한 번만 싣는다.
+    // ★전환지원금 지방비는 **거의 항상 지방비와 같다** — 17,567건 중 17,556건 일치(99.94%).
+    //   그래서 전량을 싣지 않고 **다른 11건만** 예외로 남긴다.
+    //   (전량 저장 시 subsidies-legacy.json 이 2.5MB→3.2MB 로 붇는데, 이 파일은 하루
+    //    80회 넘게 커밋되고 vw-k 는 읽지도 않는다. 저장소만 불린다.)
+    //   소비 측 계산: convLocal = convLocalExceptions[key] ?? local
+    //                 convTotal = national + local + convNational + convLocal
+    if (convLocal !== local) {
+      (regions[code].convLocalExceptions ||= {})[key] = convLocal;
+    }
+
+    // 전환지원금 국비·제원은 전국 공통이라 vehicles 쪽에 한 번만 싣는다(+8KB, 하루 9커밋).
     if (!vehicles[key]) vehicles[key] = { type, manufacturer: maker, model, national, convNational, battery, range };
     if (nationalSeen.has(key) && nationalSeen.get(key) !== national) {
       if (nationalConflicts.length < 10) nationalConflicts.push(`${key}: ${nationalSeen.get(key)} vs ${national}`);
@@ -167,6 +174,7 @@ function buildFromSheets(sheets, opt = {}) {
     return {
       parentName: r.parentName, localName: r.localName, code: r.code,
       vehicles: r._vehicles, success: true, attempts: 1, timestamp,
+      ...(r.convLocalExceptions ? { convLocalExceptions: r.convLocalExceptions } : {}),
     };
   });
   for (const c of codes) delete regions[c]._vehicles;
