@@ -151,6 +151,10 @@ function buildFromSheets(sheets, opt = {}) {
     regions[code].subsidies[key] = local;
     regions[code]._vehicles[key] = { type, manufacturer: maker, model, national, local, total };
 
+    // ⚠️2026-08-18 실무 검증: 화면에 띄운 '전환 포함 총액'이 **실제 받는 금액과 맞지 않는다**
+    //   (Excel 의 전환 포함 총액 컬럼과는 일치했으나, 현장 지급액과 어긋남 — 판매자 확인).
+    //   그래서 **화면에서는 쓰지 않는다.** 수집은 유지하되, 정확한 산정 규칙을 확인하기
+    //   전까지 UI 에 노출하지 말 것. 배터리·주행거리는 문제없어 계속 쓴다.
     // ★전환지원금 지방비는 **거의 항상 지방비와 같다** — 17,567건 중 17,556건 일치(99.94%).
     //   그래서 전량을 싣지 않고 **다른 11건만** 예외로 남긴다.
     //   (전량 저장 시 subsidies-legacy.json 이 2.5MB→3.2MB 로 붇는데, 이 파일은 하루
