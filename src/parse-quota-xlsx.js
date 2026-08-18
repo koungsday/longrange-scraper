@@ -10,9 +10,16 @@
  *   → 사이트가 사용자에게 제공하는 「Excel 다운로드」가 가장 안정적이다.
  *     161건이 한 번에 오고, 예전 표보다 데이터가 더 많다.
  *
- * ★출력 스키마는 예전 그대로 둔다. 하류(vw-k)를 한 줄도 안 건드리기 위해서다.
- *   새로 생긴 값(선정대수·선정잔여·신청마감·담당부서 등)은 여기서 버린다 —
- *   쓸 곳을 정한 뒤에 따로 싣는다.
+ * ★출력 스키마는 예전 필드를 그대로 두고 **덧붙이기만** 한다(하류 무중단).
+ *   2026-08-18 추가: selected_total · selectedRemaining_total (선정대수·선정잔여, **전체만**).
+ *   왜 필요한가 — 정부가 "지금 신청할 수 있나요?" 판단에 쓰는 값이 **선정잔여**다.
+ *   우리 remaining_* 는 '출고잔여'라 의미가 다르다. 부산 실측(2026-08-18):
+ *     전체 출고잔여 398 vs 선정잔여 17 — 마감임박 판정이 완전히 갈린다.
+ *   ★유형별(우선순위·일반·법인·택시)은 **Excel 에 없다** — 161개 행 전수 확인 결과
+ *     '선정대수'·'선정잔여' 행은 전체 칸만 채워지고 나머지는 빈 칸이다.
+ *     화면 모달은 그 값을 보여주지만 Excel 로는 안 나온다. 0 을 채우면 '잔여 0'
+ *     으로 읽혀 거짓이 되므로 **필드 자체를 만들지 않는다**(없음 = 모름).
+ *   나머지 미수집분(신청마감·변경이력 등)은 쓸 곳을 정한 뒤 싣는다.
  */
 
 const AdmZip = require('adm-zip');
@@ -136,6 +143,8 @@ function parseQuotaXlsx(buf) {
     const m = byId.get(id) || {};
     const q = pick(m, '공고대수'), g = pick(m, '접수대수');
     const d = pick(m, '출고대수'), rem = pick(m, '출고잔여');
+    // ★선정 계열 — 전체 칸만 값이 있다(위 주석 참조). 그래서 [0] 만 쓴다.
+    const sel = pick(m, '선정대수'), selRem = pick(m, '선정잔여');
     rows.push({
       sido: r[S.sido] || '',
       region: r[S.region] || '',
@@ -152,6 +161,10 @@ function parseQuotaXlsx(buf) {
 
       remaining_total: num(rem[0]), remaining_priority: num(rem[1]), remaining_corporate: num(rem[2]),
       remaining_taxi: num(rem[3]), remaining_general: num(rem[4]),
+
+      // 유형별은 싣지 않는다 — Excel 에 없다. 필드가 없는 것이 0 보다 정직하다.
+      selected_total: num(sel[0]),
+      selectedRemaining_total: num(selRem[0]),
 
       note: (r[S.note] || '').trim(),
     });
