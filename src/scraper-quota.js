@@ -5,6 +5,7 @@ const os = require('os');
 const { parseQuotaXlsx, readSheets } = require('./parse-quota-xlsx');
 const { parseQuotaDetail, diffDetail } = require('./parse-quota-detail');
 const { parseNoticeSchedule, diffSchedule, formatAlert } = require('./parse-notice-schedule');
+const { parseChangeHistory } = require('./parse-change-history');
 const { parseSubsidyXlsx } = require('./parse-subsidy-xlsx');
 const { downloadExcel } = require('./ev-excel-download');
 
@@ -75,12 +76,16 @@ async function scrapeRegionWithRetry(browser, region) {
       //   (quota 파싱은 위에서 던지는 게 맞다 — 틀린 숫자를 배포하느니 멈추는 게 낫다.)
       let detail = null;
       let schedule = null;
+      let changes = null;
       let subsidy = null;
       try {
         const sheets = readSheets(buf);
         detail = parseQuotaDetail(sheets);
         // ★공고별_일정 = 추경 개시 신호. 같은 Excel 이라 추가 요청 0.
         schedule = parseNoticeSchedule(sheets);
+        // ★변경이력 = 마감을 앞당긴 적이 있는가. 실측 1,237건 중 앞당김 284 / 연장 136.
+        //   신청기간 변경분만 제공된다(안내 시트 명시) — 대수·금액 변경은 여기 없다.
+        changes = parseChangeHistory(sheets);
       } catch (e) {
         detail = { available: false, timestamp: new Date().toISOString(),
           missing: [`파서 예외: ${e.message}`], fields: [], regions: {} };
@@ -369,8 +374,9 @@ async function main() {
     //   리뉴얼 때 쓸 데이터이므로 옆에 조용히 쌓아 두고, 지금 화면은 아무것도 안 바뀐다.
     const detail = results.find((r) => r && r.detail)?.detail || null;
     const schedule = results.find((r) => r && r.schedule)?.schedule || null;
+    const changes = results.find((r) => r && r.changes)?.changes || null;
     const subsidy = results.find((r) => r && r.subsidy)?.subsidy || null;
-    for (const r of results) { delete r.detail; delete r.schedule; delete r.subsidy; }  // quota.json 오염 방지
+    for (const r of results) { delete r.detail; delete r.schedule; delete r.changes; delete r.subsidy; }  // quota.json 오염 방지
 
     const outputData = {
       timestamp: new Date().toISOString(),
@@ -516,6 +522,34 @@ async function main() {
           && JSON.stringify({ ...prevSch, timestamp: 0 }) === JSON.stringify({ ...schedule, timestamp: 0 });
         if (!schSame) await fs.writeFile(SP, JSON.stringify(schedule));
       }
+      }
+
+      // ── 변경이력(마감 앞당김 신호) ────────────────────────────────
+      //   내용이 같으면 안 쓴다(129KB 를 10분마다 커밋하지 않는다).
+      //   실패해도 실패 사실은 남긴다 — 공고 일정과 같은 처방.
+      if (changes) {
+        const CP = 'data/change-history.json';
+        let prevCh = null;
+        try { prevCh = JSON.parse(await fs.readFile(CP, 'utf8')); } catch { /* 최초 */ }
+        if (!changes.available) {
+          console.warn(`⚠️ 변경이력 수집 실패 — ${changes.missing.join(' / ')}`);
+          if (!prevCh || prevCh.available !== false) {
+            await fs.writeFile(CP, JSON.stringify({
+              ...(prevCh || {}), available: false, missing: changes.missing,
+              failedAt: new Date().toISOString(),
+            }));
+          }
+        } else {
+          const chSame = prevCh
+            && JSON.stringify({ ...prevCh, timestamp: 0 }) === JSON.stringify({ ...changes, timestamp: 0 });
+          if (chSame) {
+            console.log('📜 변경이력 변화 없음 → 미기록');
+          } else {
+            const earlier = Object.values(changes.regions).reduce((a, v) => a + v.summary.earlier, 0);
+            await fs.writeFile(CP, JSON.stringify(changes));
+            console.log(`📜 변경이력 ${changes.count}건 · ${Object.keys(changes.regions).length}지역 (마감 앞당김 누적 ${earlier}회) 저장`);
+          }
+        }
       }
 
       } else {
