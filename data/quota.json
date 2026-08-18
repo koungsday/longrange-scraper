@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-18T13:01:19.526Z",
+  "timestamp": "2026-08-18T13:11:08.969Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -303,18 +303,18 @@
           "registered_corporate": 4,
           "registered_taxi": 39,
           "registered_general": 573,
-          "delivered_total": 819,
+          "delivered_total": 818,
           "delivered_priority": 241,
           "delivered_corporate": 4,
           "delivered_taxi": 34,
-          "delivered_general": 540,
-          "remaining_total": 252,
+          "delivered_general": 539,
+          "remaining_total": 253,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 19,
-          "remaining_general": 371,
-          "selected_total": 868,
-          "selectedRemaining_total": 203,
+          "remaining_general": 372,
+          "selected_total": 867,
+          "selectedRemaining_total": 204,
           "note": "★ 2026.6.30. 14:25 기준, 전기승용차 마감 ★&#xa; &#xa; 2026년 2차 전기자동차(승용) 구매지원 보급사업&#xa; 공고일: 2026. 05. 28.(목)&#xa; 접수일: 2026. 06. 11.(목) 10:00~ 예산소진시까지&#xa; 공고물량: 승용 371대 *시작번호: 667번&#xa; 잔여물량: 약 10대(차종별  보조금 금액 상이하여 대수 달라질 수 있음, 2026.06.30.기준)&#xa; &#xa; * 전기자동차 물량 소진은 '대상자선정' 기준임.&#xa; * 취소분 발생할 경우에 한하여, '지원가능확인' 순으로 '대상자선정' 추가(취소분 발생 가능성에 따라 신청 차단 x)&#xa; * 보조금 대상 및 지급은 출고순 기준(신청순 x)으로 확정됩니다."
         },
         {
@@ -4498,11 +4498,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 48524,
+          "registered_total": 48525,
           "registered_priority": 21,
           "registered_corporate": 46921,
           "registered_taxi": 680,
-          "registered_general": 902,
+          "registered_general": 903,
           "delivered_total": 35842,
           "delivered_priority": 12,
           "delivered_corporate": 34725,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-18T13:01:19.467Z"
+      "timestamp": "2026-08-18T13:11:08.912Z"
     }
   ]
 }
