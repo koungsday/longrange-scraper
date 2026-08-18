@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-18T11:41:07.388Z",
+  "timestamp": "2026-08-18T11:51:00.008Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -331,13 +331,13 @@
           "registered_corporate": 31,
           "registered_taxi": 88,
           "registered_general": 1059,
-          "delivered_total": 1637,
-          "delivered_priority": 506,
+          "delivered_total": 1638,
+          "delivered_priority": 507,
           "delivered_corporate": 28,
           "delivered_taxi": 80,
           "delivered_general": 1023,
-          "remaining_total": 33,
-          "remaining_priority": 44,
+          "remaining_total": 32,
+          "remaining_priority": 43,
           "remaining_corporate": 0,
           "remaining_taxi": 8,
           "remaining_general": 9,
@@ -3401,11 +3401,11 @@
           "sido": "경북",
           "region": "김천시",
           "vehicleType": "전기승용",
-          "quota_total": 1000,
+          "quota_total": 960,
           "quota_priority": 0,
           "quota_corporate": 0,
           "quota_taxi": 0,
-          "quota_general": 1000,
+          "quota_general": 960,
           "registered_total": 963,
           "registered_priority": 321,
           "registered_corporate": 17,
@@ -3416,13 +3416,13 @@
           "delivered_corporate": 14,
           "delivered_taxi": 33,
           "delivered_general": 484,
-          "remaining_total": 211,
+          "remaining_total": 171,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 516,
+          "remaining_general": 476,
           "selected_total": 960,
-          "selectedRemaining_total": 40,
+          "selectedRemaining_total": 0,
           "note": "★★★ 잔여 : 승용 마감 /화물 약100대 (8.18.화)&#xa; (화물 →승용  차종간 물량조정 중으로, \"승용\"접수는 가능하나 지원가능확인 승인불가)&#xa;  9월중 승인 가능할것으로 예상&#xa; &#xa; &#xa; - 차종별 금액이 상이하므로 잔여대수는 변경될수있습니다.&#xa; &#xa; &#xa; ★ 접수기간 : 2026. 7. 27.(월) 14:00 ~ 예산 소진 시&#xa; &#xa; ★ 지원대수 : 약 809대(승용 550대, 화물 250대, 승합 7대, 어린이통학 2대)&#xa; &#xa; ★★★  승합 : 접수중&#xa; &#xa;  ※ 차종별 보조금 차등 지원으로, 잔여 예산에 따라 보급대수는 조정될 수 있음&#xa;   &#xa; &#xa; ★기타 자세한 사항은 공고문 확인&#xa; &#xa; ★★★순차적으로 처리하오니 원활한 진행을 위해 처리독촉 전화 자제 부탁드립니다"
         },
         {
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-18T11:41:07.316Z"
+      "timestamp": "2026-08-18T11:50:59.959Z"
     }
   ]
 }
