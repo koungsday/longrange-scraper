@@ -99,6 +99,12 @@ function buildFromSheets(sheets, opt = {}) {
     model: at('모델명'), maker: at('제조사'),
     national: at('국비'), local: at('지방비'), total: at('총지원금'),
     support: at('지원여부'),
+    // ★2026-08-18 추가 — 전환지원금(내연기관 폐차·수출말소 시 추가)과 차량 제원.
+    //   조건부 금액이라 화면에서 **반드시 조건과 함께** 써야 한다(정부 안내 확인:
+    //   "내연기관 차량 폐차·수출말소 — 해당 시 추가 지원금 지원", 증빙서류 필요).
+    convNational: at('전환지원금 국비'), convLocal: at('전환지원금 지방비'),
+    convTotal: at('전환 포함 총액'),
+    battery: at('배터리'), range: at('주행거리'),
   };
   const unit = resolveMoneyUnit(sheets, h[C.local]);
 
@@ -124,7 +130,12 @@ function buildFromSheets(sheets, opt = {}) {
     const national = won(r[C.national], unit);
     const local = won(r[C.local], unit);
     const total = won(r[C.total], unit);
+    const convNational = won(r[C.convNational], unit);
+    const convLocal = won(r[C.convLocal], unit);
+    const convTotal = won(r[C.convTotal], unit);
     const type = (r[C.vtype] || '').trim();
+    const battery = (r[C.battery] || '').trim();
+    const range = (r[C.range] || '').trim();
 
     if (!regions[code]) {
       regions[code] = {
@@ -138,9 +149,13 @@ function buildFromSheets(sheets, opt = {}) {
     }
     // 예전 산출물과 같은 모양: 지역별 subsidies 는 **지방비만** 담는다.
     regions[code].subsidies[key] = local;
-    regions[code]._vehicles[key] = { type, manufacturer: maker, model, national, local, total };
+    regions[code]._vehicles[key] = {
+      type, manufacturer: maker, model, national, local, total,
+      convLocal, convTotal,          // 전환지원금 지방비 · 전환 포함 총액 (지역마다 다름)
+    };
 
-    if (!vehicles[key]) vehicles[key] = { type, manufacturer: maker, model, national };
+    // 전환지원금 국비·제원은 전국 공통이라 vehicles 쪽에 한 번만 싣는다.
+    if (!vehicles[key]) vehicles[key] = { type, manufacturer: maker, model, national, convNational, battery, range };
     if (nationalSeen.has(key) && nationalSeen.get(key) !== national) {
       if (nationalConflicts.length < 10) nationalConflicts.push(`${key}: ${nationalSeen.get(key)} vs ${national}`);
     } else nationalSeen.set(key, national);
