@@ -245,7 +245,7 @@ async function saveQuotaHistory(quotaData, regions) {
 
 /**
  * quota.json → 지역별 시그니처 Map<지역명, string>.
- * 한 지역의 모든 행(차종별)을 사용자가 보는 전체 필드(할당·등록·출고·잔여·비고)로 서명.
+ * 한 지역의 모든 행(차종별)을 사용자가 보는 전체 필드(할당·등록·출고·잔여·선정·비고)로 서명.
  * 행 순서 무관하게 정렬 후 결합 → 순서만 바뀐 건 '변경'으로 오탐하지 않음.
  */
 function regionSignatures(quotaJson) {
@@ -262,6 +262,9 @@ function regionSignatures(quotaJson) {
       r.registered_total, r.registered_priority, r.registered_corporate, r.registered_taxi, r.registered_general,
       r.delivered_total, r.delivered_priority, r.delivered_corporate, r.delivered_taxi, r.delivered_general,
       r.remaining_total, r.remaining_priority, r.remaining_corporate, r.remaining_taxi, r.remaining_general,
+      // 선정대수·선정잔여 — 화면 판정(예산 소진 / 접수중)이 이 둘로 갈린다.
+      // 빠져 있으면 판정이 뒤집혀도 재검증이 돌지 않아 옛 상태가 그대로 남는다.
+      r.selected_total, r.selectedRemaining_total,
       r.note
     ]));
   }
