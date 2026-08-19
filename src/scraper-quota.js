@@ -110,6 +110,9 @@ async function scrapeRegionWithRetry(browser, region) {
         quotaData: quotaData,
         detail,
         schedule,
+        // ★여기 빠져 있어서 380행의 results.find(r => r.changes) 가 늘 undefined 였다.
+        //   섀도잉을 고쳐도 changes 가 null 이라 변경이력 블록은 조용히 건너뛴다.
+        changes,
         subsidy,
         success: true,
         attempts: attempt,
