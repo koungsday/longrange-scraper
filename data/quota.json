@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-19T09:21:05.493Z",
+  "timestamp": "2026-08-19T09:31:08.418Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -163,8 +163,8 @@
           "registered_corporate": 57,
           "registered_taxi": 150,
           "registered_general": 1474,
-          "delivered_total": 2246,
-          "delivered_priority": 684,
+          "delivered_total": 2247,
+          "delivered_priority": 685,
           "delivered_corporate": 54,
           "delivered_taxi": 136,
           "delivered_general": 1372,
@@ -247,18 +247,18 @@
           "registered_corporate": 45,
           "registered_taxi": 157,
           "registered_general": 2695,
-          "delivered_total": 3641,
+          "delivered_total": 3642,
           "delivered_priority": 1196,
           "delivered_corporate": 38,
           "delivered_taxi": 136,
-          "delivered_general": 2271,
-          "remaining_total": 1329,
+          "delivered_general": 2272,
+          "remaining_total": 1328,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 112,
-          "remaining_general": 2451,
-          "selected_total": 4318,
-          "selectedRemaining_total": 652,
+          "remaining_general": 2450,
+          "selected_total": 4319,
+          "selectedRemaining_total": 651,
           "note": "★ (8. 18. ) 전기승용 하반기 선정 마감되었습니다. (추가 신청접수 불가)&#xa;     - 기존 접수건 중 '지원가능 확인요청'순으로 대기번호 부여 예정이며, &#xa;       취소분 발생 시 순차적으로 연락드리겠습니다.&#xa;     - 하반기 공고(3차)는 추경 후 빠르게 시행한 건으로, 시 회기 일정 등에 따라&#xa;       금년도에는 추가 공고는 없으니, 참고하시기 바랍니다. 감사합니다.&#xa;     &#xa; ---------------------------------------------------------------------------------------------&#xa; [2026년 하반기 전기자동차(승용,화물,승합) 보급사업]&#xa; ○ 보급대수 : 총 1,259대(승용 1,100대, 화물 150대, 일반 승합 9대)&#xa;   (* 실제 대수는 차종별 보조금 차등 지원에 따라 예산범위 내에서 변동 가능)&#xa; ○ 접수기간 : 2026. 8. 3.(월) 10:00 ~ 11. 30.(월) 18:00  &#xa;    - (승용) 8. 3.(월) 10:00 ~ 11. 30.(월) 18:00&#xa;    - (화물) 8. 10.(월) 10:00 ~ 11. 30.(월) 18:00&#xa;    - (승합) 8. 10.(월) 09:00 ~ 11. 30.(월) 18:00&#xa; ○ 신청대상 : 지원신청일 이전 60일 이상 수원시에 연속하여 주소를 둔 자&#xa; ○ 신청방법 : 제조·수입사에서 무공해차 통합누리집(ev.or.kr) 사이트로 신청&#xa; ○ 선정기준 : 자동차 출고·등록순&#xa; ○ 보급차량 : 관계 법령에 의해 각종 인증을 모두 완료한 전기자동차&#xa; ○ 기타 자세한 사항은 공고문 참고&#xa; ---------------------------------------------------------------------------------------------&#xa;  ※ 차종별 보조금 확인방법(사이트 상단에서 해당 탭 클릭)&#xa;    - ‘구매 및 지원’ - ‘무공해차 구매보조금 지원’ - ‘지자체 차종별 보조금’ 참조"
         },
         {
@@ -303,18 +303,18 @@
           "registered_corporate": 4,
           "registered_taxi": 39,
           "registered_general": 573,
-          "delivered_total": 820,
-          "delivered_priority": 242,
+          "delivered_total": 819,
+          "delivered_priority": 241,
           "delivered_corporate": 4,
           "delivered_taxi": 34,
           "delivered_general": 540,
-          "remaining_total": 251,
+          "remaining_total": 252,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 19,
           "remaining_general": 371,
-          "selected_total": 869,
-          "selectedRemaining_total": 202,
+          "selected_total": 868,
+          "selectedRemaining_total": 203,
           "note": "★ 2026.6.30. 14:25 기준, 전기승용차 마감 ★&#xa; &#xa; 2026년 2차 전기자동차(승용) 구매지원 보급사업&#xa; 공고일: 2026. 05. 28.(목)&#xa; 접수일: 2026. 06. 11.(목) 10:00~ 예산소진시까지&#xa; 공고물량: 승용 371대 *시작번호: 667번&#xa; 잔여물량: 약 10대(차종별  보조금 금액 상이하여 대수 달라질 수 있음, 2026.06.30.기준)&#xa; &#xa; * 전기자동차 물량 소진은 '대상자선정' 기준임.&#xa; * 취소분 발생할 경우에 한하여, '지원가능확인' 순으로 '대상자선정' 추가(취소분 발생 가능성에 따라 신청 차단 x)&#xa; * 보조금 대상 및 지급은 출고순 기준(신청순 x)으로 확정됩니다."
         },
         {
@@ -1491,7 +1491,7 @@
           "remaining_general": 93,
           "selected_total": 63,
           "selectedRemaining_total": 47,
-          "note": "★ 화천군 승용부문 3차 신청 및 접수 ★&#xa; ☆ 잔여대수(8. 19. 16시 기준) : 26대&#xa;   - 차종간 지급단가 차이로 인하여 실제와 차이가 있을 수 있음.&#xa; 1. 신청 증가 및 몰림, 민원전화로 인해 대상자 선정까지 1~2일 소요 예정됩니다. 이점 참고하시어 서류 접수해주시기 바랍니다.&#xa; 2. 예산 소진 시 조기마감되며, 승용부문 4차 공고 예정 없음을 알립니다.&#xa; 3. 공고문 내용 미숙지로 인한 책임은 본인에게 있음을 알립니다.&#xa; 4. 구매지원신청서 전자서명 가능합니다.&#xa; &#xa; ** 민원전화로 인해 업무처리가 지연되오니, 단순민원은 되도록 공시공고란을 확인해주시기 바랍니다**&#xa;  (담당자 한명이 무공해차(전기·수소) 관련 모든 업무를 담당합니다. 공고 등으로 확인 가능한 단순 민원이 폭주하여 업무처리 지연되오니 양해해주시기 바랍니다.)"
+          "note": "★ 화천군 승용부문 3차 신청 및 접수 ★&#xa; ☆ 잔여대수(8. 19. 18시 기준) : 26대&#xa;   - 차종간 지급단가 차이로 인하여 실제와 차이가 있을 수 있음.&#xa; 1. 신청 증가 및 몰림, 민원전화로 인해 대상자 선정까지 1~2일 소요 예정됩니다. 이점 참고하시어 서류 접수해주시기 바랍니다.&#xa; 2. 예산 소진 시 조기마감되며, 승용부문 4차 공고 예정 없음을 알립니다.&#xa; 3. 공고문 내용 미숙지로 인한 책임은 본인에게 있음을 알립니다.&#xa; 4. 구매지원신청서 전자서명 가능합니다.&#xa; &#xa; ** 민원전화로 인해 업무처리가 지연되오니, 단순민원은 되도록 공시공고란을 확인해주시기 바랍니다**&#xa;  (담당자 한명이 무공해차(전기·수소) 관련 모든 업무를 담당합니다. 공고 등으로 확인 가능한 단순 민원이 폭주하여 업무처리 지연되오니 양해해주시기 바랍니다.)"
         },
         {
           "sido": "강원",
@@ -4498,14 +4498,14 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 49275,
+          "registered_total": 49276,
           "registered_priority": 24,
-          "registered_corporate": 47642,
+          "registered_corporate": 47643,
           "registered_taxi": 686,
           "registered_general": 923,
-          "delivered_total": 36513,
+          "delivered_total": 36523,
           "delivered_priority": 13,
-          "delivered_corporate": 35369,
+          "delivered_corporate": 35379,
           "delivered_taxi": 430,
           "delivered_general": 701,
           "remaining_total": 0,
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 29299,
-          "selected_total": 45721,
+          "selected_total": 45720,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-19T09:21:05.435Z"
+      "timestamp": "2026-08-19T09:31:08.341Z"
     }
   ]
 }
