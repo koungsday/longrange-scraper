@@ -432,13 +432,17 @@ async function main() {
           await fs.writeFile(`data/quota-detail-history-${hist.year}.json`, JSON.stringify(hist));
           hist = { year, lastUpdated: '', changes: [] };
         }
-        const changes = diffDetail(prevDetail, detail, nowKst);
-        if (changes.length) {
-          hist.changes.push(...changes);
+        // ★이름을 changes 로 두면 안 된다 — 바깥의 '변경이력(Excel)' changes 를 가리고,
+        //   아래 변경이력 블록이 이 배열을 보게 된다. 실제로 그래서 20일 가까이
+        //   change-history.json 이 한 번도 만들어지지 않았다(배열엔 .missing 이 없어
+        //   TypeError → 상위 catch 가 조용히 삼킴 → 워크플로는 계속 초록).
+        const detailDiff = diffDetail(prevDetail, detail, nowKst);
+        if (detailDiff.length) {
+          hist.changes.push(...detailDiff);
           hist.lastUpdated = nowKst;
           await fs.writeFile(HP, JSON.stringify(hist));
-          const brief = changes.slice(0, 5).map((c) => `${c.region} ${c.field} ${c.before}→${c.after}`).join(' · ');
-          console.log(`📝 변경 ${changes.length}건 기록: ${brief}${changes.length > 5 ? ' …' : ''}`);
+          const brief = detailDiff.slice(0, 5).map((c) => `${c.region} ${c.field} ${c.before}→${c.after}`).join(' · ');
+          console.log(`📝 변경 ${detailDiff.length}건 기록: ${brief}${detailDiff.length > 5 ? ' …' : ''}`);
         } else {
           // ★변경이 0건이어도 **파일은 있어야 한다.** 없으면 위생 다이제스트가
           //   "감시 대상 없음" 으로 조용히 지나가고, 이력 수집이 죽어도 아무도 모른다.
@@ -563,7 +567,9 @@ async function main() {
         }));
       }
     } catch (e) {
+      // 여기서 삼킨 TypeError 하나가 변경이력 수집을 20일 동안 죽여 놨다. 스택을 남긴다.
       console.error('⚠️ 부가 필드 단계 오류(본체엔 영향 없음):', e.message);
+      console.error(e.stack);
     }
 
     // [변경감지] 변경 지역 코드 산출 → data 밖(root)에 기록. 워크플로 웹훅이 읽어 vw-k 재검증.
