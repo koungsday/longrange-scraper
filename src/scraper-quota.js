@@ -5,7 +5,7 @@ const os = require('os');
 const { parseQuotaXlsx, readSheets } = require('./parse-quota-xlsx');
 const { parseQuotaDetail, diffDetail } = require('./parse-quota-detail');
 const { parseNoticeSchedule, diffSchedule, formatAlert } = require('./parse-notice-schedule');
-const { parseChangeHistory } = require('./parse-change-history');
+const { parseChangeHistory, summarize } = require('./parse-change-history');
 const { parseSubsidyXlsx } = require('./parse-subsidy-xlsx');
 const { downloadExcel } = require('./ev-excel-download');
 
@@ -526,6 +526,43 @@ async function main() {
           }));
         } else {
           console.log('🗓 공고 일정 변경 없음');
+        }
+
+        // ── 자체 변경이력 ─────────────────────────────────────────────
+        //   왜 또 만드나 — 환경부 Excel 의 「변경이력」 시트는 언제든 빠질 수 있다.
+        //   2026-08-16 개편 때 표가 통째로 사라진 전례가 있다. 그때가 오면 이 로그만 남는다.
+        //   우리는 이미 10분마다 공고 일정을 받고 diff 까지 내고 있다 — 버리지 않고 쌓기만 한다.
+        //   Excel 과 **같은 스키마**로 적어서 화면이 출처를 갈아끼워도 그대로 읽게 한다.
+        if (d.changed.length && prevSch) {
+          const LP = 'data/change-history-self.json';
+          let log = null;
+          try { log = JSON.parse(await fs.readFile(LP, 'utf8')); } catch { /* 최초 */ }
+          // ★nowKst 는 위 detail 블록 안에서 선언된다 — 여기선 스코프 밖이라 직접 만든다.
+          //   (같은 함정으로 변경이력 수집이 20일 죽어 있었다.)
+          const stamp = new Date().toLocaleString('sv-SE', { timeZone: 'Asia/Seoul' });
+          if (!log || !log.regions) log = { available: true, since: stamp, count: 0, regions: {} };
+          const FN = { posted: '게시일', start: '접수시작', end: '접수마감', name: '공고명' };
+          for (const c of d.changed) {
+            if (!c.code) continue;
+            const R = (log.regions[c.code] ||= { region: c.region || '', items: [] });
+            for (const f of c.fields) {
+              // 최신이 위로 — Excel 파서와 정렬 방향을 맞춘다
+              R.items.unshift({
+                when: stamp,
+                item: `${c.kind || ''} ${FN[f] || f}`.trim(),
+                before: String(c.before[f] ?? ''),
+                after: String(c[f] ?? ''),
+              });
+            }
+            // 한 지역이 무한히 자라지 않게. 300건이면 몇 년 치다.
+            if (R.items.length > 300) R.items.length = 300;
+          }
+          for (const v of Object.values(log.regions)) v.summary = summarize(v.items);
+          log.count = Object.values(log.regions).reduce((a, v) => a + v.items.length, 0);
+          log.timestamp = new Date().toISOString();
+          await fs.writeFile(LP, JSON.stringify(log));
+          const early = Object.values(log.regions).reduce((a, v) => a + v.summary.earlier, 0);
+          console.log(`🗒 자체 변경이력 +${d.changed.length}건 → 누적 ${log.count}건 (마감 앞당김 ${early}회)`);
         }
         // 내용이 같으면 안 쓴다(10분마다 35KB 헛 커밋 방지)
         const schSame = prevSch
