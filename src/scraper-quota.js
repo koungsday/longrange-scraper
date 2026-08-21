@@ -5,6 +5,7 @@ const os = require('os');
 const { parseQuotaXlsx, readSheets } = require('./parse-quota-xlsx');
 const { parseQuotaDetail, diffDetail } = require('./parse-quota-detail');
 const { parseNoticeSchedule, diffSchedule, formatAlert } = require('./parse-notice-schedule');
+const { buildNoticeLinks } = require('./notice-links');
 const { parseChangeHistory, summarize } = require('./parse-change-history');
 const { parseSubsidyXlsx } = require('./parse-subsidy-xlsx');
 const { downloadExcel } = require('./ev-excel-download');
@@ -524,6 +525,59 @@ async function main() {
             added: d.added.length, changed: d.changed.length, removed: d.removed.length,
             text: formatAlert(d),
           }));
+
+          /* ── 새 공고 지역만 첨부 즉시 재훑기 ───────────────────────────
+             ★공고가 새로 뜨면 **첨부도 같이 올라온다.** 그런데 첨부 목록은
+               별도 워크플로(notice-links.yml)가 타이머로 만들고 있었다 —
+               평소엔 '이미 아는 칸' 만 두드리므로(388회 ≈ 3분) 지역이 **새 칸에**
+               파일을 올리면 다음 전수 훑기(1,771회 ≈ 20분, 4시간마다) 전엔 안 보인다.
+               2026-08-21 함평군 실측: 환경부엔 A(1차)·A02(추경1차) 두 건인데 우리는 A 하나.
+               같은 날 추경1차 공고는 10분 만에 잡혔는데 첨부만 최대 4시간 뒤처졌다.
+
+             ★타이머를 더 조이는 대신 **트리거를 쓴다.** 새 첨부가 생기는 순간은
+               곧 새 공고가 뜨는 순간이고, 그건 바로 위 diffSchedule 이 10분마다
+               이미 알고 있다. 모르는 것을 주기적으로 뒤지는 대신, 아는 순간에 본다.
+
+             ★그 지역만 전수(11칸)다 — 새 칸을 찾아야 하므로 known 최적화를 쓰지 않는다.
+               보통 1~3곳이라 11~33회, 몇 초. 161곳 전수(20분)와는 차원이 다르다.
+
+             ★prev 를 넘긴다. HEAD 가 한 번 실패했다고 멀쩡한 첨부를 지우면 안 된다
+               (notice-links.js 가 prev 에서 이전 값을 복구한다).
+
+             ★여기서 쓰면 커밋·Pages 발행·웹훅이 **같은 런 안에서** 이어진다 —
+               새 공고와 그 첨부가 한 묶음으로 화면에 뜬다. */
+          try {
+            const hot = [...new Set([...d.added, ...d.changed]
+              .map((x) => String(x.code || '').replace(/[^0-9]/g, '')).filter(Boolean))];
+            const LP = 'data/notice-links.json';
+            let links = null;
+            try { links = JSON.parse(await fs.readFile(LP, 'utf8')); } catch { /* 아직 없음 */ }
+            if (hot.length && links?.regions) {
+              const targets = regions.filter((r) => hot.includes(String(r.code)));
+              const fresh = await buildNoticeLinks(targets, { probe: true, prev: links.regions, log: () => { } });
+              let add = 0, gone = 0;
+              for (const c of hot) {
+                const before = links.regions[c]?.files?.length || 0;
+                const after = fresh.regions[c]?.files?.length || 0;
+                if (fresh.regions[c]) links.regions[c] = fresh.regions[c];
+                else if (links.regions[c]) delete links.regions[c];
+                if (after > before) add += after - before; else gone += before - after;
+              }
+              if (add || gone) {
+                links.timestamp = new Date().toISOString();
+                links.regionCount = Object.keys(links.regions).length;
+                links.fileCount = Object.values(links.regions).reduce((n, v) => n + v.files.length, 0);
+                await fs.writeFile(LP, JSON.stringify(links));
+                console.log(`📎 새 공고 ${hot.length}곳 첨부 재훑기 — 추가 ${add} / 사라짐 ${gone} → 총 ${links.fileCount}건`);
+              } else {
+                console.log(`📎 새 공고 ${hot.length}곳 첨부 재훑기 — 변화 없음`);
+              }
+            }
+          } catch (e) {
+            /* 첨부는 부가 정보다. 실패해도 잔여대수 수집을 죽이지 않는다 —
+               4시간 전수 훑기가 안전망으로 남아 있다. */
+            console.warn('⚠️ 첨부 재훑기 실패(무시):', e.message);
+          }
         } else {
           console.log('🗓 공고 일정 변경 없음');
         }

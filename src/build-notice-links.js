@@ -44,7 +44,14 @@ async function main() {
   // ★전수는 **하루 1회(새벽 4시대)** 면 충분하다 — 새 '칸' 이 생기는 건 드물다.
   //   나머지 시간은 알려진 칸만 보므로 3분이면 끝난다.
   const kstHour = Number(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul', hour: '2-digit', hour12: false }));
-  const full = process.env.NOTICE_FULL === '1' || kstHour === 4 || !prev;
+  /* ★전수를 하루 1회(04시)만 돌렸더니 **새로 생긴 첨부를 최대 24시간 놓쳤다**.
+     2026-08-21 함평군 실측 — 환경부에는 A(1차)와 A02(3차) 두 건이 있는데 우리는 A 하나만.
+     '알려진 칸만' 최적화는 이미 아는 칸을 다시 확인할 뿐이라, 지역이 **새 칸에** 파일을 올리면
+     다음 전수까지 보이지 않는다. 새 공고가 뜨는 건 드문 일이 아니고(오늘도 추경1차가 떴다)
+     그때 첨부가 같이 올라오므로, 하루 1회는 너무 성기다.
+     → 4시간마다 전수(00·04·08·12·16·20시). 전수는 1,771회 ≈ 20분이고 30분 주기 안에 들어간다.
+       나머지 시간(하루 20회)은 그대로 알려진 칸만 본다 — 최적화의 이득은 유지된다. */
+  const full = process.env.NOTICE_FULL === '1' || kstHour % 4 === 0 || !prev;
   console.log(full ? '🔍 전수 훑기 (새 첨부 탐색)' : '🔎 알려진 칸만 확인');
   const data = await buildNoticeLinks(regions, { probe: true, known: full ? null : prev.regions });
 
