@@ -51,7 +51,10 @@ async function main() {
      그때 첨부가 같이 올라오므로, 하루 1회는 너무 성기다.
      → 4시간마다 전수(00·04·08·12·16·20시). 전수는 1,771회 ≈ 20분이고 30분 주기 안에 들어간다.
        나머지 시간(하루 20회)은 그대로 알려진 칸만 본다 — 최적화의 이득은 유지된다. */
-  const full = process.env.NOTICE_FULL === '1' || kstHour % 4 === 0 || !prev;
+  /* ★cron 이 '5,35 * * * *' 라 시(hour)만 보면 :05 와 :35 **두 런 모두** 전수가 된다 —
+     의도한 하루 6회가 실제로는 12회, 2.1만 HEAD/일 이었다. 분까지 봐서 :05 런만 전수. */
+  const kstMin = Number(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul', minute: '2-digit' }));
+  const full = process.env.NOTICE_FULL === '1' || (kstHour % 4 === 0 && kstMin < 20) || !prev;
   console.log(full ? '🔍 전수 훑기 (새 첨부 탐색)' : '🔎 알려진 칸만 확인');
   const data = await buildNoticeLinks(regions, { probe: true, known: full ? null : prev.regions });
 

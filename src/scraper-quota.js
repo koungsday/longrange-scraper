@@ -549,28 +549,58 @@ async function main() {
           try {
             const hot = [...new Set([...d.added, ...d.changed]
               .map((x) => String(x.code || '').replace(/[^0-9]/g, '')).filter(Boolean))];
+            /* ★상한. hot 은 지역코드로 dedup 되므로 최대 161 이고, 161×11=1,771회 ≈ 20분이다 —
+               별도 워크플로를 30분 주기로 뗀 바로 그 작업 전체다. 이 런은 cancel-in-progress 라
+               20분을 쓰면 **다음 10분 런이 이번 런을 취소**하고, 커밋 스텝에 always() 가 없어
+               quota.json 이 커밋도 Pages 발행도 안 된다. 기준선(notice-schedule)도 안 밀리니
+               다음 런이 같은 diff 를 또 보고 같은 20분을 쓴다 — 자기 재생성 루프.
+               연 1회 관리번호 체계가 갱신되면 전 항목이 added 로 잡혀 확정적으로 터진다.
+               넘치면 앞의 12곳만 즉시 보고 나머지는 정기 전수(하루 6회)에 맡긴다. */
+            const CAP = 12;
+            if (hot.length > CAP) {
+              console.warn(`📎 새 공고 ${hot.length}곳 — 상한 ${CAP}곳만 즉시 훑는다(나머지는 정기 전수가 맡는다)`);
+              hot.length = CAP;
+            }
             const LP = 'data/notice-links.json';
             let links = null;
             try { links = JSON.parse(await fs.readFile(LP, 'utf8')); } catch { /* 아직 없음 */ }
             if (hot.length && links?.regions) {
               const targets = regions.filter((r) => hot.includes(String(r.code)));
-              const fresh = await buildNoticeLinks(targets, { probe: true, prev: links.regions, log: () => { } });
-              let add = 0, gone = 0;
+              /* ★90초 예산. peek() 의 fetch 에는 타임아웃이 없어(AbortSignal 없음) 환경부가
+                 응답을 안 주면 워커가 OS TCP 타임아웃까지 매달린다. 격리된 25분 워크플로에선
+                 감당됐지만 여기는 10분 취소 창의 크리티컬 패스다. 예산을 넘기면 버린다. */
+              const fresh = await Promise.race([
+                buildNoticeLinks(targets, { probe: true, prev: links.regions }),
+                new Promise((_, rej) => setTimeout(() => rej(new Error('재훑기 90초 초과')), 90000)),
+              ]);
+              let hit = 0, shrank = 0;
               for (const c of hot) {
-                const before = links.regions[c]?.files?.length || 0;
-                const after = fresh.regions[c]?.files?.length || 0;
-                if (fresh.regions[c]) links.regions[c] = fresh.regions[c];
-                else if (links.regions[c]) delete links.regions[c];
-                if (after > before) add += after - before; else gone += before - after;
+                const got = fresh.regions[c];
+                /* ★못 찾았다고 지우지 않는다. peek() 는 403·404·429 를 `{ok:true,name:null}`
+                   = "확인했고 첨부 없음" 으로 돌려준다(!res.ok 분기). prev 복구는 **네트워크
+                   예외에만** 걸리므로, 환경부가 차단하거나 점검 페이지를 200 으로 내보내면
+                   멀쩡한 지역이 통째로 삭제되고 그대로 커밋된다(적대적 검증에서 오프라인 실증).
+                   이 블록의 일은 '새 첨부를 빨리 찾는 것' 뿐이다 — 지우는 일은 정기 스캔에 맡긴다. */
+                if (!got) continue;
+                const before = links.regions[c]?.files || [];
+                if (got.files.length < before.length) { shrank++; continue; }   /* 줄어드는 변화는 무시 */
+                /* ★개수가 아니라 **내용**으로 비교한다. 개수만 보면 추경 교체(A 내려가고 A02 올라옴,
+                   1→1)와 정정 공고(같은 칸 파일명 교체)를 놓친다 — 이 기능이 겨냥한 바로 그 경우다. */
+                if (JSON.stringify(before) === JSON.stringify(got.files)) continue;
+                links.regions[c] = got;
+                hit++;
               }
-              if (add || gone) {
+              if (hit) {
                 links.timestamp = new Date().toISOString();
                 links.regionCount = Object.keys(links.regions).length;
                 links.fileCount = Object.values(links.regions).reduce((n, v) => n + v.files.length, 0);
+                /* byExt 합계 = fileCount 는 이 파일의 불변식이다. 병합하고 갱신을 빠뜨리면 깨진다. */
+                links.byExt = {};
+                for (const v of Object.values(links.regions)) for (const f of v.files) links.byExt[f.ext] = (links.byExt[f.ext] || 0) + 1;
                 await fs.writeFile(LP, JSON.stringify(links));
-                console.log(`📎 새 공고 ${hot.length}곳 첨부 재훑기 — 추가 ${add} / 사라짐 ${gone} → 총 ${links.fileCount}건`);
+                console.log(`📎 새 공고 ${hot.length}곳 첨부 재훑기 — ${hit}곳 갱신 → 총 ${links.fileCount}건${shrank ? ` (줄어든 ${shrank}곳은 보류)` : ''}`);
               } else {
-                console.log(`📎 새 공고 ${hot.length}곳 첨부 재훑기 — 변화 없음`);
+                console.log(`📎 새 공고 ${hot.length}곳 첨부 재훑기 — 변화 없음${shrank ? ` (줄어든 ${shrank}곳은 보류)` : ''}`);
               }
             }
           } catch (e) {
