@@ -6,7 +6,7 @@ const { parseQuotaXlsx, readSheets } = require('./parse-quota-xlsx');
 const { parseQuotaDetail, diffDetail } = require('./parse-quota-detail');
 const { parseNoticeSchedule, diffSchedule, formatAlert } = require('./parse-notice-schedule');
 const { buildNoticeLinks } = require('./notice-links');
-const { computeChangedCodes, auxChangedCodes } = require('./changed-codes');
+const { computeChangedCodes, auxChangedCodes, buildKeyToCode } = require('./changed-codes');
 const { parseChangeHistory, summarize } = require('./parse-change-history');
 const { parseSubsidyXlsx } = require('./parse-subsidy-xlsx');
 const { downloadExcel } = require('./ev-excel-download');
@@ -351,13 +351,12 @@ async function main() {
       previousQuota = JSON.parse(await fs.readFile('data/quota.json', 'utf8'));
     } catch { /* 최초 실행 등 → null (전 지역 changed 처리) */ }
 
-    /* ★부가 파일 4종의 '이전' 내용 — 아래 블록이 덮어쓰기 **전에** 읽어 둔다.
-       quota.json 과 똑같은 방식이다. 이게 있어야 공고 계열 변경도 codes 에 넣을 수 있다. */
+    /* 공고 계열 변경 감지용. ★'덮어쓰기 전 디스크' 를 읽던 방식은 폐기했다 —
+       notice-links.json 은 별도 워크플로가 만들어서 우리 체크아웃엔 이미 반영돼 있고,
+       그러면 prev ≡ now 라 영원히 안 잡힌다(실측: 60런 재생 기여 0건).
+       대신 **마지막으로 통보한 지문**을 파일로 남겨 그것과 비교한다. */
     const AUX_FILES = ['quota-detail', 'notice-schedule', 'notice-links', 'change-history'];
-    const prevAux = {};
-    for (const f of AUX_FILES) {
-      try { prevAux[f] = JSON.parse(await fs.readFile(`data/${f}.json`, 'utf8')); } catch { prevAux[f] = null; }
-    }
+    const AUX_BASELINE = 'data/aux-baseline.json';
 
     await fs.writeFile(
       'data/quota.json',
@@ -663,34 +662,44 @@ async function main() {
       let changedCodes = [];
       let changedNames = [];
       if (result.success && result.quotaData.length > 0) {
-        /* ★키에 시도를 넣는다 — localName 만 쓰면 동명 지역(고성군)이 last-wins 로
-           덮어써져 한 코드가 영영 안 잡힌다. donut 의 parentName 은 quota.json 의
-           sido 와 값이 같다(실측: 강원/경남). */
-        const keyToCode = {};
-        for (const r of regions) keyToCode[`${r.parentName || ''}\t${r.localName}`] = r.code;
-        const diff = computeChangedCodes(previousQuota, outputData, keyToCode);
+        const diff = computeChangedCodes(previousQuota, outputData, buildKeyToCode(regions));
         changedCodes = diff.codes;
         changedNames = diff.changedNames;
       }
 
-      /* ★공고 계열 변경을 합친다. quota 숫자는 그대로인데 status·마감일·접수안내·
-         공고차수·공고문만 바뀌는 경우가 실측상 절대 드물지 않다(공고 계열 49건 중 48건을
-         지금 놓치고 있다). 놓치면 그 지역 페이지가 최대 24시간 옛 공고를 건다 —
-         2026-08-21 함평군 추경1차 사고와 같은 형태다. */
+      /* ★공고 계열 변경을 합친다 — **저장된 기준선**과 비교한다(디스크 전/후가 아니라).
+         notice-links.json 은 별도 워크플로가 만들어서, quota 런이 체크아웃할 땐 이미
+         prev 에 들어와 있다. 전/후 비교로는 영원히 안 잡힌다(실측: 60런 재생, 기여 0건).
+         기준선 파일을 두면 **누가 썼든** 잡힌다. */
       try {
         const nowAux = {};
         for (const f of AUX_FILES) {
           try { nowAux[f] = JSON.parse(await fs.readFile(`data/${f}.json`, 'utf8')); } catch { nowAux[f] = null; }
         }
-        const extra = auxChangedCodes(prevAux, nowAux).filter((c) => !changedCodes.includes(c));
-        if (extra.length) {
+        let baseline = null;
+        try { baseline = JSON.parse(await fs.readFile(AUX_BASELINE, 'utf8')).regions; } catch { /* 최초 */ }
+        const { codes: rawExtra, fingerprint } = auxChangedCodes(baseline, nowAux);
+        const extra = rawExtra.filter((c) => !changedCodes.includes(c));
+
+        /* ★상한. 지문이 화이트리스트라 스키마 변경엔 면역이지만, 그래도 마지막 방어선을 둔다 —
+           161개가 한 번에 나가면 우리가 없애려는 폭탄과 다를 게 없다.
+           실측 분포(60런): 대부분 0~2곳. 30을 넘는 건 이상 상황이므로 통보를 포기하고
+           24h TTL·전역 fallback 에 맡긴다(조용히 틀리는 것보다 낫다). */
+        const EXTRA_CAP = 30;
+        if (extra.length > EXTRA_CAP) {
+          console.warn(`⚠️ 공고 계열 변경이 ${extra.length}곳 — 상한 ${EXTRA_CAP} 초과라 통보하지 않는다(스키마 변경 의심). 기준선만 갱신.`);
+        } else if (extra.length) {
           console.log(`   ↳ 공고 계열 변경 ${extra.length}곳 추가: ${extra.slice(0, 10).join(', ')}${extra.length > 10 ? ' …' : ''}`);
           changedCodes = changedCodes.concat(extra);
         }
+        /* 기준선은 통보 여부와 무관하게 갱신한다 — 안 하면 같은 변경을 매 런 다시 통보한다 */
+        if (Object.keys(fingerprint).length) {
+          await fs.writeFile(AUX_BASELINE, JSON.stringify({ ts: new Date().toISOString(), regions: fingerprint }));
+        }
       } catch (e) {
-        /* 합집합 실패는 조용히 넘긴다 — quota 기반 codes 는 이미 확보돼 있다 */
         console.warn('⚠️ 공고 계열 변경감지 실패(무시):', e.message);
       }
+
       await fs.writeFile('changed-codes.json', JSON.stringify({
         ts: new Date().toISOString(),
         quotaTs: outputData.timestamp,   // vw-k가 자기 vantage에서 전파 재확인용(신선도 증명)
