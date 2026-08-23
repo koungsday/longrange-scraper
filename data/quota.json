@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-22T16:41:02.740Z",
+  "timestamp": "2026-08-23T04:01:10.036Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1138,11 +1138,11 @@
           "quota_corporate": 0,
           "quota_taxi": 50,
           "quota_general": 1340,
-          "registered_total": 1123,
+          "registered_total": 1122,
           "registered_priority": 384,
           "registered_corporate": 16,
           "registered_taxi": 36,
-          "registered_general": 687,
+          "registered_general": 686,
           "delivered_total": 1091,
           "delivered_priority": 373,
           "delivered_corporate": 15,
@@ -1153,8 +1153,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 15,
           "remaining_general": 672,
-          "selected_total": 1122,
-          "selectedRemaining_total": 418,
+          "selected_total": 1121,
+          "selectedRemaining_total": 419,
           "note": "○ 제조수입사는 공고문 필독하시기 바라며, 공고 미숙지 및 시스템 오기입 등으로 인한 보완 발생 시 순번 밀릴 수 있습니다.&#xa; ○ 3차 공고(추경) / 변동 가능&#xa;   - 공고일: 9. 17. 또는 18.&#xa;   - 접수일: 9. 22. 또는 23. 9:00 ~&#xa;   - 공고대수: 승용 472대, 화물 100대&#xa; &#xa; ○ 현재 접수 불가입니다(2차까지 진행했으며 마감되었습니다)&#xa; ○ 무공해차 통합누리집 내 출고잔여대수와 실제 잔여대수는 일치하지 않음&#xa; ○ (참고) 해당 페이지 공고파일 보는 법: 본공고=1차 공고 // 추경1차=2차 공고 (시스템 상 파일 표출명과 실제 지자체 공고명이 일치하지 않아 안내드립니다)&#xa; &#xa; ○ 지급신청서 원주시 공고 서식 사용 및 원본서류 일체 발송&#xa; &#xa; ○ 연간 총 보급대수 2,012대(1차 1,200대, 2차 340대, 3차 472대)&#xa;    - 보급대수는 차종별 보조금 차등 지원 및 국비 추가 지급 등에 따라 변동될 수 있습니다."
         },
         {
@@ -1181,8 +1181,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 742,
-          "selected_total": 589,
-          "selectedRemaining_total": 486,
+          "selected_total": 668,
+          "selectedRemaining_total": 407,
           "note": "☆ 3차 승용,화물 마감 ☆&#xa; -예산 확인 후 마감 이후 접수건은 예비 순번 부여 예정&#xa; ※ 대기 인원이 많은 관계로, 예산 지원 대상 차량은 출고 기한을 엄수해 주시기 바랍니다.  &#xa; &#xa; ※ 경유화물차 성능 보조금 차감 기준 변경&#xa;   - 보유 경유화물차 폐차(수출말소 포함)만 미차감, 판매나 보유 시 성능보조금 차감-"
         },
         {
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-22T16:41:02.665Z"
+      "timestamp": "2026-08-23T04:01:09.828Z"
     }
   ]
 }
