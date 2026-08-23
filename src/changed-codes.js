@@ -262,5 +262,39 @@ function finalizeCodes(quotaCodes, quotaNames, extraCodes, codeToName, opts = {}
   return { codes, names, capped };
 }
 
+/**
+ * 지역별로 **어느 출처가** 바뀌었는지 돌려준다 — 신선도 문구가 쓸 재료.
+ *
+ * ★auxChangedCodes 는 "바뀌었나"(불리언)만 답한다. 화면은 "언제 바뀌었나"가 필요하고,
+ *   그 날짜를 남기려면 **어느 조각이** 달라졌는지 알아야 한다.
+ *   조각은 이미 auxFingerprint 가 계산한다 — d(상세)·s(공고차수)·l(공고문첨부)·c(일정변경이력).
+ * ★d 는 제외한다. quota-detail 변경은 detailDiff 가 필드 단위로 이미 기록하므로 중복이다.
+ * ★대량 배치는 파서 아티팩트다 — 한 출처가 artifactLimit 개 지역을 넘게 바꾸면 그 출처를 버린다.
+ *   실측(2026-08-17): deadline 이 같은 초에 161개 지역 전부 바뀌었고 72건은 포맷만 추가였다.
+ */
+const AUX_SOURCE_NAME = { s: 'notice-schedule', l: 'notice-links', c: 'change-history' };
+
+function auxChangedSources(baseline, fingerprint, opts = {}) {
+  const limit = opts.artifactLimit ?? 30;
+  if (!baseline || !Object.keys(baseline).length) return { bySource: {}, dropped: [] };
+
+  const hits = {};                      /* src → [code, ...] */
+  for (const [code, cur] of Object.entries(fingerprint || {})) {
+    const old = baseline[code];
+    if (!old) continue;                 /* 신규 지역 — 기준선이 없으니 판단 보류 */
+    for (const src of ['s', 'l', 'c']) {
+      if (cur[src] === undefined || old[src] === undefined) continue;   /* 한쪽이 없으면 보류 */
+      if (cur[src] !== old[src]) (hits[src] ||= []).push(code);
+    }
+  }
+
+  const bySource = {}, dropped = [];
+  for (const [src, codes] of Object.entries(hits)) {
+    if (codes.length > limit) { dropped.push({ src: AUX_SOURCE_NAME[src], count: codes.length }); continue; }
+    for (const code of codes) (bySource[code] ||= []).push(AUX_SOURCE_NAME[src]);
+  }
+  return { bySource, dropped };
+}
+
 module.exports = { regionSignatures, computeChangedCodes, auxChangedCodes, auxFingerprint, buildKeyToCode,
-  countUnmatched, buildCodeToName, mergePending, finalizeCodes };
+  countUnmatched, buildCodeToName, mergePending, finalizeCodes, auxChangedSources };

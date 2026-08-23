@@ -7,7 +7,7 @@ const { parseQuotaDetail, diffDetail } = require('./parse-quota-detail');
 const { parseNoticeSchedule, diffSchedule, formatAlert } = require('./parse-notice-schedule');
 const { buildNoticeLinks } = require('./notice-links');
 const { computeChangedCodes, auxChangedCodes, buildKeyToCode,
-        countUnmatched, buildCodeToName, mergePending, finalizeCodes } = require('./changed-codes');
+        countUnmatched, buildCodeToName, mergePending, finalizeCodes, auxChangedSources } = require('./changed-codes');
 const { parseChangeHistory, summarize } = require('./parse-change-history');
 const { parseSubsidyXlsx } = require('./parse-subsidy-xlsx');
 const { downloadExcel } = require('./ev-excel-download');
@@ -209,7 +209,19 @@ async function saveQuotaHistory(quotaData, regions) {
       total: { total: row.quota_total, priority: row.quota_priority, corporate: row.quota_corporate, taxi: row.quota_taxi, general: row.quota_general },
       remaining: { total: row.remaining_total, priority: row.remaining_priority, corporate: row.remaining_corporate, taxi: row.remaining_taxi, general: row.remaining_general },
       registered: { total: row.registered_total, priority: row.registered_priority, corporate: row.registered_corporate, taxi: row.registered_taxi, general: row.registered_general },
-      delivered: { total: row.delivered_total, priority: row.delivered_priority, corporate: row.delivered_corporate, taxi: row.delivered_taxi, general: row.delivered_general }
+      delivered: { total: row.delivered_total, priority: row.delivered_priority, corporate: row.delivered_corporate, taxi: row.delivered_taxi, general: row.delivered_general },
+      /* ★선정 대수·선정 잔여 — 2026-08-23 추가.
+         화면 **헤드라인**("선정 기준 남은 자리")이 이 값인데 스냅샷에 없었다.
+         그래서 신선도 문구가 이 숫자의 변동을 못 봤다 —
+         실측: 강릉 4215 가 오늘 486 → 407 로 **58번** 바뀌었는데 화면은 "2일째 변동 없음".
+         ★여기 넣으면 사이트 코드를 한 줄도 안 고쳐도 된다. trend.ts 의 sig 가
+           `JSON.stringify(car)` 로 기록 전체를 비교하므로 자동으로 판정에 들어온다.
+         ★재생성 비용은 안 늘어난다 — regionSignatures 가 이미
+           selected_total·selectedRemaining_total 을 보고 있어서, 이 값이 바뀐 지역은
+           지금도 changed-codes 에 들어가 재검증된다. 화면 문구가 그 사실을 못 읽었을 뿐이다.
+         ⚠️ 과거 스냅샷에는 이 필드가 없다 — 오늘부터 쌓인다. */
+      selected: row.selected_total ?? null,
+      selectedRemaining: row.selectedRemaining_total ?? null
     };
   }
 
@@ -779,6 +791,37 @@ async function main() {
         changedNames = fin.names;
         capped = fin.capped;
 
+        /* ★공고 차수·공고문 첨부·일정 변경이력이 바뀐 날도 지역별 이력에 남긴다.
+           화면은 이 셋을 다 그리는데(차수 레일·첨부 칩·"일정 변경 N건" 버튼),
+           신선도 문구는 못 보고 있었다. 조각 비교는 auxFingerprint 가 이미 하고 있으므로
+           **어느 조각이** 달라졌는지만 꺼내 쓰면 된다 — 새 파일도 새 계산도 없다.
+           ★d(상세)는 뺀다 — detailDiff 가 필드 단위로 이미 기록한다(중복 방지).
+           ★대량 배치는 파서 아티팩트로 보고 버린다(같은 임계 30). */
+        try {
+          const { bySource, dropped } = auxChangedSources(baseline, fingerprint);
+          for (const dp of dropped) console.warn(`   \u26a0\ufe0f ${dp.src} 가 한 번에 ${dp.count}곳 — 파서 변경으로 보고 이력에 남기지 않는다`);
+          const codesWith = Object.keys(bySource);
+          if (codesWith.length) {
+            const stamp = new Date().toLocaleString('sv-SE', { timeZone: 'Asia/Seoul' }).replace(' ', 'T');
+            const yr = Number(stamp.slice(0, 4));
+            await fs.mkdir('data/detail-history', { recursive: true });
+            for (const dcode of codesWith) {
+              const dpath = `data/detail-history/${dcode}.json`;
+              let dhist = [];
+              try {
+                const prev = JSON.parse(await fs.readFile(dpath, 'utf8'));
+                if (Array.isArray(prev.history)) dhist = prev.history;
+              } catch { /* 최초 */ }
+              dhist = dhist.filter((h) => Number(String(h.date).slice(0, 4)) === yr);
+              dhist.unshift(...bySource[dcode].map((field) => ({ date: stamp, field, before: '', after: '' })));
+              dhist = dhist.slice(0, 30);
+              await fs.writeFile(dpath, JSON.stringify({ code: dcode, lastUpdated: stamp, history: dhist }));
+            }
+            console.log(`   \u21b3 공고 계열 변경일 ${codesWith.length}곳 기록`);
+          }
+        } catch (e) {
+          console.warn('   \u26a0\ufe0f 공고 계열 변경일 기록 실패(무시):', e.message);
+        }
         /* 기준선은 통보 여부와 무관하게 갱신한다 — 안 하면 같은 변경을 매 런 다시 통보한다.
            ★내용이 같으면 쓰지 않는다(ts 만 바뀐 313KB 를 매 런 커밋하면 저장소가 분다 —
              이 저장소가 이미 다섯 번 대응한 함정이다). */
@@ -837,8 +880,18 @@ async function main() {
           const prevLen = history.length;
           history = history.filter(h => new Date(h.date).getFullYear() === curYear);
           const last = history.length ? history[0].note : null;
+          /* ★표기만 다른 것은 변경이 아니다.
+             2026-08-17 00:03 에 133곳이 일괄 기록됐는데 전부 `&#xa;` 같은 **HTML 엔티티가 삽입된 것**
+             뿐이고 글자는 동일했다(원본이 줄바꿈을 이스케이프하기 시작). 이걸 변경으로 세면 화면이
+             실제보다 **젊게** 말한다 — "6일째 변동 없음" 인데 진짜 마지막 변경은 4~8일 전(실측 18곳).
+             ★공백 정규화만으로는 안 잡힌다. `&#xa;` 는 공백이 아니라 문자열이라 엔티티를 먼저 지워야 한다
+               (그래서 처음 검사에서 0건이 나왔다). */
+          const sameText = (a, b) => {
+            const nz = (x) => String(x || '').replace(/&#x?[0-9a-fA-F]+;/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, '').trim();
+            return nz(a) === nz(b);
+          };
           let write = false;
-          if (note !== last) {
+          if (note !== last && !sameText(note, last)) {
             history.unshift({ date: outputData.timestamp, note });
             history = history.slice(0, 15);
             write = true;

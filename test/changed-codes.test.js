@@ -12,7 +12,7 @@
  */
 const { execSync } = require('child_process');
 const { computeChangedCodes, auxChangedCodes, auxFingerprint, buildKeyToCode,
-        countUnmatched, buildCodeToName, mergePending, finalizeCodes } = require('../src/changed-codes');
+        countUnmatched, buildCodeToName, mergePending, finalizeCodes, auxChangedSources } = require('../src/changed-codes');
 
 const read = (f) => JSON.parse(execSync(`git show HEAD:${f}`, { maxBuffer: 1e9 }));
 const clone = (o) => JSON.parse(JSON.stringify(o));
@@ -287,6 +287,51 @@ t('정상 규모(1~3곳)에서는 상한이 절대 안 걸린다', () => {
   const m = buildCodeToName(donutLike);
   const f = finalizeCodes(['1100', '2600'], ['a', 'b'], ['4686'], m);
   return (f.capped === 0 && f.codes.length === 3) || JSON.stringify(f);
+});
+
+console.log('\n■ 공고 계열 변경일 — 어느 출처가 바뀌었는지');
+
+t('★공고문 첨부만 바뀌면 notice-links 로 잡힌다', () => {
+  const n = clone(aux); const code = Object.keys(aux['notice-links'].regions)[7];
+  n['notice-links'].regions[code].files.push({ gubun: 'Z', name: 'x.hwp', ext: 'hwp', kind: '공고문', url: 'u' });
+  const r = auxChangedSources(base, auxFingerprint(n));
+  return (eq(Object.keys(r.bySource), [code]) && r.bySource[code][0] === 'notice-links') || JSON.stringify(r.bySource);
+});
+
+t('★공고 차수만 바뀌면 notice-schedule 로 잡힌다', () => {
+  const n = clone(aux); const k = Object.keys(aux['notice-schedule'].items)[3];
+  n['notice-schedule'].items[k].end = '2026-12-31 18:00';
+  const r = auxChangedSources(base, auxFingerprint(n));
+  return (r.bySource[k.split('|')[0]]?.includes('notice-schedule')) || JSON.stringify(r.bySource);
+});
+
+t('★상세(d)는 제외한다 — detailDiff 가 필드 단위로 이미 기록하므로 중복', () => {
+  const n = clone(aux); const code = Object.keys(aux['quota-detail'].regions)[4];
+  const cur = n['quota-detail'].regions[code].status;
+  n['quota-detail'].regions[code].status = cur === '접수중' ? '마감' : '접수중';
+  const r = auxChangedSources(base, auxFingerprint(n));
+  return Object.keys(r.bySource).length === 0 || `d 가 새어 나왔다: ${JSON.stringify(r.bySource)}`;
+});
+
+t('★대량 배치는 파서 아티팩트로 버린다 (161곳 폭탄 방지)', () => {
+  const n = clone(aux);
+  for (const v of Object.values(n['notice-links'].regions)) v.files = [];
+  const r = auxChangedSources(base, auxFingerprint(n));
+  return (Object.keys(r.bySource).length === 0 && r.dropped.length === 1 && r.dropped[0].src === 'notice-links')
+    || `bySource ${Object.keys(r.bySource).length} · dropped ${JSON.stringify(r.dropped)}`;
+});
+
+t('기준선이 없으면 0곳 (최초 실행에 전 지역 통보 방지)', () => {
+  return Object.keys(auxChangedSources(null, auxFingerprint(aux)).bySource).length === 0 || '폭탄';
+});
+
+t('한쪽에 출처가 없으면 판단 보류 (수집 실패 → 161곳 방지)', () => {
+  const n = clone(aux); n['notice-links'] = { regions: {} };
+  return Object.keys(auxChangedSources(base, auxFingerprint(n)).bySource).length === 0 || '폭탄';
+});
+
+t('변경이 없으면 0곳', () => {
+  return Object.keys(auxChangedSources(base, auxFingerprint(aux)).bySource).length === 0 || '오탐';
 });
 
 console.log(`\n결과: ${pass} 통과 / ${fail} 실패\n`);
