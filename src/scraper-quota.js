@@ -259,8 +259,15 @@ function regionSignatures(quotaJson) {
   for (const r of rows) {
     const name = r.region;
     if (!name) continue;
-    if (!byRegion.has(name)) byRegion.set(name, []);
-    byRegion.get(name).push(JSON.stringify([
+    /* ★키에 sido 를 넣는다. 이름만 쓰면 **동명 지역이 하나로 뭉개진다** —
+       실측: quota.json 지역명 160개 vs 코드 161개, 고성군(강원 4282 / 경남 4882)이 겹친다.
+       그러면 nameToCode 도 last-wins 라 한 코드가 changed-codes 에 **영영 안 들어가고**,
+       그 지역은 웹훅 사각지대가 되어 24h TTL 로만 갱신된다.
+       바로 아래 regionNotes() 는 이미 같은 처방을 쓰고 그 이유까지 주석에 적어 뒀는데
+       (동명 지역 분리) 여기에만 안 왔다. */
+    const key = `${r.sido || ''}\t${name}`;
+    if (!byRegion.has(key)) byRegion.set(key, []);
+    byRegion.get(key).push(JSON.stringify([
       r.vehicleType,
       r.quota_total, r.quota_priority, r.quota_corporate, r.quota_taxi, r.quota_general,
       r.registered_total, r.registered_priority, r.registered_corporate, r.registered_taxi, r.registered_general,
@@ -272,9 +279,9 @@ function regionSignatures(quotaJson) {
       r.note
     ]));
   }
-  for (const [name, arr] of byRegion) {
+  for (const [key, arr] of byRegion) {
     arr.sort();
-    sigs.set(name, arr.join('|'));
+    sigs.set(key, arr.join('|'));
   }
   return sigs;
 }
@@ -285,21 +292,61 @@ function regionSignatures(quotaJson) {
  * - nameToCode(donut)로 지역명→코드. 매핑 실패(코드 0/공백)는 제외(fallback revalidate가 커버).
  * - 이전값 없음(최초 실행)이면 전 지역 changed(1회성, 정상).
  */
-function computeChangedCodes(oldQuota, newQuota, nameToCode) {
+function computeChangedCodes(oldQuota, newQuota, keyToCode) {
   const oldSigs = regionSignatures(oldQuota);
   const newSigs = regionSignatures(newQuota);
-  const changedNames = [];
-  for (const [name, sig] of newSigs) {
-    if (oldSigs.get(name) !== sig) changedNames.push(name);
+  const changedKeys = [];
+  for (const [key, sig] of newSigs) {
+    if (oldSigs.get(key) !== sig) changedKeys.push(key);
   }
   const codes = [];
   const seen = new Set();
-  for (const name of changedNames) {
-    const code = String(nameToCode[name] || '').replace(/[^0-9]/g, '');
+  for (const key of changedKeys) {
+    const code = String(keyToCode[key] || '').replace(/[^0-9]/g, '');
     if (!code) continue;
     if (!seen.has(code)) { seen.add(code); codes.push(code); }
   }
-  return { codes, changedNames };
+  /* 로그·알림은 사람이 읽으므로 시도 접두를 떼고 지역명만 남긴다 */
+  return { codes, changedNames: changedKeys.map((k) => k.split('\t').pop()) };
+}
+
+/**
+ * 부가 파일(공고 계열) 4종에서 **지역별로 내용이 달라진 코드**를 뽑는다.
+ * ★왜 필요한가 — computeChangedCodes 는 quota.json 의 숫자 행만 서명한다.
+ *   status·deadline·note 는 다른 엑셀 시트(「요약」)에서 오고, 공고문 첨부는 아예
+ *   **별도 워크플로**가 만든다. 그래서 공고가 바뀌어도 codes 에 안 들어간다.
+ *   실측(160쌍): 지역 콘텐츠가 바뀐 133건 중 48건(36%)을 놓쳤고, 공고 계열만 보면
+ *   49건 중 48건(98%)을 놓쳤다. 지금 그게 안 터지는 건 웹훅이 notice-data 를 통째로
+ *   지워 161개를 다 새로 그리기 때문이다 — 그 폭탄을 걷어내려면 여기가 먼저 맞아야 한다.
+ * ★수집 실패본은 무시한다. available:false 나 빈 regions 를 비교에 넣으면
+ *   전 지역이 '변경' 으로 잡혀 161개 재검증 폭탄이 된다.
+ */
+function auxChangedCodes(prevAux, nowAux) {
+  const out = new Set();
+  const pick = (j, f) => {
+    if (!j || j.available === false) return null;
+    if (f === 'notice-schedule') {
+      /* items 키가 `${code}|${kind}` 다 — 코드로 묶는다 */
+      const m = {};
+      for (const [k, v] of Object.entries(j.items || {})) {
+        const c = String(k).split('|')[0];
+        if (c) (m[c] ||= []).push(v);
+      }
+      for (const c of Object.keys(m)) m[c].sort((a, b) => (JSON.stringify(a) < JSON.stringify(b) ? -1 : 1));
+      return Object.keys(m).length ? m : null;
+    }
+    const r = j.regions;
+    return r && Object.keys(r).length ? r : null;
+  };
+  for (const f of Object.keys(nowAux)) {
+    const a = pick(nowAux[f], f), b = pick(prevAux[f], f);
+    if (!a || !b) continue;   /* 한쪽이 없거나 실패본 → 판정 보류 */
+    for (const code of Object.keys(a)) {
+      if (JSON.stringify(a[code]) !== JSON.stringify(b[code])) out.add(String(code).replace(/[^0-9]/g, ''));
+    }
+  }
+  out.delete('');
+  return [...out];
 }
 
 /**
@@ -398,6 +445,14 @@ async function main() {
     try {
       previousQuota = JSON.parse(await fs.readFile('data/quota.json', 'utf8'));
     } catch { /* 최초 실행 등 → null (전 지역 changed 처리) */ }
+
+    /* ★부가 파일 4종의 '이전' 내용 — 아래 블록이 덮어쓰기 **전에** 읽어 둔다.
+       quota.json 과 똑같은 방식이다. 이게 있어야 공고 계열 변경도 codes 에 넣을 수 있다. */
+    const AUX_FILES = ['quota-detail', 'notice-schedule', 'notice-links', 'change-history'];
+    const prevAux = {};
+    for (const f of AUX_FILES) {
+      try { prevAux[f] = JSON.parse(await fs.readFile(`data/${f}.json`, 'utf8')); } catch { prevAux[f] = null; }
+    }
 
     await fs.writeFile(
       'data/quota.json',
@@ -703,11 +758,33 @@ async function main() {
       let changedCodes = [];
       let changedNames = [];
       if (result.success && result.quotaData.length > 0) {
-        const nameToCode = {};
-        for (const r of regions) nameToCode[r.localName] = r.code;
-        const diff = computeChangedCodes(previousQuota, outputData, nameToCode);
+        /* ★키에 시도를 넣는다 — localName 만 쓰면 동명 지역(고성군)이 last-wins 로
+           덮어써져 한 코드가 영영 안 잡힌다. donut 의 parentName 은 quota.json 의
+           sido 와 값이 같다(실측: 강원/경남). */
+        const keyToCode = {};
+        for (const r of regions) keyToCode[`${r.parentName || ''}\t${r.localName}`] = r.code;
+        const diff = computeChangedCodes(previousQuota, outputData, keyToCode);
         changedCodes = diff.codes;
         changedNames = diff.changedNames;
+      }
+
+      /* ★공고 계열 변경을 합친다. quota 숫자는 그대로인데 status·마감일·접수안내·
+         공고차수·공고문만 바뀌는 경우가 실측상 절대 드물지 않다(공고 계열 49건 중 48건을
+         지금 놓치고 있다). 놓치면 그 지역 페이지가 최대 24시간 옛 공고를 건다 —
+         2026-08-21 함평군 추경1차 사고와 같은 형태다. */
+      try {
+        const nowAux = {};
+        for (const f of AUX_FILES) {
+          try { nowAux[f] = JSON.parse(await fs.readFile(`data/${f}.json`, 'utf8')); } catch { nowAux[f] = null; }
+        }
+        const extra = auxChangedCodes(prevAux, nowAux).filter((c) => !changedCodes.includes(c));
+        if (extra.length) {
+          console.log(`   ↳ 공고 계열 변경 ${extra.length}곳 추가: ${extra.slice(0, 10).join(', ')}${extra.length > 10 ? ' …' : ''}`);
+          changedCodes = changedCodes.concat(extra);
+        }
+      } catch (e) {
+        /* 합집합 실패는 조용히 넘긴다 — quota 기반 codes 는 이미 확보돼 있다 */
+        console.warn('⚠️ 공고 계열 변경감지 실패(무시):', e.message);
       }
       await fs.writeFile('changed-codes.json', JSON.stringify({
         ts: new Date().toISOString(),
