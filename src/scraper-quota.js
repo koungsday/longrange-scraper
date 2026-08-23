@@ -413,6 +413,47 @@ async function main() {
           await fs.writeFile(HP, JSON.stringify(hist));
           const brief = detailDiff.slice(0, 5).map((c) => `${c.region} ${c.field} ${c.before}→${c.after}`).join(' · ');
           console.log(`📝 변경 ${detailDiff.length}건 기록: ${brief}${detailDiff.length > 5 ? ' …' : ''}`);
+
+          /* ★같은 변경을 **지역별 파일**로도 남긴다 — data/detail-history/{code}.json
+             왜: 화면의 "N일째 변동 없음" 이 quota-history(배정·잔여·등록·출고)만 보고 있어
+                 접수 안내·마감일이 바뀌어도 몰랐다. 실측 152곳 중 **49곳(32퍼센트)** 이 그 상태였고,
+                 성남시는 "52일째 변동 없음" 이라 말하면서 6일 전에 바뀌었다.
+                 양주시는 접수 안내와 **마감일까지**(12-11 → 04-27) 8/17 에 바뀌었다.
+             ★통짜 quota-detail-history.json(640KB, 3,983건)을 사이트가 읽으면 전국 파일이라
+               태그가 전역이 되고 재생성마다 640KB 를 받는다 — 오늘 하루 종일 고친 그 병이다.
+               per-region 관행을 따른다(note-history/{code}.json 과 같은 형태).
+             ★숫자 필드(selected·selectedRemaining·budgetUsedPct·budgetLeftPct)는 뺀다 —
+               3,983건 중 3,699건(93퍼센트)이 그것이고 잔여는 quota-history 가 이미 덮는다.
+               넣으면 파일이 숫자 잡음으로 차고 신선도 판정도 그쪽에 지배된다.
+             실패해도 스크래핑에 영향 없다(격리). */
+          try {
+            const KEEP = new Set(['status', 'deadline', 'note', 'applyMethod', 'dept', 'tel', 'noticeKinds', 'noticeCount']);
+            const byCode = {};
+            for (const c of detailDiff) {
+              if (!KEEP.has(c.field)) continue;
+              const dcode = String(c.code || '').replace(/[^0-9]/g, '');
+              if (!dcode) continue;
+              (byCode[dcode] ||= []).push({ date: c.date, field: c.field, before: String(c.before ?? '').slice(0, 200), after: String(c.after ?? '').slice(0, 200) });
+            }
+            if (Object.keys(byCode).length) {
+              await fs.mkdir('data/detail-history', { recursive: true });
+              for (const [dcode, items] of Object.entries(byCode)) {
+                const dpath = `data/detail-history/${dcode}.json`;
+                let dhist = [];
+                try {
+                  const prev = JSON.parse(await fs.readFile(dpath, 'utf8'));
+                  if (Array.isArray(prev.history)) dhist = prev.history;
+                } catch { /* 최초 */ }
+                dhist = dhist.filter((h) => Number(String(h.date).slice(0, 4)) === year);   /* 해당 연도분만 */
+                dhist.unshift(...items);                                                    /* 최신이 위로 */
+                dhist = dhist.slice(0, 30);
+                await fs.writeFile(dpath, JSON.stringify({ code: dcode, lastUpdated: nowKst, history: dhist }));
+              }
+              console.log(`   \u21b3 지역별 상세 이력 ${Object.keys(byCode).length}곳 기록`);
+            }
+          } catch (e) {
+            console.warn('   ⚠️ 지역별 상세 이력 기록 실패(무시):', e.message);
+          }
         } else {
           // ★변경이 0건이어도 **파일은 있어야 한다.** 없으면 위생 다이제스트가
           //   "감시 대상 없음" 으로 조용히 지나가고, 이력 수집이 죽어도 아무도 모른다.
