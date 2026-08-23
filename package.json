@@ -4,7 +4,8 @@
   "description": "EV subsidy auto-scraping",
   "main": "src/scraper.js",
   "scripts": {
-    "scrape": "node src/scraper.js"
+    "scrape": "node src/scraper.js",
+    "test": "node test/changed-codes.test.js"
   },
   "dependencies": {
     "adm-zip": "^0.6.0",
