@@ -731,6 +731,26 @@ async function main() {
         console.warn('⚠️ 공고 계열 변경감지 실패(무시):', e.message);
       }
 
+      /* ★quota 경로에도 상한을 건다 — 공고 계열(EXTRA_CAP)에만 걸려 있었다.
+         실측: webhook-status 이력에서 **changed=160 이 세 번** 났다.
+             08-17 09:03 (직전 커밋: 표 파싱 → Excel 다운로드 전환)
+             08-18 15:21 (직전 커밋: 선정대수·선정잔여 수집 추가)
+             08-19 10:21 (직전 배포 런)
+         패턴이 명확하다 — **regionSignatures 의 필드 목록을 건드리는 배포마다**
+         전 지역 서명이 바뀌어 160발이 나간다. 가정이 아니라 세 번 일어난 일이다.
+         다음에 필드를 하나 더 넣는 커밋에서 똑같이 재현된다.
+         ★수집 실패로 빈 quota.json 이 커밋되면 다음 런의 previousQuota 가 비어
+           161 전부가 changed 로 잡히는 경로도 있다(아직 안 겪었지만 구조상 열려 있다).
+         → 넘으면 통보를 포기하고 24h TTL·fallback 에 맡긴다. 조용히 나가는 것보다 낫다.
+           capped 에 실어 두면 위생 다이제스트가 잡는다. */
+      const TOTAL_CAP = 60;
+      if (changedCodes.length > TOTAL_CAP) {
+        console.warn(`⚠️ 변경 지역이 ${changedCodes.length}곳 — 상한 ${TOTAL_CAP} 초과라 통보하지 않는다(시그니처 스키마 변경·수집 이상 의심)`);
+        capped = Math.max(capped, changedCodes.length);
+        changedCodes = [];
+        changedNames = [];
+      }
+
       await fs.writeFile('changed-codes.json', JSON.stringify({
         ts: new Date().toISOString(),
         capped,                          // >0 이면 상한 초과로 **통보를 포기한 지역 수** (조용한 손실 감시용)

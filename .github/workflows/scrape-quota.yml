@@ -216,15 +216,6 @@ jobs:
         uses: actions/deploy-pages@v4
         continue-on-error: true  # 충돌 시 워크플로우 전체 실패 방지
 
-      # ★회귀 테스트 — **커밋·발행이 끝난 뒤**에 둔다.
-      #   continue-on-error 로 앞에 두면 스텝만 빨갛고 잡은 초록이라(실측) 하루 205런 중
-      #   아무도 안 본다 — 저자가 쓴 "매 런 확인한다" 가 달성되지 않는다.
-      #   뒤에 두면 수집·커밋·발행은 이미 끝났으므로 데이터는 안전하고,
-      #   실패하면 **잡이 빨개져** Actions 목록에서 바로 보인다.
-      - name: Run change-detection tests
-        if: always()
-        run: node test/changed-codes.test.js
-
       # ========================================
       # 6.5. vw-k 온디맨드 재검증 (변경 지역만) — Pages 전파 확인 후 발사
       #  - 변경 지역이 없으면 아예 호출 안 함(비용 0).
@@ -257,11 +248,17 @@ jobs:
           #   안 그러면 정상 무변경과 글자 하나 다르지 않아 위생 다이제스트가 못 잡는다.
           CAPPED=$(node -pe "require('./changed-codes.json').capped || 0" 2>/dev/null || echo 0)
           UNMATCHED=$(node -pe "require('./changed-codes.json').unmatched || 0" 2>/dev/null || echo 0)
+          # ★이상 신호는 COUNT 와 **무관하게** 판정한다.
+          #   처음엔 COUNT==0 안에만 뒀는데, 실측상 상태 변화 이벤트의 **89%가 COUNT>0** 이라
+          #   경보가 10번 중 9번 꺼져 있었다. capped(공고 계열)와 COUNT(물량)는 서로 독립이다 —
+          #   "물량 3곳 통보 + 공고 45곳 상한초과 드롭" 이면 reason 이 그냥 ok 로 찍혔다.
+          ABNORMAL=""
+          if [ "$CAPPED" -gt 0 ] || [ "$UNMATCHED" -gt 0 ]; then
+            ABNORMAL="capped-${CAPPED}-unmatched-${UNMATCHED}"
+            echo "⚠️ 이상 신호 — capped=$CAPPED unmatched=$UNMATCHED (통보 지역 ${COUNT}개와 별개)"
+          fi
           if [ "$COUNT" -eq 0 ]; then
-            if [ "$CAPPED" -gt 0 ] || [ "$UNMATCHED" -gt 0 ]; then
-              echo "⚠️ 통보 없음이지만 이상 신호 — capped=$CAPPED unmatched=$UNMATCHED"
-              write_status 0 false 0 "capped-${CAPPED}-unmatched-${UNMATCHED}"; exit 0
-            fi
+            if [ -n "$ABNORMAL" ]; then write_status 0 false 0 "$ABNORMAL"; exit 0; fi
             echo "변경 지역 0개 → 재검증 불필요 (비용 0)"; write_status 0 true 0 no-change; exit 0
           fi
           EXPECT_TS=$(node -pe "require('./data/quota.json').timestamp || ''" 2>/dev/null || echo "")
@@ -292,7 +289,8 @@ jobs:
           done
 
           if [ "$OK" == "true" ]; then
-            echo "✅ 변경 지역 ${COUNT}개 재검증 완료"; write_status "$COUNT" true "$HTTP" ok
+            echo "✅ 변경 지역 ${COUNT}개 재검증 완료"
+            if [ -n "$ABNORMAL" ]; then write_status "$COUNT" false "$HTTP" "ok-but-$ABNORMAL"; else write_status "$COUNT" true "$HTTP" ok; fi
           else
             echo "⚠️ 5회 재시도 후에도 재검증 미완료 (HTTP=${HTTP}) → fallback revalidate가 신선도 커버, 위생 다이제스트가 알림"
             write_status "$COUNT" false "$HTTP" failed
@@ -372,3 +370,17 @@ jobs:
             echo "❌ Quota 스크래핑 중 오류 발생"
           fi
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+      # ★회귀 테스트는 **맨 마지막**이다. 이유가 실측으로 확인됐다 —
+      #   GitHub Actions 는 상태함수 없는 `if:` 를 암묵적으로 `success() && (...)` 로 감싼다.
+      #   앞 스텝이 하나라도 실패하면 **뒤 스텝이 통째로 스킵**된다.
+      #   2026-08-23 13:40 런이 그대로 재현했다: 커밋 스텝 실패 하나에
+      #   Setup Pages·Upload·Deploy·**Revalidate 가 전부 skipped**.
+      #   이 테스트는 HEAD 의 **실제 데이터**를 읽으므로(고성군 행·notice-links 21번째 지역 등)
+      #   환경부 표기가 바뀌거나 파서가 실패하면 테스트가 먼저 깨진다.
+      #   앞에 두면 **데이터가 깨지는 바로 그 순간 통보 채널까지 같이 죽는다.**
+      #   맨 뒤면 수집·커밋·발행·재검증이 전부 끝난 뒤라 아무것도 막지 않고,
+      #   실패하면 잡이 빨개져 Actions 목록에서 보인다.
+      - name: Run change-detection tests
+        if: always()
+        run: node test/changed-codes.test.js
