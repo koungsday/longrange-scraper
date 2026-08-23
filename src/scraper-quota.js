@@ -749,6 +749,27 @@ async function main() {
            161 전부가 changed 로 잡히는 경로도 있다(아직 안 겪었지만 구조상 열려 있다).
          → 넘으면 통보를 포기하고 24h TTL·fallback 에 맡긴다. 조용히 나가는 것보다 낫다.
            capped 에 실어 두면 위생 다이제스트가 잡는다. */
+      /* ★지난 런에서 통보에 실패한 코드를 합친다.
+         POST 5회 재시도가 다 실패하면 워크플로가 data/pending-codes.json 에 남긴다.
+         기준선과 quota.json 은 POST 전에 이미 갱신되므로, 이월이 없으면 그 변경은
+         **다시는 통보되지 않는다**(전에는 notice-data 전역 purge 가 우연히 덮었지만
+         이제 그 보험이 없다). 성공하면 워크플로가 그 파일을 지운다.
+         ★24시간이 지난 이월은 버린다 — 그때쯤이면 TTL 이 이미 덮었고, 계속 들고 있으면
+           같은 코드를 영원히 재검증하게 된다. */
+      try {
+        const pend = JSON.parse(await fs.readFile('data/pending-codes.json', 'utf8'));
+        const ageH = (Date.now() - new Date(pend.ts).getTime()) / 3600000;
+        if (ageH <= 24 && Array.isArray(pend.codes) && pend.codes.length) {
+          const add = pend.codes.filter((c) => !changedCodes.includes(c));
+          if (add.length) {
+            console.log(`   ↳ 지난 런 미통보 ${add.length}곳 이월 합침 (${ageH.toFixed(1)}시간 전)`);
+            changedCodes = changedCodes.concat(add);
+          }
+        } else if (ageH > 24) {
+          console.warn(`   ↳ 이월분 ${pend.codes?.length ?? 0}곳이 24시간을 넘겨 폐기 (TTL 이 이미 덮었다)`);
+        }
+      } catch { /* 이월 없음 — 정상 */ }
+
       const TOTAL_CAP = 60;
       if (changedCodes.length > TOTAL_CAP) {
         console.warn(`⚠️ 변경 지역이 ${changedCodes.length}곳 — 상한 ${TOTAL_CAP} 초과라 통보하지 않는다(시그니처 스키마 변경·수집 이상 의심)`);

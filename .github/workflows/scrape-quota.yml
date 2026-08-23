@@ -299,12 +299,29 @@ jobs:
             echo "  → 재검증 미완료, 15s 후 재시도"; sleep 15
           done
 
+          # ★통보 유실 = 영구 유실이던 것을 이월로 막는다.
+          #   스크래퍼는 기준선(aux-baseline)과 quota.json 을 **POST 전에** 이미 갱신한다.
+          #   그래서 POST 가 5회 재시도 후 실패하면 그 변경은 **다시는 통보되지 않았다** —
+          #   전에는 notice-data 전역 purge 가 우연히 덮어줬지만 이제 그 보험이 없다.
+          #   → 실패한 codes 를 data/pending-codes.json 에 남기고 다음 런의 스크래퍼가 합친다.
+          #     성공하면 지운다. 커밋돼야 다음 런이 보므로 아래 커밋 스텝에 등록한다.
+          PENDING=data/pending-codes.json
           if [ "$OK" == "true" ]; then
             echo "✅ 변경 지역 ${COUNT}개 재검증 완료"
             if [ -n "$ABNORMAL" ]; then write_status "$COUNT" false "$HTTP" "ok-but-$ABNORMAL"; else write_status "$COUNT" true "$HTTP" ok; fi
+            if [ -f "$PENDING" ]; then rm -f "$PENDING"; echo "   ↳ 이월분 해소 — $PENDING 삭제"; fi
           else
-            echo "⚠️ 5회 재시도 후에도 재검증 미완료 (HTTP=${HTTP}) → fallback revalidate가 신선도 커버, 위생 다이제스트가 알림"
+            echo "⚠️ 5회 재시도 후에도 재검증 미완료 (HTTP=${HTTP}) → 다음 런으로 이월"
             write_status "$COUNT" false "$HTTP" failed
+            node -e "
+              const fs=require('fs');
+              const cur=JSON.parse(fs.readFileSync('changed-codes.json','utf8')).codes||[];
+              let prev=[]; try{ prev=JSON.parse(fs.readFileSync(process.argv[1],'utf8')).codes||[] }catch{}
+              // 합집합에 상한 60 — 무한히 쌓이면 그 자체가 폭탄이 된다(넘치면 24h TTL 에 맡긴다)
+              const codes=[...new Set([...prev,...cur])].slice(0,60);
+              fs.writeFileSync(process.argv[1], JSON.stringify({ ts:new Date().toISOString(), codes }));
+              console.log('   \u21b3 이월 '+codes.length+'곳');
+            " "$PENDING" || echo "   ⚠️ 이월 기록 실패(무시)"
           fi
 
       # ========================================
@@ -346,13 +363,21 @@ jobs:
           else
             OLD="(없음)"
           fi
-          if [ "$NEW" == "$OLD" ]; then
-            echo "웹훅 상태 변화 없음 ($NEW) → 커밋 생략"; exit 0
+          # ★이월 파일이 바뀌었으면 상태가 같아도 커밋해야 한다 —
+          #   안 그러면 이월 기록/해소가 영영 저장되지 않는다(그 자체가 유실이다).
+          PEND_CHANGED=0
+          git add -A data/pending-codes.json 2>/dev/null || true
+          git diff --quiet --staged -- data/pending-codes.json || PEND_CHANGED=1
+          if [ "$NEW" == "$OLD" ] && [ "$PEND_CHANGED" -eq 0 ]; then
+            echo "웹훅 상태 변화 없음 ($NEW) · 이월 변화 없음 → 커밋 생략"; exit 0
           fi
           echo "웹훅 상태 변화: $OLD  →  $NEW"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add "$F"
+          # ★이월 파일도 함께. 커밋 안 되면 다음 런이 못 보고 이월이 무의미해진다.
+          #   -A 로 잡아 **삭제(해소)** 도 반영한다 — 안 하면 해소된 이월이 계속 남는다.
+          git add -A data/pending-codes.json 2>/dev/null || true
           if git diff --quiet --staged; then
             echo "스테이징 결과 변화 없음 → 생략"; exit 0
           fi
