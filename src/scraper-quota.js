@@ -661,8 +661,20 @@ async function main() {
     try {
       let changedCodes = [];
       let changedNames = [];
+      let capped = 0;                    /* 상한 초과로 통보를 포기한 공고 계열 지역 수 */
+      let unmatched = 0;                 /* 지역 키 매칭 실패 수 — 0 이 아니면 통보가 죽고 있다 */
       if (result.success && result.quotaData.length > 0) {
-        const diff = computeChangedCodes(previousQuota, outputData, buildKeyToCode(regions));
+        /* ★키의 좌변(donut localType)과 우변(환경부 Excel '시도' 열)이 **서로 다른 출처**다.
+           지금은 161/161 일치하지만, 실제 행정명은 이미 강원특별자치도·전북특별자치도라
+           donut 이 표기를 바꾸는 날 매칭이 전멸하고 **codes 가 영구히 0곳**이 된다.
+           그때 테스트도 워크플로도 webhook-status 도 전부 초록이다(조용한 실패).
+           → 매칭 실패 수를 세서 로그와 changed-codes.json 에 남긴다. */
+        const keyToCode = buildKeyToCode(regions);
+        const quotaKeys = new Set((outputData?.data?.[0]?.quotaData || [])
+          .filter((r) => r.region).map((r) => `${r.sido || ''}\t${r.region}`));
+        unmatched = [...quotaKeys].filter((k) => !keyToCode[k]).length;
+        if (unmatched) console.warn(`⚠️ 지역 키 매칭 실패 ${unmatched}/${quotaKeys.size} — donut 과 환경부 시도 표기가 갈라졌을 수 있다(변경 통보가 죽는다)`);
+        const diff = computeChangedCodes(previousQuota, outputData, keyToCode);
         changedCodes = diff.codes;
         changedNames = diff.changedNames;
       }
@@ -687,14 +699,33 @@ async function main() {
            24h TTL·전역 fallback 에 맡긴다(조용히 틀리는 것보다 낫다). */
         const EXTRA_CAP = 30;
         if (extra.length > EXTRA_CAP) {
-          console.warn(`⚠️ 공고 계열 변경이 ${extra.length}곳 — 상한 ${EXTRA_CAP} 초과라 통보하지 않는다(스키마 변경 의심). 기준선만 갱신.`);
+          /* ★상한을 넘으면 통보를 포기하는데, **그 사실이 아무 데도 안 남으면** 조용한 데이터
+             손실이 된다(적대적 검증 지적). 기준선은 갱신되므로 그 변경들은 영영 통보되지 않고,
+             webhook-status 에는 정상 무변경과 **글자 하나 다르지 않은** {changed:0, ok:true} 가 찍힌다.
+             → changed-codes.json 에 capped 를 남기고 워크플로가 상태 파일 reason 에 싣는다. */
+          capped = extra.length;
+          console.warn(`⚠️ 공고 계열 변경이 ${extra.length}곳 — 상한 ${EXTRA_CAP} 초과라 통보하지 않는다(스키마 변경·대량 수집실패 의심). 기준선만 갱신.`);
         } else if (extra.length) {
           console.log(`   ↳ 공고 계열 변경 ${extra.length}곳 추가: ${extra.slice(0, 10).join(', ')}${extra.length > 10 ? ' …' : ''}`);
           changedCodes = changedCodes.concat(extra);
+          /* ★names 에도 넣는다. 안 넣으면 count 와 names 가 어긋나고, 사람이 읽는 유일한 로그가
+             "변경 지역 4개: 고성군" 처럼 거짓말한다(실측). 코드→이름은 donut 목록에서 얻는다. */
+          const codeToName = {};
+          for (const r of regions) codeToName[String(r.code)] = `${r.parentName || ''} ${r.localName}`.trim();
+          changedNames = changedNames.concat(extra.map((c) => codeToName[c] || c));
         }
-        /* 기준선은 통보 여부와 무관하게 갱신한다 — 안 하면 같은 변경을 매 런 다시 통보한다 */
+        /* 기준선은 통보 여부와 무관하게 갱신한다 — 안 하면 같은 변경을 매 런 다시 통보한다.
+           ★단 **내용이 같으면 쓰지 않는다.** ts 만 바꿔 매 런 313KB 를 다시 커밋하면
+             저장소가 분다 — 이 저장소가 이미 다섯 번 대응한 함정이다
+             (quota-detail·notice-schedule·change-history·notice-links·webhook-status 전부
+              같으면 미기록하거나 ts 를 비교에서 뺀다). 새 파일만 그 규칙 밖에 둘 이유가 없다. */
         if (Object.keys(fingerprint).length) {
-          await fs.writeFile(AUX_BASELINE, JSON.stringify({ ts: new Date().toISOString(), regions: fingerprint }));
+          const next = JSON.stringify(fingerprint);
+          let prevSig = null;
+          try { prevSig = JSON.stringify(JSON.parse(await fs.readFile(AUX_BASELINE, 'utf8')).regions); } catch { /* 최초 */ }
+          if (prevSig !== next) {
+            await fs.writeFile(AUX_BASELINE, JSON.stringify({ ts: new Date().toISOString(), regions: fingerprint }));
+          }
         }
       } catch (e) {
         console.warn('⚠️ 공고 계열 변경감지 실패(무시):', e.message);
@@ -702,6 +733,8 @@ async function main() {
 
       await fs.writeFile('changed-codes.json', JSON.stringify({
         ts: new Date().toISOString(),
+        capped,                          // >0 이면 상한 초과로 **통보를 포기한 지역 수** (조용한 손실 감시용)
+        unmatched,                       // >0 이면 지역 키 매칭이 깨졌다 — 변경 통보가 죽는다
         quotaTs: outputData.timestamp,   // vw-k가 자기 vantage에서 전파 재확인용(신선도 증명)
         count: changedCodes.length,
         codes: changedCodes,

@@ -43,13 +43,6 @@ jobs:
         with:
           node-version: '20'
 
-      # ★회귀 테스트 — 안 돌면 장식이다(적대적 검증 지적).
-      #   변경 감지는 조용히 틀리는 종류라(0곳이 되어도 아무도 모른다) 매 런 확인한다.
-      #   의존성 없는 순수 함수 테스트라 2초면 끝난다. 실패해도 수집은 막지 않는다.
-      - name: Run change-detection tests
-        continue-on-error: true
-        run: node test/changed-codes.test.js
-
       - name: Set Puppeteer Cache Directory
         run: echo "PUPPETEER_CACHE_DIR=$(pwd)/.cache/puppeteer" >> $GITHUB_ENV
 
@@ -223,6 +216,15 @@ jobs:
         uses: actions/deploy-pages@v4
         continue-on-error: true  # 충돌 시 워크플로우 전체 실패 방지
 
+      # ★회귀 테스트 — **커밋·발행이 끝난 뒤**에 둔다.
+      #   continue-on-error 로 앞에 두면 스텝만 빨갛고 잡은 초록이라(실측) 하루 205런 중
+      #   아무도 안 본다 — 저자가 쓴 "매 런 확인한다" 가 달성되지 않는다.
+      #   뒤에 두면 수집·커밋·발행은 이미 끝났으므로 데이터는 안전하고,
+      #   실패하면 **잡이 빨개져** Actions 목록에서 바로 보인다.
+      - name: Run change-detection tests
+        if: always()
+        run: node test/changed-codes.test.js
+
       # ========================================
       # 6.5. vw-k 온디맨드 재검증 (변경 지역만) — Pages 전파 확인 후 발사
       #  - 변경 지역이 없으면 아예 호출 안 함(비용 0).
@@ -251,7 +253,15 @@ jobs:
             echo "changed-codes.json 없음 → 스킵"; write_status 0 true 0 no-file; exit 0
           fi
           COUNT=$(node -pe "require('./changed-codes.json').count || 0" 2>/dev/null || echo 0)
+          # ★상한 초과로 통보를 포기했거나 지역 키 매칭이 깨졌으면 reason 에 실어 둔다 —
+          #   안 그러면 정상 무변경과 글자 하나 다르지 않아 위생 다이제스트가 못 잡는다.
+          CAPPED=$(node -pe "require('./changed-codes.json').capped || 0" 2>/dev/null || echo 0)
+          UNMATCHED=$(node -pe "require('./changed-codes.json').unmatched || 0" 2>/dev/null || echo 0)
           if [ "$COUNT" -eq 0 ]; then
+            if [ "$CAPPED" -gt 0 ] || [ "$UNMATCHED" -gt 0 ]; then
+              echo "⚠️ 통보 없음이지만 이상 신호 — capped=$CAPPED unmatched=$UNMATCHED"
+              write_status 0 false 0 "capped-${CAPPED}-unmatched-${UNMATCHED}"; exit 0
+            fi
             echo "변경 지역 0개 → 재검증 불필요 (비용 0)"; write_status 0 true 0 no-change; exit 0
           fi
           EXPECT_TS=$(node -pe "require('./data/quota.json').timestamp || ''" 2>/dev/null || echo "")
