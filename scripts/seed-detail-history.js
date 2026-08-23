@@ -17,9 +17,25 @@ async function main() {
   const dry = !process.argv.includes('--commit');
   const src = JSON.parse(await fs.readFile('data/quota-detail-history.json', 'utf8'));
   const year = src.year;
+  /* ★대량 배치(같은 타임스탬프에 30지역 초과)는 파서 아티팩트다 — 제외한다.
+     실측: 2026-08-17T15:41:04 에 161개 지역 전부의 deadline 이 바뀌었고
+     72건은 포맷만 추가된 것이었다(`2026-08-07 → 2026-08-07 18:00`).
+     안 거르면 아무것도 안 바뀐 119곳이 "8/17 에 바뀜" 이라고 말한다.
+     ★스크래퍼의 ARTIFACT_REGIONS 와 **같은 임계**를 써야 한다 —
+       다르면 시드분과 이후분의 판정 기준이 갈린다. */
+  const ARTIFACT_REGIONS = 30;
+  const perTs = {};
+  for (const c of src.changes || []) {
+    if (!KEEP.has(c.field)) continue;
+    (perTs[c.date] ||= new Set()).add(String(c.code));
+  }
+  const artifactTs = new Set(Object.entries(perTs).filter(([, s]) => s.size > ARTIFACT_REGIONS).map(([k]) => k));
+  if (artifactTs.size) console.log(`⚠️ 파서 아티팩트로 판정해 제외: ${[...artifactTs].join(', ')}`);
+
   const byCode = {};
   for (const c of src.changes || []) {
     if (!KEEP.has(c.field)) continue;
+    if (artifactTs.has(c.date)) continue;
     if (Number(String(c.date).slice(0, 4)) !== year) continue;
     const code = String(c.code || '').replace(/[^0-9]/g, '');
     if (!code) continue;

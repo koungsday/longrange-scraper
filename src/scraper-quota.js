@@ -428,6 +428,23 @@ async function main() {
              실패해도 스크래핑에 영향 없다(격리). */
           try {
             const KEEP = new Set(['status', 'deadline', 'note', 'applyMethod', 'dept', 'tel', 'noticeKinds', 'noticeCount']);
+
+            /* ★대량 배치는 **파서 아티팩트**다 — 지역별 기록에서 통째로 뺀다.
+               실측(2026-08-17T15:41:04): 같은 **초**에 535건, 그중 deadline 이 **161개 지역 전부**.
+               72건은 `2026-08-07 → 2026-08-07 18:00` 처럼 **포맷만 추가**된 것이었다.
+               161개 지자체가 같은 초에 마감일을 바꿀 수는 없다 — 원본 열이 바뀐 것이다.
+               ★이걸 안 거르면 화면이 정반대로 거짓말한다: 아무것도 안 바뀐 지역 119곳이
+                 "6일째 변동 없음"(=8/17 에 바뀜)이라고 말하게 된다. 고치려던 병의 반대 방향이다.
+               ★통짜(quota-detail-history.json)에는 그대로 남긴다 — 포렌식 기록은 지워선 안 된다.
+               ★임계 30: 실측 7일간 KEEP 변경이 있던 84런 중 83런이 **1~4지역**이고,
+                 30을 넘은 건 그 아티팩트 런 하나뿐이다. 정상 운영을 막지 않는다. */
+            const ARTIFACT_REGIONS = 30;
+            const distinctCodes = new Set(detailDiff.filter((c) => KEEP.has(c.field)).map((c) => String(c.code)));
+            if (distinctCodes.size > ARTIFACT_REGIONS) {
+              console.warn(`   ⚠️ 한 번에 ${distinctCodes.size}개 지역이 바뀌었다 — 파서/원본 열 변경으로 보고 지역별 이력에 기록하지 않는다(통짜에는 남는다)`);
+              throw new Error('artifact-batch');   /* 아래 catch 가 받아 조용히 건너뛴다 */
+            }
+
             const byCode = {};
             for (const c of detailDiff) {
               if (!KEEP.has(c.field)) continue;
