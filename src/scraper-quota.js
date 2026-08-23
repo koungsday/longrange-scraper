@@ -153,10 +153,16 @@ async function saveQuotaHistory(quotaData, regions) {
   const HISTORY_PATH = 'data/quota-history.json';
 
   // 지역명 → 코드 매핑 (프론트엔드에서 코드로 조회 가능)
+  /* ★키에 시도를 넣는다 — 이름만 쓰면 **동명 지역이 하나로 뭉개진다.**
+     실측 피해: 강원 고성군(4282)의 추이가 **171일 내내 0건**이었다. 매 런 last-wins 로
+     경남 고성군(4882)이 이겨 강원 값이 4882 자리에 덮어써졌기 때문이다.
+     그래서 4282 페이지는 추이 차트도 '예상 마감일' 도 영구 부재였다.
+     2026-08-23 changed-codes.js 에서 같은 버그를 고쳤는데 이쪽에 쌍둥이가 남아 있었다.
+     시뮬레이션: 구 로직 스냅샷 160코드(4282 없음) → 신 로직 161코드(4282 있음). */
   const nameToCode = {};
   const regionMeta = {};
   for (const r of regions) {
-    nameToCode[r.localName] = String(r.code);
+    nameToCode[`${r.parentName || ''}\t${r.localName}`] = String(r.code);
     regionMeta[String(r.code)] = { name: r.localName, sido: r.parentName };
   }
 
@@ -192,7 +198,7 @@ async function saveQuotaHistory(quotaData, regions) {
     const regionName = row.region;
     if (!regionName) continue;
 
-    const code = nameToCode[regionName] || regionName;
+    const code = nameToCode[`${row.sido || ''}\t${regionName}`] || regionName;
     if (!todaySnapshot[code]) {
       todaySnapshot[code] = {};
     }

@@ -198,20 +198,23 @@ jobs:
       # ========================================
       # 6. GitHub Pages 배포 (검증 통과 시에만)
       # ========================================
+      # ★always() — 커밋 스텝이 push 충돌로 실패해도 Pages 는 올라가야 한다.
+      #   데이터는 이미 디스크에 있고 업로드는 커밋과 무관하다(2026-08-23 13:40 런에서
+      #   커밋 실패 하나에 이 셋이 전부 skipped 되어 공개 데이터가 20분 정체했다).
       - name: Setup Pages
-        if: steps.validate.outputs.valid == 'true'
+        if: always() && steps.validate.outputs.valid == 'true'
         uses: actions/configure-pages@v5
         continue-on-error: true  # subsidy 배포와 충돌 시 무시 (10분 후 재시도)
 
       - name: Upload Pages artifact
-        if: steps.validate.outputs.valid == 'true'
+        if: always() && steps.validate.outputs.valid == 'true'
         uses: actions/upload-pages-artifact@v3
         continue-on-error: true
         with:
           path: data/
 
       - name: Deploy to GitHub Pages
-        if: steps.validate.outputs.valid == 'true'
+        if: always() && steps.validate.outputs.valid == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
         continue-on-error: true  # 충돌 시 워크플로우 전체 실패 방지
@@ -223,7 +226,15 @@ jobs:
       #  - Pages 전파 전 발사 금지: vw-k가 낡은 데이터로 재생성/캐시하면 오히려 신선도 저하.
       # ========================================
       - name: Revalidate vw-k subsidy pages (changed regions)
-        if: steps.validate.outputs.valid == 'true'
+        # ★`always() &&` 가 없으면 **앞 스텝이 하나라도 실패할 때 통째로 스킵**된다
+        #   (GitHub Actions 는 상태함수 없는 if 를 암묵적으로 success() && (...) 로 감싼다).
+        #   2026-08-23 13:40 런 실측: 커밋 스텝의 push 충돌 하나에
+        #   Setup Pages·Upload·Deploy·**이 재검증까지** 전부 skipped 됐고,
+        #   그 사이클의 모든 변경이 24시간 지연됐다. 게다가 webhook-status 도 안 만들어져
+        #   위생 다이제스트는 마지막 정상값을 계속 읽는다 — 조용한 실패다.
+        #   ★재검증은 커밋 성공 여부와 **무관하게** 돌아야 한다. 데이터는 이미 Pages 에
+        #     올라가 있거나(성공) 다음 런이 다시 만든다(실패). 웹훅만 잃는 게 제일 나쁘다.
+        if: always() && steps.validate.outputs.valid == 'true'
         continue-on-error: true   # 실패해도 스크래핑/워크플로엔 영향 없음
         env:
           REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
