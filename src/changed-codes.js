@@ -140,8 +140,19 @@ function auxFingerprint(aux) {
   if (links && links.regions && Object.keys(links.regions).length) {
     for (const [code, r] of Object.entries(links.regions)) {
       /* ★stale 플래그는 뺀다 — 확인 실패 때 붙었다 떨어졌다 한다(신안군 4691, 27시간에 19회).
-         내용이 아니라 잡음이고, 넣으면 그 진동이 그대로 재검증이 된다. */
-      const files = (r?.files || []).map((f) => [f.gubun, f.name, f.url].join('\u0001')).sort();
+         내용이 아니라 잡음이고, 넣으면 그 진동이 그대로 재검증이 된다.
+         ★gubun·url 도 같은 이유로 뺀다. 원본이 같은 첨부를 A↔B↔A02 슬롯 사이로
+           옮겨 쓴다 — 파일 이름 집합은 그대로인데 슬롯만 흔들린다.
+           url 은 독립 정보가 아니라 **gubun 의 중복**이다: 실측 393/393 이
+           `local_cd=…&attach_gubun=…&model_gubun=…` 공식이고 파일명 흔적은 0/393.
+           파일 고유 식별자가 아니므로 빼도 잃는 것이 없다.
+         실측(7일치 notice-links 커밋 120개 재생):
+           gubun+name+url  63건  ← 이 중 38건(60%)이 슬롯만 흔들린 것
+           name             25건 · name+ext 25건 · name+ext+kind 25건
+           → ext·kind 는 잡음을 안 늘린다. 정보를 더 남기는 쪽을 고른다.
+         진동 지역: 4161 광주 13회 · 4315 제천 12회 · 4377 음성 11회 · 4476 부여 6회.
+         이 네 곳은 detail-history 가 거의 매일 갱신돼 화면이 상시 "오늘 변동 있음" 이었다. */
+      const files = (r?.files || []).map((f) => [f.name, f.ext, f.kind].join('\u0001')).sort();
       put(code, 'l', files.join('\u0002'));
     }
   }
