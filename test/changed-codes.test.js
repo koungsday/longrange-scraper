@@ -11,7 +11,8 @@
  * 실행: node test/changed-codes.test.js
  */
 const { execSync } = require('child_process');
-const { computeChangedCodes, auxChangedCodes, auxFingerprint, buildKeyToCode } = require('../src/changed-codes');
+const { computeChangedCodes, auxChangedCodes, auxFingerprint, buildKeyToCode,
+        countUnmatched, buildCodeToName, mergePending, finalizeCodes } = require('../src/changed-codes');
 
 const read = (f) => JSON.parse(execSync(`git show HEAD:${f}`, { maxBuffer: 1e9 }));
 const clone = (o) => JSON.parse(JSON.stringify(o));
@@ -203,6 +204,89 @@ t('기준선 병합 — 이번 런에 실패한 출처는 옛 조각을 물려�
 t('지문은 다음 비교를 위해 항상 반환된다', () => {
   const { fingerprint } = auxChangedCodes(base, aux);
   return Object.keys(fingerprint).length >= 160 || `지문 ${Object.keys(fingerprint).length}곳`;
+});
+
+console.log('\n■ 배선 — 예전엔 scraper-quota.js 안에 있어 테스트가 못 태우던 것들');
+
+t('★매칭 실패 계수 — 정상이면 0', () => {
+  const um = countUnmatched(quota, keyToCode);
+  return (um.unmatched === 0 && um.total >= 160) || `unmatched=${um.unmatched}/${um.total}`;
+});
+
+t('★시도 표기가 갈라지면 매칭 실패가 전수로 잡힌다 (조용한 죽음 방지)', () => {
+  /* donut 이 '강원' → '강원특별자치도' 로 바꾸는 날을 흉내낸다.
+     이 계수가 없으면 codes 가 영구 0 이 되는데 테스트도 워크플로도 전부 초록이다. */
+  const drifted = buildKeyToCode(donutLike.map(r => ({ ...r, parentName: r.parentName + '특별자치도' })));
+  const um = countUnmatched(quota, drifted);
+  return um.unmatched === um.total || `${um.unmatched}/${um.total} — 전수로 안 잡힌다`;
+});
+
+t('★코드→이름 매핑에 시도가 들어간다 (고성군 둘이 구분된다)', () => {
+  const m = buildCodeToName(donutLike);
+  return (m['4282'] !== m['4882'] && /고성군$/.test(m['4282']) && /고성군$/.test(m['4882']))
+    || `4282=${m['4282']} 4882=${m['4882']}`;
+});
+
+t('★이월 합침 — 지난 런 미통보분이 이번 통보에 들어간다', () => {
+  const r = mergePending(['1100'], { ts: new Date().toISOString(), codes: ['2600', '2700'] });
+  return (r.added === 2 && r.codes.length === 3) || JSON.stringify(r);
+});
+
+t('★이월 중복은 늘리지 않는다', () => {
+  const r = mergePending(['1100', '2600'], { ts: new Date().toISOString(), codes: ['2600'] });
+  return (r.added === 0 && r.codes.length === 2) || JSON.stringify(r);
+});
+
+t('★24시간 넘은 이월은 폐기 (같은 코드를 영원히 재검증하지 않게)', () => {
+  const old = new Date(Date.now() - 25 * 3600000).toISOString();
+  const r = mergePending([], { ts: old, codes: ['9999'] });
+  return (r.added === 0 && r.expired === 1 && r.codes.length === 0) || JSON.stringify(r);
+});
+
+t('이월이 없거나 비어도 예외 없이 통과', () => {
+  return mergePending(['1100'], null).codes.length === 1
+    && mergePending(['1100'], { ts: new Date().toISOString(), codes: [] }).codes.length === 1 || '예외/오탐';
+});
+
+t('★공고 계열 합집합 — names 가 codes 와 개수가 맞는다', () => {
+  const m = buildCodeToName(donutLike);
+  const f = finalizeCodes(['1100'], ['서울 서울특별시'], ['2600', '2700'], m);
+  return (f.codes.length === 3 && f.names.length === 3 && f.capped === 0)
+    || `codes=${f.codes.length} names=${f.names.length}`;
+});
+
+t('★공고 계열이 상한(30) 을 넘으면 그것만 포기하고 quota 분은 살린다', () => {
+  const m = buildCodeToName(donutLike);
+  const many = Array.from({ length: 40 }, (_, i) => String(9000 + i));
+  const f = finalizeCodes(['1100'], ['서울'], many, m);
+  return (f.capped === 40 && f.codes.length === 1 && f.codes[0] === '1100')
+    || `capped=${f.capped} codes=${JSON.stringify(f.codes)}`;
+});
+
+t('★전체가 상한(60) 을 넘으면 통째로 포기하고 capped 에 남긴다', () => {
+  /* 실측 근거: webhook-status 이력에서 changed=160 이 세 번 났다(시그니처 필드를 건드린 배포).
+     통보를 포기하되 **그 사실이 남아야** 조용한 손실이 안 된다. */
+  const m = buildCodeToName(donutLike);
+  const many = Array.from({ length: 100 }, (_, i) => String(1000 + i));
+  const f = finalizeCodes(many, many, [], m);
+  return (f.capped === 100 && f.codes.length === 0 && f.names.length === 0)
+    || `capped=${f.capped} codes=${f.codes.length}`;
+});
+
+t('★이월된 코드에도 이름이 붙는다 (count 와 names 가 어긋나지 않는다)', () => {
+  /* mergePending 은 코드만 붙이고 이름은 안 붙인다 — 그대로 두면 `count=2 names=0` 이
+     되어 사람이 읽는 유일한 로그가 거짓말한다. 시뮬레이션에서 실제로 나왔다. */
+  const m = buildCodeToName(donutLike);
+  const mp = mergePending(['1100'], { ts: new Date().toISOString(), codes: ['2600', '2700'] });
+  const f = finalizeCodes(mp.codes, ['서울 서울특별시'], [], m);
+  return (f.codes.length === 3 && f.names.length === 3 && f.names.every(Boolean))
+    || `codes=${f.codes.length} names=${f.names.length} ${JSON.stringify(f.names)}`;
+});
+
+t('정상 규모(1~3곳)에서는 상한이 절대 안 걸린다', () => {
+  const m = buildCodeToName(donutLike);
+  const f = finalizeCodes(['1100', '2600'], ['a', 'b'], ['4686'], m);
+  return (f.capped === 0 && f.codes.length === 3) || JSON.stringify(f);
 });
 
 console.log(`\n결과: ${pass} 통과 / ${fail} 실패\n`);

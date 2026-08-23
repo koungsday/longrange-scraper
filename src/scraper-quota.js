@@ -6,7 +6,8 @@ const { parseQuotaXlsx, readSheets } = require('./parse-quota-xlsx');
 const { parseQuotaDetail, diffDetail } = require('./parse-quota-detail');
 const { parseNoticeSchedule, diffSchedule, formatAlert } = require('./parse-notice-schedule');
 const { buildNoticeLinks } = require('./notice-links');
-const { computeChangedCodes, auxChangedCodes, buildKeyToCode } = require('./changed-codes');
+const { computeChangedCodes, auxChangedCodes, buildKeyToCode,
+        countUnmatched, buildCodeToName, mergePending, finalizeCodes } = require('./changed-codes');
 const { parseChangeHistory, summarize } = require('./parse-change-history');
 const { parseSubsidyXlsx } = require('./parse-subsidy-xlsx');
 const { downloadExcel } = require('./ev-excel-download');
@@ -676,10 +677,13 @@ async function main() {
            그때 테스트도 워크플로도 webhook-status 도 전부 초록이다(조용한 실패).
            → 매칭 실패 수를 세서 로그와 changed-codes.json 에 남긴다. */
         const keyToCode = buildKeyToCode(regions);
-        const quotaKeys = new Set((outputData?.data?.[0]?.quotaData || [])
-          .filter((r) => r.region).map((r) => `${r.sido || ''}\t${r.region}`));
-        unmatched = [...quotaKeys].filter((k) => !keyToCode[k]).length;
-        if (unmatched) console.warn(`⚠️ 지역 키 매칭 실패 ${unmatched}/${quotaKeys.size} — donut 과 환경부 시도 표기가 갈라졌을 수 있다(변경 통보가 죽는다)`);
+        /* ★좌변(donut localType)과 우변(환경부 Excel '시도' 열)은 **서로 다른 출처**다.
+           지금은 161/161 일치하지만 donut 이 표기를 바꾸는 날(실제 행정명은 이미
+           강원특별자치도·전북특별자치도다) 매칭이 전멸하고 codes 가 영구 0 이 된다.
+           그때 테스트도 워크플로도 전부 초록이므로, 매칭 실패 수를 세서 신호로 남긴다. */
+        const um = countUnmatched(outputData, keyToCode);
+        unmatched = um.unmatched;
+        if (unmatched) console.warn(`⚠️ 지역 키 매칭 실패 ${unmatched}/${um.total} — donut 과 환경부 시도 표기가 갈라졌을 수 있다(변경 통보가 죽는다)`);
         const diff = computeChangedCodes(previousQuota, outputData, keyToCode);
         changedCodes = diff.codes;
         changedNames = diff.changedNames;
@@ -687,8 +691,7 @@ async function main() {
 
       /* ★공고 계열 변경을 합친다 — **저장된 기준선**과 비교한다(디스크 전/후가 아니라).
          notice-links.json 은 별도 워크플로가 만들어서, quota 런이 체크아웃할 땐 이미
-         prev 에 들어와 있다. 전/후 비교로는 영원히 안 잡힌다(실측: 60런 재생, 기여 0건).
-         기준선 파일을 두면 **누가 썼든** 잡힌다. */
+         prev 에 들어와 있다. 전/후 비교로는 영원히 안 잡힌다(실측: 60런 재생, 기여 0건). */
       try {
         const nowAux = {};
         for (const f of AUX_FILES) {
@@ -697,34 +700,30 @@ async function main() {
         let baseline = null;
         try { baseline = JSON.parse(await fs.readFile(AUX_BASELINE, 'utf8')).regions; } catch { /* 최초 */ }
         const { codes: rawExtra, fingerprint } = auxChangedCodes(baseline, nowAux);
-        const extra = rawExtra.filter((c) => !changedCodes.includes(c));
 
-        /* ★상한. 지문이 화이트리스트라 스키마 변경엔 면역이지만, 그래도 마지막 방어선을 둔다 —
-           161개가 한 번에 나가면 우리가 없애려는 폭탄과 다를 게 없다.
-           실측 분포(60런): 대부분 0~2곳. 30을 넘는 건 이상 상황이므로 통보를 포기하고
-           24h TTL·전역 fallback 에 맡긴다(조용히 틀리는 것보다 낫다). */
-        const EXTRA_CAP = 30;
-        if (extra.length > EXTRA_CAP) {
-          /* ★상한을 넘으면 통보를 포기하는데, **그 사실이 아무 데도 안 남으면** 조용한 데이터
-             손실이 된다(적대적 검증 지적). 기준선은 갱신되므로 그 변경들은 영영 통보되지 않고,
-             webhook-status 에는 정상 무변경과 **글자 하나 다르지 않은** {changed:0, ok:true} 가 찍힌다.
-             → changed-codes.json 에 capped 를 남기고 워크플로가 상태 파일 reason 에 싣는다. */
-          capped = extra.length;
-          console.warn(`⚠️ 공고 계열 변경이 ${extra.length}곳 — 상한 ${EXTRA_CAP} 초과라 통보하지 않는다(스키마 변경·대량 수집실패 의심). 기준선만 갱신.`);
-        } else if (extra.length) {
-          console.log(`   ↳ 공고 계열 변경 ${extra.length}곳 추가: ${extra.slice(0, 10).join(', ')}${extra.length > 10 ? ' …' : ''}`);
-          changedCodes = changedCodes.concat(extra);
-          /* ★names 에도 넣는다. 안 넣으면 count 와 names 가 어긋나고, 사람이 읽는 유일한 로그가
-             "변경 지역 4개: 고성군" 처럼 거짓말한다(실측). 코드→이름은 donut 목록에서 얻는다. */
-          const codeToName = {};
-          for (const r of regions) codeToName[String(r.code)] = `${r.parentName || ''} ${r.localName}`.trim();
-          changedNames = changedNames.concat(extra.map((c) => codeToName[c] || c));
+        /* ★지난 런에서 통보 못 한 코드를 먼저 합친다(POST 실패분). 24시간 넘으면 버린다. */
+        let pending = null;
+        try { pending = JSON.parse(await fs.readFile('data/pending-codes.json', 'utf8')); } catch { /* 없음 */ }
+        const mp = mergePending(changedCodes, pending);
+        if (mp.added) console.log(`   ↳ 지난 런 미통보 ${mp.added}곳 이월 합침`);
+        if (mp.expired) console.warn(`   ↳ 이월분 ${mp.expired}곳이 24시간을 넘겨 폐기 (TTL 이 이미 덮었다)`);
+
+        /* ★상한 둘을 한 곳에서 적용한다 — 판단은 전부 changed-codes.js 의 순수 함수가 한다.
+           여기(scraper-quota.js)에는 파일 읽기·쓰기만 남긴다. 그래야 테스트가 태울 수 있다. */
+        const fin = finalizeCodes(mp.codes, changedNames, rawExtra, buildCodeToName(regions));
+        if (fin.capped) {
+          console.warn(`⚠️ 변경이 ${fin.capped}곳 — 상한 초과라 통보하지 않는다(스키마 변경·수집 이상 의심). 기준선만 갱신.`);
+        } else if (fin.codes.length > changedCodes.length) {
+          const added = fin.codes.filter((c) => !changedCodes.includes(c));
+          console.log(`   ↳ 공고 계열·이월 ${added.length}곳 추가: ${added.slice(0, 10).join(', ')}${added.length > 10 ? ' …' : ''}`);
         }
+        changedCodes = fin.codes;
+        changedNames = fin.names;
+        capped = fin.capped;
+
         /* 기준선은 통보 여부와 무관하게 갱신한다 — 안 하면 같은 변경을 매 런 다시 통보한다.
-           ★단 **내용이 같으면 쓰지 않는다.** ts 만 바꿔 매 런 313KB 를 다시 커밋하면
-             저장소가 분다 — 이 저장소가 이미 다섯 번 대응한 함정이다
-             (quota-detail·notice-schedule·change-history·notice-links·webhook-status 전부
-              같으면 미기록하거나 ts 를 비교에서 뺀다). 새 파일만 그 규칙 밖에 둘 이유가 없다. */
+           ★내용이 같으면 쓰지 않는다(ts 만 바뀐 313KB 를 매 런 커밋하면 저장소가 분다 —
+             이 저장소가 이미 다섯 번 대응한 함정이다). */
         if (Object.keys(fingerprint).length) {
           const next = JSON.stringify(fingerprint);
           let prevSig = null;
@@ -735,47 +734,6 @@ async function main() {
         }
       } catch (e) {
         console.warn('⚠️ 공고 계열 변경감지 실패(무시):', e.message);
-      }
-
-      /* ★quota 경로에도 상한을 건다 — 공고 계열(EXTRA_CAP)에만 걸려 있었다.
-         실측: webhook-status 이력에서 **changed=160 이 세 번** 났다.
-             08-17 09:03 (직전 커밋: 표 파싱 → Excel 다운로드 전환)
-             08-18 15:21 (직전 커밋: 선정대수·선정잔여 수집 추가)
-             08-19 10:21 (직전 배포 런)
-         패턴이 명확하다 — **regionSignatures 의 필드 목록을 건드리는 배포마다**
-         전 지역 서명이 바뀌어 160발이 나간다. 가정이 아니라 세 번 일어난 일이다.
-         다음에 필드를 하나 더 넣는 커밋에서 똑같이 재현된다.
-         ★수집 실패로 빈 quota.json 이 커밋되면 다음 런의 previousQuota 가 비어
-           161 전부가 changed 로 잡히는 경로도 있다(아직 안 겪었지만 구조상 열려 있다).
-         → 넘으면 통보를 포기하고 24h TTL·fallback 에 맡긴다. 조용히 나가는 것보다 낫다.
-           capped 에 실어 두면 위생 다이제스트가 잡는다. */
-      /* ★지난 런에서 통보에 실패한 코드를 합친다.
-         POST 5회 재시도가 다 실패하면 워크플로가 data/pending-codes.json 에 남긴다.
-         기준선과 quota.json 은 POST 전에 이미 갱신되므로, 이월이 없으면 그 변경은
-         **다시는 통보되지 않는다**(전에는 notice-data 전역 purge 가 우연히 덮었지만
-         이제 그 보험이 없다). 성공하면 워크플로가 그 파일을 지운다.
-         ★24시간이 지난 이월은 버린다 — 그때쯤이면 TTL 이 이미 덮었고, 계속 들고 있으면
-           같은 코드를 영원히 재검증하게 된다. */
-      try {
-        const pend = JSON.parse(await fs.readFile('data/pending-codes.json', 'utf8'));
-        const ageH = (Date.now() - new Date(pend.ts).getTime()) / 3600000;
-        if (ageH <= 24 && Array.isArray(pend.codes) && pend.codes.length) {
-          const add = pend.codes.filter((c) => !changedCodes.includes(c));
-          if (add.length) {
-            console.log(`   ↳ 지난 런 미통보 ${add.length}곳 이월 합침 (${ageH.toFixed(1)}시간 전)`);
-            changedCodes = changedCodes.concat(add);
-          }
-        } else if (ageH > 24) {
-          console.warn(`   ↳ 이월분 ${pend.codes?.length ?? 0}곳이 24시간을 넘겨 폐기 (TTL 이 이미 덮었다)`);
-        }
-      } catch { /* 이월 없음 — 정상 */ }
-
-      const TOTAL_CAP = 60;
-      if (changedCodes.length > TOTAL_CAP) {
-        console.warn(`⚠️ 변경 지역이 ${changedCodes.length}곳 — 상한 ${TOTAL_CAP} 초과라 통보하지 않는다(시그니처 스키마 변경·수집 이상 의심)`);
-        capped = Math.max(capped, changedCodes.length);
-        changedCodes = [];
-        changedNames = [];
       }
 
       await fs.writeFile('changed-codes.json', JSON.stringify({

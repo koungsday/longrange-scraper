@@ -195,4 +195,72 @@ function buildKeyToCode(regions) {
   return map;
 }
 
-module.exports = { regionSignatures, computeChangedCodes, auxChangedCodes, auxFingerprint, buildKeyToCode };
+/**
+ * ★배선을 순수 함수로 뺀다 — 여기부터가 오늘 적대적 검증이 "테스트 밖" 이라고 지적한 부분이다.
+ *   기준선 파일 왕복 · 상한 두 개 · 이월 합침 · 이름 매핑 · 매칭 실패 계수가 전부
+ *   scraper-quota.js 안에 인라인으로 있었고, 그건 puppeteer 의존 때문에 테스트가
+ *   require 할 수 없다. 즉 `.regions` 를 `.data` 로 오타 내도 **25/25 초록**이었다.
+ *   파일 읽기·쓰기만 호출부에 남기고 판단은 전부 여기로 옮긴다.
+ */
+
+/** quota.json 행 키와 코드 맵을 대조해 **매칭 실패 수**를 센다.
+ *  0 이 아니면 donut 과 환경부의 시도 표기가 갈라진 것이고, 그러면 통보가 통째로 죽는다. */
+function countUnmatched(quotaJson, keyToCode) {
+  const keys = new Set((quotaJson?.data?.[0]?.quotaData || [])
+    .filter((r) => r.region).map((r) => `${r.sido || ''}\t${r.region}`));
+  return { unmatched: [...keys].filter((k) => !keyToCode[k]).length, total: keys.size };
+}
+
+/** 코드 → "시도 지역명". names 가 codes 와 어긋나면 사람이 읽는 유일한 로그가 거짓말한다. */
+function buildCodeToName(regions) {
+  const m = {};
+  for (const r of regions || []) m[String(r.code)] = `${r.parentName || ''} ${r.localName}`.trim();
+  return m;
+}
+
+/** 지난 런에서 통보 못 한 코드를 합친다. 24시간 넘은 이월은 버린다(TTL 이 이미 덮었다). */
+function mergePending(changedCodes, pending, nowMs = Date.now(), maxAgeH = 24) {
+  if (!pending || !Array.isArray(pending.codes) || !pending.codes.length) return { codes: changedCodes, added: 0, expired: 0 };
+  const ageH = (nowMs - new Date(pending.ts).getTime()) / 3600000;
+  if (!(ageH <= maxAgeH)) return { codes: changedCodes, added: 0, expired: pending.codes.length };
+  const add = pending.codes.filter((c) => !changedCodes.includes(c));
+  return { codes: changedCodes.concat(add), added: add.length, expired: 0 };
+}
+
+/**
+ * 최종 통보 목록을 확정한다 — 상한 둘을 여기서 한 번에 적용한다.
+ * @returns {{codes, names, capped}} capped>0 이면 **통보를 포기했다**는 뜻이고,
+ *   그 사실이 어디에도 안 남으면 조용한 데이터 손실이 된다(워크플로가 reason 에 싣는다).
+ */
+function finalizeCodes(quotaCodes, quotaNames, extraCodes, codeToName, opts = {}) {
+  const EXTRA_CAP = opts.extraCap ?? 30;
+  const TOTAL_CAP = opts.totalCap ?? 60;
+  let codes = quotaCodes.slice();
+  let names = quotaNames.slice();
+  let capped = 0;
+
+  const extra = extraCodes.filter((c) => !codes.includes(c));
+  if (extra.length > EXTRA_CAP) {
+    capped = extra.length;                       /* 공고 계열만 초과 — quota 분은 살린다 */
+  } else if (extra.length) {
+    codes = codes.concat(extra);
+    names = names.concat(extra.map((c) => codeToName[c] || c));
+  }
+
+  if (codes.length > TOTAL_CAP) {
+    capped = Math.max(capped, codes.length);     /* 전체 초과 — 통째로 포기한다 */
+    codes = [];
+    names = [];
+  }
+
+  /* ★names 를 codes 길이에 맞춘다. mergePending 이 이월 코드를 붙일 때 이름은 안 붙이므로
+     그대로 두면 `count=2 names=0` 이 되고, 사람이 읽는 유일한 로그가 거짓말한다
+     (시뮬레이션에서 실제로 나왔다 — 앞서 공고 계열에서 고친 것과 같은 종류다). */
+  if (names.length !== codes.length) {
+    names = codes.map((c, i) => names[i] ?? codeToName[c] ?? c);
+  }
+  return { codes, names, capped };
+}
+
+module.exports = { regionSignatures, computeChangedCodes, auxChangedCodes, auxFingerprint, buildKeyToCode,
+  countUnmatched, buildCodeToName, mergePending, finalizeCodes };
