@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-24T09:41:08.439Z",
+  "timestamp": "2026-08-24T09:51:03.357Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3383,16 +3383,16 @@
           "registered_corporate": 42,
           "registered_taxi": 91,
           "registered_general": 949,
-          "delivered_total": 874,
+          "delivered_total": 875,
           "delivered_priority": 256,
           "delivered_corporate": 26,
           "delivered_taxi": 64,
-          "delivered_general": 528,
-          "remaining_total": 287,
+          "delivered_general": 529,
+          "remaining_total": 286,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 13,
-          "remaining_general": 399,
+          "remaining_general": 398,
           "selected_total": 1529,
           "selectedRemaining_total": 0,
           "note": "ㅇ 경주시 하반기사업 &#xa; - 승용 지원가능여부 1373번까지 선정예정(362대) 순차로 선정예정이니 문자받고 출고진행하시면됩니다. (택시도 마감)&#xa; (보완 완료 안되신분들은 승인 후 보완요청상태로 돌려놓을예정입니다.)&#xa; 지원가능여부1374번은 대기1번이고, 취소자 등으로 예산 여유 생기면 연락드리겠습니다. &#xa; - 하반기 추경계획없음"
@@ -4503,9 +4503,9 @@
           "registered_corporate": 49579,
           "registered_taxi": 751,
           "registered_general": 975,
-          "delivered_total": 37761,
+          "delivered_total": 37762,
           "delivered_priority": 14,
-          "delivered_corporate": 36561,
+          "delivered_corporate": 36562,
           "delivered_taxi": 461,
           "delivered_general": 725,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-24T09:41:07.881Z"
+      "timestamp": "2026-08-24T09:51:03.292Z"
     }
   ]
 }
