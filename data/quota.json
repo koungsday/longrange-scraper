@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-24T03:51:01.487Z",
+  "timestamp": "2026-08-24T04:01:13.427Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,12 +23,12 @@
           "registered_corporate": 490,
           "registered_taxi": 1295,
           "registered_general": 9111,
-          "delivered_total": 14512,
-          "delivered_priority": 4247,
+          "delivered_total": 14513,
+          "delivered_priority": 4248,
           "delivered_corporate": 449,
           "delivered_taxi": 1168,
           "delivered_general": 8648,
-          "remaining_total": 918,
+          "remaining_total": 917,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 32,
@@ -1181,8 +1181,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 742,
-          "selected_total": 713,
-          "selectedRemaining_total": 362,
+          "selected_total": 718,
+          "selectedRemaining_total": 357,
           "note": "☆ 3차 승용,화물 마감 ☆&#xa; -예산 확인 후 마감 이후 접수건은 예비 순번 부여 예정&#xa; ※ 대기 인원이 많은 관계로, 예산 지원 대상 차량은 출고 기한을 엄수해 주시기 바랍니다.  &#xa; &#xa; ※ 경유화물차 성능 보조금 차감 기준 변경&#xa;   - 보유 경유화물차 폐차(수출말소 포함)만 미차감, 판매나 보유 시 성능보조금 차감-"
         },
         {
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 50738,
+          "registered_total": 50739,
           "registered_priority": 25,
-          "registered_corporate": 49008,
+          "registered_corporate": 49009,
           "registered_taxi": 741,
           "registered_general": 964,
           "delivered_total": 37699,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-24T03:51:01.432Z"
+      "timestamp": "2026-08-24T04:01:13.360Z"
     }
   ]
 }
