@@ -255,7 +255,9 @@ async function saveQuotaHistory(quotaData, regions) {
   const carChanged = (a, b) => {
     if (!a || !b) return false;          /* 비교 상대가 없으면 단언하지 않는다 */
     for (const f of SIG_FIELDS) {
-      if (a[f] === undefined || b[f] === undefined) continue;
+      /* ★null 도 보류 — 스냅샷 writer 가 `?? null` 로 쓴다. 수집 일부 실패로 null 이 되면
+         실패한 날과 복구된 날 두 번 전 지역이 "방금 변동" 이 된다(샌드박스 재현됨). */
+    if (a[f] === undefined || b[f] === undefined || a[f] === null || b[f] === null) continue;
       if (JSON.stringify(a[f]) !== JSON.stringify(b[f])) return true;
     }
     return false;
@@ -299,7 +301,12 @@ async function saveQuotaHistory(quotaData, regions) {
         : (prev.lastChangedAt ?? null);
       prev.lastChangedAt = slice.lastChangedAt;   /* ★비교에서 제외 — 아니면 매 런 전 지역 재기록 */
       if (JSON.stringify(prev) === JSON.stringify(slice)) continue;
-    } catch { /* 최초 생성 */ }
+    } catch (e) {
+        /* ★'파일 없음'(최초 생성)만 정상이다. 그 밖의 예외를 여기서 삼키면 continue 를 건너뛰어
+           **값이 안 바뀌었는데도 매 런 161개를 재기록**하는 상태로 조용히 퇴화한다
+           (강제 throw 재현: written 161 / lastChangedAt 0개). 그건 조용한 실패다 — 소리 내게 둔다. */
+        if (e.code !== 'ENOENT') throw e;
+      }
     await fs.writeFile(path, JSON.stringify(slice));
     written++;
   }
