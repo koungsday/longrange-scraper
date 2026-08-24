@@ -239,6 +239,28 @@ async function saveQuotaHistory(quotaData, regions) {
   // [지역별 슬라이스] data/quota-history/<code>.json — 전체 파일(~17MB)과 동일 스키마의
   // 1지역 슬라이스(minified ~50KB). vw-k 클라이언트가 지역 하나의 추이만 받도록(방문자 대역폭).
   // 실데이터(스냅샷·메타·연도) 동일하면 미기록 — lastUpdated 만 바뀐 파일을 매 실행 커밋하지 않기 위함.
+  /* ★신선도 판정 — 사이트 trend.ts 의 changedBetween 과 **같은 규칙**이어야 한다.
+     한쪽에만 있는 필드는 건너뛴다: '없는 것' 은 '달라진 것' 이 아니다.
+     이 규칙이 없으면 스냅샷에 필드가 하나 늘어나는 날 전 지역이 "방금 변동" 이 된다
+     (2026-08-23 에 selected·selectedRemaining 을 넣으며 실제로 156/161 이 그렇게 될 뻔했다). */
+  const SIG_FIELDS = ['total', 'remaining', 'registered', 'delivered', 'selected', 'selectedRemaining'];
+  const latestCar = (snaps, code) => {
+    const days = Object.keys(snaps || {}).sort();
+    for (let i = days.length - 1; i >= 0; i--) {
+      const car = snaps[days[i]]?.[code]?.['전기승용'];
+      if (car) return car;
+    }
+    return null;
+  };
+  const carChanged = (a, b) => {
+    if (!a || !b) return false;          /* 비교 상대가 없으면 단언하지 않는다 */
+    for (const f of SIG_FIELDS) {
+      if (a[f] === undefined || b[f] === undefined) continue;
+      if (JSON.stringify(a[f]) !== JSON.stringify(b[f])) return true;
+    }
+    return false;
+  };
+
   const SPLIT_DIR = 'data/quota-history';
   await fs.mkdir(SPLIT_DIR, { recursive: true });
   let written = 0;
@@ -259,6 +281,23 @@ async function saveQuotaHistory(quotaData, regions) {
     try {
       const prev = JSON.parse(await fs.readFile(path, 'utf8'));
       prev.lastUpdated = slice.lastUpdated; // 비교에서 제외
+      /* ★lastChangedAt — 값이 **실제로 달라진 순간**. 화면의 "N일 N시간째 변동 없음" 이 쓴다.
+         ‖ 왜 '파일이 써졌는가' 로 재면 안 되나
+           날짜가 넘어가면 스냅샷 키가 하나 늘어 **값이 그대로여도 파일은 달라진다.**
+           실측: 매일 00:01 런이 160개 파일을 재기록한다(08-21·08-22·08-23 전부 160).
+           표본 4곳(서울·부산·대구·인천) 전부 직전날 값 변화 **없음**.
+           파일 기준이면 매일 자정 161곳이 일제히 "방금 변동" 이 된다.
+         ‖ 왜 quota.json 의 timestamp(ts) 로 재면 안 되나 — 2026-08-21 에 세 번 틀린 자리다
+           ts 는 '읽은 시각' 이라 값이 안 바뀌어도 캐시가 재생성되면 갱신된다
+           (함평군 실측 15:01 → 15:51). 그래서 "22시간째 변동 없음" 이 캐시 갱신만으로
+           "방금 변동" 으로 뒤집혔다. 여기서는 스크래퍼가 **값을 비교해서** 찍으므로
+           사이트 캐시가 몇 번 재생성되든 이 값은 흔들리지 않는다.
+         → 기준은 **가장 최근 관측값끼리**. 같은 날 안이면 (직전 런 ↔ 이번 런),
+           자정 직후면 (어제 마지막 ↔ 오늘 첫) 이 되어 둘 다 자연스럽다. */
+      slice.lastChangedAt = carChanged(latestCar(prev.snapshots, code), latestCar(snapshots, code))
+        ? new Date().toLocaleString('sv-SE', { timeZone: 'Asia/Seoul' }).replace(' ', 'T')
+        : (prev.lastChangedAt ?? null);
+      prev.lastChangedAt = slice.lastChangedAt;   /* ★비교에서 제외 — 아니면 매 런 전 지역 재기록 */
       if (JSON.stringify(prev) === JSON.stringify(slice)) continue;
     } catch { /* 최초 생성 */ }
     await fs.writeFile(path, JSON.stringify(slice));
