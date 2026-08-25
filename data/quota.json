@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T03:21:02.156Z",
+  "timestamp": "2026-08-25T03:31:10.110Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -550,11 +550,11 @@
           "quota_corporate": 0,
           "quota_taxi": 40,
           "quota_general": 800,
-          "registered_total": 643,
+          "registered_total": 644,
           "registered_priority": 183,
           "registered_corporate": 12,
           "registered_taxi": 28,
-          "registered_general": 420,
+          "registered_general": 421,
           "delivered_total": 575,
           "delivered_priority": 159,
           "delivered_corporate": 12,
@@ -2706,8 +2706,8 @@
           "quota_corporate": 0,
           "quota_taxi": 8,
           "quota_general": 90,
-          "registered_total": 148,
-          "registered_priority": 14,
+          "registered_total": 149,
+          "registered_priority": 15,
           "registered_corporate": 1,
           "registered_taxi": 0,
           "registered_general": 133,
@@ -4498,14 +4498,14 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 51445,
+          "registered_total": 51444,
           "registered_priority": 24,
-          "registered_corporate": 49674,
+          "registered_corporate": 49673,
           "registered_taxi": 762,
           "registered_general": 985,
-          "delivered_total": 37867,
+          "delivered_total": 37868,
           "delivered_priority": 15,
-          "delivered_corporate": 36655,
+          "delivered_corporate": 36656,
           "delivered_taxi": 470,
           "delivered_general": 727,
           "remaining_total": 0,
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 29273,
-          "selected_total": 46865,
+          "selected_total": 46863,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-25T03:21:02.077Z"
+      "timestamp": "2026-08-25T03:31:10.006Z"
     }
   ]
 }
