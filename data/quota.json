@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-25T10:11:03.989Z",
+  "timestamp": "2026-08-25T10:21:03.422Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2245,8 +2245,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 3,
           "remaining_general": 127,
-          "selected_total": 87,
-          "selectedRemaining_total": 108,
+          "selected_total": 88,
+          "selectedRemaining_total": 107,
           "note": "청양군 하반기 공고일: 2026.08.19.&#xa; 자세한 내용은 공고문을 통해 확인해 주시기 바랍니다.&#xa; &#xa; · 승용 65대 / 1대당 국비 5,000,000원 기준 산정&#xa;  - 접수기간: 2026. 8. 25. 9:00 ~ / 지원가능요청기간: 2026. 8. 27. 09:00~&#xa; &#xa; · 화물 36대 / 1대당 국비 11,000,000원 기준 산정&#xa;  - 접수기간: 2026. 8. 28. 9:00 ~ / 지원가능요청기간: 2026. 9. 1. 09:00~&#xa; &#xa; · 승합 4대 / 1대당 국비 15,000,000원 기준 산정&#xa;  - 접수기간: 2026. 9. 2. 9:00 ~ / 지원가능요청기간: 2026. 9 . 3. 09:00~&#xa; &#xa; ※구매신청서 작성시 전자서명 서류 인정&#xa; ※지원가능요청이 중복일 경우 자격부여 순으로 선정&#xa; ※예산 소진 시 조기마감&#xa; ※차종별 지원액 차이로 보급예정물량과 실제보급량이 상이할 수 있음"
         },
         {
@@ -3383,16 +3383,16 @@
           "registered_corporate": 42,
           "registered_taxi": 91,
           "registered_general": 949,
-          "delivered_total": 919,
+          "delivered_total": 920,
           "delivered_priority": 265,
           "delivered_corporate": 29,
           "delivered_taxi": 70,
-          "delivered_general": 555,
-          "remaining_total": 242,
+          "delivered_general": 556,
+          "remaining_total": 241,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 7,
-          "remaining_general": 372,
+          "remaining_general": 371,
           "selected_total": 1530,
           "selectedRemaining_total": 0,
           "note": "ㅇ 경주시 하반기사업 &#xa; - 승용 지원가능여부 1373번까지 선정예정(362대) 순차로 선정예정이니 문자받고 출고진행하시면됩니다. (택시도 마감)&#xa; (보완 완료 안되신분들은 승인 후 보완요청상태로 돌려놓을예정입니다.)&#xa; 지원가능여부1374번은 대기1번이고, 취소자 등으로 예산 여유 생기면 연락드리겠습니다. &#xa; - 하반기 추경계획없음"
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 51718,
+          "registered_total": 51719,
           "registered_priority": 24,
-          "registered_corporate": 49928,
+          "registered_corporate": 49929,
           "registered_taxi": 772,
           "registered_general": 994,
           "delivered_total": 37950,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-25T10:11:03.930Z"
+      "timestamp": "2026-08-25T10:21:03.363Z"
     }
   ]
 }
