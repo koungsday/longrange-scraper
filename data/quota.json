@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-27T03:41:01.605Z",
+  "timestamp": "2026-08-27T03:51:06.051Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3299,16 +3299,16 @@
           "registered_corporate": 1,
           "registered_taxi": 1,
           "registered_general": 120,
-          "delivered_total": 125,
+          "delivered_total": 126,
           "delivered_priority": 28,
           "delivered_corporate": 1,
           "delivered_taxi": 1,
-          "delivered_general": 95,
-          "remaining_total": 15,
+          "delivered_general": 96,
+          "remaining_total": 14,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 38,
+          "remaining_general": 37,
           "selected_total": 142,
           "selectedRemaining_total": 0,
           "note": "○ 2026년 하반기 전기자동차(승용,화물)보급사업 공고 ○ &#xa; &#xa;  1. 접수기간 : 2026. 8. 12.(수) ~ 하반기 예산소진시까지&#xa;  2. 보급대수 : 상반기 보급대수 65대(보급 여건 등에 따라 변동될 수 있음)&#xa;     가. 승용 50대(일반 45 / 우선 2 / 공공 3)&#xa;     나. 화물 15대(일반 12 / 우선 1 / 공공 2)&#xa;  3. 보급기준 : 개인 당 1대, 법인·기관 당 1대&#xa;  4. 선정기준 : 차량 출고·등록순(보조금 지원가능 확인 요청일 순)&#xa;  5. 지원대상 : 지원 신청일 기준으로 주민등록상 주소를 진도군에 연속하여3개월이상 둔 군민이면서 보조금 지원 대상 자동차를 군에 신규 등록한 자&#xa;  6. 지원차량 : 무공해차 통합누리집(ev.or.kr), 붙임에서 확인 가능&#xa;  7. 문의사항 : 진도군 환경수질과(☎061-540-3708)"
@@ -3859,8 +3859,8 @@
           "registered_corporate": 7,
           "registered_taxi": 0,
           "registered_general": 185,
-          "delivered_total": 183,
-          "delivered_priority": 73,
+          "delivered_total": 184,
+          "delivered_priority": 74,
           "delivered_corporate": 5,
           "delivered_taxi": 0,
           "delivered_general": 105,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-27T03:41:01.479Z"
+      "timestamp": "2026-08-27T03:51:05.963Z"
     }
   ]
 }
