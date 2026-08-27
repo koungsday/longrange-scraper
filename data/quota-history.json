@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "lastUpdated": "2026. 8. 27. PM 1:11:06 KST",
+  "lastUpdated": "2026. 8. 27. PM 1:21:14 KST",
   "regions": {
     "1100": {
       "name": "서울특별시",
@@ -849895,11 +849895,11 @@
             "general": 4722
           },
           "remaining": {
-            "total": 916,
+            "total": 914,
             "priority": 0,
             "corporate": 0,
             "taxi": 103,
-            "general": 2193
+            "general": 2192
           },
           "registered": {
             "total": 4307,
@@ -849909,11 +849909,11 @@
             "general": 2682
           },
           "delivered": {
-            "total": 4054,
-            "priority": 1341,
+            "total": 4056,
+            "priority": 1342,
             "corporate": 39,
             "taxi": 145,
-            "general": 2529
+            "general": 2530
           },
           "selected": 4298,
           "selectedRemaining": 672
@@ -850031,11 +850031,11 @@
             "general": 800
           },
           "remaining": {
-            "total": 92,
+            "total": 91,
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
-            "general": 361
+            "general": 360
           },
           "registered": {
             "total": 819,
@@ -850045,11 +850045,11 @@
             "general": 510
           },
           "delivered": {
-            "total": 708,
+            "total": 709,
             "priority": 196,
             "corporate": 12,
             "taxi": 61,
-            "general": 439
+            "general": 440
           },
           "selected": 802,
           "selectedRemaining": 0
@@ -852023,8 +852023,8 @@
             "taxi": 34,
             "general": 694
           },
-          "selected": 890,
-          "selectedRemaining": 264
+          "selected": 893,
+          "selectedRemaining": 261
         }
       },
       "4421": {
@@ -852146,11 +852146,11 @@
             "general": 384
           },
           "registered": {
-            "total": 414,
-            "priority": 142,
+            "total": 404,
+            "priority": 138,
             "corporate": 5,
             "taxi": 15,
-            "general": 252
+            "general": 246
           },
           "delivered": {
             "total": 361,
@@ -852159,8 +852159,8 @@
             "taxi": 15,
             "general": 220
           },
-          "selected": 406,
-          "selectedRemaining": 315
+          "selected": 396,
+          "selectedRemaining": 325
         }
       },
       "4471": {
@@ -853390,18 +853390,18 @@
       "4686": {
         "전기승용": {
           "total": {
-            "total": 158,
-            "priority": 16,
+            "total": 208,
+            "priority": 19,
             "corporate": 0,
-            "taxi": 15,
-            "general": 127
+            "taxi": 18,
+            "general": 171
           },
           "remaining": {
-            "total": 36,
+            "total": 86,
             "priority": 0,
             "corporate": 0,
-            "taxi": 15,
-            "general": 34
+            "taxi": 18,
+            "general": 78
           },
           "registered": {
             "total": 122,
@@ -853418,7 +853418,7 @@
             "general": 93
           },
           "selected": 122,
-          "selectedRemaining": 36
+          "selectedRemaining": 86
         }
       },
       "4687": {
@@ -854560,11 +854560,11 @@
             "general": 755
           },
           "registered": {
-            "total": 1243,
+            "total": 1242,
             "priority": 389,
             "corporate": 20,
             "taxi": 66,
-            "general": 768
+            "general": 767
           },
           "delivered": {
             "total": 985,
@@ -854999,23 +854999,23 @@
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
-            "general": 29262
+            "general": 29261
           },
           "registered": {
-            "total": 52303,
+            "total": 52307,
             "priority": 23,
-            "corporate": 50460,
-            "taxi": 796,
+            "corporate": 50463,
+            "taxi": 797,
             "general": 1024
           },
           "delivered": {
-            "total": 38407,
+            "total": 38408,
             "priority": 17,
             "corporate": 37151,
             "taxi": 501,
-            "general": 738
+            "general": 739
           },
-          "selected": 48342,
+          "selected": 48357,
           "selectedRemaining": 0
         }
       },
