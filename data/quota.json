@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-27T03:11:01.547Z",
+  "timestamp": "2026-08-27T03:21:01.955Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1479,16 +1479,16 @@
           "registered_corporate": 0,
           "registered_taxi": 1,
           "registered_general": 40,
-          "delivered_total": 46,
+          "delivered_total": 47,
           "delivered_priority": 23,
           "delivered_corporate": 0,
           "delivered_taxi": 1,
-          "delivered_general": 22,
-          "remaining_total": 64,
+          "delivered_general": 23,
+          "remaining_total": 63,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 88,
+          "remaining_general": 87,
           "selected_total": 71,
           "selectedRemaining_total": 39,
           "note": "★ 화천군 승용부문 3차 신청 및 접수 ★&#xa; ☆ 잔여대수(8. 26. 16시 기준) : 10대&#xa;  ※ 승용 1대 기준 450만원 산정이기에, 실제 잔여대수와 보급대수는 차이가 있을 수 있음.&#xa; &#xa; 1. 신청 증가 및 몰림, 민원전화로 인해 대상자 선정까지 1~2일 소요 예정됩니다. 이점 참고하시어 서류 접수해주시기 바랍니다.&#xa; 2. 예산 소진 시 조기마감되며, 승용부문 4차 공고 예정 없음을 알립니다.&#xa; 3. 공고문 내용 미숙지로 인한 책임은 본인에게 있음을 알립니다.&#xa; 4. 구매지원신청서 전자서명 가능합니다.&#xa; &#xa; ** 민원전화로 인해 업무처리가 지연되오니, 단순민원은 되도록 공시공고를 확인해주시기 바랍니다**"
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-27T03:11:01.229Z"
+      "timestamp": "2026-08-27T03:21:01.447Z"
     }
   ]
 }
