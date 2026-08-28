@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-28T08:51:05.075Z",
+  "timestamp": "2026-08-28T09:01:22.729Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -741,11 +741,11 @@
           "sido": "경기",
           "region": "용인시",
           "vehicleType": "전기승용",
-          "quota_total": 3637,
+          "quota_total": 3634,
           "quota_priority": 200,
           "quota_corporate": 0,
           "quota_taxi": 60,
-          "quota_general": 3377,
+          "quota_general": 3374,
           "registered_total": 3689,
           "registered_priority": 1249,
           "registered_corporate": 57,
@@ -756,11 +756,11 @@
           "delivered_corporate": 57,
           "delivered_taxi": 76,
           "delivered_general": 2276,
-          "remaining_total": 3,
+          "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1101,
+          "remaining_general": 1098,
           "selected_total": 3685,
           "selectedRemaining_total": 0,
           "note": "★ 승용 추경1 - 대상자선정  마감 (2026. 7. 1. )  &#xa; &#xa; ★ 하반기 추가 접수는 10월말경 추가 예산 승인 결과에 따라 결정 ★ &#xa; &#xa; ■ 전기자동차 승용 보급사업 변경공고 안내  ■&#xa; &#xa;   - 변경공고 : 2026. 5. 15.(금) &#xa;   - 변경공고 접수기간 : 2026. 5. 15.(금) 14:00 ~  예산소진 시   (신청 공고 구분 : 추경1)&#xa;   - 물량 : 2,627대 (예산물량) (차종 및 추가지원 여부에 따라 대수는 변동 가능)&#xa;     ※ 변경 전 800대 → 변경 후 2,627대&#xa;     ※전체 일반물량으로 진행되며 추가보조금은 대상에 따라 정상 지급됩니다.&#xa;     ★ 잔여물량 500대 이하부터 게시할 에정이오니 단순 잔여대수 확인 문의는 삼가주시기 바랍니다.&#xa; &#xa; ※ 반드시 공고문 확인하시고 신청하시기 바랍니다.&#xa; ※ 하루 50개 내외로 신청서류 검토 및 자격부여되오니 차량 출고일 등 감안하여 신청하시기 바랍니다."
@@ -2021,9 +2021,9 @@
           "remaining_corporate": 0,
           "remaining_taxi": 15,
           "remaining_general": 302,
-          "selected_total": 1271,
+          "selected_total": 1279,
           "selectedRemaining_total": 0,
-          "note": "* 신청 마감/ 지원가능확인요청번호 1353번 대기"
+          "note": "* 신청 마감/ 지원가능확인요청번호 1353번 대기 &#xa; * 택시 8대 신청 가능"
         },
         {
           "sido": "충남",
@@ -3197,8 +3197,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 18,
           "remaining_general": 78,
-          "selected_total": 175,
-          "selectedRemaining_total": 33,
+          "selected_total": 178,
+          "selectedRemaining_total": 30,
           "note": ""
         },
         {
@@ -3915,12 +3915,12 @@
           "registered_corporate": 4,
           "registered_taxi": 3,
           "registered_general": 154,
-          "delivered_total": 203,
-          "delivered_priority": 68,
+          "delivered_total": 204,
+          "delivered_priority": 69,
           "delivered_corporate": 3,
           "delivered_taxi": 3,
           "delivered_general": 129,
-          "remaining_total": 7,
+          "remaining_total": 6,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4498,14 +4498,14 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 52719,
+          "registered_total": 52720,
           "registered_priority": 23,
           "registered_corporate": 50837,
-          "registered_taxi": 813,
+          "registered_taxi": 814,
           "registered_general": 1046,
-          "delivered_total": 38928,
+          "delivered_total": 38929,
           "delivered_priority": 17,
-          "delivered_corporate": 37642,
+          "delivered_corporate": 37643,
           "delivered_taxi": 513,
           "delivered_general": 756,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-28T08:51:04.988Z"
+      "timestamp": "2026-08-28T09:01:22.670Z"
     }
   ]
 }
