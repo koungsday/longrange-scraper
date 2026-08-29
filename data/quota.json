@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-29T00:31:08.092Z",
+  "timestamp": "2026-08-29T00:41:03.321Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2021,7 +2021,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 15,
           "remaining_general": 302,
-          "selected_total": 1279,
+          "selected_total": 1283,
           "selectedRemaining_total": 0,
           "note": "* 신청 마감/ 지원가능확인요청번호 1353번 대기 &#xa; * 택시 8대 신청 가능"
         },
@@ -4503,9 +4503,9 @@
           "registered_corporate": 50839,
           "registered_taxi": 814,
           "registered_general": 1046,
-          "delivered_total": 38940,
+          "delivered_total": 38941,
           "delivered_priority": 17,
-          "delivered_corporate": 37654,
+          "delivered_corporate": 37655,
           "delivered_taxi": 513,
           "delivered_general": 756,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-08-29T00:31:08.017Z"
+      "timestamp": "2026-08-29T00:41:03.251Z"
     }
   ]
 }
