@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "lastUpdated": "2026. 9. 1. PM 5:21:04 KST",
+  "lastUpdated": "2026. 9. 1. PM 5:31:10 KST",
   "regions": {
     "1100": {
       "name": "서울특별시",
@@ -877139,7 +877139,7 @@
             "general": 2316
           },
           "remaining": {
-            "total": 240,
+            "total": 239,
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
@@ -877153,8 +877153,8 @@
             "general": 2035
           },
           "delivered": {
-            "total": 2366,
-            "priority": 313,
+            "total": 2367,
+            "priority": 314,
             "corporate": 52,
             "taxi": 222,
             "general": 1779
@@ -877669,8 +877669,8 @@
             "taxi": 26,
             "general": 400
           },
-          "selected": 645,
-          "selectedRemaining": 195
+          "selected": 646,
+          "selectedRemaining": 194
         }
       },
       "4136": {
@@ -880033,21 +880033,21 @@
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
-            "general": 3
+            "general": 1
           },
           "registered": {
             "total": 72,
-            "priority": 10,
+            "priority": 8,
             "corporate": 1,
             "taxi": 3,
-            "general": 58
+            "general": 60
           },
           "delivered": {
             "total": 52,
-            "priority": 6,
+            "priority": 4,
             "corporate": 1,
             "taxi": 3,
-            "general": 42
+            "general": 44
           },
           "selected": 72,
           "selectedRemaining": 0
@@ -881035,7 +881035,7 @@
             "taxi": 77,
             "general": 667
           },
-          "selected": 1464,
+          "selected": 1463,
           "selectedRemaining": 0
         }
       },
@@ -881885,7 +881885,7 @@
             "taxi": 72,
             "general": 1515
           },
-          "selected": 2000,
+          "selected": 1998,
           "selectedRemaining": 0
         }
       },
@@ -882382,16 +882382,16 @@
             "general": 29221
           },
           "registered": {
-            "total": 53458,
+            "total": 53471,
             "priority": 23,
-            "corporate": 51518,
-            "taxi": 834,
+            "corporate": 51529,
+            "taxi": 836,
             "general": 1083
           },
           "delivered": {
-            "total": 39745,
+            "total": 39747,
             "priority": 17,
-            "corporate": 38403,
+            "corporate": 38405,
             "taxi": 546,
             "general": 779
           },
