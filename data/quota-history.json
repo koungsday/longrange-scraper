@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "lastUpdated": "2026. 9. 1. PM 9:41:05 KST",
+  "lastUpdated": "2026. 9. 1. PM 9:51:07 KST",
   "regions": {
     "1100": {
       "name": "서울특별시",
@@ -880498,18 +880498,18 @@
       "4677": {
         "전기승용": {
           "total": {
-            "total": 70,
+            "total": 110,
             "priority": 7,
             "corporate": 0,
-            "taxi": 3,
-            "general": 60
+            "taxi": 4,
+            "general": 99
           },
           "remaining": {
-            "total": 0,
+            "total": 26,
             "priority": 0,
             "corporate": 0,
-            "taxi": 3,
-            "general": 0
+            "taxi": 4,
+            "general": 31
           },
           "registered": {
             "total": 84,
@@ -880526,7 +880526,7 @@
             "general": 68
           },
           "selected": 84,
-          "selectedRemaining": 0
+          "selectedRemaining": 26
         }
       },
       "4678": {

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-01T12:41:05.592Z",
+  "timestamp": "2026-09-01T12:51:04.093Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2953,11 +2953,11 @@
           "sido": "전남",
           "region": "고흥군",
           "vehicleType": "전기승용",
-          "quota_total": 70,
+          "quota_total": 110,
           "quota_priority": 7,
           "quota_corporate": 0,
-          "quota_taxi": 3,
-          "quota_general": 60,
+          "quota_taxi": 4,
+          "quota_general": 99,
           "registered_total": 84,
           "registered_priority": 14,
           "registered_corporate": 2,
@@ -2968,13 +2968,13 @@
           "delivered_corporate": 2,
           "delivered_taxi": 0,
           "delivered_general": 68,
-          "remaining_total": 0,
+          "remaining_total": 26,
           "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 3,
-          "remaining_general": 0,
+          "remaining_taxi": 4,
+          "remaining_general": 31,
           "selected_total": 84,
-          "selectedRemaining_total": 0,
+          "selectedRemaining_total": 26,
           "note": "신청기간: 2026. 9. 3. ~ 예산 소진 시까지&#xa; 사업예산: 국비 300,000천원/시비 115,000천원/군비 255,000천원&#xa; 보급대수: 50대(승용차 40대, 화물차 10대)&#xa; 지원자격&#xa;  - 고흥군에 3개월 이상 거주한 만 18세 이상의 운전면허를 소지한 사람"
         },
         {
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-01T12:41:05.525Z"
+      "timestamp": "2026-09-01T12:51:04.041Z"
     }
   ]
 }
