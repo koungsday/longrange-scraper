@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-01T03:21:00.674Z",
+  "timestamp": "2026-09-01T03:31:11.586Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -219,16 +219,16 @@
           "registered_corporate": 9,
           "registered_taxi": 18,
           "registered_general": 649,
-          "delivered_total": 801,
+          "delivered_total": 802,
           "delivered_priority": 306,
           "delivered_corporate": 6,
           "delivered_taxi": 14,
-          "delivered_general": 475,
-          "remaining_total": 420,
+          "delivered_general": 476,
+          "remaining_total": 419,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 47,
-          "remaining_general": 522,
+          "remaining_general": 521,
           "selected_total": 949,
           "selectedRemaining_total": 272,
           "note": "★★★ 3차 사업 물량 모두 소진되어, 신청·접수를 마감합니다. 감사합니다.&#xa; &#xa; < 2026년 3차 전기자동차(승용) 보급사업 안내 >&#xa; ○ 접수기간 : '26. 8. 20.(목) 14:00~ 예산 소진 시까지&#xa;   ※ 지원가능여부 확인 요청기간 : '26. 8. 24.(월) 09:00~ &#xa; ○ 보급물량 : 전기승용 173대&#xa; ○ 지원금액 : 차종별 차등 지원(구매보조금 지급현황-지자체 차종별 보조금 조회)&#xa; ○ 지원대상 : 신청일 기준 60일 이상 세종시에 연속하여 주소를 둔 자 등&#xa; ○ 지원대상자 선정기준 : 출고·등록순(지원 가능여부 확인 요청순)&#xa;   ※ 자격부여는 대상자 선정 단계가 아니며, 차량 출고 예정일이 10일 이내임을 증빙한 순서대로 예산 한도 내에서 대상자가 선정됩니다.&#xa; ○ 신청방법 : 무공해차 통합누리집을 통해 제작·수입사가 신청&#xa; &#xa; ★ 빠른 업무처리를 위해 독촉, 단순 문의 전화는 자제해 주시기 바랍니다.&#xa; ★ 전화 주신다고 먼저 처리되지 않으며, 오히려 업무 처리가 지연될 수 있습니다.&#xa;  - 자격부여는 신청서 접수일 기준 7일 이내에 처리될 예정입니다.&#xa;  - 대상자 확정(출고일 확정순)이 물량 소진 기준이 됩니다.&#xa; &#xa; ※ 무공해차 통합누리집 시스템상 잔여대수와 실제 잔여대수는 상이함&#xa; ※ 보급대수는 사업예산 소진 등 보급여건에 따라 변동될 수 있음&#xa; ※ (참고) 3차 사업 신청은 승용 접수번호 1151번부터 시작입니다.&#xa; &#xa; ------------------------------------- 신청서 제출 안내 -------------------------------------- &#xa; &#xa; ★ 출고기한 미준수 시, 대상자 취소 또는 대기자로 변경 가능&#xa;   - 자격부여일로부터 2개월 이내에 출고, 대상자 선정일로부터 10일 이내에 출고&#xa; &#xa; ○ 시스템 입력 오기사항이나 누락된 서류가 없는지 반드시 확인 바랍니다.&#xa;     (보완 요청 시 검토 순서가 뒤로 밀릴 수 있으며, 이에 대상자 미선정 될 수 있음)&#xa; ○ 추가 지원금을 지원받기 위한 증빙서류는 최초 신청 시 함께 제출해야 합니다.&#xa;     (대상자 선정 이후 제출 시 지급되지 않을 수 있습니다.)&#xa; ○ 구매보조금 지원(지급)신청서 제출에 따른 모든 서류는 일괄 스캔하여 \"1개의 PDF 파일로 제출\" 바랍니다.&#xa; ○ 모든 제출 서류는 \"30일 이내 발급서류\"에 한하여 인정되며, 열람용 서류는 인정되지 않습니다."
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 53181,
+          "registered_total": 53184,
           "registered_priority": 23,
-          "registered_corporate": 51265,
+          "registered_corporate": 51268,
           "registered_taxi": 823,
           "registered_general": 1070,
           "delivered_total": 39578,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-01T03:21:00.597Z"
+      "timestamp": "2026-09-01T03:31:11.526Z"
     }
   ]
 }
