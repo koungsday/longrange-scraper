@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-02T22:01:13.420Z",
+  "timestamp": "2026-09-02T22:11:06.792Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2431,16 +2431,16 @@
           "registered_corporate": 13,
           "registered_taxi": 19,
           "registered_general": 367,
-          "delivered_total": 244,
+          "delivered_total": 247,
           "delivered_priority": 69,
           "delivered_corporate": 8,
           "delivered_taxi": 9,
-          "delivered_general": 158,
-          "remaining_total": 144,
+          "delivered_general": 161,
+          "remaining_total": 141,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 1,
-          "remaining_general": 206,
+          "remaining_general": 203,
           "selected_total": 533,
           "selectedRemaining_total": 0,
           "note": "★승용 접수마감되었습니다★&#xa; ----------------------------------------------------------------------------------------------------&#xa; * 지원가능요청번호 281-478번 선정완료&#xa; * 선정 취소건 발생시 후순위 선정자에게 개별 연락 예정&#xa; *  예산 범위 내에서 선정으로 공고 보급대수와 상이할 수 있음&#xa; * 하반기 추가 지원계획 없습니다"
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-02T22:01:13.370Z"
+      "timestamp": "2026-09-02T22:11:06.703Z"
     }
   ]
 }
