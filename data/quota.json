@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-02T07:11:02.657Z",
+  "timestamp": "2026-09-02T07:21:04.682Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -929,8 +929,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 821,
-          "selected_total": 1177,
-          "selectedRemaining_total": 349,
+          "selected_total": 1181,
+          "selectedRemaining_total": 345,
           "note": "<< 광주시 하반기 전기자동차 보급사업 공고문)>>&#xa; (시작번호 승용 1166번 자격부여먼저하고 9.2. 밤에 지원가능여부 순서대로 예선범위내에서 선정예정 &#xa;  / 화물 248번, 자격부여되고나서 지원가능여부 순으로 확정완료, &#xa; ○접수기간 :  9월 1일 10시부터 &#xa; ○차량대수 : 사업량 승용 326대 , 화물 84대, 일반승합 8대  잔여대수는 문의전화주세요., &#xa; 전환보조금은 첨부파일 지방전환비는 국비전환의 30%&#xa; 전환지원금(승용은 대략 국비 만원 당 0.26이 전환지원금,&#xa; 세부계산법 국비가 192만원일때, 전환지원금은 49만원(전환국비 38 + 전환지방비 11 = 49)&#xa; 전환지원금 국비 금액 = 192 * 0.2 = 38&#xa; 전환지원금 지방비금액(전환지원금 국비금액의 30%) = 38*0.3 = 11&#xa; &#xa; ★주의사항&#xa; ▶지원신청서 접수순으로 서류검토 후 자격부여함 &#xa; ▶자격부여 후 10일이내 출고확정 시 지원가능확인요청&#xa; ▶‘지원가능 여부 확인 요청 순’으로 대상자 확정&#xa; &#xa; 자세한 사항은 공고문 확인"
         },
         {
@@ -2431,16 +2431,16 @@
           "registered_corporate": 13,
           "registered_taxi": 19,
           "registered_general": 366,
-          "delivered_total": 236,
+          "delivered_total": 237,
           "delivered_priority": 68,
           "delivered_corporate": 7,
           "delivered_taxi": 9,
-          "delivered_general": 152,
-          "remaining_total": 152,
+          "delivered_general": 153,
+          "remaining_total": 151,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 1,
-          "remaining_general": 212,
+          "remaining_general": 211,
           "selected_total": 533,
           "selectedRemaining_total": 0,
           "note": "★승용 접수마감되었습니다★&#xa; ----------------------------------------------------------------------------------------------------&#xa; * 지원가능요청번호 281-478번 선정완료&#xa; * 선정 취소건 발생시 후순위 선정자에게 개별 연락 예정&#xa; *  예산 범위 내에서 선정으로 공고 보급대수와 상이할 수 있음&#xa; * 하반기 추가 지원계획 없습니다"
@@ -4498,21 +4498,21 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 53825,
+          "registered_total": 53842,
           "registered_priority": 24,
-          "registered_corporate": 51867,
+          "registered_corporate": 51882,
           "registered_taxi": 847,
-          "registered_general": 1087,
-          "delivered_total": 40185,
+          "registered_general": 1089,
+          "delivered_total": 40247,
           "delivered_priority": 17,
-          "delivered_corporate": 38815,
+          "delivered_corporate": 38876,
           "delivered_taxi": 562,
-          "delivered_general": 791,
+          "delivered_general": 792,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 29209,
+          "remaining_general": 29208,
           "selected_total": 49028,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-02T07:11:02.602Z"
+      "timestamp": "2026-09-02T07:21:04.605Z"
     }
   ]
 }
