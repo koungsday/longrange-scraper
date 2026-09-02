@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-02T09:21:04.566Z",
+  "timestamp": "2026-09-02T09:31:11.124Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -929,8 +929,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 821,
-          "selected_total": 1256,
-          "selectedRemaining_total": 270,
+          "selected_total": 1266,
+          "selectedRemaining_total": 260,
           "note": "<< 광주시 하반기 전기자동차 보급사업 공고문)>>&#xa; (시작번호 승용 1166번 자격부여먼저하고 9.2. 밤에 지원가능여부 순서대로 예선범위내에서 선정예정 &#xa;  / 화물 248번, 자격부여되고나서 지원가능여부 순으로 확정완료, &#xa; ○접수기간 :  9월 1일 10시부터 &#xa; ○차량대수 : 사업량 승용 326대 , 화물 84대, 일반승합 8대  잔여대수는 문의전화주세요., &#xa; 전환보조금은 첨부파일 지방전환비는 국비전환의 30%&#xa; 전환지원금(승용은 대략 국비 만원 당 0.26이 전환지원금,&#xa; 세부계산법 국비가 192만원일때, 전환지원금은 49만원(전환국비 38 + 전환지방비 11 = 49)&#xa; 전환지원금 국비 금액 = 192 * 0.2 = 38&#xa; 전환지원금 지방비금액(전환지원금 국비금액의 30%) = 38*0.3 = 11&#xa; &#xa; ★주의사항&#xa; ▶지원신청서 접수순으로 서류검토 후 자격부여함 &#xa; ▶자격부여 후 10일이내 출고확정 시 지원가능확인요청&#xa; ▶‘지원가능 여부 확인 요청 순’으로 대상자 확정&#xa; &#xa; 자세한 사항은 공고문 확인"
         },
         {
@@ -2118,11 +2118,11 @@
           "quota_corporate": 0,
           "quota_taxi": 33,
           "quota_general": 604,
-          "registered_total": 402,
-          "registered_priority": 136,
+          "registered_total": 396,
+          "registered_priority": 135,
           "registered_corporate": 5,
           "registered_taxi": 15,
-          "registered_general": 246,
+          "registered_general": 241,
           "delivered_total": 361,
           "delivered_priority": 121,
           "delivered_corporate": 5,
@@ -2133,8 +2133,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 18,
           "remaining_general": 384,
-          "selected_total": 394,
-          "selectedRemaining_total": 327,
+          "selected_total": 388,
+          "selectedRemaining_total": 333,
           "note": "★★ 지원절차 및 지원신청서 서식변경, 공고문 필독★★&#xa; 9/10일 접수시  \"10일이내 출고가능 확인서류\"를 첨부하여 접수한 건이 우선 검토 선정됨을 알려드립니다.  미첨부시 자격부여 및 지원가능확인요청 단계 거쳐야 함."
         },
         {
@@ -4503,9 +4503,9 @@
           "registered_corporate": 52185,
           "registered_taxi": 848,
           "registered_general": 1088,
-          "delivered_total": 40594,
+          "delivered_total": 40600,
           "delivered_priority": 17,
-          "delivered_corporate": 39222,
+          "delivered_corporate": 39228,
           "delivered_taxi": 562,
           "delivered_general": 793,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-02T09:21:04.515Z"
+      "timestamp": "2026-09-02T09:31:11.051Z"
     }
   ]
 }
