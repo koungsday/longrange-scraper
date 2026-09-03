@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-03T09:40:58.960Z",
+  "timestamp": "2026-09-03T09:51:08.938Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2487,16 +2487,16 @@
           "registered_corporate": 9,
           "registered_taxi": 12,
           "registered_general": 321,
-          "delivered_total": 252,
+          "delivered_total": 253,
           "delivered_priority": 46,
           "delivered_corporate": 4,
           "delivered_taxi": 12,
-          "delivered_general": 190,
-          "remaining_total": 1,
+          "delivered_general": 191,
+          "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 30,
+          "remaining_general": 29,
           "selected_total": 272,
           "selectedRemaining_total": 0,
           "note": "----------승용 신청 마감 -----&#xa; 예산 한도 내에서 443번까지 선정 완료 하였습니다. &#xa; 월요일에 없으므로 화요일 연락부탁드립니다. &#xa; 대상자 선정 전까지 출고 안됩니다. &#xa; 추후 처리과정은 전과 동일합니다 .! &#xa; &#xa; 신청접수기간 &#xa; 승용 60대/화물 40대 / 승합 (일반 5, 어린이 1) 대 &#xa; 전기승용 : 2026. 8. 19(수) 09:00 ~ 2026. 12. 11.(금) 18:00  &#xa; 전기화물 : 2026. 8. 20(목) 09:00 ~ 2026. 12. 11.(금) 18:00 &#xa; 전기승합 : 2026. 8. 20(목) 09:00 ~ 2026. 12. 11.(금) 18:00&#xa; 대상자 선정방법 : 구매지원신청서 접수순 &#xa; 공고문 필독 후 문의부탁드립니다. &#xa; 하반기는 예산 소진시까지이므로 자격부여까지 시간이 걸릴 수 있음을 양해부탁드립니다.&#xa; 신청번호 361번 부터 시작됩니다. (전화문의로 자격부여 지연됩니다. )&#xa; 일주일 안으로 선정여부 안내드릴테니 당일 출고 전화 자제 부탁드립니다."
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 54614,
+          "registered_total": 54618,
           "registered_priority": 25,
-          "registered_corporate": 52621,
+          "registered_corporate": 52625,
           "registered_taxi": 863,
           "registered_general": 1105,
           "delivered_total": 41445,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-03T09:40:58.901Z"
+      "timestamp": "2026-09-03T09:51:08.882Z"
     }
   ]
 }
