@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-03T12:41:05.759Z",
+  "timestamp": "2026-09-03T12:51:10.913Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1390,23 +1390,23 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 117,
-          "registered_total": 83,
-          "registered_priority": 29,
+          "registered_total": 84,
+          "registered_priority": 30,
           "registered_corporate": 4,
           "registered_taxi": 1,
           "registered_general": 49,
-          "delivered_total": 83,
-          "delivered_priority": 29,
+          "delivered_total": 84,
+          "delivered_priority": 30,
           "delivered_corporate": 4,
           "delivered_taxi": 1,
           "delivered_general": 49,
-          "remaining_total": 47,
+          "remaining_total": 46,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 68,
-          "selected_total": 83,
-          "selectedRemaining_total": 47,
+          "selected_total": 84,
+          "selectedRemaining_total": 46,
           "note": "★ 전기승용, 전기화물, 전기이륜 마감되었습니다.(2026. 7.14.)&#xa; - 잔여: 전기수소 1대 &#xa; &#xa;  ※ 예산 조기소진에 따라 추가 공고에 대해서는 추경예산 확보 후 공고 및 접수 예정입니다.&#xa;       - 의사 일정에 따라, 누리집 공고문은 9월 23일(수),  시스템 신청·접수는 9월 30일(수) 예정입니다. 변동 시 수정하겠습니다.&#xa;       - 추가 접수대상: 전기 승용(36대), 이륜(5대), 승합(소형 1대) 예정(변동 가능)&#xa; &#xa;  ※ 전기화물은 올해 사업 마감되었습니다.(예산 소진으로 추가 신청접수 없음)"
         },
         {
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-03T12:41:05.708Z"
+      "timestamp": "2026-09-03T12:51:10.829Z"
     }
   ]
 }
