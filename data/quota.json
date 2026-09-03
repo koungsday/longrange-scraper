@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-03T09:11:03.129Z",
+  "timestamp": "2026-09-03T09:21:06.620Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -4139,16 +4139,16 @@
           "registered_corporate": 19,
           "registered_taxi": 58,
           "registered_general": 715,
-          "delivered_total": 995,
+          "delivered_total": 996,
           "delivered_priority": 321,
           "delivered_corporate": 13,
           "delivered_taxi": 54,
-          "delivered_general": 607,
-          "remaining_total": 605,
+          "delivered_general": 608,
+          "remaining_total": 604,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 27,
-          "remaining_general": 749,
+          "remaining_general": 748,
           "selected_total": 1060,
           "selectedRemaining_total": 540,
           "note": "* 신청기간(3차 공고)&#xa;  - 승용: 2026. 8. 27.(목) 11:00 ~ 2026. 11. 30.(월) (예산소진 시 조기종료)&#xa;  - 화물/어린이통학버스: 2026. 8. 31.(월) 11:00 ~ 2026. 11. 30.(월) (예산소진 시 조기종료)&#xa; * 보급대수 : 승용: 100대, 화물: 55대, 어린이통학버스: 3대&#xa; &#xa; ※2026.8.31. 13:00 전기승용 대상자 선정이 완료되었습니다."
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 54607,
+          "registered_total": 54610,
           "registered_priority": 25,
-          "registered_corporate": 52614,
+          "registered_corporate": 52617,
           "registered_taxi": 863,
           "registered_general": 1105,
           "delivered_total": 41444,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-03T09:11:03.057Z"
+      "timestamp": "2026-09-03T09:21:06.566Z"
     }
   ]
 }
