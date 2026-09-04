@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-04T11:31:07.558Z",
+  "timestamp": "2026-09-04T11:41:03.633Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2011,17 +2011,17 @@
           "registered_corporate": 28,
           "registered_taxi": 42,
           "registered_general": 1221,
-          "delivered_total": 970,
+          "delivered_total": 969,
           "delivered_priority": 152,
           "delivered_corporate": 16,
-          "delivered_taxi": 37,
+          "delivered_taxi": 36,
           "delivered_general": 765,
-          "remaining_total": 184,
+          "remaining_total": 185,
           "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 12,
+          "remaining_taxi": 13,
           "remaining_general": 231,
-          "selected_total": 1292,
+          "selected_total": 1291,
           "selectedRemaining_total": 0,
           "note": "* 신청 마감/ 지원가능확인요청번호 1395번부터 대기(26. 9. 3. 17:00)&#xa; * 8. 31.까지 보급물량의 150% 자격부여 완료(2023번까지)하였으며, 자격부여를 받지 않으신 분들께서는 추후 공고에 신청바랍니다.  &#xa; * 택시 7대 신청 가능(※ 10. 1.(목) 이후 택시 물량은 일반 승용 물량으로 전환 예정)"
         },
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-04T11:31:07.493Z"
+      "timestamp": "2026-09-04T11:41:03.576Z"
     }
   ]
 }
