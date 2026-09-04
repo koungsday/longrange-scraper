@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-04T03:51:03.144Z",
+  "timestamp": "2026-09-04T04:01:14.887Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,16 +23,16 @@
           "registered_corporate": 486,
           "registered_taxi": 1290,
           "registered_general": 9076,
-          "delivered_total": 14904,
+          "delivered_total": 14905,
           "delivered_priority": 4365,
           "delivered_corporate": 471,
           "delivered_taxi": 1185,
-          "delivered_general": 8883,
-          "remaining_total": 526,
+          "delivered_general": 8884,
+          "remaining_total": 525,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 15,
-          "remaining_general": 3454,
+          "remaining_general": 3453,
           "selected_total": 15172,
           "selectedRemaining_total": 258,
           "note": "★★하반기 서울시 전기승용 접수가 마감(2026. 8. 7. 13:00)되었음을 알려드립니다. ★★&#xa; &#xa; &#xa; ★★하반기 서울시 전기자동차 민간보급 사업 공고 안내 ★★&#xa; &#xa;   ㅇ 신청시기: ’26. 7. 27.(월) 10:00 ∼ 12. 4.(금) 18:00 (※ 예산소진시 조기 마감)&#xa;   ㅇ 하반기 보급대수 : 3,173대&#xa; [차종별]&#xa;      ① 전기승용차 : 2,927대(일반 2,634대, 우선순위 293대)  &#xa;      ② 전기화물차 : 207대(일반 171대, 택배 12대, 우선순위 24대)&#xa;      ③ 전기승합차 : 39대(일반 37대, 어린이통학버스 2대)&#xa; -------------------------------------------------&#xa;           전기택시: 260대(개인 및 법인)&#xa; &#xa; ※ 연간 총 보급대수 : 총 16,672대(승용차 14,230대, 화물차 2,368대, 승합 74대)&#xa;     ※ 보급대수는 상반기 취소분, 보급여건 및 예산범위 내에서 변동될 수 있으며 전기택시？전기이륜은 별도 공고&#xa;  &#xa; (우선순위) 취약계층(장애인, 차상위 이하 계층), 상이·독립 유공자, 소상공인, 다자녀 가구, 생애최초 차량 구매자, &#xa;                 기존 노후 경유차를 폐차하고 전기차로 대체하려는 자 등&#xa; &#xa; **반드시 공고문 내용을 숙지하시고 신청바랍니다. &#xa; &#xa; -----------------------------------------------------------------------------------------------------------------------------------------------&#xa; &#xa; &#xa; ★★2026.6.22. 18시 기준, &#xa;        상반기 서울시 전기승용차(전기택시 포함) 접수 마감되었습니다.★★&#xa; ㅇ 보급목표: 11,361대&#xa; ㅇ 접수대수: 11,361대&#xa; ㅇ 잔여대수: 0대   &#xa; -----------------------------&#xa; ※ 하반기 전기자동차 보급사업은 7월중순 이후에 진행할 예정입니다."
@@ -2805,8 +2805,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 135,
-          "selected_total": 480,
-          "selectedRemaining_total": 14,
+          "selected_total": 481,
+          "selectedRemaining_total": 13,
           "note": "! 계속 전화 주시면 자격부여를 진행할 수 없습니다. 하단에 내용 기재했으니, 단순문의는 자제해주세요(자격부여 늦으면 추후 선정도 늦어집니다) ! &#xa; ※ 순천시 전기승용 마감입니다&#xa; ※ 신청번호 536번부터 시작(추경 1번)&#xa; ※ 접수대수는 215대로, 기존 공고문 기재대로 35대까지 자격부여 예정입니다&#xa; &#xa; !!!!!누리집상 잔여대수는 실제 보급가능 잔여대수가 아닙니다!!!!!&#xa; !!!!!예시로 우선순위 물량을 초과하여 신청한 대상자들이 출고 시 우선순위 물량은 0에 수렴하며, 자동적으로 일반 물량에서 차감되지 않음!!!!!"
         },
         {
@@ -4498,10 +4498,10 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 54751,
+          "registered_total": 54752,
           "registered_priority": 25,
           "registered_corporate": 52747,
-          "registered_taxi": 868,
+          "registered_taxi": 869,
           "registered_general": 1111,
           "delivered_total": 41701,
           "delivered_priority": 17,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-04T03:51:03.097Z"
+      "timestamp": "2026-09-04T04:01:14.725Z"
     }
   ]
 }
