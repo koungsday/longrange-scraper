@@ -1,0 +1,338 @@
+#!/usr/bin/env node
+/**
+ * 변경 감지 회귀 테스트 — 합성 환경.
+ *
+ * ★왜 합성인가: 실제 변경을 기다리면 "변경이 없던 날" 에는 검증 자체가 안 된다.
+ *   그리고 우리가 고친 버그들(공고 계열 누락·고성군 코드 뒤바뀜)은 **드물게** 일어나서
+ *   실환경 관찰로는 몇 주가 걸린다.
+ * ★실제 배포 코드(src/changed-codes.js)를 그대로 부른다. 사본을 두지 않는다.
+ * ★입력은 git HEAD 의 실제 데이터다 — 손으로 만든 가짜 스키마로 통과시키지 않기 위해.
+ *
+ * 실행: node test/changed-codes.test.js
+ */
+const { execSync } = require('child_process');
+const { computeChangedCodes, auxChangedCodes, auxFingerprint, buildKeyToCode,
+        countUnmatched, buildCodeToName, mergePending, finalizeCodes, auxChangedSources } = require('../src/changed-codes');
+
+const read = (f) => JSON.parse(execSync(`git show HEAD:${f}`, { maxBuffer: 1e9 }));
+const clone = (o) => JSON.parse(JSON.stringify(o));
+const AUX = ['quota-detail', 'notice-schedule', 'notice-links', 'change-history'];
+
+const quota = read('data/quota.json');
+const aux = {}; for (const f of AUX) { try { aux[f] = read(`data/${f}.json`); } catch { aux[f] = null; } }
+
+/* ★keyToCode 는 **본체가 쓰는 그 함수**로 만든다(buildKeyToCode).
+   예전엔 테스트가 자기 방식으로 만들었는데, 그러면 본체 배선을 예전(이름만)으로 되돌려도
+   테스트가 17/17 초록불이고 프로덕션만 영구히 0곳이 된다(적대적 검증이 실제로 재현).
+   donut 을 네트워크로 부르지 않으려고 그 응답 형태({parentName, localName, code})를
+   quota-detail 에서 합성한다 — 형태만 흉내내고 **키 생성은 본체 코드가 한다.** */
+const donutLike = Object.entries(aux['quota-detail']?.regions || {})
+  .map(([code, d]) => ({ parentName: d.sido || '', localName: d.region || '', code }));
+const keyToCode = buildKeyToCode(donutLike);
+
+let pass = 0, fail = 0;
+function t(name, fn) {
+  try {
+    const msg = fn();
+    if (msg === true) { console.log(`  ✅ ${name}`); pass++; }
+    else { console.log(`  ❌ ${name}\n       ${msg}`); fail++; }
+  } catch (e) { console.log(`  ❌ ${name}\n       예외: ${e.message}`); fail++; }
+}
+const rowOf = (q, sido, region) => q.data[0].quotaData.find(r => r.sido === sido && r.region === region);
+const eq = (a, b) => JSON.stringify([...a].sort()) === JSON.stringify([...b].sort());
+
+console.log('\n■ quota 기반 변경 감지');
+
+t('변경이 없으면 통보 0곳 (웹훅 발사 안 함)', () => {
+  const { codes } = computeChangedCodes(quota, clone(quota), keyToCode);
+  return codes.length === 0 || `codes=${codes}`;
+});
+
+t('서울 잔여만 바뀌면 서울만', () => {
+  const n = clone(quota); rowOf(n, '서울', '서울특별시').remaining_total += 5;
+  const { codes } = computeChangedCodes(quota, n, keyToCode);
+  return eq(codes, ['1100']) || `codes=${codes}`;
+});
+
+t('★강원 고성군만 바뀌면 4282 (경남 4882 아님)', () => {
+  const n = clone(quota); rowOf(n, '강원', '고성군').remaining_total += 7;
+  const { codes } = computeChangedCodes(quota, n, keyToCode);
+  return eq(codes, ['4282']) || `codes=${codes} — 이름만 키로 쓰면 4882 가 나온다`;
+});
+
+t('★경남 고성군만 바뀌면 4882 (강원 4282 아님)', () => {
+  const n = clone(quota); rowOf(n, '경남', '고성군').remaining_total += 7;
+  const { codes } = computeChangedCodes(quota, n, keyToCode);
+  return eq(codes, ['4882']) || `codes=${codes}`;
+});
+
+t('두 고성군이 동시에 바뀌면 둘 다', () => {
+  const n = clone(quota);
+  rowOf(n, '강원', '고성군').remaining_total += 1; rowOf(n, '경남', '고성군').remaining_total += 1;
+  const { codes } = computeChangedCodes(quota, n, keyToCode);
+  return eq(codes, ['4282', '4882']) || `codes=${codes}`;
+});
+
+t('최초 실행(이전값 없음)은 전 지역', () => {
+  const { codes } = computeChangedCodes(null, quota, keyToCode);
+  return codes.length >= 160 || `codes=${codes.length}곳 — 전 지역이어야 한다`;
+});
+
+console.log('\n■ 공고 계열 — 저장된 기준선과 비교 (구 로직이 통째로 놓치던 것)');
+
+/* 헬퍼: 기준선 = 현재 상태의 지문. 거기서 무엇을 바꾸면 잡히는지 본다. */
+const base = auxFingerprint(aux);
+const changed = (mutate) => { const n = clone(aux); mutate(n); return auxChangedCodes(base, n).codes; };
+
+t('변경이 없으면 0곳', () => changed(() => {}).length === 0 || '오탐');
+
+t('status 만 바뀌면 그 지역이 잡힌다', () => {
+  const code = Object.keys(aux['quota-detail'].regions)[0];
+  return eq(changed(n => {
+    /* ★고정값을 넣으면 안 된다 — 서울은 이미 status:'마감' 이라 무변경이 된다(첫 시도에서 오탐) */
+    const cur = n['quota-detail'].regions[code].status;
+    n['quota-detail'].regions[code].status = cur === '접수중' ? '마감' : '접수중';
+  }), [code]) || '못 잡음';
+});
+
+t('deadline 만 바뀌어도 잡힌다', () => {
+  const code = Object.keys(aux['quota-detail'].regions)[2];
+  return eq(changed(n => { n['quota-detail'].regions[code].deadline = '2026-12-31 18:00'; }), [code]) || '못 잡음';
+});
+
+t('접수 안내(note) 만 바뀌어도 잡힌다', () => {
+  const code = Object.keys(aux['quota-detail'].regions)[3];
+  return eq(changed(n => { n['quota-detail'].regions[code].note = '테스트 변경'; }), [code]) || '못 잡음';
+});
+
+t('★공고문 첨부(notice-links) 만 바뀌어도 잡힌다 — 별도 워크플로가 쓰는 파일', () => {
+  const code = Object.keys(aux['notice-links'].regions)[5];
+  return eq(changed(n => {
+    n['notice-links'].regions[code].files.push({ gubun: 'Z', name: '테스트.hwp', ext: 'hwp', kind: '공고문', url: 'x' });
+  }), [code]) || '못 잡음 — 기준선 방식의 존재 이유가 이것이다';
+});
+
+t('공고 일정(notice-schedule) 만 바뀌어도 잡힌다 — items 키가 code|kind', () => {
+  const k = Object.keys(aux['notice-schedule'].items)[0];
+  return eq(changed(n => { n['notice-schedule'].items[k].start = '2026-12-01 09:00'; }), [k.split('|')[0]]) || '못 잡음';
+});
+
+t('여러 파일이 서로 다른 지역에서 바뀌면 합집합', () => {
+  const a = Object.keys(aux['quota-detail'].regions)[10];
+  const b = Object.keys(aux['notice-links'].regions)[20];
+  return eq(changed(n => {
+    const cur = n['quota-detail'].regions[a].status;
+    n['quota-detail'].regions[a].status = cur === '접수중' ? '마감' : '접수중';
+    n['notice-links'].regions[b].files = [];
+  }), [a, b]) || '합집합 아님';
+});
+
+console.log('\n■ 폭탄 방지 — 한 번에 161곳이 나가면 안 된다');
+
+t('★지문에 없는 필드를 추가해도 0곳 (화이트리스트라 스키마 변경에 면역)', () => {
+  const c = changed(n => { for (const r of Object.values(n['quota-detail'].regions)) r.newField = 1; });
+  return c.length === 0 || `${c.length}곳 — 파서가 필드 하나 늘리면 161발이 나간다`;
+});
+
+t('★키 순서만 뒤집어도 0곳', () => {
+  const c = changed(n => {
+    for (const [code, r] of Object.entries(n['quota-detail'].regions)) {
+      n['quota-detail'].regions[code] = Object.fromEntries(Object.entries(r).reverse());
+    }
+  });
+  return c.length === 0 || `${c.length}곳 — 객체 통째 비교의 병`;
+});
+
+t('★notice-links 의 stale 플래그가 붙었다 떨어져도 0곳 (신안군 27h 19회 진동)', () => {
+  const c = changed(n => { for (const r of Object.values(n['notice-links'].regions)) for (const f of r.files || []) f.stale = true; });
+  return c.length === 0 || `${c.length}곳 — 잡음이 통보가 된다`;
+});
+
+t('★available:false 는 그 파일을 통째로 무시 (stale regions 가 남아 있어도)', () => {
+  /* 검증 지적: 기존 테스트는 regions:{} 를 같이 넣어 **빈 객체 경로**만 밟았다.
+     가드만 지워도 17/17 초록불이었다. 여기서는 regions 를 채운 채 available:false 로 둔다. */
+  const c = changed(n => {
+    n['quota-detail'].available = false;
+    for (const r of Object.values(n['quota-detail'].regions)) r.status = '테스트';
+  });
+  return c.length === 0 || `${c.length}곳 — 수집 실패본이 통보가 된다`;
+});
+
+t('regions 가 빈 객체여도 0곳', () => {
+  const c = changed(n => { n['quota-detail'] = { available: true, regions: {} }; });
+  return c.length === 0 || '폭탄';
+});
+
+t('기준선이 없으면(최초) 0곳 — 전 지역 통보 방지', () => {
+  return auxChangedCodes(null, aux).codes.length === 0 || '최초 실행에 전 지역이 잡혔다';
+});
+
+t('기준선이 빈 객체여도 0곳', () => {
+  return auxChangedCodes({}, aux).codes.length === 0 || '폭탄';
+});
+
+t('파일이 통째로 없어도 예외 없이 0곳', () => {
+  return auxChangedCodes(base, {}).codes.length === 0 || '예외/오탐';
+});
+
+t('기준선에 없던 지역이 생기면 통보하지 않는다 (판단 보류)', () => {
+  /* 변이 실험 ⑧ 이 안 잡혀서 동작을 고정한다. 기준선에 없는 지역을 '변경' 으로 보면,
+     기준선이 부분적으로만 쓰인 상황에서 수십 곳이 한꺼번에 나갈 수 있다.
+     진짜 신규 지역은 다음 런에 기준선이 생기고 그 뒤 변경부터 잡힌다. */
+  const partial = {}; const keys = Object.keys(base).slice(0, 100);
+  for (const k of keys) partial[k] = base[k];
+  const c = auxChangedCodes(partial, aux).codes;
+  return c.length === 0 || `${c.length}곳 — 기준선에 없는 지역이 통보됐다`;
+});
+
+t('★기준선에 없던 출처가 생겨도 0곳 — 장애 중 기준선이 쓰인 뒤 복구되는 경우', () => {
+  /* 변이 실험에서 이 경로가 안 잡혔다. `old[src] !== undefined` 가드를 빼면
+     복구 런에서 161곳이 통째로 나간다 — 우리가 없애려던 폭탄이다. */
+  const partial = {};
+  for (const [code, parts] of Object.entries(base)) { const { d, ...rest } = parts; partial[code] = rest; }
+  const c = auxChangedCodes(partial, aux).codes;
+  return c.length === 0 || `${c.length}곳 — 기준선에 없던 출처를 '변경' 으로 읽는다`;
+});
+
+t('기준선 병합 — 이번 런에 실패한 출처는 옛 조각을 물려받는다', () => {
+  const n = clone(aux); n['quota-detail'] = { available: false, regions: {} };
+  const { fingerprint } = auxChangedCodes(base, n);
+  const code = Object.keys(base)[0];
+  return fingerprint[code]?.d === base[code].d || '실패한 출처의 기준선이 지워졌다 — 복구 시 전 지역 통보';
+});
+
+t('지문은 다음 비교를 위해 항상 반환된다', () => {
+  const { fingerprint } = auxChangedCodes(base, aux);
+  return Object.keys(fingerprint).length >= 160 || `지문 ${Object.keys(fingerprint).length}곳`;
+});
+
+console.log('\n■ 배선 — 예전엔 scraper-quota.js 안에 있어 테스트가 못 태우던 것들');
+
+t('★매칭 실패 계수 — 정상이면 0', () => {
+  const um = countUnmatched(quota, keyToCode);
+  return (um.unmatched === 0 && um.total >= 160) || `unmatched=${um.unmatched}/${um.total}`;
+});
+
+t('★시도 표기가 갈라지면 매칭 실패가 전수로 잡힌다 (조용한 죽음 방지)', () => {
+  /* donut 이 '강원' → '강원특별자치도' 로 바꾸는 날을 흉내낸다.
+     이 계수가 없으면 codes 가 영구 0 이 되는데 테스트도 워크플로도 전부 초록이다. */
+  const drifted = buildKeyToCode(donutLike.map(r => ({ ...r, parentName: r.parentName + '특별자치도' })));
+  const um = countUnmatched(quota, drifted);
+  return um.unmatched === um.total || `${um.unmatched}/${um.total} — 전수로 안 잡힌다`;
+});
+
+t('★코드→이름 매핑에 시도가 들어간다 (고성군 둘이 구분된다)', () => {
+  const m = buildCodeToName(donutLike);
+  return (m['4282'] !== m['4882'] && /고성군$/.test(m['4282']) && /고성군$/.test(m['4882']))
+    || `4282=${m['4282']} 4882=${m['4882']}`;
+});
+
+t('★이월 합침 — 지난 런 미통보분이 이번 통보에 들어간다', () => {
+  const r = mergePending(['1100'], { ts: new Date().toISOString(), codes: ['2600', '2700'] });
+  return (r.added === 2 && r.codes.length === 3) || JSON.stringify(r);
+});
+
+t('★이월 중복은 늘리지 않는다', () => {
+  const r = mergePending(['1100', '2600'], { ts: new Date().toISOString(), codes: ['2600'] });
+  return (r.added === 0 && r.codes.length === 2) || JSON.stringify(r);
+});
+
+t('★24시간 넘은 이월은 폐기 (같은 코드를 영원히 재검증하지 않게)', () => {
+  const old = new Date(Date.now() - 25 * 3600000).toISOString();
+  const r = mergePending([], { ts: old, codes: ['9999'] });
+  return (r.added === 0 && r.expired === 1 && r.codes.length === 0) || JSON.stringify(r);
+});
+
+t('이월이 없거나 비어도 예외 없이 통과', () => {
+  return mergePending(['1100'], null).codes.length === 1
+    && mergePending(['1100'], { ts: new Date().toISOString(), codes: [] }).codes.length === 1 || '예외/오탐';
+});
+
+t('★공고 계열 합집합 — names 가 codes 와 개수가 맞는다', () => {
+  const m = buildCodeToName(donutLike);
+  const f = finalizeCodes(['1100'], ['서울 서울특별시'], ['2600', '2700'], m);
+  return (f.codes.length === 3 && f.names.length === 3 && f.capped === 0)
+    || `codes=${f.codes.length} names=${f.names.length}`;
+});
+
+t('★공고 계열이 상한(30) 을 넘으면 그것만 포기하고 quota 분은 살린다', () => {
+  const m = buildCodeToName(donutLike);
+  const many = Array.from({ length: 40 }, (_, i) => String(9000 + i));
+  const f = finalizeCodes(['1100'], ['서울'], many, m);
+  return (f.capped === 40 && f.codes.length === 1 && f.codes[0] === '1100')
+    || `capped=${f.capped} codes=${JSON.stringify(f.codes)}`;
+});
+
+t('★전체가 상한(60) 을 넘으면 통째로 포기하고 capped 에 남긴다', () => {
+  /* 실측 근거: webhook-status 이력에서 changed=160 이 세 번 났다(시그니처 필드를 건드린 배포).
+     통보를 포기하되 **그 사실이 남아야** 조용한 손실이 안 된다. */
+  const m = buildCodeToName(donutLike);
+  const many = Array.from({ length: 100 }, (_, i) => String(1000 + i));
+  const f = finalizeCodes(many, many, [], m);
+  return (f.capped === 100 && f.codes.length === 0 && f.names.length === 0)
+    || `capped=${f.capped} codes=${f.codes.length}`;
+});
+
+t('★이월된 코드에도 이름이 붙는다 (count 와 names 가 어긋나지 않는다)', () => {
+  /* mergePending 은 코드만 붙이고 이름은 안 붙인다 — 그대로 두면 `count=2 names=0` 이
+     되어 사람이 읽는 유일한 로그가 거짓말한다. 시뮬레이션에서 실제로 나왔다. */
+  const m = buildCodeToName(donutLike);
+  const mp = mergePending(['1100'], { ts: new Date().toISOString(), codes: ['2600', '2700'] });
+  const f = finalizeCodes(mp.codes, ['서울 서울특별시'], [], m);
+  return (f.codes.length === 3 && f.names.length === 3 && f.names.every(Boolean))
+    || `codes=${f.codes.length} names=${f.names.length} ${JSON.stringify(f.names)}`;
+});
+
+t('정상 규모(1~3곳)에서는 상한이 절대 안 걸린다', () => {
+  const m = buildCodeToName(donutLike);
+  const f = finalizeCodes(['1100', '2600'], ['a', 'b'], ['4686'], m);
+  return (f.capped === 0 && f.codes.length === 3) || JSON.stringify(f);
+});
+
+console.log('\n■ 공고 계열 변경일 — 어느 출처가 바뀌었는지');
+
+t('★공고문 첨부만 바뀌면 notice-links 로 잡힌다', () => {
+  const n = clone(aux); const code = Object.keys(aux['notice-links'].regions)[7];
+  n['notice-links'].regions[code].files.push({ gubun: 'Z', name: 'x.hwp', ext: 'hwp', kind: '공고문', url: 'u' });
+  const r = auxChangedSources(base, auxFingerprint(n));
+  return (eq(Object.keys(r.bySource), [code]) && r.bySource[code][0] === 'notice-links') || JSON.stringify(r.bySource);
+});
+
+t('★공고 차수만 바뀌면 notice-schedule 로 잡힌다', () => {
+  const n = clone(aux); const k = Object.keys(aux['notice-schedule'].items)[3];
+  n['notice-schedule'].items[k].end = '2026-12-31 18:00';
+  const r = auxChangedSources(base, auxFingerprint(n));
+  return (r.bySource[k.split('|')[0]]?.includes('notice-schedule')) || JSON.stringify(r.bySource);
+});
+
+t('★상세(d)는 제외한다 — detailDiff 가 필드 단위로 이미 기록하므로 중복', () => {
+  const n = clone(aux); const code = Object.keys(aux['quota-detail'].regions)[4];
+  const cur = n['quota-detail'].regions[code].status;
+  n['quota-detail'].regions[code].status = cur === '접수중' ? '마감' : '접수중';
+  const r = auxChangedSources(base, auxFingerprint(n));
+  return Object.keys(r.bySource).length === 0 || `d 가 새어 나왔다: ${JSON.stringify(r.bySource)}`;
+});
+
+t('★대량 배치는 파서 아티팩트로 버린다 (161곳 폭탄 방지)', () => {
+  const n = clone(aux);
+  for (const v of Object.values(n['notice-links'].regions)) v.files = [];
+  const r = auxChangedSources(base, auxFingerprint(n));
+  return (Object.keys(r.bySource).length === 0 && r.dropped.length === 1 && r.dropped[0].src === 'notice-links')
+    || `bySource ${Object.keys(r.bySource).length} · dropped ${JSON.stringify(r.dropped)}`;
+});
+
+t('기준선이 없으면 0곳 (최초 실행에 전 지역 통보 방지)', () => {
+  return Object.keys(auxChangedSources(null, auxFingerprint(aux)).bySource).length === 0 || '폭탄';
+});
+
+t('한쪽에 출처가 없으면 판단 보류 (수집 실패 → 161곳 방지)', () => {
+  const n = clone(aux); n['notice-links'] = { regions: {} };
+  return Object.keys(auxChangedSources(base, auxFingerprint(n)).bySource).length === 0 || '폭탄';
+});
+
+t('변경이 없으면 0곳', () => {
+  return Object.keys(auxChangedSources(base, auxFingerprint(aux)).bySource).length === 0 || '오탐';
+});
+
+console.log(`\n결과: ${pass} 통과 / ${fail} 실패\n`);
+process.exit(fail ? 1 : 0);

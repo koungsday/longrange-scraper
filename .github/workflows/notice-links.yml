@@ -1,0 +1,84 @@
+name: 공고문 첨부 링크
+
+# ★30분 주기. quota(10분)와 완전히 분리한다 —
+#   quota 는 cancel-in-progress 라 시간에 쫓기면 잔여대수 수집이 통째로 취소된다.
+#   10분 신선도가 상품이므로 거기에 3분짜리 작업을 얹지 않는다.
+# ★새 공고에 딸려 오는 첨부는 이제 **quota 런이 그 자리에서** 가져온다
+#   (일정 변경을 감지한 지역만 11칸 전수 — scraper-quota.js 의 「첨부 재훑기」).
+#   그래서 이 워크플로는 타이머로 새 첨부를 찾는 역할을 더는 맡지 않는다.
+#   남은 두 가지만 한다:
+#     · 일정 변경 **없이** 파일만 교체된 경우 (알려진 칸 재확인, 30분)
+#     · 일정 변경 **없이** 새 칸이 생긴 경우 (전수, 4시간) — 드물지만 0은 아니다
+on:
+  schedule:
+    - cron: '5,35 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: notice-links
+  cancel-in-progress: false
+
+env:
+  TZ: Asia/Seoul
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25      # 알려진 칸 ≈3분 / 하루 1회 전수 ≈8분
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ★--ignore-scripts: 이 작업은 브라우저가 필요 없다(HEAD 요청뿐).
+      #   puppeteer 의 Chrome 내려받기(276MB)를 건너뛴다.
+      - name: Install dependencies
+        run: npm install --ignore-scripts --no-audit --no-fund
+
+      - name: Build notice links
+        run: node src/build-notice-links.js
+
+      - name: Commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/notice-links.json 2>/dev/null || true
+          if git diff --quiet --staged; then
+            echo "변화 없음 → 커밋 생략"
+            exit 0
+          fi
+          git commit -m "Update notice links: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M KST')"
+          # ★Pages 배포는 여기서 안 한다 — data/ 에 커밋만 해두면 다음 quota 런
+          #   (10분 주기)이 data/ 전체를 발행하면서 같이 올린다. 충돌 회피.
+          #
+          # ★★git 명령마다 timeout 을 건다.
+          #   2026-08-17 실측: push 충돌 후 `git pull` 의 **fetch 가 9분 29초** 걸렸다
+          #   (머지는 0.3초, 바로 다음 pull 은 0.6초 — 간헐적 서버측 지연).
+          #   저장소가 150MB 이고 17.5MB 짜리 quota-history.json 이 10분마다 다시
+          #   커밋되는 압박이 배경으로 보인다. 원인을 우리가 못 고치므로
+          #   **한 번 막혔을 때 손해를 60초로 묶는다.**
+          #
+          # ★실패해도 exit 0 — 이 데이터는 30분마다 다시 만든다. 워크플로를
+          #   빨갛게 만들어 진짜 실패를 묻히게 하는 것이 더 나쁘다.
+          for i in 1 2; do
+            if timeout 30 git push; then
+              echo "✅ push 성공 ($i/2)"
+              exit 0
+            fi
+            echo "push 실패 — 최신 반영 후 재시도 ($i/2)"
+            # ★-X ours 였다. 그러면 충돌 시 **이쪽(정기 안전망)** 이 이긴다 —
+            #   quota 런이 새 공고를 보고 방금 찾아낸 첨부를 덮어 지웠다.
+            #   이쪽이 잃는 것은 '알려진 칸 재확인' 뿐이고 30분 뒤 다시 만든다.
+            #   저쪽이 잃는 것은 **새로 발견한 첨부** 이고 4시간 전수 전엔 못 찾는다.
+            #   정보가 더 많은 쪽을 살린다.
+            timeout 30 git pull --no-rebase -X theirs origin main || echo "  pull 시간초과(30초) — 다음 시도"
+            sleep 3
+          done
+          echo "⚠️ push 2회 실패 — 다음 30분 런이 다시 만든다(실패로 처리하지 않음)"
+          exit 0

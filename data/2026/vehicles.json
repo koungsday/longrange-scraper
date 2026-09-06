@@ -1,0 +1,1006 @@
+{
+  "year": 2026,
+  "timestamp": "2026-08-18T06:31:08.689Z",
+  "total_vehicles": 111,
+  "vehicles": {
+    "현대자동차___GV60 스탠다드 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 스탠다드 2WD 19인치",
+      "national": 2850000,
+      "convNational": 570000,
+      "battery": "리튬이온(77.4kWh)",
+      "range": "(상온) 470km (저온) 416km"
+    },
+    "현대자동차___GV60 스탠다드 AWD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 스탠다드 AWD 19인치",
+      "national": 2720000,
+      "convNational": 540000,
+      "battery": "리튬이온(77.4kWh)",
+      "range": "(상온) 403km (저온) 378km"
+    },
+    "현대자동차___GV60 스탠다드 AWD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "GV60 스탠다드 AWD 20인치",
+      "national": 2610000,
+      "convNational": 520000,
+      "battery": "리튬이온(77.4kWh)",
+      "range": "(상온) 386km (저온) 358km"
+    },
+    "현대자동차___코나 일렉트릭 2WD 스탠다드 17인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "코나 일렉트릭 2WD 스탠다드 17인치",
+      "national": 4370000,
+      "convNational": 870000,
+      "battery": "리튬이온(48.6kWh)",
+      "range": "(상온) 313km (저온) 269km"
+    },
+    "현대자동차___코나 일렉트릭 2WD 롱레인지 17인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "코나 일렉트릭 2WD 롱레인지 17인치",
+      "national": 5140000,
+      "convNational": 1000000,
+      "battery": "리튬이온(64.8kWh)",
+      "range": "(상온) 419km (저온) 340km"
+    },
+    "현대자동차___아이오닉6 N": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉6 N",
+      "national": 2500000,
+      "convNational": 500000,
+      "battery": "84 kWh",
+      "range": "(상온) 401km (저온) 351km"
+    },
+    "현대자동차___코나 일렉트릭 2WD 롱레인지 17인치 빌트인 캠 미적용": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "코나 일렉트릭 2WD 롱레인지 17인치 빌트인 캠 미적용",
+      "national": 5140000,
+      "convNational": 1000000,
+      "battery": "리튬이온(64.8kWh)",
+      "range": "(상온)419km (저온) 340km"
+    },
+    "현대자동차___코나 일렉트릭 2WD 롱레인지 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "코나 일렉트릭 2WD 롱레인지 19인치",
+      "national": 4590000,
+      "convNational": 920000,
+      "battery": "리튬이온(64.8kWh)",
+      "range": "(상온)371km (저온) 307km"
+    },
+    "현대자동차___ELECTRIFIED GV70 AWD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "ELECTRIFIED GV70 AWD 19인치",
+      "national": 2610000,
+      "convNational": 520000,
+      "battery": "리튬이온(84.1kWh)",
+      "range": "(상온)405km (저온) 322km"
+    },
+    "현대자동차___ELECTRIFIED GV70 AWD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "ELECTRIFIED GV70 AWD 20인치",
+      "national": 2450000,
+      "convNational": 490000,
+      "battery": "리튬이온(84.1kWh)",
+      "range": "(상온)405km (저온) 322km"
+    },
+    "현대자동차___ELECTRIFIED G80": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "ELECTRIFIED G80",
+      "national": 2700000,
+      "convNational": 540000,
+      "battery": "리튬이온(94.6kWh)",
+      "range": "(상온)489km (저온) 380km"
+    },
+    "현대자동차___더 뉴 아이오닉5 2WD 스탠다드 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉5 2WD 스탠다드 19인치",
+      "national": 4830000,
+      "convNational": 970000,
+      "battery": "리튬이온(63.1kWh)",
+      "range": "(상온)368km (저온) 297km"
+    },
+    "현대자동차___더 뉴 아이오닉5 2WD 롱레인지 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉5 2WD 롱레인지 19인치",
+      "national": 5640000,
+      "convNational": 1000000,
+      "battery": "리튬이온(83.6kWh)",
+      "range": "(상온)462km (저온) 369km"
+    },
+    "현대자동차___더 뉴 아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉5 2WD 롱레인지 19인치 빌트인 캠 미적용",
+      "national": 5670000,
+      "convNational": 1000000,
+      "battery": "리튬이온(83.6kWh)",
+      "range": "(상온)462km (저온) 369km"
+    },
+    "현대자동차___더 뉴 아이오닉5 2WD 롱레인지 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉5 2WD 롱레인지 20인치",
+      "national": 5590000,
+      "convNational": 1000000,
+      "battery": "리튬이온(83.6kWh)",
+      "range": "(상온)462km (저온) 369km"
+    },
+    "현대자동차___더 뉴 아이오닉5 2WD 롱레인지 N라인 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉5 2WD 롱레인지 N라인 20인치",
+      "national": 5410000,
+      "convNational": 1000000,
+      "battery": "리튬이온(83.6kWh)",
+      "range": "(상온)448km (저온) 354km"
+    },
+    "현대자동차___더 뉴 아이오닉5 AWD 롱레인지 19인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉5 AWD 롱레인지 19인치",
+      "national": 5580000,
+      "convNational": 1000000,
+      "battery": "리튬이온(84kWh)",
+      "range": "(상온)468km (저온) 379km"
+    },
+    "현대자동차___더 뉴 아이오닉5 AWD 롱레인지 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉5 AWD 롱레인지 20인치",
+      "national": 5320000,
+      "convNational": 1000000,
+      "battery": "리튬이온(83.6kWh)",
+      "range": "(상온)434km (저온) 368km"
+    },
+    "현대자동차___더 뉴 아이오닉5 AWD 롱레인지 N라인 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉5 AWD 롱레인지 N라인 20인치",
+      "national": 5100000,
+      "convNational": 1000000,
+      "battery": "리튬이온(83.6kWh)",
+      "range": "(상온)411km (저온) 343km"
+    },
+    "현대자동차___더 뉴 아이오닉6 2WD 스탠다드 18인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 2WD 스탠다드 18인치",
+      "national": 5600000,
+      "convNational": 1000000,
+      "battery": "리튬이온(63kWh)",
+      "range": "(상온)422km (저온) 387km"
+    },
+    "현대자동차___더 뉴 아이오닉6 2WD 롱레인지 18인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 2WD 롱레인지 18인치",
+      "national": 5700000,
+      "convNational": 1000000,
+      "battery": "리튬이온(84kWh)",
+      "range": "(상온)475km (저온) 432km"
+    },
+    "현대자동차___더 뉴 아이오닉6 2WD 롱레인지 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 2WD 롱레인지 20인치",
+      "national": 5700000,
+      "convNational": 1000000,
+      "battery": "리튬이온(84kWh)",
+      "range": "(상온)475km (저온) 432km"
+    },
+    "현대자동차___더 뉴 아이오닉6 2WD 롱레인지 N라인 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 2WD 롱레인지 N라인 20인치",
+      "national": 5700000,
+      "convNational": 1000000,
+      "battery": "리튬이온(84kWh)",
+      "range": "(상온)475km (저온) 432km"
+    },
+    "현대자동차___더 뉴 아이오닉6 AWD 롱레인지 18인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 AWD 롱레인지 18인치",
+      "national": 5700000,
+      "convNational": 1000000,
+      "battery": "리튬이온(84kWh)",
+      "range": "(상온)431km (저온) 382km"
+    },
+    "현대자동차___더 뉴 아이오닉6 AWD 롱레인지 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 AWD 롱레인지 20인치",
+      "national": 5530000,
+      "convNational": 1000000,
+      "battery": "리튬이온(84kWh)",
+      "range": "(상온)431km (저온) 382km"
+    },
+    "현대자동차___더 뉴 아이오닉6 AWD 롱레인지 N라인 20인치": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "더 뉴 아이오닉6 AWD 롱레인지 N라인 20인치",
+      "national": 5370000,
+      "convNational": 1000000,
+      "battery": "리튬이온(84kWh)",
+      "range": "(상온)431km (저온) 382km"
+    },
+    "현대자동차___아이오닉9 성능형 AWD": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉9 성능형 AWD",
+      "national": 2720000,
+      "convNational": 540000,
+      "battery": "",
+      "range": ""
+    },
+    "현대자동차___아이오닉9 항속형 2WD": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉9 항속형 2WD",
+      "national": 2740000,
+      "convNational": 550000,
+      "battery": "",
+      "range": ""
+    },
+    "현대자동차___아이오닉9 항속형 AWD": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "아이오닉9 항속형 AWD",
+      "national": 2710000,
+      "convNational": 540000,
+      "battery": "",
+      "range": ""
+    },
+    "현대자동차___스타리아 리무진 일렉트릭 6인승": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "스타리아 리무진 일렉트릭 6인승",
+      "national": 2290000,
+      "convNational": 460000,
+      "battery": "리튬이온(84kWh)",
+      "range": "(상온) 370km (저온)290km"
+    },
+    "현대자동차___스타리아 라운지 일렉트릭 7인승": {
+      "type": "일반승용",
+      "manufacturer": "현대자동차",
+      "model": "스타리아 라운지 일렉트릭 7인승",
+      "national": 2290000,
+      "convNational": 460000,
+      "battery": "-",
+      "range": "-"
+    },
+    "기아___EV9 롱레인지 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 롱레인지 2WD 19인치",
+      "national": 2700000,
+      "convNational": 540000,
+      "battery": "리튬이온(99.8kWh)",
+      "range": "(상온) 508km (저온) 368km"
+    },
+    "기아___EV9 롱레인지 2WD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 롱레인지 2WD 20인치",
+      "national": 2680000,
+      "convNational": 540000,
+      "battery": "리튬이온(99.8kWh)",
+      "range": "(상온) 490km (저온) 370km"
+    },
+    "기아___EV9 롱레인지 4WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 롱레인지 4WD 19인치",
+      "national": 2540000,
+      "convNational": 510000,
+      "battery": "리튬이온(99.8kWh)",
+      "range": "(상온) 453km (저온) 337km"
+    },
+    "기아___EV9 롱레인지 4WD 21인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 롱레인지 4WD 21인치",
+      "national": 2600000,
+      "convNational": 520000,
+      "battery": "리튬이온(99.8kWh)",
+      "range": "(상온) 461km (저온) 352km"
+    },
+    "기아___EV9 롱레인지 GTL 4WD 21인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 롱레인지 GTL 4WD 21인치",
+      "national": 2520000,
+      "convNational": 500000,
+      "battery": "리튬이온(99.8kWh)",
+      "range": "(상온) 452km (저온) 321km"
+    },
+    "기아___더뉴EV6 롱레인지 4WD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 롱레인지 4WD 20인치",
+      "national": 5320000,
+      "convNational": 1000000,
+      "battery": "리튬이온(83.6kWh)",
+      "range": "(상온) 437km (저온) 353km"
+    },
+    "기아___더뉴EV6 롱레인지 2WD 20인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 롱레인지 2WD 20인치",
+      "national": 5590000,
+      "convNational": 1000000,
+      "battery": "리튬이온(83.6kWh)",
+      "range": "(상온) 462km (저온) 370km"
+    },
+    "기아___더뉴EV6 롱레인지 4WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 롱레인지 4WD 19인치",
+      "national": 5610000,
+      "convNational": 1000000,
+      "battery": "리튬이온(83.6kWh)",
+      "range": "(상온) 461km (저온) 380km"
+    },
+    "기아___더뉴EV6 롱레인지 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 롱레인지 2WD 19인치",
+      "national": 5700000,
+      "convNational": 1000000,
+      "battery": "리튬이온(83.6kWh)",
+      "range": "(상온) 505km (저온) 391km"
+    },
+    "기아___EV3 롱레인지 2WD 17인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV3 롱레인지 2WD 17인치",
+      "national": 5550000,
+      "convNational": 1000000,
+      "battery": "리튬이온(81.3kWh)",
+      "range": "(상온) 510km (저온) 401km"
+    },
+    "기아___EV3 롱레인지 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV3 롱레인지 2WD 19인치",
+      "national": 5550000,
+      "convNational": 1000000,
+      "battery": "리튬이온(81.3kWh)",
+      "range": "(상온) 485km (저온) 382km"
+    },
+    "기아___EV3 스탠다드 2WD": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV3 스탠다드 2WD",
+      "national": 4690000,
+      "convNational": 940000,
+      "battery": "리튬이온(58.3kWh)",
+      "range": "(상온) 347km (저온) 292km"
+    },
+    "기아___더뉴EV6 스탠다드": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "더뉴EV6 스탠다드",
+      "national": 5010000,
+      "convNational": 1000000,
+      "battery": "리튬이온(63.1kWh)",
+      "range": "(상온) 389km (저온) 304km"
+    },
+    "기아___EV9 스탠다드": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 스탠다드",
+      "national": 2370000,
+      "convNational": 470000,
+      "battery": "리튬이온(76.2kWh)",
+      "range": "(상온) 385km (저온) 307km"
+    },
+    "기아___EV4 롱레인지 GTL 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 롱레인지 GTL 2WD 19인치",
+      "national": 5550000,
+      "convNational": 1000000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 509km (저온) 421km"
+    },
+    "기아___EV4 스탠다드 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 스탠다드 2WD 19인치",
+      "national": 4810000,
+      "convNational": 960000,
+      "battery": "리튬이온(58.3kWh)",
+      "range": "(상온) 362km (저온) 291km"
+    },
+    "기아___EV4 롱레인지 2WD 17인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 롱레인지 2WD 17인치",
+      "national": 5550000,
+      "convNational": 1000000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 549km (저온) 440km"
+    },
+    "기아___EV4 롱레인지 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 롱레인지 2WD 19인치",
+      "national": 5550000,
+      "convNational": 1000000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 514km (저온) 410km"
+    },
+    "기아___EV4 스탠다드 2WD 17인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 스탠다드 2WD 17인치",
+      "national": 5120000,
+      "convNational": 1000000,
+      "battery": "리튬이온(58.3kWh)",
+      "range": "(상온) 391km (저온) 305km"
+    },
+    "기아___PV5 패신저 5인승 롱레인지": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "PV5 패신저 5인승 롱레인지",
+      "national": 4580000,
+      "convNational": 920000,
+      "battery": "리튬이온(71.2kWh)",
+      "range": "(상온) 363km (저온) 296km"
+    },
+    "기아___EV5 롱레인지 2WD": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV5 롱레인지 2WD",
+      "national": 5520000,
+      "convNational": 1000000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 460km (저온) 374km"
+    },
+    "기아___EV5 롱레인지 4WD 18인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV5 롱레인지 4WD 18인치",
+      "national": 4990000,
+      "convNational": 1000000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 420km (저온) 330km"
+    },
+    "기아___Pv5 WAV(비용 지원)": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "Pv5 WAV(비용 지원)",
+      "national": 4480000,
+      "convNational": 900000,
+      "battery": "",
+      "range": ""
+    },
+    "기아___EV5 롱레인지 4WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV5 롱레인지 4WD 19인치",
+      "national": 4930000,
+      "convNational": 990000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 406km (저온) 320km"
+    },
+    "기아___Pv5 WAV(비용 미지원)": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "Pv5 WAV(비용 미지원)",
+      "national": 6480000,
+      "convNational": 1000000,
+      "battery": "",
+      "range": ""
+    },
+    "기아___EV5 GT": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV5 GT",
+      "national": 2320000,
+      "convNational": 460000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 378km (저온) 308km"
+    },
+    "기아___EV3 롱레인지 4WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV3 롱레인지 4WD 19인치",
+      "national": 5390000,
+      "convNational": 1000000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 457km (저온) 372km"
+    },
+    "기아___EV3 GT": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV3 GT",
+      "national": 2480000,
+      "convNational": 500000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 414km (저온) 354km"
+    },
+    "기아___EV4 롱레인지 4WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 롱레인지 4WD 19인치",
+      "national": 5540000,
+      "convNational": 1000000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 484km (저온) 376km"
+    },
+    "기아___EV4 GT": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV4 GT",
+      "national": 2550000,
+      "convNational": 510000,
+      "battery": "리튬이온(81.4kWh)",
+      "range": "(상온) 431km (저온) 349km"
+    },
+    "기아___EV9 GT": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV9 GT",
+      "national": 2450000,
+      "convNational": 490000,
+      "battery": "리튬이온(99.8kWh)",
+      "range": "(상온) 421km (저온) 359km"
+    },
+    "BMW___MINI Cooper SE": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI Cooper SE",
+      "national": 3960000,
+      "convNational": 790000,
+      "battery": "리튬이온(54.2kWh)",
+      "range": "(상온)320km (저온)241km"
+    },
+    "BMW___iX1 xDrive30": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX1 xDrive30",
+      "national": 1920000,
+      "convNational": 380000,
+      "battery": "리튬이온(66.4kWh)",
+      "range": "(상온) 313km (저온) 268km"
+    },
+    "BMW___iX2 eDrive20": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX2 eDrive20",
+      "national": 2140000,
+      "convNational": 430000,
+      "battery": "리튬이온(66.4kWh)",
+      "range": "(상온) 358km (저온) 275km"
+    },
+    "BMW___MINI Countryman SE ALL4": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI Countryman SE ALL4",
+      "national": 2030000,
+      "convNational": 410000,
+      "battery": "리튬이온(66.4kWh)",
+      "range": "(상온) 344km (저온) 268km"
+    },
+    "BMW___MINI Countryman E": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI Countryman E",
+      "national": 2170000,
+      "convNational": 430000,
+      "battery": "리튬이온(66.4kWh)",
+      "range": "(상온) 367km (저온) 286km"
+    },
+    "BMW___MINI Aceman SE": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI Aceman SE",
+      "national": 4000000,
+      "convNational": 800000,
+      "battery": "리튬이온(54.2kWh)",
+      "range": "(상온) 322km (저온) 243km"
+    },
+    "BMW___MINI JCW Aceman E": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI JCW Aceman E",
+      "national": 1970000,
+      "convNational": 390000,
+      "battery": "리튬이온(54.2kWh)",
+      "range": "(상온)315km (저온)249km"
+    },
+    "BMW___MINI JCW E": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI JCW E",
+      "national": 1910000,
+      "convNational": 380000,
+      "battery": "리튬이온(54.2kWh)",
+      "range": "(상온)303km (저온)243km"
+    },
+    "BMW___MINI Aceman E": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "MINI Aceman E",
+      "national": 4000000,
+      "convNational": 800000,
+      "battery": "리튬이온(54.2kWh)",
+      "range": "(상온)322km (저온)243km"
+    },
+    "BMW___i4 M60 LCI (71HD)": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "i4 M60 LCI (71HD)",
+      "national": 2330000,
+      "convNational": 470000,
+      "battery": "리튬이온(83.9kWh)",
+      "range": "(상온) 415km (저온) 315km"
+    },
+    "BMW___i4 eDrive 40 LCI(21HD)": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "i4 eDrive 40 LCI(21HD)",
+      "national": 2440000,
+      "convNational": 490000,
+      "battery": "리튬이온(83.9kWh)",
+      "range": "(상온) 439km (저온) 331km"
+    },
+    "BMW___i4 eDrive 40 LCI(61HD)": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "i4 eDrive 40 LCI(61HD)",
+      "national": 2560000,
+      "convNational": 510000,
+      "battery": "리튬이온(83.9kWh)",
+      "range": "(상온) 464km (저온) 337km"
+    },
+    "BMW___i5 eDrive 40": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "i5 eDrive 40",
+      "national": 2620000,
+      "convNational": 520000,
+      "battery": "리튬이온(83.9kWh)",
+      "range": "(상온) 497km (저온) 356km"
+    },
+    "BMW___iX1 eDrive20": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX1 eDrive20",
+      "national": 2120000,
+      "convNational": 420000,
+      "battery": "리튬이온(66.4kWh)",
+      "range": "(상온) 354km (저온) 288km"
+    },
+    "BMW___iX3 50 xDrive": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX3 50 xDrive",
+      "national": 2750000,
+      "convNational": 550000,
+      "battery": "리튬이온(113.4kWh)",
+      "range": "(상온) 615km (저온) 568km"
+    },
+    "BMW___iX1 eDrive20(11HM)": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX1 eDrive20(11HM)",
+      "national": 2350000,
+      "convNational": 470000,
+      "battery": "리튬이온(66.4kWh)",
+      "range": "(상온) 392km (저온) 328km"
+    },
+    "BMW___iX2 eDrive20(71GN)": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX2 eDrive20(71GN)",
+      "national": 2390000,
+      "convNational": 480000,
+      "battery": "리튬이온(66.4kWh)",
+      "range": "(상온) 397km (저온) 328km"
+    },
+    "테슬라코리아___Model 3 Performance": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 Performance",
+      "national": 2000000,
+      "convNational": 400000,
+      "battery": "리튬이온(81.65kWh)",
+      "range": "(상온) 430km (저온) 358km"
+    },
+    "테슬라코리아___Model 3 RWD(2025)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 RWD(2025)",
+      "national": 1680000,
+      "convNational": 340000,
+      "battery": "리튬인산철(62.1kWh)",
+      "range": "(상온) 399km (저온) 309km"
+    },
+    "테슬라코리아___Model 3 RWD": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 RWD",
+      "national": 1680000,
+      "convNational": 340000,
+      "battery": "리튬인산철(62.1kWh)",
+      "range": "(상온) 399km (저온) 309km"
+    },
+    "테슬라코리아___Model 3 Premium Long Range RWD": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 Premium Long Range RWD",
+      "national": 4200000,
+      "convNational": 840000,
+      "battery": "리튬이온(84.7kWh)",
+      "range": "(상온) 551km (저온) 419km"
+    },
+    "테슬라코리아___Model Y Premium RWD": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model Y Premium RWD",
+      "national": 1700000,
+      "convNational": 340000,
+      "battery": "리튬인산철(62.1kWh)",
+      "range": "(상온) 400km (저온) 302km"
+    },
+    "테슬라코리아___Model Y Premium Long Range": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model Y Premium Long Range",
+      "national": 2100000,
+      "convNational": 420000,
+      "battery": "리튬이온(84.7kWh)",
+      "range": "(상온) 523km (저온) 396km"
+    },
+    "테슬라코리아___Model Y RWD(2025)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model Y RWD(2025)",
+      "national": 1700000,
+      "convNational": 340000,
+      "battery": "리튬인산철(62.1kWh)",
+      "range": "(상온) 400km (저온) 302km"
+    },
+    "테슬라코리아___Model Y Long Range(2025)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model Y Long Range(2025)",
+      "national": 2100000,
+      "convNational": 420000,
+      "battery": "리튬이온 (84.7kWh)",
+      "range": "(상온) 523km (저온) 396km"
+    },
+    "테슬라코리아___Model Y L AWD": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model Y L AWD",
+      "national": 2150000,
+      "convNational": 430000,
+      "battery": "리튬이온(88.2kWh)",
+      "range": "(상온) 553km (저온) 454km"
+    },
+    "테슬라코리아___Model 3 Premium Long Range RWD(5999만원)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 Premium Long Range RWD(5999만원)",
+      "national": 2100000,
+      "convNational": 420000,
+      "battery": "",
+      "range": ""
+    },
+    "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)": {
+      "type": "일반승용",
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "EQB 300 4MATIC(Facelift)",
+      "national": 1540000,
+      "convNational": 310000,
+      "battery": "리튬이온(68.6kWh)",
+      "range": "(상온) 302km (저온) 225km"
+    },
+    "메르세데스벤츠코리아___EQA 250(Facelift)": {
+      "type": "일반승용",
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "EQA 250(Facelift)",
+      "national": 1900000,
+      "convNational": 380000,
+      "battery": "리튬이온(68.6kWh)",
+      "range": "(상온) 367km (저온) 298km"
+    },
+    "메르세데스벤츠코리아___EQB 300 4MATIC(Facelift)(CY25/2)": {
+      "type": "일반승용",
+      "manufacturer": "메르세데스벤츠코리아",
+      "model": "EQB 300 4MATIC(Facelift)(CY25/2)",
+      "national": 1620000,
+      "convNational": 320000,
+      "battery": "",
+      "range": ""
+    },
+    "폭스바겐그룹코리아___Q4 45 e-tron": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "Q4 45 e-tron",
+      "national": 2060000,
+      "convNational": 410000,
+      "battery": "리튬이온(82.8kWh)",
+      "range": "(상온) 406km (저온) 285km"
+    },
+    "폭스바겐그룹코리아___Q4 Sportback 45 e-tron": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "Q4 Sportback 45 e-tron",
+      "national": 2060000,
+      "convNational": 410000,
+      "battery": "리튬이온(82.8kWh)",
+      "range": "(상온) 406km (저온) 285km"
+    },
+    "폭스바겐그룹코리아___ID.4 Pro": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "ID.4 Pro",
+      "national": 4320000,
+      "convNational": 860000,
+      "battery": "리튬이온(82.8kWh)",
+      "range": "(상온) 424km (저온) 296km"
+    },
+    "폭스바겐그룹코리아___iD.5 Pro": {
+      "type": "일반승용",
+      "manufacturer": "폭스바겐그룹코리아",
+      "model": "iD.5 Pro",
+      "national": 4730000,
+      "convNational": 950000,
+      "battery": "리튬이온 (82.8kWh)",
+      "range": "(상온) 451km (저온) 341km"
+    },
+    "케이지모빌리티___토레스 EVX 18인치": {
+      "type": "일반승용",
+      "manufacturer": "케이지모빌리티",
+      "model": "토레스 EVX 18인치",
+      "national": 3540000,
+      "convNational": 710000,
+      "battery": "리튬인산철(80.7kWh)",
+      "range": "(상온) 452km (저온) 341km"
+    },
+    "케이지모빌리티___토레스 EVX 20인치": {
+      "type": "일반승용",
+      "manufacturer": "케이지모빌리티",
+      "model": "토레스 EVX 20인치",
+      "national": 3440000,
+      "convNational": 690000,
+      "battery": "리튬인산철(80.7kWh)",
+      "range": "(상온) 436km (저온) 310km"
+    },
+    "케이지모빌리티___토레스 EVX 18인치(2026)": {
+      "type": "일반승용",
+      "manufacturer": "케이지모빌리티",
+      "model": "토레스 EVX 18인치(2026)",
+      "national": 3610000,
+      "convNational": 720000,
+      "battery": "리튬인산철(80.66kWh)",
+      "range": "(상온)448km (저온) 407km"
+    },
+    "케이지모빌리티___토레스 EVX 20인치(2026)": {
+      "type": "일반승용",
+      "manufacturer": "케이지모빌리티",
+      "model": "토레스 EVX 20인치(2026)",
+      "national": 3540000,
+      "convNational": 710000,
+      "battery": "리튬인산철(80.66kWh)",
+      "range": "(상온)433km (저온) 399km"
+    },
+    "폴스타오토모티브코리아___Polestar 4 Coupe Rear Motor": {
+      "type": "일반승용",
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "Polestar 4 Coupe Rear Motor",
+      "national": 1810000,
+      "convNational": 360000,
+      "battery": "-",
+      "range": "-"
+    },
+    "폴스타오토모티브코리아___Polestar 4 Coupe Dual Motor": {
+      "type": "일반승용",
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "Polestar 4 Coupe Dual Motor",
+      "national": 1680000,
+      "convNational": 340000,
+      "battery": "-",
+      "range": "-"
+    },
+    "볼보자동차코리아___볼보 EX30 Single Motor ER": {
+      "type": "일반승용",
+      "manufacturer": "볼보자동차코리아",
+      "model": "볼보 EX30 Single Motor ER",
+      "national": 2470000,
+      "convNational": 490000,
+      "battery": "리튬이온(66kWh)",
+      "range": "(상온) 351km (저온) 302km"
+    },
+    "볼보자동차코리아___볼보 EX30CC Twin Motor Perf": {
+      "type": "일반승용",
+      "manufacturer": "볼보자동차코리아",
+      "model": "볼보 EX30CC Twin Motor Perf",
+      "national": 2220000,
+      "convNational": 440000,
+      "battery": "리튬이온(66kWh)",
+      "range": "(상온) 338km (저온) 280km"
+    },
+    "기아___레이 EV 2WD 14인치 4인승 승용": {
+      "type": "경·소형",
+      "manufacturer": "기아",
+      "model": "레이 EV 2WD 14인치 4인승 승용",
+      "national": 4570000,
+      "convNational": 910000,
+      "battery": "리튬인산철(35.2kWh)",
+      "range": "(상온) 211km (저온) 176km"
+    },
+    "기아___레이 EV 2WD 14인치 2인승 밴": {
+      "type": "경·소형",
+      "manufacturer": "기아",
+      "model": "레이 EV 2WD 14인치 2인승 밴",
+      "national": 4570000,
+      "convNational": 910000,
+      "battery": "리튬인산철(35.2kWh)",
+      "range": "(상온) 211km (저온) 176km"
+    },
+    "기아___레이 EV 2WD 14인치 1인승 밴": {
+      "type": "경·소형",
+      "manufacturer": "기아",
+      "model": "레이 EV 2WD 14인치 1인승 밴",
+      "national": 4570000,
+      "convNational": 910000,
+      "battery": "리튬인산철(35.2kWh)",
+      "range": "(상온) 211km (저온) 176km"
+    },
+    "현대자동차___캐스퍼 일렉트릭 항속형 17인치(라운지포함)": {
+      "type": "경·소형",
+      "manufacturer": "현대자동차",
+      "model": "캐스퍼 일렉트릭 항속형 17인치(라운지포함)",
+      "national": 4900000,
+      "convNational": 980000,
+      "battery": "리튬이온(49kWh)",
+      "range": "(상온) 295km (저온) 245km"
+    },
+    "현대자동차___캐스퍼 일렉트릭 항속형 15인치": {
+      "type": "경·소형",
+      "manufacturer": "현대자동차",
+      "model": "캐스퍼 일렉트릭 항속형 15인치",
+      "national": 4900000,
+      "convNational": 980000,
+      "battery": "리튬이온(49kWh)",
+      "range": "(상온) 318km (저온) 254km"
+    },
+    "현대자동차___캐스퍼 일렉트릭 기본형 15인치": {
+      "type": "경·소형",
+      "manufacturer": "현대자동차",
+      "model": "캐스퍼 일렉트릭 기본형 15인치",
+      "national": 4900000,
+      "convNational": 980000,
+      "battery": "리튬이온(42.1kWh)",
+      "range": "(상온) 281km (저온) 231km"
+    },
+    "현대자동차___캐스퍼 일렉트릭 크로스 17인치": {
+      "type": "경·소형",
+      "manufacturer": "현대자동차",
+      "model": "캐스퍼 일렉트릭 크로스 17인치",
+      "national": 4870000,
+      "convNational": 970000,
+      "battery": "리튬이온(49kWh)",
+      "range": "(상온) 248km (저온) 227km"
+    }
+  }
+}

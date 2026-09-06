@@ -1,41 +1,51 @@
 name: EV Quota Scraper
 
 on:
-  schedule:
-    - cron: '0 * * * *'  # 매시간 정각 (UTC)
-  workflow_dispatch:     # 수동 실행 버튼
+  workflow_dispatch:     # cron-job.org에서 10분마다 트리거
 
-# 동일한 워크플로우가 동시에 실행되는 것을 방지
+# 10분마다 실행되므로 오래된 런은 즉시 취소하고 최신 런만 실행
+# scrape.yml과는 별도 그룹 사용 (Pages 충돌은 continue-on-error로 처리)
 concurrency:
-  group: scrape-quota
-  cancel-in-progress: false  # 진행 중인 작업을 취소하지 않고 대기
+  group: quota-scraper
+  cancel-in-progress: true
+
+env:
+  TZ: Asia/Seoul
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    
-    # ⭐ 핵심 수정: GITHUB_TOKEN에 쓰기 권한을 명시적으로 부여합니다.
+
     permissions:
       contents: write
-    
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
+      # ========================================
+      # 1. 스크래퍼 리포 체크아웃
+      # ========================================
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-        
-      # --- Node.js 환경 설정 ---
+
+      # ========================================
+      # 2. Node.js 환경 설정
+      # ========================================
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      # Puppeteer의 캐시 위치를 프로젝트 폴더 내의 '.cache/puppeteer'로 지정합니다.
       - name: Set Puppeteer Cache Directory
         run: echo "PUPPETEER_CACHE_DIR=$(pwd)/.cache/puppeteer" >> $GITHUB_ENV
-        
-      # --- 1. 캐시 복원 (Restore) 단계 ---
+
       - name: Restore Node Modules and Puppeteer Cache
         id: cache-restore
         uses: actions/cache@v4
@@ -46,83 +56,130 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-            
-      # --- 2. 설치 단계: 캐시 미스 시에만 설치 ---
+
       - name: Install dependencies (with Puppeteer fix)
         run: |
-          # cache-restore 단계에서 캐시를 찾지 못했을 때 (cache-hit != 'true')
           if [ "${{ steps.cache-restore.outputs.cache-hit }}" != "true" ]; then
             echo "Cache miss. Installing all dependencies..."
-            # 이전 워크플로우에서 불필요했던 'Generate package-lock and push' 단계는 삭제하고 npm install만 남깁니다.
             npm install
           else
             echo "Cache hit. Skipping npm install, checking Puppeteer..."
           fi
-          
-          # 캐시 복원 여부와 관계없이 Puppeteer 실행 파일 누락 문제를 해결합니다.
-          # PUPPETEER_CACHE_DIR 환경 변수 덕분에 설치된 바이너리가 캐시 대상 폴더에 저장됩니다.
           npx puppeteer install
-          
-      # --- 3. 캐시 저장 (Save) 단계 ---
-      # 복원 단계에서 캐시를 찾지 못했고, 설치가 성공적으로 완료되었을 때만 새로운 캐시를 저장합니다.
+
       - name: Save New Node Modules Cache
         uses: actions/cache@v4
-        if: always() && steps.cache-restore.outputs.cache-hit != 'true'
+        if: steps.cache-restore.outputs.cache-hit != 'true'
         with:
           path: |
             node_modules
             .cache/puppeteer
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          
+
+      # ========================================
+      # 3. 스크래핑 실행
+      # ========================================
       - name: Run quota scraper
         run: node src/scraper-quota.js
-        
-      - name: Upload quota to Google Sheets
-        run: node src/sheets-uploader-quota.js
-        env:
-          GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
-          GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
-          GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
-        
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: quota-results
-          path: data/quota.json
-          
-      # ⭐ 최종 파일 커밋 및 푸시 단계 (동시성 문제 해결)
-      - name: Commit and push if changed
+          path: |
+            data/quota.json
+            data/quota-history*.json
+
+      # ========================================
+      # 4. 데이터 검증
+      # ========================================
+      - name: Validate quota data
+        id: validate
+        run: |
+          RESULT=$(node src/validate-data.js quota || true)
+          echo "검증 결과: $RESULT"
+
+          VALID=$(echo "$RESULT" | node -e "process.stdin.on('data',d=>{const r=JSON.parse(d);console.log(r.valid)})")
+
+          if [ "$VALID" == "true" ]; then
+            echo "valid=true" >> $GITHUB_OUTPUT
+            echo "✅ 데이터 검증 통과"
+          else
+            echo "valid=false" >> $GITHUB_OUTPUT
+            echo "❌ 데이터 검증 실패"
+          fi
+
+      # ========================================
+      # 4.5. 공고 일정 변경 알림 (추경 개시 신호)
+      #   ★공고 차수가 새로 뜨거나 접수 일정이 바뀌면 곧 추경 접수가 시작된다.
+      #     물량이 새로 풀리는 순간이라 늦게 알수록 손해다 → 감지 즉시 카톡.
+      #   ★시크릿은 워크플로가 들고 있는다. 스크립트는 data/notice-alert.json 만 남긴다.
+      #   ★실패해도 스크랩엔 영향 없다.
+      # ========================================
+      - name: Notify notice schedule change
+        if: always()
+        continue-on-error: true
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+          WEB_URL: ${{ secrets.KOUNGS_DAY_WEB_URL }}
+        run: |
+          F=data/notice-alert.json
+          [ -f "$F" ] || { echo "공고 일정 변경 없음"; exit 0; }
+          if [ -z "$REVALIDATE_SECRET" ] || [ -z "$WEB_URL" ]; then
+            echo "시크릿 미설정 → 알림 생략"; rm -f "$F"; exit 0
+          fi
+          CODE=$(curl -s -o /tmp/alert-res.json -w '%{http_code}' --max-time 20 \
+            -X POST "$WEB_URL/api/subsidy/notice-alert" \
+            -H "Content-Type: application/json" \
+            -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+            --data-binary @"$F")
+          echo "알림 발송 HTTP $CODE — $(head -c 200 /tmp/alert-res.json)"
+          # ★보냈든 못 보냈든 파일은 지운다. 남겨 두면 다음 런이 같은 걸 또 쏜다.
+          rm -f "$F"
+
+      # ========================================
+      # 5. scraper repo 커밋 (검증 결과와 무관하게 항상 커밋)
+      # ========================================
+      - name: Commit and push to scraper repo
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-          # 생성된 json 파일을 커밋 대상으로 추가
-          git add data/quota.json
+          # ★2026-08-09 — pathspec 이 하나라도 없으면 git add 는 전체를 중단하고
+          #   아무것도 스테이징하지 않는다("fatal: pathspec ... did not match any files").
+          #   data/webhook-status.json 은 이 스텝 *뒤* 재검증 스텝에서 쓰이므로 커밋 시점엔 늘 없다
+          #   → 2026-07-22 이후 모든 런이 조용히 "No data changes" 로 빠졌다(|| true 가 오류를 삼킴).
+          #   그 결과 data/ 가 7.22 에 얼어붙었고, 변경감지의 전제("git HEAD = 직전 커밋본")가 깨져
+          #   매 런 139개 지역이 거짓 변경으로 잡혀 vw-k 재검증을 폭주시켰다.
+          #   → 경로별로 따로 add 한다. 하나가 없어도 나머지는 스테이징된다.
+          for p in data/quota.json data/quota-detail.json data/quota-detail-history*.json data/notice-schedule.json data/notice-links.json data/aux-baseline.json data/change-history.json data/change-history-self.json data/quota-history*.json data/quota-history data/note-history data/detail-history data/webhook-status.json data/*/subsidies.json data/*/vehicles.json data/*/subsidies-legacy.json data/years.json; do
+            git add "$p" 2>/dev/null || true
+          done
 
-          # 변경 사항이 있는지 확인
           if ! git diff --quiet --staged; then
             echo "Data changes detected. Committing and pushing..."
-            git commit -m "Update EV quota data: $(date +'%Y-%m-%d %H:%M:%S KST')"
+            git commit -m "Update EV quota data: $(TZ=Asia/Seoul date +'%Y-%m-%d %H:%M:%S KST')"
 
-            # Push with retry logic (최대 5번 시도, 재시도 간 pull --rebase)
-            MAX_RETRIES=5
+            # ★5→3: 최악 5.7분은 10분 주기에 너무 길다. 어차피 10분 뒤 다시 만든다.
+            MAX_RETRIES=3
             RETRY_COUNT=0
 
             while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
               echo "Push attempt $((RETRY_COUNT + 1))/$MAX_RETRIES..."
 
-              if git push; then
+              # ★timeout 30 — 2026-08-17 실측: 간헐적으로 git fetch 가 9분 29초
+              #   응답 없이 매달렸다(평소 1초). 이 워크플로는 cancel-in-progress 라
+              #   한 번 매달리면 10분 창을 넘겨 **다음 런이 이번 수집을 취소**한다.
+              #   막히면 기다리지 말고 끊고 다시 던진다.
+              if timeout 30 git push; then
                 echo "✅ Push successful!"
-                exit 0
+                break
               else
                 echo "⚠️ Push failed. Pulling latest changes..."
                 RETRY_COUNT=$((RETRY_COUNT + 1))
 
                 if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
-                  # Pull with rebase to integrate remote changes
-                  git pull --rebase origin main
-
-                  # 지수 백오프: 2초, 4초, 8초, 16초
+                  timeout 30 git pull --no-rebase -X ours origin main || echo "  pull 30초 초과 — 끊고 재시도"
                   WAIT_TIME=$((2 ** RETRY_COUNT))
                   echo "Waiting ${WAIT_TIME}s before retry..."
                   sleep $WAIT_TIME
@@ -130,8 +187,236 @@ jobs:
               fi
             done
 
-            echo "❌ Failed to push after $MAX_RETRIES attempts"
-            exit 1
+            if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+              echo "❌ Failed to push after $MAX_RETRIES attempts"
+              exit 1
+            fi
           else
             echo "No data changes since last run. Skipping commit."
           fi
+
+      # ========================================
+      # 6. GitHub Pages 배포 (검증 통과 시에만)
+      # ========================================
+      # ★always() — 커밋 스텝이 push 충돌로 실패해도 Pages 는 올라가야 한다.
+      #   데이터는 이미 디스크에 있고 업로드는 커밋과 무관하다(2026-08-23 13:40 런에서
+      #   커밋 실패 하나에 이 셋이 전부 skipped 되어 공개 데이터가 20분 정체했다).
+      - name: Setup Pages
+        if: always() && steps.validate.outputs.valid == 'true'
+        uses: actions/configure-pages@v5
+        continue-on-error: true  # subsidy 배포와 충돌 시 무시 (10분 후 재시도)
+
+      - name: Upload Pages artifact
+        if: always() && steps.validate.outputs.valid == 'true'
+        uses: actions/upload-pages-artifact@v3
+        continue-on-error: true
+        with:
+          path: data/
+
+      - name: Deploy to GitHub Pages
+        if: always() && steps.validate.outputs.valid == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true  # 충돌 시 워크플로우 전체 실패 방지
+
+      # ========================================
+      # 6.5. vw-k 온디맨드 재검증 (변경 지역만) — Pages 전파 확인 후 발사
+      #  - 변경 지역이 없으면 아예 호출 안 함(비용 0).
+      #  - REVALIDATE_SECRET 미설정 시 스킵(안전) → fallback revalidate가 신선도 유지.
+      #  - Pages 전파 전 발사 금지: vw-k가 낡은 데이터로 재생성/캐시하면 오히려 신선도 저하.
+      # ========================================
+      - name: Revalidate vw-k subsidy pages (changed regions)
+        # ★`always() &&` 가 없으면 **앞 스텝이 하나라도 실패할 때 통째로 스킵**된다
+        #   (GitHub Actions 는 상태함수 없는 if 를 암묵적으로 success() && (...) 로 감싼다).
+        #   2026-08-23 13:40 런 실측: 커밋 스텝의 push 충돌 하나에
+        #   Setup Pages·Upload·Deploy·**이 재검증까지** 전부 skipped 됐고,
+        #   그 사이클의 모든 변경이 24시간 지연됐다. 게다가 webhook-status 도 안 만들어져
+        #   위생 다이제스트는 마지막 정상값을 계속 읽는다 — 조용한 실패다.
+        #   ★재검증은 커밋 성공 여부와 **무관하게** 돌아야 한다. 데이터는 이미 Pages 에
+        #     올라가 있거나(성공) 다음 런이 다시 만든다(실패). 웹훅만 잃는 게 제일 나쁘다.
+        if: always() && steps.validate.outputs.valid == 'true'
+        continue-on-error: true   # 실패해도 스크래핑/워크플로엔 영향 없음
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          # 웹훅 헬스 기록 — 위생 다이제스트가 읽어 알림(변경 있었는데 ok=false면 웹훅 고장 신호).
+          # data/ 안이라 다음 주기 커밋·Pages 배포에 실림(1주기 지연 OK, 일일 점검용).
+          STATUS_FILE=data/webhook-status.json
+          write_status() { # $1=changed $2=ok(true/false) $3=http $4=reason
+            NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+            printf '{\n  "ts": "%s",\n  "changed": %s,\n  "ok": %s,\n  "http": "%s",\n  "reason": "%s"\n}\n' "$NOW" "$1" "$2" "$3" "$4" > "$STATUS_FILE"
+          }
+
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "⚠️ REVALIDATE_SECRET 미설정 → 재검증 스킵 (fallback revalidate가 신선도 유지)"
+            write_status 0 true 0 secret-missing; exit 0
+          fi
+          if [ ! -f changed-codes.json ]; then
+            echo "changed-codes.json 없음 → 스킵"; write_status 0 true 0 no-file; exit 0
+          fi
+          COUNT=$(node -pe "require('./changed-codes.json').count || 0" 2>/dev/null || echo 0)
+          # ★상한 초과로 통보를 포기했거나 지역 키 매칭이 깨졌으면 reason 에 실어 둔다 —
+          #   안 그러면 정상 무변경과 글자 하나 다르지 않아 위생 다이제스트가 못 잡는다.
+          CAPPED=$(node -pe "require('./changed-codes.json').capped || 0" 2>/dev/null || echo 0)
+          UNMATCHED=$(node -pe "require('./changed-codes.json').unmatched || 0" 2>/dev/null || echo 0)
+          # ★이상 신호는 COUNT 와 **무관하게** 판정한다.
+          #   처음엔 COUNT==0 안에만 뒀는데, 실측상 상태 변화 이벤트의 **89%가 COUNT>0** 이라
+          #   경보가 10번 중 9번 꺼져 있었다. capped(공고 계열)와 COUNT(물량)는 서로 독립이다 —
+          #   "물량 3곳 통보 + 공고 45곳 상한초과 드롭" 이면 reason 이 그냥 ok 로 찍혔다.
+          ABNORMAL=""
+          if [ "$CAPPED" -gt 0 ] || [ "$UNMATCHED" -gt 0 ]; then
+            ABNORMAL="capped-${CAPPED}-unmatched-${UNMATCHED}"
+            echo "⚠️ 이상 신호 — capped=$CAPPED unmatched=$UNMATCHED (통보 지역 ${COUNT}개와 별개)"
+          fi
+          if [ "$COUNT" -eq 0 ]; then
+            if [ -n "$ABNORMAL" ]; then write_status 0 false 0 "$ABNORMAL"; exit 0; fi
+            echo "변경 지역 0개 → 재검증 불필요 (비용 0)"; write_status 0 true 0 no-change; exit 0
+          fi
+          EXPECT_TS=$(node -pe "require('./data/quota.json').timestamp || ''" 2>/dev/null || echo "")
+          CODES=$(node -pe "JSON.stringify(require('./changed-codes.json').codes || [])" 2>/dev/null || echo "[]")
+          echo "변경 지역 ${COUNT}개 · 새 timestamp=${EXPECT_TS}"
+
+          # 재시도 루프: (1)Pages 전파 확인 → (2)재검증 POST. 응답 body의 ok:true 일 때만 성공.
+          #   HTTP 200이어도 ok:false(전파 미완/defer)면 재시도 — 놓침을 거의 0으로. 최대 5회(사이 15s).
+          #   전파 전 발사하면 낡은 데이터로 재생성되므로 반드시 전파 확인 후 POST.
+          PAGES_URL="https://koungsday.github.io/longrange-scraper/quota.json"
+          OK=false
+          HTTP=000
+          for attempt in $(seq 1 5); do
+            LIVE_TS=$(curl -s --max-time 10 "$PAGES_URL" | node -pe "try{JSON.parse(require('fs').readFileSync(0,'utf8')).timestamp}catch(e){''}" 2>/dev/null || echo "")
+            if [ "$LIVE_TS" != "$EXPECT_TS" ]; then
+              echo "  [시도 ${attempt}/5] Pages 미전파 (live=${LIVE_TS}) → 15s 대기"; sleep 15; continue
+            fi
+            HTTP=$(curl -s -o /tmp/reval-resp.json -w "%{http_code}" -X POST \
+              "https://www.vw-k.com/api/revalidate/subsidy" \
+              -H "Content-Type: application/json" \
+              -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+              --retry 2 --retry-delay 2 --max-time 30 \
+              -d "{\"codes\": $CODES, \"expectedTs\": \"$EXPECT_TS\"}" 2>/dev/null || echo "000")
+            OKBODY=$(node -pe "try{JSON.parse(require('fs').readFileSync('/tmp/reval-resp.json','utf8')).ok===true}catch(e){false}" 2>/dev/null || echo false)
+            echo "  [시도 ${attempt}/5] HTTP=${HTTP} ok=${OKBODY} $(cat /tmp/reval-resp.json 2>/dev/null)"
+            if [ "$HTTP" == "200" ] && [ "$OKBODY" == "true" ]; then OK=true; break; fi
+            echo "  → 재검증 미완료, 15s 후 재시도"; sleep 15
+          done
+
+          # ★통보 유실 = 영구 유실이던 것을 이월로 막는다.
+          #   스크래퍼는 기준선(aux-baseline)과 quota.json 을 **POST 전에** 이미 갱신한다.
+          #   그래서 POST 가 5회 재시도 후 실패하면 그 변경은 **다시는 통보되지 않았다** —
+          #   전에는 notice-data 전역 purge 가 우연히 덮어줬지만 이제 그 보험이 없다.
+          #   → 실패한 codes 를 data/pending-codes.json 에 남기고 다음 런의 스크래퍼가 합친다.
+          #     성공하면 지운다. 커밋돼야 다음 런이 보므로 아래 커밋 스텝에 등록한다.
+          PENDING=data/pending-codes.json
+          if [ "$OK" == "true" ]; then
+            echo "✅ 변경 지역 ${COUNT}개 재검증 완료"
+            if [ -n "$ABNORMAL" ]; then write_status "$COUNT" false "$HTTP" "ok-but-$ABNORMAL"; else write_status "$COUNT" true "$HTTP" ok; fi
+            if [ -f "$PENDING" ]; then rm -f "$PENDING"; echo "   ↳ 이월분 해소 — $PENDING 삭제"; fi
+          else
+            echo "⚠️ 5회 재시도 후에도 재검증 미완료 (HTTP=${HTTP}) → 다음 런으로 이월"
+            write_status "$COUNT" false "$HTTP" failed
+            node -e "
+              const fs=require('fs');
+              const cur=JSON.parse(fs.readFileSync('changed-codes.json','utf8')).codes||[];
+              let prev=[]; try{ prev=JSON.parse(fs.readFileSync(process.argv[1],'utf8')).codes||[] }catch{}
+              // 합집합에 상한 60 — 무한히 쌓이면 그 자체가 폭탄이 된다(넘치면 24h TTL 에 맡긴다)
+              const codes=[...new Set([...prev,...cur])].slice(0,60);
+              fs.writeFileSync(process.argv[1], JSON.stringify({ ts:new Date().toISOString(), codes }));
+              console.log('   \u21b3 이월 '+codes.length+'곳');
+            " "$PENDING" || echo "   ⚠️ 이월 기록 실패(무시)"
+          fi
+
+      # ========================================
+      # 6-b. 웹훅 상태 커밋 — ★이 파일만 따로 커밋해야 하는 이유
+      # ========================================
+      #  data/webhook-status.json 은 바로 위 재검증 스텝이 만든다. 즉 5번 커밋 스텝
+      #  *뒤*, 그리고 Pages 업로드 스텝 *뒤* 다 → git 에도 Pages 에도 영영 못 올라간다.
+      #  (이 이중 교착이 2026-07-22~08-09 데이터 18일 동결의 시발점이었다. 그때 원인인
+      #   git add pathspec 은 3cbf46c 로 고쳤지만, 이 파일 자체는 여전히 한 번도
+      #   커밋된 적이 없어 vw-k 의 웹훅 감시가 읽을 게 없는 상태로 죽어 있었다.)
+      #
+      #  ts 는 매 런 바뀐다 — 그대로 커밋하면 10분마다 커밋이 하나씩 늘어 하루 144개다.
+      #  → **의미 있는 필드(changed/ok/http/reason)가 바뀔 때만** 푸시한다.
+      #    상태가 안 바뀌면 커밋 0. 그래서 vw-k 는 이 파일의 ts 로 신선도를 재지 않는다
+      #    (그 역할은 quota.json 의 Last-Modified 가 맡는다 — 늘 발행되는 파일이므로).
+      #
+      #  발행까지 한 주기 지연된다: 이번 런이 푸시 → 다음 런 체크아웃에 포함 → 그 런의
+      #  Pages 배포로 공개. 최대 ~20분. 하루 1회 다이제스트엔 충분하다.
+      #  실패해도 접수·데이터에 영향이 없으므로 절대 런을 깨지 않는다(항상 exit 0).
+      - name: Commit webhook status (on state change)
+        if: always()
+        run: |
+          set +e
+          F=data/webhook-status.json
+          if [ ! -f "$F" ]; then
+            echo "상태 파일 없음 → 생략 (재검증 스텝이 안 돌았다는 뜻)"; exit 0
+          fi
+          sig() {  # 의미 있는 필드만. ts 는 일부러 뺀다.
+            node -e "
+              const fs=require('fs');
+              try{const d=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));
+                  process.stdout.write([d.changed,d.ok,d.http,d.reason].join('|'));}
+              catch(e){process.stdout.write('unreadable');}
+            " "$1"
+          }
+          NEW=$(sig "$F")
+          if git show "HEAD:$F" > /tmp/prev-webhook-status.json 2>/dev/null; then
+            OLD=$(sig /tmp/prev-webhook-status.json)
+          else
+            OLD="(없음)"
+          fi
+          # ★이월 파일이 바뀌었으면 상태가 같아도 커밋해야 한다 —
+          #   안 그러면 이월 기록/해소가 영영 저장되지 않는다(그 자체가 유실이다).
+          PEND_CHANGED=0
+          git add -A data/pending-codes.json 2>/dev/null || true
+          git diff --quiet --staged -- data/pending-codes.json || PEND_CHANGED=1
+          if [ "$NEW" == "$OLD" ] && [ "$PEND_CHANGED" -eq 0 ]; then
+            echo "웹훅 상태 변화 없음 ($NEW) · 이월 변화 없음 → 커밋 생략"; exit 0
+          fi
+          echo "웹훅 상태 변화: $OLD  →  $NEW"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add "$F"
+          # ★이월 파일도 함께. 커밋 안 되면 다음 런이 못 보고 이월이 무의미해진다.
+          #   -A 로 잡아 **삭제(해소)** 도 반영한다 — 안 하면 해소된 이월이 계속 남는다.
+          git add -A data/pending-codes.json 2>/dev/null || true
+          if git diff --quiet --staged; then
+            echo "스테이징 결과 변화 없음 → 생략"; exit 0
+          fi
+          git commit -m "webhook status: $NEW"
+          for i in 1 2 3; do
+            if timeout 30 git push; then echo "✅ 웹훅 상태 푸시 완료"; exit 0; fi
+            echo "  푸시 충돌 → pull 후 재시도 ($i/3)"
+            git pull --no-rebase -X ours origin main
+            sleep $((i * 3))
+          done
+          echo "⚠️ 웹훅 상태 푸시 실패 — 비치명(다음 런이 다시 시도한다)"
+          exit 0
+
+      # ========================================
+      # 7. 결과 로그
+      # ========================================
+      - name: Log result
+        if: always()
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          if [ "${{ steps.validate.outputs.valid }}" == "true" ]; then
+            echo "✅ Quota 스크래핑 + 검증 통과 + GitHub Pages 배포 완료"
+          elif [ "${{ steps.validate.outputs.valid }}" == "false" ]; then
+            echo "⚠️ Quota 스크래핑 완료, 검증 실패 → scraper repo만 커밋"
+          else
+            echo "❌ Quota 스크래핑 중 오류 발생"
+          fi
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+      # ★회귀 테스트는 **맨 마지막**이다. 이유가 실측으로 확인됐다 —
+      #   GitHub Actions 는 상태함수 없는 `if:` 를 암묵적으로 `success() && (...)` 로 감싼다.
+      #   앞 스텝이 하나라도 실패하면 **뒤 스텝이 통째로 스킵**된다.
+      #   2026-08-23 13:40 런이 그대로 재현했다: 커밋 스텝 실패 하나에
+      #   Setup Pages·Upload·Deploy·**Revalidate 가 전부 skipped**.
+      #   이 테스트는 HEAD 의 **실제 데이터**를 읽으므로(고성군 행·notice-links 21번째 지역 등)
+      #   환경부 표기가 바뀌거나 파서가 실패하면 테스트가 먼저 깨진다.
+      #   앞에 두면 **데이터가 깨지는 바로 그 순간 통보 채널까지 같이 죽는다.**
+      #   맨 뒤면 수집·커밋·발행·재검증이 전부 끝난 뒤라 아무것도 막지 않고,
+      #   실패하면 잡이 빨개져 Actions 목록에서 보인다.
+      - name: Run change-detection tests
+        if: always()
+        run: node test/changed-codes.test.js
