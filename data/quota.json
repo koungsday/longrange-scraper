@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-06T20:21:04.294Z",
+  "timestamp": "2026-09-06T20:31:08.569Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1245,11 +1245,11 @@
           "sido": "강원",
           "region": "속초시",
           "vehicleType": "전기승용",
-          "quota_total": 50,
+          "quota_total": 216,
           "quota_priority": 0,
           "quota_corporate": 0,
           "quota_taxi": 0,
-          "quota_general": 50,
+          "quota_general": 216,
           "registered_total": 166,
           "registered_priority": 56,
           "registered_corporate": 0,
@@ -1260,13 +1260,13 @@
           "delivered_corporate": 0,
           "delivered_taxi": 12,
           "delivered_general": 98,
-          "remaining_total": 0,
+          "remaining_total": 50,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 0,
+          "remaining_general": 118,
           "selected_total": 166,
-          "selectedRemaining_total": 0,
+          "selectedRemaining_total": 50,
           "note": "★하반기 접수★&#xa;   - 공고 대수 : 승용 52, 화물 16, 승합 3(승합은 대형기준이며, 스타리아 지원 가능합니다)&#xa;   - 접수일시: 9. 8.(화) 9시~ (신청접수 상황에 따라 조기마감 가능)&#xa;   - 신청접수 이후 단계는 순차적으로 진행해드립니다.(★전화 XXX / 문자 보내드립니다 / 전화로 요청하는 경우가 많습니다. 이럴 경우 빠른 업무처리가 불가하오니, 양해 부탁드립니다.)&#xa;   - 접수 마감 이후 신청이 초과되어 취소해야하는 건은 별도로 연락 드리겠습니다.&#xa;   - 접수 가능 대수가 수요에 비해 적은 관계로 자동차 제조·수입사(대리점)에서는 구매계약 체결 시 구매자에게 보조금 지원이 불가능할 수 있음을 반드시 사전 안내하여 주시기 바랍니다."
         },
         {
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-06T20:21:04.210Z"
+      "timestamp": "2026-09-06T20:31:08.509Z"
     }
   ]
 }
