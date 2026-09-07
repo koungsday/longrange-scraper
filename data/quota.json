@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-07T09:51:03.234Z",
+  "timestamp": "2026-09-07T10:01:18.902Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3561,8 +3561,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 369,
-          "selected_total": 597,
-          "selectedRemaining_total": 3,
+          "selected_total": 610,
+          "selectedRemaining_total": 0,
           "note": "？ 접수기간: 2026. 9. 7. 10:00 ~ 12. 15.  ※ 단, 예산 소진 시 조기 마감 &#xa;    ※ 2026. 12. 20.까지 보조금 교부신청서 미신청시 자동취소&#xa;    ※ 상반기 미소진물량은 3차분으로 이월하여 계속 추진&#xa;  ？ 선정기준: 차량 출고·등록순&#xa;  ？ 보급대수: 총 540대【승용 390대, 화물 150대】"
         },
         {
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 55645,
+          "registered_total": 55644,
           "registered_priority": 25,
-          "registered_corporate": 53622,
+          "registered_corporate": 53621,
           "registered_taxi": 879,
           "registered_general": 1119,
           "delivered_total": 42270,
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 29186,
-          "selected_total": 48890,
+          "selected_total": 48889,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-07T09:51:03.176Z"
+      "timestamp": "2026-09-07T10:01:18.851Z"
     }
   ]
 }
