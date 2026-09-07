@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-07T03:11:05.139Z",
+  "timestamp": "2026-09-07T03:21:03.592Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2011,16 +2011,16 @@
           "registered_corporate": 28,
           "registered_taxi": 42,
           "registered_general": 1219,
-          "delivered_total": 990,
+          "delivered_total": 991,
           "delivered_priority": 159,
           "delivered_corporate": 17,
           "delivered_taxi": 38,
-          "delivered_general": 776,
-          "remaining_total": 164,
+          "delivered_general": 777,
+          "remaining_total": 163,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 11,
-          "remaining_general": 220,
+          "remaining_general": 219,
           "selected_total": 1290,
           "selectedRemaining_total": 0,
           "note": "* 신청 마감/ 지원가능확인요청번호 1396번부터 대기(26. 9. 7. 10:20)&#xa; * 8. 31.까지 보급물량의 150% 자격부여 완료(2023번까지)하였으며, 자격부여를 받지 않으신 분들께서는 추후 공고에 신청바랍니다.  &#xa; * 택시 7대 신청 가능(※ 10. 1.(목) 이후 택시 물량은 일반 승용 물량으로 전환 예정)"
@@ -3561,8 +3561,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 369,
-          "selected_total": 403,
-          "selectedRemaining_total": 197,
+          "selected_total": 404,
+          "selectedRemaining_total": 196,
           "note": "？ 접수기간: 2026. 9. 7. 10:00 ~ 12. 15.  ※ 단, 예산 소진 시 조기 마감 &#xa;    ※ 2026. 12. 20.까지 보조금 교부신청서 미신청시 자동취소&#xa;    ※ 상반기 미소진물량은 3차분으로 이월하여 계속 추진&#xa;  ？ 선정기준: 차량 출고·등록순&#xa;  ？ 보급대수: 총 540대【승용 390대, 화물 150대】"
         },
         {
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 55221,
+          "registered_total": 55222,
           "registered_priority": 25,
-          "registered_corporate": 53205,
+          "registered_corporate": 53206,
           "registered_taxi": 875,
           "registered_general": 1116,
           "delivered_total": 42006,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-07T03:11:04.559Z"
+      "timestamp": "2026-09-07T03:21:03.548Z"
     }
   ]
 }
