@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-08-18T06:31:08.689Z",
-  "total_vehicles": 111,
+  "timestamp": "2026-09-07T05:21:04.753Z",
+  "total_vehicles": 118,
   "vehicles": {
     "현대자동차___GV60 스탠다드 2WD 19인치": {
       "type": "일반승용",
@@ -1001,6 +1001,69 @@
       "convNational": 970000,
       "battery": "리튬이온(49kWh)",
       "range": "(상온) 248km (저온) 227km"
+    },
+    "기아___EV5 스탠다드 2WD 19인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV5 스탠다드 2WD 19인치",
+      "national": 4530000,
+      "convNational": 910000,
+      "battery": "",
+      "range": ""
+    },
+    "BMW___New MINI Countryman E": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "New MINI Countryman E",
+      "national": 2380000,
+      "convNational": 480000,
+      "battery": "",
+      "range": ""
+    },
+    "BMW___New MINI Countryman SE ALL4": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "New MINI Countryman SE ALL4",
+      "national": 2250000,
+      "convNational": 450000,
+      "battery": "",
+      "range": ""
+    },
+    "기아___PV5 패신저 5인승 (1-2-2 택시) 롱레인지": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "PV5 패신저 5인승 (1-2-2 택시) 롱레인지",
+      "national": 4580000,
+      "convNational": 920000,
+      "battery": "",
+      "range": ""
+    },
+    "기아___PV5 패신저 5인승(1-2-2) 롱레인지": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "PV5 패신저 5인승(1-2-2) 롱레인지",
+      "national": 4580000,
+      "convNational": 920000,
+      "battery": "",
+      "range": ""
+    },
+    "기아___PV5 패신저 7인승(2-2-3) 롱레인지": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "PV5 패신저 7인승(2-2-3) 롱레인지",
+      "national": 4550000,
+      "convNational": 910000,
+      "battery": "",
+      "range": ""
+    },
+    "기아___PV5 프라임 롱레인지": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "PV5 프라임 롱레인지",
+      "national": 4390000,
+      "convNational": 880000,
+      "battery": "",
+      "range": ""
     }
   }
 }
