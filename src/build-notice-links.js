@@ -43,25 +43,42 @@ async function main() {
   try { prev = JSON.parse(await fs.readFile(OUT, 'utf8')); } catch { /* 최초 */ }
   // ★전수는 **하루 1회(새벽 4시대)** 면 충분하다 — 새 '칸' 이 생기는 건 드물다.
   //   나머지 시간은 알려진 칸만 보므로 3분이면 끝난다.
-  const kstHour = Number(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul', hour: '2-digit', hour12: false }));
-  /* ★전수를 하루 1회(04시)만 돌렸더니 **새로 생긴 첨부를 최대 24시간 놓쳤다**.
-     2026-08-21 함평군 실측 — 환경부에는 A(1차)와 A02(3차) 두 건이 있는데 우리는 A 하나만.
-     '알려진 칸만' 최적화는 이미 아는 칸을 다시 확인할 뿐이라, 지역이 **새 칸에** 파일을 올리면
-     다음 전수까지 보이지 않는다. 새 공고가 뜨는 건 드문 일이 아니고(오늘도 추경1차가 떴다)
-     그때 첨부가 같이 올라오므로, 하루 1회는 너무 성기다.
-     → 4시간마다 전수(00·04·08·12·16·20시). 전수는 1,771회 ≈ 20분이고 30분 주기 안에 들어간다.
-       나머지 시간(하루 20회)은 그대로 알려진 칸만 본다 — 최적화의 이득은 유지된다. */
-  /* ★cron 이 '5,35 * * * *' 라 시(hour)만 보면 :05 와 :35 **두 런 모두** 전수가 된다 —
-     의도한 하루 6회가 실제로는 12회, 2.1만 HEAD/일 이었다. 분까지 봐서 :05 런만 전수. */
-  const kstMin = Number(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul', minute: '2-digit' }));
-  const full = process.env.NOTICE_FULL === '1' || (kstHour % 4 === 0 && kstMin < 20) || !prev;
+  /* ★전수를 언제 도느냐 — **실행된 시각(분)으로 정하지 않는다.**
+     예전 판정식: (kstHour % 4 === 0 && kstMin < 20)
+     의도는 "4시간마다 :05 런에서만 전수" 였는데, GitHub Actions 의 schedule 은
+     예약 시각을 안 지킨다(실측 2026-09-04~08, 최근 런 30건의 지연 0~59분).
+     그래서 4의 배수 시각에 20분 안에 시작한 런이 **30건 중 0건**이었고,
+     전수는 2026-09-03 00:10 을 마지막으로 **5일간 한 번도 돌지 않았다.**
+     의도 12회/일 → 6회/일 로 줄이려던 조건이 실제로는 0회/일을 만들었다.
+     → 어느 cron 이 우리를 깨웠는지는 GitHub 이 알려준다(github.event.schedule).
+       워크플로가 그걸 보고 NOTICE_FULL 을 넣어 준다. 지각해도 판정이 안 흔들린다. */
+  const full = process.env.NOTICE_FULL === '1' || !prev;
   console.log(full ? '🔍 전수 훑기 (새 첨부 탐색)' : '🔎 알려진 칸만 확인');
-  const data = await buildNoticeLinks(regions, { probe: true, known: full ? null : prev.regions });
+  // ★prev 도 넘긴다. 안 넘기면 **전수 모드에서** 네트워크 예외가 난 칸의 이전 값을
+  //   되살릴 방법이 없다(notice-links.js 의 복구 경로가 opt.prev 를 본다).
+  const data = await buildNoticeLinks(regions, {
+    probe: true,
+    known: full ? null : prev.regions,
+    prev: prev?.regions,
+  });
 
   if (!data.fileCount) {
     // ★0건이면 쓰지 않는다. 서버가 잠깐 막았을 때 멀쩡한 목록을 빈 목록으로
     //   덮어쓰면 화면에서 첨부가 통째로 사라진다.
     console.error('❌ 첨부 0건 — 기존 파일을 지키기 위해 쓰지 않는다');
+    process.exit(1);
+  }
+
+  /* ★대량 삭제 가드 — 가드가 '총 0건' 하나뿐이라 **18% 삭제가 그냥 통과했다.**
+     2026-09-03 13:06 KST 런: 402 → 330건(72건, 61개 지역)을 한 번에 지우고 커밋했다.
+     그 파일들은 지금도 환경부 서버에서 정상으로 내려받힌다 — 전부 거짓 삭제였다.
+     정상 감소는 한 번에 몇 건이다. 두 자릿수가 한 번에 빠지면 그건 사고다.
+     진짜로 대량 정리를 해야 하면 NOTICE_ALLOW_DROP=1 로 명시적으로 넘긴다. */
+  const dropped = prev ? prev.fileCount - data.fileCount : 0;
+  const dropPct = prev && prev.fileCount ? dropped / prev.fileCount : 0;
+  if (dropped >= 10 && dropPct > 0.05 && process.env.NOTICE_ALLOW_DROP !== '1') {
+    console.error(`❌ 한 번에 ${dropped}건(${(dropPct * 100).toFixed(1)}%) 감소 — 사고로 보고 쓰지 않는다`);
+    console.error('   (의도한 정리라면 NOTICE_ALLOW_DROP=1 로 다시 실행)');
     process.exit(1);
   }
 

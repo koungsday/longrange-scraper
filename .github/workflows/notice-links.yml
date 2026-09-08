@@ -9,10 +9,22 @@ name: 공고문 첨부 링크
 #   남은 두 가지만 한다:
 #     · 일정 변경 **없이** 파일만 교체된 경우 (알려진 칸 재확인, 30분)
 #     · 일정 변경 **없이** 새 칸이 생긴 경우 (전수, 4시간) — 드물지만 0은 아니다
+# ★전수/알려진칸을 **cron 으로 갈라 둔다**(2026-09-08).
+#   예전엔 스크립트가 '실행된 시각의 분' 을 보고 정했는데(kstHour%4===0 && kstMin<20),
+#   GitHub 의 schedule 은 예약 시각을 안 지킨다 — 실측 최근 30건 지연 0~59분.
+#   그래서 전수가 2026-09-03 이후 **5일간 0회** 돌았다. 지각해도 안 흔들리게,
+#   "어느 cron 이 깨웠는가"(github.event.schedule)로 판정을 옮겼다.
 on:
   schedule:
-    - cron: '5,35 * * * *'
+    - cron: '5 0,4,8,12,16,20 * * *'                    # 전수 (하루 6회)
+    - cron: '35 * * * *'                                # 알려진 칸
+    - cron: '5 1-3,5-7,9-11,13-15,17-19,21-23 * * *'    # 알려진 칸
   workflow_dispatch:
+    inputs:
+      full:
+        description: "전수 훑기(모든 칸 두드리기) — 사라진 첨부를 되살릴 때"
+        type: boolean
+        default: false
 
 concurrency:
   group: notice-links
@@ -42,6 +54,9 @@ jobs:
         run: npm install --ignore-scripts --no-audit --no-fund
 
       - name: Build notice links
+        # ★스크립트는 이제 시계를 안 본다. 전수 여부를 여기서 정해 준다.
+        env:
+          NOTICE_FULL: ${{ (github.event.schedule == '5 0,4,8,12,16,20 * * *' || inputs.full) && '1' || '' }}
         run: node src/build-notice-links.js
 
       - name: Commit

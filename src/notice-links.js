@@ -24,6 +24,11 @@ const { filenameOf, GUBUN, GUBUN_PROBE, url } = require('./notice-files');
 
 const UA = { 'User-Agent': 'Mozilla/5.0 (compatible; vw-k-subsidy-links/1.0)' };
 
+/** 있던 파일을 지우기까지 필요한 **연속** '없음' 관찰 횟수.
+ *  1(=즉시 삭제)이 기본이던 시절에 서버가 한 번 흔들려 72건이 날아갔다(2026-09-03 실측).
+ *  런이 하루 5~8회이므로 3이면 진짜 내려간 공고도 하루 안에는 정리된다. */
+const MISS_LIMIT = 3;
+
 /**
  * 확장자 → 사람이 읽는 형식.
  * ★"폰에서 열리는지" 는 넣지 않는다. 한글 뷰어 앱도 브라우저 뷰어도 있어서
@@ -99,7 +104,9 @@ async function buildNoticeLinks(regions, opt = {}) {
   const surprises = [];
   let files = 0;
   let asked = 0;
-  let unknown = 0;      // 확인 실패 — 이전 값을 그대로 지킨 건수
+  let unknown = 0;      // 확인 실패(네트워크 예외) — 이전 값을 그대로 지킨 건수
+  let vanishing = 0;    // "사라진 것 같다" 로 관찰됐지만 아직 지우지 않은 건수
+  const removed = [];   // 실제로 지운 것 — 로그에 이름을 남긴다
   for (const r of regions) {
     const code = String(r.code);
     const arr = [];
@@ -117,13 +124,39 @@ async function buildNoticeLinks(regions, opt = {}) {
       return [g, r];
     });
     for (const [g, r] of results.sort((a, b) => list.indexOf(a[0]) - list.indexOf(b[0]))) {
+      const old = opt.known?.[code]?.files.find((f) => f.gubun === g)
+        || opt.prev?.[code]?.files.find((f) => f.gubun === g);
       let name = r.ok ? r.name : null;
       if (!r.ok) {
-        // ★확인 실패 → 이전에 있던 건 그대로 지킨다. 지우지 않는다.
-        const old = opt.known?.[code]?.files.find((f) => f.gubun === g)
-          || opt.prev?.[code]?.files.find((f) => f.gubun === g);
+        // ★확인 실패(네트워크 예외) → 이전에 있던 건 그대로 지킨다. 지우지 않는다.
         if (old) { arr.push({ ...old, stale: true }); files++; unknown++; }
         continue;
+      }
+      if (!name && old) {
+        /* ★★있던 파일이 "없다" 로 왔다 — **한 번의 응답으로 지우지 않는다.**
+           peek 은 비-200 을 전부 '첨부 없음' 으로 확정한다(빈 칸의 정상 응답이 500 이라
+           그 자체는 옳다). 문제는 서버가 잠깐 흔들려도 같은 500 이 온다는 것이다.
+           2026-09-03 13:06 KST 런이 그렇게 **한 번에 72건(61개 지역)을 지웠고**,
+           그 중에는 성남시 A·A03 처럼 지금도 멀쩡히 내려받히는 파일이 섞여 있었다.
+           지워진 칸은 '알려진 칸' 이 아니게 되어 다음부터 두드리지도 않으므로,
+           전수 훑기가 돌기 전까지 스스로는 절대 못 돌아온다(한 방향 톱니바퀴).
+           → ① 그 자리에서 한 번 더 확인하고 ② 그래도 없으면 MISS_LIMIT 번 연속으로
+             관찰될 때까지 이전 값을 유지한다. 진짜 내려간 공고는 며칠 안에 사라진다. */
+        const again = await peek(code, g, year);
+        asked++;
+        if (again.ok && again.name) {
+          name = again.name;          // 첫 응답이 헛것이었다 — 살아 있다
+        } else {
+          const miss = (old.miss || 0) + 1;
+          if (miss < MISS_LIMIT) {
+            arr.push({ ...old, miss });
+            files++;
+            vanishing++;
+            continue;
+          }
+          removed.push(`${code}/${g}: ${old.name}`);
+          continue;                   // MISS_LIMIT 번 연속 확인됨 — 이제 지운다
+        }
       }
       if (!name) continue;
       const d = describe(name);
@@ -146,6 +179,8 @@ async function buildNoticeLinks(regions, opt = {}) {
     fileCount: files,
     askedCount: asked,      // 이번에 실제로 두드린 칸 수 — 낭비를 눈에 보이게
     unknownCount: unknown,  // 확인 실패로 이전 값을 유지한 건수 (0이어야 정상)
+    vanishingCount: vanishing,  // '없다' 로 왔지만 아직 안 지운 건수 — 삭제 사고의 조기경보
+    removedCount: removed.length,
     scanMode: opt.known ? 'known' : 'full',
     byExt,
     surprises: surprises.slice(0, 20),
@@ -153,8 +188,10 @@ async function buildNoticeLinks(regions, opt = {}) {
   };
   log(`🔗 첨부 링크 ${files}건 · ${result.regionCount}개 지역 · ${opt.known ? '알려진 칸만' : '전수'} ${asked}회 두드림 · 형식 ${JSON.stringify(byExt)}`);
   if (unknown) log(`   ⚠️ 확인 실패 ${unknown}건 — 이전 값을 유지했다(지우지 않음)`);
+  if (vanishing) log(`   ⏳ 사라짐 의심 ${vanishing}건 — ${MISS_LIMIT}회 연속까지는 유지한다`);
+  if (removed.length) log(`   🗑 삭제 ${removed.length}건: ${removed.slice(0, 10).join(' / ')}${removed.length > 10 ? ' …' : ''}`);
   if (surprises.length) log(`   ⚠️ 새 구분: ${surprises.join(' / ')} → notice-files.js GUBUN 확장 필요`);
   return result;
 }
 
-module.exports = { buildNoticeLinks, describe, KIND };
+module.exports = { buildNoticeLinks, describe, KIND, MISS_LIMIT };
