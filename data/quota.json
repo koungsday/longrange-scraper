@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-09T23:01:15.382Z",
+  "timestamp": "2026-09-09T23:11:06.539Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -919,11 +919,11 @@
           "registered_corporate": 40,
           "registered_taxi": 11,
           "registered_general": 894,
-          "delivered_total": 1080,
-          "delivered_priority": 313,
+          "delivered_total": 1082,
+          "delivered_priority": 314,
           "delivered_corporate": 29,
           "delivered_taxi": 10,
-          "delivered_general": 728,
+          "delivered_general": 729,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
@@ -2011,16 +2011,16 @@
           "registered_corporate": 28,
           "registered_taxi": 44,
           "registered_general": 1213,
-          "delivered_total": 1104,
+          "delivered_total": 1105,
           "delivered_priority": 207,
           "delivered_corporate": 22,
           "delivered_taxi": 40,
-          "delivered_general": 835,
-          "remaining_total": 50,
+          "delivered_general": 836,
+          "remaining_total": 49,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 9,
-          "remaining_general": 161,
+          "remaining_general": 160,
           "selected_total": 1290,
           "selectedRemaining_total": 0,
           "note": "* 신청 마감/ 지원가능확인요청번호 1397번부터 대기(26. 9. 9. 16:20)&#xa; * 8. 31.까지 보급물량의 150% 자격부여 완료(2023번까지)하였으며, 자격부여를 받지 않으신 분들께서는 추후 공고에 신청바랍니다.  &#xa; * 택시 5대 신청 가능(※ 10. 1.(목) 이후 택시 물량은 일반 승용 물량으로 전환 예정)"
@@ -4475,8 +4475,8 @@
           "registered_corporate": 58,
           "registered_taxi": 335,
           "registered_general": 2273,
-          "delivered_total": 4592,
-          "delivered_priority": 2142,
+          "delivered_total": 4593,
+          "delivered_priority": 2143,
           "delivered_corporate": 55,
           "delivered_taxi": 305,
           "delivered_general": 2090,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-09T23:01:15.328Z"
+      "timestamp": "2026-09-09T23:11:06.485Z"
     }
   ]
 }
