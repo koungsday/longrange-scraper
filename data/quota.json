@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-09T03:41:06.811Z",
+  "timestamp": "2026-09-09T03:51:04.131Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2426,11 +2426,11 @@
           "quota_corporate": 0,
           "quota_taxi": 10,
           "quota_general": 364,
-          "registered_total": 527,
+          "registered_total": 526,
           "registered_priority": 133,
           "registered_corporate": 13,
           "registered_taxi": 19,
-          "registered_general": 362,
+          "registered_general": 361,
           "delivered_total": 346,
           "delivered_priority": 95,
           "delivered_corporate": 12,
@@ -2441,7 +2441,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 137,
-          "selected_total": 526,
+          "selected_total": 525,
           "selectedRemaining_total": 0,
           "note": "★승용 접수마감되었습니다★&#xa; ----------------------------------------------------------------------------------------------------&#xa; * 지원가능요청번호 281-478번 선정완료&#xa; * 선정 취소건 발생시 후순위 선정자에게 개별 연락 예정&#xa; *  예산 범위 내에서 선정으로 공고 보급대수와 상이할 수 있음&#xa; * 하반기 추가 지원계획 없습니다"
         },
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 57435,
+          "registered_total": 57436,
           "registered_priority": 27,
-          "registered_corporate": 55380,
+          "registered_corporate": 55381,
           "registered_taxi": 890,
           "registered_general": 1138,
           "delivered_total": 42873,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-09T03:41:06.725Z"
+      "timestamp": "2026-09-09T03:51:04.056Z"
     }
   ]
 }
