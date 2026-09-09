@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-09-09T01:21:02.047Z",
+  "timestamp": "2026-09-09T01:51:05.373Z",
   "total_regions": 161,
   "success_count": 161,
   "failed_count": 0,
@@ -4868,7 +4868,7 @@
         "테슬라코리아___Model 3 Performance": 1000000,
         "테슬라코리아___Model 3 RWD(2025)": 840000,
         "테슬라코리아___Model 3 RWD": 840000,
-        "테슬라코리아___Model 3 Premium Long Range RWD": 2100000,
+        "테슬라코리아___Model 3 Premium Long Range RWD": 0,
         "테슬라코리아___Model Y Premium RWD": 850000,
         "테슬라코리아___Model Y Premium Long Range": 1050000,
         "테슬라코리아___Model Y RWD(2025)": 850000,
@@ -4904,6 +4904,9 @@
         "기아___PV5 패신저 5인승(1-2-2) 롱레인지": 2290000,
         "기아___PV5 패신저 7인승(2-2-3) 롱레인지": 2270000,
         "기아___PV5 프라임 롱레인지": 2190000
+      },
+      "convLocalExceptions": {
+        "테슬라코리아___Model 3 Premium Long Range RWD": 2100000
       }
     },
     "4213": {
