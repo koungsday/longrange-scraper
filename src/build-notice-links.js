@@ -90,14 +90,15 @@ async function main() {
        — 실측 하루 48회 중 5~8회만 돈다. 즉 '조용히 known 모드만 도는' 상태는 여전히 가능하다. */
   data.lastFullAt = full ? new Date().toISOString() : (prev?.lastFullAt ?? null);
 
-  const strip = (o) => JSON.stringify({ ...o, timestamp: 0, lastFullAt: 0 });
-  const same = prev && strip(prev) === strip(data);
-  /* 내용이 같아도 **전수 시각이 12시간 넘게 굳었으면** 한 번 쓴다.
-     안 그러면 전수가 멀쩡히 도는데도 lastFullAt 이 안 갱신돼 다이제스트가 헛경보를 낸다.
-     상한은 하루 2회 — 커밋 소음은 이 정도면 감당된다(그래서 timestamp 만 바뀐 커밋은 계속 막는다). */
-  const staleStamp = full && (!prev?.lastFullAt
-    || (Date.now() - Date.parse(prev.lastFullAt)) > 12 * 3600 * 1000);
-  if (same && !staleStamp) {
+  /* ★lastFullAt 은 비교에서 **빼지 않는다.** 처음엔 빼 두고 '12시간 넘게 굳었으면 한 번 쓴다'
+     는 장치를 달았는데, 적대적 검증이 그게 도달하기 어려운 길임을 실측으로 보였다 —
+     전수 기록 뒤 첫 known 런은 scanMode·askedCount 가 달라 **항상** 덮어쓰므로,
+     그 장치에 닿으려면 12시간 동안 아무 런도 안 써야 한다(실측 246개 쓰기 간격 중 1건, 0.4%).
+     비교에 남기면 전수 런이 곧 기록이라 시각이 늘 정확하고, 코드가 11줄 줄고,
+     '내용 같으면 안 쓴다' 규칙도 known 런에서 그대로 산다. 늘어나는 커밋은 '연속 전수'
+     경우뿐인데 실측 246쌍 중 9건(3.7%)이다. */
+  const same = prev && JSON.stringify({ ...prev, timestamp: 0 }) === JSON.stringify({ ...data, timestamp: 0 });
+  if (same) {
     console.log('💾 변화 없음 → 미기록');
     return;
   }
