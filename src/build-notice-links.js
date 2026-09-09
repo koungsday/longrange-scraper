@@ -82,8 +82,22 @@ async function main() {
     process.exit(1);
   }
 
-  const same = prev && JSON.stringify({ ...prev, timestamp: 0 }) === JSON.stringify({ ...data, timestamp: 0 });
-  if (same) {
+  /* ★마지막 전수 시각을 파일에 남긴다 — **감시할 방법이 이것뿐이다.**
+     2026-09-03~08 사고의 결정타는 삭제가 아니라 '전수가 5일간 0회 돌았는데 아무도 몰랐다' 였다.
+     산출물은 그동안 완전히 건강해 보였다(fileCount 344·regionCount 161·unknownCount 0).
+     이 한 줄이 있으면 위생 다이제스트가 "전수가 N시간째 안 돌았다" 를 말할 수 있다.
+     ★전수 판정은 이제 cron 이 하는데(github.event.schedule), GitHub 은 예약을 자주 건너뛴다
+       — 실측 하루 48회 중 5~8회만 돈다. 즉 '조용히 known 모드만 도는' 상태는 여전히 가능하다. */
+  data.lastFullAt = full ? new Date().toISOString() : (prev?.lastFullAt ?? null);
+
+  const strip = (o) => JSON.stringify({ ...o, timestamp: 0, lastFullAt: 0 });
+  const same = prev && strip(prev) === strip(data);
+  /* 내용이 같아도 **전수 시각이 12시간 넘게 굳었으면** 한 번 쓴다.
+     안 그러면 전수가 멀쩡히 도는데도 lastFullAt 이 안 갱신돼 다이제스트가 헛경보를 낸다.
+     상한은 하루 2회 — 커밋 소음은 이 정도면 감당된다(그래서 timestamp 만 바뀐 커밋은 계속 막는다). */
+  const staleStamp = full && (!prev?.lastFullAt
+    || (Date.now() - Date.parse(prev.lastFullAt)) > 12 * 3600 * 1000);
+  if (same && !staleStamp) {
     console.log('💾 변화 없음 → 미기록');
     return;
   }
