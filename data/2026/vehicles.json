@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-09-07T05:51:03.151Z",
-  "total_vehicles": 118,
+  "timestamp": "2026-09-11T06:51:02.973Z",
+  "total_vehicles": 117,
   "vehicles": {
     "현대자동차___GV60 스탠다드 2WD 19인치": {
       "type": "일반승용",
@@ -722,15 +722,6 @@
       "convNational": 400000,
       "battery": "리튬이온(81.65kWh)",
       "range": "(상온) 430km (저온) 358km"
-    },
-    "테슬라코리아___Model 3 RWD(2025)": {
-      "type": "일반승용",
-      "manufacturer": "테슬라코리아",
-      "model": "Model 3 RWD(2025)",
-      "national": 1680000,
-      "convNational": 340000,
-      "battery": "리튬인산철(62.1kWh)",
-      "range": "(상온) 399km (저온) 309km"
     },
     "테슬라코리아___Model 3 RWD": {
       "type": "일반승용",
