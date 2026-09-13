@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-13T08:01:41.933Z",
+  "timestamp": "2026-09-13T08:11:01.549Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2133,8 +2133,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 18,
           "remaining_general": 384,
-          "selected_total": 362,
-          "selectedRemaining_total": 359,
+          "selected_total": 363,
+          "selectedRemaining_total": 358,
           "note": "★★ 지원절차 및 지원신청서 서식변경, 공고문 필독★★&#xa; 9/10일 접수시  \"10일이내 출고가능 확인서류\"를 첨부하여 접수한 건이 우선 검토 선정됨을 알려드립니다.  미첨부시 자격부여 및 지원가능확인요청 단계 거쳐야 함.&#xa; 접수시작번호 :876번, 동시접수 시 중복번호 부여 → 시스템 정렬로 번호 수정될 수 있음"
         },
         {
@@ -2594,11 +2594,11 @@
           "quota_corporate": 0,
           "quota_taxi": 2,
           "quota_general": 47,
-          "registered_total": 66,
+          "registered_total": 69,
           "registered_priority": 13,
           "registered_corporate": 2,
           "registered_taxi": 0,
-          "registered_general": 51,
+          "registered_general": 54,
           "delivered_total": 49,
           "delivered_priority": 6,
           "delivered_corporate": 1,
@@ -4078,11 +4078,11 @@
           "quota_corporate": 0,
           "quota_taxi": 108,
           "quota_general": 2262,
-          "registered_total": 2314,
+          "registered_total": 2306,
           "registered_priority": 370,
           "registered_corporate": 76,
           "registered_taxi": 87,
-          "registered_general": 1781,
+          "registered_general": 1773,
           "delivered_total": 1968,
           "delivered_priority": 310,
           "delivered_corporate": 64,
@@ -4519,8 +4519,8 @@
         }
       ],
       "success": true,
-      "attempts": 2,
-      "timestamp": "2026-09-13T08:01:41.878Z"
+      "attempts": 1,
+      "timestamp": "2026-09-13T08:11:00.967Z"
     }
   ]
 }
