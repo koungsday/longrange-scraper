@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-14T09:41:06.859Z",
+  "timestamp": "2026-09-14T09:51:05.817Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1843,16 +1843,16 @@
           "registered_corporate": 5,
           "registered_taxi": 0,
           "registered_general": 86,
-          "delivered_total": 99,
+          "delivered_total": 100,
           "delivered_priority": 17,
           "delivered_corporate": 4,
           "delivered_taxi": 0,
-          "delivered_general": 78,
-          "remaining_total": 63,
+          "delivered_general": 79,
+          "remaining_total": 62,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 10,
-          "remaining_general": 57,
+          "remaining_general": 56,
           "selected_total": 109,
           "selectedRemaining_total": 53,
           "note": "☆신청기간☆&#xa; -승용:  9월 3일(목) 10:00 ~ &#xa; -화물 , 승합 : 9월 3일(목) 10:30 ~ &#xa; &#xa; ☆승용 18대, 화물 10대, 승합4대 예정&#xa; ☆승용,화물은 추경3, 승합은 본공고로 신청하셔야 합니다☆&#xa; &#xa; -서류자격이 맞으면 대상자 선정 1.2배까지 자격부여 해드리고 있습니다. &#xa; 자격부여는 대상자 선정이 아닙니다. 지원가능확인요청 넣은 순서대로 대상자 선정 진행합니다.&#xa; 대상자 선정 완료 후 취소물량이 나올때마다 지원대상가능확인요청 넣은 순서대로 순차적으로 추가 대상자선정 진행합니다.&#xa; -대상자 선정 후 10일이내 미출고 시 - 지원취소"
@@ -3141,8 +3141,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 1,
           "remaining_general": 15,
-          "selected_total": 86,
-          "selectedRemaining_total": 4,
+          "selected_total": 97,
+          "selectedRemaining_total": 0,
           "note": "*전기승용 접수마감되었습니다.(2026. 9. 14. 10:06)&#xa; *임시저장 기능 활성화 : (전기승용)9/14 09:00~&#xa; *사업물량의 150%에 해당하는 물량 접수 시, 접수 마감 처리 함&#xa; *신청서 내 모든 서명은 일치해야 하며 서명이 불일치 및 식별 불가한 경우 신청이 반려됨"
         },
         {
@@ -4503,9 +4503,9 @@
           "registered_corporate": 59323,
           "registered_taxi": 908,
           "registered_general": 1167,
-          "delivered_total": 44536,
+          "delivered_total": 44556,
           "delivered_priority": 18,
-          "delivered_corporate": 43090,
+          "delivered_corporate": 43110,
           "delivered_taxi": 599,
           "delivered_general": 829,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-14T09:41:06.792Z"
+      "timestamp": "2026-09-14T09:51:05.665Z"
     }
   ]
 }
