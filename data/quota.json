@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-14T09:31:13.130Z",
+  "timestamp": "2026-09-14T09:41:06.859Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -163,16 +163,16 @@
           "registered_corporate": 57,
           "registered_taxi": 149,
           "registered_general": 1462,
-          "delivered_total": 2317,
+          "delivered_total": 2318,
           "delivered_priority": 703,
           "delivered_corporate": 56,
           "delivered_taxi": 142,
-          "delivered_general": 1416,
+          "delivered_general": 1417,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 310,
+          "remaining_general": 309,
           "selected_total": 2381,
           "selectedRemaining_total": 0,
           "note": "<< 2026년 하반기 전기자동차 보급사업 접수 안내 >>    **하반기 공고 '추경1 첨부파일에 있습니다&#xa; ★★ '하반기 전기자동차 구매지원 신청서 2페이지 유의사항 일부 수정'에 따라 하반기 공고문에 첨부된 서식으로 신청하여야 하며, 등본 및 초본 등 제출서류는 신청일 기준 30일이내 발급된 서류만 인정 ★★&#xa; ****전기승용 접수번호 1491번, 화물 259번부터 시작입니다.****&#xa; *********지원가능요청은 26.7.8부터 가능합니다***************&#xa; - 보급대수: 전기승용 약 486대, 전기화물 약 80대, 전기승합 약 3대(대형기준), 전기승합(어린이) 약 1대&#xa; - 접수기간: 전기승합(7.2. 10:00) 전기승용(7.7. 10:00) 전기화물(7.14. 10:00) ~ 예산소진시까지&#xa;   *차종별 보조금 차등지원 및 사업여건에 따라 변동될 수 있음&#xa; - 지원대상: 신청일 기준 30일간 연속하여 대전시에 주소를 둔 개인, 법인 등&#xa; * 대상자 선정은 자동차 출고 등록 순&#xa; * 지원신청서의 빠른 승인을 위해 독촉 전화문의는 자제 부탁드립니다.&#xa; * 자세한 사항은 공고문 참고하여 주시기 바랍니다."
@@ -3141,8 +3141,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 1,
           "remaining_general": 15,
-          "selected_total": 77,
-          "selectedRemaining_total": 13,
+          "selected_total": 86,
+          "selectedRemaining_total": 4,
           "note": "*전기승용 접수마감되었습니다.(2026. 9. 14. 10:06)&#xa; *임시저장 기능 활성화 : (전기승용)9/14 09:00~&#xa; *사업물량의 150%에 해당하는 물량 접수 시, 접수 마감 처리 함&#xa; *신청서 내 모든 서명은 일치해야 하며 서명이 불일치 및 식별 불가한 경우 신청이 반려됨"
         },
         {
@@ -4503,9 +4503,9 @@
           "registered_corporate": 59323,
           "registered_taxi": 908,
           "registered_general": 1167,
-          "delivered_total": 44534,
+          "delivered_total": 44536,
           "delivered_priority": 18,
-          "delivered_corporate": 43088,
+          "delivered_corporate": 43090,
           "delivered_taxi": 599,
           "delivered_general": 829,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-14T09:31:13.024Z"
+      "timestamp": "2026-09-14T09:41:06.792Z"
     }
   ]
 }
