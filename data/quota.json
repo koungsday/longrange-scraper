@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-14T03:01:15.458Z",
+  "timestamp": "2026-09-14T03:11:03.795Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -313,8 +313,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 368,
-          "selected_total": 829,
-          "selectedRemaining_total": 80,
+          "selected_total": 830,
+          "selectedRemaining_total": 79,
           "note": "★★하반기 추경에 따른 신청 승용 마감(2026년 9월 14일 오전 10시 10분)★★&#xa; ★하반기 추경에 따른 신청 일정(승용, 화물)★&#xa; - 승용: 2026년 9월 14일 오전 10시 (108대)&#xa; - 화물: 2026년 9월 17일 오전 10시 (47대)&#xa; 해당 추경에 따른 전기자동차 승용 신청접수는 신청번호 1058번부터 시작입니다."
         },
         {
@@ -970,11 +970,11 @@
           "quota_corporate": 10,
           "quota_taxi": 14,
           "quota_general": 386,
-          "registered_total": 440,
+          "registered_total": 442,
           "registered_priority": 102,
           "registered_corporate": 32,
           "registered_taxi": 29,
-          "registered_general": 277,
+          "registered_general": 279,
           "delivered_total": 286,
           "delivered_priority": 66,
           "delivered_corporate": 25,
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 61318,
+          "registered_total": 61288,
           "registered_priority": 28,
-          "registered_corporate": 59224,
+          "registered_corporate": 59194,
           "registered_taxi": 909,
           "registered_general": 1157,
           "delivered_total": 44433,
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 29172,
-          "selected_total": 48343,
+          "selected_total": 48323,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-09-14T03:01:15.260Z"
+      "timestamp": "2026-09-14T03:11:03.744Z"
     }
   ]
 }
