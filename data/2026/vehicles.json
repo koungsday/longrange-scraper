@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-09-22T00:51:07.550Z",
-  "total_vehicles": 117,
+  "timestamp": "2026-09-22T02:11:03.716Z",
+  "total_vehicles": 122,
   "vehicles": {
     "현대자동차___GV60 스탠다드 2WD 19인치": {
       "type": "일반승용",
@@ -1055,6 +1055,51 @@
       "convNational": 880000,
       "battery": ",",
       "range": ","
+    },
+    "기아___EV5 스탠다드 2WD 18인치": {
+      "type": "일반승용",
+      "manufacturer": "기아",
+      "model": "EV5 스탠다드 2WD 18인치",
+      "national": 4560000,
+      "convNational": 0,
+      "battery": "",
+      "range": ""
+    },
+    "테슬라코리아___Model 3 RWD (2027)": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model 3 RWD (2027)",
+      "national": 2170000,
+      "convNational": 0,
+      "battery": "",
+      "range": ""
+    },
+    "테슬라코리아___Model Y L": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model Y L",
+      "national": 2150000,
+      "convNational": 0,
+      "battery": "",
+      "range": ""
+    },
+    "폴스타오토모티브코리아___Polestar 3 Rear Motor": {
+      "type": "일반승용",
+      "manufacturer": "폴스타오토모티브코리아",
+      "model": "Polestar 3 Rear Motor",
+      "national": 1620000,
+      "convNational": 0,
+      "battery": "",
+      "range": ""
+    },
+    "BMW___iX3 50 xDrive SE": {
+      "type": "일반승용",
+      "manufacturer": "BMW",
+      "model": "iX3 50 xDrive SE",
+      "national": 2850000,
+      "convNational": 0,
+      "battery": "",
+      "range": ""
     }
   }
 }
