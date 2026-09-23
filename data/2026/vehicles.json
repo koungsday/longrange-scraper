@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-09-23T02:11:05.099Z",
-  "total_vehicles": 121,
+  "timestamp": "2026-09-23T02:31:45.755Z",
+  "total_vehicles": 122,
   "vehicles": {
     "현대자동차___GV60 스탠다드 2WD 19인치": {
       "type": "일반승용",
@@ -1089,6 +1089,15 @@
       "model": "iX3 50 xDrive SE",
       "national": 2850000,
       "convNational": 570000,
+      "battery": ".",
+      "range": "."
+    },
+    "테슬라코리아___Model Y premium L AWD": {
+      "type": "일반승용",
+      "manufacturer": "테슬라코리아",
+      "model": "Model Y premium L AWD",
+      "national": 2150000,
+      "convNational": 430000,
       "battery": ".",
       "range": "."
     }
