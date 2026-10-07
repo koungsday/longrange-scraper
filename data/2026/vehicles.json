@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-09-28T01:43:14.960Z",
+  "timestamp": "2026-10-07T05:51:08.102Z",
   "total_vehicles": 122,
   "vehicles": {
     "현대자동차___GV60 스탠다드 2WD 19인치": {
@@ -648,8 +648,8 @@
       "model": "MINI Countryman SE ALL4",
       "national": 2030000,
       "convNational": 410000,
-      "battery": "리튬이온(66.4kWh)",
-      "range": "(상온) 344km (저온) 268km"
+      "battery": "",
+      "range": ""
     },
     "BMW___MINI Countryman E": {
       "type": "일반승용",
@@ -657,8 +657,8 @@
       "model": "MINI Countryman E",
       "national": 2170000,
       "convNational": 430000,
-      "battery": "리튬이온(66.4kWh)",
-      "range": "(상온) 367km (저온) 286km"
+      "battery": "",
+      "range": ""
     },
     "BMW___MINI Aceman SE": {
       "type": "일반승용",
@@ -783,8 +783,8 @@
       "model": "New MINI Countryman E",
       "national": 2380000,
       "convNational": 480000,
-      "battery": "",
-      "range": ""
+      "battery": "리튬이온(66.4kWh)",
+      "range": "(상온) 367km (저온) 286km"
     },
     "BMW___New MINI Countryman SE ALL4": {
       "type": "일반승용",
@@ -792,8 +792,8 @@
       "model": "New MINI Countryman SE ALL4",
       "national": 2250000,
       "convNational": 450000,
-      "battery": "",
-      "range": ""
+      "battery": "리튬이온(66.4kWh)",
+      "range": "(상온) 344km (저온) 268km"
     },
     "테슬라코리아___Model 3 Performance": {
       "type": "일반승용",
