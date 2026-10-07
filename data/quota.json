@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-07T09:41:06.634Z",
+  "timestamp": "2026-10-07T09:51:11.658Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1115,12 +1115,12 @@
           "registered_corporate": 6,
           "registered_taxi": 58,
           "registered_general": 865,
-          "delivered_total": 1022,
-          "delivered_priority": 331,
+          "delivered_total": 1023,
+          "delivered_priority": 332,
           "delivered_corporate": 4,
           "delivered_taxi": 52,
           "delivered_general": 635,
-          "remaining_total": 678,
+          "remaining_total": 677,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -2217,8 +2217,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 14,
           "remaining_general": 44,
-          "selected_total": 133,
-          "selectedRemaining_total": 13,
+          "selected_total": 135,
+          "selectedRemaining_total": 11,
           "note": "접수날짜: 2026. 10. 7.(수) 10:00&#xa; 자세한 사항은 붙임 공고 파일을 참고해 주시기 바랍니다.&#xa; * 테슬라 Model 3 Premium Long Range RWD는 차량가격 인상에 따라 계약일 별 국비 보조금이 다음과 같이 적용됩니다.&#xa;  - 차량가격 5,999만원(7월 1일 이후 계약): 국비 210만원&#xa;  - 차량가격 5,299만원(6월 30일 이전 계약): 국비 420만원&#xa; (신규접수번호 142번부터)"
         },
         {
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-07T09:41:06.501Z"
+      "timestamp": "2026-10-07T09:51:11.595Z"
     }
   ]
 }
