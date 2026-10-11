@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-11T08:51:05.546Z",
+  "timestamp": "2026-10-11T09:01:22.959Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3261,11 +3261,11 @@
           "sido": "전남",
           "region": "완도군",
           "vehicleType": "전기승용",
-          "quota_total": 107,
+          "quota_total": 96,
           "quota_priority": 3,
           "quota_corporate": 0,
           "quota_taxi": 0,
-          "quota_general": 104,
+          "quota_general": 93,
           "registered_total": 130,
           "registered_priority": 41,
           "registered_corporate": 3,
@@ -3276,11 +3276,11 @@
           "delivered_corporate": 2,
           "delivered_taxi": 5,
           "delivered_general": 56,
-          "remaining_total": 19,
+          "remaining_total": 8,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 48,
+          "remaining_general": 37,
           "selected_total": 114,
           "selectedRemaining_total": 0,
           "note": "승용차 자격부여는 검토는 오후 3시부터 시작"
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-11T08:51:05.487Z"
+      "timestamp": "2026-10-11T09:01:22.902Z"
     }
   ]
 }
