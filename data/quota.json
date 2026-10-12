@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-12T23:01:22.966Z",
+  "timestamp": "2026-10-12T23:11:14.702Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2273,7 +2273,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 13,
-          "selected_total": 308,
+          "selected_total": 313,
           "selectedRemaining_total": 0,
           "note": "☆ 접 수 : 2026. 10. 12.(월) 10:00~18:00&#xa; ☆ 지원가능확인요청일 : 2026. 10. 14.(수) 16:00 ~&#xa; ☆사업물량은 15대(일반 14대, 공공기관 1대) &#xa; ☆대상자선정방식 : 출고,등록순(지원시스템 지원가능확인요청 순)"
         },
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 67304,
+          "registered_total": 67306,
           "registered_priority": 37,
-          "registered_corporate": 64958,
+          "registered_corporate": 64960,
           "registered_taxi": 975,
           "registered_general": 1334,
           "delivered_total": 45619,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-12T23:01:22.914Z"
+      "timestamp": "2026-10-12T23:11:14.642Z"
     }
   ]
 }
