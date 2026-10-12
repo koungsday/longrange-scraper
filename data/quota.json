@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-12T09:51:10.206Z",
+  "timestamp": "2026-10-12T10:01:24.881Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,11 +18,11 @@
           "quota_corporate": 0,
           "quota_taxi": 1650,
           "quota_general": 15352,
-          "registered_total": 18571,
+          "registered_total": 18569,
           "registered_priority": 5295,
-          "registered_corporate": 573,
+          "registered_corporate": 572,
           "registered_taxi": 1684,
-          "registered_general": 11019,
+          "registered_general": 11018,
           "delivered_total": 16166,
           "delivered_priority": 4775,
           "delivered_corporate": 507,
@@ -2525,8 +2525,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 4,
           "remaining_general": 129,
-          "selected_total": 296,
-          "selectedRemaining_total": 9,
+          "selected_total": 298,
+          "selectedRemaining_total": 7,
           "note": "★★★★★하반기 전기차 보급사업 시행★★★★★&#xa; ☆★☆★☆접수순 아님☆★☆★☆&#xa; 지원가능확인요청번호 승용 364번, 화물 118번 시작 예상됨.&#xa; &#xa; 1. 공고대수 : 승용 75대(일반 71대, 택시 4대), 화물 32대 (일반 30대, 택배 2대)&#xa; ※ 차종별 보조금은 상이하며, 지원금액 및 예산 집행 상황에 따라 보급물량은 조정될 수 있음.&#xa; &#xa; 2. 접수기간&#xa;   - 승용 : 2026. 10. 12.(월) 09:00 ~ 10. 14.(수) 18:00&#xa;   - 화물 : 2026. 10. 16.(금) 09:00 ~ 10. 20.(화) 18:00&#xa;     ※ 접수기간 내 미보완 시 자격부여 불가&#xa; &#xa; 3. 지원가능 확인요청일&#xa;   - 승용 : 2026. 10. 15.(목) 14:00&#xa;   - 화물 : 2026. 10. 21.(수) 14:00&#xa; &#xa; 4. 선정방법 : 출고등록순&#xa; &#xa; ★ 자세한 사항은 공고문 참고&#xa; ★ 전환지원금은 개인(개인사업자 불가)만 신청가능하며 판매 및 폐차관련서류는 보조금 지급신청전까지 제출(대리점에서는 전환지원금 Y로 체크)&#xa; ★ 빠른 처리를 위한 단순 접수알림, 처리 독촉 전화 자제 요망&#xa; * 선정 이후 공동명의 불가능(2년 제한)"
         },
         {
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 67306,
+          "registered_total": 67301,
           "registered_priority": 37,
-          "registered_corporate": 64960,
+          "registered_corporate": 64955,
           "registered_taxi": 975,
           "registered_general": 1334,
           "delivered_total": 45619,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-12T09:51:10.143Z"
+      "timestamp": "2026-10-12T10:01:24.804Z"
     }
   ]
 }
