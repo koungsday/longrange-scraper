@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-14T03:31:12.347Z",
+  "timestamp": "2026-10-14T03:41:14.211Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -79,12 +79,12 @@
           "registered_corporate": 114,
           "registered_taxi": 520,
           "registered_general": 3337,
-          "delivered_total": 4447,
-          "delivered_priority": 1379,
+          "delivered_total": 4448,
+          "delivered_priority": 1380,
           "delivered_corporate": 86,
           "delivered_taxi": 391,
           "delivered_general": 2591,
-          "remaining_total": 740,
+          "remaining_total": 739,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -2749,8 +2749,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 106,
-          "selected_total": 159,
-          "selectedRemaining_total": 42,
+          "selected_total": 160,
+          "selectedRemaining_total": 41,
           "note": "2026년 전기자동차(승용) 보급사업(3차)  공고 안내&#xa; &#xa; ○ 신청기간 : 2026 10. 14. ~ 11. 27. (평일 9 ~18시) &#xa; ☆★○ 지원가능 확인요청 : 2026. 10. 19. ~ 11. 27.  (평일 9 ~18시)&#xa; ○ 보급대수 : 50대&#xa; ○ 선정방법 : 지원가능 확인요청 순(출고등록순)&#xa;   ※ 보급대수는 차량별 보조금 차등지원에 따라 예산범위 내에서 변동될 수 있음"
         },
         {
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 67570,
+          "registered_total": 67571,
           "registered_priority": 37,
-          "registered_corporate": 65178,
+          "registered_corporate": 65179,
           "registered_taxi": 997,
           "registered_general": 1358,
           "delivered_total": 45732,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-14T03:31:12.285Z"
+      "timestamp": "2026-10-14T03:41:14.152Z"
     }
   ]
 }
