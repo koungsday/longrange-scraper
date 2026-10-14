@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-10-08T06:51:13.739Z",
-  "total_vehicles": 122,
+  "timestamp": "2026-10-14T07:31:18.179Z",
+  "total_vehicles": 123,
   "vehicles": {
     "현대자동차___GV60 스탠다드 2WD 19인치": {
       "type": "일반승용",
@@ -1098,6 +1098,15 @@
       "model": "Model Y premium L AWD",
       "national": 2150000,
       "convNational": 430000,
+      "battery": ".",
+      "range": "."
+    },
+    "볼보자동차코리아___ES90 Twin Motor": {
+      "type": "일반승용",
+      "manufacturer": "볼보자동차코리아",
+      "model": "ES90 Twin Motor",
+      "national": 1740000,
+      "convNational": 350000,
       "battery": ".",
       "range": "."
     }
