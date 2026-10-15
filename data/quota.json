@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-15T09:41:11.388Z",
+  "timestamp": "2026-10-15T09:51:09.240Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -107,13 +107,13 @@
           "registered_corporate": 150,
           "registered_taxi": 335,
           "registered_general": 5667,
-          "delivered_total": 8586,
-          "delivered_priority": 2817,
+          "delivered_total": 8587,
+          "delivered_priority": 2818,
           "delivered_corporate": 139,
           "delivered_taxi": 321,
           "delivered_general": 5309,
-          "remaining_total": 720,
-          "remaining_priority": 47,
+          "remaining_total": 719,
+          "remaining_priority": 46,
           "remaining_corporate": 0,
           "remaining_taxi": 55,
           "remaining_general": 647,
@@ -789,8 +789,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 553,
-          "selected_total": 1599,
-          "selectedRemaining_total": 55,
+          "selected_total": 1600,
+          "selectedRemaining_total": 54,
           "note": "[2026년 하반기 전기자동차 보급사업 추가 공고]&#xa; ○ 보급대수: 총 135대(승용 90대, 화물 45대)&#xa; ○ 접수기간&#xa;   - (화물) 2026. 10. 7.(수) 10:00 ~ 11. 30.(월) 18:00&#xa;   - (승용) 2026. 10. 15.(목) 10:00 ~ 11. 30.(월) 18:00&#xa; ○ 신청대상: 신청서 접수일 이전 연속하여 파주시에 60일 이상 주소를 둔 자&#xa; ○ 신청방법: 제작.수입사에서 무공해차 통합누리집를 통해 신청&#xa; ○ 선정기준&#xa;   - (자격부여) 신청서 접수순&#xa;   - (대상자 선정) 출고.등록순&#xa; ★ 세부 지원내용 및 신청방법 등은 공고문을 확인하여 주시기 바랍니다.&#xa; ★ '추경2차'에 첨부한 공고문을 확인하고 신청하여 주시기 바라며, 공고 미숙지로 인한 불이익은 파주시에서 책임지지 않습니다.&#xa;   ☞ 해당 공고문에 있는 서식 사용(타 지자체 서식 X)&#xa; ★ 전기승용은 2032번, 전기화물은 476번부터 시작합니다.&#xa; ★ 동시에 접수되어 신청번호가 중복될 경우, 번호 재정렬에 따라 신청번호가 달라질 수 있습니다.&#xa; <추경1 미선정자는 기존 신청 건 취소 후 ‘추경2’로 재신청해주시기 바랍니다>"
         },
         {
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 68295,
+          "registered_total": 68296,
           "registered_priority": 39,
-          "registered_corporate": 65855,
+          "registered_corporate": 65856,
           "registered_taxi": 1029,
           "registered_general": 1372,
           "delivered_total": 45886,
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 29153,
-          "selected_total": 53017,
+          "selected_total": 53018,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-15T09:41:11.268Z"
+      "timestamp": "2026-10-15T09:51:09.183Z"
     }
   ]
 }
