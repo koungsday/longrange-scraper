@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-18T22:51:04.096Z",
+  "timestamp": "2026-10-18T23:01:22.556Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3243,16 +3243,16 @@
           "registered_corporate": 9,
           "registered_taxi": 3,
           "registered_general": 191,
-          "delivered_total": 170,
+          "delivered_total": 171,
           "delivered_priority": 29,
           "delivered_corporate": 8,
           "delivered_taxi": 3,
-          "delivered_general": 130,
-          "remaining_total": 68,
+          "delivered_general": 131,
+          "remaining_total": 67,
           "remaining_priority": 3,
           "remaining_corporate": 0,
           "remaining_taxi": 1,
-          "remaining_general": 72,
+          "remaining_general": 71,
           "selected_total": 251,
           "selectedRemaining_total": 0,
           "note": "★대상자 선정 완료됐습니다★&#xa; 지원가능요청번호 승용 285번, 화물 94번까지 입니다. &#xa; ====================================&#xa; ※  선정대상차량이 10일내 출고 하지 않으면 차순위에 부여&#xa; (대상자에게 개별 연락)"
@@ -4503,9 +4503,9 @@
           "registered_corporate": 66474,
           "registered_taxi": 1049,
           "registered_general": 1384,
-          "delivered_total": 45988,
+          "delivered_total": 45991,
           "delivered_priority": 19,
-          "delivered_corporate": 44495,
+          "delivered_corporate": 44498,
           "delivered_taxi": 626,
           "delivered_general": 848,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-18T22:51:03.848Z"
+      "timestamp": "2026-10-18T23:01:22.456Z"
     }
   ]
 }
