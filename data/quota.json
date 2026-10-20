@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-20T23:11:05.898Z",
+  "timestamp": "2026-10-20T23:21:02.158Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -863,8 +863,8 @@
           "registered_corporate": 55,
           "registered_taxi": 19,
           "registered_general": 1109,
-          "delivered_total": 1725,
-          "delivered_priority": 593,
+          "delivered_total": 1726,
+          "delivered_priority": 594,
           "delivered_corporate": 50,
           "delivered_taxi": 19,
           "delivered_general": 1063,
@@ -3462,11 +3462,11 @@
           "quota_corporate": 0,
           "quota_taxi": 23,
           "quota_general": 1172,
-          "registered_total": 1927,
+          "registered_total": 1926,
           "registered_priority": 651,
           "registered_corporate": 37,
           "registered_taxi": 84,
-          "registered_general": 1155,
+          "registered_general": 1154,
           "delivered_total": 1226,
           "delivered_priority": 418,
           "delivered_corporate": 23,
@@ -3477,7 +3477,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 439,
-          "selected_total": 1926,
+          "selected_total": 1925,
           "selectedRemaining_total": 0,
           "note": "★ 구미시 전기차 보급사업 승용, 화물, 승합 마감"
         },
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 69792,
+          "registered_total": 69795,
           "registered_priority": 40,
-          "registered_corporate": 67267,
+          "registered_corporate": 67270,
           "registered_taxi": 1068,
           "registered_general": 1417,
           "delivered_total": 46278,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-20T23:11:05.828Z"
+      "timestamp": "2026-10-20T23:21:02.108Z"
     }
   ]
 }
