@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-23T08:51:13.796Z",
+  "timestamp": "2026-10-23T09:01:29.627Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -18,11 +18,11 @@
           "quota_corporate": 0,
           "quota_taxi": 1650,
           "quota_general": 15352,
-          "registered_total": 18953,
-          "registered_priority": 5497,
+          "registered_total": 18958,
+          "registered_priority": 5500,
           "registered_corporate": 590,
           "registered_taxi": 1669,
-          "registered_general": 11197,
+          "registered_general": 11199,
           "delivered_total": 17516,
           "delivered_priority": 5120,
           "delivered_corporate": 543,
@@ -79,16 +79,16 @@
           "registered_corporate": 113,
           "registered_taxi": 517,
           "registered_general": 3272,
-          "delivered_total": 5150,
+          "delivered_total": 5151,
           "delivered_priority": 1593,
           "delivered_corporate": 105,
           "delivered_taxi": 444,
-          "delivered_general": 3008,
-          "remaining_total": 37,
+          "delivered_general": 3009,
+          "remaining_total": 36,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1399,
+          "remaining_general": 1398,
           "selected_total": 5614,
           "selectedRemaining_total": 0,
           "note": "*2026년 전기자동차 민간보급사업 안내 (4차)*  : 마감&#xa; &#xa;   - 보급물량(마감) : 1,680대(승용차 1,100대, 화물차 500대, 소형승합차 80대)&#xa;      * 보급수량은 차종별 보조금 차등지원 및 차종별 구매수요에 따라 가감될 수 있습니다.&#xa; &#xa; ★ 빠른 처리를 위해 단순 문의 및 처리 독촉 전화는 자제해주시길 바랍니다. ★"
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 70437,
+          "registered_total": 70438,
           "registered_priority": 41,
-          "registered_corporate": 67829,
+          "registered_corporate": 67830,
           "registered_taxi": 1109,
           "registered_general": 1458,
           "delivered_total": 46607,
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 29140,
-          "selected_total": 60092,
+          "selected_total": 60094,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-23T08:51:13.740Z"
+      "timestamp": "2026-10-23T09:01:29.561Z"
     }
   ]
 }
