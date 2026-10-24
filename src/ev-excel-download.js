@@ -38,7 +38,20 @@ async function downloadExcel(page, { timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
       t.click();
       return true;
     });
-    if (!clicked) throw new Error("'Excel 다운로드' 버튼을 찾지 못했습니다 (페이지가 또 바뀌었을 수 있음)");
+    if (!clicked) {
+      /* ★"페이지가 또 바뀌었을 수 있음" 만 남기면 오진한다 — 실제 원인은 대개 사이트 5xx 다.
+         무엇을 받았는지 수치로 남긴다: 정상 페이지는 후보 188개·본문 1,300자 안팎,
+         오류 페이지(1.5KB)는 둘 다 한 자릿수~수십이라 로그만 보고 바로 갈린다. */
+      const diag = await page.evaluate(() => ({
+        title: document.title,
+        candidates: document.querySelectorAll('button, a, input[type=button]').length,
+        bodyLen: ((document.body && document.body.innerText) || '').length,
+      })).catch(() => ({ title: '?', candidates: -1, bodyLen: -1 }));
+      throw new Error(
+        `'Excel 다운로드' 버튼 없음 — title="${diag.title}" 후보 ${diag.candidates}개 본문 ${diag.bodyLen}자 `
+        + '(정상은 후보 188개 안팎. 훨씬 적으면 사이트 오류 페이지다)'
+      );
+    }
 
     // .crdownload 가 사라지고 .xlsx 가 안정될 때까지 기다린다.
     const deadline = Date.now() + timeoutMs;

@@ -73,9 +73,28 @@ t('두 고성군이 동시에 바뀌면 둘 다', () => {
   return eq(codes, ['4282', '4882']) || `codes=${codes}`;
 });
 
-t('최초 실행(이전값 없음)은 전 지역', () => {
+/* ★이 테스트는 2026-10-24 에 기대값을 **뒤집었다.** 예전엔 '전 지역' 이 맞다고 봤는데
+   그 동작이 프로덕션에서 사고를 냈다 — 아래 두 케이스가 그 사고의 회귀 방지다. */
+t('★이전값 없음(null)이면 통보하지 않는다 — 전 지역 통보는 상한에 걸려 통째로 버려진다', () => {
   const { codes } = computeChangedCodes(null, quota, keyToCode);
-  return codes.length >= 160 || `codes=${codes.length}곳 — 전 지역이어야 한다`;
+  return codes.length === 0 || `codes=${codes.length}곳 — 0이어야 한다(161곳이면 capped 폭탄)`;
+});
+
+t('★★빈 quota.json(rows=0)을 이전값으로 줘도 통보하지 않는다 — capped-161 의 실제 원인', () => {
+  /* 스크랩 실패 런이 커밋하는 모양 그대로: data[0].quotaData 가 빈 배열.
+     실측(2026-10-24 01:20 커밋)도 정확히 이 모양이었고, 고치기 전엔 여기서 161이 나왔다. */
+  const empty = clone(quota);
+  empty.data[0].quotaData = [];
+  const { codes } = computeChangedCodes(empty, quota, keyToCode);
+  return codes.length === 0 || `codes=${codes.length}곳 — 0이어야 한다(고치기 전 161곳)`;
+});
+
+t('정상 이전값이면 변경 감지는 그대로 동작한다 — 가드가 기능을 죽이지 않았나', () => {
+  const n = clone(quota);
+  const row = rowOf(n, '서울', '서울특별시');
+  row.remaining_total = (Number(row.remaining_total) || 0) + 7;
+  const { codes } = computeChangedCodes(quota, n, keyToCode);
+  return codes.length === 1 || `codes=${codes.length}곳 — 1곳이어야 한다`;
 });
 
 console.log('\n■ 공고 계열 — 저장된 기준선과 비교 (구 로직이 통째로 놓치던 것)');

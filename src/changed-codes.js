@@ -50,11 +50,27 @@ function regionSignatures(quotaJson) {
  * 이전 quota.json 대비 변경된 지역만 산출 → vw-k 온디맨드 재검증 대상 코드.
  * - 이전에 없던 지역(신규)·시그니처가 달라진 지역만 changed.
  * - nameToCode(donut)로 지역명→코드. 매핑 실패(코드 0/공백)는 제외(fallback revalidate가 커버).
- * - 이전값 없음(최초 실행)이면 전 지역 changed(1회성, 정상).
+ * - **이전값이 비면 통보하지 않는다**(아래 ★).
  */
 function computeChangedCodes(oldQuota, newQuota, keyToCode) {
   const oldSigs = regionSignatures(oldQuota);
   const newSigs = regionSignatures(newQuota);
+
+  /* ★이전값이 비었으면 빈 배열 — 예전엔 '전 지역 changed(1회성, 정상)' 로 뒀다.
+     그 가정이 틀렸다. 1회성이 아니라 **스크랩이 실패할 때마다** 재발한다:
+     실패 런은 rows=0 인 quota.json 을 커밋하고(검증 실패여도 커밋은 한다),
+     다음 성공 런이 그걸 이전값으로 읽어 161곳 전부 '변경' 으로 본다.
+     그러면 finalizeCodes 의 상한(60)에 걸려 **그 사이클 통보가 통째로 버려진다**
+     — 재검증이 아예 안 돌고 페이지는 24h 시간 폴백까지 묵는다.
+     실측(2026-10-23~24, webhook-status 이력): capped-161 이 20시간에 11회.
+     rows=0 커밋 직후 런이 6/6 전부 capped — 시점이 정확히 일치했다.
+     재현: computeChangedCodes(빈 quota, 정상 quota) → codes 161.
+     ★공고 계열(auxChangedCodes)은 이미 같은 이유로 '기준선 없으면 빈 배열' 이다.
+       물량 쪽에만 이 가드가 없던 비대칭을 맞춘다.
+     ★놓치는 것: 진짜 최초 실행 1회. 그건 24h 폴백이 덮는다 —
+       멀쩡한 사이클을 통째로 버리는 쪽이 훨씬 비싸다. */
+  if (!oldSigs.size) return { codes: [], changedNames: [] };
+
   const changedKeys = [];
   for (const [key, sig] of newSigs) {
     if (oldSigs.get(key) !== sig) changedKeys.push(key);
