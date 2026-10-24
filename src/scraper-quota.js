@@ -68,10 +68,22 @@ async function scrapeRegionWithRetry(browser, region) {
       // ★2026-08-16 개편 — 이 페이지에서 <table> 이 사라졌다(AG Grid 가상 스크롤).
       //   161건 중 화면에 보이는 10건 남짓만 DOM 에 있어 HTML 파싱이 성립하지 않는다.
       //   사이트가 제공하는 「Excel 다운로드」로 받는다 — 161건이 한 번에 온다.
-      await page.goto(targetUrl, {
+      const res = await page.goto(targetUrl, {
         waitUntil: 'networkidle2',
         timeout: 30000
       });
+
+      /* ★goto 는 5xx 를 실패로 보지 않는다 — 오류 페이지를 '정상 로드' 로 넘긴다.
+         그러면 다음 줄의 downloadExcel 이 버튼을 못 찾고
+         "페이지가 또 바뀌었을 수 있음" 을 던져 **서버 장애가 페이지 개편으로 오진된다.**
+         실측(2026-10-24): 같은 URL GET 15회 중 1회가 HTTP 500,
+         본문 1,578B 짜리 "페이지를 표시할 수 없습니다" 였다(버튼 당연히 없음).
+         같은 시각 정상 응답은 1.04MB 이고 #btnExcel 도 그대로 있었다 — 페이지는 안 바뀌었다.
+         상태코드를 여기서 보고 사유를 **그대로** 남긴다. 다음에 또 나면 바로 판정된다. */
+      if (res && !res.ok()) {
+        const len = res.headers()['content-length'] || '?';
+        throw new Error(`페이지가 HTTP ${res.status()} 응답 (본문 ${len}B) — 사이트 장애로 보인다(페이지 개편 아님)`);
+      }
 
       const buf = await downloadExcel(page, { timeoutMs: EXCEL_TIMEOUT_MS });
       const quotaData = parseQuotaXlsx(buf);
@@ -128,7 +140,10 @@ async function scrapeRegionWithRetry(browser, region) {
 
       if (attempt < MAX_RETRIES) {
         console.log(`   ⚠️ 재시도 ${attempt}/${MAX_RETRIES}: ${error.message}`);
-        await new Promise(resolve => setTimeout(resolve, 2000 * attempt));
+        /* ★2s·4s 로는 짧았다 — 재시도 3회가 같은 장애 구간에 전부 들어갔다.
+           실측: 실패 런의 시도 1·2·3 이 **전부 같은 오류**였다(500 이 몰려 터진다).
+           5s·20s 로 벌려 구간을 넘긴다. 10분 주기·30분 타임아웃이라 +25초는 안전하다. */
+        await new Promise(resolve => setTimeout(resolve, attempt === 1 ? 5000 : 20000));
         continue;
       } else {
         console.error(`   ❌ 최종 실패: ${error.message}`);
