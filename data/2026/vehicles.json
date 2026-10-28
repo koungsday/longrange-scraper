@@ -1,7 +1,7 @@
 {
   "year": 2026,
-  "timestamp": "2026-10-15T01:11:06.779Z",
-  "total_vehicles": 123,
+  "timestamp": "2026-10-28T00:21:07.006Z",
+  "total_vehicles": 124,
   "vehicles": {
     "현대자동차___GV60 스탠다드 2WD 19인치": {
       "type": "일반승용",
@@ -1109,6 +1109,15 @@
       "convNational": 970000,
       "battery": "리튬이온(49kWh)",
       "range": "(상온) 248km (저온) 227km"
+    },
+    "볼보자동차코리아___EX30 P5 LR": {
+      "type": "일반승용",
+      "manufacturer": "볼보자동차코리아",
+      "model": "EX30 P5 LR",
+      "national": 2630000,
+      "convNational": 530000,
+      "battery": "",
+      "range": ""
     }
   }
 }
