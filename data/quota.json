@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-29T09:31:15.225Z",
+  "timestamp": "2026-10-29T09:41:09.012Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -51,12 +51,12 @@
           "registered_corporate": 198,
           "registered_taxi": 1305,
           "registered_general": 4976,
-          "delivered_total": 8257,
-          "delivered_priority": 2420,
+          "delivered_total": 8258,
+          "delivered_priority": 2421,
           "delivered_corporate": 180,
           "delivered_taxi": 1120,
           "delivered_general": 4537,
-          "remaining_total": 372,
+          "remaining_total": 371,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -79,16 +79,16 @@
           "registered_corporate": 113,
           "registered_taxi": 515,
           "registered_general": 3260,
-          "delivered_total": 5313,
+          "delivered_total": 5314,
           "delivered_priority": 1639,
           "delivered_corporate": 107,
           "delivered_taxi": 450,
-          "delivered_general": 3117,
+          "delivered_general": 3118,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1290,
+          "remaining_general": 1289,
           "selected_total": 5598,
           "selectedRemaining_total": 0,
           "note": "*2026년 전기자동차 민간보급사업 안내 (4차)*  : 마감&#xa; &#xa;   - 보급물량(마감) : 1,680대(승용차 1,100대, 화물차 500대, 소형승합차 80대)&#xa;      * 보급수량은 차종별 보조금 차등지원 및 차종별 구매수요에 따라 가감될 수 있습니다.&#xa; &#xa; ★ 빠른 처리를 위해 단순 문의 및 처리 독촉 전화는 자제해주시길 바랍니다. ★"
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-29T09:31:15.173Z"
+      "timestamp": "2026-10-29T09:41:08.961Z"
     }
   ]
 }
