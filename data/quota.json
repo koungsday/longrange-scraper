@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-31T02:31:17.203Z",
+  "timestamp": "2026-10-31T02:41:07.096Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -107,12 +107,12 @@
           "registered_corporate": 151,
           "registered_taxi": 346,
           "registered_general": 5673,
-          "delivered_total": 9004,
-          "delivered_priority": 2952,
+          "delivered_total": 9005,
+          "delivered_priority": 2953,
           "delivered_corporate": 149,
           "delivered_taxi": 337,
           "delivered_general": 5566,
-          "remaining_total": 32,
+          "remaining_total": 31,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 25,
@@ -2039,16 +2039,16 @@
           "registered_corporate": 14,
           "registered_taxi": 16,
           "registered_general": 531,
-          "delivered_total": 551,
+          "delivered_total": 552,
           "delivered_priority": 179,
           "delivered_corporate": 10,
           "delivered_taxi": 15,
-          "delivered_general": 347,
-          "remaining_total": 2,
+          "delivered_general": 348,
+          "remaining_total": 1,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 162,
+          "remaining_general": 161,
           "selected_total": 819,
           "selectedRemaining_total": 0,
           "note": "승용 지원가능확인요청번호 852번까지 대상자선정완료&#xa; (13일 대상자 선정건 모두 출고완료, 추가 선정건 출고 진행중)&#xa; 취소물량 발생 시 대기순번에 따라 별도 연락드립니다.  &#xa; .&#xa; 승용차 접수 마감(10/8 18:00)"
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-10-31T02:31:17.140Z"
+      "timestamp": "2026-10-31T02:41:07.015Z"
     }
   ]
 }
