@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-02T12:21:08.238Z",
+  "timestamp": "2026-11-02T12:31:28.194Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3406,8 +3406,8 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 1205,
-          "registered_total": 1190,
-          "registered_priority": 382,
+          "registered_total": 1189,
+          "registered_priority": 381,
           "registered_corporate": 17,
           "registered_taxi": 37,
           "registered_general": 754,
@@ -3421,8 +3421,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 458,
-          "selected_total": 1190,
-          "selectedRemaining_total": 15,
+          "selected_total": 1189,
+          "selectedRemaining_total": 16,
           "note": "※ 승용,화물,이륜 : 마감 &#xa; (대상자선정완료, 취소건 발생시 추가선정예정)&#xa; ※ 승합 : 1대 가능"
         },
         {
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-02T12:21:08.171Z"
+      "timestamp": "2026-11-02T12:31:28.135Z"
     }
   ]
 }
