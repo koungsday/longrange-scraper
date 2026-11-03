@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-03T09:01:25.404Z",
+  "timestamp": "2026-11-03T09:11:08.220Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -1115,16 +1115,16 @@
           "registered_corporate": 5,
           "registered_taxi": 58,
           "registered_general": 845,
-          "delivered_total": 1159,
+          "delivered_total": 1160,
           "delivered_priority": 374,
           "delivered_corporate": 4,
           "delivered_taxi": 53,
-          "delivered_general": 728,
-          "remaining_total": 541,
+          "delivered_general": 729,
+          "remaining_total": 540,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 972,
+          "remaining_general": 971,
           "selected_total": 1175,
           "selectedRemaining_total": 525,
           "note": "-------------예산소진------------취소물량이 생기면 자격부여 진행-------------------------------&#xa; &#xa; <2026년 전기자동차 보급사업 안내(4차)>&#xa; ○ 신청기간&#xa;    - (승용) 2026. 9. 18.(금) 10:00 ~ 12. 11.(금) 18:00&#xa;    - (화물) 2026. 9. 21.(월) 10:00 ~ 12. 11.(금) 18:00   *예산소진 시 조기 마감&#xa; ○ 보급대수 : 550대(승용 500, 화물 50)  * 예산 범위 내에서 변동 될 수 있음  (연간 총 보급대수 1,947대)&#xa;  * 기타 자세한 내용 공고문 참조&#xa; &#xa;  * 대상자 선정 전 차량 출고(등록) 시 보조금 지급 불가하오니 주의하여 주시기 바랍니다.&#xa;  ** 전환지원금 관련 기존 차량 폐차, 판매는 지급신청 전까지 완료하시면 됩니다.(차량등록일로부터 10일 이내)&#xa;  *** 누리집에 표기된 잔여 대수는 실제 현황과 다를 수 있으니 유의하시기 바랍니다."
@@ -4498,14 +4498,14 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 70829,
+          "registered_total": 70830,
           "registered_priority": 43,
           "registered_corporate": 68169,
           "registered_taxi": 1134,
-          "registered_general": 1483,
-          "delivered_total": 48567,
+          "registered_general": 1484,
+          "delivered_total": 48568,
           "delivered_priority": 21,
-          "delivered_corporate": 46944,
+          "delivered_corporate": 46945,
           "delivered_taxi": 679,
           "delivered_general": 923,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-03T09:01:25.315Z"
+      "timestamp": "2026-11-03T09:11:08.156Z"
     }
   ]
 }
