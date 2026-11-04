@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "lastUpdated": "2026. 11. 4. AM 11:21:08 KST",
+  "lastUpdated": "2026. 11. 4. AM 11:31:14 KST",
   "regions": {
     "1100": {
       "name": "서울특별시",
@@ -1227467,28 +1227467,28 @@
             "general": 15352
           },
           "remaining": {
-            "total": 1338,
+            "total": 1335,
             "priority": 0,
             "corporate": 0,
             "taxi": 81,
-            "general": 4533
+            "general": 4531
           },
           "registered": {
-            "total": 19571,
-            "priority": 5788,
+            "total": 19569,
+            "priority": 5787,
             "corporate": 609,
             "taxi": 1656,
-            "general": 11518
+            "general": 11517
           },
           "delivered": {
-            "total": 18310,
-            "priority": 5359,
+            "total": 18313,
+            "priority": 5360,
             "corporate": 563,
             "taxi": 1569,
-            "general": 10819
+            "general": 10821
           },
-          "selected": 19272,
-          "selectedRemaining": 376
+          "selected": 19271,
+          "selectedRemaining": 377
         }
       },
       "2600": {
@@ -1227539,7 +1227539,7 @@
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
-            "general": 1239
+            "general": 1238
           },
           "registered": {
             "total": 5591,
@@ -1227549,11 +1227549,11 @@
             "general": 3251
           },
           "delivered": {
-            "total": 5400,
+            "total": 5401,
             "priority": 1667,
             "corporate": 108,
             "taxi": 457,
-            "general": 3168
+            "general": 3169
           },
           "selected": 5589,
           "selectedRemaining": 0
@@ -1228609,8 +1228609,8 @@
             "taxi": 13,
             "general": 535
           },
-          "selected": 853,
-          "selectedRemaining": 592
+          "selected": 855,
+          "selectedRemaining": 590
         }
       },
       "4165": {
@@ -1231411,7 +1231411,7 @@
             "general": 110
           },
           "remaining": {
-            "total": 1,
+            "total": 0,
             "priority": 0,
             "corporate": 0,
             "taxi": 3,
@@ -1231425,11 +1231425,11 @@
             "general": 125
           },
           "delivered": {
-            "total": 119,
+            "total": 120,
             "priority": 7,
             "corporate": 1,
             "taxi": 0,
-            "general": 111
+            "general": 112
           },
           "selected": 133,
           "selectedRemaining": 0
@@ -1232819,13 +1232819,13 @@
             "general": 2253
           },
           "delivered": {
-            "total": 4800,
-            "priority": 2240,
+            "total": 4801,
+            "priority": 2241,
             "corporate": 57,
             "taxi": 323,
             "general": 2180
           },
-          "selected": 4801,
+          "selected": 4802,
           "selectedRemaining": 0
         }
       },
@@ -1232846,20 +1232846,20 @@
             "general": 29071
           },
           "registered": {
-            "total": 70746,
+            "total": 70749,
             "priority": 43,
-            "corporate": 68089,
+            "corporate": 68093,
             "taxi": 1129,
-            "general": 1485
+            "general": 1484
           },
           "delivered": {
-            "total": 48696,
+            "total": 48700,
             "priority": 21,
-            "corporate": 47062,
+            "corporate": 47066,
             "taxi": 684,
             "general": 929
           },
-          "selected": 62707,
+          "selected": 62706,
           "selectedRemaining": 0
         }
       },
