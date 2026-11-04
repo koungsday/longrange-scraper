@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-04T09:01:23.047Z",
+  "timestamp": "2026-11-04T09:11:09.819Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -107,15 +107,15 @@
           "registered_corporate": 151,
           "registered_taxi": 346,
           "registered_general": 5666,
-          "delivered_total": 9040,
+          "delivered_total": 9041,
           "delivered_priority": 2960,
           "delivered_corporate": 149,
-          "delivered_taxi": 342,
+          "delivered_taxi": 343,
           "delivered_general": 5589,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
-          "remaining_taxi": 20,
+          "remaining_taxi": 19,
           "remaining_general": 63,
           "selected_total": 9117,
           "selectedRemaining_total": 0,
@@ -957,8 +957,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 910,
-          "selected_total": 1023,
-          "selectedRemaining_total": 422,
+          "selected_total": 1033,
+          "selectedRemaining_total": 412,
           "note": "■ 2026년 하반기 전기자동차(승용) 보급사업 공고 ■&#xa;   1. 신청기간 : 2026. 11. 4. 09:00 ~ 2026. 12. 11. 18:00 (예산 소진 시 조기마감)&#xa;          - 신청일 3일(주말 제외)전부터 임시저장 가능(승용 10월30일 부터)&#xa;   2. 보급대수 : 369대(일반 369대)&#xa;   3. 신청대상 :  전기자동차 신청 전일까지 1개월 이상 거주한  양주시에 주소를 둔 만 18세 이상 개인 &#xa;                        대표자가 양주시에 주소를 둔 개인사업자&#xa;                        양주시 내 사업장(본사, 자사 등) 이 위치한 법인&#xa;   4. 지원금액 : 차종별 차등 지급&#xa;   5. 선정기준 : 출고 등록순&#xa; &#xa; ★ 2026년 하반기 전기자동차(화물) 보급사업 신청 마감 : 2026.10.30.&#xa; ★ 화물전기자동차 물량 취소시 257번부터 자격부여"
         },
         {
@@ -4503,9 +4503,9 @@
           "registered_corporate": 68235,
           "registered_taxi": 1132,
           "registered_general": 1481,
-          "delivered_total": 48838,
+          "delivered_total": 48866,
           "delivered_priority": 21,
-          "delivered_corporate": 47196,
+          "delivered_corporate": 47224,
           "delivered_taxi": 686,
           "delivered_general": 935,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-04T09:01:22.986Z"
+      "timestamp": "2026-11-04T09:11:09.780Z"
     }
   ]
 }
