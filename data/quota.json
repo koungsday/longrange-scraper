@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-05T09:11:18.648Z",
+  "timestamp": "2026-11-05T09:21:13.348Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2095,16 +2095,16 @@
           "registered_corporate": 3,
           "registered_taxi": 0,
           "registered_general": 279,
-          "delivered_total": 253,
+          "delivered_total": 254,
           "delivered_priority": 50,
           "delivered_corporate": 3,
           "delivered_taxi": 0,
-          "delivered_general": 200,
-          "remaining_total": 4,
+          "delivered_general": 201,
+          "remaining_total": 3,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 29,
+          "remaining_general": 28,
           "selected_total": 269,
           "selectedRemaining_total": 0,
           "note": "(승용) 마감 (지원가능확인요청번호 365번=대기1번)&#xa; (화물) 마감 (지원가능확인요청번호 45번=대기1번)&#xa; (승합) 마감 (지원가능확인요청번호 5번=대기1번)"
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 70888,
+          "registered_total": 70887,
           "registered_priority": 43,
-          "registered_corporate": 68236,
+          "registered_corporate": 68235,
           "registered_taxi": 1129,
           "registered_general": 1480,
           "delivered_total": 49473,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-05T09:11:18.593Z"
+      "timestamp": "2026-11-05T09:21:13.283Z"
     }
   ]
 }
