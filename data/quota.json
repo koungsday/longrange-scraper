@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-09T08:31:17.268Z",
+  "timestamp": "2026-11-09T08:41:08.321Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -2851,16 +2851,16 @@
           "registered_corporate": 15,
           "registered_taxi": 18,
           "registered_general": 441,
-          "delivered_total": 520,
+          "delivered_total": 521,
           "delivered_priority": 147,
           "delivered_corporate": 12,
           "delivered_taxi": 15,
-          "delivered_general": 346,
-          "remaining_total": 30,
+          "delivered_general": 347,
+          "remaining_total": 29,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 204,
+          "remaining_general": 203,
           "selected_total": 561,
           "selectedRemaining_total": 0,
           "note": "※2026년 광양시 전기승용차 접수 마감되었습니다."
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 29023,
-          "selected_total": 63707,
+          "selected_total": 63712,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-09T08:31:17.206Z"
+      "timestamp": "2026-11-09T08:41:08.272Z"
     }
   ]
 }
