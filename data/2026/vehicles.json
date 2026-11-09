@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "timestamp": "2026-11-09T06:51:10.332Z",
+  "timestamp": "2026-11-09T07:11:09.367Z",
   "total_vehicles": 125,
   "vehicles": {
     "현대자동차___GV60 스탠다드 2WD 19인치": {
@@ -1056,6 +1056,15 @@
       "battery": "",
       "range": ""
     },
+    "볼보자동차코리아___ES90 Single Motor ER": {
+      "type": "일반승용",
+      "manufacturer": "볼보자동차코리아",
+      "model": "ES90 Single Motor ER",
+      "national": 1630000,
+      "convNational": 330000,
+      "battery": "",
+      "range": ""
+    },
     "기아___레이 EV 2WD 14인치 4인승 승용": {
       "type": "경·소형",
       "manufacturer": "기아",
@@ -1118,15 +1127,6 @@
       "convNational": 970000,
       "battery": "리튬이온(49kWh)",
       "range": "(상온) 248km (저온) 227km"
-    },
-    "볼보자동차코리아___ES90 Single Motor ER": {
-      "type": "일반승용",
-      "manufacturer": "볼보자동차코리아",
-      "model": "ES90 Single Motor ER",
-      "national": 1630000,
-      "convNational": 330000,
-      "battery": "",
-      "range": ""
     }
   }
 }
