@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "lastUpdated": "2026. 11. 10. PM 5:41:12 KST",
+  "lastUpdated": "2026. 11. 10. PM 5:51:13 KST",
   "regions": {
     "1100": {
       "name": "서울특별시",
@@ -1261173,11 +1261173,11 @@
             "general": 1220
           },
           "remaining": {
-            "total": 0,
+            "total": 1,
             "priority": 0,
             "corporate": 0,
             "taxi": 0,
-            "general": 99
+            "general": 101
           },
           "registered": {
             "total": 1338,
@@ -1261187,13 +1261187,13 @@
             "general": 1134
           },
           "delivered": {
-            "total": 1321,
+            "total": 1319,
             "priority": 157,
             "corporate": 35,
             "taxi": 8,
-            "general": 1121
+            "general": 1119
           },
-          "selected": 1332,
+          "selected": 1330,
           "selectedRemaining": 0
         }
       },
@@ -1265715,7 +1265715,7 @@
             "taxi": 706,
             "general": 984
           },
-          "selected": 64423,
+          "selected": 64422,
           "selectedRemaining": 0
         }
       },
