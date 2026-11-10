@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-10T08:51:13.650Z",
+  "timestamp": "2026-11-10T09:01:29.633Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -761,8 +761,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 1848,
-          "selected_total": 3798,
-          "selectedRemaining_total": 586,
+          "selected_total": 3796,
+          "selectedRemaining_total": 588,
           "note": "▷ 2026.11.10.  신청번호 4425번까지 자격부여 종료&#xa; &#xa;  ▷ 승용 접수번호 : 4258번에서 시작&#xa;  ▷ 영업일 오전 9~10시 경 자격부여 진행 예정 (하루 약 50건 내외 검토)&#xa; &#xa; ★ 2026년 전기자동차 승용 추가 보급사업 일정 안내 ★&#xa; &#xa;   ○ 신청기간: 2026. 11. 6.(금) 15:00 ~ 16:30&#xa;      ※ 2026년 11월 6일 16시 30분 기준 접수물량의 150% 초과 접수로 접수 마감&#xa; &#xa;   ○ 보급기간: 2026. 11. 9.(월) ~ 12. 4.(금) 예산소진 시 조기마감&#xa; &#xa;   ○ 보급대수: 750대&#xa; &#xa;      ※ 우선순위 없으며, 보급대수는 보급여건 및 예산범위 내에서 변동 가능&#xa;      ※ 보급대수의 150% 초과 접수 시 접수를 중단할 수 있음."
         },
         {
@@ -2823,8 +2823,8 @@
           "registered_corporate": 15,
           "registered_taxi": 16,
           "registered_general": 314,
-          "delivered_total": 376,
-          "delivered_priority": 103,
+          "delivered_total": 377,
+          "delivered_priority": 104,
           "delivered_corporate": 11,
           "delivered_taxi": 15,
           "delivered_general": 247,
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 29016,
-          "selected_total": 64422,
+          "selected_total": 64424,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-10T08:51:13.587Z"
+      "timestamp": "2026-11-10T09:01:29.556Z"
     }
   ]
 }
