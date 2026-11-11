@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-11T03:51:05.848Z",
+  "timestamp": "2026-11-11T04:01:20.805Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,12 +23,12 @@
           "registered_corporate": 615,
           "registered_taxi": 1652,
           "registered_general": 11551,
-          "delivered_total": 18759,
-          "delivered_priority": 5492,
+          "delivered_total": 18760,
+          "delivered_priority": 5493,
           "delivered_corporate": 581,
           "delivered_taxi": 1590,
           "delivered_general": 11096,
-          "remaining_total": 889,
+          "remaining_total": 888,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 60,
@@ -761,8 +761,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 1846,
-          "selected_total": 3870,
-          "selectedRemaining_total": 514,
+          "selected_total": 3868,
+          "selectedRemaining_total": 516,
           "note": "▷ 2026.11.11.  신청번호 4500번까지 자격부여 종료&#xa; &#xa;  ▷ 승용 접수번호 : 4258번에서 시작&#xa;  ▷ 영업일 오전 9~10시 경 자격부여 진행 예정 (하루 약 50건 내외 검토)&#xa; &#xa; ★ 2026년 전기자동차 승용 추가 보급사업 일정 안내 ★&#xa; &#xa;   ○ 신청기간: 2026. 11. 6.(금) 15:00 ~ 16:30&#xa;      ※ 2026년 11월 6일 16시 30분 기준 접수물량의 150% 초과 접수로 접수 마감&#xa; &#xa;   ○ 보급기간: 2026. 11. 9.(월) ~ 12. 4.(금) 예산소진 시 조기마감&#xa; &#xa;   ○ 보급대수: 750대&#xa; &#xa;      ※ 우선순위 없으며, 보급대수는 보급여건 및 예산범위 내에서 변동 가능&#xa;      ※ 보급대수의 150% 초과 접수 시 접수를 중단할 수 있음."
         },
         {
@@ -4195,16 +4195,16 @@
           "registered_corporate": 1,
           "registered_taxi": 0,
           "registered_general": 71,
-          "delivered_total": 85,
+          "delivered_total": 86,
           "delivered_priority": 17,
           "delivered_corporate": 1,
           "delivered_taxi": 0,
-          "delivered_general": 67,
-          "remaining_total": 1,
+          "delivered_general": 68,
+          "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 19,
+          "remaining_general": 18,
           "selected_total": 90,
           "selectedRemaining_total": 0,
           "note": ""
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-11T03:51:05.767Z"
+      "timestamp": "2026-11-11T04:01:20.759Z"
     }
   ]
 }
