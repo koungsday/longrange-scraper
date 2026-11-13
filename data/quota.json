@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-13T08:51:17.265Z",
+  "timestamp": "2026-11-13T09:01:28.680Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -886,11 +886,11 @@
           "quota_corporate": 0,
           "quota_taxi": 85,
           "quota_general": 4132,
-          "registered_total": 4415,
-          "registered_priority": 1530,
-          "registered_corporate": 113,
-          "registered_taxi": 104,
-          "registered_general": 2668,
+          "registered_total": 4249,
+          "registered_priority": 1482,
+          "registered_corporate": 110,
+          "registered_taxi": 94,
+          "registered_general": 2563,
           "delivered_total": 4191,
           "delivered_priority": 1462,
           "delivered_corporate": 107,
@@ -901,8 +901,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 1604,
-          "selected_total": 4245,
-          "selectedRemaining_total": 2,
+          "selected_total": 4212,
+          "selectedRemaining_total": 35,
           "note": "★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★&#xa; ★   2026년 전기자동차(승용·화물) 보급사업(3차) 마감되었습니다.  ★&#xa; ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★"
         },
         {
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 28991,
-          "selected_total": 63827,
+          "selected_total": 63782,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-13T08:51:17.228Z"
+      "timestamp": "2026-11-13T09:01:28.630Z"
     }
   ]
 }
