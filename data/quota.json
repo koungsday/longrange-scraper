@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-16T03:11:16.249Z",
+  "timestamp": "2026-11-16T03:21:12.886Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -751,16 +751,16 @@
           "registered_corporate": 83,
           "registered_taxi": 124,
           "registered_general": 2991,
-          "delivered_total": 3703,
+          "delivered_total": 3704,
           "delivered_priority": 1245,
           "delivered_corporate": 57,
           "delivered_taxi": 83,
-          "delivered_general": 2318,
-          "remaining_total": 681,
+          "delivered_general": 2319,
+          "remaining_total": 680,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1806,
+          "remaining_general": 1805,
           "selected_total": 4128,
           "selectedRemaining_total": 256,
           "note": "▷ 2026.11.16. 신청번호 4769번까지 자격부여 진행&#xa;     (2026.11.17. 신청번호 4770번부터 자격부여 예정)&#xa; &#xa;  ▷ 승용 접수번호 : 4258번에서 시작&#xa;  ▷ 영업일 오전 9~10시 경 자격부여 진행 예정 (하루 약 50건 내외 검토)&#xa; &#xa; ★ 2026년 전기자동차 승용 추가 보급사업 일정 안내 ★&#xa; &#xa;   ○ 신청기간: 2026. 11. 6.(금) 15:00 ~ 16:30&#xa;      ※ 2026년 11월 6일 16시 30분 기준 접수물량의 150% 초과 접수로 접수 마감&#xa; &#xa;   ○ 보급기간: 2026. 11. 9.(월) ~ 12. 4.(금) 예산소진 시 조기마감&#xa; &#xa;   ○ 보급대수: 750대&#xa; &#xa;      ※ 우선순위 없으며, 보급대수는 보급여건 및 예산범위 내에서 변동 가능&#xa;      ※ 보급대수의 150% 초과 접수 시 접수를 중단할 수 있음."
@@ -4274,11 +4274,11 @@
           "quota_corporate": 0,
           "quota_taxi": 7,
           "quota_general": 199,
-          "registered_total": 160,
+          "registered_total": 159,
           "registered_priority": 15,
           "registered_corporate": 12,
           "registered_taxi": 15,
-          "registered_general": 118,
+          "registered_general": 117,
           "delivered_total": 132,
           "delivered_priority": 12,
           "delivered_corporate": 12,
@@ -4503,9 +4503,9 @@
           "registered_corporate": 68235,
           "registered_taxi": 1144,
           "registered_general": 1499,
-          "delivered_total": 53126,
+          "delivered_total": 53128,
           "delivered_priority": 22,
-          "delivered_corporate": 51359,
+          "delivered_corporate": 51361,
           "delivered_taxi": 728,
           "delivered_general": 1017,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-16T03:11:16.210Z"
+      "timestamp": "2026-11-16T03:21:12.803Z"
     }
   ]
 }
