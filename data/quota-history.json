@@ -1,6 +1,6 @@
 {
   "year": 2026,
-  "lastUpdated": "2026. 11. 16. PM 3:21:05 KST",
+  "lastUpdated": "2026. 11. 16. PM 3:31:21 KST",
   "regions": {
     "1100": {
       "name": "서울특별시",
@@ -1294321,8 +1294321,8 @@
             "taxi": 13,
             "general": 621
           },
-          "selected": 1042,
-          "selectedRemaining": 403
+          "selected": 1043,
+          "selectedRemaining": 402
         }
       },
       "4165": {
@@ -1296783,11 +1296783,11 @@
             "general": 149
           },
           "remaining": {
-            "total": 0,
+            "total": 1,
             "priority": 0,
             "corporate": 0,
             "taxi": 1,
-            "general": 41
+            "general": 42
           },
           "registered": {
             "total": 210,
@@ -1296797,13 +1296797,13 @@
             "general": 158
           },
           "delivered": {
-            "total": 153,
+            "total": 152,
             "priority": 38,
             "corporate": 4,
             "taxi": 3,
-            "general": 108
+            "general": 107
           },
-          "selected": 210,
+          "selected": 209,
           "selectedRemaining": 0
         }
       },
@@ -1297361,11 +1297361,11 @@
             "general": 604
           },
           "remaining": {
-            "total": 302,
+            "total": 301,
             "priority": 0,
             "corporate": 0,
             "taxi": 5,
-            "general": 327
+            "general": 326
           },
           "registered": {
             "total": 444,
@@ -1297375,11 +1297375,11 @@
             "general": 293
           },
           "delivered": {
-            "total": 426,
+            "total": 427,
             "priority": 131,
             "corporate": 9,
             "taxi": 9,
-            "general": 277
+            "general": 278
           },
           "selected": 442,
           "selectedRemaining": 286
@@ -1298299,8 +1298299,8 @@
             "taxi": 12,
             "general": 96
           },
-          "selected": 147,
-          "selectedRemaining": 67
+          "selected": 148,
+          "selectedRemaining": 66
         }
       },
       "4884": {
@@ -1298565,13 +1298565,13 @@
             "general": 1499
           },
           "delivered": {
-            "total": 53288,
+            "total": 53311,
             "priority": 22,
-            "corporate": 51518,
+            "corporate": 51541,
             "taxi": 728,
             "general": 1020
           },
-          "selected": 63792,
+          "selected": 63791,
           "selectedRemaining": 0
         }
       },
