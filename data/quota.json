@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-16T03:31:16.402Z",
+  "timestamp": "2026-11-16T03:51:10.117Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -761,8 +761,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 1805,
-          "selected_total": 4127,
-          "selectedRemaining_total": 257,
+          "selected_total": 4126,
+          "selectedRemaining_total": 258,
           "note": "▷ 2026.11.16. 신청번호 4769번까지 자격부여 진행&#xa;     (2026.11.17. 신청번호 4770번부터 자격부여 예정)&#xa; &#xa;  ▷ 승용 접수번호 : 4258번에서 시작&#xa;  ▷ 영업일 오전 9~10시 경 자격부여 진행 예정 (하루 약 50건 내외 검토)&#xa; &#xa; ★ 2026년 전기자동차 승용 추가 보급사업 일정 안내 ★&#xa; &#xa;   ○ 신청기간: 2026. 11. 6.(금) 15:00 ~ 16:30&#xa;      ※ 2026년 11월 6일 16시 30분 기준 접수물량의 150% 초과 접수로 접수 마감&#xa; &#xa;   ○ 보급기간: 2026. 11. 9.(월) ~ 12. 4.(금) 예산소진 시 조기마감&#xa; &#xa;   ○ 보급대수: 750대&#xa; &#xa;      ※ 우선순위 없으며, 보급대수는 보급여건 및 예산범위 내에서 변동 가능&#xa;      ※ 보급대수의 150% 초과 접수 시 접수를 중단할 수 있음."
         },
         {
@@ -947,16 +947,16 @@
           "registered_corporate": 14,
           "registered_taxi": 19,
           "registered_general": 828,
-          "delivered_total": 926,
+          "delivered_total": 927,
           "delivered_priority": 288,
           "delivered_corporate": 12,
           "delivered_taxi": 13,
-          "delivered_general": 613,
-          "remaining_total": 519,
+          "delivered_general": 614,
+          "remaining_total": 518,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 832,
+          "remaining_general": 831,
           "selected_total": 1044,
           "selectedRemaining_total": 401,
           "note": "★ 2026년 하반기 전기자동차(승용) 보급사업 신청 마감 : 2026.11.04&#xa; ★ 전기자동차 승용 물량 취소시 1131번부터 자격부여&#xa; &#xa; ■ 2026년 하반기 전기자동차(승용) 보급사업 공고 ■&#xa;   1. 신청기간 : 2026. 11. 4. 09:00 ~ 2026. 12. 11. 18:00 (예산 소진 시 조기마감)&#xa;          - 신청일 3일(주말 제외)전부터 임시저장 가능(승용 10월30일 부터)&#xa;   2. 보급대수 : 369대(일반 369대)&#xa;   3. 신청대상 :  전기자동차 신청 전일까지 1개월 이상 거주한  양주시에 주소를 둔 만 18세 이상 개인 &#xa;                        대표자가 양주시에 주소를 둔 개인사업자&#xa;                        양주시 내 사업장(본사, 자사 등) 이 위치한 법인"
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-16T03:31:16.332Z"
+      "timestamp": "2026-11-16T03:51:10.058Z"
     }
   ]
 }
