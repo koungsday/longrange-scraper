@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-16T13:01:36.395Z",
+  "timestamp": "2026-11-16T13:11:11.439Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -881,11 +881,11 @@
           "sido": "경기",
           "region": "화성시",
           "vehicleType": "전기승용",
-          "quota_total": 4212,
+          "quota_total": 4191,
           "quota_priority": 30,
           "quota_corporate": 0,
           "quota_taxi": 85,
-          "quota_general": 4097,
+          "quota_general": 4076,
           "registered_total": 4249,
           "registered_priority": 1482,
           "registered_corporate": 110,
@@ -896,13 +896,13 @@
           "delivered_corporate": 107,
           "delivered_taxi": 94,
           "delivered_general": 2528,
-          "remaining_total": 21,
+          "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1569,
-          "selected_total": 4207,
-          "selectedRemaining_total": 5,
+          "remaining_general": 1548,
+          "selected_total": 4191,
+          "selectedRemaining_total": 0,
           "note": "★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★&#xa; ★   2026년 전기자동차(승용·화물) 보급사업(3차) 마감되었습니다.  ★&#xa; ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★"
         },
         {
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-16T13:01:36.362Z"
+      "timestamp": "2026-11-16T13:11:11.380Z"
     }
   ]
 }
