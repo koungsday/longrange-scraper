@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-16T08:16:14.698Z",
+  "timestamp": "2026-11-16T08:21:34.245Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3925,8 +3925,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 108,
-          "selected_total": 221,
-          "selectedRemaining_total": 23,
+          "selected_total": 222,
+          "selectedRemaining_total": 22,
           "note": "<울진군 전기차 일정 안내>&#xa; ○ 접수: 14시 02분 마감&#xa; ○ 물량: 승용 30대(접수번호 260번~), 화물 5대(접수번호 69번~)&#xa;  - 접수순으로 서류 검토 후 자격 부여(서류 보완이 필요한 경우 보완 완료 시점을 기준으로 자격 부여 후 지원가능 요청 확인 가능)&#xa;  - 서류 보완 지연 및 미보완으로 인해 보조금 지원이 불가하게 되는 경우 그에 따른 책임은 울진군에서 부담하지 않음 &#xa; ※ 기타 자세한 사항은 공고문 참조하시기 바랍니다."
         },
         {
@@ -4503,9 +4503,9 @@
           "registered_corporate": 68248,
           "registered_taxi": 1145,
           "registered_general": 1501,
-          "delivered_total": 53589,
+          "delivered_total": 53591,
           "delivered_priority": 22,
-          "delivered_corporate": 51817,
+          "delivered_corporate": 51819,
           "delivered_taxi": 729,
           "delivered_general": 1021,
           "remaining_total": 0,
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 28979,
-          "selected_total": 63793,
+          "selected_total": 63813,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-16T08:16:14.508Z"
+      "timestamp": "2026-11-16T08:21:34.208Z"
     }
   ]
 }
