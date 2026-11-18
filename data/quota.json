@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-17T23:51:05.569Z",
+  "timestamp": "2026-11-18T00:01:27.145Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -746,11 +746,11 @@
           "quota_corporate": 0,
           "quota_taxi": 60,
           "quota_general": 4124,
-          "registered_total": 4852,
+          "registered_total": 4851,
           "registered_priority": 1667,
           "registered_corporate": 83,
           "registered_taxi": 124,
-          "registered_general": 2978,
+          "registered_general": 2977,
           "delivered_total": 3778,
           "delivered_priority": 1270,
           "delivered_corporate": 57,
@@ -761,8 +761,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 1762,
-          "selected_total": 4184,
-          "selectedRemaining_total": 200,
+          "selected_total": 4183,
+          "selectedRemaining_total": 201,
           "note": "▷ 2026.11.17. 14:00 기준 520대 대상자 선정 완료&#xa; ▷ 예산 기준 대상자 선정 잔여물량 예상 68대 (지원가능신청번호 4410번까지 대상자 선정 완료)&#xa; ▷ 예산 기준 전환지원금 잔여물량 예상 10대&#xa; - 전환지원금 예산 소진 시 전환지원금 신청자는 기본 보조금만 지급 가능&#xa; &#xa; ▷ 2026.11.17. 신청번호 4830번까지 자격부여 진행&#xa;     (2026.11.18. 신청번호 4831번부터 자격부여 예정)&#xa; &#xa; ▷ 승용 접수번호 : 4258번에서 시작&#xa; ▷ 영업일 오전 9~10시 경 자격부여 진행 예정 (하루 약 50건 내외 검토)&#xa; &#xa; ★ 2026년 전기자동차 승용 추가 보급사업 일정 안내 ★&#xa; &#xa;   ○ 신청기간: 2026. 11. 6.(금) 15:00 ~ 16:30&#xa;      ※ 2026년 11월 6일 16시 30분 기준 접수물량의 150% 초과 접수로 접수 마감&#xa; &#xa;   ○ 보급기간: 2026. 11. 9.(월) ~ 12. 4.(금) 예산소진 시 조기마감&#xa; &#xa;   ○ 보급대수: 750대&#xa;      ※ 우선순위 없으며, 보급대수는 보급여건 및 예산범위 내에서 변동 가능&#xa;      ※ 보급대수의 150% 초과 접수 시 접수를 중단할 수 있음."
         },
         {
@@ -3714,11 +3714,11 @@
           "quota_corporate": 0,
           "quota_taxi": 2,
           "quota_general": 106,
-          "registered_total": 147,
+          "registered_total": 146,
           "registered_priority": 36,
           "registered_corporate": 2,
           "registered_taxi": 3,
-          "registered_general": 106,
+          "registered_general": 105,
           "delivered_total": 138,
           "delivered_priority": 33,
           "delivered_corporate": 2,
@@ -3729,7 +3729,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 5,
-          "selected_total": 139,
+          "selected_total": 138,
           "selectedRemaining_total": 0,
           "note": "<2026년 영덕군 전기자동차 구매지원 사업 공고 안내(3차)>&#xa; - 일정: 10/26(월) 오전 10시 접수&#xa; - 물량: 승용 10대(일반9, 택시1) (예산 따라 변동 가능)&#xa; * 자세한 사항은 공고 확인 부탁드립니다.&#xa; ** 신청번호 135번부터 시작&#xa; &#xa; + 2026년 화물, 승합 마감&#xa; &#xa; ☆담당자 1명이 전기자동차 보조금 등 업무를 맡고 있습니다. 양해 부탁드립니다."
         },
@@ -4503,9 +4503,9 @@
           "registered_corporate": 68194,
           "registered_taxi": 1142,
           "registered_general": 1499,
-          "delivered_total": 53911,
+          "delivered_total": 53954,
           "delivered_priority": 22,
-          "delivered_corporate": 52126,
+          "delivered_corporate": 52169,
           "delivered_taxi": 736,
           "delivered_general": 1027,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-17T23:51:05.521Z"
+      "timestamp": "2026-11-18T00:01:27.028Z"
     }
   ]
 }
