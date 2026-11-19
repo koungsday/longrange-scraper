@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-19T07:51:21.200Z",
+  "timestamp": "2026-11-19T08:01:33.308Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -942,11 +942,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 1445,
-          "registered_total": 1227,
+          "registered_total": 1226,
           "registered_priority": 370,
           "registered_corporate": 14,
           "registered_taxi": 19,
-          "registered_general": 824,
+          "registered_general": 823,
           "delivered_total": 1001,
           "delivered_priority": 308,
           "delivered_corporate": 13,
@@ -957,8 +957,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 779,
-          "selected_total": 1041,
-          "selectedRemaining_total": 404,
+          "selected_total": 1040,
+          "selectedRemaining_total": 405,
           "note": "★ 2026년 하반기 전기자동차(승용) 보급사업 신청 마감 : 2026.11.04&#xa; ★ 전기자동차 승용 물량 취소시 1131번부터 자격부여&#xa; &#xa; ■ 2026년 하반기 전기자동차(승용) 보급사업 공고 ■&#xa;   1. 신청기간 : 2026. 11. 4. 09:00 ~ 2026. 12. 11. 18:00 (예산 소진 시 조기마감)&#xa;          - 신청일 3일(주말 제외)전부터 임시저장 가능(승용 10월30일 부터)&#xa;   2. 보급대수 : 369대(일반 369대)&#xa;   3. 신청대상 :  전기자동차 신청 전일까지 1개월 이상 거주한  양주시에 주소를 둔 만 18세 이상 개인 &#xa;                        대표자가 양주시에 주소를 둔 개인사업자&#xa;                        양주시 내 사업장(본사, 자사 등) 이 위치한 법인"
         },
         {
@@ -4475,17 +4475,17 @@
           "registered_corporate": 58,
           "registered_taxi": 332,
           "registered_general": 2245,
-          "delivered_total": 4797,
+          "delivered_total": 4796,
           "delivered_priority": 2239,
           "delivered_corporate": 57,
           "delivered_taxi": 322,
-          "delivered_general": 2179,
+          "delivered_general": 2178,
           "remaining_total": 0,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 138,
-          "remaining_general": 1041,
-          "selected_total": 4797,
+          "remaining_general": 1042,
+          "selected_total": 4796,
           "selectedRemaining_total": 0,
           "note": "2026년도 전기자동차 보급 사업(하반기)&#xa; &#xa; ★ 화물 8. 7.(금) 접수 마감 &#xa; ★★ 승용 8. 12.(수) 접수 마감 &#xa; &#xa; ○ 사업 개요&#xa; - 사업명 : 2026년 하반기 전기자동차 보급사업&#xa; - 보급대수 : 승용 1,200대, 화물 400대&#xa; - 접수기간&#xa;     · 승용: 2026. 8. 6.(14:00)부터 예산 소진시까지&#xa;    예산 소진 상황에 따라 접수 기간 종점은 변경되며, 추가 변경 공고가 있을 수 있음) &#xa; - 지원대상 : 제주 도민 및 제주도 내 기업？법인(3개월 이상 지속 거주 및 설립)&#xa; &#xa; ※ 자세한 내용은 공고문을 참고하시기 바랍니다.&#xa; ※ 무공해차 누리집 출고잔여대수와 실제 잔여대수는 일치하지 않습니다.&#xa; ※ 접수일 기준 14일 이내 출고 안될 시 직권 취소"
         },
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 71110,
+          "registered_total": 71111,
           "registered_priority": 42,
-          "registered_corporate": 68424,
+          "registered_corporate": 68425,
           "registered_taxi": 1140,
           "registered_general": 1504,
           "delivered_total": 54993,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-19T07:51:21.156Z"
+      "timestamp": "2026-11-19T08:01:33.277Z"
     }
   ]
 }
