@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-23T23:32:30.709Z",
+  "timestamp": "2026-11-23T23:41:10.576Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -751,16 +751,16 @@
           "registered_corporate": 80,
           "registered_taxi": 122,
           "registered_general": 2900,
-          "delivered_total": 4037,
+          "delivered_total": 4038,
           "delivered_priority": 1346,
           "delivered_corporate": 63,
           "delivered_taxi": 102,
-          "delivered_general": 2526,
-          "remaining_total": 197,
+          "delivered_general": 2527,
+          "remaining_total": 196,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1448,
+          "remaining_general": 1447,
           "selected_total": 4266,
           "selectedRemaining_total": 0,
           "note": "▷ 2026년 11월 18일 대상자 선정 마감&#xa;   - 지원가능번호 4490번(최종 자격부여 4925번)으로 대상자선정 마감&#xa; ▷ 취소물량 발생 시 지원가능확인요청순으로 대상자 추가 선정(별도 연락 예정)&#xa;   - 취소물량 발생으로 지원가능번호 4498번까지 추가 선정 완료(26.11.23. 기준)&#xa; &#xa; ★ 2026년 전기자동차 승용 추가 보급사업 일정 안내 ★&#xa; &#xa;   ○ 신청기간: 2026. 11. 6.(금) 15:00 ~ 16:30&#xa;      ※ 2026년 11월 6일 16시 30분 기준 접수물량의 150% 초과 접수로 접수 마감&#xa; &#xa;   ○ 보급기간: 2026. 11. 9.(월) ~ 12. 4.(금) 예산소진 시 조기마감&#xa; &#xa;   ○ 보급대수: 750대&#xa;      ※ 우선순위 없으며, 보급대수는 보급여건 및 예산범위 내에서 변동 가능&#xa;      ※ 보급대수의 150% 초과 접수 시 접수를 중단할 수 있음."
@@ -2459,8 +2459,8 @@
           "registered_corporate": 1,
           "registered_taxi": 10,
           "registered_general": 276,
-          "delivered_total": 237,
-          "delivered_priority": 58,
+          "delivered_total": 238,
+          "delivered_priority": 59,
           "delivered_corporate": 1,
           "delivered_taxi": 10,
           "delivered_general": 168,
@@ -4503,10 +4503,10 @@
           "registered_corporate": 68564,
           "registered_taxi": 1136,
           "registered_general": 1494,
-          "delivered_total": 55613,
+          "delivered_total": 55615,
           "delivered_priority": 22,
-          "delivered_corporate": 53778,
-          "delivered_taxi": 765,
+          "delivered_corporate": 53779,
+          "delivered_taxi": 766,
           "delivered_general": 1048,
           "remaining_total": 0,
           "remaining_priority": 0,
@@ -4519,8 +4519,8 @@
         }
       ],
       "success": true,
-      "attempts": 2,
-      "timestamp": "2026-11-23T23:32:30.654Z"
+      "attempts": 1,
+      "timestamp": "2026-11-23T23:41:10.514Z"
     }
   ]
 }
