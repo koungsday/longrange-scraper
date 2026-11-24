@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-24T08:31:28.439Z",
+  "timestamp": "2026-11-24T08:41:11.118Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3915,16 +3915,16 @@
           "registered_corporate": 4,
           "registered_taxi": 3,
           "registered_general": 190,
-          "delivered_total": 226,
+          "delivered_total": 227,
           "delivered_priority": 78,
           "delivered_corporate": 3,
           "delivered_taxi": 3,
-          "delivered_general": 142,
-          "remaining_total": 18,
+          "delivered_general": 143,
+          "remaining_total": 17,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 102,
+          "remaining_general": 101,
           "selected_total": 256,
           "selectedRemaining_total": 0,
           "note": "<울진군 전기승용차 대상자 선정 안내>&#xa; ○ 접수마감: 2026. 11. 16. 14시02분 &#xa; ○ 계획물량: 승용 30대(접수번호 260번~345번, 86대 접수)&#xa; ○ 선정물량: 38대(후보 5대)&#xa; ○ 탈락물량: 43대&#xa; ※ 지원가능확인 요청 차량이 예산을 초과할 경우 후순위 접수자의 서류 검토가 진행되지 않을 수 있습니다."
@@ -4289,8 +4289,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 97,
-          "selected_total": 148,
-          "selectedRemaining_total": 66,
+          "selected_total": 147,
+          "selectedRemaining_total": 67,
           "note": "2026. 11. 16. 전기승용, 전기화물 마감.&#xa; 소형승합 1대 가능&#xa; =============================&#xa; ◀ 4차 공고:  승용 24대, 화물 4대&#xa; * 신청기간  &#xa;   - 승    용: `26. 11. 16.(월) 10:00 ∼ &#xa;   - 화    물: `26. 11. 16.(월) 15:00 ∼ &#xa; * 소형승합 1대 가능(3차 공고 잔여분)"
         },
         {
@@ -4503,9 +4503,9 @@
           "registered_corporate": 68583,
           "registered_taxi": 1129,
           "registered_general": 1487,
-          "delivered_total": 56227,
+          "delivered_total": 56228,
           "delivered_priority": 22,
-          "delivered_corporate": 54373,
+          "delivered_corporate": 54374,
           "delivered_taxi": 776,
           "delivered_general": 1056,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-24T08:31:28.406Z"
+      "timestamp": "2026-11-24T08:41:11.063Z"
     }
   ]
 }
