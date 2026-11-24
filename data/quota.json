@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-24T08:11:10.907Z",
+  "timestamp": "2026-11-24T08:21:13.207Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -4289,8 +4289,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 97,
-          "selected_total": 147,
-          "selectedRemaining_total": 67,
+          "selected_total": 148,
+          "selectedRemaining_total": 66,
           "note": "2026. 11. 16. 전기승용, 전기화물 마감.&#xa; 소형승합 1대 가능&#xa; =============================&#xa; ◀ 4차 공고:  승용 24대, 화물 4대&#xa; * 신청기간  &#xa;   - 승    용: `26. 11. 16.(월) 10:00 ∼ &#xa;   - 화    물: `26. 11. 16.(월) 15:00 ∼ &#xa; * 소형승합 1대 가능(3차 공고 잔여분)"
         },
         {
@@ -4498,11 +4498,11 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 71247,
+          "registered_total": 71239,
           "registered_priority": 40,
-          "registered_corporate": 68590,
+          "registered_corporate": 68583,
           "registered_taxi": 1129,
-          "registered_general": 1488,
+          "registered_general": 1487,
           "delivered_total": 56227,
           "delivered_priority": 22,
           "delivered_corporate": 54373,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-24T08:11:10.844Z"
+      "timestamp": "2026-11-24T08:21:12.987Z"
     }
   ]
 }
