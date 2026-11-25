@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-25T07:41:12.561Z",
+  "timestamp": "2026-11-25T07:51:07.353Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3591,7 +3591,7 @@
           "remaining_general": 121,
           "selected_total": 229,
           "selectedRemaining_total": 73,
-          "note": "승용 화물 마감했습니다"
+          "note": "화물 이륜 승합마감&#xa; 승용 363번부터 시작입니다."
         },
         {
           "sido": "경북",
@@ -4503,9 +4503,9 @@
           "registered_corporate": 68353,
           "registered_taxi": 1118,
           "registered_general": 1483,
-          "delivered_total": 56375,
+          "delivered_total": 56376,
           "delivered_priority": 22,
-          "delivered_corporate": 54516,
+          "delivered_corporate": 54517,
           "delivered_taxi": 776,
           "delivered_general": 1061,
           "remaining_total": 0,
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 28939,
-          "selected_total": 62650,
+          "selected_total": 62651,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-25T07:41:12.515Z"
+      "timestamp": "2026-11-25T07:51:07.285Z"
     }
   ]
 }
