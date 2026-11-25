@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-25T01:51:06.650Z",
+  "timestamp": "2026-11-25T02:01:24.714Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -751,16 +751,16 @@
           "registered_corporate": 79,
           "registered_taxi": 122,
           "registered_general": 2893,
-          "delivered_total": 4116,
+          "delivered_total": 4117,
           "delivered_priority": 1373,
           "delivered_corporate": 64,
           "delivered_taxi": 103,
-          "delivered_general": 2576,
-          "remaining_total": 118,
+          "delivered_general": 2577,
+          "remaining_total": 117,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 1398,
+          "remaining_general": 1397,
           "selected_total": 4263,
           "selectedRemaining_total": 0,
           "note": "▷ 취소물량 발생으로 지원가능번호 4505번까지 추가 선정 완료(26.11.25. 10:00 기준)&#xa; ※ 전환지원금 예산 소진으로 추가 대상자 선정물량의 경우 전환지원금 지급 불가&#xa; &#xa; ▷ 2026년 11월 18일 신청번호 4925번으로 자격부여 마감&#xa; ▷ 취소물량 발생 시 지원가능확인요청순으로 대상자 추가 선정(별도 연락 예정)&#xa;   - 취소물량 발생으로 지원가능번호 4498번까지 추가 선정 완료(26.11.23. 기준)&#xa; &#xa; ★ 2026년 전기자동차 승용 추가 보급사업 일정 안내 ★&#xa; &#xa;   ○ 신청기간: 2026. 11. 6.(금) 15:00 ~ 16:30&#xa;      ※ 2026년 11월 6일 16시 30분 기준 접수물량의 150% 초과 접수로 접수 마감&#xa; &#xa;   ○ 보급기간: 2026. 11. 9.(월) ~ 12. 4.(금) 예산소진 시 조기마감&#xa; &#xa;   ○ 보급대수: 750대&#xa;      ※ 우선순위 없으며, 보급대수는 보급여건 및 예산범위 내에서 변동 가능&#xa;      ※ 보급대수의 150% 초과 접수 시 접수를 중단할 수 있음."
@@ -957,8 +957,8 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 763,
-          "selected_total": 1045,
-          "selectedRemaining_total": 400,
+          "selected_total": 1044,
+          "selectedRemaining_total": 401,
           "note": "★ 2026년 하반기 전기자동차(승용) 보급사업 신청 마감 : 2026.11.04&#xa; ★ 전기자동차 승용 물량 취소시 1131번부터 자격부여&#xa; &#xa; ■ 2026년 하반기 전기자동차(승용) 보급사업 공고 ■&#xa;   1. 신청기간 : 2026. 11. 4. 09:00 ~ 2026. 12. 11. 18:00 (예산 소진 시 조기마감)&#xa;          - 신청일 3일(주말 제외)전부터 임시저장 가능(승용 10월30일 부터)&#xa;   2. 보급대수 : 369대(일반 369대)&#xa;   3. 신청대상 :  전기자동차 신청 전일까지 1개월 이상 거주한  양주시에 주소를 둔 만 18세 이상 개인 &#xa;                        대표자가 양주시에 주소를 둔 개인사업자&#xa;                        양주시 내 사업장(본사, 자사 등) 이 위치한 법인"
         },
         {
@@ -4498,14 +4498,14 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 71220,
+          "registered_total": 71222,
           "registered_priority": 40,
-          "registered_corporate": 68566,
+          "registered_corporate": 68568,
           "registered_taxi": 1128,
           "registered_general": 1486,
-          "delivered_total": 56330,
+          "delivered_total": 56336,
           "delivered_priority": 22,
-          "delivered_corporate": 54473,
+          "delivered_corporate": 54479,
           "delivered_taxi": 776,
           "delivered_general": 1059,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-25T01:51:06.579Z"
+      "timestamp": "2026-11-25T02:01:24.649Z"
     }
   ]
 }
