@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-25T02:41:07.562Z",
+  "timestamp": "2026-11-25T02:51:08.546Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -3449,7 +3449,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 347,
-          "selected_total": 1053,
+          "selected_total": 1052,
           "selectedRemaining_total": 0,
           "note": "※ 승용, 화물 신청 마감&#xa; ※ 지원가능확인요청순으로 승용 1058~1108, 화물 205~211까지 대상자 선정 완료했습니다.&#xa; ※ 대상자 선정 전 차량 출고(등록) 시 보조금 지급 불가&#xa; ※ 지원가능확인후 보완 자제&#xa; ※ 담당자 1명이 전기차 모든 업무 담당하고 있습니다. 전화문의 자제해주세요&#xa; &#xa; ○ 보급대수 : 승용 45대, 화물 8대 * 예산 범위 내 변동 가능&#xa; ○ 선정기준 : 차량 출고등록순(지원가능 확인요청순)&#xa; &#xa; ◀왼쪽 잔여대수와 실제 잔여대수 다름"
         },
@@ -4498,14 +4498,14 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 71221,
+          "registered_total": 71222,
           "registered_priority": 40,
-          "registered_corporate": 68570,
+          "registered_corporate": 68571,
           "registered_taxi": 1126,
           "registered_general": 1485,
-          "delivered_total": 56342,
+          "delivered_total": 56343,
           "delivered_priority": 22,
-          "delivered_corporate": 54485,
+          "delivered_corporate": 54486,
           "delivered_taxi": 776,
           "delivered_general": 1059,
           "remaining_total": 0,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-25T02:41:07.502Z"
+      "timestamp": "2026-11-25T02:51:08.372Z"
     }
   ]
 }
