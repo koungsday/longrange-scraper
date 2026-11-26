@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-26T08:11:10.235Z",
+  "timestamp": "2026-11-26T08:21:09.181Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -466,11 +466,11 @@
           "quota_corporate": 0,
           "quota_taxi": 56,
           "quota_general": 1288,
-          "registered_total": 1354,
+          "registered_total": 1353,
           "registered_priority": 399,
           "registered_corporate": 52,
           "registered_taxi": 74,
-          "registered_general": 829,
+          "registered_general": 828,
           "delivered_total": 1343,
           "delivered_priority": 397,
           "delivered_corporate": 51,
@@ -481,7 +481,7 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 466,
-          "selected_total": 1353,
+          "selected_total": 1352,
           "selectedRemaining_total": 0,
           "note": "★★  승용 신청 마감 및 대상자 선정 기준 마감(2026.10.15. 18시)  /지원가능여부요청순으로 대기자 되며, 취소물량 발생 시 대상자 선정 가능&#xa; &#xa; &#xa; ★★ 전기화물 신청 마감_2026. 9. 21. 14:05 /신청접수시작번호 : 314번&#xa; ★★ 전기화물 대상자 선정 마감_2026. 9. 23. 13:50 /지원가능여부요청순으로 대기자 되며, 취소물량 발생 시 대상자 선정 가능&#xa;          - 전기화물 신청접수 건 380번까지 자격부여 됨  &#xa; &#xa; ★ 전기자동차(승용, 화물) 보급사업 3차 변경 공고 안내→ 공고문 일부 수정되어 변경공고문 확인 부탁드립니다!&#xa; □ 접수기간 : 화물 2026. 9. 21.(월) 14:00 ∼ 2026. 12. 4.(금) 18:00 / 승용 2026. 9. 23.(수) 14:00 ∼ 2026. 12. 4.(금) 18:00 &#xa;    ※ 단, 보조금 지급신청기한 2026. 12. 11.(금) 18시까지이며, 예산 소진 시 조기 마감&#xa; □ 보급대수 : 승용 480대, 화물60대&#xa; □ 변경내용 : 총 640대 → 총 540대로 변경. 구매가능대수 택시법인 변경 등&#xa; □ 신청대상 : 구매신청서 접수일 기준 연속하여 30일 이상 안산시에 주소를 둔 개인·개인사업자, 법인 등&#xa; □ 선정방법 : 차량 출고·등록순에 의한 선정&#xa;    ※ 추경2차 첨부파일1 : 변경공고문 / 추경2차 첨부파일 2 : 생애최초 증빙서류 발급 절차 안내 / 추경3차 첨부파일 2 : 차종별 지원단가&#xa; &#xa;    ※ 반드시 공고문을 읽고 신청하여 주시기 바랍니다."
         },
@@ -751,12 +751,12 @@
           "registered_corporate": 66,
           "registered_taxi": 105,
           "registered_general": 2665,
-          "delivered_total": 4171,
-          "delivered_priority": 1392,
+          "delivered_total": 4172,
+          "delivered_priority": 1393,
           "delivered_corporate": 66,
           "delivered_taxi": 103,
           "delivered_general": 2610,
-          "remaining_total": 63,
+          "remaining_total": 62,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 71068,
+          "registered_total": 71069,
           "registered_priority": 39,
-          "registered_corporate": 68429,
+          "registered_corporate": 68430,
           "registered_taxi": 1113,
           "registered_general": 1487,
           "delivered_total": 56561,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-26T08:11:10.173Z"
+      "timestamp": "2026-11-26T08:21:09.132Z"
     }
   ]
 }
