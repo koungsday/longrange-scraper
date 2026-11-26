@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-26T02:51:09.613Z",
+  "timestamp": "2026-11-26T03:01:19.315Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -23,12 +23,12 @@
           "registered_corporate": 614,
           "registered_taxi": 1642,
           "registered_general": 11485,
-          "delivered_total": 19360,
+          "delivered_total": 19361,
           "delivered_priority": 5753,
-          "delivered_corporate": 604,
+          "delivered_corporate": 605,
           "delivered_taxi": 1618,
           "delivered_general": 11385,
-          "remaining_total": 288,
+          "remaining_total": 287,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 32,
@@ -3574,8 +3574,8 @@
           "quota_corporate": 0,
           "quota_taxi": 15,
           "quota_general": 277,
-          "registered_total": 281,
-          "registered_priority": 79,
+          "registered_total": 280,
+          "registered_priority": 78,
           "registered_corporate": 3,
           "registered_taxi": 4,
           "registered_general": 195,
@@ -4055,12 +4055,12 @@
           "registered_corporate": 10,
           "registered_taxi": 21,
           "registered_general": 284,
-          "delivered_total": 363,
-          "delivered_priority": 82,
+          "delivered_total": 364,
+          "delivered_priority": 83,
           "delivered_corporate": 9,
           "delivered_taxi": 20,
           "delivered_general": 252,
-          "remaining_total": 12,
+          "remaining_total": 11,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
@@ -4513,14 +4513,14 @@
           "remaining_corporate": 0,
           "remaining_taxi": 0,
           "remaining_general": 28936,
-          "selected_total": 62919,
+          "selected_total": 62918,
           "selectedRemaining_total": 0,
           "note": "* 신청서 검토는 접수된 순으로 진행합니다.&#xa; * 차종별로 보조금이 상이하므로 실 잔여대수는 표기된 바와 다를 수 있습니다."
         }
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-26T02:51:09.555Z"
+      "timestamp": "2026-11-26T03:01:19.255Z"
     }
   ]
 }
