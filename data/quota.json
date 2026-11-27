@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-27T09:21:09.646Z",
+  "timestamp": "2026-11-27T09:31:26.006Z",
   "total_regions": 1,
   "success_count": 1,
   "failed_count": 0,
@@ -4279,16 +4279,16 @@
           "registered_corporate": 12,
           "registered_taxi": 13,
           "registered_general": 110,
-          "delivered_total": 144,
+          "delivered_total": 145,
           "delivered_priority": 13,
           "delivered_corporate": 12,
           "delivered_taxi": 13,
-          "delivered_general": 106,
-          "remaining_total": 70,
+          "delivered_general": 107,
+          "remaining_total": 69,
           "remaining_priority": 0,
           "remaining_corporate": 0,
           "remaining_taxi": 0,
-          "remaining_general": 93,
+          "remaining_general": 92,
           "selected_total": 149,
           "selectedRemaining_total": 65,
           "note": "**2026. 11. 26. 현재 접수 가능 차량**&#xa; - 소형승합 1대(스타리아 및 엠티알ST1) : 출고등록 후 2026. 12. 21.한 지급신청 가능한 차량&#xa; &#xa; =============================&#xa; 2026. 11. 16. 전기승용, 전기화물 마감.&#xa; 소형승합 1대 가능&#xa; =============================&#xa; ◀ 4차 공고:  승용 24대, 화물 4대&#xa; * 신청기간  &#xa;   - 승    용: `26. 11. 16.(월) 10:00 ∼ &#xa;   - 화    물: `26. 11. 16.(월) 15:00 ∼ &#xa; * 소형승합 1대 가능(3차 공고 잔여분)"
@@ -4498,9 +4498,9 @@
           "quota_corporate": 0,
           "quota_taxi": 0,
           "quota_general": 30000,
-          "registered_total": 71193,
+          "registered_total": 71195,
           "registered_priority": 39,
-          "registered_corporate": 68559,
+          "registered_corporate": 68561,
           "registered_taxi": 1114,
           "registered_general": 1481,
           "delivered_total": 56890,
@@ -4520,7 +4520,7 @@
       ],
       "success": true,
       "attempts": 1,
-      "timestamp": "2026-11-27T09:21:09.591Z"
+      "timestamp": "2026-11-27T09:31:25.966Z"
     }
   ]
 }
