@@ -25,8 +25,9 @@ const { filenameOf, GUBUN, GUBUN_PROBE, url } = require('./notice-files');
 const UA = { 'User-Agent': 'Mozilla/5.0 (compatible; vw-k-subsidy-links/1.0)' };
 
 /* ★요청 하나를 기다리는 최대 시간. 예전엔 없었다 — 서버가 답을 미루면 일꾼 4명이 그대로 붙잡혔다.
-   2026-11-25 부터 이 UA 의 HEAD 가 막히기 시작했고(러너에서 469/469 확인 실패, 실패 한 번에 수 초),
-   재시도까지 얹혀 런이 25분 잡 제한에 걸려 강제 종료됐다 — 저장 단계까지 못 가 실패가 기록조차 안 됐다.
+   2026-11-25 부터 러너의 HEAD 가 전부 실패했고(469/469 — 원인은 환경부 서버의 중간 인증서 누락,
+   certs/ 머리말 참고), 재시도까지 얹혀 런이 25분 잡 제한에 걸려 강제 종료됐다 — 저장 단계까지
+   못 가 실패가 기록조차 안 됐다.
    정상 HEAD 는 0.1~0.3초(2026-11-27 한국 회선 실측)라 10초면 넉넉하다. */
 const PEEK_TIMEOUT_MS = 10_000;
 
@@ -74,21 +75,23 @@ const describe = (name) => {
  *   멀쩡한 첨부를 목록에서 지워 버린다(그러면 화면에서 공고문이 사라진다).
  */
 async function peek(code, gubun, year, tries = 2, timeoutMs = PEEK_TIMEOUT_MS) {
+  let why = '';   // 진단용 실패 사유 — 판정엔 쓰지 않는다
   for (let i = 0; i < tries; i++) {
     try {
       const res = await fetch(url(code, gubun, year), {
         method: 'HEAD', headers: UA, signal: AbortSignal.timeout(timeoutMs),
       });
-      if (res.status >= 500 && res.status !== 500) throw new Error('5xx');
+      if (res.status >= 500 && res.status !== 500) throw new Error(`HTTP ${res.status}`);
       // 500 은 "그 칸에 첨부가 없다"는 이 서버의 정상 응답이다(실측).
       if (!res.ok) return { ok: true, name: null };
       return { ok: true, name: filenameOf(res.headers) || null };
-    } catch {
-      if (i === tries - 1) return { ok: false };
+    } catch (e) {
+      why = e?.cause?.code || e?.name || String(e);
+      if (i === tries - 1) return { ok: false, why };
       await new Promise((s) => setTimeout(s, 300 * (i + 1)));
     }
   }
-  return { ok: false };
+  return { ok: false, why };
 }
 
 /** 동시 실행. ★4가 최적 — 8·12는 오히려 느려지고 실패가 는다(실측). */
@@ -111,7 +114,8 @@ async function buildNoticeLinks(regions, opt = {}) {
   // ★HEAD 는 **제한이 없다**(실측: 간격 0초에서도 12/12, 150ms 로 100건 연속 100/100).
   //   제한은 본문 다운로드에만 걸린다. 처음에 1초를 붙였던 건 근거 없는 과잉이었고
   //   그 탓에 1,771건이 30분+ 걸렸다. 150ms 면 예의도 지키고 11분이면 끝난다.
-  // ★단 2026-11-25 부터는 이 UA 의 HEAD 가 막힌다 — 위 실측은 그 전 이야기다(PEEK_TIMEOUT_MS 주석).
+  // ★단 2026-11-27 한국 회선 실측: 이 UA 로 연달아 물으면 서버가 빈 응답을 주고 끊는다
+  //   (같은 시각 브라우저 UA 는 6/6 정상). 러너에도 걸리는지는 인증서를 고친 뒤 확인한다.
   const delay = opt.delayMs ?? 0;         // 병렬로 도니 개별 지연은 필요 없다
   const conc = opt.concurrency ?? 4;      // ★4가 최적(실측: 8·12는 더 느리고 실패 증가)
   const log = opt.log || console.log;
@@ -142,7 +146,9 @@ async function buildNoticeLinks(regions, opt = {}) {
     const results = await mapLimit(slots, conc, async (g) => {
       if (Date.now() > deadline) { cut++; return [g, { ok: false }]; }   // 확인 실패로 넘긴다(이전 값 유지)
       asked++;
+      const t0 = Date.now();
       const r = await peek(code, g, year, 2, timeoutMs);
+      opt.onPeek?.({ code, gubun: g, ok: r.ok, name: r.name ?? null, why: r.why, ms: Date.now() - t0 });
       if (delay) await new Promise((s) => setTimeout(s, delay));
       return [g, r];
     });

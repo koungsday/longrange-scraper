@@ -56,11 +56,51 @@ async function main() {
   console.log(full ? '🔍 전수 훑기 (새 첨부 탐색)' : '🔎 알려진 칸만 확인');
   // ★prev 도 넘긴다. 안 넘기면 **전수 모드에서** 네트워크 예외가 난 칸의 이전 값을
   //   되살릴 방법이 없다(notice-links.js 의 복구 경로가 opt.prev 를 본다).
-  const data = await buildNoticeLinks(regions, {
+  /* ★진단·조율 손잡이 (2026-11-27) — 수동 실행 입력으로만 들어온다. 정기 실행은 기본값 그대로.
+     11/25 부터 이 작업만 막혔다(같은 사이트의 잔여대수 수집은 정상). '빠르게 많이 물어서'
+     끊기는지 확인하려고, 속도·표본을 바꿔 **저장 없이** 러너에서 직접 재 볼 수 있게 한다. */
+  const num = (v) => (v === undefined || v === '' ? undefined : Number(v));
+  const concurrency = num(process.env.NOTICE_CONCURRENCY);
+  const delayMs = num(process.env.NOTICE_DELAY_MS);
+  const sample = num(process.env.NOTICE_SAMPLE);
+  const dry = process.env.NOTICE_DRY_RUN === '1';
+  let targets = regions;
+  if (sample && prev && !full) {   // 알려진 칸 기준으로 앞에서부터 sample 칸이 될 때까지
+    targets = [];
+    let n = 0;
+    for (const r of regions) {
+      const f = prev.regions?.[String(r.code)]?.files?.length || 0;
+      if (!f) continue;
+      targets.push(r);
+      n += f;
+      if (n >= sample) break;
+    }
+  }
+  const trace = [];
+  const data = await buildNoticeLinks(targets, {
     probe: true,
     known: full ? null : prev.regions,
     prev: prev?.regions,
+    concurrency,
+    delayMs,
+    onPeek: dry ? (p) => trace.push(p) : undefined,
   });
+
+  // ★진단 실행은 여기서 끝낸다 — 표본은 파일 수가 적어 아래 대량삭제 가드에 걸리고, 저장할 이유도 없다.
+  if (dry) {
+    const ok = trace.filter((p) => p.ok && p.name).length;
+    const empty = trace.filter((p) => p.ok && !p.name).length;
+    const bad = trace.filter((p) => !p.ok);
+    const whys = {};
+    for (const p of bad) whys[p.why || '?'] = (whys[p.why || '?'] || 0) + 1;
+    const ms = trace.map((p) => p.ms).sort((a, b) => a - b);
+    console.log(`🧪 진단(저장 안 함) · 동시 ${concurrency ?? 4} · 간격 ${delayMs ?? 0}ms · ${trace.length}칸`);
+    console.log(`   성공 ${ok} · 빈칸 ${empty} · 실패 ${bad.length}`);
+    console.log(`   순서 ${trace.map((p) => (p.ok ? (p.name ? 'O' : '-') : 'X')).join('')}`);
+    console.log(`   실패 사유 ${JSON.stringify(whys)}`);
+    console.log(`   응답 시간 중앙 ${ms[Math.floor(ms.length / 2)] ?? '-'}ms · 최장 ${ms[ms.length - 1] ?? '-'}ms`);
+    return;
+  }
 
   if (!data.fileCount) {
     // ★0건이면 쓰지 않는다. 서버가 잠깐 막았을 때 멀쩡한 목록을 빈 목록으로

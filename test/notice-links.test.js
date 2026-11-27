@@ -10,6 +10,10 @@
  * 실행: node test/notice-links.test.js
  */
 const { buildNoticeLinks, trustworthy } = require('../src/notice-links');
+const fs = require('fs');
+const path = require('path');
+const tls = require('tls');
+const { X509Certificate } = require('crypto');
 
 const regions = [
   { code: '1100', parentName: '서울', localName: '서울특별시' },
@@ -86,6 +90,13 @@ async function t(name, fn) {
       || `vanishing=${r.vanishingCount} unknown=${r.unknownCount} cut=${r.cutCount}`;
   });
 
+  await t('진단 콜백 — 칸마다 성공 여부·실패 사유·응답 시간을 받는다 (속도 시험용)', async () => {
+    const seen = [];
+    await run(FAKE.fail, { onPeek: (p) => seen.push(p) });
+    return (seen.length === 6 && seen.every((p) => p.ok === false && p.why && typeof p.ms === 'number'))
+      || JSON.stringify(seen.slice(0, 2));
+  });
+
   console.log('\n■ 믿을 수 있는 결과인가 (lastFullAt 을 찍을지)');
   const T = (fileCount, unknownCount, cutCount) => trustworthy({ fileCount, unknownCount, cutCount });
   await t('평소 수준(14/469) 은 믿는다', async () => T(469, 14, 0) === true || 'false');
@@ -93,6 +104,19 @@ async function t(name, fn) {
   await t('경계 — 20% 는 믿지 않고 19% 는 믿는다', async () => (T(100, 20, 0) === false && T(100, 19, 0) === true) || 'mismatch');
   await t('시간 상한에 한 칸이라도 잘렸으면 믿지 않는다', async () => T(469, 0, 1) === false || 'true');
   await t('첨부 0건이면 믿지 않는다', async () => T(0, 0, 0) === false || 'true');
+
+  console.log('\n■ 동봉한 중간 인증서 (환경부 서버가 빠뜨리는 고리)');
+  const pem = fs.readFileSync(path.join(__dirname, '../certs/turingsign-rsa-secure-ca3.pem'), 'utf8');
+  const ica = new X509Certificate(pem.slice(pem.indexOf('-----BEGIN CERTIFICATE-----')));
+  await t('★Node 가 원래 믿는 최상위 기관이 서명했다 — 새 신뢰 대상을 만들지 않는다', async () => {
+    const root = tls.rootCertificates.map((r) => new X509Certificate(r))
+      .find((r) => ica.checkIssued(r) && ica.verify(r.publicKey));
+    return !!root || `서명한 최상위 기관을 Node 기본 목록에서 못 찾음 (issuer: ${ica.issuer})`;
+  });
+  await t('만료까지 60일 넘게 남았다 — 가까워지면 여기서 먼저 운다', async () => {
+    const days = (Date.parse(ica.validTo) - Date.now()) / 86400000;
+    return days > 60 || `만료까지 ${Math.floor(days)}일 (${ica.validTo}) — 새 중간 인증서로 바꿀 것`;
+  });
 
   console.log(`\n결과: ${pass} 통과 / ${fail} 실패`);
   process.exit(fail ? 1 : 0);

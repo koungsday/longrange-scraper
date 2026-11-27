@@ -25,6 +25,23 @@ on:
         description: "전수 훑기(모든 칸 두드리기) — 사라진 첨부를 되살릴 때"
         type: boolean
         default: false
+      # ★진단·조율용(2026-11-27) — 정기 실행엔 안 들어온다(비면 기본값).
+      dry_run:
+        description: "진단만 — 저장·커밋 안 함 (속도 시험용)"
+        type: boolean
+        default: false
+      concurrency:
+        description: "동시 요청 수 (비우면 기본 4)"
+        type: string
+        default: ''
+      delay_ms:
+        description: "요청 사이 간격 ms (비우면 0)"
+        type: string
+        default: ''
+      sample:
+        description: "알려진 칸 앞에서부터 N칸만 (비우면 전부)"
+        type: string
+        default: ''
 
 concurrency:
   group: notice-links
@@ -57,6 +74,13 @@ jobs:
         # ★스크립트는 이제 시계를 안 본다. 전수 여부를 여기서 정해 준다.
         env:
           NOTICE_FULL: ${{ (github.event.schedule == '5 0,4,8,12,16,20 * * *' || inputs.full) && '1' || '' }}
+          NOTICE_DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          NOTICE_CONCURRENCY: ${{ inputs.concurrency }}
+          NOTICE_DELAY_MS: ${{ inputs.delay_ms }}
+          NOTICE_SAMPLE: ${{ inputs.sample }}
+          # ★환경부 서버가 중간 인증서를 빠뜨리고 보낸다 → Node 가 TLS 검증에 실패해 첨부 확인이
+          #   2026-11-25 부터 469/469 실패했다. 빠진 고리를 채운다(검증을 끄는 게 아니다). certs/ 머리말 참고.
+          NODE_EXTRA_CA_CERTS: ${{ github.workspace }}/certs/turingsign-rsa-secure-ca3.pem
         run: node src/build-notice-links.js
 
       - name: Commit
