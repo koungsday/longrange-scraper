@@ -12,7 +12,7 @@
 
 const fs = require('fs').promises;
 const axios = require('axios');
-const { buildNoticeLinks } = require('./notice-links');
+const { buildNoticeLinks, trustworthy } = require('./notice-links');
 
 const OUT = 'data/notice-links.json';
 
@@ -88,7 +88,13 @@ async function main() {
      이 한 줄이 있으면 위생 다이제스트가 "전수가 N시간째 안 돌았다" 를 말할 수 있다.
      ★전수 판정은 이제 cron 이 하는데(github.event.schedule), GitHub 은 예약을 자주 건너뛴다
        — 실측 하루 48회 중 5~8회만 돈다. 즉 '조용히 known 모드만 도는' 상태는 여전히 가능하다. */
-  data.lastFullAt = full ? new Date().toISOString() : (prev?.lastFullAt ?? null);
+  /* ★(2026-11-27) 전수가 '끝났다'와 '확인했다'는 다르다 — 시간 상한에 잘렸거나 대부분 확인 실패면
+     찍지 않는다. 판단은 notice-links.js 의 trustworthy()가 한다(테스트가 태운다). */
+  const ok = trustworthy(data);
+  if (full && !ok) {
+    console.warn(`⚠️ 전수였지만 확인이 되지 않았다 — 확인 실패 ${data.unknownCount}/${data.fileCount} · 시간 상한으로 건너뜀 ${data.cutCount}칸 → lastFullAt 은 그대로 둔다`);
+  }
+  data.lastFullAt = full && ok ? new Date().toISOString() : (prev?.lastFullAt ?? null);
 
   /* ★lastFullAt 은 비교에서 **빼지 않는다.** 처음엔 빼 두고 '12시간 넘게 굳었으면 한 번 쓴다'
      는 장치를 달았는데, 적대적 검증이 그게 도달하기 어려운 길임을 실측으로 보였다 —

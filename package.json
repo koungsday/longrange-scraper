@@ -5,7 +5,7 @@
   "main": "src/scraper.js",
   "scripts": {
     "scrape": "node src/scraper.js",
-    "test": "node test/changed-codes.test.js"
+    "test": "node test/changed-codes.test.js && node test/notice-links.test.js"
   },
   "dependencies": {
     "adm-zip": "^0.6.0",

@@ -24,6 +24,21 @@ const { filenameOf, GUBUN, GUBUN_PROBE, url } = require('./notice-files');
 
 const UA = { 'User-Agent': 'Mozilla/5.0 (compatible; vw-k-subsidy-links/1.0)' };
 
+/* ★요청 하나를 기다리는 최대 시간. 예전엔 없었다 — 서버가 답을 미루면 일꾼 4명이 그대로 붙잡혔다.
+   2026-11-25 부터 이 UA 의 HEAD 가 막히기 시작했고(러너에서 469/469 확인 실패, 실패 한 번에 수 초),
+   재시도까지 얹혀 런이 25분 잡 제한에 걸려 강제 종료됐다 — 저장 단계까지 못 가 실패가 기록조차 안 됐다.
+   정상 HEAD 는 0.1~0.3초(2026-11-27 한국 회선 실측)라 10초면 넉넉하다. */
+const PEEK_TIMEOUT_MS = 10_000;
+
+/* ★실행 전체 시간 상한 — 잡 제한(25분)보다 먼저 손을 뗀다.
+   넘으면 남은 칸은 두드리지 않고 '확인 실패'로 넘긴다(이전 값 유지 — 지우지 않음).
+   그래야 런이 끝까지 가서 '무엇을 확인 못 했는지'가 커밋된다. 정상 전수 ≈8분·알려진 칸 ≈3분. */
+const RUN_BUDGET_MS = 18 * 60_000;
+
+/* ★확인 실패가 첨부의 이 비율을 넘으면 그 런은 '확인이 된 결과'가 아니다.
+   평소 3% 안팎(실측: 10월 알려진 칸 4~14/455~469, 11/24 14/469) — 11/25 이후 100%. */
+const UNTRUSTED_UNKNOWN_RATIO = 0.2;
+
 /** 있던 파일을 지우기까지 필요한 **연속** '없음' 관찰 횟수.
  *  1(=즉시 삭제)이 기본이던 시절에 서버가 한 번 흔들려 72건이 날아갔다(2026-09-03 실측).
  *  런이 하루 5~8회이므로 3이면 진짜 내려간 공고도 하루 안에는 정리된다. */
@@ -58,10 +73,12 @@ const describe = (name) => {
  * ★"없음"과 "확인 실패"를 반드시 구분한다. 둘을 섞으면 일시적 실패 하나가
  *   멀쩡한 첨부를 목록에서 지워 버린다(그러면 화면에서 공고문이 사라진다).
  */
-async function peek(code, gubun, year, tries = 2) {
+async function peek(code, gubun, year, tries = 2, timeoutMs = PEEK_TIMEOUT_MS) {
   for (let i = 0; i < tries; i++) {
     try {
-      const res = await fetch(url(code, gubun, year), { method: 'HEAD', headers: UA });
+      const res = await fetch(url(code, gubun, year), {
+        method: 'HEAD', headers: UA, signal: AbortSignal.timeout(timeoutMs),
+      });
       if (res.status >= 500 && res.status !== 500) throw new Error('5xx');
       // 500 은 "그 칸에 첨부가 없다"는 이 서버의 정상 응답이다(실측).
       if (!res.ok) return { ok: true, name: null };
@@ -94,9 +111,13 @@ async function buildNoticeLinks(regions, opt = {}) {
   // ★HEAD 는 **제한이 없다**(실측: 간격 0초에서도 12/12, 150ms 로 100건 연속 100/100).
   //   제한은 본문 다운로드에만 걸린다. 처음에 1초를 붙였던 건 근거 없는 과잉이었고
   //   그 탓에 1,771건이 30분+ 걸렸다. 150ms 면 예의도 지키고 11분이면 끝난다.
+  // ★단 2026-11-25 부터는 이 UA 의 HEAD 가 막힌다 — 위 실측은 그 전 이야기다(PEEK_TIMEOUT_MS 주석).
   const delay = opt.delayMs ?? 0;         // 병렬로 도니 개별 지연은 필요 없다
   const conc = opt.concurrency ?? 4;      // ★4가 최적(실측: 8·12는 더 느리고 실패 증가)
   const log = opt.log || console.log;
+  const timeoutMs = opt.peekTimeoutMs ?? PEEK_TIMEOUT_MS;
+  const budgetMs = opt.budgetMs ?? RUN_BUDGET_MS;
+  const deadline = Date.now() + budgetMs;
   // ★가끔 넓게 훑는다. 처음에 A계열만 보다가 B(93건)·C(25건)를 통째로 놓쳤다.
   const list = opt.probe ? [...GUBUN, ...GUBUN_PROBE] : GUBUN;
 
@@ -105,6 +126,7 @@ async function buildNoticeLinks(regions, opt = {}) {
   let files = 0;
   let asked = 0;
   let unknown = 0;      // 확인 실패(네트워크 예외) — 이전 값을 그대로 지킨 건수
+  let cut = 0;          // 시간 상한에 걸려 두드리지 않은 칸 — 0이어야 정상
   let vanishing = 0;    // "사라진 것 같다" 로 관찰됐지만 아직 지우지 않은 건수
   const removed = [];   // 실제로 지운 것 — 로그에 이름을 남긴다
   for (const r of regions) {
@@ -118,8 +140,9 @@ async function buildNoticeLinks(regions, opt = {}) {
       ? list.filter((g) => opt.known[code].files.some((f) => f.gubun === g))
       : list;
     const results = await mapLimit(slots, conc, async (g) => {
+      if (Date.now() > deadline) { cut++; return [g, { ok: false }]; }   // 확인 실패로 넘긴다(이전 값 유지)
       asked++;
-      const r = await peek(code, g, year);
+      const r = await peek(code, g, year, 2, timeoutMs);
       if (delay) await new Promise((s) => setTimeout(s, delay));
       return [g, r];
     });
@@ -142,7 +165,7 @@ async function buildNoticeLinks(regions, opt = {}) {
            전수 훑기가 돌기 전까지 스스로는 절대 못 돌아온다(한 방향 톱니바퀴).
            → ① 그 자리에서 한 번 더 확인하고 ② 그래도 없으면 MISS_LIMIT 번 연속으로
              관찰될 때까지 이전 값을 유지한다. 진짜 내려간 공고는 며칠 안에 사라진다. */
-        const again = await peek(code, g, year);
+        const again = await peek(code, g, year, 2, timeoutMs);
         asked++;
         if (again.ok && again.name) {
           name = again.name;          // 첫 응답이 헛것이었다 — 살아 있다
@@ -179,6 +202,7 @@ async function buildNoticeLinks(regions, opt = {}) {
     fileCount: files,
     askedCount: asked,      // 이번에 실제로 두드린 칸 수 — 낭비를 눈에 보이게
     unknownCount: unknown,  // 확인 실패로 이전 값을 유지한 건수 (0이어야 정상)
+    cutCount: cut,          // 시간 상한으로 두드리지 않은 칸 (0이어야 정상)
     vanishingCount: vanishing,  // '없다' 로 왔지만 아직 안 지운 건수 — 삭제 사고의 조기경보
     removedCount: removed.length,
     scanMode: opt.known ? 'known' : 'full',
@@ -188,10 +212,23 @@ async function buildNoticeLinks(regions, opt = {}) {
   };
   log(`🔗 첨부 링크 ${files}건 · ${result.regionCount}개 지역 · ${opt.known ? '알려진 칸만' : '전수'} ${asked}회 두드림 · 형식 ${JSON.stringify(byExt)}`);
   if (unknown) log(`   ⚠️ 확인 실패 ${unknown}건 — 이전 값을 유지했다(지우지 않음)`);
+  if (cut) log(`   ⏱ 시간 상한 ${Math.round(budgetMs / 60000)}분에 걸려 ${cut}칸은 두드리지 않았다(이전 값 유지)`);
   if (vanishing) log(`   ⏳ 사라짐 의심 ${vanishing}건 — ${MISS_LIMIT}회 연속까지는 유지한다`);
   if (removed.length) log(`   🗑 삭제 ${removed.length}건: ${removed.slice(0, 10).join(' / ')}${removed.length > 10 ? ' …' : ''}`);
   if (surprises.length) log(`   ⚠️ 새 구분: ${surprises.join(' / ')} → notice-files.js GUBUN 확장 필요`);
   return result;
 }
 
-module.exports = { buildNoticeLinks, describe, KIND, MISS_LIMIT };
+/**
+ * 이 결과를 '확인이 된 결과'로 믿어도 되나 — lastFullAt 을 찍을지 정한다.
+ * ★안전장치(확인 실패면 이전 값 유지)가 실패를 가린다. 11/25 이후 런은 469/469 확인 실패였는데
+ *   fileCount 469·vanishing 0 으로 산출물이 멀쩡해 보였다. 지금까지는 런이 25분에 잘려 우연히
+ *   lastFullAt 이 안 찍혔을 뿐 — 시간 상한으로 런이 끝나게 되면, 아무것도 확인 못 한 전수가
+ *   '전수 완료'로 찍혀 감시까지 조용해진다. 그래서 '끝났다'가 아니라 '확인했다'를 본다.
+ */
+function trustworthy(data) {
+  if (!data.fileCount || data.cutCount) return false;
+  return data.unknownCount / data.fileCount < UNTRUSTED_UNKNOWN_RATIO;
+}
+
+module.exports = { buildNoticeLinks, describe, KIND, MISS_LIMIT, trustworthy, UNTRUSTED_UNKNOWN_RATIO };
