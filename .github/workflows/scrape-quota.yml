@@ -80,6 +80,11 @@ jobs:
       # 3. 스크래핑 실행
       # ========================================
       - name: Run quota scraper
+        # ★새 공고 지역 첨부 재훑기(notice-links.js)는 Node 로 ev.or.kr 에 HEAD 를 보낸다 — 환경부 서버가
+        #   중간 인증서를 빠뜨려 2026-11-25 부터 Node 요청이 TLS 검증에 실패했다. 빠진 고리를 채운다.
+        #   (검증을 끄는 게 아니다. 본체의 puppeteer Chromium 은 자기 인증서 목록을 써서 이 설정과 무관.)
+        env:
+          NODE_EXTRA_CA_CERTS: ${{ github.workspace }}/certs/turingsign-rsa-secure-ca3.pem
         run: node src/scraper-quota.js
 
       - name: Upload artifact
